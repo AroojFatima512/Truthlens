@@ -1,0 +1,546 @@
+2026-11-02 19:03:40,496 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.logcount.LogCount',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.remote_control.RemoteControl',
+ 'truthlens.run_reporting.RunReportingExtension']
+2026-11-02 19:03:40,497 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'truthlens',
+ 'CONCURRENT_REQUESTS': 1,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 1,
+ 'DOWNLOAD_DELAY': 3,
+ 'DOWNLOAD_TIMEOUT': 30,
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'FEED_EXPORT_INDENT': 2,
+ 'LOG_LEVEL': 'INFO',
+ 'NEWSPIDER_MODULE': 'truthlens.spiders',
+ 'ROBOTSTXT_OBEY': True,
+ 'SPIDER_MODULES': ['truthlens.spiders'],
+ 'USER_AGENT': 'TruthLensResearchBot/0.1'}
+2026-11-02 19:03:40,807 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2026-11-02 19:03:40,812 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.start.StartSpiderMiddleware',
+ 'scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware',
+ 'scrapy.spidermiddlewares.metacopy.MetaCopyDetectionMiddleware']
+2026-11-02 19:03:40,917 [scrapy.middleware] INFO: Enabled item pipelines:
+['truthlens.pipelines.CleaningPipeline',
+ 'truthlens.pipelines.MongoDBPipeline',
+ 'truthlens.export.RunJsonExportPipeline']
+2026-11-02 19:03:40,918 [scrapy.core.engine] INFO: Spider opened
+2026-11-02 19:03:40,955 [truthlens.pipelines] INFO: MongoDB connected: database=truthlens
+2026-11-02 19:03:40,959 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2026-11-02 19:03:40,962 [truthlens.run_reporting] INFO: Run started: 20261102T140340Z_f92fda979f5e480f98adaef19a255901 | source=The Nation
+2026-11-02 19:03:40,963 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2026-11-02 19:03:40,966 [scrapy.extensions.remote_control] INFO: Remote control HTTP server listening on port 57468 (job 16012-351ff63a49894e4e8e67add74161f0d3)
+2026-11-02 19:03:44,988 [nation_sitemap] INFO: Sitemap: selected 150 article URLs.
+2026-11-02 19:03:49,321 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/lgh-forms-vigilance-committee-improve-patient-care-monitoring | paragraphs=4 | words=240
+2026-11-02 19:03:49,322 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-lgh-forms-vigilance-committee-improve-patient-care-monitoring | characters=1771 | hash=b41a0127ea98
+2026-11-02 19:03:49,329 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-lgh-forms-vigilance-committee-improve-patient-care-monitoring | version=1 | fields=none
+2026-11-02 19:03:53,017 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/acs-orders-faster-execution-development-schemes-improved-public-service-delivery | paragraphs=12 | words=677
+2026-11-02 19:03:53,020 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-acs-orders-faster-execution-development-schemes-improved-public-service-delivery | characters=5075 | hash=377a45f8bc7c
+2026-11-02 19:03:53,027 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-acs-orders-faster-execution-development-schemes-improved-public-service-delivery | version=1 | fields=none
+2026-11-02 19:03:57,466 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/lahore-ranks-polluted-city-world-aqi-reaches-hazardous-448 | paragraphs=4 | words=206
+2026-11-02 19:03:57,467 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-lahore-ranks-polluted-city-world-aqi-reaches-hazardous-448 | characters=1365 | hash=907e3e2f05cf
+2026-11-02 19:03:57,474 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-lahore-ranks-polluted-city-world-aqi-reaches-hazardous-448 | version=1 | fields=none
+2026-11-02 19:04:01,627 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/punjab-igp-declares-violence-women-children-red-line | paragraphs=7 | words=296
+2026-11-02 19:04:01,629 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-punjab-igp-declares-violence-women-children-red-line | characters=2118 | hash=9ca7aa35567f
+2026-11-02 19:04:01,637 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-punjab-igp-declares-violence-women-children-red-line | version=1 | fields=none
+2026-11-02 19:04:05,857 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/five-killed-fresh-ethnic-violence-india-s-manipur-state | paragraphs=4 | words=284
+2026-11-02 19:04:05,859 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-five-killed-fresh-ethnic-violence-india-s-manipur-state | characters=1768 | hash=3472aaecdbbc
+2026-11-02 19:04:05,865 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-five-killed-fresh-ethnic-violence-india-s-manipur-state | version=1 | fields=none
+2026-11-02 19:04:10,181 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/one-killed-eight-injured-factory-cylinder-blast | paragraphs=4 | words=186
+2026-11-02 19:04:10,184 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-one-killed-eight-injured-factory-cylinder-blast | characters=1135 | hash=a55bdad95857
+2026-11-02 19:04:10,194 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-one-killed-eight-injured-factory-cylinder-blast | version=1 | fields=none
+2026-11-02 19:04:13,854 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/israeli-leader-warns-netanyahu-can-use-new-attack-iran-stay-power | paragraphs=3 | words=311
+2026-11-02 19:04:13,857 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-israeli-leader-warns-netanyahu-can-use-new-attack-iran-stay-power | characters=2029 | hash=8f01ee16e58a
+2026-11-02 19:04:13,869 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-israeli-leader-warns-netanyahu-can-use-new-attack-iran-stay-power | version=1 | fields=none
+2026-11-02 19:04:18,259 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/man-stabs-wife-five-children-domestic-dispute | paragraphs=1 | words=122
+2026-11-02 19:04:18,261 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-man-stabs-wife-five-children-domestic-dispute | characters=742 | hash=835ec068b730
+2026-11-02 19:04:18,270 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-man-stabs-wife-five-children-domestic-dispute | version=1 | fields=none
+2026-11-02 19:04:21,931 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/french-protest-violence-eases-scattered-riots-hit-germany | paragraphs=7 | words=625
+2026-11-02 19:04:21,934 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-french-protest-violence-eases-scattered-riots-hit-germany | characters=4042 | hash=7cd0a93576bd
+2026-11-02 19:04:21,940 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-french-protest-violence-eases-scattered-riots-hit-germany | version=1 | fields=none
+2026-11-02 19:04:26,330 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/pwwf-disburses-record-rs460-7m-welfare-grants-single-day-manshaullah-butt | paragraphs=1 | words=93
+2026-11-02 19:04:26,332 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-pwwf-disburses-record-rs460-7m-welfare-grants-single-day-manshaullah-butt | characters=650 | hash=6828badebb3a
+2026-11-02 19:04:26,342 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-pwwf-disburses-record-rs460-7m-welfare-grants-single-day-manshaullah-butt | version=1 | fields=none
+2026-11-02 19:04:29,604 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/somali-pirates-seize-iranian-fishing-vessel-raising-fears-attacks-on-cargo-ships | paragraphs=1 | words=218
+2026-11-02 19:04:29,605 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-somali-pirates-seize-iranian-fishing-vessel-raising-fears-attacks-on-cargo-ships | characters=1377 | hash=999afebb3e45
+2026-11-02 19:04:29,612 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-somali-pirates-seize-iranian-fishing-vessel-raising-fears-attacks-on-cargo-ships | version=1 | fields=none
+2026-11-02 19:04:34,206 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/nccia-arrests-three-suspects-blackmailing-women-social-media | paragraphs=6 | words=272
+2026-11-02 19:04:34,208 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-nccia-arrests-three-suspects-blackmailing-women-social-media | characters=1806 | hash=085e0be49d23
+2026-11-02 19:04:34,214 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-nccia-arrests-three-suspects-blackmailing-women-social-media | version=1 | fields=none
+2026-11-02 19:04:37,420 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/yotova-become-bulgaria-s-first-elected-female-president | paragraphs=8 | words=453
+2026-11-02 19:04:37,424 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-yotova-become-bulgaria-s-first-elected-female-president | characters=2946 | hash=e1d347029024
+2026-11-02 19:04:37,436 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-yotova-become-bulgaria-s-first-elected-female-president | version=1 | fields=none
+2026-11-02 19:04:40,952 [scrapy.extensions.logstats] INFO: Crawled 15 pages (at 15 pages/min), scraped 13 items (at 13 items/min)
+2026-11-02 19:04:41,308 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/judicial-hours-subordinate-courts-punjab-revised | paragraphs=1 | words=87
+2026-11-02 19:04:41,309 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-judicial-hours-subordinate-courts-punjab-revised | characters=530 | hash=de0364514dfd
+2026-11-02 19:04:41,315 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-judicial-hours-subordinate-courts-punjab-revised | version=1 | fields=none
+2026-11-02 19:04:43,460 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/punjab-approves-149-new-posts-3-departments | paragraphs=2 | words=168
+2026-11-02 19:04:43,462 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-punjab-approves-149-new-posts-3-departments | characters=1147 | hash=ead2abe20a19
+2026-11-02 19:04:43,467 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-punjab-approves-149-new-posts-3-departments | version=1 | fields=none
+2026-11-02 19:04:46,943 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/cm-maryam-felicitates-gb-people-79th-liberation-day | paragraphs=3 | words=199
+2026-11-02 19:04:46,944 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-cm-maryam-felicitates-gb-people-79th-liberation-day | characters=1348 | hash=d513ec15df3f
+2026-11-02 19:04:46,951 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-cm-maryam-felicitates-gb-people-79th-liberation-day | version=1 | fields=none
+2026-11-02 19:04:50,894 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/punjab-sets-target-train-one-million-youth-skills-3-years | paragraphs=7 | words=560
+2026-11-02 19:04:50,896 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-punjab-sets-target-train-one-million-youth-skills-3-years | characters=4010 | hash=bf233b816257
+2026-11-02 19:04:50,903 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-punjab-sets-target-train-one-million-youth-skills-3-years | version=1 | fields=none
+2026-11-02 19:04:55,389 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/punjab-launch-polio-eradication-campaign-today | paragraphs=7 | words=455
+2026-11-02 19:04:55,392 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-punjab-launch-polio-eradication-campaign-today | characters=3075 | hash=1af6c4021281
+2026-11-02 19:04:55,404 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-punjab-launch-polio-eradication-campaign-today | version=1 | fields=none
+2026-11-02 19:04:59,587 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/mqm-p-demands-new-administrative-units-announces-nov-29-procession | paragraphs=5 | words=422
+2026-11-02 19:04:59,589 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-mqm-p-demands-new-administrative-units-announces-nov-29-procession | characters=2785 | hash=b79620787faf
+2026-11-02 19:04:59,596 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-mqm-p-demands-new-administrative-units-announces-nov-29-procession | version=1 | fields=none
+2026-11-02 19:05:02,935 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/wafi-energy-pakistan-announces-q3-2026-results | paragraphs=1 | words=225
+2026-11-02 19:05:02,938 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-wafi-energy-pakistan-announces-q3-2026-results | characters=1528 | hash=e197b80f4eb6
+2026-11-02 19:05:02,946 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-wafi-energy-pakistan-announces-q3-2026-results | version=1 | fields=none
+2026-11-02 19:05:06,495 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/handmade-carpet-exhibition-delivered-results-beyond-expectations-pcmea | paragraphs=4 | words=354
+2026-11-02 19:05:06,497 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-handmade-carpet-exhibition-delivered-results-beyond-expectations-pcmea | characters=2525 | hash=06f1c10b0080
+2026-11-02 19:05:06,503 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-handmade-carpet-exhibition-delivered-results-beyond-expectations-pcmea | version=1 | fields=none
+2026-11-02 19:05:10,601 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/pakistan-maldives-reaffirm-commitment-to-strengthen-bilateral-coop | paragraphs=2 | words=165
+2026-11-02 19:05:10,604 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-pakistan-maldives-reaffirm-commitment-to-strengthen-bilateral-coop | characters=1210 | hash=038f28a08f91
+2026-11-02 19:05:10,615 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-pakistan-maldives-reaffirm-commitment-to-strengthen-bilateral-coop | version=1 | fields=none
+2026-11-02 19:05:13,334 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/north-korea-tests-cluster-bomb-warheads-kcna | paragraphs=4 | words=278
+2026-11-02 19:05:13,337 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-north-korea-tests-cluster-bomb-warheads-kcna | characters=1773 | hash=30b47dcc9928
+2026-11-02 19:05:13,348 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-north-korea-tests-cluster-bomb-warheads-kcna | version=1 | fields=none
+2026-11-02 19:05:17,510 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/province-advances-ndc-3-0-plan-digital-climate-registry | paragraphs=13 | words=512
+2026-11-02 19:05:17,513 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-province-advances-ndc-3-0-plan-digital-climate-registry | characters=3724 | hash=f3ee130b747b
+2026-11-02 19:05:17,520 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-province-advances-ndc-3-0-plan-digital-climate-registry | version=1 | fields=none
+2026-11-02 19:05:21,077 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/kp-seeks-cci-nod-500pc-increase-fed-indigenous-natural-gas | paragraphs=4 | words=427
+2026-11-02 19:05:21,079 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-kp-seeks-cci-nod-500pc-increase-fed-indigenous-natural-gas | characters=2555 | hash=38e3a26740c1
+2026-11-02 19:05:21,087 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-kp-seeks-cci-nod-500pc-increase-fed-indigenous-natural-gas | version=1 | fields=none
+2026-11-02 19:05:24,940 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/chinese-communist-party-s-minister-liu-haixing-pakistan-talks | paragraphs=2 | words=168
+2026-11-02 19:05:24,942 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-chinese-communist-party-s-minister-liu-haixing-pakistan-talks | characters=1189 | hash=29a51564c1be
+2026-11-02 19:05:24,947 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-chinese-communist-party-s-minister-liu-haixing-pakistan-talks | version=1 | fields=none
+2026-11-02 19:05:28,655 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/nccia-arrests-man-harassing-blackmailing-woman | paragraphs=1 | words=150
+2026-11-02 19:05:28,658 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-nccia-arrests-man-harassing-blackmailing-woman | characters=1005 | hash=bac7556d7150
+2026-11-02 19:05:28,669 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-nccia-arrests-man-harassing-blackmailing-woman | version=1 | fields=none
+2026-11-02 19:05:32,445 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/israeli-strikes-gaza-kill-8-including-4-year-old-boy | paragraphs=1 | words=280
+2026-11-02 19:05:32,447 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-israeli-strikes-gaza-kill-8-including-4-year-old-boy | characters=1744 | hash=ce90745b4cf8
+2026-11-02 19:05:32,452 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-israeli-strikes-gaza-kill-8-including-4-year-old-boy | version=1 | fields=none
+2026-11-02 19:05:35,475 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/rlng-price-hike-burden-industry-piaf | paragraphs=3 | words=360
+2026-11-02 19:05:35,479 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-rlng-price-hike-burden-industry-piaf | characters=2562 | hash=898ef49ceef5
+2026-11-02 19:05:35,490 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-rlng-price-hike-burden-industry-piaf | version=1 | fields=none
+2026-11-02 19:05:39,418 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/week-long-polio-eradication-campaign-starts-hyderabad | paragraphs=2 | words=230
+2026-11-02 19:05:39,419 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-week-long-polio-eradication-campaign-starts-hyderabad | characters=1579 | hash=f4a2e3d00b0f
+2026-11-02 19:05:39,426 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-week-long-polio-eradication-campaign-starts-hyderabad | version=1 | fields=none
+2026-11-02 19:05:40,967 [scrapy.extensions.logstats] INFO: Crawled 32 pages (at 17 pages/min), scraped 30 items (at 17 items/min)
+2026-11-02 19:05:43,340 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/pakistan-set-host-23rd-asian-team-squash-c-ships-islamabad | paragraphs=2 | words=107
+2026-11-02 19:05:43,341 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-pakistan-set-host-23rd-asian-team-squash-c-ships-islamabad | characters=648 | hash=fedfb8747dbe
+2026-11-02 19:05:43,347 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-pakistan-set-host-23rd-asian-team-squash-c-ships-islamabad | version=1 | fields=none
+2026-11-02 19:05:47,834 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/lahore-blues-whites-reach-national-u19-c-ship-semis | paragraphs=1 | words=98
+2026-11-02 19:05:47,836 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-lahore-blues-whites-reach-national-u19-c-ship-semis | characters=658 | hash=70f4181bd8c8
+2026-11-02 19:05:47,846 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-lahore-blues-whites-reach-national-u19-c-ship-semis | version=1 | fields=none
+2026-11-02 19:05:51,606 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/thousands-protest-india-s-capital-voter-roll-revision | paragraphs=1 | words=424
+2026-11-02 19:05:51,609 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-thousands-protest-india-s-capital-voter-roll-revision | characters=2723 | hash=6b50b7aa9593
+2026-11-02 19:05:51,621 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-thousands-protest-india-s-capital-voter-roll-revision | version=1 | fields=none
+2026-11-02 19:05:55,721 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/dc-hyderabad-intensifying-action-artificial-price-hikes-profiteering | paragraphs=3 | words=122
+2026-11-02 19:05:55,723 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-dc-hyderabad-intensifying-action-artificial-price-hikes-profiteering | characters=835 | hash=46377b0ada07
+2026-11-02 19:05:55,733 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-dc-hyderabad-intensifying-action-artificial-price-hikes-profiteering | version=1 | fields=none
+2026-11-02 19:06:00,073 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/shehbaz-fc-lahore-city-fc-win-12th-fame-sports-floodlight-openers | paragraphs=1 | words=132
+2026-11-02 19:06:00,075 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-shehbaz-fc-lahore-city-fc-win-12th-fame-sports-floodlight-openers | characters=879 | hash=47ee23c769f2
+2026-11-02 19:06:00,080 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-shehbaz-fc-lahore-city-fc-win-12th-fame-sports-floodlight-openers | version=1 | fields=none
+2026-11-02 19:06:02,949 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/sukkur-commissioner-pledges-improved-sports-facilities-sindh-games | paragraphs=1 | words=104
+2026-11-02 19:06:02,950 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-sukkur-commissioner-pledges-improved-sports-facilities-sindh-games | characters=710 | hash=fa2edd1344d6
+2026-11-02 19:06:02,958 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-sukkur-commissioner-pledges-improved-sports-facilities-sindh-games | version=1 | fields=none
+2026-11-02 19:06:07,198 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/governor-felicitates-people-gb-79th-independence-day | paragraphs=4 | words=166
+2026-11-02 19:06:07,199 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-governor-felicitates-people-gb-79th-independence-day | characters=1183 | hash=59ebe1b4eb74
+2026-11-02 19:06:07,205 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-governor-felicitates-people-gb-79th-independence-day | version=1 | fields=none
+2026-11-02 19:06:11,136 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/pakistan-police-edge-guangdong-7-6-thrilling-hockey-friendly | paragraphs=1 | words=141
+2026-11-02 19:06:11,139 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-pakistan-police-edge-guangdong-7-6-thrilling-hockey-friendly | characters=990 | hash=6aaf525d1453
+2026-11-02 19:06:11,149 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-pakistan-police-edge-guangdong-7-6-thrilling-hockey-friendly | version=1 | fields=none
+2026-11-02 19:06:15,566 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/consumers-getting-rs14-71-relief-govt-orders-refineries-surrender-extra-war-time-premium-petrol | paragraphs=6 | words=570
+2026-11-02 19:06:15,569 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-consumers-getting-rs14-71-relief-govt-orders-refineries-surrender-extra-war-time-premium-petrol | characters=3617 | hash=06365cab344d
+2026-11-02 19:06:15,576 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-consumers-getting-rs14-71-relief-govt-orders-refineries-surrender-extra-war-time-premium-petrol | version=1 | fields=none
+2026-11-02 19:06:19,904 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/sindh-tourism-resorts-face-rs22-3m-loss-despite-strong-tourist-footfall | paragraphs=7 | words=592
+2026-11-02 19:06:19,908 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-sindh-tourism-resorts-face-rs22-3m-loss-despite-strong-tourist-footfall | characters=4023 | hash=5b516788856f
+2026-11-02 19:06:19,918 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-sindh-tourism-resorts-face-rs22-3m-loss-despite-strong-tourist-footfall | version=1 | fields=none
+2026-11-02 19:06:24,441 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/osairm-springs-surprise-secure-governor-s-cup-golf-title | paragraphs=1 | words=212
+2026-11-02 19:06:24,443 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-osairm-springs-surprise-secure-governor-s-cup-golf-title | characters=1338 | hash=cba4bb9cc349
+2026-11-02 19:06:24,454 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-osairm-springs-surprise-secure-governor-s-cup-golf-title | version=1 | fields=none
+2026-11-02 19:06:28,115 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/gilgit-baltistan-vital-part-pakistan-beautiful-symbol-national-unity-cm-murad | paragraphs=3 | words=148
+2026-11-02 19:06:28,118 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-gilgit-baltistan-vital-part-pakistan-beautiful-symbol-national-unity-cm-murad | characters=995 | hash=2f55c1659a2a
+2026-11-02 19:06:28,128 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-gilgit-baltistan-vital-part-pakistan-beautiful-symbol-national-unity-cm-murad | version=1 | fields=none
+2026-11-02 19:06:32,386 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/10th-sheheryar-malik-memorial-pakistan-open-tennis-begins | paragraphs=1 | words=226
+2026-11-02 19:06:32,388 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-10th-sheheryar-malik-memorial-pakistan-open-tennis-begins | characters=1466 | hash=f6d9c81a236a
+2026-11-02 19:06:32,399 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-10th-sheheryar-malik-memorial-pakistan-open-tennis-begins | version=1 | fields=none
+2026-11-02 19:06:35,368 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/ecp-launches-pilot-project-women-s-voter-registration-qambar-shahdadkot | paragraphs=5 | words=278
+2026-11-02 19:06:35,372 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-ecp-launches-pilot-project-women-s-voter-registration-qambar-shahdadkot | characters=1987 | hash=41123fa9042a
+2026-11-02 19:06:35,379 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-ecp-launches-pilot-project-women-s-voter-registration-qambar-shahdadkot | version=1 | fields=none
+2026-11-02 19:06:38,925 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/pakistan-team-face-world-s-best-mma-world-c-ships | paragraphs=6 | words=505
+2026-11-02 19:06:38,927 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-pakistan-team-face-world-s-best-mma-world-c-ships | characters=3654 | hash=d1c4a56a44d0
+2026-11-02 19:06:38,934 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-pakistan-team-face-world-s-best-mma-world-c-ships | version=1 | fields=none
+2026-11-02 19:06:40,749 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/dp-imperial-clinch-14th-maj-gen-saeed-uz-zaman-janjua-memorial-polo-cup-trophy | paragraphs=1 | words=279
+2026-11-02 19:06:40,750 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-dp-imperial-clinch-14th-maj-gen-saeed-uz-zaman-janjua-memorial-polo-cup-trophy | characters=1886 | hash=9bdaa8a504ec
+2026-11-02 19:06:40,756 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-dp-imperial-clinch-14th-maj-gen-saeed-uz-zaman-janjua-memorial-polo-cup-trophy | version=1 | fields=none
+2026-11-02 19:06:40,949 [scrapy.extensions.logstats] INFO: Crawled 48 pages (at 16 pages/min), scraped 46 items (at 16 items/min)
+2026-11-02 19:06:44,930 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/ku-offers-free-oral-health-screening-staff | paragraphs=3 | words=176
+2026-11-02 19:06:44,932 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-ku-offers-free-oral-health-screening-staff | characters=1222 | hash=cd0e16a194a5
+2026-11-02 19:06:44,939 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-ku-offers-free-oral-health-screening-staff | version=1 | fields=none
+2026-11-02 19:06:48,926 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/abbas-afridi-s-fireworks-power-pakistan-hong-kong-sixes-plate-title | paragraphs=1 | words=358
+2026-11-02 19:06:48,928 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-abbas-afridi-s-fireworks-power-pakistan-hong-kong-sixes-plate-title | characters=2279 | hash=94116823ff2b
+2026-11-02 19:06:48,936 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-abbas-afridi-s-fireworks-power-pakistan-hong-kong-sixes-plate-title | version=1 | fields=none
+2026-11-02 19:06:53,403 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/sindhi-adabi-sangat-reviews-multiple-genres-literature | paragraphs=1 | words=182
+2026-11-02 19:06:53,404 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-sindhi-adabi-sangat-reviews-multiple-genres-literature | characters=1175 | hash=f06b871d5fe8
+2026-11-02 19:06:53,411 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-sindhi-adabi-sangat-reviews-multiple-genres-literature | version=1 | fields=none
+2026-11-02 19:06:56,924 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/qist-bazaar-celebrating-five-years-operations | paragraphs=7 | words=389
+2026-11-02 19:06:56,925 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-qist-bazaar-celebrating-five-years-operations | characters=2779 | hash=10565565584e
+2026-11-02 19:06:56,932 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-qist-bazaar-celebrating-five-years-operations | version=1 | fields=none
+2026-11-02 19:07:00,671 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/hcstsi-seeks-extension-gas-supply-hours-hotels-restaurants | paragraphs=3 | words=324
+2026-11-02 19:07:00,674 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-hcstsi-seeks-extension-gas-supply-hours-hotels-restaurants | characters=2172 | hash=057ffee32187
+2026-11-02 19:07:00,684 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-hcstsi-seeks-extension-gas-supply-hours-hotels-restaurants | version=1 | fields=none
+2026-11-02 19:07:03,918 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/ndf-conducts-community-accountability-forum-nawabshah | paragraphs=5 | words=232
+2026-11-02 19:07:03,919 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-ndf-conducts-community-accountability-forum-nawabshah | characters=1751 | hash=b7d79ad969dc
+2026-11-02 19:07:03,925 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-ndf-conducts-community-accountability-forum-nawabshah | version=1 | fields=none
+2026-11-02 19:07:08,356 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/four-killed-exchange-fire-two-groups | paragraphs=2 | words=68
+2026-11-02 19:07:08,358 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-four-killed-exchange-fire-two-groups | characters=398 | hash=6c614a60430a
+2026-11-02 19:07:08,368 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-four-killed-exchange-fire-two-groups | version=1 | fields=none
+2026-11-02 19:07:12,515 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/two-boys-killed-tractor-trolley-hits-motorbike | paragraphs=2 | words=93
+2026-11-02 19:07:12,517 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-two-boys-killed-tractor-trolley-hits-motorbike | characters=555 | hash=efcf0b5b11e5
+2026-11-02 19:07:12,526 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-two-boys-killed-tractor-trolley-hits-motorbike | version=1 | fields=none
+2026-11-02 19:07:16,514 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/nestle-pakistan-participate-29th-sustainable-development-conference | paragraphs=9 | words=577
+2026-11-02 19:07:16,517 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-nestle-pakistan-participate-29th-sustainable-development-conference | characters=4145 | hash=3c1136d6032d
+2026-11-02 19:07:16,523 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-nestle-pakistan-participate-29th-sustainable-development-conference | version=1 | fields=none
+2026-11-02 19:07:19,085 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/ppp-continue-struggle-rights-gilgit-baltistan-s-people | paragraphs=2 | words=279
+2026-11-02 19:07:19,088 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-ppp-continue-struggle-rights-gilgit-baltistan-s-people | characters=1895 | hash=406caf1444d0
+2026-11-02 19:07:19,099 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-ppp-continue-struggle-rights-gilgit-baltistan-s-people | version=1 | fields=none
+2026-11-02 19:07:22,508 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/pakistan-needs-unified-body-protect-digital-asset-investors-awaj-president | paragraphs=10 | words=410
+2026-11-02 19:07:22,513 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-pakistan-needs-unified-body-protect-digital-asset-investors-awaj-president | characters=3152 | hash=c375320f2771
+2026-11-02 19:07:22,525 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-pakistan-needs-unified-body-protect-digital-asset-investors-awaj-president | version=1 | fields=none
+2026-11-02 19:07:26,411 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/pakistan-reports-eighth-polio-case | paragraphs=1 | words=429
+2026-11-02 19:07:26,415 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-pakistan-reports-eighth-polio-case | characters=2999 | hash=b774502dac46
+2026-11-02 19:07:26,425 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-pakistan-reports-eighth-polio-case | version=1 | fields=none
+2026-11-02 19:07:29,758 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/abhi-microfinance-bank-plans-raise-rs2-3b-ipo | paragraphs=3 | words=344
+2026-11-02 19:07:29,759 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-abhi-microfinance-bank-plans-raise-rs2-3b-ipo | characters=2187 | hash=30a4e7c0515e
+2026-11-02 19:07:29,766 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-abhi-microfinance-bank-plans-raise-rs2-3b-ipo | version=1 | fields=none
+2026-11-02 19:07:33,562 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/cda-appoints-3-retired-military-officers-dgs | paragraphs=1 | words=90
+2026-11-02 19:07:33,564 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-cda-appoints-3-retired-military-officers-dgs | characters=631 | hash=7724be97818d
+2026-11-02 19:07:33,571 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-cda-appoints-3-retired-military-officers-dgs | version=1 | fields=none
+2026-11-02 19:07:37,206 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/serena-hotels-celebrates-5-years-mehfil-e-sukhan | paragraphs=3 | words=332
+2026-11-02 19:07:37,208 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-serena-hotels-celebrates-5-years-mehfil-e-sukhan | characters=2191 | hash=d5fea401a876
+2026-11-02 19:07:37,214 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-serena-hotels-celebrates-5-years-mehfil-e-sukhan | version=1 | fields=none
+2026-11-02 19:07:40,964 [scrapy.extensions.logstats] INFO: Crawled 63 pages (at 15 pages/min), scraped 61 items (at 15 items/min)
+2026-11-02 19:07:41,081 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/iran-us-continue-doha-talks-tehran-warns-wider-war | paragraphs=1 | words=887
+2026-11-02 19:07:41,084 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-iran-us-continue-doha-talks-tehran-warns-wider-war | characters=6054 | hash=6a5958285a65
+2026-11-02 19:07:41,090 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-iran-us-continue-doha-talks-tehran-warns-wider-war | version=1 | fields=none
+2026-11-02 19:07:44,406 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/saudi-led-coalition-launches-operation-neutralise-houthi-military-resources | paragraphs=1 | words=954
+2026-11-02 19:07:44,409 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-saudi-led-coalition-launches-operation-neutralise-houthi-military-resources | characters=6299 | hash=f1ed024fa8d2
+2026-11-02 19:07:44,414 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-saudi-led-coalition-launches-operation-neutralise-houthi-military-resources | version=1 | fields=none
+2026-11-02 19:07:48,466 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/pakistan-water-week-2026-kicks-today-capital | paragraphs=3 | words=403
+2026-11-02 19:07:48,469 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-pakistan-water-week-2026-kicks-today-capital | characters=2917 | hash=545c5f6cd9cf
+2026-11-02 19:07:48,476 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-pakistan-water-week-2026-kicks-today-capital | version=1 | fields=none
+2026-11-02 19:07:52,780 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/cbd-punjab-coo-reviews-site-clearance-development-plans-proposed-diplomatic-enclave | paragraphs=3 | words=320
+2026-11-02 19:07:52,782 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-cbd-punjab-coo-reviews-site-clearance-development-plans-proposed-diplomatic-enclave | characters=2272 | hash=427770369823
+2026-11-02 19:07:52,787 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-cbd-punjab-coo-reviews-site-clearance-development-plans-proposed-diplomatic-enclave | version=1 | fields=none
+2026-11-02 19:07:55,574 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/pakistan-assumes-g-24-chairmanship | paragraphs=2 | words=650
+2026-11-02 19:07:55,577 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-pakistan-assumes-g-24-chairmanship | characters=4898 | hash=9cde30ffc89f
+2026-11-02 19:07:55,582 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-pakistan-assumes-g-24-chairmanship | version=1 | fields=none
+2026-11-02 19:07:59,908 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/fear-recovery-pm-s-hepatitis-c-programme-brings-hope-life-recovery-millions | paragraphs=11 | words=1284
+2026-11-02 19:07:59,916 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-fear-recovery-pm-s-hepatitis-c-programme-brings-hope-life-recovery-millions | characters=9083 | hash=9c2a871091e2
+2026-11-02 19:07:59,924 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-fear-recovery-pm-s-hepatitis-c-programme-brings-hope-life-recovery-millions | version=1 | fields=none
+2026-11-02 19:08:03,991 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/us-open-role-pakistan-s-afghan-terror-concerns-rubio | paragraphs=3 | words=845
+2026-11-02 19:08:03,996 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-us-open-role-pakistan-s-afghan-terror-concerns-rubio | characters=5517 | hash=c1faf08baa6d
+2026-11-02 19:08:04,002 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-us-open-role-pakistan-s-afghan-terror-concerns-rubio | version=1 | fields=none
+2026-11-02 19:08:07,657 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/kpt-handles-two-bulk-carriers-carrying-101-000-tonnes-fertiliser-wheat-junaid-anwar | paragraphs=5 | words=330
+2026-11-02 19:08:07,659 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-kpt-handles-two-bulk-carriers-carrying-101-000-tonnes-fertiliser-wheat-junaid-anwar | characters=2358 | hash=b1c4c29a3d5e
+2026-11-02 19:08:07,665 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-kpt-handles-two-bulk-carriers-carrying-101-000-tonnes-fertiliser-wheat-junaid-anwar | version=1 | fields=none
+2026-11-02 19:08:11,398 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/wedding-stampede-leaves-1-dead-18-injured-6-arrested | paragraphs=3 | words=304
+2026-11-02 19:08:11,400 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-wedding-stampede-leaves-1-dead-18-injured-6-arrested | characters=2088 | hash=7eb7dc988c2a
+2026-11-02 19:08:11,409 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-wedding-stampede-leaves-1-dead-18-injured-6-arrested | version=1 | fields=none
+2026-11-02 19:08:15,322 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/ppp-urges-opposition-end-boycott-join-electoral-reforms-process | paragraphs=7 | words=477
+2026-11-02 19:08:15,326 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-ppp-urges-opposition-end-boycott-join-electoral-reforms-process | characters=3429 | hash=40b739708efd
+2026-11-02 19:08:15,333 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-ppp-urges-opposition-end-boycott-join-electoral-reforms-process | version=1 | fields=none
+2026-11-02 19:08:19,659 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/islamabad-police-facilitation-vans-serve-citizens-18-locations-today | paragraphs=11 | words=317
+2026-11-02 19:08:19,661 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-islamabad-police-facilitation-vans-serve-citizens-18-locations-today | characters=2184 | hash=e9b501f669a9
+2026-11-02 19:08:19,667 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-islamabad-police-facilitation-vans-serve-citizens-18-locations-today | version=1 | fields=none
+2026-11-02 19:08:23,970 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/pharmacists-warned-obtaining-multiple-drug-sale-licences | paragraphs=4 | words=122
+2026-11-02 19:08:23,971 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-pharmacists-warned-obtaining-multiple-drug-sale-licences | characters=885 | hash=d085a75fcf73
+2026-11-02 19:08:23,977 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-pharmacists-warned-obtaining-multiple-drug-sale-licences | version=1 | fields=none
+2026-11-02 19:08:27,548 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/attock-journalists-announce-peaceful-protest-cm-punjab-s-visit | paragraphs=1 | words=144
+2026-11-02 19:08:27,550 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-attock-journalists-announce-peaceful-protest-cm-punjab-s-visit | characters=864 | hash=6cb70a49b3dc
+2026-11-02 19:08:27,556 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-attock-journalists-announce-peaceful-protest-cm-punjab-s-visit | version=1 | fields=none
+2026-11-02 19:08:31,698 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/aerial-firing-becomes-nuisance-residents | paragraphs=2 | words=128
+2026-11-02 19:08:31,700 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-aerial-firing-becomes-nuisance-residents | characters=807 | hash=ce1f9a9e4590
+2026-11-02 19:08:31,707 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-aerial-firing-becomes-nuisance-residents | version=1 | fields=none
+2026-11-02 19:08:35,666 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/non-academic-burden-weighs-heavy-private-school-teachers | paragraphs=9 | words=299
+2026-11-02 19:08:35,669 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-non-academic-burden-weighs-heavy-private-school-teachers | characters=1900 | hash=d7b4e9e54a2d
+2026-11-02 19:08:35,675 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-non-academic-burden-weighs-heavy-private-school-teachers | version=1 | fields=none
+2026-11-02 19:08:39,949 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/free-dead-body-transportation-service-inaugurated-jhelum-hospital | paragraphs=6 | words=240
+2026-11-02 19:08:39,952 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-free-dead-body-transportation-service-inaugurated-jhelum-hospital | characters=1662 | hash=a3b933e3dbe8
+2026-11-02 19:08:39,959 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-free-dead-body-transportation-service-inaugurated-jhelum-hospital | version=1 | fields=none
+2026-11-02 19:08:40,974 [scrapy.extensions.logstats] INFO: Crawled 79 pages (at 16 pages/min), scraped 77 items (at 16 items/min)
+2026-11-02 19:08:43,164 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/teaching-age-artificial-intelligence | paragraphs=14 | words=732
+2026-11-02 19:08:43,169 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-teaching-age-artificial-intelligence | characters=5202 | hash=aa7eed17b00b
+2026-11-02 19:08:43,177 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-teaching-age-artificial-intelligence | version=1 | fields=none
+2026-11-02 19:08:47,681 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/past-perspective | paragraphs=1 | words=107
+2026-11-02 19:08:47,682 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-past-perspective | characters=787 | hash=135cb52cab1d
+2026-11-02 19:08:47,688 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-past-perspective | version=1 | fields=none
+2026-11-02 19:08:50,728 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/ikigai-art-living-longer | paragraphs=14 | words=522
+2026-11-02 19:08:50,732 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-ikigai-art-living-longer | characters=3486 | hash=3d9cc9127fe2
+2026-11-02 19:08:50,739 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-ikigai-art-living-longer | version=1 | fields=none
+2026-11-02 19:08:54,057 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/growing-debt-burden | paragraphs=6 | words=172
+2026-11-02 19:08:54,060 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-growing-debt-burden | characters=1318 | hash=2a92c589cf3a
+2026-11-02 19:08:54,067 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-growing-debt-burden | version=1 | fields=none
+2026-11-02 19:08:57,444 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/role-english | paragraphs=6 | words=142
+2026-11-02 19:08:57,445 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-role-english | characters=1006 | hash=297b354a3b58
+2026-11-02 19:08:57,451 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-role-english | version=1 | fields=none
+2026-11-02 19:09:01,817 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/shared-heritage | paragraphs=16 | words=1050
+2026-11-02 19:09:01,822 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-shared-heritage | characters=7023 | hash=9a192a2ff12a
+2026-11-02 19:09:01,830 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-shared-heritage | version=1 | fields=none
+2026-11-02 19:09:04,014 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/punjab-s-economic-pivot | paragraphs=9 | words=713
+2026-11-02 19:09:04,017 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-punjab-s-economic-pivot | characters=4760 | hash=f34b24777e2f
+2026-11-02 19:09:04,024 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-punjab-s-economic-pivot | version=1 | fields=none
+2026-11-02 19:09:07,967 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/dishonesty-s-short-life | paragraphs=15 | words=917
+2026-11-02 19:09:07,971 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-dishonesty-s-short-life | characters=5656 | hash=2f2f947ab00a
+2026-11-02 19:09:07,978 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-dishonesty-s-short-life | version=1 | fields=none
+2026-11-02 19:09:11,305 [nation_sitemap] WARNING: Validation issues: https://www.nation.com.pk/02-Nov-2026/cartoon | missing_body_container, missing_article_text
+2026-11-02 19:09:11,305 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/cartoon | paragraphs=0 | words=0
+2026-11-02 19:09:11,306 [truthlens.pipelines] WARNING: Cleaning needs review: nation:2026-11-02-cartoon | missing_content_blocks, empty_cleaned_text
+2026-11-02 19:09:11,309 [truthlens.pipelines] WARNING: Saved for review only: https://www.nation.com.pk/02-Nov-2026/cartoon
+2026-11-02 19:09:15,713 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/dangerous-border-conduct | paragraphs=4 | words=232
+2026-11-02 19:09:15,715 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-dangerous-border-conduct | characters=1754 | hash=cb1045e9324e
+2026-11-02 19:09:15,721 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-dangerous-border-conduct | version=1 | fields=none
+2026-11-02 19:09:19,997 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/civic-heritage | paragraphs=4 | words=234
+2026-11-02 19:09:19,999 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-civic-heritage | characters=1692 | hash=0fe3637c7af9
+2026-11-02 19:09:20,008 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-civic-heritage | version=1 | fields=none
+2026-11-02 19:09:22,060 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/shaping-financial-reform | paragraphs=4 | words=242
+2026-11-02 19:09:22,063 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-shaping-financial-reform | characters=1836 | hash=428c5aa4e238
+2026-11-02 19:09:22,069 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-shaping-financial-reform | version=1 | fields=none
+2026-11-02 19:09:25,705 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/governor-kundi-calls-peace-key-kp-s-progress | paragraphs=10 | words=416
+2026-11-02 19:09:25,709 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-governor-kundi-calls-peace-key-kp-s-progress | characters=2834 | hash=b73e1d0b8277
+2026-11-02 19:09:25,715 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-governor-kundi-calls-peace-key-kp-s-progress | version=1 | fields=none
+2026-11-02 19:09:30,203 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/kp-orders-shifting-students-unsafe-school-buildings | paragraphs=5 | words=168
+2026-11-02 19:09:30,205 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-kp-orders-shifting-students-unsafe-school-buildings | characters=1189 | hash=a9203da25e2b
+2026-11-02 19:09:30,211 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-kp-orders-shifting-students-unsafe-school-buildings | version=1 | fields=none
+2026-11-02 19:09:34,593 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/pmdc-clears-99pc-304-000-registration-applications | paragraphs=11 | words=385
+2026-11-02 19:09:34,597 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-pmdc-clears-99pc-304-000-registration-applications | characters=3005 | hash=a30db506f303
+2026-11-02 19:09:34,604 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-pmdc-clears-99pc-304-000-registration-applications | version=1 | fields=none
+2026-11-02 19:09:38,989 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/free-hepatitis-c-programme-offers-hope-millions | paragraphs=14 | words=604
+2026-11-02 19:09:38,994 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-free-hepatitis-c-programme-offers-hope-millions | characters=4263 | hash=b2683d4c8dac
+2026-11-02 19:09:39,001 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-free-hepatitis-c-programme-offers-hope-millions | version=1 | fields=none
+2026-11-02 19:09:40,974 [scrapy.extensions.logstats] INFO: Crawled 95 pages (at 16 pages/min), scraped 93 items (at 16 items/min)
+2026-11-02 19:09:43,363 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/compensation-school-jeep-accident-victims-sought | paragraphs=11 | words=458
+2026-11-02 19:09:43,365 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-compensation-school-jeep-accident-victims-sought | characters=3135 | hash=ef22234d4d73
+2026-11-02 19:09:43,372 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-compensation-school-jeep-accident-victims-sought | version=1 | fields=none
+2026-11-02 19:09:46,882 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/section-144-imposed-bannu-anti-polio-drive | paragraphs=10 | words=261
+2026-11-02 19:09:46,884 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-section-144-imposed-bannu-anti-polio-drive | characters=1740 | hash=ef8b2286961d
+2026-11-02 19:09:46,890 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-section-144-imposed-bannu-anti-polio-drive | version=1 | fields=none
+2026-11-02 19:09:51,269 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/robbery-suspect-shoots-policeman-escapes | paragraphs=6 | words=142
+2026-11-02 19:09:51,271 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-robbery-suspect-shoots-policeman-escapes | characters=910 | hash=cd3d075400eb
+2026-11-02 19:09:51,277 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-robbery-suspect-shoots-policeman-escapes | version=1 | fields=none
+2026-11-02 19:09:55,118 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/rescue-1122-handles-787-emergencies-di-khan-oct | paragraphs=7 | words=217
+2026-11-02 19:09:55,121 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-rescue-1122-handles-787-emergencies-di-khan-oct | characters=1540 | hash=3cb9cd8804ee
+2026-11-02 19:09:55,128 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-rescue-1122-handles-787-emergencies-di-khan-oct | version=1 | fields=none
+2026-11-02 19:09:58,456 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/reliable-data-political-will-vital-effective-water-governance | paragraphs=13 | words=520
+2026-11-02 19:09:58,459 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-reliable-data-political-will-vital-effective-water-governance | characters=3884 | hash=9647062b0748
+2026-11-02 19:09:58,466 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-reliable-data-political-will-vital-effective-water-governance | version=1 | fields=none
+2026-11-02 19:10:04,194 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/tank-administration-clears-encroachments-along-di-khan-road | paragraphs=10 | words=310
+2026-11-02 19:10:04,196 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-tank-administration-clears-encroachments-along-di-khan-road | characters=2242 | hash=0bdc0fe368e8
+2026-11-02 19:10:04,203 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-tank-administration-clears-encroachments-along-di-khan-road | version=1 | fields=none
+2026-11-02 19:10:06,411 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/ict-police-nab-175-suspects-conduct-48-search-operations-one-week | paragraphs=8 | words=245
+2026-11-02 19:10:06,414 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-ict-police-nab-175-suspects-conduct-48-search-operations-one-week | characters=1655 | hash=cee1b85de4f0
+2026-11-02 19:10:06,423 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-ict-police-nab-175-suspects-conduct-48-search-operations-one-week | version=1 | fields=none
+2026-11-02 19:10:10,119 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/itp-offer-students-motorcycle-licences-without-42-day-learner-waiting-period | paragraphs=5 | words=176
+2026-11-02 19:10:10,120 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-itp-offer-students-motorcycle-licences-without-42-day-learner-waiting-period | characters=1196 | hash=073b564914f9
+2026-11-02 19:10:10,127 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-itp-offer-students-motorcycle-licences-without-42-day-learner-waiting-period | version=1 | fields=none
+2026-11-02 19:10:14,898 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/fire-e-11-marquee-brought-control-overnight-operation | paragraphs=7 | words=183
+2026-11-02 19:10:14,900 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-fire-e-11-marquee-brought-control-overnight-operation | characters=1213 | hash=47de8da9c6fe
+2026-11-02 19:10:14,907 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-fire-e-11-marquee-brought-control-overnight-operation | version=1 | fields=none
+2026-11-02 19:10:16,450 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/bettani-elders-admin-agree-joint-efforts-lasting-peace | paragraphs=6 | words=242
+2026-11-02 19:10:16,453 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-bettani-elders-admin-agree-joint-efforts-lasting-peace | characters=1670 | hash=db72204ad35e
+2026-11-02 19:10:16,460 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-bettani-elders-admin-agree-joint-efforts-lasting-peace | version=1 | fields=none
+2026-11-02 19:10:20,816 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/lakki-marwat-bans-weapons-pillion-riding-four-days | paragraphs=4 | words=179
+2026-11-02 19:10:20,818 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-lakki-marwat-bans-weapons-pillion-riding-four-days | characters=1140 | hash=64d2ab31c695
+2026-11-02 19:10:20,826 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-lakki-marwat-bans-weapons-pillion-riding-four-days | version=1 | fields=none
+2026-11-02 19:10:25,068 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/supports-special-polio-campaign | paragraphs=3 | words=110
+2026-11-02 19:10:25,070 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-supports-special-polio-campaign | characters=729 | hash=219ce9d8d076
+2026-11-02 19:10:25,076 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-supports-special-polio-campaign | version=1 | fields=none
+2026-11-02 19:10:29,319 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/raag-bhairavicompositions-enthral-audiences | paragraphs=5 | words=170
+2026-11-02 19:10:29,321 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-raag-bhairavicompositions-enthral-audiences | characters=1217 | hash=178b29d8f53d
+2026-11-02 19:10:29,328 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-raag-bhairavicompositions-enthral-audiences | version=1 | fields=none
+2026-11-02 19:10:33,209 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/ihc-resumes-hearing-50-missing-pakistanis-abroad | paragraphs=9 | words=347
+2026-11-02 19:10:33,212 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-ihc-resumes-hearing-50-missing-pakistanis-abroad | characters=2361 | hash=79276d9b0fdc
+2026-11-02 19:10:33,218 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-ihc-resumes-hearing-50-missing-pakistanis-abroad | version=1 | fields=none
+2026-11-02 19:10:35,200 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/shabqadar-fort-s-chained-gates-guard-186-year-old-tale | paragraphs=18 | words=645
+2026-11-02 19:10:35,204 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-shabqadar-fort-s-chained-gates-guard-186-year-old-tale | characters=4267 | hash=ac2f32fc649c
+2026-11-02 19:10:35,212 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-shabqadar-fort-s-chained-gates-guard-186-year-old-tale | version=1 | fields=none
+2026-11-02 19:10:37,663 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/arab-league-calls-international-probe-torture-gaza-detainees-israeli-prison | paragraphs=12 | words=270
+2026-11-02 19:10:37,665 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-arab-league-calls-international-probe-torture-gaza-detainees-israeli-prison | characters=1813 | hash=73038d4c2763
+2026-11-02 19:10:37,672 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-arab-league-calls-international-probe-torture-gaza-detainees-israeli-prison | version=1 | fields=none
+2026-11-02 19:10:40,947 [scrapy.extensions.logstats] INFO: Crawled 111 pages (at 16 pages/min), scraped 109 items (at 16 items/min)
+2026-11-02 19:10:41,278 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/bulgaria-s-yotova-wins-presidential-runoff-clear-lead-exit-polls | paragraphs=8 | words=266
+2026-11-02 19:10:41,280 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-bulgaria-s-yotova-wins-presidential-runoff-clear-lead-exit-polls | characters=1735 | hash=894dfde8192a
+2026-11-02 19:10:41,286 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-bulgaria-s-yotova-wins-presidential-runoff-clear-lead-exit-polls | version=1 | fields=none
+2026-11-02 19:10:45,136 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/russia-ukraine-report-cyberattacks-emergency-alert-apps | paragraphs=10 | words=212
+2026-11-02 19:10:45,137 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-russia-ukraine-report-cyberattacks-emergency-alert-apps | characters=1459 | hash=96d70bdb4866
+2026-11-02 19:10:45,144 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-russia-ukraine-report-cyberattacks-emergency-alert-apps | version=1 | fields=none
+2026-11-02 19:10:48,294 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/lahore-tops-world-s-polluted-cities-list-aqi-crosses-500 | paragraphs=6 | words=154
+2026-11-02 19:10:48,296 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-lahore-tops-world-s-polluted-cities-list-aqi-crosses-500 | characters=999 | hash=2a6fbd0c711b
+2026-11-02 19:10:48,302 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-lahore-tops-world-s-polluted-cities-list-aqi-crosses-500 | version=1 | fields=none
+2026-11-02 19:10:52,148 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/fcc-says-sc-rulings-binding-sets-strict-conditions-review-petitions | paragraphs=21 | words=544
+2026-11-02 19:10:52,154 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-fcc-says-sc-rulings-binding-sets-strict-conditions-review-petitions | characters=3540 | hash=b97d6f47fe13
+2026-11-02 19:10:52,167 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-fcc-says-sc-rulings-binding-sets-strict-conditions-review-petitions | version=1 | fields=none
+2026-11-02 19:10:55,529 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/south-korea-takes-emergency-steps-keep-dollar-17-5bn-czech-nuclear-project-track | paragraphs=9 | words=241
+2026-11-02 19:10:55,530 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-south-korea-takes-emergency-steps-keep-dollar-17-5bn-czech-nuclear-project-track | characters=1656 | hash=46a8ecace337
+2026-11-02 19:10:55,537 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-south-korea-takes-emergency-steps-keep-dollar-17-5bn-czech-nuclear-project-track | version=1 | fields=none
+2026-11-02 19:10:59,534 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/drone-attacks-hit-2-power-stations-eastern-sudan-trigger-widespread-outage | paragraphs=10 | words=267
+2026-11-02 19:10:59,537 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-drone-attacks-hit-2-power-stations-eastern-sudan-trigger-widespread-outage | characters=1778 | hash=4c8da726622c
+2026-11-02 19:10:59,544 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-drone-attacks-hit-2-power-stations-eastern-sudan-trigger-widespread-outage | version=1 | fields=none
+2026-11-02 19:11:04,011 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/kp-governor-urges-stronger-economic-ties-china-invites-investment | paragraphs=11 | words=284
+2026-11-02 19:11:04,013 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-kp-governor-urges-stronger-economic-ties-china-invites-investment | characters=2142 | hash=f4b5b6694ebe
+2026-11-02 19:11:04,019 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-kp-governor-urges-stronger-economic-ties-china-invites-investment | version=1 | fields=none
+2026-11-02 19:11:08,505 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/khawaja-asif-accuses-tiktoker-evading-law-deadly-daska-stampede | paragraphs=10 | words=253
+2026-11-02 19:11:08,508 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-khawaja-asif-accuses-tiktoker-evading-law-deadly-daska-stampede | characters=1648 | hash=eb4614876440
+2026-11-02 19:11:08,515 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-khawaja-asif-accuses-tiktoker-evading-law-deadly-daska-stampede | version=1 | fields=none
+2026-11-02 19:11:10,519 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/attaullah-tarar-orders-revival-ptv-drama-film-academy | paragraphs=15 | words=430
+2026-11-02 19:11:10,523 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-attaullah-tarar-orders-revival-ptv-drama-film-academy | characters=3151 | hash=aae86f9d806f
+2026-11-02 19:11:10,533 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-attaullah-tarar-orders-revival-ptv-drama-film-academy | version=1 | fields=none
+2026-11-02 19:11:13,812 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/nbp-issues-major-currency-exchange-rates | paragraphs=5 | words=103
+2026-11-02 19:11:13,814 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-nbp-issues-major-currency-exchange-rates | characters=624 | hash=03570208b3b2
+2026-11-02 19:11:13,819 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-nbp-issues-major-currency-exchange-rates | version=1 | fields=none
+2026-11-02 19:11:16,686 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/maryam-nawaz-vows-protect-journalists-rights-press-freedom | paragraphs=8 | words=221
+2026-11-02 19:11:16,691 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-maryam-nawaz-vows-protect-journalists-rights-press-freedom | characters=1498 | hash=b948bd04da21
+2026-11-02 19:11:16,700 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-maryam-nawaz-vows-protect-journalists-rights-press-freedom | version=1 | fields=none
+2026-11-02 19:11:19,485 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/kimi-antonelli-becomes-youngest-f1-world-champion-3rd-place-finish-mexico | paragraphs=17 | words=423
+2026-11-02 19:11:19,487 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-kimi-antonelli-becomes-youngest-f1-world-champion-3rd-place-finish-mexico | characters=2675 | hash=0eeee603bb62
+2026-11-02 19:11:19,494 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-kimi-antonelli-becomes-youngest-f1-world-champion-3rd-place-finish-mexico | version=1 | fields=none
+2026-11-02 19:11:23,777 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/french-government-warns-school-blockades-protests-resume | paragraphs=10 | words=219
+2026-11-02 19:11:23,778 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-french-government-warns-school-blockades-protests-resume | characters=1528 | hash=d04f288088ae
+2026-11-02 19:11:23,785 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-french-government-warns-school-blockades-protests-resume | version=1 | fields=none
+2026-11-02 19:11:26,346 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/irsa-releases-99-700-cusecs-water-rivers | paragraphs=5 | words=138
+2026-11-02 19:11:26,348 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-irsa-releases-99-700-cusecs-water-rivers | characters=847 | hash=77d51b62d6c3
+2026-11-02 19:11:26,359 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-irsa-releases-99-700-cusecs-water-rivers | version=1 | fields=none
+2026-11-02 19:11:29,678 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/second-batch-digital-skills-programme-launched-di-khan | paragraphs=5 | words=137
+2026-11-02 19:11:29,681 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-second-batch-digital-skills-programme-launched-di-khan | characters=1004 | hash=acdb87b1a7ba
+2026-11-02 19:11:29,692 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-second-batch-digital-skills-programme-launched-di-khan | version=1 | fields=none
+2026-11-02 19:11:33,276 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/china-s-high-tech-manufacturing-green-technologies-draw-global-business-interest | paragraphs=20 | words=656
+2026-11-02 19:11:33,279 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-china-s-high-tech-manufacturing-green-technologies-draw-global-business-interest | characters=5162 | hash=311f5c9fd7c5
+2026-11-02 19:11:33,287 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-china-s-high-tech-manufacturing-green-technologies-draw-global-business-interest | version=1 | fields=none
+2026-11-02 19:11:36,069 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/35-000-patients-flu-like-symptoms-reported-lahore-hospitals | paragraphs=7 | words=199
+2026-11-02 19:11:36,071 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-35-000-patients-flu-like-symptoms-reported-lahore-hospitals | characters=1407 | hash=67954bc8621d
+2026-11-02 19:11:36,076 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-35-000-patients-flu-like-symptoms-reported-lahore-hospitals | version=1 | fields=none
+2026-11-02 19:11:39,615 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/pakistan-s-remittances-expected-exceed-dollar-44-billion-fiscal-year-aurangzeb | paragraphs=12 | words=328
+2026-11-02 19:11:39,617 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-pakistan-s-remittances-expected-exceed-dollar-44-billion-fiscal-year-aurangzeb | characters=2374 | hash=361c42308a46
+2026-11-02 19:11:39,623 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-pakistan-s-remittances-expected-exceed-dollar-44-billion-fiscal-year-aurangzeb | version=1 | fields=none
+2026-11-02 19:11:40,975 [scrapy.extensions.logstats] INFO: Crawled 129 pages (at 18 pages/min), scraped 127 items (at 18 items/min)
+2026-11-02 19:11:44,120 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/ai-models-mostly-smarter-top-scientists-openai-s-altman-says | paragraphs=12 | words=354
+2026-11-02 19:11:44,124 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-ai-models-mostly-smarter-top-scientists-openai-s-altman-says | characters=2169 | hash=e1f0690a6e25
+2026-11-02 19:11:44,136 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-ai-models-mostly-smarter-top-scientists-openai-s-altman-says | version=1 | fields=none
+2026-11-02 19:11:48,080 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/pakistan-south-korea-sign-mou-strengthen-judicial-cooperation | paragraphs=15 | words=416
+2026-11-02 19:11:48,083 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-pakistan-south-korea-sign-mou-strengthen-judicial-cooperation | characters=3151 | hash=2f1d4837dc80
+2026-11-02 19:11:48,089 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-pakistan-south-korea-sign-mou-strengthen-judicial-cooperation | version=1 | fields=none
+2026-11-02 19:11:52,123 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/maryam-nawaz-sets-target-train-2-500-rural-women-shethreads-programme | paragraphs=9 | words=240
+2026-11-02 19:11:52,125 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-maryam-nawaz-sets-target-train-2-500-rural-women-shethreads-programme | characters=1728 | hash=c6ce120fec78
+2026-11-02 19:11:52,131 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-maryam-nawaz-sets-target-train-2-500-rural-women-shethreads-programme | version=1 | fields=none
+2026-11-02 19:11:55,877 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/maryam-nawaz-gives-15-day-deadline-improve-cleanliness-across-punjab | paragraphs=10 | words=296
+2026-11-02 19:11:55,880 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-maryam-nawaz-gives-15-day-deadline-improve-cleanliness-across-punjab | characters=2059 | hash=6ea061d6d8e5
+2026-11-02 19:11:55,890 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-maryam-nawaz-gives-15-day-deadline-improve-cleanliness-across-punjab | version=1 | fields=none
+2026-11-02 19:11:58,465 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/gilani-pledges-parliamentary-support-water-security-initiatives | paragraphs=16 | words=560
+2026-11-02 19:11:58,469 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-gilani-pledges-parliamentary-support-water-security-initiatives | characters=3868 | hash=9d4c82d7e30b
+2026-11-02 19:11:58,479 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-gilani-pledges-parliamentary-support-water-security-initiatives | version=1 | fields=none
+2026-11-02 19:12:02,263 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/lpg-price-reaches-rs600-per-kg-lahore | paragraphs=6 | words=171
+2026-11-02 19:12:02,265 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-lpg-price-reaches-rs600-per-kg-lahore | characters=1107 | hash=841e596510f4
+2026-11-02 19:12:02,272 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-lpg-price-reaches-rs600-per-kg-lahore | version=1 | fields=none
+2026-11-02 19:12:06,107 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/pm-shehbaz-directs-banks-expedite-loans-priority-sectors | paragraphs=18 | words=548
+2026-11-02 19:12:06,113 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-pm-shehbaz-directs-banks-expedite-loans-priority-sectors | characters=3889 | hash=933122cf8b72
+2026-11-02 19:12:06,122 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-pm-shehbaz-directs-banks-expedite-loans-priority-sectors | version=1 | fields=none
+2026-11-02 19:12:10,537 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/week-long-polio-vaccination-drive-begins-across-97-districts | paragraphs=1 | words=228
+2026-11-02 19:12:10,539 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-week-long-polio-vaccination-drive-begins-across-97-districts | characters=1581 | hash=28e0eab2014a
+2026-11-02 19:12:10,544 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-week-long-polio-vaccination-drive-begins-across-97-districts | version=1 | fields=none
+2026-11-02 19:12:12,492 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/gold-prices-rise-rs2-400-per-tola | paragraphs=1 | words=130
+2026-11-02 19:12:12,494 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-gold-prices-rise-rs2-400-per-tola | characters=760 | hash=a0b8542f91a7
+2026-11-02 19:12:12,504 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-gold-prices-rise-rs2-400-per-tola | version=1 | fields=none
+2026-11-02 19:12:15,721 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/dpm-dar-reiterates-pakistan-s-commitment-strengthening-strategic-cooperative-partnership-china | paragraphs=6 | words=112
+2026-11-02 19:12:15,724 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-dpm-dar-reiterates-pakistan-s-commitment-strengthening-strategic-cooperative-partnership-china | characters=824 | hash=d4277d9a9c37
+2026-11-02 19:12:15,735 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-dpm-dar-reiterates-pakistan-s-commitment-strengthening-strategic-cooperative-partnership-china | version=1 | fields=none
+2026-11-02 19:12:17,664 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/pakistan-bangladesh-explore-new-avenue-industrial-cooperation-economic-partnership | paragraphs=1 | words=525
+2026-11-02 19:12:17,669 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-pakistan-bangladesh-explore-new-avenue-industrial-cooperation-economic-partnership | characters=4009 | hash=853ea79da3d0
+2026-11-02 19:12:17,680 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-pakistan-bangladesh-explore-new-avenue-industrial-cooperation-economic-partnership | version=1 | fields=none
+2026-11-02 19:12:21,989 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/islamabad-court-sentences-man-seven-years-peca-harassment-case | paragraphs=5 | words=145
+2026-11-02 19:12:21,991 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-islamabad-court-sentences-man-seven-years-peca-harassment-case | characters=920 | hash=249e4c07df88
+2026-11-02 19:12:22,002 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-islamabad-court-sentences-man-seven-years-peca-harassment-case | version=1 | fields=none
+2026-11-02 19:12:25,992 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/water-food-national-security-closely-linked-says-iwmi-pakistan-representative | paragraphs=7 | words=217
+2026-11-02 19:12:25,994 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-water-food-national-security-closely-linked-says-iwmi-pakistan-representative | characters=1551 | hash=07f9620d078f
+2026-11-02 19:12:26,001 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-water-food-national-security-closely-linked-says-iwmi-pakistan-representative | version=1 | fields=none
+2026-11-02 19:12:30,321 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/diamond-paints-launches-pakkay-rishtay-ki-demand-campaign-jahez-demands | paragraphs=23 | words=521
+2026-11-02 19:12:30,325 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-diamond-paints-launches-pakkay-rishtay-ki-demand-campaign-jahez-demands | characters=3348 | hash=8e495d3d5899
+2026-11-02 19:12:30,333 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-diamond-paints-launches-pakkay-rishtay-ki-demand-campaign-jahez-demands | version=1 | fields=none
+2026-11-02 19:12:33,185 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/ahsan-iqbal-proposes-five-political-corridors-cpc-pakistani-parties | paragraphs=11 | words=389
+2026-11-02 19:12:33,189 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-ahsan-iqbal-proposes-five-political-corridors-cpc-pakistani-parties | characters=2829 | hash=d2f4785c9555
+2026-11-02 19:12:33,202 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-ahsan-iqbal-proposes-five-political-corridors-cpc-pakistani-parties | version=1 | fields=none
+2026-11-02 19:12:37,485 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/php-police-arrest-60-wanted-criminals | paragraphs=1 | words=391
+2026-11-02 19:12:37,489 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-php-police-arrest-60-wanted-criminals | characters=2880 | hash=28ce23aa5b39
+2026-11-02 19:12:37,499 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-php-police-arrest-60-wanted-criminals | version=1 | fields=none
+2026-11-02 19:12:39,719 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/farewell-ceremony-held-honour-two-transferred-dsps-muzaffargarh | paragraphs=1 | words=128
+2026-11-02 19:12:39,720 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-farewell-ceremony-held-honour-two-transferred-dsps-muzaffargarh | characters=836 | hash=b350ecdd748c
+2026-11-02 19:12:39,726 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-farewell-ceremony-held-honour-two-transferred-dsps-muzaffargarh | version=1 | fields=none
+2026-11-02 19:12:40,962 [scrapy.extensions.logstats] INFO: Crawled 146 pages (at 17 pages/min), scraped 144 items (at 17 items/min)
+2026-11-02 19:12:43,733 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/faisalabad-police-arrest-thousands-suspects-major-crime-crackdown | paragraphs=1 | words=165
+2026-11-02 19:12:43,734 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-faisalabad-police-arrest-thousands-suspects-major-crime-crackdown | characters=1118 | hash=1a136fa63685
+2026-11-02 19:12:43,741 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-faisalabad-police-arrest-thousands-suspects-major-crime-crackdown | version=1 | fields=none
+2026-11-02 19:12:46,743 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/khawaja-farid-university-college-face-decline-amid-mismanagement | paragraphs=2 | words=481
+2026-11-02 19:12:46,745 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-khawaja-farid-university-college-face-decline-amid-mismanagement | characters=3417 | hash=29e43ef16cf5
+2026-11-02 19:12:46,752 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-khawaja-farid-university-college-face-decline-amid-mismanagement | version=1 | fields=none
+2026-11-02 19:12:51,096 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/fic-schedules-live-cardiac-surgeries-phc-inspection | paragraphs=2 | words=332
+2026-11-02 19:12:51,100 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-fic-schedules-live-cardiac-surgeries-phc-inspection | characters=2205 | hash=c65d3cf43a11
+2026-11-02 19:12:51,111 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-fic-schedules-live-cardiac-surgeries-phc-inspection | version=1 | fields=none
+2026-11-02 19:12:55,381 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/man-kills-former-mother-in-law-divorce-dispute | paragraphs=1 | words=198
+2026-11-02 19:12:55,383 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-man-kills-former-mother-in-law-divorce-dispute | characters=1296 | hash=c34322d4988d
+2026-11-02 19:12:55,394 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-man-kills-former-mother-in-law-divorce-dispute | version=1 | fields=none
+2026-11-02 19:12:58,906 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/dig-prisons-inspects-bahawalnagar-district-jail | paragraphs=1 | words=167
+2026-11-02 19:12:58,909 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-dig-prisons-inspects-bahawalnagar-district-jail | characters=1231 | hash=05b281e7728a
+2026-11-02 19:12:58,919 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-dig-prisons-inspects-bahawalnagar-district-jail | version=1 | fields=none
+2026-11-02 19:13:03,244 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/02-Nov-2026/false-rape-cases-emerge-new-challenge-south-punjab-police | paragraphs=1 | words=489
+2026-11-02 19:13:03,248 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-02-false-rape-cases-emerge-new-challenge-south-punjab-police | characters=3327 | hash=bd70400d5f8c
+2026-11-02 19:13:03,259 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-02-false-rape-cases-emerge-new-challenge-south-punjab-police | version=1 | fields=none
+2026-11-02 19:13:03,262 [scrapy.core.engine] INFO: Closing spider (finished)
+2026-11-02 19:13:03,263 [truthlens.export] INFO: Run JSON saved: data\runs\nation_sitemap\nation_sitemap_2026-11-02_19-03-40.json | items=150
+2026-11-02 19:13:03,268 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 58061,
+ 'downloader/request_count': 152,
+ 'downloader/request_method_count/GET': 152,
+ 'downloader/response_bytes': 3676204,
+ 'downloader/response_count': 152,
+ 'downloader/response_status_count/200': 152,
+ 'elapsed_time_seconds': 562.3119999999999,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2026, 11, 2, 14, 13, 3, 267266, tzinfo=datetime.timezone.utc),
+ 'httpcompression/response_bytes': 22893279,
+ 'httpcompression/response_count': 152,
+ 'item_scraped_count': 150,
+ 'items_per_minute': 16.01423487544484,
+ 'log_count/INFO': 464,
+ 'log_count/WARNING': 3,
+ 'mongodb/articles_new': 149,
+ 'mongodb/snapshot_only': 1,
+ 'mongodb/snapshots_inserted': 150,
+ 'request_depth_max': 1,
+ 'response_received_count': 152,
+ 'responses_per_minute': 16.227758007117437,
+ 'robotstxt/request_count': 1,
+ 'robotstxt/response_count': 1,
+ 'robotstxt/response_status_count/200': 1,
+ 'scheduler/dequeued': 151,
+ 'scheduler/dequeued/memory': 151,
+ 'scheduler/enqueued': 151,
+ 'scheduler/enqueued/memory': 151,
+ 'start_time': datetime.datetime(2026, 11, 2, 14, 3, 40, 959099, tzinfo=datetime.timezone.utc)}
+2026-11-02 19:13:03,271 [scrapy.core.engine] INFO: Spider closed (finished)
+2026-11-02 19:13:03,277 [truthlens.run_reporting] INFO: Run summary saved: logs\runs\20261102T140340Z_f92fda979f5e480f98adaef19a255901.json | status=completed_with_review_items

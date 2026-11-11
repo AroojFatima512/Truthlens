@@ -1,0 +1,888 @@
+{
+  "schema_version": "truthlens-run-v1",
+  "run_id": "20261104T203610Z_9ddb4b654a0c4bb98f1e8ed1bc6efea6",
+  "source": "Dawn",
+  "spider": "dawn_sitemap",
+  "status": "completed_with_errors",
+  "finish_reason": "finished",
+  "started_at": "2026-11-04T20:36:10.734971+00:00",
+  "finished_at": "2026-11-04T20:42:46.555499+00:00",
+  "duration_seconds": 395.821,
+  "log_file": "logs\\runs\\20261104T203610Z_9ddb4b654a0c4bb98f1e8ed1bc6efea6.log",
+  "counts": {
+    "requests_total": 105,
+    "responses_total": 105,
+    "retry_attempts": 0,
+    "items_processed": 96,
+    "new_articles": 72,
+    "unchanged_articles": 1,
+    "updated_articles": 2,
+    "baselines_created": 0,
+    "processing_changes": 0,
+    "snapshots_inserted": 95,
+    "snapshots_skipped": 1,
+    "review_only_records": 21,
+    "records_with_review_flags": 76,
+    "stale_observations": 0,
+    "replayed_observations": 0,
+    "rejected_records": 0,
+    "failed_requests": 0,
+    "item_errors": 0,
+    "spider_errors": 0
+  },
+  "failed_requests": [],
+  "rejected_records": [],
+  "review_records": [
+    {
+      "article_key": "dawn:2042038",
+      "url": "https://www.dawn.com/news/2042038/ghalibaf-says-americans-have-voted-no-to-war-after-republican-losses-in-congress",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author",
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2042040",
+      "url": "https://www.dawn.com/news/2042040/job-opportunity",
+      "change_status": "needs_review",
+      "validation_issues": [
+        "missing_article_text",
+        "missing_author"
+      ],
+      "cleaning_issues": [
+        "missing_content_blocks",
+        "empty_cleaned_text"
+      ]
+    },
+    {
+      "article_key": "dawn:2042041",
+      "url": "https://www.dawn.com/news/2042041/job-opportunities",
+      "change_status": "needs_review",
+      "validation_issues": [
+        "missing_article_text",
+        "missing_author"
+      ],
+      "cleaning_issues": [
+        "missing_content_blocks",
+        "empty_cleaned_text"
+      ]
+    },
+    {
+      "article_key": "dawn:2042042",
+      "url": "https://www.dawn.com/news/2042042/career-opportunities",
+      "change_status": "needs_review",
+      "validation_issues": [
+        "missing_article_text",
+        "missing_author"
+      ],
+      "cleaning_issues": [
+        "missing_content_blocks",
+        "empty_cleaned_text"
+      ]
+    },
+    {
+      "article_key": "dawn:2042043",
+      "url": "https://www.dawn.com/news/2042043/career-opportunities",
+      "change_status": "needs_review",
+      "validation_issues": [
+        "missing_article_text",
+        "missing_author"
+      ],
+      "cleaning_issues": [
+        "missing_content_blocks",
+        "empty_cleaned_text"
+      ]
+    },
+    {
+      "article_key": "dawn:2042044",
+      "url": "https://www.dawn.com/news/2042044/job-opportunities",
+      "change_status": "needs_review",
+      "validation_issues": [
+        "missing_article_text",
+        "missing_author"
+      ],
+      "cleaning_issues": [
+        "missing_content_blocks",
+        "empty_cleaned_text"
+      ]
+    },
+    {
+      "article_key": "dawn:2042046",
+      "url": "https://www.dawn.com/news/2042046/career-opportunities",
+      "change_status": "needs_review",
+      "validation_issues": [
+        "missing_article_text",
+        "missing_author"
+      ],
+      "cleaning_issues": [
+        "missing_content_blocks",
+        "empty_cleaned_text"
+      ]
+    },
+    {
+      "article_key": "dawn:2042047",
+      "url": "https://www.dawn.com/news/2042047/job-opportunities",
+      "change_status": "needs_review",
+      "validation_issues": [
+        "missing_article_text",
+        "missing_author"
+      ],
+      "cleaning_issues": [
+        "missing_content_blocks",
+        "empty_cleaned_text"
+      ]
+    },
+    {
+      "article_key": "dawn:2042048",
+      "url": "https://www.dawn.com/news/2042048/career-opportunity",
+      "change_status": "needs_review",
+      "validation_issues": [
+        "missing_article_text",
+        "missing_author"
+      ],
+      "cleaning_issues": [
+        "missing_content_blocks",
+        "empty_cleaned_text"
+      ]
+    },
+    {
+      "article_key": "dawn:2042049",
+      "url": "https://www.dawn.com/news/2042049/nasas-swift-satellite-telescope-heads-for-fiery-re-entry-22-years-after-launch",
+      "change_status": "new",
+      "validation_issues": [
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2042050",
+      "url": "https://www.dawn.com/news/2042050/career-opportunity",
+      "change_status": "needs_review",
+      "validation_issues": [
+        "missing_article_text",
+        "missing_author"
+      ],
+      "cleaning_issues": [
+        "missing_content_blocks",
+        "empty_cleaned_text"
+      ]
+    },
+    {
+      "article_key": "dawn:2042054",
+      "url": "https://www.dawn.com/news/2042054/china-supports-iran-us-to-resolve-differences-through-negotiation",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author",
+        "short_article_under_50_words"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2042058",
+      "url": "https://www.dawn.com/news/2042058/iran-seeks-diplomatic-end-to-us-israel-war-but-ready-for-any-scenario",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author",
+        "short_article_under_50_words",
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2042059",
+      "url": "https://www.dawn.com/news/2042059/another-indian-national-injured-in-riyadh-airport-attack-dies",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author",
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2042061",
+      "url": "https://www.dawn.com/news/2042061/asian-markets-open-mixed-as-us-midterm-elections-take-place-dawn-news-english",
+      "change_status": "needs_review",
+      "validation_issues": [
+        "missing_article_text",
+        "missing_author"
+      ],
+      "cleaning_issues": [
+        "missing_content_blocks",
+        "empty_cleaned_text"
+      ]
+    },
+    {
+      "article_key": "dawn:2042062",
+      "url": "https://www.dawn.com/news/2042062/oil-prices-waver-as-us-election-results-rattle-global-markets-dawn-news-english",
+      "change_status": "needs_review",
+      "validation_issues": [
+        "missing_article_text",
+        "missing_author"
+      ],
+      "cleaning_issues": [
+        "missing_content_blocks",
+        "empty_cleaned_text"
+      ]
+    },
+    {
+      "article_key": "dawn:2042051",
+      "url": "https://www.dawn.com/news/2042051/historic-leadership-firsts-for-minorities-across-us-in-midterm-vote",
+      "change_status": "new",
+      "validation_issues": [
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2042066",
+      "url": "https://www.dawn.com/news/2042066/china-says-avoiding-new-hostilities-in-mideast-a-top-priority",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2042052",
+      "url": "https://www.dawn.com/news/2042052/ssgc-announces-winter-gas-supply-schedule-for-sindh-balochistan",
+      "change_status": "new",
+      "validation_issues": [
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2042067",
+      "url": "https://www.dawn.com/news/2042067/gulf-bourses-advance-as-investors-weigh-us-midterms-and-iran-standoff",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2042070",
+      "url": "https://www.dawn.com/news/2042070/iran-says-us-reply-to-hormuz-plan-unconvincing-as-trump-confirms-strikes",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author",
+        "short_article_under_50_words"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2042072",
+      "url": "https://www.dawn.com/news/2042072/lebanon-pm-warns-hezbollah-against-joining-another-war",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2042073",
+      "url": "https://www.dawn.com/news/2042073/pakistan-continuing-efforts-for-peace-in-middle-east-pm-shehbaz",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author",
+        "short_article_under_50_words"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2042074",
+      "url": "https://www.dawn.com/news/2042074/iran-war-inflation-and-trumps-policies-why-democrats-won-anwer-iqbal-analysisdawn-news-english",
+      "change_status": "needs_review",
+      "validation_issues": [
+        "missing_article_text",
+        "missing_author"
+      ],
+      "cleaning_issues": [
+        "missing_content_blocks",
+        "empty_cleaned_text"
+      ]
+    },
+    {
+      "article_key": "dawn:2042075",
+      "url": "https://www.dawn.com/news/2042075/iran-says-control-of-strait-of-hormuz-has-made-it-worlds-fourth-largest-power",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author",
+        "short_article_under_50_words",
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2042077",
+      "url": "https://www.dawn.com/news/2042077/schools-in-sindh-to-remain-closed-on-nov-9-on-account-of-iqbal-day",
+      "change_status": "new",
+      "validation_issues": [
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2042080",
+      "url": "https://www.dawn.com/news/2042080/iran-supreme-leader-says-those-expecting-us-policy-shift-seriously-mistaken",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2042081",
+      "url": "https://www.dawn.com/news/2042081/iran-supreme-leader-warns-war-would-be-much-wider-if-it-resumes",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2042083",
+      "url": "https://www.dawn.com/news/2042083/iran-threatens-to-target-enemy-leaders-if-its-commanders-are-attacked-irgc-adviser-says",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2042085",
+      "url": "https://www.dawn.com/news/2042085/pakistan-uk-express-concern-at-threat-posed-by-terrorist-groups-operating-in-and-from-afghanistan-fo",
+      "change_status": "new",
+      "validation_issues": [
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2042090",
+      "url": "https://www.dawn.com/news/2042090/oil-falls-on-iran-war-uncertainty-us-democrats-midterm-sweep",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2042071",
+      "url": "https://www.dawn.com/news/2042071/federal-cabinet-ratifies-defence-agreement-with-kuwait",
+      "change_status": "new",
+      "validation_issues": [
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2042065",
+      "url": "https://www.dawn.com/news/2042065/clear-message-by-americans-us-politicians-react-to-democratic-win-in-us-midterms",
+      "change_status": "new",
+      "validation_issues": [
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2042093",
+      "url": "https://www.dawn.com/news/2042093/baqaei-says-american-people-have-sent-a-clear-message-warns-of-consequences-of-grave-miscalculation-by-us",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author",
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2042092",
+      "url": "https://www.dawn.com/news/2042092/iran-supreme-leader-says-those-expecting-us-policy-shift-seriously-mistaken",
+      "change_status": "new",
+      "validation_issues": [
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2042094",
+      "url": "https://www.dawn.com/news/2042094/watch-footage-from-state-media-shows-bombardment-of-tehrans-dr-shariati-street-a-residential-area",
+      "change_status": "needs_review",
+      "validation_issues": [
+        "missing_article_text",
+        "missing_author",
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": [
+        "missing_content_blocks",
+        "empty_cleaned_text"
+      ]
+    },
+    {
+      "article_key": "dawn:2042096",
+      "url": "https://www.dawn.com/news/2042096/houthis-carry-out-ballistic-missile-strikes-on-saudi-led-forces-spokesperson",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author",
+        "short_article_under_50_words",
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2042063",
+      "url": "https://www.dawn.com/news/2042063/we-did-it-democrat-el-sayed-hails-us-senate-win-becomes-first-muslim-elected-to-upper-chamber-of-congress",
+      "change_status": "new",
+      "validation_issues": [
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2042097",
+      "url": "https://www.dawn.com/news/2042097/military-facilities-in-saudi-arabia-targeted-by-drones-and-missiles-houthi-spokesperson",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author",
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2042098",
+      "url": "https://www.dawn.com/news/2042098/irgc-says-us-drone-destroyed-over-qeshm-island",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author",
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2042099",
+      "url": "https://www.dawn.com/news/2042099/yemens-houthis-claim-they-targeted-riyadh-airport-no-saudi-confirmation",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author",
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2042100",
+      "url": "https://www.dawn.com/news/2042100/oil-falls-on-iran-war-uncertainty-us-democrats-midterm-sweep",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2042102",
+      "url": "https://www.dawn.com/news/2042102/lebanon-says-israeli-strike-kills-one-in-countrys-south",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author",
+        "short_article_under_50_words"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2042103",
+      "url": "https://www.dawn.com/news/2042103/ill-be-working-for-de-escalation-want-strait-of-hormuz-fully-reopened-british-pm",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2042087",
+      "url": "https://www.dawn.com/news/2042087/ecp-objects-to-retired-sc-judges-remarks-about-2023-ruling-on-polls-in-punjab-and-kp-reserved-seats-case",
+      "change_status": "new",
+      "validation_issues": [
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2042104",
+      "url": "https://www.dawn.com/news/2042104/us-midterm-elections-2026-historic-democratic-victories-across-key-states-dawn-news-english",
+      "change_status": "needs_review",
+      "validation_issues": [
+        "missing_article_text",
+        "missing_author"
+      ],
+      "cleaning_issues": [
+        "missing_content_blocks",
+        "empty_cleaned_text"
+      ]
+    },
+    {
+      "article_key": "dawn:2042101",
+      "url": "https://www.dawn.com/news/2042101/pia-to-run-3-weekly-direct-flights-between-islamabad-and-birmingham-from-dec-1",
+      "change_status": "new",
+      "validation_issues": [
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2042019",
+      "url": "https://www.dawn.com/news/2042019/democrats-win-us-congress-in-midterm-rout-of-trump",
+      "change_status": "new",
+      "validation_issues": [
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2042106",
+      "url": "https://www.dawn.com/news/2042106/saudi-led-forces-near-yemen-iron-factory-targeted-in-houthi-missile-strike",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author",
+        "short_article_under_50_words",
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2042107",
+      "url": "https://www.dawn.com/news/2042107/the-reason-we-lost-is-the-war-jd-vance-acknowledges-iran-conflict-made-supporters-abandon-trump",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author",
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2042109",
+      "url": "https://www.dawn.com/news/2042109/thousands-mock-trumps-midterm-setback-at-tehran-rally",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2042108",
+      "url": "https://www.dawn.com/news/2042108/after-us-midterm-loss-vice-president-jd-vance-backs-diplomatic-solution-to-iran-war",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2042110",
+      "url": "https://www.dawn.com/news/2042110/at-tehran-rally-some-iranians-doubt-us-midterm-result-would-make-a-difference-for-them",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2042111",
+      "url": "https://www.dawn.com/news/2042111/rizwan-stages-resounding-comeback-in-domestic-cricket-after-england-tour-controversy",
+      "change_status": "new",
+      "validation_issues": [
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2042112",
+      "url": "https://www.dawn.com/news/2042112/us-midterms-five-takeaways-from-democrats-election-sweep-dawn-news-english",
+      "change_status": "needs_review",
+      "validation_issues": [
+        "missing_article_text",
+        "missing_author"
+      ],
+      "cleaning_issues": [
+        "missing_content_blocks",
+        "empty_cleaned_text"
+      ]
+    },
+    {
+      "article_key": "dawn:2042084",
+      "url": "https://www.dawn.com/news/2042084/asif-says-chaudhry-saliks-remarks-about-corruption-in-punjab-beyond-my-understanding",
+      "change_status": "new",
+      "validation_issues": [
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2042113",
+      "url": "https://www.dawn.com/news/2042113/iran-protests-biased-reports-on-shipping-security-by-global-body-state-media",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author",
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2042115",
+      "url": "https://www.dawn.com/news/2042115/oil-tumbles-as-investors-weigh-end-to-iran-war-after-democrats-sweep-us-midterm-elections",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2042117",
+      "url": "https://www.dawn.com/news/2042117/in-meeting-with-iranian-ambassador-dar-highlights-importance-of-dialogue-diplomacy-for-regional-peace-fo",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author",
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2042116",
+      "url": "https://www.dawn.com/news/2042116/icrc-says-delivered-its-first-medical-aid-into-yemens-besieged-taiz-in-weeks",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author",
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2042119",
+      "url": "https://www.dawn.com/news/2042119/iran-handed-trump-a-strategic-defeat-on-the-battlefield-political-defeat-in-washington-national-security-chief-says",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author",
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2042121",
+      "url": "https://www.dawn.com/news/2042121/united-states-issues-fresh-iran-related-sanctions-treasury-dept-says",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author",
+        "short_article_under_50_words"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2033739",
+      "url": "https://www.dawn.com/news/2033739/fuel-prices",
+      "change_status": "needs_review",
+      "validation_issues": [
+        "missing_article_text",
+        "missing_author"
+      ],
+      "cleaning_issues": [
+        "missing_content_blocks",
+        "empty_cleaned_text"
+      ]
+    },
+    {
+      "article_key": "dawn:2042118",
+      "url": "https://www.dawn.com/news/2042118/us-vice-president-jd-vance-says-iran-war-is-the-reason-we-lost-midterms",
+      "change_status": "new",
+      "validation_issues": [
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2042122",
+      "url": "https://www.dawn.com/news/2042122/big-money-flops-as-democrats-sweep-us-congress",
+      "change_status": "new",
+      "validation_issues": [
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2042123",
+      "url": "https://www.dawn.com/news/2042123/trump-says-iran-war-has-been-worth-it-despite-election-losses",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author",
+        "short_article_under_50_words"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2042125",
+      "url": "https://www.dawn.com/news/2042125/trump-says-largely-true-iran-war-caused-midterms-loss-after-vance-comments",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author",
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2042126",
+      "url": "https://www.dawn.com/news/2042126/trump-rules-out-firing-pentagon-chief-hegseth",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2042127",
+      "url": "https://www.dawn.com/news/2042127/us-midterms-iran-causes-regime-change-in-america-zara-hat-kay-dawn-news",
+      "change_status": "needs_review",
+      "validation_issues": [
+        "missing_article_text",
+        "missing_author"
+      ],
+      "cleaning_issues": [
+        "missing_content_blocks",
+        "empty_cleaned_text"
+      ]
+    },
+    {
+      "article_key": "dawn:2042129",
+      "url": "https://www.dawn.com/news/2042129/trumps-midterm-setback-israel-ties-amp-iran-war-under-scrutiny-dawn-news",
+      "change_status": "needs_review",
+      "validation_issues": [
+        "missing_article_text",
+        "missing_author"
+      ],
+      "cleaning_issues": [
+        "missing_content_blocks",
+        "empty_cleaned_text"
+      ]
+    },
+    {
+      "article_key": "dawn:2042130",
+      "url": "https://www.dawn.com/news/2042130/us-midterm-elections-will-pakistans-strategic-importance-decline-dawn-news",
+      "change_status": "needs_review",
+      "validation_issues": [
+        "missing_article_text",
+        "missing_author"
+      ],
+      "cleaning_issues": [
+        "missing_content_blocks",
+        "empty_cleaned_text"
+      ]
+    },
+    {
+      "article_key": "dawn:2042131",
+      "url": "https://www.dawn.com/news/2042131/pakistans-ties-with-trump-what-should-islamabad-do-next-dawn-news",
+      "change_status": "needs_review",
+      "validation_issues": [
+        "missing_article_text",
+        "missing_author"
+      ],
+      "cleaning_issues": [
+        "missing_content_blocks",
+        "empty_cleaned_text"
+      ]
+    },
+    {
+      "article_key": "dawn:2042128",
+      "url": "https://www.dawn.com/news/2042128/dar-saudi-fm-stress-importance-of-continued-dialogue-for-regional-peace-fo",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author",
+        "short_article_under_50_words",
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2042132",
+      "url": "https://www.dawn.com/news/2042132/us-sanctions-indian-companies-over-alleged-maritime-fraud-aiding-iranian-vessels",
+      "change_status": "new",
+      "validation_issues": [
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2042133",
+      "url": "https://www.dawn.com/news/2042133/maulanas-anger-with-government-genuine-grievance-or-political-strategy",
+      "change_status": "needs_review",
+      "validation_issues": [
+        "missing_article_text",
+        "missing_author"
+      ],
+      "cleaning_issues": [
+        "missing_content_blocks",
+        "empty_cleaned_text"
+      ]
+    },
+    {
+      "article_key": "dawn:2042114",
+      "url": "https://www.dawn.com/news/2042114/united-opposition-gathers-at-fazls-islamabad-residence-vows-stronger-alliance",
+      "change_status": "new",
+      "validation_issues": [
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": []
+    }
+  ],
+  "item_errors": [],
+  "spider_errors": [],
+  "http_status_counts": {
+    "200": 99,
+    "302": 6
+  },
+  "download_attempt_exceptions": {},
+  "scrapy_stats": {
+    "start_time": "2026-11-04 20:36:11.134613+00:00",
+    "log_count/INFO": 259,
+    "scheduler/enqueued/memory": 104,
+    "scheduler/enqueued": 104,
+    "scheduler/dequeued/memory": 104,
+    "scheduler/dequeued": 104,
+    "downloader/request_count": 105,
+    "downloader/request_method_count/GET": 105,
+    "downloader/request_bytes": 35233,
+    "downloader/response_count": 105,
+    "downloader/response_status_count/200": 99,
+    "downloader/response_bytes": 3790307,
+    "httpcompression/response_bytes": 18091533,
+    "httpcompression/response_count": 99,
+    "response_received_count": 99,
+    "robotstxt/response_count": 1,
+    "robotstxt/response_status_count/200": 1,
+    "robotstxt/request_count": 1,
+    "request_depth_max": 1,
+    "log_count/WARNING": 118,
+    "mongodb/snapshots_inserted": 95,
+    "mongodb/articles_new": 72,
+    "item_scraped_count": 96,
+    "downloader/response_status_count/302": 6,
+    "mongodb/snapshot_only": 21,
+    "dupefilter/filtered": 1,
+    "offsite/domains": 1,
+    "offsite/filtered": 2,
+    "mongodb/articles_multiple_changes": 2,
+    "mongodb/snapshots_skipped": 1,
+    "mongodb/articles_unchanged": 1,
+    "log_count/ERROR": 1,
+    "elapsed_time_seconds": 395.40699999999924,
+    "finish_time": "2026-11-04 20:42:46.552550+00:00",
+    "finish_reason": "finished",
+    "responses_per_minute": 15.037974683544304,
+    "items_per_minute": 14.58227848101266
+  },
+  "notes": [
+    "requests_total includes robots.txt, listing pages, redirects, retries and article requests.",
+    "failed_requests lists terminal failures reported by the spider errback; retried attempts are separate.",
+    "review flags do not mean a record was dropped; review-only records are retained as snapshots.",
+    "updated_articles excludes new baselines and processing-method changes.",
+    "snapshots_inserted can include baselines and review records; it is not a count of article edits.",
+    "A running summary left behind after a forced termination is incomplete."
+  ]
+}

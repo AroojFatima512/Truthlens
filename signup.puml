@@ -1,0 +1,27 @@
+@startuml
+
+start
+
+:Open Login Page;
+
+:Enter Email and Password;
+
+:System Validates Credentials;
+
+if (Credentials Valid?) then (Yes)
+
+    :Grant Access;
+    
+    :Redirect to Dashboard;
+
+else (No)
+
+    :Display Error Message;
+
+    :Retry Login;
+
+endif
+
+stop
+
+@enduml

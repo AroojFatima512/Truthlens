@@ -1,0 +1,546 @@
+2026-11-03 21:07:04,775 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.logcount.LogCount',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.remote_control.RemoteControl',
+ 'truthlens.run_reporting.RunReportingExtension']
+2026-11-03 21:07:04,777 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'truthlens',
+ 'CONCURRENT_REQUESTS': 1,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 1,
+ 'DOWNLOAD_DELAY': 3,
+ 'DOWNLOAD_TIMEOUT': 30,
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'FEED_EXPORT_INDENT': 2,
+ 'LOG_LEVEL': 'INFO',
+ 'NEWSPIDER_MODULE': 'truthlens.spiders',
+ 'ROBOTSTXT_OBEY': True,
+ 'SPIDER_MODULES': ['truthlens.spiders'],
+ 'USER_AGENT': 'TruthLensResearchBot/0.1'}
+2026-11-03 21:07:05,080 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2026-11-03 21:07:05,085 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.start.StartSpiderMiddleware',
+ 'scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware',
+ 'scrapy.spidermiddlewares.metacopy.MetaCopyDetectionMiddleware']
+2026-11-03 21:07:05,183 [scrapy.middleware] INFO: Enabled item pipelines:
+['truthlens.pipelines.CleaningPipeline',
+ 'truthlens.pipelines.MongoDBPipeline',
+ 'truthlens.export.RunJsonExportPipeline']
+2026-11-03 21:07:05,184 [scrapy.core.engine] INFO: Spider opened
+2026-11-03 21:07:05,207 [truthlens.pipelines] INFO: MongoDB connected: database=truthlens
+2026-11-03 21:07:05,209 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2026-11-03 21:07:05,212 [truthlens.run_reporting] INFO: Run started: 20261103T160704Z_759f326488c2431c8ace47a4febd22a5 | source=Express Tribune
+2026-11-03 21:07:05,213 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2026-11-03 21:07:05,216 [scrapy.extensions.remote_control] INFO: Remote control HTTP server listening on port 53566 (job 17332-47353abff2c14db3822d08242451840f)
+2026-11-03 21:07:10,050 [tribune_sitemap] INFO: Sitemap: selected 150 article URLs.
+2026-11-03 21:07:15,916 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638290/shah-rukh-khan-turns-61-as-bollywood-stars-celebrate-the-king-ahead-of-new-film | paragraphs=27 | words=688
+2026-11-03 21:07:15,921 [truthlens.pipelines] INFO: Cleaned article: tribune:2638290 | characters=4347 | hash=e2a2355882b3
+2026-11-03 21:07:15,931 [truthlens.pipelines] INFO: MongoDB unchanged: tribune:2638290 | version=1 | fields=none
+2026-11-03 21:07:19,184 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638291/Sadiq%20pinpoints%20flaws%20in%20Babar's%20batting | paragraphs=18 | words=640
+2026-11-03 21:07:19,186 [truthlens.pipelines] INFO: Cleaned article: tribune:2638291 | characters=3920 | hash=2ca32921125f
+2026-11-03 21:07:19,196 [truthlens.pipelines] INFO: MongoDB metadata_changed: tribune:2638291 | version=2 | fields=metadata.published_at
+2026-11-03 21:07:20,857 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638292/new-cyberattack-on-supermarket-fridges-sweeps-across-europe | paragraphs=29 | words=844
+2026-11-03 21:07:20,861 [truthlens.pipelines] INFO: Cleaned article: tribune:2638292 | characters=5362 | hash=1d3fbbca6c69
+2026-11-03 21:07:20,870 [truthlens.pipelines] INFO: MongoDB unchanged: tribune:2638292 | version=1 | fields=none
+2026-11-03 21:07:26,817 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638293/4-polio-immunisation-workers-abducted-in-k-ps-tank | paragraphs=11 | words=255
+2026-11-03 21:07:26,819 [truthlens.pipelines] INFO: Cleaned article: tribune:2638293 | characters=1657 | hash=26eb4bb109e6
+2026-11-03 21:07:26,827 [truthlens.pipelines] INFO: MongoDB unchanged: tribune:2638293 | version=1 | fields=none
+2026-11-03 21:07:31,422 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638294/ptis-barrister-salman-safdar-meets-imran-bushra-bibi-in-adiala-jail | paragraphs=15 | words=472
+2026-11-03 21:07:31,424 [truthlens.pipelines] INFO: Cleaned article: tribune:2638294 | characters=2973 | hash=ba9703477636
+2026-11-03 21:07:31,431 [truthlens.pipelines] INFO: MongoDB unchanged: tribune:2638294 | version=1 | fields=none
+2026-11-03 21:07:34,249 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638295/govt-slashes-petrol-by-rs34-high-speed-diesel-by-rs776 | paragraphs=10 | words=350
+2026-11-03 21:07:34,251 [truthlens.pipelines] INFO: Cleaned article: tribune:2638295 | characters=2270 | hash=377e6ea92e83
+2026-11-03 21:07:34,260 [truthlens.pipelines] INFO: MongoDB unchanged: tribune:2638295 | version=1 | fields=none
+2026-11-03 21:07:36,435 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638296/trump-could-launch-nuclear-strike-on-iran-within-days-claims-tucker-carlson | paragraphs=31 | words=812
+2026-11-03 21:07:36,438 [truthlens.pipelines] INFO: Cleaned article: tribune:2638296 | characters=5293 | hash=184780f22239
+2026-11-03 21:07:36,448 [truthlens.pipelines] INFO: MongoDB unchanged: tribune:2638296 | version=1 | fields=none
+2026-11-03 21:07:40,670 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638297/the-ownership-disclosure | paragraphs=5 | words=668
+2026-11-03 21:07:40,672 [truthlens.pipelines] INFO: Cleaned article: tribune:2638297 | characters=3975 | hash=d133e90f9cc9
+2026-11-03 21:07:40,684 [truthlens.pipelines] INFO: MongoDB metadata_changed: tribune:2638297 | version=2 | fields=metadata.published_at
+2026-11-03 21:07:46,964 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638298/war-madness | paragraphs=4 | words=331
+2026-11-03 21:07:46,966 [truthlens.pipelines] INFO: Cleaned article: tribune:2638298 | characters=2136 | hash=c522abdf9690
+2026-11-03 21:07:46,974 [truthlens.pipelines] INFO: MongoDB metadata_changed: tribune:2638298 | version=2 | fields=metadata.published_at
+2026-11-03 21:07:50,910 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638299/police-brutality-5 | paragraphs=3 | words=283
+2026-11-03 21:07:50,912 [truthlens.pipelines] INFO: Cleaned article: tribune:2638299 | characters=1983 | hash=032318a1234b
+2026-11-03 21:07:50,920 [truthlens.pipelines] INFO: MongoDB metadata_changed: tribune:2638299 | version=2 | fields=metadata.published_at
+2026-11-03 21:07:55,567 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638300/killer-karachi-roads | paragraphs=5 | words=337
+2026-11-03 21:07:55,569 [truthlens.pipelines] INFO: Cleaned article: tribune:2638300 | characters=2122 | hash=7f5934300148
+2026-11-03 21:07:55,580 [truthlens.pipelines] INFO: MongoDB metadata_changed: tribune:2638300 | version=2 | fields=metadata.published_at
+2026-11-03 21:07:58,540 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638301/why-cant-i-see-my-taxes-working | paragraphs=10 | words=610
+2026-11-03 21:07:58,543 [truthlens.pipelines] INFO: Cleaned article: tribune:2638301 | characters=3661 | hash=3d52615beab8
+2026-11-03 21:07:58,550 [truthlens.pipelines] INFO: MongoDB metadata_changed: tribune:2638301 | version=2 | fields=metadata.published_at
+2026-11-03 21:08:02,603 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638302/need-for-a-change-in-two-postures | paragraphs=14 | words=909
+2026-11-03 21:08:02,606 [truthlens.pipelines] INFO: Cleaned article: tribune:2638302 | characters=6780 | hash=da8903520753
+2026-11-03 21:08:02,614 [truthlens.pipelines] INFO: MongoDB metadata_changed: tribune:2638302 | version=2 | fields=metadata.published_at
+2026-11-03 21:08:05,222 [scrapy.extensions.logstats] INFO: Crawled 15 pages (at 15 pages/min), scraped 13 items (at 13 items/min)
+2026-11-03 21:08:07,711 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638303/gm-seed-governance-lessons-from-cotton | paragraphs=14 | words=837
+2026-11-03 21:08:07,715 [truthlens.pipelines] INFO: Cleaned article: tribune:2638303 | characters=5993 | hash=b86931bcfdcf
+2026-11-03 21:08:07,724 [truthlens.pipelines] INFO: MongoDB new: tribune:2638303 | version=1 | fields=none
+2026-11-03 21:08:16,968 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638307/the-big-show-bows-out-maxwell-retires-from-international-cricket | paragraphs=2 | words=543
+2026-11-03 21:08:16,970 [truthlens.pipelines] INFO: Cleaned article: tribune:2638307 | characters=3339 | hash=bc6a0d2fc05b
+2026-11-03 21:08:16,981 [truthlens.pipelines] INFO: MongoDB metadata_changed: tribune:2638307 | version=2 | fields=metadata.published_at
+2026-11-03 21:08:19,139 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638308/core-inflation-falls-to-75-in-oct | paragraphs=16 | words=717
+2026-11-03 21:08:19,142 [truthlens.pipelines] INFO: Cleaned article: tribune:2638308 | characters=4380 | hash=8c8cb65f093d
+2026-11-03 21:08:19,149 [truthlens.pipelines] INFO: MongoDB new: tribune:2638308 | version=1 | fields=none
+2026-11-03 21:08:23,566 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638309/oil-falls-75-on-peace-hopes-gold-up | paragraphs=9 | words=387
+2026-11-03 21:08:23,568 [truthlens.pipelines] INFO: Cleaned article: tribune:2638309 | characters=2469 | hash=53c70c9a1cc2
+2026-11-03 21:08:23,574 [truthlens.pipelines] INFO: MongoDB new: tribune:2638309 | version=1 | fields=none
+2026-11-03 21:08:26,133 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638310/eurobond-debt-may-be-tokenised | paragraphs=13 | words=318
+2026-11-03 21:08:26,135 [truthlens.pipelines] INFO: Cleaned article: tribune:2638310 | characters=2408 | hash=60c20b89ffab
+2026-11-03 21:08:26,142 [truthlens.pipelines] INFO: MongoDB new: tribune:2638310 | version=1 | fields=none
+2026-11-03 21:08:29,687 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638311/pakistans-quiet-resilience-in-first-quarter-of-fy27 | paragraphs=14 | words=792
+2026-11-03 21:08:29,690 [truthlens.pipelines] INFO: Cleaned article: tribune:2638311 | characters=4981 | hash=6a25a7ec9158
+2026-11-03 21:08:29,697 [truthlens.pipelines] INFO: MongoDB new: tribune:2638311 | version=1 | fields=none
+2026-11-03 21:08:34,226 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638312/agri-output-as-vital-as-industrial-productivity | paragraphs=6 | words=205
+2026-11-03 21:08:34,228 [truthlens.pipelines] INFO: Cleaned article: tribune:2638312 | characters=1615 | hash=4ec118c1879f
+2026-11-03 21:08:34,234 [truthlens.pipelines] INFO: MongoDB new: tribune:2638312 | version=1 | fields=none
+2026-11-03 21:08:38,229 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638313/closed-for-debt-but-open-for-business-in-equity | paragraphs=21 | words=729
+2026-11-03 21:08:38,234 [truthlens.pipelines] INFO: Cleaned article: tribune:2638313 | characters=5051 | hash=dbef521087c1
+2026-11-03 21:08:38,243 [truthlens.pipelines] INFO: MongoDB new: tribune:2638313 | version=1 | fields=none
+2026-11-03 21:08:42,545 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638314/psx-records-thin-gains-in-volatile-session | paragraphs=5 | words=303
+2026-11-03 21:08:42,546 [truthlens.pipelines] INFO: Cleaned article: tribune:2638314 | characters=1885 | hash=bbca2be303f4
+2026-11-03 21:08:42,553 [truthlens.pipelines] INFO: MongoDB new: tribune:2638314 | version=1 | fields=none
+2026-11-03 21:08:45,055 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638315/mineral-incentive-package-on-cards | paragraphs=15 | words=755
+2026-11-03 21:08:45,057 [truthlens.pipelines] INFO: Cleaned article: tribune:2638315 | characters=5177 | hash=51d395e5e1cc
+2026-11-03 21:08:45,064 [truthlens.pipelines] INFO: MongoDB new: tribune:2638315 | version=1 | fields=none
+2026-11-03 21:08:48,518 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638316/ai-puts-hourly-billing-model-at-risk | paragraphs=13 | words=670
+2026-11-03 21:08:48,521 [truthlens.pipelines] INFO: Cleaned article: tribune:2638316 | characters=4870 | hash=95a6cbe2a806
+2026-11-03 21:08:48,528 [truthlens.pipelines] INFO: MongoDB new: tribune:2638316 | version=1 | fields=none
+2026-11-03 21:08:50,943 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638317/220kv-transmission-line-energised | paragraphs=6 | words=165
+2026-11-03 21:08:50,945 [truthlens.pipelines] INFO: Cleaned article: tribune:2638317 | characters=1089 | hash=92fc0ca7ba07
+2026-11-03 21:08:50,950 [truthlens.pipelines] INFO: MongoDB new: tribune:2638317 | version=1 | fields=none
+2026-11-03 21:08:57,056 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638320/karachi-festival-offers-a-cultural-feast | paragraphs=7 | words=304
+2026-11-03 21:08:57,057 [truthlens.pipelines] INFO: Cleaned article: tribune:2638320 | characters=2199 | hash=e7b6cbcc4ce6
+2026-11-03 21:08:57,064 [truthlens.pipelines] INFO: MongoDB new: tribune:2638320 | version=1 | fields=none
+2026-11-03 21:08:59,748 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638321/changing-fortunes-of-indias-royals | paragraphs=22 | words=734
+2026-11-03 21:08:59,751 [truthlens.pipelines] INFO: Cleaned article: tribune:2638321 | characters=4680 | hash=b58c2a9d9d12
+2026-11-03 21:08:59,758 [truthlens.pipelines] INFO: MongoDB new: tribune:2638321 | version=1 | fields=none
+2026-11-03 21:09:03,610 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638322/ritchie-expands-the-gentlemen-universe | paragraphs=10 | words=323
+2026-11-03 21:09:03,612 [truthlens.pipelines] INFO: Cleaned article: tribune:2638322 | characters=2116 | hash=a63b0ef0cf6b
+2026-11-03 21:09:03,618 [truthlens.pipelines] INFO: MongoDB new: tribune:2638322 | version=1 | fields=none
+2026-11-03 21:09:05,218 [scrapy.extensions.logstats] INFO: Crawled 30 pages (at 15 pages/min), scraped 28 items (at 15 items/min)
+2026-11-03 21:09:07,477 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638323/a-date-with-death-courtesy-of-007 | paragraphs=13 | words=382
+2026-11-03 21:09:07,479 [truthlens.pipelines] INFO: Cleaned article: tribune:2638323 | characters=2334 | hash=31e6fff78d61
+2026-11-03 21:09:07,485 [truthlens.pipelines] INFO: MongoDB new: tribune:2638323 | version=1 | fields=none
+2026-11-03 21:09:10,184 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638324/dressing-up-for-a-slice-of-fame | paragraphs=11 | words=471
+2026-11-03 21:09:10,186 [truthlens.pipelines] INFO: Cleaned article: tribune:2638324 | characters=2980 | hash=066b92617fac
+2026-11-03 21:09:10,193 [truthlens.pipelines] INFO: MongoDB new: tribune:2638324 | version=1 | fields=none
+2026-11-03 21:09:12,411 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638325/tax-evasion-panel-seeks-recovery-of-rs112tr | paragraphs=14 | words=393
+2026-11-03 21:09:12,413 [truthlens.pipelines] INFO: Cleaned article: tribune:2638325 | characters=2821 | hash=dfcce697c589
+2026-11-03 21:09:12,420 [truthlens.pipelines] INFO: MongoDB new: tribune:2638325 | version=1 | fields=none
+2026-11-03 21:09:16,426 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638326/pakistan-south-korea-sign-judicial-mou | paragraphs=9 | words=247
+2026-11-03 21:09:16,428 [truthlens.pipelines] INFO: Cleaned article: tribune:2638326 | characters=1856 | hash=9aeeebcf491d
+2026-11-03 21:09:16,433 [truthlens.pipelines] INFO: MongoDB new: tribune:2638326 | version=1 | fields=none
+2026-11-03 21:09:18,602 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638328/fsc-cj-explains-family-reconciliation | paragraphs=6 | words=104
+2026-11-03 21:09:18,603 [truthlens.pipelines] INFO: Cleaned article: tribune:2638328 | characters=667 | hash=4a85f6309c50
+2026-11-03 21:09:18,610 [truthlens.pipelines] INFO: MongoDB new: tribune:2638328 | version=1 | fields=none
+2026-11-03 21:09:22,537 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638329/ihc-orders-regularisation-of-fia-nccia-staff | paragraphs=7 | words=100
+2026-11-03 21:09:22,539 [truthlens.pipelines] INFO: Cleaned article: tribune:2638329 | characters=682 | hash=cfedf85221cc
+2026-11-03 21:09:22,546 [truthlens.pipelines] INFO: MongoDB new: tribune:2638329 | version=1 | fields=none
+2026-11-03 21:09:26,982 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638330/govt-houses-illegally-occupied-panel-told | paragraphs=13 | words=379
+2026-11-03 21:09:26,984 [truthlens.pipelines] INFO: Cleaned article: tribune:2638330 | characters=2624 | hash=59b4b3551b9e
+2026-11-03 21:09:26,990 [truthlens.pipelines] INFO: MongoDB new: tribune:2638330 | version=1 | fields=none
+2026-11-03 21:09:31,278 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638331/bilal-urges-embracing-financial-innovation | paragraphs=11 | words=390
+2026-11-03 21:09:31,280 [truthlens.pipelines] INFO: Cleaned article: tribune:2638331 | characters=2717 | hash=5585417a4550
+2026-11-03 21:09:31,286 [truthlens.pipelines] INFO: MongoDB new: tribune:2638331 | version=1 | fields=none
+2026-11-03 21:09:35,134 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638332/musadik-seeks-climate-resilient-development | paragraphs=6 | words=89
+2026-11-03 21:09:35,136 [truthlens.pipelines] INFO: Cleaned article: tribune:2638332 | characters=613 | hash=c1f9bcadea48
+2026-11-03 21:09:35,143 [truthlens.pipelines] INFO: MongoDB new: tribune:2638332 | version=1 | fields=none
+2026-11-03 21:09:38,868 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638333/court-upholds-warrants-against-cm-afridi | paragraphs=37 | words=326
+2026-11-03 21:09:38,871 [truthlens.pipelines] INFO: Cleaned article: tribune:2638333 | characters=2217 | hash=eb2a8e93b7de
+2026-11-03 21:09:38,883 [truthlens.pipelines] INFO: MongoDB new: tribune:2638333 | version=1 | fields=none
+2026-11-03 21:09:42,621 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638334/pm-warns-banks-over-slow-loans | paragraphs=15 | words=449
+2026-11-03 21:09:42,624 [truthlens.pipelines] INFO: Cleaned article: tribune:2638334 | characters=2968 | hash=ec795d7b131c
+2026-11-03 21:09:42,631 [truthlens.pipelines] INFO: MongoDB new: tribune:2638334 | version=1 | fields=none
+2026-11-03 21:09:47,270 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638335/fazl-criticises-govts-approach-to-ex-fata | paragraphs=8 | words=295
+2026-11-03 21:09:47,271 [truthlens.pipelines] INFO: Cleaned article: tribune:2638335 | characters=1879 | hash=1684e4f30ac6
+2026-11-03 21:09:47,278 [truthlens.pipelines] INFO: MongoDB new: tribune:2638335 | version=1 | fields=none
+2026-11-03 21:09:50,234 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638336/medical-treatment-gross-negligence-can-be-penalised | paragraphs=20 | words=699
+2026-11-03 21:09:50,237 [truthlens.pipelines] INFO: Cleaned article: tribune:2638336 | characters=4577 | hash=095f7bab5cb0
+2026-11-03 21:09:50,243 [truthlens.pipelines] INFO: MongoDB new: tribune:2638336 | version=1 | fields=none
+2026-11-03 21:09:54,671 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638337/ecp-reviews-islamabad-lg-poll-preparations | paragraphs=8 | words=194
+2026-11-03 21:09:54,672 [truthlens.pipelines] INFO: Cleaned article: tribune:2638337 | characters=1333 | hash=e013d0290a1a
+2026-11-03 21:09:54,677 [truthlens.pipelines] INFO: MongoDB new: tribune:2638337 | version=1 | fields=none
+2026-11-03 21:09:58,915 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638340/two-killed-in-separate-incidents-5 | paragraphs=5 | words=189
+2026-11-03 21:09:58,917 [truthlens.pipelines] INFO: Cleaned article: tribune:2638340 | characters=1099 | hash=09d47d82b96f
+2026-11-03 21:09:58,922 [truthlens.pipelines] INFO: MongoDB new: tribune:2638340 | version=1 | fields=none
+2026-11-03 21:10:04,420 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638341/millers-threaten-strike-over-police-action | paragraphs=14 | words=500
+2026-11-03 21:10:04,422 [truthlens.pipelines] INFO: Cleaned article: tribune:2638341 | characters=3242 | hash=e53dcdcd38e3
+2026-11-03 21:10:04,428 [truthlens.pipelines] INFO: MongoDB new: tribune:2638341 | version=1 | fields=none
+2026-11-03 21:10:05,227 [scrapy.extensions.logstats] INFO: Crawled 46 pages (at 16 pages/min), scraped 44 items (at 16 items/min)
+2026-11-03 21:10:07,185 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638342/german-envoy-urges-stronger-trade-ties | paragraphs=9 | words=264
+2026-11-03 21:10:07,187 [truthlens.pipelines] INFO: Cleaned article: tribune:2638342 | characters=1799 | hash=ba96ab62a65b
+2026-11-03 21:10:07,193 [truthlens.pipelines] INFO: MongoDB new: tribune:2638342 | version=1 | fields=none
+2026-11-03 21:10:11,781 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638343/weapons-drugs-seized-at-bus-stand | paragraphs=6 | words=132
+2026-11-03 21:10:11,782 [truthlens.pipelines] INFO: Cleaned article: tribune:2638343 | characters=910 | hash=8f50e895ac49
+2026-11-03 21:10:11,789 [truthlens.pipelines] INFO: MongoDB new: tribune:2638343 | version=1 | fields=none
+2026-11-03 21:10:16,903 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638344/man-convicted-of-harassing-minor | paragraphs=8 | words=182
+2026-11-03 21:10:16,905 [truthlens.pipelines] INFO: Cleaned article: tribune:2638344 | characters=1126 | hash=cd260ada2490
+2026-11-03 21:10:16,911 [truthlens.pipelines] INFO: MongoDB new: tribune:2638344 | version=1 | fields=none
+2026-11-03 21:10:19,914 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638345/ihc-orders-recovery-of-girl | paragraphs=7 | words=165
+2026-11-03 21:10:19,916 [truthlens.pipelines] INFO: Cleaned article: tribune:2638345 | characters=1008 | hash=ed520d5a4085
+2026-11-03 21:10:19,922 [truthlens.pipelines] INFO: MongoDB new: tribune:2638345 | version=1 | fields=none
+2026-11-03 21:10:23,259 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638346/punjab-approves-rs11b-for-ct-scanners-1 | paragraphs=14 | words=449
+2026-11-03 21:10:23,264 [truthlens.pipelines] INFO: Cleaned article: tribune:2638346 | characters=3062 | hash=839bda474762
+2026-11-03 21:10:23,271 [truthlens.pipelines] INFO: MongoDB new: tribune:2638346 | version=1 | fields=none
+2026-11-03 21:10:27,699 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638347/intermediate-supplementary-examinations-begin-1 | paragraphs=5 | words=240
+2026-11-03 21:10:27,701 [truthlens.pipelines] INFO: Cleaned article: tribune:2638347 | characters=1695 | hash=91547b0774f5
+2026-11-03 21:10:27,708 [truthlens.pipelines] INFO: MongoDB new: tribune:2638347 | version=1 | fields=none
+2026-11-03 21:10:31,381 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638361/gharo-glitch-adds-fuel-to-citys-water-crisis | paragraphs=8 | words=350
+2026-11-03 21:10:31,383 [truthlens.pipelines] INFO: Cleaned article: tribune:2638361 | characters=2317 | hash=0777f10964a3
+2026-11-03 21:10:31,391 [truthlens.pipelines] INFO: MongoDB new: tribune:2638361 | version=1 | fields=none
+2026-11-03 21:10:35,230 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638362/sbca-invites-bids-for-demolition-of-gul-plaza | paragraphs=5 | words=209
+2026-11-03 21:10:35,231 [truthlens.pipelines] INFO: Cleaned article: tribune:2638362 | characters=1348 | hash=03a74fcbd330
+2026-11-03 21:10:35,238 [truthlens.pipelines] INFO: MongoDB new: tribune:2638362 | version=1 | fields=none
+2026-11-03 21:10:38,211 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638363/dala-culture-strikes-again-family-assaulted | paragraphs=8 | words=199
+2026-11-03 21:10:38,213 [truthlens.pipelines] INFO: Cleaned article: tribune:2638363 | characters=1191 | hash=a911bf9d664d
+2026-11-03 21:10:38,218 [truthlens.pipelines] INFO: MongoDB new: tribune:2638363 | version=1 | fields=none
+2026-11-03 21:10:42,460 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638364/hospitals-witness-protest-over-harassment | paragraphs=8 | words=192
+2026-11-03 21:10:42,462 [truthlens.pipelines] INFO: Cleaned article: tribune:2638364 | characters=1449 | hash=c1c44beb1f95
+2026-11-03 21:10:42,469 [truthlens.pipelines] INFO: MongoDB new: tribune:2638364 | version=1 | fields=none
+2026-11-03 21:10:46,156 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638365/sindh-wb-review-385b-development-portfolio | paragraphs=11 | words=465
+2026-11-03 21:10:46,159 [truthlens.pipelines] INFO: Cleaned article: tribune:2638365 | characters=3139 | hash=63f8646f6e55
+2026-11-03 21:10:46,166 [truthlens.pipelines] INFO: MongoDB new: tribune:2638365 | version=1 | fields=none
+2026-11-03 21:10:50,374 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638366/court-orders-production-of-hindu-girl-on-nov-23 | paragraphs=7 | words=275
+2026-11-03 21:10:50,376 [truthlens.pipelines] INFO: Cleaned article: tribune:2638366 | characters=1669 | hash=80afd84d226e
+2026-11-03 21:10:50,382 [truthlens.pipelines] INFO: MongoDB new: tribune:2638366 | version=1 | fields=none
+2026-11-03 21:10:54,620 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638369/forum-calls-for-protection-of-tharis-rights | paragraphs=5 | words=117
+2026-11-03 21:10:54,622 [truthlens.pipelines] INFO: Cleaned article: tribune:2638369 | characters=828 | hash=5a965c8f7665
+2026-11-03 21:10:54,628 [truthlens.pipelines] INFO: MongoDB new: tribune:2638369 | version=1 | fields=none
+2026-11-03 21:10:59,033 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638376/rs2395b-irregularities-unearthed-in-irrigation-dept-1 | paragraphs=8 | words=238
+2026-11-03 21:10:59,034 [truthlens.pipelines] INFO: Cleaned article: tribune:2638376 | characters=1762 | hash=1419abfe609d
+2026-11-03 21:10:59,040 [truthlens.pipelines] INFO: MongoDB new: tribune:2638376 | version=1 | fields=none
+2026-11-03 21:11:03,128 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638377/president-reviews-development-projects-1 | paragraphs=6 | words=196
+2026-11-03 21:11:03,130 [truthlens.pipelines] INFO: Cleaned article: tribune:2638377 | characters=1386 | hash=13422158b6f3
+2026-11-03 21:11:03,137 [truthlens.pipelines] INFO: MongoDB new: tribune:2638377 | version=1 | fields=none
+2026-11-03 21:11:05,222 [scrapy.extensions.logstats] INFO: Crawled 61 pages (at 15 pages/min), scraped 59 items (at 15 items/min)
+2026-11-03 21:11:07,282 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638379/pollution-touches-hazardous-level | paragraphs=19 | words=486
+2026-11-03 21:11:07,285 [truthlens.pipelines] INFO: Cleaned article: tribune:2638379 | characters=3161 | hash=360fa096f5cb
+2026-11-03 21:11:07,292 [truthlens.pipelines] INFO: MongoDB new: tribune:2638379 | version=1 | fields=none
+2026-11-03 21:11:09,396 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638380/deficient-waste-companies-face-termination | paragraphs=10 | words=247
+2026-11-03 21:11:09,398 [truthlens.pipelines] INFO: Cleaned article: tribune:2638380 | characters=1681 | hash=b5a3aeabc278
+2026-11-03 21:11:09,405 [truthlens.pipelines] INFO: MongoDB new: tribune:2638380 | version=1 | fields=none
+2026-11-03 21:11:15,852 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638381/city-records-112-suicides-in-10-months | paragraphs=8 | words=167
+2026-11-03 21:11:15,854 [truthlens.pipelines] INFO: Cleaned article: tribune:2638381 | characters=975 | hash=c9baf5fa2dd4
+2026-11-03 21:11:15,860 [truthlens.pipelines] INFO: MongoDB new: tribune:2638381 | version=1 | fields=none
+2026-11-03 21:11:19,703 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638382/pakistan-tajikistan-to-boost-trade-ties | paragraphs=9 | words=184
+2026-11-03 21:11:19,705 [truthlens.pipelines] INFO: Cleaned article: tribune:2638382 | characters=1396 | hash=674305931784
+2026-11-03 21:11:19,712 [truthlens.pipelines] INFO: MongoDB new: tribune:2638382 | version=1 | fields=none
+2026-11-03 21:11:23,076 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638383/man-held-for-harassment-blackmail | paragraphs=9 | words=145
+2026-11-03 21:11:23,079 [truthlens.pipelines] INFO: Cleaned article: tribune:2638383 | characters=999 | hash=09b3cd61a859
+2026-11-03 21:11:23,085 [truthlens.pipelines] INFO: MongoDB new: tribune:2638383 | version=1 | fields=none
+2026-11-03 21:11:25,574 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638384/464-die-in-punjab-road-crashes-in-october | paragraphs=18 | words=391
+2026-11-03 21:11:25,576 [truthlens.pipelines] INFO: Cleaned article: tribune:2638384 | characters=2863 | hash=6d11cb287aba
+2026-11-03 21:11:25,583 [truthlens.pipelines] INFO: MongoDB new: tribune:2638384 | version=1 | fields=none
+2026-11-03 21:11:27,914 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638385/suspect-identified-in-murder-case | paragraphs=10 | words=188
+2026-11-03 21:11:27,916 [truthlens.pipelines] INFO: Cleaned article: tribune:2638385 | characters=1234 | hash=53e4e7d09771
+2026-11-03 21:11:27,922 [truthlens.pipelines] INFO: MongoDB new: tribune:2638385 | version=1 | fields=none
+2026-11-03 21:11:33,813 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638386/counterfeit-salt-snacks-seized | paragraphs=6 | words=132
+2026-11-03 21:11:33,815 [truthlens.pipelines] INFO: Cleaned article: tribune:2638386 | characters=891 | hash=97a26867c93b
+2026-11-03 21:11:33,823 [truthlens.pipelines] INFO: MongoDB new: tribune:2638386 | version=1 | fields=none
+2026-11-03 21:11:34,421 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638387/long-wait-ends-as-lawyer-meets-jailed-imran-bushra | paragraphs=18 | words=606
+2026-11-03 21:11:34,424 [truthlens.pipelines] INFO: Cleaned article: tribune:2638387 | characters=3810 | hash=1dd719d2581d
+2026-11-03 21:11:34,431 [truthlens.pipelines] INFO: MongoDB new: tribune:2638387 | version=1 | fields=none
+2026-11-03 21:11:37,099 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638388/refineries-to-shoulder-rs15b-fuel-burden | paragraphs=21 | words=890
+2026-11-03 21:11:37,103 [truthlens.pipelines] INFO: Cleaned article: tribune:2638388 | characters=5341 | hash=1d4da1a52deb
+2026-11-03 21:11:37,108 [truthlens.pipelines] INFO: MongoDB new: tribune:2638388 | version=1 | fields=none
+2026-11-03 21:11:40,514 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638389/lhc-orders-jail-meeting-for-noreen | paragraphs=19 | words=769
+2026-11-03 21:11:40,518 [truthlens.pipelines] INFO: Cleaned article: tribune:2638389 | characters=4929 | hash=8b0f34aa7201
+2026-11-03 21:11:40,525 [truthlens.pipelines] INFO: MongoDB new: tribune:2638389 | version=1 | fields=none
+2026-11-03 21:11:44,488 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638390/candidates-make-final-push-for-us-midterms | paragraphs=32 | words=964
+2026-11-03 21:11:44,491 [truthlens.pipelines] INFO: Cleaned article: tribune:2638390 | characters=6146 | hash=21236b4d24c9
+2026-11-03 21:11:44,499 [truthlens.pipelines] INFO: MongoDB new: tribune:2638390 | version=1 | fields=none
+2026-11-03 21:11:47,142 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638391/china-urges-deeper-political-and-institutional-exchanges | paragraphs=45 | words=1216
+2026-11-03 21:11:47,146 [truthlens.pipelines] INFO: Cleaned article: tribune:2638391 | characters=9190 | hash=cb8ec46393fd
+2026-11-03 21:11:47,154 [truthlens.pipelines] INFO: MongoDB new: tribune:2638391 | version=1 | fields=none
+2026-11-03 21:11:51,433 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638392/iran-says-talks-continue-despite-no-breakthrough | paragraphs=49 | words=1384
+2026-11-03 21:11:51,437 [truthlens.pipelines] INFO: Cleaned article: tribune:2638392 | characters=8766 | hash=4e72bb2ad4e2
+2026-11-03 21:11:51,444 [truthlens.pipelines] INFO: MongoDB new: tribune:2638392 | version=1 | fields=none
+2026-11-03 21:11:56,312 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638393/hackers-shut-down-shop-fridges-across-europe | paragraphs=7 | words=234
+2026-11-03 21:11:56,315 [truthlens.pipelines] INFO: Cleaned article: tribune:2638393 | characters=1514 | hash=c75ef30132e0
+2026-11-03 21:11:56,321 [truthlens.pipelines] INFO: MongoDB new: tribune:2638393 | version=1 | fields=none
+2026-11-03 21:12:00,652 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638394/nine-killed-in-florida-business-jet-crash | paragraphs=13 | words=370
+2026-11-03 21:12:00,654 [truthlens.pipelines] INFO: Cleaned article: tribune:2638394 | characters=2305 | hash=d3e6ea1ea802
+2026-11-03 21:12:00,660 [truthlens.pipelines] INFO: MongoDB new: tribune:2638394 | version=1 | fields=none
+2026-11-03 21:12:04,139 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638395/spain-deports-asylum-seekers | paragraphs=6 | words=187
+2026-11-03 21:12:04,140 [truthlens.pipelines] INFO: Cleaned article: tribune:2638395 | characters=1183 | hash=976329e8e218
+2026-11-03 21:12:04,145 [truthlens.pipelines] INFO: MongoDB new: tribune:2638395 | version=1 | fields=none
+2026-11-03 21:12:05,221 [scrapy.extensions.logstats] INFO: Crawled 78 pages (at 17 pages/min), scraped 76 items (at 17 items/min)
+2026-11-03 21:12:07,376 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638396/xi-calls-for-lasting-peace-in-middle-east | paragraphs=13 | words=324
+2026-11-03 21:12:07,379 [truthlens.pipelines] INFO: Cleaned article: tribune:2638396 | characters=2086 | hash=7a8f29c772c6
+2026-11-03 21:12:07,385 [truthlens.pipelines] INFO: MongoDB new: tribune:2638396 | version=1 | fields=none
+2026-11-03 21:12:10,701 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638397/russian-bombing-kills-24-in-ukraine | paragraphs=8 | words=128
+2026-11-03 21:12:10,703 [truthlens.pipelines] INFO: Cleaned article: tribune:2638397 | characters=834 | hash=e2e1fdec9fc4
+2026-11-03 21:12:10,710 [truthlens.pipelines] INFO: MongoDB new: tribune:2638397 | version=1 | fields=none
+2026-11-03 21:12:13,934 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638398/bd-protests-turn-violent | paragraphs=13 | words=308
+2026-11-03 21:12:13,936 [truthlens.pipelines] INFO: Cleaned article: tribune:2638398 | characters=2040 | hash=832cef88bcb2
+2026-11-03 21:12:13,943 [truthlens.pipelines] INFO: MongoDB new: tribune:2638398 | version=1 | fields=none
+2026-11-03 21:12:18,196 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638399/cleric-arrested-after-bajaur-madrassa-child-death | paragraphs=8 | words=216
+2026-11-03 21:12:18,197 [truthlens.pipelines] INFO: Cleaned article: tribune:2638399 | characters=1326 | hash=4fac789f2d2e
+2026-11-03 21:12:18,204 [truthlens.pipelines] INFO: MongoDB new: tribune:2638399 | version=1 | fields=none
+2026-11-03 21:12:20,976 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638400/governor-vows-action-against-illegal-afghans | paragraphs=8 | words=420
+2026-11-03 21:12:20,979 [truthlens.pipelines] INFO: Cleaned article: tribune:2638400 | characters=2770 | hash=7de6410ecf6f
+2026-11-03 21:12:20,987 [truthlens.pipelines] INFO: MongoDB new: tribune:2638400 | version=1 | fields=none
+2026-11-03 21:12:25,435 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638401/k-p-audit-exposes-billions-in-irregularities | paragraphs=8 | words=232
+2026-11-03 21:12:25,437 [truthlens.pipelines] INFO: Cleaned article: tribune:2638401 | characters=1668 | hash=872ba5ce9ae2
+2026-11-03 21:12:25,443 [truthlens.pipelines] INFO: MongoDB new: tribune:2638401 | version=1 | fields=none
+2026-11-03 21:12:29,896 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638402/ji-questions-ptis-lack-of-protests-over-governors-rule | paragraphs=7 | words=194
+2026-11-03 21:12:29,899 [truthlens.pipelines] INFO: Cleaned article: tribune:2638402 | characters=1370 | hash=02a1725c4356
+2026-11-03 21:12:29,906 [truthlens.pipelines] INFO: MongoDB new: tribune:2638402 | version=1 | fields=none
+2026-11-03 21:12:33,626 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638403/four-polio-workers-kidnapped-in-tank | paragraphs=8 | words=168
+2026-11-03 21:12:33,626 [truthlens.pipelines] INFO: Cleaned article: tribune:2638403 | characters=1121 | hash=960915f5dd3b
+2026-11-03 21:12:33,633 [truthlens.pipelines] INFO: MongoDB new: tribune:2638403 | version=1 | fields=none
+2026-11-03 21:12:38,075 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638405/islamabad-atc-grants-bail-to-imaan-mazari-hadi-ali-chattha-in-road-blockade-police-clash-case | paragraphs=13 | words=528
+2026-11-03 21:12:38,078 [truthlens.pipelines] INFO: Cleaned article: tribune:2638405 | characters=3323 | hash=52ad53f053d4
+2026-11-03 21:12:38,085 [truthlens.pipelines] INFO: MongoDB new: tribune:2638405 | version=1 | fields=none
+2026-11-03 21:12:40,775 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638406/nicolas-cage-currently-homeless-after-sinkhole-damages-malibu-mansion | paragraphs=9 | words=305
+2026-11-03 21:12:40,777 [truthlens.pipelines] INFO: Cleaned article: tribune:2638406 | characters=1981 | hash=5c00e52cd9a9
+2026-11-03 21:12:40,784 [truthlens.pipelines] INFO: MongoDB new: tribune:2638406 | version=1 | fields=none
+2026-11-03 21:12:44,649 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638407/oil-edges-up-after-report-of-us-strike-on-irans-qeshm-island | paragraphs=14 | words=428
+2026-11-03 21:12:44,652 [truthlens.pipelines] INFO: Cleaned article: tribune:2638407 | characters=2674 | hash=43c97b225d0e
+2026-11-03 21:12:44,659 [truthlens.pipelines] INFO: MongoDB new: tribune:2638407 | version=1 | fields=none
+2026-11-03 21:12:48,349 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638408/us-strikes-irans-qeshm-island-as-irgc-claims-downing-of-two-more-us-mqm-170-drones | paragraphs=49 | words=1395
+2026-11-03 21:12:48,354 [truthlens.pipelines] INFO: Cleaned article: tribune:2638408 | characters=8805 | hash=86b176ec5854
+2026-11-03 21:12:48,363 [truthlens.pipelines] INFO: MongoDB new: tribune:2638408 | version=1 | fields=none
+2026-11-03 21:12:50,951 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638409/zverev-savours-rise-to-world-number-one | paragraphs=10 | words=265
+2026-11-03 21:12:50,953 [truthlens.pipelines] INFO: Cleaned article: tribune:2638409 | characters=1463 | hash=96ec55360d8c
+2026-11-03 21:12:50,960 [truthlens.pipelines] INFO: MongoDB new: tribune:2638409 | version=1 | fields=none
+2026-11-03 21:12:55,114 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638410/samad-to-lead-shaheens-in-asia-cup-rising-stars | paragraphs=16 | words=457
+2026-11-03 21:12:55,117 [truthlens.pipelines] INFO: Cleaned article: tribune:2638410 | characters=2711 | hash=ef2deec79642
+2026-11-03 21:12:55,123 [truthlens.pipelines] INFO: MongoDB new: tribune:2638410 | version=1 | fields=none
+2026-11-03 21:12:59,825 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638411/dwts-season-35-week-8-recap-disney-night-delivers-perfect-scores-and-surprise-elimination | paragraphs=9 | words=254
+2026-11-03 21:12:59,827 [truthlens.pipelines] INFO: Cleaned article: tribune:2638411 | characters=1657 | hash=0b264c0aad6f
+2026-11-03 21:12:59,833 [truthlens.pipelines] INFO: MongoDB new: tribune:2638411 | version=1 | fields=none
+2026-11-03 21:13:02,703 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638412/kane-would-trade-ballon-dor-for-champions-league-trophy | paragraphs=20 | words=552
+2026-11-03 21:13:02,706 [truthlens.pipelines] INFO: Cleaned article: tribune:2638412 | characters=3193 | hash=22297848896a
+2026-11-03 21:13:02,712 [truthlens.pipelines] INFO: MongoDB new: tribune:2638412 | version=1 | fields=none
+2026-11-03 21:13:05,093 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638413/demichelis-set-for-manchester-city-reunion | paragraphs=27 | words=590
+2026-11-03 21:13:05,096 [truthlens.pipelines] INFO: Cleaned article: tribune:2638413 | characters=3449 | hash=6c8c3565ebfe
+2026-11-03 21:13:05,103 [truthlens.pipelines] INFO: MongoDB new: tribune:2638413 | version=1 | fields=none
+2026-11-03 21:13:05,226 [scrapy.extensions.logstats] INFO: Crawled 95 pages (at 17 pages/min), scraped 93 items (at 17 items/min)
+2026-11-03 21:13:08,770 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638414/judge-blocks-trump-administration-from-pressuring-states-over-noncitizen-voting | paragraphs=11 | words=491
+2026-11-03 21:13:08,773 [truthlens.pipelines] INFO: Cleaned article: tribune:2638414 | characters=3213 | hash=b062f317196a
+2026-11-03 21:13:08,780 [truthlens.pipelines] INFO: MongoDB new: tribune:2638414 | version=1 | fields=none
+2026-11-03 21:13:11,982 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638415/trump-faces-major-political-test-as-americans-vote-in-midterms | paragraphs=47 | words=1381
+2026-11-03 21:13:11,989 [truthlens.pipelines] INFO: Cleaned article: tribune:2638415 | characters=8921 | hash=5547255080a0
+2026-11-03 21:13:11,997 [truthlens.pipelines] INFO: MongoDB new: tribune:2638415 | version=1 | fields=none
+2026-11-03 21:13:14,095 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638416/two-policemen-martyred-one-injured-in-attack-on-polio-team-in-k-ps-mohmand | paragraphs=14 | words=474
+2026-11-03 21:13:14,097 [truthlens.pipelines] INFO: Cleaned article: tribune:2638416 | characters=3152 | hash=697017498be1
+2026-11-03 21:13:14,104 [truthlens.pipelines] INFO: MongoDB new: tribune:2638416 | version=1 | fields=none
+2026-11-03 21:13:18,674 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638417/dortmund-bring-back-painful-memories-for-pellegrini | paragraphs=26 | words=661
+2026-11-03 21:13:18,677 [truthlens.pipelines] INFO: Cleaned article: tribune:2638417 | characters=3984 | hash=7e90e078b21e
+2026-11-03 21:13:18,683 [truthlens.pipelines] INFO: MongoDB new: tribune:2638417 | version=1 | fields=none
+2026-11-03 21:13:20,928 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638418/russian-strikes-kill-26-in-ukraine-after-longest-ceasefire-ends | paragraphs=31 | words=683
+2026-11-03 21:13:20,931 [truthlens.pipelines] INFO: Cleaned article: tribune:2638418 | characters=4355 | hash=27d5455b4415
+2026-11-03 21:13:20,939 [truthlens.pipelines] INFO: MongoDB new: tribune:2638418 | version=1 | fields=none
+2026-11-03 21:13:25,123 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638419/hila-klein-files-for-divorce-from-h3-podcast-co-host-ethan-klein-following-affair-allegation | paragraphs=10 | words=243
+2026-11-03 21:13:25,125 [truthlens.pipelines] INFO: Cleaned article: tribune:2638419 | characters=1522 | hash=2e2511716d42
+2026-11-03 21:13:25,131 [truthlens.pipelines] INFO: MongoDB new: tribune:2638419 | version=1 | fields=none
+2026-11-03 21:13:29,404 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638420/heidi-klums-halloween-costume-team-accidentally-spoils-the-batman-part-ii-characters | paragraphs=10 | words=237
+2026-11-03 21:13:29,405 [truthlens.pipelines] INFO: Cleaned article: tribune:2638420 | characters=1626 | hash=6ffca7641377
+2026-11-03 21:13:29,412 [truthlens.pipelines] INFO: MongoDB new: tribune:2638420 | version=1 | fields=none
+2026-11-03 21:13:32,955 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638421/scream-8-neve-campbell-confirms-return-as-sidney-prescott | paragraphs=11 | words=241
+2026-11-03 21:13:32,957 [truthlens.pipelines] INFO: Cleaned article: tribune:2638421 | characters=1568 | hash=251512c49a34
+2026-11-03 21:13:32,964 [truthlens.pipelines] INFO: MongoDB new: tribune:2638421 | version=1 | fields=none
+2026-11-03 21:13:37,688 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638422/justin-timberlake-reportedly-developing-four-part-apple-documentary-featuring-janet-jackson | paragraphs=12 | words=228
+2026-11-03 21:13:37,690 [truthlens.pipelines] INFO: Cleaned article: tribune:2638422 | characters=1600 | hash=2e5c79a6ca20
+2026-11-03 21:13:37,698 [truthlens.pipelines] INFO: MongoDB new: tribune:2638422 | version=1 | fields=none
+2026-11-03 21:13:41,182 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638423/afc-postpones-asian-cup-2027 | paragraphs=1 | words=240
+2026-11-03 21:13:41,183 [truthlens.pipelines] INFO: Cleaned article: tribune:2638423 | characters=1574 | hash=853a980abfd8
+2026-11-03 21:13:41,188 [truthlens.pipelines] INFO: MongoDB new: tribune:2638423 | version=1 | fields=none
+2026-11-03 21:13:44,415 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638424/kai-cenat-announces-5-game-grand-theft-auto-marathon-ahead-of-gta-6-release | paragraphs=10 | words=246
+2026-11-03 21:13:44,417 [truthlens.pipelines] INFO: Cleaned article: tribune:2638424 | characters=1491 | hash=78f5de89ed3a
+2026-11-03 21:13:44,424 [truthlens.pipelines] INFO: MongoDB new: tribune:2638424 | version=1 | fields=none
+2026-11-03 21:13:48,892 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638425/irans-foreign-minister-says-talks-with-saudi-arabia-are-ongoing | paragraphs=19 | words=629
+2026-11-03 21:13:48,896 [truthlens.pipelines] INFO: Cleaned article: tribune:2638425 | characters=4032 | hash=cd763fd9f21c
+2026-11-03 21:13:48,901 [truthlens.pipelines] INFO: MongoDB new: tribune:2638425 | version=1 | fields=none
+2026-11-03 21:13:51,249 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638426/off-duty-violence-against-wife-constitutes-misconduct-by-civil-servant-supreme-court | paragraphs=10 | words=375
+2026-11-03 21:13:51,251 [truthlens.pipelines] INFO: Cleaned article: tribune:2638426 | characters=2481 | hash=9a3b116723c1
+2026-11-03 21:13:51,258 [truthlens.pipelines] INFO: MongoDB new: tribune:2638426 | version=1 | fields=none
+2026-11-03 21:13:55,566 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638427/8-including-trekkers-missing-in-indian-himalayas-as-snowfall-hampers-rescue-efforts | paragraphs=14 | words=225
+2026-11-03 21:13:55,569 [truthlens.pipelines] INFO: Cleaned article: tribune:2638427 | characters=1521 | hash=7a477ac1b201
+2026-11-03 21:13:55,575 [truthlens.pipelines] INFO: MongoDB new: tribune:2638427 | version=1 | fields=none
+2026-11-03 21:14:00,318 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638428/north-korea-rejects-us-allegations-over-binance-crypto-theft-warns-of-response | paragraphs=8 | words=206
+2026-11-03 21:14:00,321 [truthlens.pipelines] INFO: Cleaned article: tribune:2638428 | characters=1442 | hash=4d98596be0f4
+2026-11-03 21:14:00,329 [truthlens.pipelines] INFO: MongoDB new: tribune:2638428 | version=1 | fields=none
+2026-11-03 21:14:04,410 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638429/ecp-issues-show-cause-notice-to-mqm-p-over-intra-party-elections | paragraphs=11 | words=328
+2026-11-03 21:14:04,412 [truthlens.pipelines] INFO: Cleaned article: tribune:2638429 | characters=2199 | hash=b99ac268bd59
+2026-11-03 21:14:04,418 [truthlens.pipelines] INFO: MongoDB new: tribune:2638429 | version=1 | fields=none
+2026-11-03 21:14:05,229 [scrapy.extensions.logstats] INFO: Crawled 111 pages (at 16 pages/min), scraped 109 items (at 16 items/min)
+2026-11-03 21:14:08,509 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638430/psx-gains-over-1300-points-amid-sustained-buying | paragraphs=12 | words=456
+2026-11-03 21:14:08,511 [truthlens.pipelines] INFO: Cleaned article: tribune:2638430 | characters=3108 | hash=9cced04d0885
+2026-11-03 21:14:08,518 [truthlens.pipelines] INFO: MongoDB new: tribune:2638430 | version=1 | fields=none
+2026-11-03 21:14:12,913 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638431/mckenna-grace-honours-jennifer-lawrence-in-fiery-girl-on-fire-dress | paragraphs=7 | words=286
+2026-11-03 21:14:12,916 [truthlens.pipelines] INFO: Cleaned article: tribune:2638431 | characters=1905 | hash=c044d73bc0e1
+2026-11-03 21:14:12,924 [truthlens.pipelines] INFO: MongoDB new: tribune:2638431 | version=1 | fields=none
+2026-11-03 21:14:17,000 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638432/terminally-ill-longtime-grand-theft-auto-fan-passes-away-weeks-before-gta-6-release | paragraphs=12 | words=269
+2026-11-03 21:14:17,004 [truthlens.pipelines] INFO: Cleaned article: tribune:2638432 | characters=1605 | hash=ba980befd78f
+2026-11-03 21:14:17,010 [truthlens.pipelines] INFO: MongoDB new: tribune:2638432 | version=1 | fields=none
+2026-11-03 21:14:19,847 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638433/us-supreme-court-rejects-trump-lets-california-count-all-ballots | paragraphs=25 | words=806
+2026-11-03 21:14:19,851 [truthlens.pipelines] INFO: Cleaned article: tribune:2638433 | characters=5264 | hash=827c80efff46
+2026-11-03 21:14:19,858 [truthlens.pipelines] INFO: MongoDB new: tribune:2638433 | version=1 | fields=none
+2026-11-03 21:14:23,375 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638434/conway-out-of-india-odi | paragraphs=10 | words=246
+2026-11-03 21:14:23,377 [truthlens.pipelines] INFO: Cleaned article: tribune:2638434 | characters=1464 | hash=760ee454f5c0
+2026-11-03 21:14:23,382 [truthlens.pipelines] INFO: MongoDB new: tribune:2638434 | version=1 | fields=none
+2026-11-03 21:14:27,392 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638435/ellen-degeneres-mourns-death-of-longtime-producer-matthew-wright-at-52 | paragraphs=12 | words=317
+2026-11-03 21:14:27,394 [truthlens.pipelines] INFO: Cleaned article: tribune:2638435 | characters=1909 | hash=af4bfa8bfe81
+2026-11-03 21:14:27,400 [truthlens.pipelines] INFO: MongoDB new: tribune:2638435 | version=1 | fields=none
+2026-11-03 21:14:30,467 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638436/taylor-swift-reportedly-considers-private-investigators-after-wedding-photo-leak | paragraphs=8 | words=277
+2026-11-03 21:14:30,469 [truthlens.pipelines] INFO: Cleaned article: tribune:2638436 | characters=1815 | hash=da4751443024
+2026-11-03 21:14:30,475 [truthlens.pipelines] INFO: MongoDB new: tribune:2638436 | version=1 | fields=none
+2026-11-03 21:14:34,061 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638437/uk-announces-fully-funded-masters-scholarships-for-pakistani-students | paragraphs=10 | words=373
+2026-11-03 21:14:34,063 [truthlens.pipelines] INFO: Cleaned article: tribune:2638437 | characters=2623 | hash=5ed67f562da8
+2026-11-03 21:14:34,069 [truthlens.pipelines] INFO: MongoDB new: tribune:2638437 | version=1 | fields=none
+2026-11-03 21:14:37,575 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638438/jessica-alba-reveals-impostor-syndrome-struggle-while-building-the-honest-company | paragraphs=9 | words=296
+2026-11-03 21:14:37,577 [truthlens.pipelines] INFO: Cleaned article: tribune:2638438 | characters=1947 | hash=0a22d6af153a
+2026-11-03 21:14:37,583 [truthlens.pipelines] INFO: MongoDB new: tribune:2638438 | version=1 | fields=none
+2026-11-03 21:14:42,127 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638439/zach-creggers-resident-evil-arrives-on-digital-after-earning-over-400m-worldwide | paragraphs=8 | words=307
+2026-11-03 21:14:42,129 [truthlens.pipelines] INFO: Cleaned article: tribune:2638439 | characters=2009 | hash=d547ed39dbe5
+2026-11-03 21:14:42,137 [truthlens.pipelines] INFO: MongoDB new: tribune:2638439 | version=1 | fields=none
+2026-11-03 21:14:45,987 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638440/capcom-maintains-movie-ambitions-despite-street-fighters-box-office-slowdown | paragraphs=9 | words=276
+2026-11-03 21:14:45,988 [truthlens.pipelines] INFO: Cleaned article: tribune:2638440 | characters=1915 | hash=2ab5c9bee59b
+2026-11-03 21:14:45,994 [truthlens.pipelines] INFO: MongoDB new: tribune:2638440 | version=1 | fields=none
+2026-11-03 21:14:49,635 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638441/pakistan-saudi-agree-to-enhance-cooperation-in-media-culture-tourism | paragraphs=16 | words=496
+2026-11-03 21:14:49,638 [truthlens.pipelines] INFO: Cleaned article: tribune:2638441 | characters=3516 | hash=7671e31fe061
+2026-11-03 21:14:49,645 [truthlens.pipelines] INFO: MongoDB new: tribune:2638441 | version=1 | fields=none
+2026-11-03 21:14:54,107 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638442/mckenna-grace-says-she-avoids-hypersexual-roles-in-hopes-of-playing-disney-princess-one-day | paragraphs=7 | words=264
+2026-11-03 21:14:54,108 [truthlens.pipelines] INFO: Cleaned article: tribune:2638442 | characters=1610 | hash=194222b32346
+2026-11-03 21:14:54,116 [truthlens.pipelines] INFO: MongoDB new: tribune:2638442 | version=1 | fields=none
+2026-11-03 21:14:57,501 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638443/pakistan-india-world-cup-clash-draws-84-million-ticket-requests | paragraphs=4 | words=125
+2026-11-03 21:14:57,503 [truthlens.pipelines] INFO: Cleaned article: tribune:2638443 | characters=795 | hash=b38a259173d6
+2026-11-03 21:14:57,510 [truthlens.pipelines] INFO: MongoDB new: tribune:2638443 | version=1 | fields=none
+2026-11-03 21:15:01,725 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638444/ben-wang-in-talks-to-play-iceman-in-marvels-upcoming-x-men-film | paragraphs=8 | words=282
+2026-11-03 21:15:01,728 [truthlens.pipelines] INFO: Cleaned article: tribune:2638444 | characters=1705 | hash=3388c444b1d8
+2026-11-03 21:15:01,737 [truthlens.pipelines] INFO: MongoDB new: tribune:2638444 | version=1 | fields=none
+2026-11-03 21:15:05,224 [scrapy.extensions.logstats] INFO: Crawled 126 pages (at 15 pages/min), scraped 124 items (at 15 items/min)
+2026-11-03 21:15:05,447 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638445/vivienne-jolie-becomes-fourth-child-to-drop-brad-pitts-surname-after-court-approval | paragraphs=8 | words=259
+2026-11-03 21:15:05,449 [truthlens.pipelines] INFO: Cleaned article: tribune:2638445 | characters=1659 | hash=cfba634f3294
+2026-11-03 21:15:05,456 [truthlens.pipelines] INFO: MongoDB new: tribune:2638445 | version=1 | fields=none
+2026-11-03 21:15:08,775 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638446/whitney-peak-felt-way-in-over-my-head-joining-the-hunger-games-franchise | paragraphs=9 | words=282
+2026-11-03 21:15:08,777 [truthlens.pipelines] INFO: Cleaned article: tribune:2638446 | characters=1724 | hash=b8027d29a1b6
+2026-11-03 21:15:08,783 [truthlens.pipelines] INFO: MongoDB new: tribune:2638446 | version=1 | fields=none
+2026-11-03 21:15:12,634 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638447/bill-hader-to-guest-star-on-quinta-brunsons-abbott-elementary | paragraphs=9 | words=287
+2026-11-03 21:15:12,637 [truthlens.pipelines] INFO: Cleaned article: tribune:2638447 | characters=1796 | hash=b6ff4b2ca1aa
+2026-11-03 21:15:12,645 [truthlens.pipelines] INFO: MongoDB new: tribune:2638447 | version=1 | fields=none
+2026-11-03 21:15:13,563 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638448/us-and-iran-review-draft-proposal-to-end-war-qatar-says | paragraphs=30 | words=800
+2026-11-03 21:15:13,568 [truthlens.pipelines] INFO: Cleaned article: tribune:2638448 | characters=5224 | hash=9c181116459c
+2026-11-03 21:15:13,574 [truthlens.pipelines] INFO: MongoDB new: tribune:2638448 | version=1 | fields=none
+2026-11-03 21:15:19,406 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638449/nathan-fielder-was-not-supposed-to-appear-you-can-see-everything | paragraphs=9 | words=287
+2026-11-03 21:15:19,408 [truthlens.pipelines] INFO: Cleaned article: tribune:2638449 | characters=1970 | hash=1d2855e8652c
+2026-11-03 21:15:19,415 [truthlens.pipelines] INFO: MongoDB new: tribune:2638449 | version=1 | fields=none
+2026-11-03 21:15:23,030 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638450/pakistan-offers-to-share-energy-crisis-management-experience-with-bangladesh | paragraphs=23 | words=711
+2026-11-03 21:15:23,034 [truthlens.pipelines] INFO: Cleaned article: tribune:2638450 | characters=5099 | hash=ea06447b2da5
+2026-11-03 21:15:23,040 [truthlens.pipelines] INFO: MongoDB new: tribune:2638450 | version=1 | fields=none
+2026-11-03 21:15:24,750 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638451/phc-sends-petitions-challenging-detentions-of-afridi-others-to-cj-to-form-larger-bench | paragraphs=18 | words=764
+2026-11-03 21:15:24,754 [truthlens.pipelines] INFO: Cleaned article: tribune:2638451 | characters=4860 | hash=7931a1180175
+2026-11-03 21:15:24,760 [truthlens.pipelines] INFO: MongoDB new: tribune:2638451 | version=1 | fields=none
+2026-11-03 21:15:31,564 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638452/paris-jackson-seeks-600m-trust-fund-from-michael-jacksons-estate | paragraphs=9 | words=328
+2026-11-03 21:15:31,567 [truthlens.pipelines] INFO: Cleaned article: tribune:2638452 | characters=2102 | hash=b55f19879330
+2026-11-03 21:15:31,574 [truthlens.pipelines] INFO: MongoDB new: tribune:2638452 | version=1 | fields=none
+2026-11-03 21:15:35,419 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638453/tenerife-striker-dies-after-collision | paragraphs=1 | words=469
+2026-11-03 21:15:35,420 [truthlens.pipelines] INFO: Cleaned article: tribune:2638453 | characters=2857 | hash=4cccff4f9039
+2026-11-03 21:15:35,427 [truthlens.pipelines] INFO: MongoDB new: tribune:2638453 | version=1 | fields=none
+2026-11-03 21:15:39,706 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638454/zohran-mamdani-trolls-jd-vances-new-york-city-boasts-with-viral-subway-meme | paragraphs=10 | words=241
+2026-11-03 21:15:39,708 [truthlens.pipelines] INFO: Cleaned article: tribune:2638454 | characters=1561 | hash=10ae55252557
+2026-11-03 21:15:39,715 [truthlens.pipelines] INFO: MongoDB new: tribune:2638454 | version=1 | fields=none
+2026-11-03 21:15:42,153 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638455/dar-reaffirms-govts-commitment-to-public-relief-in-meeting-with-ji-delegation | paragraphs=15 | words=626
+2026-11-03 21:15:42,157 [truthlens.pipelines] INFO: Cleaned article: tribune:2638455 | characters=4138 | hash=4904c9a08fab
+2026-11-03 21:15:42,165 [truthlens.pipelines] INFO: MongoDB new: tribune:2638455 | version=1 | fields=none
+2026-11-03 21:15:46,232 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638456/us-intelligence-sharing-has-fractured-under-trump-officials-say | paragraphs=32 | words=1005
+2026-11-03 21:15:46,237 [truthlens.pipelines] INFO: Cleaned article: tribune:2638456 | characters=6495 | hash=eabf93f52484
+2026-11-03 21:15:46,245 [truthlens.pipelines] INFO: MongoDB new: tribune:2638456 | version=1 | fields=none
+2026-11-03 21:15:50,204 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638457/taylor-swift-opens-up-about-why-she-hesitated-to-write-a-song-for-toy-story-5 | paragraphs=12 | words=273
+2026-11-03 21:15:50,206 [truthlens.pipelines] INFO: Cleaned article: tribune:2638457 | characters=1668 | hash=9cc007d124af
+2026-11-03 21:15:50,215 [truthlens.pipelines] INFO: MongoDB new: tribune:2638457 | version=1 | fields=none
+2026-11-03 21:15:54,836 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638458/johnny-depp-reveals-one-condition-for-returning-to-pirates-of-the-caribbean-6 | paragraphs=8 | words=292
+2026-11-03 21:15:54,838 [truthlens.pipelines] INFO: Cleaned article: tribune:2638458 | characters=1894 | hash=ce800b419ab9
+2026-11-03 21:15:54,844 [truthlens.pipelines] INFO: MongoDB new: tribune:2638458 | version=1 | fields=none
+2026-11-03 21:15:56,345 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638459/primetime-digital-release-where-to-stream-robert-pattinsons-new-thriller | paragraphs=8 | words=267
+2026-11-03 21:15:56,347 [truthlens.pipelines] INFO: Cleaned article: tribune:2638459 | characters=1744 | hash=06227c2b5be2
+2026-11-03 21:15:56,354 [truthlens.pipelines] INFO: MongoDB new: tribune:2638459 | version=1 | fields=none
+2026-11-03 21:16:00,793 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638460/experts-urge-regular-phone-updates-amid-surge-in-whatsapp-account-hijacking | paragraphs=16 | words=531
+2026-11-03 21:16:00,796 [truthlens.pipelines] INFO: Cleaned article: tribune:2638460 | characters=3605 | hash=acc2fe0c4eb3
+2026-11-03 21:16:00,803 [truthlens.pipelines] INFO: MongoDB new: tribune:2638460 | version=1 | fields=none
+2026-11-03 21:16:04,842 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638461/bomb-threats-trigger-security-alerts-at-airports-across-europe | paragraphs=22 | words=445
+2026-11-03 21:16:04,845 [truthlens.pipelines] INFO: Cleaned article: tribune:2638461 | characters=2944 | hash=5956d4ec0293
+2026-11-03 21:16:04,853 [truthlens.pipelines] INFO: MongoDB new: tribune:2638461 | version=1 | fields=none
+2026-11-03 21:16:05,222 [scrapy.extensions.logstats] INFO: Crawled 143 pages (at 17 pages/min), scraped 141 items (at 17 items/min)
+2026-11-03 21:16:09,888 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638462/apple-shares-slide-as-higher-memory-costs-fuel-margin-concerns | paragraphs=11 | words=335
+2026-11-03 21:16:09,890 [truthlens.pipelines] INFO: Cleaned article: tribune:2638462 | characters=2116 | hash=35451cbd600a
+2026-11-03 21:16:09,898 [truthlens.pipelines] INFO: MongoDB new: tribune:2638462 | version=1 | fields=none
+2026-11-03 21:16:13,149 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638463/lpg-soars-in-pakistan-forcing-rickshaw-drivers-to-cut-meals | paragraphs=18 | words=477
+2026-11-03 21:16:13,152 [truthlens.pipelines] INFO: Cleaned article: tribune:2638463 | characters=2713 | hash=6b024ec8adb8
+2026-11-03 21:16:13,160 [truthlens.pipelines] INFO: MongoDB new: tribune:2638463 | version=1 | fields=none
+2026-11-03 21:16:18,340 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638464/taylor-red-singer-nicole-taylor-dies-at-35-after-breast-cancer-battle | paragraphs=13 | words=269
+2026-11-03 21:16:18,342 [truthlens.pipelines] INFO: Cleaned article: tribune:2638464 | characters=1669 | hash=050c5f5ecc3e
+2026-11-03 21:16:18,348 [truthlens.pipelines] INFO: MongoDB new: tribune:2638464 | version=1 | fields=none
+2026-11-03 21:16:21,886 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638466/govt-says-to-expect-more-good-news-on-petroleum-prices | paragraphs=21 | words=746
+2026-11-03 21:16:21,889 [truthlens.pipelines] INFO: Cleaned article: tribune:2638466 | characters=4859 | hash=5731cd0e8823
+2026-11-03 21:16:21,895 [truthlens.pipelines] INFO: MongoDB new: tribune:2638466 | version=1 | fields=none
+2026-11-03 21:16:25,312 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638467/chinas-baidu-launches-ai-model-simulating-road-environment-for-robotaxis | paragraphs=11 | words=302
+2026-11-03 21:16:25,315 [truthlens.pipelines] INFO: Cleaned article: tribune:2638467 | characters=2085 | hash=f7d3693ac7d8
+2026-11-03 21:16:25,322 [truthlens.pipelines] INFO: MongoDB new: tribune:2638467 | version=1 | fields=none
+2026-11-03 21:16:28,098 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638468/chinese-researchers-achieve-breakthrough-in-underground-positioning-and-navigation | paragraphs=11 | words=376
+2026-11-03 21:16:28,100 [truthlens.pipelines] INFO: Cleaned article: tribune:2638468 | characters=2788 | hash=2b85cd389854
+2026-11-03 21:16:28,107 [truthlens.pipelines] INFO: MongoDB new: tribune:2638468 | version=1 | fields=none
+2026-11-03 21:16:30,437 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638469/soldier-martyred-17-terrorists-killed-in-balochistan-ibos-ispr | paragraphs=29 | words=861
+2026-11-03 21:16:30,441 [truthlens.pipelines] INFO: Cleaned article: tribune:2638469 | characters=5905 | hash=5659f3e1b3e8
+2026-11-03 21:16:30,447 [truthlens.pipelines] INFO: MongoDB new: tribune:2638469 | version=1 | fields=none
+2026-11-03 21:16:34,051 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638470/pcb-patrons-xi-to-face-sri-lanka-tomorrow | paragraphs=19 | words=438
+2026-11-03 21:16:34,054 [truthlens.pipelines] INFO: Cleaned article: tribune:2638470 | characters=2698 | hash=2bd968051434
+2026-11-03 21:16:34,062 [truthlens.pipelines] INFO: MongoDB new: tribune:2638470 | version=1 | fields=none
+2026-11-03 21:16:36,455 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2638471/trump-says-us-will-stop-4-billion-in-funding-to-israel-at-end-of-2026 | paragraphs=14 | words=524
+2026-11-03 21:16:36,458 [truthlens.pipelines] INFO: Cleaned article: tribune:2638471 | characters=3148 | hash=26f60189b566
+2026-11-03 21:16:36,465 [truthlens.pipelines] INFO: MongoDB new: tribune:2638471 | version=1 | fields=none
+2026-11-03 21:16:36,467 [scrapy.core.engine] INFO: Closing spider (finished)
+2026-11-03 21:16:36,467 [truthlens.export] INFO: Run JSON saved: data\runs\tribune_sitemap\tribune_sitemap_2026-11-03_21-07-05.json | items=150
+2026-11-03 21:16:36,469 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 50652,
+ 'downloader/request_count': 152,
+ 'downloader/request_method_count/GET': 152,
+ 'downloader/response_bytes': 5864885,
+ 'downloader/response_count': 152,
+ 'downloader/response_status_count/200': 152,
+ 'elapsed_time_seconds': 571.2649999999999,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2026, 11, 3, 16, 16, 36, 469522, tzinfo=datetime.timezone.utc),
+ 'httpcompression/response_bytes': 28095783,
+ 'httpcompression/response_count': 152,
+ 'item_scraped_count': 150,
+ 'items_per_minute': 15.761821366024517,
+ 'log_count/INFO': 466,
+ 'mongodb/articles_metadata_changed': 8,
+ 'mongodb/articles_new': 136,
+ 'mongodb/articles_unchanged': 6,
+ 'mongodb/snapshots_inserted': 144,
+ 'mongodb/snapshots_skipped': 6,
+ 'request_depth_max': 1,
+ 'response_received_count': 152,
+ 'responses_per_minute': 15.971978984238177,
+ 'robotstxt/request_count': 1,
+ 'robotstxt/response_count': 1,
+ 'robotstxt/response_status_count/200': 1,
+ 'scheduler/dequeued': 151,
+ 'scheduler/dequeued/memory': 151,
+ 'scheduler/enqueued': 151,
+ 'scheduler/enqueued/memory': 151,
+ 'start_time': datetime.datetime(2026, 11, 3, 16, 7, 5, 209309, tzinfo=datetime.timezone.utc)}
+2026-11-03 21:16:36,471 [scrapy.core.engine] INFO: Spider closed (finished)
+2026-11-03 21:16:36,475 [truthlens.run_reporting] INFO: Run summary saved: logs\runs\20261103T160704Z_759f326488c2431c8ace47a4febd22a5.json | status=completed

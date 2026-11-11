@@ -1,0 +1,119 @@
+2026-09-29 21:32:55 [scrapy.utils.log] INFO: Scrapy 2.19.0 started (bot: truthlens)
+2026-09-29 21:32:56 [scrapy.utils.log] INFO: Versions:
+{'lxml': '6.1.3',
+ 'libxml2': '2.11.9',
+ 'cssselect': '1.5.0',
+ 'parsel': '1.12.1',
+ 'w3lib': '2.4.1',
+ 'Twisted': '26.4.0',
+ 'Python': '3.14.7 (tags/v3.14.7:823f032, Aug  5 2026, 10:51:32) [MSC v.1944 '
+           '64 bit (AMD64)]',
+ 'pyOpenSSL': '26.4.0 (OpenSSL 4.0.2 25 Aug 2026)',
+ 'cryptography': '50.0.1',
+ 'Platform': 'Windows-10-10.0.19045-SP0'}
+2026-09-29 21:32:56 [scrapy.addons] INFO: Enabled addons:
+[]
+2026-09-29 21:32:56 [scrapy.extensions.telnet] INFO: Telnet Password: 89a926558e84c0e1
+2026-09-29 21:32:56 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.logcount.LogCount',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.feedexport.FeedExporter',
+ 'scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.remote_control.RemoteControl']
+2026-09-29 21:32:56 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'truthlens',
+ 'CONCURRENT_REQUESTS': 1,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 1,
+ 'DOWNLOAD_DELAY': 3,
+ 'DOWNLOAD_TIMEOUT': 30,
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'FEED_EXPORT_INDENT': 2,
+ 'LOG_FILE': 'logs\\geo_mongodb_ten.log',
+ 'LOG_LEVEL': 'INFO',
+ 'NEWSPIDER_MODULE': 'truthlens.spiders',
+ 'ROBOTSTXT_OBEY': True,
+ 'SPIDER_MODULES': ['truthlens.spiders'],
+ 'USER_AGENT': 'TruthLensResearchBot/0.1'}
+2026-09-29 21:32:56 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2026-09-29 21:32:56 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.start.StartSpiderMiddleware',
+ 'scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware',
+ 'scrapy.spidermiddlewares.metacopy.MetaCopyDetectionMiddleware']
+2026-09-29 21:32:57 [scrapy.middleware] INFO: Enabled item pipelines:
+['truthlens.pipelines.MongoDBPipeline']
+2026-09-29 21:32:57 [scrapy.core.engine] INFO: Spider opened
+2026-09-29 21:32:57 [truthlens.pipelines] INFO: MongoDB connected: database=truthlens
+2026-09-29 21:32:57 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2026-09-29 21:32:57 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2026-09-29 21:32:57 [scrapy.extensions.remote_control] INFO: Remote control HTTP server listening on port 59844 (job 7500-4fa103fac2714fecbcf9c054c2a0439f)
+2026-09-29 21:33:00 [geo_news] INFO: Selected 10 article URLs.
+2026-09-29 21:33:04 [geo_news] INFO: Extracted article: https://www.geo.tv/latest/684157-police-arrest-second-suspect-hunt-third-in-alleged-assault-of-azerbaijani-woman | images=1 | videos=0
+2026-09-29 21:33:04 [truthlens.pipelines] INFO: MongoDB inserted: geo:684157
+2026-09-29 21:33:08 [geo_news] INFO: Extracted article: https://www.geo.tv/latest/684174-pakistani-journalists-covering-unga-81-honoured-at-washington-reception | images=3 | videos=0
+2026-09-29 21:33:08 [truthlens.pipelines] INFO: MongoDB inserted: geo:684174
+2026-09-29 21:33:12 [geo_news] INFO: Extracted article: https://www.geo.tv/latest/684172-seven-india-backed-terrorists-killed-in-kp-balochistan-operations-security-sources | images=1 | videos=0
+2026-09-29 21:33:12 [truthlens.pipelines] INFO: MongoDB inserted: geo:684172
+2026-09-29 21:33:16 [geo_news] INFO: Extracted article: https://www.geo.tv/latest/684195-chatbot-that-called-fbi-inside-two-ai-linked-murder-plots-in-pakistan | images=1 | videos=0
+2026-09-29 21:33:16 [truthlens.pipelines] INFO: MongoDB inserted: geo:684195
+2026-09-29 21:33:20 [geo_news] INFO: Extracted article: https://www.geo.tv/latest/684186-school-van-catches-fire-after-plunging-off-road-in-murree-11-injured | images=2 | videos=1
+2026-09-29 21:33:20 [truthlens.pipelines] INFO: MongoDB inserted: geo:684186
+2026-09-29 21:33:24 [geo_news] INFO: Extracted article: https://www.geo.tv/latest/684187-atc-drops-contempt-proceedings-against-adiala-officials-after-imaan-hadis-powers-of-attorney-signed | images=1 | videos=0
+2026-09-29 21:33:24 [truthlens.pipelines] INFO: MongoDB inserted: geo:684187
+2026-09-29 21:33:27 [geo_news] INFO: Extracted article: https://www.geo.tv/latest/684192-azeri-woman-tells-court-she-was-sexually-assaulted-after-being-made-to-drink-alcohol | images=1 | videos=0
+2026-09-29 21:33:27 [truthlens.pipelines] INFO: MongoDB inserted: geo:684192
+2026-09-29 21:33:31 [geo_news] INFO: Extracted article: https://www.geo.tv/latest/684202-can-the-centre-send-a-provincial-government-home | images=1 | videos=0
+2026-09-29 21:33:31 [truthlens.pipelines] INFO: MongoDB inserted: geo:684202
+2026-09-29 21:33:34 [geo_news] INFO: Extracted article: https://www.geo.tv/latest/684218-pakistan-urges-taliban-regime-to-shun-militant-mindset-adopt-responsible-approach | images=1 | videos=1
+2026-09-29 21:33:34 [truthlens.pipelines] INFO: MongoDB inserted: geo:684218
+2026-09-29 21:33:38 [geo_news] INFO: Extracted article: https://www.geo.tv/latest/684238-pti-kp-leader-urges-party-to-further-postpone-long-march-warns-of-emergency-risk | images=1 | videos=2
+2026-09-29 21:33:38 [truthlens.pipelines] INFO: MongoDB updated: geo:684238
+2026-09-29 21:33:38 [scrapy.core.engine] INFO: Closing spider (finished)
+2026-09-29 21:33:38 [scrapy.extensions.feedexport] INFO: Stored json feed (10 items) in: data\geo_mongodb_ten.json
+2026-09-29 21:33:38 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 4332,
+ 'downloader/request_count': 12,
+ 'downloader/request_method_count/GET': 12,
+ 'downloader/response_bytes': 302606,
+ 'downloader/response_count': 12,
+ 'downloader/response_status_count/200': 12,
+ 'elapsed_time_seconds': 41.6197555000017,
+ 'feedexport/success_count/FileFeedStorage': 1,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2026, 9, 29, 16, 33, 38, 708187, tzinfo=datetime.timezone.utc),
+ 'httpcompression/response_bytes': 1627294,
+ 'httpcompression/response_count': 12,
+ 'item_scraped_count': 10,
+ 'items_per_minute': 14.634146341463415,
+ 'log_count/INFO': 25,
+ 'mongodb/articles_inserted': 9,
+ 'mongodb/articles_updated': 1,
+ 'mongodb/snapshots_inserted': 10,
+ 'request_depth_max': 1,
+ 'response_received_count': 12,
+ 'responses_per_minute': 17.5609756097561,
+ 'robotstxt/request_count': 1,
+ 'robotstxt/response_count': 1,
+ 'robotstxt/response_status_count/200': 1,
+ 'scheduler/dequeued': 11,
+ 'scheduler/dequeued/memory': 11,
+ 'scheduler/enqueued': 11,
+ 'scheduler/enqueued/memory': 11,
+ 'start_time': datetime.datetime(2026, 9, 29, 16, 32, 57, 88433, tzinfo=datetime.timezone.utc)}
+2026-09-29 21:33:38 [scrapy.core.engine] INFO: Spider closed (finished)

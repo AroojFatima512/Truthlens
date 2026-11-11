@@ -1,0 +1,112 @@
+2026-10-11 20:05:44,556 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.logcount.LogCount',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.feedexport.FeedExporter',
+ 'scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.remote_control.RemoteControl',
+ 'truthlens.run_reporting.RunReportingExtension']
+2026-10-11 20:05:44,558 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'truthlens',
+ 'CONCURRENT_REQUESTS': 1,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 1,
+ 'DOWNLOAD_DELAY': 3,
+ 'DOWNLOAD_TIMEOUT': 30,
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'FEED_EXPORT_INDENT': 2,
+ 'LOG_LEVEL': 'INFO',
+ 'NEWSPIDER_MODULE': 'truthlens.spiders',
+ 'ROBOTSTXT_OBEY': True,
+ 'SPIDER_MODULES': ['truthlens.spiders'],
+ 'USER_AGENT': 'TruthLensResearchBot/0.1'}
+2026-10-11 20:05:45,047 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2026-10-11 20:05:45,062 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.start.StartSpiderMiddleware',
+ 'scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware',
+ 'scrapy.spidermiddlewares.metacopy.MetaCopyDetectionMiddleware']
+2026-10-11 20:05:45,478 [scrapy.middleware] INFO: Enabled item pipelines:
+['truthlens.pipelines.CleaningPipeline', 'truthlens.pipelines.MongoDBPipeline']
+2026-10-11 20:05:45,479 [scrapy.core.engine] INFO: Spider opened
+2026-10-11 20:05:45,543 [truthlens.pipelines] INFO: MongoDB connected: database=truthlens
+2026-10-11 20:05:45,546 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2026-10-11 20:05:45,551 [truthlens.run_reporting] INFO: Run started: 20261011T150544Z_f625c508547c485eac1705b3ea748bd7 | source=Dawn
+2026-10-11 20:05:45,555 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2026-10-11 20:05:45,567 [scrapy.extensions.remote_control] INFO: Remote control HTTP server listening on port 56458 (job 12208-b8d3150f3e9f480dbd1b2c92f324bf01)
+2026-10-11 20:05:50,635 [dawn_news] INFO: Selected 10 article URLs.
+2026-10-11 20:05:55,437 [dawn_news] WARNING: Validation issues: https://www.dawn.com/news/2036352/emergency-governors-rule-imposed-in-kp-as-president-approves-cabinet-decision | tweet_text_missing
+2026-10-11 20:05:55,438 [dawn_news] INFO: Extracted article: https://www.dawn.com/news/2036352/emergency-governors-rule-imposed-in-kp-as-president-approves-cabinet-decision | images=1 | videos=0
+2026-10-11 20:05:55,462 [truthlens.pipelines] INFO: Cleaned article: dawn:2036352 | characters=15545 | hash=89bc99d8a7aa
+2026-10-11 20:05:55,508 [truthlens.pipelines] INFO: MongoDB new: dawn:2036352 | version=1 | fields=none
+2026-10-11 20:05:58,625 [dawn_news] INFO: Extracted article: https://www.dawn.com/news/2036383/intercity-transport-suspended-in-lahore-bus-terminals-reportedly-sealed | images=1 | videos=0
+2026-10-11 20:05:58,630 [truthlens.pipelines] INFO: Cleaned article: dawn:2036383 | characters=1910 | hash=2a591f1da79d
+2026-10-11 20:05:58,647 [truthlens.pipelines] INFO: MongoDB new: dawn:2036383 | version=1 | fields=none
+2026-10-11 20:06:02,219 [dawn_news] INFO: Extracted article: https://www.dawn.com/news/2036387/pakistan-army-deployed-in-khyber-pakhtunkhwa-in-aid-of-civil-power | images=4 | videos=0
+2026-10-11 20:06:02,226 [truthlens.pipelines] INFO: Cleaned article: dawn:2036387 | characters=7827 | hash=eb08344186dc
+2026-10-11 20:06:02,239 [truthlens.pipelines] INFO: MongoDB new: dawn:2036387 | version=1 | fields=none
+2026-10-11 20:06:05,938 [dawn_news] WARNING: Validation issues: https://www.dawn.com/news/2036382/soldier-martyred-12-terrorists-killed-as-security-forces-foil-infiltration-attempt-in-kurram-ispr | tweet_text_missing
+2026-10-11 20:06:05,938 [dawn_news] INFO: Extracted article: https://www.dawn.com/news/2036382/soldier-martyred-12-terrorists-killed-as-security-forces-foil-infiltration-attempt-in-kurram-ispr | images=0 | videos=0
+2026-10-11 20:06:05,945 [truthlens.pipelines] INFO: Cleaned article: dawn:2036382 | characters=3322 | hash=167ed6eab9a6
+2026-10-11 20:06:05,958 [truthlens.pipelines] INFO: MongoDB new: dawn:2036382 | version=1 | fields=none
+2026-10-11 20:06:10,238 [dawn_news] INFO: Skipping non-Pakistan section: branded-content | https://www.dawn.com/news/2035663/omoda-amp-jaecoo-nishat-celebrates-15000-units-as-jaecoo-j7-marks-first-anniversary-with-a-special-beige-interior-edition
+2026-10-11 20:06:12,617 [dawn_news] INFO: Skipping non-Pakistan section: branded-content | https://www.dawn.com/news/2035897/drive-fuel-free-chery-master-offers-rs129-million-upfront-savings-on-tiggo-8-super-hybrid-awd
+2026-10-11 20:06:17,085 [dawn_news] INFO: Skipping non-Pakistan section: branded-content | https://www.dawn.com/news/2035931/a-daughter-should-always-have-a-safe-place-to-call-home-master-moltyfoams-wedding-campaign
+2026-10-11 20:06:21,495 [dawn_news] INFO: Extracted article: https://www.dawn.com/news/2036396/our-fight-is-against-terrorism-kundi-chairs-first-meeting-of-kp-advisory-council | images=1 | videos=1
+2026-10-11 20:06:21,509 [truthlens.pipelines] INFO: Cleaned article: dawn:2036396 | characters=3251 | hash=8efb2df49a37
+2026-10-11 20:06:21,544 [truthlens.pipelines] INFO: MongoDB new: dawn:2036396 | version=1 | fields=none
+2026-10-11 20:06:25,421 [dawn_news] INFO: Extracted article: https://www.dawn.com/news/2036403/ttap-condemns-imposition-of-governors-rule-emergency-in-kp-calls-move-unconstitutional | images=1 | videos=0
+2026-10-11 20:06:25,447 [truthlens.pipelines] INFO: Cleaned article: dawn:2036403 | characters=6298 | hash=75f2c9c6da95
+2026-10-11 20:06:25,488 [truthlens.pipelines] INFO: MongoDB new: dawn:2036403 | version=1 | fields=none
+2026-10-11 20:06:28,856 [dawn_news] INFO: Extracted article: https://www.dawn.com/news/2036389/info-minister-alleges-nexus-between-pti-led-kp-govt-terrorists | images=2 | videos=2
+2026-10-11 20:06:28,902 [truthlens.pipelines] INFO: Cleaned article: dawn:2036389 | characters=13387 | hash=262f169cfb02
+2026-10-11 20:06:28,950 [truthlens.pipelines] INFO: MongoDB new: dawn:2036389 | version=1 | fields=none
+2026-10-11 20:06:28,970 [scrapy.core.engine] INFO: Closing spider (finished)
+2026-10-11 20:06:28,980 [scrapy.extensions.feedexport] INFO: Stored json feed (7 items) in: data\matching\dawn_20261011_200254.json
+2026-10-11 20:06:28,985 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'dawn/skipped_non_pakistan': 3,
+ 'downloader/request_bytes': 3935,
+ 'downloader/request_count': 12,
+ 'downloader/request_method_count/GET': 12,
+ 'downloader/response_bytes': 390545,
+ 'downloader/response_count': 12,
+ 'downloader/response_status_count/200': 12,
+ 'elapsed_time_seconds': 43.43202240000028,
+ 'feedexport/success_count/FileFeedStorage': 1,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2026, 10, 11, 15, 6, 28, 977650, tzinfo=datetime.timezone.utc),
+ 'httpcompression/response_bytes': 1912649,
+ 'httpcompression/response_count': 12,
+ 'item_scraped_count': 7,
+ 'items_per_minute': 9.767441860465116,
+ 'log_count/INFO': 30,
+ 'log_count/WARNING': 2,
+ 'mongodb/articles_new': 7,
+ 'mongodb/snapshots_inserted': 7,
+ 'request_depth_max': 1,
+ 'response_received_count': 12,
+ 'responses_per_minute': 16.74418604651163,
+ 'robotstxt/request_count': 1,
+ 'robotstxt/response_count': 1,
+ 'robotstxt/response_status_count/200': 1,
+ 'scheduler/dequeued': 11,
+ 'scheduler/dequeued/memory': 11,
+ 'scheduler/enqueued': 11,
+ 'scheduler/enqueued/memory': 11,
+ 'start_time': datetime.datetime(2026, 10, 11, 15, 5, 45, 545630, tzinfo=datetime.timezone.utc)}
+2026-10-11 20:06:28,997 [scrapy.core.engine] INFO: Spider closed (finished)
+2026-10-11 20:06:29,015 [truthlens.run_reporting] INFO: Run summary saved: logs\runs\20261011T150544Z_f625c508547c485eac1705b3ea748bd7.json | status=completed_with_review_items

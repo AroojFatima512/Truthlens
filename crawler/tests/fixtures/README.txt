@@ -1,0 +1,1 @@
+Saved Geo response from the user-provided ten-article sample. Used offline for parser regression tests. Missing-field cases are produced from this fixture in memory. No website requests are made by tests.

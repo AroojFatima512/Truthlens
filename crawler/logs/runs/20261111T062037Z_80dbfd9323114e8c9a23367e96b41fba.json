@@ -1,0 +1,100 @@
+{
+  "schema_version": "truthlens-run-v1",
+  "run_id": "20261111T062037Z_80dbfd9323114e8c9a23367e96b41fba",
+  "source": "Aaj News",
+  "spider": "aaj_sitemap",
+  "status": "completed_with_review_items",
+  "finish_reason": "finished",
+  "started_at": "2026-11-11T06:20:37.868952+00:00",
+  "finished_at": "2026-11-11T06:26:56.840243+00:00",
+  "duration_seconds": 378.971,
+  "log_file": "logs\\runs\\20261111T062037Z_80dbfd9323114e8c9a23367e96b41fba.log",
+  "counts": {
+    "requests_total": 102,
+    "responses_total": 102,
+    "retry_attempts": 0,
+    "items_processed": 31,
+    "new_articles": 31,
+    "unchanged_articles": 0,
+    "updated_articles": 0,
+    "baselines_created": 0,
+    "processing_changes": 0,
+    "snapshots_inserted": 31,
+    "snapshots_skipped": 0,
+    "review_only_records": 0,
+    "records_with_review_flags": 2,
+    "stale_observations": 0,
+    "replayed_observations": 0,
+    "rejected_records": 0,
+    "failed_requests": 0,
+    "item_errors": 0,
+    "spider_errors": 0
+  },
+  "failed_requests": [],
+  "rejected_records": [],
+  "review_records": [
+    {
+      "article_key": "aaj:330480134",
+      "url": "https://english.aaj.tv/news/330480134/bilawal-urges-pm-to-mend-ties-with-allies-avoid-opposition-clash",
+      "change_status": "new",
+      "validation_issues": [
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "aaj:330480141",
+      "url": "https://english.aaj.tv/news/330480141/remittances-hit-39bn-in-october-up-14-on-year",
+      "change_status": "new",
+      "validation_issues": [
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": []
+    }
+  ],
+  "item_errors": [],
+  "spider_errors": [],
+  "http_status_counts": {
+    "200": 102
+  },
+  "download_attempt_exceptions": {},
+  "scrapy_stats": {
+    "start_time": "2026-11-11 06:20:38.885141+00:00",
+    "log_count/INFO": 179,
+    "scheduler/enqueued/memory": 101,
+    "scheduler/enqueued": 101,
+    "scheduler/dequeued/memory": 101,
+    "scheduler/dequeued": 101,
+    "downloader/request_count": 102,
+    "downloader/request_method_count/GET": 102,
+    "downloader/request_bytes": 35365,
+    "downloader/response_count": 102,
+    "downloader/response_status_count/200": 102,
+    "downloader/response_bytes": 3275724,
+    "httpcompression/response_bytes": 14534528,
+    "httpcompression/response_count": 102,
+    "response_received_count": 102,
+    "robotstxt/response_count": 1,
+    "robotstxt/response_status_count/200": 1,
+    "robotstxt/request_count": 1,
+    "request_depth_max": 1,
+    "aaj_sitemap/skipped_section": 69,
+    "log_count/WARNING": 2,
+    "mongodb/snapshots_inserted": 31,
+    "mongodb/articles_new": 31,
+    "item_scraped_count": 31,
+    "elapsed_time_seconds": 377.9539999999997,
+    "finish_time": "2026-11-11 06:26:56.836220+00:00",
+    "finish_reason": "finished",
+    "responses_per_minute": 16.23342175066313,
+    "items_per_minute": 4.93368700265252
+  },
+  "notes": [
+    "requests_total includes robots.txt, listing pages, redirects, retries and article requests.",
+    "failed_requests lists terminal failures reported by the spider errback; retried attempts are separate.",
+    "review flags do not mean a record was dropped; review-only records are retained as snapshots.",
+    "updated_articles excludes new baselines and processing-method changes.",
+    "snapshots_inserted can include baselines and review records; it is not a count of article edits.",
+    "A running summary left behind after a forced termination is incomplete."
+  ]
+}

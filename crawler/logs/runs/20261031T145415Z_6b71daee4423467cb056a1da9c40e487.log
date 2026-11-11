@@ -1,0 +1,103 @@
+2026-10-31 19:54:15,975 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.logcount.LogCount',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.feedexport.FeedExporter',
+ 'scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.remote_control.RemoteControl',
+ 'truthlens.run_reporting.RunReportingExtension']
+2026-10-31 19:54:15,977 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'truthlens',
+ 'CONCURRENT_REQUESTS': 1,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 1,
+ 'DOWNLOAD_DELAY': 3,
+ 'DOWNLOAD_TIMEOUT': 30,
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'FEED_EXPORT_INDENT': 2,
+ 'LOG_LEVEL': 'INFO',
+ 'NEWSPIDER_MODULE': 'truthlens.spiders',
+ 'ROBOTSTXT_OBEY': True,
+ 'SPIDER_MODULES': ['truthlens.spiders'],
+ 'USER_AGENT': 'TruthLensResearchBot/0.1'}
+2026-10-31 19:54:16,328 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2026-10-31 19:54:16,333 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.start.StartSpiderMiddleware',
+ 'scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware',
+ 'scrapy.spidermiddlewares.metacopy.MetaCopyDetectionMiddleware']
+2026-10-31 19:54:16,448 [scrapy.middleware] INFO: Enabled item pipelines:
+['truthlens.pipelines.CleaningPipeline', 'truthlens.pipelines.MongoDBPipeline']
+2026-10-31 19:54:16,448 [scrapy.core.engine] INFO: Spider opened
+2026-10-31 19:54:16,509 [truthlens.pipelines] INFO: MongoDB connected: database=truthlens
+2026-10-31 19:54:16,511 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2026-10-31 19:54:16,516 [truthlens.run_reporting] INFO: Run started: 20261031T145415Z_6b71daee4423467cb056a1da9c40e487 | source=Express Tribune
+2026-10-31 19:54:16,518 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2026-10-31 19:54:16,522 [scrapy.extensions.remote_control] INFO: Remote control HTTP server listening on port 60685 (job 12528-97530b57a518488e82e75f2cc3ac4616)
+2026-10-31 19:54:21,042 [tribune_sitemap] INFO: Sitemap: selected 10 article URLs.
+2026-10-31 19:54:26,523 [tribune_sitemap] INFO: Skipping section sports | https://tribune.com.pk/story/2637927/west-indies-crush-bangladesh-in-first-test
+2026-10-31 19:54:30,973 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2637928/uk-pm-burnham-says-he-is-open-to-formal-apology-for-slavery-but-rules-out-reparations | paragraphs=9 | words=305
+2026-10-31 19:54:30,978 [truthlens.pipelines] INFO: Cleaned article: tribune:2637928 | characters=1961 | hash=4c525d021026
+2026-10-31 19:54:30,988 [truthlens.pipelines] INFO: MongoDB new: tribune:2637928 | version=1 | fields=none
+2026-10-31 19:54:34,287 [tribune_sitemap] INFO: Skipping section entertainment | https://tribune.com.pk/story/2637929/it-welcome-to-derry-drops-surprise-halloween-episode-on-hbo-max
+2026-10-31 19:54:37,975 [tribune_sitemap] INFO: Skipping section sports | https://tribune.com.pk/story/2637934/masood-khan-receives-warm-welcome-after-completing-peshawar-karachi-run
+2026-10-31 19:54:42,360 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2637935/rawalpindi-police-says-legal-action-underway-after-man-dies-of-police-brutality-at-taxila-check-post | paragraphs=14 | words=498
+2026-10-31 19:54:42,362 [truthlens.pipelines] INFO: Cleaned article: tribune:2637935 | characters=3291 | hash=29e705fd951e
+2026-10-31 19:54:42,370 [truthlens.pipelines] INFO: MongoDB new: tribune:2637935 | version=1 | fields=none
+2026-10-31 19:54:47,627 [tribune_sitemap] INFO: Skipping section sports | https://tribune.com.pk/story/2637936/south-africa-beat-australia-to-win-test-series
+2026-10-31 19:54:51,052 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2637937/police-constable-martyred-two-injured-in-firing-at-lakki-marwat-judicial-complex | paragraphs=12 | words=368
+2026-10-31 19:54:51,055 [truthlens.pipelines] INFO: Cleaned article: tribune:2637937 | characters=2503 | hash=f96c91bf5442
+2026-10-31 19:54:51,063 [truthlens.pipelines] INFO: MongoDB new: tribune:2637937 | version=1 | fields=none
+2026-10-31 19:54:55,271 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2637938/syria-says-discussions-underway-on-joining-makkah-defence-alliance | paragraphs=12 | words=293
+2026-10-31 19:54:55,275 [truthlens.pipelines] INFO: Cleaned article: tribune:2637938 | characters=1872 | hash=b7b0fa650742
+2026-10-31 19:54:55,282 [truthlens.pipelines] INFO: MongoDB new: tribune:2637938 | version=1 | fields=none
+2026-10-31 19:54:59,702 [tribune_sitemap] INFO: Skipping section technology | https://tribune.com.pk/story/2637939/power-bills-and-data-centers-cast-rare-spotlight-on-utilities-in-us-midterms
+2026-10-31 19:55:04,248 [tribune_sitemap] INFO: Skipping section technology | https://tribune.com.pk/story/2637940/chinas-first-shipborne-stealth-combat-drone-completes-maiden-carrier-landing
+2026-10-31 19:55:04,250 [scrapy.core.engine] INFO: Closing spider (finished)
+2026-10-31 19:55:04,254 [scrapy.extensions.feedexport] INFO: Stored json feed (4 items) in: data\tribune_test.json
+2026-10-31 19:55:04,256 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 3983,
+ 'downloader/request_count': 12,
+ 'downloader/request_method_count/GET': 12,
+ 'downloader/response_bytes': 394683,
+ 'downloader/response_count': 12,
+ 'downloader/response_status_count/200': 12,
+ 'elapsed_time_seconds': 47.73500000000058,
+ 'feedexport/success_count/FileFeedStorage': 1,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2026, 10, 31, 14, 55, 4, 254035, tzinfo=datetime.timezone.utc),
+ 'httpcompression/response_bytes': 1902159,
+ 'httpcompression/response_count': 12,
+ 'item_scraped_count': 4,
+ 'items_per_minute': 5.1063829787234045,
+ 'log_count/INFO': 24,
+ 'mongodb/articles_new': 4,
+ 'mongodb/snapshots_inserted': 4,
+ 'request_depth_max': 1,
+ 'response_received_count': 12,
+ 'responses_per_minute': 15.319148936170214,
+ 'robotstxt/request_count': 1,
+ 'robotstxt/response_count': 1,
+ 'robotstxt/response_status_count/200': 1,
+ 'scheduler/dequeued': 11,
+ 'scheduler/dequeued/memory': 11,
+ 'scheduler/enqueued': 11,
+ 'scheduler/enqueued/memory': 11,
+ 'start_time': datetime.datetime(2026, 10, 31, 14, 54, 16, 510637, tzinfo=datetime.timezone.utc),
+ 'tribune_sitemap/skipped_section': 6}
+2026-10-31 19:55:04,261 [scrapy.core.engine] INFO: Spider closed (finished)
+2026-10-31 19:55:04,268 [truthlens.run_reporting] INFO: Run summary saved: logs\runs\20261031T145415Z_6b71daee4423467cb056a1da9c40e487.json | status=completed

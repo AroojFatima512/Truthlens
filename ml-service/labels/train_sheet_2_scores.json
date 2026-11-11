@@ -1,0 +1,23 @@
+{
+  "bias": {
+    "labelled_by_both": 0,
+    "agreement": null,
+    "cohens_kappa": null,
+    "gold_sentences": 0,
+    "gold_distribution": {},
+    "models": {
+      "DeBERTa (yours)": null,
+      "Second model": null
+    }
+  },
+  "sentiment": {
+    "labelled_by_both": 0,
+    "agreement": null,
+    "cohens_kappa": null,
+    "gold_sentences": 0,
+    "gold_distribution": {},
+    "models": {
+      "Sentiment model": null
+    }
+  }
+}

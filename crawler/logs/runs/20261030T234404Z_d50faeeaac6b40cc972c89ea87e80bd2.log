@@ -1,0 +1,172 @@
+2026-10-31 04:44:04,511 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.logcount.LogCount',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.remote_control.RemoteControl',
+ 'truthlens.run_reporting.RunReportingExtension']
+2026-10-31 04:44:04,514 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'truthlens',
+ 'CONCURRENT_REQUESTS': 1,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 1,
+ 'DOWNLOAD_DELAY': 3,
+ 'DOWNLOAD_TIMEOUT': 30,
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'FEED_EXPORT_INDENT': 2,
+ 'LOG_LEVEL': 'INFO',
+ 'NEWSPIDER_MODULE': 'truthlens.spiders',
+ 'ROBOTSTXT_OBEY': True,
+ 'SPIDER_MODULES': ['truthlens.spiders'],
+ 'USER_AGENT': 'TruthLensResearchBot/0.1'}
+2026-10-31 04:44:05,112 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2026-10-31 04:44:05,120 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.start.StartSpiderMiddleware',
+ 'scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware',
+ 'scrapy.spidermiddlewares.metacopy.MetaCopyDetectionMiddleware']
+2026-10-31 04:44:05,279 [scrapy.middleware] INFO: Enabled item pipelines:
+['truthlens.pipelines.CleaningPipeline', 'truthlens.pipelines.MongoDBPipeline']
+2026-10-31 04:44:05,280 [scrapy.core.engine] INFO: Spider opened
+2026-10-31 04:44:05,325 [truthlens.pipelines] INFO: MongoDB connected: database=truthlens
+2026-10-31 04:44:05,327 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2026-10-31 04:44:05,331 [truthlens.run_reporting] INFO: Run started: 20261030T234404Z_d50faeeaac6b40cc972c89ea87e80bd2 | source=Dawn
+2026-10-31 04:44:05,334 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2026-10-31 04:44:05,338 [scrapy.extensions.remote_control] INFO: Remote control HTTP server listening on port 56441 (job 7952-5919c15f6d7e4188a897b40bf6681706)
+2026-10-31 04:44:08,932 [dawn_sitemap] INFO: Sitemap: selected 40 article URLs.
+2026-10-31 04:44:12,032 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041092/tyre-makers-face-electronic-surveillance | images=0 | videos=0
+2026-10-31 04:44:12,037 [truthlens.pipelines] INFO: Cleaned article: dawn:2041092 | characters=3395 | hash=b88c78f7378d
+2026-10-31 04:44:12,056 [truthlens.pipelines] INFO: MongoDB new: dawn:2041092 | version=1 | fields=none
+2026-10-31 04:44:15,437 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041093/pm-shehbaz-forms-body-to-review-proposed-lpg-policy-reforms | images=0 | videos=0
+2026-10-31 04:44:15,447 [truthlens.pipelines] INFO: Cleaned article: dawn:2041093 | characters=4689 | hash=26e881dea9fb
+2026-10-31 04:44:15,466 [truthlens.pipelines] INFO: MongoDB new: dawn:2041093 | version=1 | fields=none
+2026-10-31 04:44:18,153 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041106/bugti-stresses-collective-efforts-to-combat-terrorism | images=0 | videos=0
+2026-10-31 04:44:18,159 [truthlens.pipelines] INFO: Cleaned article: dawn:2041106 | characters=2979 | hash=a38b42082621
+2026-10-31 04:44:18,174 [truthlens.pipelines] INFO: MongoDB new: dawn:2041106 | version=1 | fields=none
+2026-10-31 04:44:21,534 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041107/makkah-pact-badr-accord-latest-milestones-in-ties-with-pakistan-says-turkish-envoy | images=1 | videos=0
+2026-10-31 04:44:21,538 [truthlens.pipelines] INFO: Cleaned article: dawn:2041107 | characters=1244 | hash=c7737c5c27f7
+2026-10-31 04:44:21,552 [truthlens.pipelines] INFO: MongoDB new: dawn:2041107 | version=1 | fields=none
+2026-10-31 04:44:23,736 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041108/bill-for-quarterly-gas-price-adjustments-tabled-in-senate | images=0 | videos=0
+2026-10-31 04:44:23,743 [truthlens.pipelines] INFO: Cleaned article: dawn:2041108 | characters=3860 | hash=d645682a6d98
+2026-10-31 04:44:23,760 [truthlens.pipelines] INFO: MongoDB new: dawn:2041108 | version=1 | fields=none
+2026-10-31 04:44:27,445 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041115/smoke-emitting-vehicles-fined | images=0 | videos=0
+2026-10-31 04:44:27,447 [truthlens.pipelines] INFO: Cleaned article: dawn:2041115 | characters=732 | hash=5ab35685c82a
+2026-10-31 04:44:27,461 [truthlens.pipelines] INFO: MongoDB new: dawn:2041115 | version=1 | fields=none
+2026-10-31 04:44:32,192 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041100/two-brothers-shot-dead-in-nasirabad | images=0 | videos=0
+2026-10-31 04:44:32,195 [truthlens.pipelines] INFO: Cleaned article: dawn:2041100 | characters=652 | hash=32db5259c292
+2026-10-31 04:44:32,208 [truthlens.pipelines] INFO: MongoDB new: dawn:2041100 | version=1 | fields=none
+2026-10-31 04:44:36,120 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041101/jui-f-slams-ministers-remarks-against-fazl | images=0 | videos=0
+2026-10-31 04:44:36,124 [truthlens.pipelines] INFO: Cleaned article: dawn:2041101 | characters=1368 | hash=58b45726f36a
+2026-10-31 04:44:36,137 [truthlens.pipelines] INFO: MongoDB new: dawn:2041101 | version=1 | fields=none
+2026-10-31 04:44:39,457 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041102/anp-announces-mpc-over-asghar-achakzais-arrest | images=0 | videos=0
+2026-10-31 04:44:39,461 [truthlens.pipelines] INFO: Cleaned article: dawn:2041102 | characters=1757 | hash=ee4892ef75d6
+2026-10-31 04:44:39,475 [truthlens.pipelines] INFO: MongoDB new: dawn:2041102 | version=1 | fields=none
+2026-10-31 04:44:42,384 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041103/four-of-a-family-found-dead-in-skardu-home | images=0 | videos=0
+2026-10-31 04:44:42,389 [truthlens.pipelines] INFO: Cleaned article: dawn:2041103 | characters=2000 | hash=1109172952b1
+2026-10-31 04:44:42,404 [truthlens.pipelines] INFO: MongoDB new: dawn:2041103 | version=1 | fields=none
+2026-10-31 04:44:46,157 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041104/workplace-harassment-goes-beyond-sexual-conduct | images=0 | videos=0
+2026-10-31 04:44:46,164 [truthlens.pipelines] INFO: Cleaned article: dawn:2041104 | characters=3637 | hash=62678e61b265
+2026-10-31 04:44:46,180 [truthlens.pipelines] INFO: MongoDB new: dawn:2041104 | version=1 | fields=none
+2026-10-31 04:44:50,530 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041105/army-targets-afghan-border-positions | images=0 | videos=0
+2026-10-31 04:44:50,535 [truthlens.pipelines] INFO: Cleaned article: dawn:2041105 | characters=1619 | hash=9975ad36eef2
+2026-10-31 04:44:50,549 [truthlens.pipelines] INFO: MongoDB new: dawn:2041105 | version=1 | fields=none
+2026-10-31 04:44:54,692 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041094/netanyahus-path-to-power-becomes-complicated | images=1 | videos=0
+2026-10-31 04:44:54,703 [truthlens.pipelines] INFO: Cleaned article: dawn:2041094 | characters=4373 | hash=bb7eb3142d80
+2026-10-31 04:44:54,721 [truthlens.pipelines] INFO: MongoDB new: dawn:2041094 | version=1 | fields=none
+2026-10-31 04:44:58,176 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041095/barbs-fly-in-senate-over-rising-poverty-womens-detention | images=0 | videos=0
+2026-10-31 04:44:58,187 [truthlens.pipelines] INFO: Cleaned article: dawn:2041095 | characters=3539 | hash=21ea0c8ee40e
+2026-10-31 04:44:58,206 [truthlens.pipelines] INFO: MongoDB new: dawn:2041095 | version=1 | fields=none
+2026-10-31 04:45:02,635 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041096/pakistan-warns-of-taliban-repression-as-un-expert-urges-accountability | images=0 | videos=0
+2026-10-31 04:45:02,642 [truthlens.pipelines] INFO: Cleaned article: dawn:2041096 | characters=2631 | hash=d58f96abe8e9
+2026-10-31 04:45:02,656 [truthlens.pipelines] INFO: MongoDB new: dawn:2041096 | version=1 | fields=none
+2026-10-31 04:45:05,341 [scrapy.extensions.logstats] INFO: Crawled 17 pages (at 17 pages/min), scraped 15 items (at 15 items/min)
+2026-10-31 04:45:07,192 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041097/us-orders-staff-to-leave-s-arabia-over-security-risks | images=0 | videos=0
+2026-10-31 04:45:07,196 [truthlens.pipelines] INFO: Cleaned article: dawn:2041097 | characters=1706 | hash=d7dc3e1f8cbc
+2026-10-31 04:45:07,204 [truthlens.pipelines] INFO: MongoDB new: dawn:2041097 | version=1 | fields=none
+2026-10-31 04:45:11,319 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041098/qatari-delegation-arrives-in-tehran-for-peace-talks | images=1 | videos=0
+2026-10-31 04:45:11,328 [truthlens.pipelines] INFO: Cleaned article: dawn:2041098 | characters=3033 | hash=2f76ab34e021
+2026-10-31 04:45:11,343 [truthlens.pipelines] INFO: MongoDB new: dawn:2041098 | version=1 | fields=none
+2026-10-31 04:45:13,973 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041099/hackers-steal-63bn-from-binance-in-massive-crypto-heist | images=0 | videos=0
+2026-10-31 04:45:13,981 [truthlens.pipelines] INFO: Cleaned article: dawn:2041099 | characters=4030 | hash=09b9bcc8c257
+2026-10-31 04:45:13,996 [truthlens.pipelines] INFO: MongoDB new: dawn:2041099 | version=1 | fields=none
+2026-10-31 04:45:18,643 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041109/pakistan-singapore-agree-to-prioritise-trade-expansion | images=1 | videos=0
+2026-10-31 04:45:18,654 [truthlens.pipelines] INFO: Cleaned article: dawn:2041109 | characters=5925 | hash=1f3e935079b7
+2026-10-31 04:45:18,671 [truthlens.pipelines] INFO: MongoDB new: dawn:2041109 | version=1 | fields=none
+2026-10-31 04:45:22,605 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041110/kp-police-get-tech-to-monitor-counterterrorism-operations | images=0 | videos=0
+2026-10-31 04:45:22,614 [truthlens.pipelines] INFO: Cleaned article: dawn:2041110 | characters=3951 | hash=1040ce2c2e47
+2026-10-31 04:45:22,629 [truthlens.pipelines] INFO: MongoDB new: dawn:2041110 | version=1 | fields=none
+2026-10-31 04:45:26,804 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041111/ppp-presses-opposition-for-joint-electoral-reforms | images=0 | videos=0
+2026-10-31 04:45:26,813 [truthlens.pipelines] INFO: Cleaned article: dawn:2041111 | characters=4500 | hash=b1abcb8b6049
+2026-10-31 04:45:26,829 [truthlens.pipelines] INFO: MongoDB new: dawn:2041111 | version=1 | fields=none
+2026-10-31 04:45:30,852 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041112/cautiously-optimistic-on-iran-us-mediation-ispr-chief | images=0 | videos=0
+2026-10-31 04:45:30,856 [truthlens.pipelines] INFO: Cleaned article: dawn:2041112 | characters=1817 | hash=84257cdbd1e4
+2026-10-31 04:45:30,876 [truthlens.pipelines] INFO: MongoDB new: dawn:2041112 | version=1 | fields=none
+2026-10-31 04:45:35,182 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041113/islamabad-riyadh-explore-strategic-oil-storage-venture | images=0 | videos=0
+2026-10-31 04:45:35,190 [truthlens.pipelines] INFO: Cleaned article: dawn:2041113 | characters=4832 | hash=401d3d0b30bd
+2026-10-31 04:45:35,206 [truthlens.pipelines] INFO: MongoDB new: dawn:2041113 | version=1 | fields=none
+2026-10-31 04:45:38,406 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041114/fcc-warns-govt-against-ignoring-sc-verdicts | images=0 | videos=0
+2026-10-31 04:45:38,415 [truthlens.pipelines] INFO: Cleaned article: dawn:2041114 | characters=4714 | hash=b4572f634e85
+2026-10-31 04:45:38,430 [truthlens.pipelines] INFO: MongoDB new: dawn:2041114 | version=1 | fields=none
+2026-10-31 04:45:42,118 [dawn_sitemap] INFO: Skipping section newspaper supplement (Young World) | https://www.dawn.com/news/2040594/making-peace-with-regret
+2026-10-31 04:45:47,253 [dawn_sitemap] INFO: Skipping section newspaper feature (quiz-animals) | https://www.dawn.com/news/2040590/quiz-animals
+2026-10-31 04:45:51,961 [dawn_sitemap] INFO: Skipping section newspaper feature (poets-corner) | https://www.dawn.com/news/2040592/poets-corner
+2026-10-31 04:45:55,564 [dawn_sitemap] INFO: Skipping section newspaper feature (mailbox) | https://www.dawn.com/news/2040593/mailbox
+2026-10-31 04:45:58,291 [dawn_sitemap] INFO: Skipping section newspaper feature (movie-review-the-magic-faraway-tree) | https://www.dawn.com/news/2040832/movie-review-the-magic-faraway-tree
+2026-10-31 04:46:00,119 [dawn_sitemap] INFO: Skipping section newspaper feature (cook-it-yourself) | https://www.dawn.com/news/2040833/cook-it-yourself
+2026-10-31 04:46:03,279 [dawn_sitemap] INFO: Skipping section newspaper feature (story-time-the-courage-to-speak) | https://www.dawn.com/news/2040645/story-time-the-courage-to-speak
+2026-10-31 04:46:05,336 [scrapy.extensions.logstats] INFO: Crawled 33 pages (at 16 pages/min), scraped 24 items (at 9 items/min)
+2026-10-31 04:46:06,679 [dawn_sitemap] INFO: Skipping section newspaper feature (art-corner) | https://www.dawn.com/news/2040675/art-corner
+2026-10-31 04:46:10,616 [dawn_sitemap] INFO: Skipping section newspaper feature (website-review-draw-it-without-looking) | https://www.dawn.com/news/2040679/website-review-draw-it-without-looking
+2026-10-31 04:46:15,320 [dawn_sitemap] INFO: Skipping section newspaper feature (story-time-the-haunted-house) | https://www.dawn.com/news/2040681/story-time-the-haunted-house
+2026-10-31 04:46:18,622 [dawn_sitemap] INFO: Skipping section newspaper feature (the-weekly-weird) | https://www.dawn.com/news/2040686/the-weekly-weird
+2026-10-31 04:46:22,372 [dawn_sitemap] INFO: Skipping section newspaper feature (spotlight) | https://www.dawn.com/news/2040687/spotlight
+2026-10-31 04:46:26,549 [dawn_sitemap] INFO: Skipping section newspaper feature (story-time-the-passport-problem) | https://www.dawn.com/news/2040829/story-time-the-passport-problem
+2026-10-31 04:46:30,833 [dawn_sitemap] INFO: Skipping section newspaper feature (opinion-the-beauty-of-detachment) | https://www.dawn.com/news/2040830/opinion-the-beauty-of-detachment
+2026-10-31 04:46:34,792 [dawn_sitemap] INFO: Skipping section newspaper feature (story-time-a-universe-of-questions) | https://www.dawn.com/news/2040831/story-time-a-universe-of-questions
+2026-10-31 04:46:37,884 [dawn_sitemap] INFO: Skipping section newspaper feature (book-review-who-was-winston-churchill) | https://www.dawn.com/news/2040644/book-review-who-was-winston-churchill
+2026-10-31 04:46:37,887 [scrapy.core.engine] INFO: Closing spider (finished)
+2026-10-31 04:46:37,894 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'dawn_sitemap/skipped_section': 16,
+ 'downloader/request_bytes': 12827,
+ 'downloader/request_count': 42,
+ 'downloader/request_method_count/GET': 42,
+ 'downloader/response_bytes': 1453528,
+ 'downloader/response_count': 42,
+ 'downloader/response_status_count/200': 42,
+ 'elapsed_time_seconds': 152.56200000000536,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2026, 10, 30, 23, 46, 37, 892455, tzinfo=datetime.timezone.utc),
+ 'httpcompression/response_bytes': 7320434,
+ 'httpcompression/response_count': 42,
+ 'item_scraped_count': 24,
+ 'items_per_minute': 9.473684210526317,
+ 'log_count/INFO': 96,
+ 'mongodb/articles_new': 24,
+ 'mongodb/snapshots_inserted': 24,
+ 'request_depth_max': 1,
+ 'response_received_count': 42,
+ 'responses_per_minute': 16.578947368421055,
+ 'robotstxt/request_count': 1,
+ 'robotstxt/response_count': 1,
+ 'robotstxt/response_status_count/200': 1,
+ 'scheduler/dequeued': 41,
+ 'scheduler/dequeued/memory': 41,
+ 'scheduler/enqueued': 41,
+ 'scheduler/enqueued/memory': 41,
+ 'start_time': datetime.datetime(2026, 10, 30, 23, 44, 5, 326955, tzinfo=datetime.timezone.utc)}
+2026-10-31 04:46:37,898 [scrapy.core.engine] INFO: Spider closed (finished)
+2026-10-31 04:46:37,905 [truthlens.run_reporting] INFO: Run summary saved: logs\runs\20261030T234404Z_d50faeeaac6b40cc972c89ea87e80bd2.json | status=completed

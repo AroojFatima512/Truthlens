@@ -1,0 +1,117 @@
+2026-10-31 21:00:24,915 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.logcount.LogCount',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.feedexport.FeedExporter',
+ 'scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.remote_control.RemoteControl',
+ 'truthlens.run_reporting.RunReportingExtension']
+2026-10-31 21:00:24,916 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'truthlens',
+ 'CONCURRENT_REQUESTS': 1,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 1,
+ 'DOWNLOAD_DELAY': 3,
+ 'DOWNLOAD_TIMEOUT': 30,
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'FEED_EXPORT_INDENT': 2,
+ 'LOG_LEVEL': 'INFO',
+ 'NEWSPIDER_MODULE': 'truthlens.spiders',
+ 'ROBOTSTXT_OBEY': True,
+ 'SPIDER_MODULES': ['truthlens.spiders'],
+ 'USER_AGENT': 'TruthLensResearchBot/0.1'}
+2026-10-31 21:00:25,383 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2026-10-31 21:00:25,389 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.start.StartSpiderMiddleware',
+ 'scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware',
+ 'scrapy.spidermiddlewares.metacopy.MetaCopyDetectionMiddleware']
+2026-10-31 21:00:25,531 [scrapy.middleware] INFO: Enabled item pipelines:
+['truthlens.pipelines.CleaningPipeline', 'truthlens.pipelines.MongoDBPipeline']
+2026-10-31 21:00:25,532 [scrapy.core.engine] INFO: Spider opened
+2026-10-31 21:00:25,566 [truthlens.pipelines] INFO: MongoDB connected: database=truthlens
+2026-10-31 21:00:25,567 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2026-10-31 21:00:25,571 [truthlens.run_reporting] INFO: Run started: 20261031T160024Z_b838f442a1fc4714a45ee53ad158b63e | source=The Nation
+2026-10-31 21:00:25,576 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2026-10-31 21:00:25,579 [scrapy.extensions.remote_control] INFO: Remote control HTTP server listening on port 51855 (job 2436-bced703dc5e445d2af964c82d463cec2)
+2026-10-31 21:00:30,259 [nation_sitemap] INFO: Sitemap: selected 8 article URLs.
+2026-10-31 21:00:33,312 [nation_sitemap] WARNING: Validation issues: https://www.nation.com.pk/31-Oct-2026/lahore-tops-global-pollution-rankings-citywide-aqi-reaches-253 | missing_body_container, missing_article_text
+2026-10-31 21:00:33,313 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/31-Oct-2026/lahore-tops-global-pollution-rankings-citywide-aqi-reaches-253 | paragraphs=0 | words=0
+2026-10-31 21:00:33,314 [truthlens.pipelines] WARNING: Cleaning needs review: nation:2026-10-31-lahore-tops-global-pollution-rankings-citywide-aqi-reaches-253 | missing_content_blocks, empty_cleaned_text
+2026-10-31 21:00:33,323 [truthlens.pipelines] WARNING: Saved for review only: https://www.nation.com.pk/31-Oct-2026/lahore-tops-global-pollution-rankings-citywide-aqi-reaches-253
+2026-10-31 21:00:36,166 [nation_sitemap] WARNING: Validation issues: https://www.nation.com.pk/31-Oct-2026/punjab-private-mbbs-admissions-open-till-nov-6 | missing_body_container, missing_article_text
+2026-10-31 21:00:36,168 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/31-Oct-2026/punjab-private-mbbs-admissions-open-till-nov-6 | paragraphs=0 | words=0
+2026-10-31 21:00:36,169 [truthlens.pipelines] WARNING: Cleaning needs review: nation:2026-10-31-punjab-private-mbbs-admissions-open-till-nov-6 | missing_content_blocks, empty_cleaned_text
+2026-10-31 21:00:36,174 [truthlens.pipelines] WARNING: Saved for review only: https://www.nation.com.pk/31-Oct-2026/punjab-private-mbbs-admissions-open-till-nov-6
+2026-10-31 21:00:40,235 [nation_sitemap] WARNING: Validation issues: https://www.nation.com.pk/31-Oct-2026/anti-narcotics-awareness-seminar-held-sialkot-college | missing_body_container, missing_article_text
+2026-10-31 21:00:40,236 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/31-Oct-2026/anti-narcotics-awareness-seminar-held-sialkot-college | paragraphs=0 | words=0
+2026-10-31 21:00:40,238 [truthlens.pipelines] WARNING: Cleaning needs review: nation:2026-10-31-anti-narcotics-awareness-seminar-held-sialkot-college | missing_content_blocks, empty_cleaned_text
+2026-10-31 21:00:40,246 [truthlens.pipelines] WARNING: Saved for review only: https://www.nation.com.pk/31-Oct-2026/anti-narcotics-awareness-seminar-held-sialkot-college
+2026-10-31 21:00:44,714 [nation_sitemap] WARNING: Validation issues: https://www.nation.com.pk/31-Oct-2026/french-ambassador-calls-cm-punjab-discusses-trade-investment-cooperation | missing_body_container, missing_article_text
+2026-10-31 21:00:44,715 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/31-Oct-2026/french-ambassador-calls-cm-punjab-discusses-trade-investment-cooperation | paragraphs=0 | words=0
+2026-10-31 21:00:44,716 [truthlens.pipelines] WARNING: Cleaning needs review: nation:2026-10-31-french-ambassador-calls-cm-punjab-discusses-trade-investment-cooperation | missing_content_blocks, empty_cleaned_text
+2026-10-31 21:00:44,722 [truthlens.pipelines] WARNING: Saved for review only: https://www.nation.com.pk/31-Oct-2026/french-ambassador-calls-cm-punjab-discusses-trade-investment-cooperation
+2026-10-31 21:00:47,527 [nation_sitemap] WARNING: Validation issues: https://www.nation.com.pk/31-Oct-2026/aphc-leader-links-indian-policies-kashmir-israeli-practices-palestine | missing_body_container, missing_article_text
+2026-10-31 21:00:47,529 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/31-Oct-2026/aphc-leader-links-indian-policies-kashmir-israeli-practices-palestine | paragraphs=0 | words=0
+2026-10-31 21:00:47,530 [truthlens.pipelines] WARNING: Cleaning needs review: nation:2026-10-31-aphc-leader-links-indian-policies-kashmir-israeli-practices-palestine | missing_content_blocks, empty_cleaned_text
+2026-10-31 21:00:47,534 [truthlens.pipelines] WARNING: Saved for review only: https://www.nation.com.pk/31-Oct-2026/aphc-leader-links-indian-policies-kashmir-israeli-practices-palestine
+2026-10-31 21:00:51,232 [nation_sitemap] WARNING: Validation issues: https://www.nation.com.pk/31-Oct-2026/ecp-targets-registration-174-845-women-voters-two-district-pilot-project | missing_body_container, missing_article_text
+2026-10-31 21:00:51,232 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/31-Oct-2026/ecp-targets-registration-174-845-women-voters-two-district-pilot-project | paragraphs=0 | words=0
+2026-10-31 21:00:51,233 [truthlens.pipelines] WARNING: Cleaning needs review: nation:2026-10-31-ecp-targets-registration-174-845-women-voters-two-district-pilot-project | missing_content_blocks, empty_cleaned_text
+2026-10-31 21:00:51,237 [truthlens.pipelines] WARNING: Saved for review only: https://www.nation.com.pk/31-Oct-2026/ecp-targets-registration-174-845-women-voters-two-district-pilot-project
+2026-10-31 21:00:58,154 [nation_sitemap] WARNING: Validation issues: https://www.nation.com.pk/31-Oct-2026/qatar-offers-pakistani-travellers-free-30-day-visa-arrival-four-conditions | missing_body_container, missing_article_text
+2026-10-31 21:00:58,155 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/31-Oct-2026/qatar-offers-pakistani-travellers-free-30-day-visa-arrival-four-conditions | paragraphs=0 | words=0
+2026-10-31 21:00:58,156 [truthlens.pipelines] WARNING: Cleaning needs review: nation:2026-10-31-qatar-offers-pakistani-travellers-free-30-day-visa-arrival-four-conditions | missing_content_blocks, empty_cleaned_text
+2026-10-31 21:00:58,161 [truthlens.pipelines] WARNING: Saved for review only: https://www.nation.com.pk/31-Oct-2026/qatar-offers-pakistani-travellers-free-30-day-visa-arrival-four-conditions
+2026-10-31 21:01:01,677 [nation_sitemap] WARNING: Validation issues: https://www.nation.com.pk/31-Oct-2026/dg-ispr-says-pakistan-saudi-defence-cooperation-expand-rules-wider-military-campaigns | missing_body_container, missing_article_text
+2026-10-31 21:01:01,677 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/31-Oct-2026/dg-ispr-says-pakistan-saudi-defence-cooperation-expand-rules-wider-military-campaigns | paragraphs=0 | words=0
+2026-10-31 21:01:01,679 [truthlens.pipelines] WARNING: Cleaning needs review: nation:2026-10-31-dg-ispr-says-pakistan-saudi-defence-cooperation-expand-rules-wider-military-campaigns | missing_content_blocks, empty_cleaned_text
+2026-10-31 21:01:01,683 [truthlens.pipelines] WARNING: Saved for review only: https://www.nation.com.pk/31-Oct-2026/dg-ispr-says-pakistan-saudi-defence-cooperation-expand-rules-wider-military-campaigns
+2026-10-31 21:01:01,689 [scrapy.core.engine] INFO: Closing spider (finished)
+2026-10-31 21:01:01,693 [scrapy.extensions.feedexport] INFO: Stored json feed (8 items) in: data\nation_test.json
+2026-10-31 21:01:01,696 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 3312,
+ 'downloader/request_count': 10,
+ 'downloader/request_method_count/GET': 10,
+ 'downloader/response_bytes': 213296,
+ 'downloader/response_count': 10,
+ 'downloader/response_status_count/200': 10,
+ 'elapsed_time_seconds': 36.125,
+ 'feedexport/success_count/FileFeedStorage': 1,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2026, 10, 31, 16, 1, 1, 693010, tzinfo=datetime.timezone.utc),
+ 'httpcompression/response_bytes': 1373644,
+ 'httpcompression/response_count': 10,
+ 'item_scraped_count': 8,
+ 'items_per_minute': 13.333333333333334,
+ 'log_count/INFO': 14,
+ 'log_count/WARNING': 24,
+ 'mongodb/snapshot_only': 8,
+ 'mongodb/snapshots_inserted': 8,
+ 'request_depth_max': 1,
+ 'response_received_count': 10,
+ 'responses_per_minute': 16.666666666666668,
+ 'robotstxt/request_count': 1,
+ 'robotstxt/response_count': 1,
+ 'robotstxt/response_status_count/200': 1,
+ 'scheduler/dequeued': 9,
+ 'scheduler/dequeued/memory': 9,
+ 'scheduler/enqueued': 9,
+ 'scheduler/enqueued/memory': 9,
+ 'start_time': datetime.datetime(2026, 10, 31, 16, 0, 25, 567568, tzinfo=datetime.timezone.utc)}
+2026-10-31 21:01:01,706 [scrapy.core.engine] INFO: Spider closed (finished)
+2026-10-31 21:01:01,713 [truthlens.run_reporting] INFO: Run summary saved: logs\runs\20261031T160024Z_b838f442a1fc4714a45ee53ad158b63e.json | status=completed_with_review_items

@@ -1,0 +1,427 @@
+{
+  "schema_version": "truthlens-run-v1",
+  "run_id": "20261102T134708Z_60758d3756d74c69818fcdc19fe50273",
+  "source": "Dawn",
+  "spider": "dawn_sitemap",
+  "status": "completed_with_errors",
+  "finish_reason": "finished",
+  "started_at": "2026-11-02T13:47:08.708425+00:00",
+  "finished_at": "2026-11-02T13:54:06.808067+00:00",
+  "duration_seconds": 418.1,
+  "log_file": "logs\\runs\\20261102T134708Z_60758d3756d74c69818fcdc19fe50273.log",
+  "counts": {
+    "requests_total": 114,
+    "responses_total": 114,
+    "retry_attempts": 0,
+    "items_processed": 86,
+    "new_articles": 78,
+    "unchanged_articles": 5,
+    "updated_articles": 0,
+    "baselines_created": 0,
+    "processing_changes": 0,
+    "snapshots_inserted": 81,
+    "snapshots_skipped": 5,
+    "review_only_records": 3,
+    "records_with_review_flags": 34,
+    "stale_observations": 0,
+    "replayed_observations": 0,
+    "rejected_records": 0,
+    "failed_requests": 0,
+    "item_errors": 0,
+    "spider_errors": 0
+  },
+  "failed_requests": [],
+  "rejected_records": [],
+  "review_records": [
+    {
+      "article_key": "dawn:2041565",
+      "url": "https://www.dawn.com/news/2041565/chinas-logistics-sees-improved-performance-as-industrial-upgrades-support-growth",
+      "change_status": "needs_review",
+      "validation_issues": [
+        "missing_article_text",
+        "missing_author",
+        "updated_before_published"
+      ],
+      "cleaning_issues": [
+        "missing_content_blocks",
+        "empty_cleaned_text"
+      ]
+    },
+    {
+      "article_key": "dawn:2041574",
+      "url": "https://www.dawn.com/news/2041574/oil-prices-ease-3pc-on-optimism-for-qatari-led-talks-on-ending-iran-war",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041578",
+      "url": "https://www.dawn.com/news/2041578/saudi-strikes-on-port-oil-facility-in-yemen-wound-7-houthis",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author",
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041567",
+      "url": "https://www.dawn.com/news/2041567/nine-people-dead-in-learjet-crash-in-south-florida-officials-say",
+      "change_status": "new",
+      "validation_issues": [
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041580",
+      "url": "https://www.dawn.com/news/2041580/araghchi-arrives-in-ashgabat-for-talks-on-regional-developments-bilateral-ties",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author",
+        "short_article_under_50_words",
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041586",
+      "url": "https://www.dawn.com/news/2041586/ryanair-quarterly-profit-falls-on-mideast-war-impact",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041588",
+      "url": "https://www.dawn.com/news/2041588/saudi-civil-defence-sounds-all-clear-after-alerts-in-southern-cities",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041585",
+      "url": "https://www.dawn.com/news/2041585/pakistan-assumes-chairmanship-of-sco-interbank-consortium-for-2026-27",
+      "change_status": "new",
+      "validation_issues": [
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041591",
+      "url": "https://www.dawn.com/news/2041591/china-to-send-middle-east-envoy-on-regional-trips-in-november",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author",
+        "short_article_under_50_words"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041596",
+      "url": "https://www.dawn.com/news/2041596/us-midterms-trump-campaigns-alaska-court-ruling-and-voter-turnout-dawn-news-english",
+      "change_status": "needs_review",
+      "validation_issues": [
+        "missing_article_text",
+        "missing_author"
+      ],
+      "cleaning_issues": [
+        "missing_content_blocks",
+        "empty_cleaned_text"
+      ]
+    },
+    {
+      "article_key": "dawn:2041597",
+      "url": "https://www.dawn.com/news/2041597/chinas-xi-says-middle-east-shouldnt-become-battleground-for-great-power-rivalry",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041589",
+      "url": "https://www.dawn.com/news/2041589/us-midterms-michigan-democrats-endorsement-of-republican-ruffles-critical-senate-race",
+      "change_status": "new",
+      "validation_issues": [
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041599",
+      "url": "https://www.dawn.com/news/2041599/iran-says-considering-two-day-plan-to-reopen-hormuz",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041602",
+      "url": "https://www.dawn.com/news/2041602/araghchi-says-irans-hormuz-proposal-revised-after-consultations-with-qatar-pakistan",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041601",
+      "url": "https://www.dawn.com/news/2041601/baqaei-calls-international-bodies-just-talk-not-action",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author",
+        "short_article_under_50_words",
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041604",
+      "url": "https://www.dawn.com/news/2041604/araghchi-says-us-must-lift-sanctions-end-blockade-for-hormuz-reopening",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041605",
+      "url": "https://www.dawn.com/news/2041605/iran-rules-out-transferring-60pc-enriched-uranium-to-third-country",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author",
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041600",
+      "url": "https://www.dawn.com/news/2041600/iran-says-us-biggest-threat-to-nuclear-non-proliferation-treaty",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author",
+        "short_article_under_50_words",
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041606",
+      "url": "https://www.dawn.com/news/2041606/uae-state-oil-company-announces-openai-partnership",
+      "change_status": "new",
+      "validation_issues": [
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041609",
+      "url": "https://www.dawn.com/news/2041609/chinas-foreign-minister-pushes-for-dialogue-to-resolve-middle-east-conflict",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041607",
+      "url": "https://www.dawn.com/news/2041607/saudi-arabia-briefly-activates-emergency-alerts-in-3-cities-amid-hostilities-with-yemens-houthis",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author",
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041612",
+      "url": "https://www.dawn.com/news/2041612/iranians-have-left-doha-talks-draft-proposal-for-us-deal-being-circulated-official-says",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author",
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041615",
+      "url": "https://www.dawn.com/news/2041615/oil-drops-over-4pc-on-hopes-of-progress-in-talks-on-ending-us-iran-war",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041617",
+      "url": "https://www.dawn.com/news/2041617/kuwait-lifts-oil-output-to-highest-since-start-of-iran-war-source-says",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041618",
+      "url": "https://www.dawn.com/news/2041618/uae-to-protect-energy-infrastructure-invest-in-new-export-routes-to-prepare-for-iran-war-minister-says",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041619",
+      "url": "https://www.dawn.com/news/2041619/china-fm-tells-iran-official-beijing-supports-safeguarding-sovereignty",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041622",
+      "url": "https://www.dawn.com/news/2041622/us-backed-44-billion-lng-project-in-pakistan-what-you-need-to-know-dawn-news-english",
+      "change_status": "needs_review",
+      "validation_issues": [
+        "missing_article_text",
+        "missing_author"
+      ],
+      "cleaning_issues": [
+        "missing_content_blocks",
+        "empty_cleaned_text"
+      ]
+    },
+    {
+      "article_key": "dawn:2041623",
+      "url": "https://www.dawn.com/news/2041623/bill-clinton-criticises-us-attack-on-iran-says-war-lacked-careful-planning",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author",
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041625",
+      "url": "https://www.dawn.com/news/2041625/araghchi-meredov-discuss-regional-developments-economic-cooperation",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author",
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041614",
+      "url": "https://www.dawn.com/news/2041614/uae-energy-minister-says-course-of-iran-war-cannot-be-predicted-but-we-will-be-more-prepared",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author",
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041628",
+      "url": "https://www.dawn.com/news/2041628/totalenergies-chief-sees-no-gas-shortage-in-europe-this-winter",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041629",
+      "url": "https://www.dawn.com/news/2041629/tanker-hits-mine-catches-fire-in-restricted-high-risk-area-near-strait-of-hormuz-iranian-navy",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author",
+        "short_article_under_50_words",
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041630",
+      "url": "https://www.dawn.com/news/2041630/iran-ministry-claims-unprecedented-harmony-among-top-decision-making-authorities",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author",
+        "short_article_under_50_words",
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041632",
+      "url": "https://www.dawn.com/news/2041632/totalenergies-expects-iran-war-to-accelerate-energy-transition",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author"
+      ],
+      "cleaning_issues": []
+    }
+  ],
+  "item_errors": [],
+  "spider_errors": [],
+  "http_status_counts": {
+    "200": 96,
+    "302": 18
+  },
+  "download_attempt_exceptions": {},
+  "scrapy_stats": {
+    "start_time": "2026-11-02 13:47:09.243972+00:00",
+    "log_count/INFO": 272,
+    "scheduler/enqueued/memory": 113,
+    "scheduler/enqueued": 113,
+    "scheduler/dequeued/memory": 113,
+    "scheduler/dequeued": 113,
+    "downloader/request_count": 114,
+    "downloader/request_method_count/GET": 114,
+    "downloader/request_bytes": 37913,
+    "downloader/response_count": 114,
+    "downloader/response_status_count/200": 96,
+    "downloader/response_bytes": 3448929,
+    "httpcompression/response_bytes": 16584150,
+    "httpcompression/response_count": 96,
+    "response_received_count": 96,
+    "robotstxt/response_count": 1,
+    "robotstxt/response_status_count/200": 1,
+    "robotstxt/request_count": 1,
+    "request_depth_max": 1,
+    "mongodb/snapshots_inserted": 81,
+    "mongodb/articles_new": 78,
+    "item_scraped_count": 86,
+    "downloader/response_status_count/302": 18,
+    "mongodb/snapshots_skipped": 5,
+    "mongodb/articles_unchanged": 5,
+    "log_count/WARNING": 40,
+    "mongodb/snapshot_only": 3,
+    "dawn_sitemap/skipped_section": 7,
+    "offsite/domains": 2,
+    "offsite/filtered": 6,
+    "log_count/ERROR": 1,
+    "elapsed_time_seconds": 417.54699999999866,
+    "finish_time": "2026-11-02 13:54:06.801510+00:00",
+    "finish_reason": "finished",
+    "responses_per_minute": 13.81294964028777,
+    "items_per_minute": 12.37410071942446
+  },
+  "notes": [
+    "requests_total includes robots.txt, listing pages, redirects, retries and article requests.",
+    "failed_requests lists terminal failures reported by the spider errback; retried attempts are separate.",
+    "review flags do not mean a record was dropped; review-only records are retained as snapshots.",
+    "updated_articles excludes new baselines and processing-method changes.",
+    "snapshots_inserted can include baselines and review records; it is not a count of article edits.",
+    "A running summary left behind after a forced termination is incomplete."
+  ]
+}

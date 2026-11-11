@@ -1,0 +1,29 @@
+[
+  {
+    "url": "https://example.com/source-a/education-policy",
+    "source": "Source A",
+    "title": "Province announces new school funding plan",
+    "body": "The provincial government on Monday announced a new plan to fund public schools. The education minister said the plan would add 500 classrooms over three years. Opposition leaders said the budget for the plan had not been published. Teachers' unions have asked for a meeting with the minister next week.",
+    "category": "Education",
+    "author": "Staff reporter",
+    "published_at": "2026-05-01T09:00:00Z"
+  },
+  {
+    "url": "https://example.com/source-b/education-policy",
+    "source": "Source B",
+    "title": "Controversial school plan slammed as empty promise",
+    "body": "The government unveiled yet another controversial school plan on Monday, which critics slammed as an empty promise. The education minister claimed the scheme would add 500 classrooms over three years. Furious opposition leaders said the budget had been hidden from the public. Angry teachers are threatening protests across the province.",
+    "category": "Education",
+    "author": "Staff reporter",
+    "published_at": "2026-05-01T11:30:00Z"
+  },
+  {
+    "url": "https://example.com/source-c/education-policy",
+    "source": "Source C",
+    "title": "Historic school plan set to transform education",
+    "body": "In a historic move, the provincial government on Monday launched a bold plan to transform public schools. The education minister said the plan would add 500 classrooms over three years. Parents across the province welcomed the announcement.",
+    "category": "Education",
+    "author": "Staff reporter",
+    "published_at": "2026-05-01T13:00:00Z"
+  }
+]

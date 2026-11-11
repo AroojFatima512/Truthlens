@@ -1,0 +1,237 @@
+2026-11-03 21:25:57,149 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.logcount.LogCount',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.remote_control.RemoteControl',
+ 'truthlens.run_reporting.RunReportingExtension']
+2026-11-03 21:25:57,151 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'truthlens',
+ 'CONCURRENT_REQUESTS': 1,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 1,
+ 'DOWNLOAD_DELAY': 3,
+ 'DOWNLOAD_TIMEOUT': 30,
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'FEED_EXPORT_INDENT': 2,
+ 'LOG_LEVEL': 'INFO',
+ 'NEWSPIDER_MODULE': 'truthlens.spiders',
+ 'ROBOTSTXT_OBEY': True,
+ 'SPIDER_MODULES': ['truthlens.spiders'],
+ 'USER_AGENT': 'TruthLensResearchBot/0.1'}
+2026-11-03 21:25:57,457 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2026-11-03 21:25:57,462 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.start.StartSpiderMiddleware',
+ 'scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware',
+ 'scrapy.spidermiddlewares.metacopy.MetaCopyDetectionMiddleware']
+2026-11-03 21:25:57,559 [scrapy.middleware] INFO: Enabled item pipelines:
+['truthlens.pipelines.CleaningPipeline',
+ 'truthlens.pipelines.MongoDBPipeline',
+ 'truthlens.export.RunJsonExportPipeline']
+2026-11-03 21:25:57,559 [scrapy.core.engine] INFO: Spider opened
+2026-11-03 21:25:57,581 [truthlens.pipelines] INFO: MongoDB connected: database=truthlens
+2026-11-03 21:25:57,583 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2026-11-03 21:25:57,586 [truthlens.run_reporting] INFO: Run started: 20261103T162557Z_6daf7f2dad1b4ab5bee55736c1d773af | source=Aaj News
+2026-11-03 21:25:57,587 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2026-11-03 21:25:57,590 [scrapy.extensions.remote_control] INFO: Remote control HTTP server listening on port 55312 (job 17248-e899215ba7844d28bde533b8cd8429c8)
+2026-11-03 21:26:02,722 [aaj_sitemap] INFO: Sitemap: selected 100 article URLs.
+2026-11-03 21:26:06,439 [aaj_sitemap] INFO: Extracted article: https://english.aaj.tv/news/330479103/talks-with-saudi-arabia-are-ongoing-iran | paragraphs=7 | words=202
+2026-11-03 21:26:06,441 [truthlens.pipelines] INFO: Cleaned article: aaj:330479103 | characters=1325 | hash=b4804e8afec6
+2026-11-03 21:26:06,448 [truthlens.pipelines] INFO: MongoDB new: aaj:330479103 | version=1 | fields=none
+2026-11-03 21:26:10,100 [aaj_sitemap] INFO: Extracted article: https://english.aaj.tv/news/330479104/uk-adventurer-returns-home-after-28-year-trek-around-the-world | paragraphs=14 | words=425
+2026-11-03 21:26:10,102 [truthlens.pipelines] INFO: Cleaned article: aaj:330479104 | characters=2502 | hash=7320e2a1ccfe
+2026-11-03 21:26:10,108 [truthlens.pipelines] INFO: MongoDB new: aaj:330479104 | version=1 | fields=none
+2026-11-03 21:26:14,525 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330479105/trump-on-iran-us-iran-deal-iran-economy-oil-prices-drop-aaj-news
+2026-11-03 21:26:18,995 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330479106/iran-us-war-us-attack-on-iran-explosions-reported-on-qeshm-island-9am-headlines-03-nov-2026
+2026-11-03 21:26:22,921 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330479107/us-iran-deal-jd-vance-statement-no-deadline-for-further-action-aaj-news
+2026-11-03 21:26:25,294 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330479108/us-iran-deal-qatar-mediation-abbas-araghchi-talks-agreement-draft-aaj-news
+2026-11-03 21:26:29,882 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330479109/us-poll-2026-democrats-lead-by-8-points-reuters-ipsos-survey-trump-approval-aaj-news
+2026-11-03 21:26:32,576 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330479110/us-attack-on-iran-qeshm-island-amp-bandar-lengeh-us-election-2026-10am-headlines-03-nov-2026
+2026-11-03 21:26:35,687 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330479111/masoud-pezeshkian-statement-iran-us-talks-mojtaba-khamenei-iran-tensions-aaj-news
+2026-11-03 21:26:38,497 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330479112/hafizabad-road-accident-fog-causes-collision-dumper-and-motorcycle-aaj-news
+2026-11-03 21:26:40,946 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330479113/us-midterm-elections-2026-house-amp-senate-races-democrats-vs-republicans-aaj-news
+2026-11-03 21:26:45,012 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330479114/us-midterm-elections-2026-early-voting-record-democrats-vs-republicans-trump-aaj-news
+2026-11-03 21:26:49,682 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330479115/midterm-elections-in-the-us-us-iran-war-israel-imran-khan-pti-11am-headlines-03-nov-2026
+2026-11-03 21:26:53,437 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330479116/hina-javed-case-rawalpindi-investigation-family-rejects-police-inquiry-aaj-news
+2026-11-03 21:26:57,475 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330479117/sohail-afridi-case-peshawar-high-court-larger-bench-pti-leaders-aaj-news
+2026-11-03 21:26:57,590 [scrapy.extensions.logstats] INFO: Crawled 17 pages (at 17 pages/min), scraped 2 items (at 2 items/min)
+2026-11-03 21:27:00,532 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330479118/karachi-saad-qazi-case-mochko-investigation-police-inquiry-team-aaj-news
+2026-11-03 21:27:05,386 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330479119/petroleum-levy-talks-ishaq-dar-jamaat-e-islami-pakistan-aaj-news
+2026-11-03 21:27:09,266 [aaj_sitemap] INFO: Extracted article: https://english.aaj.tv/news/330479120/uk-eases-permanent-residency-rules-for-care-workers | paragraphs=18 | words=468
+2026-11-03 21:27:09,268 [truthlens.pipelines] INFO: Cleaned article: aaj:330479120 | characters=3009 | hash=085dbf4bfda5
+2026-11-03 21:27:09,273 [truthlens.pipelines] INFO: MongoDB new: aaj:330479120 | version=1 | fields=none
+2026-11-03 21:27:13,217 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330479121/us-midterm-elections-israel-election-shock-is-netanyahu-facing-12pm-headlines-03-nov-2026
+2026-11-03 21:27:15,487 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330479122/seasonal-weather-change-brings-rise-in-cold-and-flu-cases-aaj-pakistan-with-sidra-iqbal
+2026-11-03 21:27:17,896 [aaj_sitemap] INFO: Extracted article: https://english.aaj.tv/news/330479123/strong-winds-nearly-sweep-bride-away-during-istanbul-photoshoot | paragraphs=6 | words=122
+2026-11-03 21:27:17,897 [truthlens.pipelines] INFO: Cleaned article: aaj:330479123 | characters=730 | hash=f75547a80422
+2026-11-03 21:27:17,902 [truthlens.pipelines] INFO: MongoDB new: aaj:330479123 | version=1 | fields=none
+2026-11-03 21:27:22,069 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330479124/climate-change-impacts-hybrid-fruit-plants-gain-popularity-in-karachi-aaj-digital
+2026-11-03 21:27:25,562 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330479125/ecuadorian-folkloric-dance-the-unique-art-of-storytelling-through-aaj-pakistan-with-sidra-iqbal
+2026-11-03 21:27:29,506 [aaj_sitemap] INFO: Extracted article: https://english.aaj.tv/news/330479126/two-policemen-guarding-polio-team-shot-dead-in-mohmand | paragraphs=8 | words=149
+2026-11-03 21:27:29,508 [truthlens.pipelines] INFO: Cleaned article: aaj:330479126 | characters=962 | hash=8ef8979e4310
+2026-11-03 21:27:29,514 [truthlens.pipelines] INFO: MongoDB new: aaj:330479126 | version=1 | fields=none
+2026-11-03 21:27:33,073 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330479127/pricing-of-52-life-saving-medicines-still-delayed-aaj-pakistan-with-sidra-iqbal
+2026-11-03 21:27:35,922 [aaj_sitemap] INFO: Extracted article: https://english.aaj.tv/news/330479128/us-midterms-put-trumps-grip-on-congress-to-the-test | paragraphs=11 | words=306
+2026-11-03 21:27:35,925 [truthlens.pipelines] INFO: Cleaned article: aaj:330479128 | characters=1987 | hash=3163dbc1a253
+2026-11-03 21:27:35,930 [truthlens.pipelines] INFO: MongoDB new: aaj:330479128 | version=1 | fields=none
+2026-11-03 21:27:38,487 [aaj_sitemap] INFO: Extracted article: https://english.aaj.tv/news/330479129/iran-us-deal-still-out-of-reach-despite-mediation-efforts | paragraphs=9 | words=298
+2026-11-03 21:27:38,489 [truthlens.pipelines] INFO: Cleaned article: aaj:330479129 | characters=1888 | hash=5793a9bb8b6e
+2026-11-03 21:27:38,495 [truthlens.pipelines] INFO: MongoDB new: aaj:330479129 | version=1 | fields=none
+2026-11-03 21:27:42,905 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330479130/karachi-gas-crisis-16-hours-gas-suspension-gas-schedule-change-aaj-news
+2026-11-03 21:27:47,890 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330479131/karachi-faces-16-hour-gas-shutdown-as-supply-schedule-changes-aaj-news
+2026-11-03 21:27:51,816 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330479132/trump-on-iran-us-iran-talks-iran-deal-washington-dc-aaj-news
+2026-11-03 21:27:54,756 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330479133/sharing-personal-data-with-ai-how-safe-is-your-privacy-aaj-pakistan-with-sidra-iqbal
+2026-11-03 21:27:57,600 [scrapy.extensions.logstats] INFO: Crawled 33 pages (at 16 pages/min), scraped 7 items (at 5 items/min)
+2026-11-03 21:27:59,092 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330479135/major-court-update-on-sohail-afridi-petrol-prices-and-us-midterm-1pm-headlines-03-nov-2026
+2026-11-03 21:28:00,959 [aaj_sitemap] INFO: Extracted article: https://english.aaj.tv/news/330479136/ecp-issues-show-cause-notice-to-mqm-p-over-intra-party-polls | paragraphs=5 | words=136
+2026-11-03 21:28:00,961 [truthlens.pipelines] INFO: Cleaned article: aaj:330479136 | characters=852 | hash=09cccbbca69d
+2026-11-03 21:28:00,969 [truthlens.pipelines] INFO: MongoDB new: aaj:330479136 | version=1 | fields=none
+2026-11-03 21:28:04,602 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330479137/iran-us-drones-mq-170-drones-mq-9-drone-strait-of-hormuz-aaj-news
+2026-11-03 21:28:08,739 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330479138/mohmand-polio-team-incident-kp-police-mohsin-naqvi-aaj-news
+2026-11-03 21:28:13,118 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330479140/government-employees-can-face-departmental-accountability-for-private-conduct-aaj-news
+2026-11-03 21:28:16,089 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330479141/lahore-consumers-face-unjustified-lpg-price-hikes-no-relief-in-sight-aaj-news
+2026-11-03 21:28:20,500 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330479142/islamabad-high-court-orders-complete-record-in-pims-incident-case-aaj-news
+2026-11-03 21:28:24,264 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330479143/anti-encroachment-drive-continues-across-kp-after-governors-rule-aaj-news
+2026-11-03 21:28:26,887 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330479144/karachi-residents-protest-against-water-and-electricity-disruptions-traffic-affected-aaj-news
+2026-11-03 21:28:29,495 [aaj_sitemap] INFO: Extracted article: https://english.aaj.tv/news/330479145/hina-javeds-family-seeks-judicial-commission-rejects-re-investigation | paragraphs=11 | words=306
+2026-11-03 21:28:29,499 [truthlens.pipelines] INFO: Cleaned article: aaj:330479145 | characters=1989 | hash=1205a21e1104
+2026-11-03 21:28:29,509 [truthlens.pipelines] INFO: MongoDB new: aaj:330479145 | version=1 | fields=none
+2026-11-03 21:28:32,245 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330479146/mqm-pakistan-ecp-show-cause-notice-intra-party-elections-aaj-news
+2026-11-03 21:28:34,579 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330479147/ppp-high-level-delegation-to-meet-prime-minister-today-key-political-consultations-aaj-news
+2026-11-03 21:28:38,499 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330479148/mr-patloo-islamabad-high-court-protective-bail-sialkot-case-aaj-news
+2026-11-03 21:28:43,531 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330479149/uk-immigration-rules-10-year-settlement-shabana-mahmood-aaj-news
+2026-11-03 21:28:47,127 [aaj_sitemap] INFO: Extracted article: https://english.aaj.tv/news/330479150/ihc-grants-bail-to-tiktoker-mr-patlo-in-stampede-case | paragraphs=13 | words=235
+2026-11-03 21:28:47,129 [truthlens.pipelines] INFO: Cleaned article: aaj:330479150 | characters=1462 | hash=13f521b4c0e9
+2026-11-03 21:28:47,136 [truthlens.pipelines] INFO: MongoDB new: aaj:330479150 | version=1 | fields=none
+2026-11-03 21:28:48,991 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330479151/multan-dha-case-aman-abbas-police-investigation-house-incident-aaj-news
+2026-11-03 21:28:52,596 [aaj_sitemap] INFO: Extracted article: https://english.aaj.tv/news/330479152/from-grains-to-chicken-and-milk-india-faces-prolonged-food-inflation | paragraphs=31 | words=896
+2026-11-03 21:28:52,600 [truthlens.pipelines] INFO: Cleaned article: aaj:330479152 | characters=5649 | hash=33e3263af33d
+2026-11-03 21:28:52,606 [truthlens.pipelines] INFO: MongoDB new: aaj:330479152 | version=1 | fields=none
+2026-11-03 21:28:56,882 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330479153/us-midterm-elections-betting-market-heats-up-millions-of-dollars-at-stake-aaj-digital
+2026-11-03 21:28:57,593 [scrapy.extensions.logstats] INFO: Crawled 51 pages (at 18 pages/min), scraped 11 items (at 4 items/min)
+2026-11-03 21:28:59,620 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330479154/supermarkets-across-europe-face-major-cyberattack-cooling-systems-disrupted-aaj-news
+2026-11-03 21:29:02,582 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330479155/two-helicopters-collide-during-landing-in-nepal-authorities-launch-investigation-aaj-news
+2026-11-03 21:29:05,940 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330479156/us-iran-war-breaking-live-us-attacks-irans-qeshm-island-midterm-elections-3pm-headlines-3-nov
+2026-11-03 21:29:09,743 [aaj_sitemap] INFO: Extracted article: https://english.aaj.tv/news/330479157/chinas-lipstick-king-touts-ai-tokens-in-first-for-singles-day-festival | paragraphs=17 | words=437
+2026-11-03 21:29:09,747 [truthlens.pipelines] INFO: Cleaned article: aaj:330479157 | characters=2729 | hash=3ca64df3b941
+2026-11-03 21:29:09,753 [truthlens.pipelines] INFO: MongoDB new: aaj:330479157 | version=1 | fields=none
+2026-11-03 21:29:13,917 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330479158/major-meeting-on-kp-situation-today-federal-ministers-and-senior-officials-to-attend-aaj-news
+2026-11-03 21:29:18,371 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330479159/maryam-nawaz-responds-to-chaudhry-salik-defamation-notice-over-corruption-claims-aaj-news
+2026-11-03 21:29:22,196 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330479160/pti-chairman-urges-serious-negotiations-to-ease-political-tensions-aaj-news
+2026-11-03 21:29:26,823 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330479161/sharjeel-memon-responds-to-mqm-leadership-strong-warning-over-rally-plans-aaj-news
+2026-11-03 21:29:29,092 [aaj_sitemap] INFO: Extracted article: https://english.aaj.tv/news/330479162/barrister-gohar-calls-for-dialogue-to-ease-political-tensions | paragraphs=8 | words=241
+2026-11-03 21:29:29,094 [truthlens.pipelines] INFO: Cleaned article: aaj:330479162 | characters=1468 | hash=0cbf834566eb
+2026-11-03 21:29:29,099 [truthlens.pipelines] INFO: MongoDB new: aaj:330479162 | version=1 | fields=none
+2026-11-03 21:29:34,449 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330479163/karachi-court-issues-direction-in-gul-plaza-case-next-hearing-on-november-16-aaj-news
+2026-11-03 21:29:37,864 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330479164/gold-price-today-us-iran-war-us-midterm-elections-2026-4pm-headlines-03-nov-2026
+2026-11-03 21:29:41,000 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330479165/us-midterm-polling-begins-trumps-political-influence-faces-a-major-test-aaj-news
+2026-11-03 21:29:44,870 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330479166/karachi-fire-incident-sohrab-goth-lunda-warehouse-fire-brigade-aaj-news
+2026-11-03 21:29:48,463 [aaj_sitemap] INFO: Extracted article: https://english.aaj.tv/news/330479167/iran-warns-of-response-without-geographical-limits | paragraphs=11 | words=320
+2026-11-03 21:29:48,465 [truthlens.pipelines] INFO: Cleaned article: aaj:330479167 | characters=2109 | hash=616b84cf7565
+2026-11-03 21:29:48,471 [truthlens.pipelines] INFO: MongoDB new: aaj:330479167 | version=1 | fields=none
+2026-11-03 21:29:53,655 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330479168/chamkta-punjab-project-begins-in-lahore-to-reduce-smog-aaj-news
+2026-11-03 21:29:56,306 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330479169/hafizabad-canal-incident-car-falls-into-canal-three-people-aaj-news
+2026-11-03 21:29:57,601 [scrapy.extensions.logstats] INFO: Crawled 67 pages (at 16 pages/min), scraped 14 items (at 3 items/min)
+2026-11-03 21:29:59,310 [aaj_sitemap] INFO: Extracted article: https://english.aaj.tv/news/330479139/democrats-lead-in-key-senate-races-ahead-of-us-midterms-poll-finds | paragraphs=15 | words=357
+2026-11-03 21:29:59,312 [truthlens.pipelines] INFO: Cleaned article: aaj:330479139 | characters=2293 | hash=640f222f2346
+2026-11-03 21:29:59,319 [truthlens.pipelines] INFO: MongoDB new: aaj:330479139 | version=1 | fields=none
+2026-11-03 21:30:03,709 [aaj_sitemap] INFO: Extracted article: https://english.aaj.tv/news/330479134/early-voting-data-points-to-democratic-advantage-in-midterm-polls | paragraphs=11 | words=262
+2026-11-03 21:30:03,711 [truthlens.pipelines] INFO: Cleaned article: aaj:330479134 | characters=1681 | hash=d8f6eb16d5b0
+2026-11-03 21:30:03,718 [truthlens.pipelines] INFO: MongoDB new: aaj:330479134 | version=1 | fields=none
+2026-11-03 21:30:06,692 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330479170/us-midterm-polls-show-democratic-gains-millions-of-dollars-linked-to-election-aaj-news
+2026-11-03 21:30:09,848 [aaj_sitemap] INFO: Extracted article: https://english.aaj.tv/news/330479171/us-midterm-elections-begin-with-control-of-congress-at-stake | paragraphs=6 | words=150
+2026-11-03 21:30:09,849 [truthlens.pipelines] INFO: Cleaned article: aaj:330479171 | characters=995 | hash=a9ce944dfa84
+2026-11-03 21:30:09,854 [truthlens.pipelines] INFO: MongoDB new: aaj:330479171 | version=1 | fields=none
+2026-11-03 21:30:12,350 [aaj_sitemap] INFO: Extracted article: https://english.aaj.tv/news/330479172/psx-kse-100-settles-above-168000-level | paragraphs=19 | words=574
+2026-11-03 21:30:12,353 [truthlens.pipelines] INFO: Cleaned article: aaj:330479172 | characters=3756 | hash=e8773316e1f4
+2026-11-03 21:30:12,358 [truthlens.pipelines] INFO: MongoDB new: aaj:330479172 | version=1 | fields=none
+2026-11-03 21:30:17,047 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330479173/us-midterm-elections-2026-democrats-vs-republicans-voting-begins-aaj-news
+2026-11-03 21:30:21,216 [aaj_sitemap] INFO: Extracted article: https://english.aaj.tv/news/330479174/investors-ready-for-possible-shake-up-in-congress-as-election-day-arrives | paragraphs=11 | words=493
+2026-11-03 21:30:21,219 [truthlens.pipelines] INFO: Cleaned article: aaj:330479174 | characters=3184 | hash=ba621c35017f
+2026-11-03 21:30:21,226 [truthlens.pipelines] INFO: MongoDB new: aaj:330479174 | version=1 | fields=none
+2026-11-03 21:30:23,906 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330479175/us-midterm-elections-2026-us-iran-war-breaking-live-05pm-headlines
+2026-11-03 21:30:27,617 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330479176/resistance-activity-against-taliban-intensifies-across-afghanistan-new-groups-emerge-aaj-news
+2026-11-03 21:30:30,847 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330479177/pakistani-origin-candidates-make-their-mark-in-us-midterm-elections-aaj-digital
+2026-11-03 21:30:33,134 [aaj_sitemap] INFO: Extracted article: https://english.aaj.tv/news/330479178/trumps-justice-dept-identifies-where-us-election-monitors-will-be-in-the-50-states | paragraphs=8 | words=226
+2026-11-03 21:30:33,138 [truthlens.pipelines] INFO: Cleaned article: aaj:330479178 | characters=1531 | hash=46c5b733bc47
+2026-11-03 21:30:33,145 [truthlens.pipelines] INFO: MongoDB new: aaj:330479178 | version=1 | fields=none
+2026-11-03 21:30:35,955 [aaj_sitemap] INFO: Extracted article: https://english.aaj.tv/news/330479179/trump-says-us-will-stop-4-billion-military-aid-to-israel-at-end-of-2026 | paragraphs=4 | words=132
+2026-11-03 21:30:35,956 [truthlens.pipelines] INFO: Cleaned article: aaj:330479179 | characters=737 | hash=027ce7c29e3a
+2026-11-03 21:30:35,961 [truthlens.pipelines] INFO: MongoDB new: aaj:330479179 | version=1 | fields=none
+2026-11-03 21:30:40,187 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330479180/live-attaullah-tarar-ali-pervez-malik-islamabad-press-conference-aaj-news
+2026-11-03 21:30:44,422 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330479181/us-midterm-elections-2026-democrats-vs-republicans-us-congress-aaj-news
+2026-11-03 21:30:47,771 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330479182/us-midterm-elections-voting-begins-in-new-hampshire-and-maine-06pm-headlines
+2026-11-03 21:30:51,506 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330479183/ppp-finalizes-three-names-for-electoral-reforms-committee-key-nominees-revealed-aaj-news
+2026-11-03 21:30:55,631 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330479184/us-midterm-elections-2026-democrats-vs-republicans-trump-aaj-news
+2026-11-03 21:30:57,591 [scrapy.extensions.logstats] INFO: Crawled 84 pages (at 17 pages/min), scraped 21 items (at 7 items/min)
+2026-11-03 21:30:59,619 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330479185/amaat-e-islami-seeks-relief-for-public-as-ishaq-dar-holds-talks-with-liaqat-baloch-aaj-news
+2026-11-03 21:31:03,179 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330479186/ppp-delegation-to-meet-prime-minister-today-key-political-consultations-expected-aaj-news
+2026-11-03 21:31:07,742 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330479187/mqm-pakistan-ecp-show-cause-notice-intra-party-elections-aaj-news
+2026-11-03 21:31:10,495 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330479188/chaudhry-salik-stands-by-punjab-corruption-claims-responds-to-maryam-nawaz-aaj-news
+2026-11-03 21:31:14,123 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330479189/us-military-operation-in-the-strait-of-hormuz-latest-update-aaj-news-07pm-headlines
+2026-11-03 21:31:19,232 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330479190/khawaja-asif-calls-maulana-fazlur-rehman-a-200-friend-political-ties-explained-aaj-news
+2026-11-03 21:31:22,604 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330479191/salman-akram-raja-rules-out-political-breakthrough-pti-ready-for-talks-with-government-aaj-news
+2026-11-03 21:31:24,803 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330479192/us-midterm-elections-2026-donald-trump-political-future-at-stake-aaj-news
+2026-11-03 21:31:28,541 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330479193/us-midterm-elections-2026-republicans-trump-political-future-aaj-news
+2026-11-03 21:31:32,223 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330479194/chinas-scenic-train-journey-through-beautiful-pink-grass-fields-a-breathtaking-view-aaj-digital
+2026-11-03 21:31:36,538 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330479195/pakistan-stock-market-youth-investment-stock-market-guide-badal-gaya-karobar-ep-86
+2026-11-03 21:31:39,645 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330479197/pakistan-petrol-prices-diesel-prices-global-oil-rates-drop-aaj-news-08pm-headlines
+2026-11-03 21:31:41,874 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330479198/pml-n-internal-differences-pti-negotiations-pakistan-politics-rubaroo-with-shaukat-piracha
+2026-11-03 21:31:45,957 [aaj_sitemap] INFO: Extracted article: https://english.aaj.tv/news/330479196/security-forces-kills-17-militants-in-two-operations-in-balochistan-ispr | paragraphs=7 | words=218
+2026-11-03 21:31:45,960 [truthlens.pipelines] INFO: Cleaned article: aaj:330479196 | characters=1503 | hash=c370cca9fa31
+2026-11-03 21:31:45,967 [truthlens.pipelines] INFO: MongoDB new: aaj:330479196 | version=1 | fields=none
+2026-11-03 21:31:50,746 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330479199/balochistan-operations-pakistan-security-forces-latest-update-aaj-news
+2026-11-03 21:31:53,045 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330479201/imran-khan-meeting-barrister-salman-safdar-pti-government-talks-rubaroo-with-shaukat-piracha
+2026-11-03 21:31:57,475 [aaj_sitemap] INFO: Extracted article: https://english.aaj.tv/news/330479200/petroleum-minister-promises-relief-to-lpg-consumers-through-market-reforms | paragraphs=29 | words=818
+2026-11-03 21:31:57,479 [truthlens.pipelines] INFO: Cleaned article: aaj:330479200 | characters=5690 | hash=5ebb8812ec7b
+2026-11-03 21:31:57,487 [truthlens.pipelines] INFO: MongoDB new: aaj:330479200 | version=1 | fields=none
+2026-11-03 21:31:57,585 [scrapy.extensions.logstats] INFO: Crawled 101 pages (at 17 pages/min), scraped 23 items (at 2 items/min)
+2026-11-03 21:32:02,770 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330479202/why-did-pti-not-hold-talks-with-the-government-if-it-wanted-peace-in-kp-rubaroo
+2026-11-03 21:32:02,771 [scrapy.core.engine] INFO: Closing spider (finished)
+2026-11-03 21:32:02,771 [truthlens.export] INFO: Run JSON saved: data\runs\aaj_sitemap\aaj_sitemap_2026-11-03_21-25-57.json | items=23
+2026-11-03 21:32:02,774 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'aaj_sitemap/skipped_section': 77,
+ 'downloader/request_bytes': 35558,
+ 'downloader/request_count': 102,
+ 'downloader/request_method_count/GET': 102,
+ 'downloader/response_bytes': 2998529,
+ 'downloader/response_count': 102,
+ 'downloader/response_status_count/200': 102,
+ 'elapsed_time_seconds': 365.1869999999999,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2026, 11, 3, 16, 32, 2, 773887, tzinfo=datetime.timezone.utc),
+ 'httpcompression/response_bytes': 13510430,
+ 'httpcompression/response_count': 102,
+ 'item_scraped_count': 23,
+ 'items_per_minute': 3.780821917808219,
+ 'log_count/INFO': 159,
+ 'mongodb/articles_new': 23,
+ 'mongodb/snapshots_inserted': 23,
+ 'request_depth_max': 1,
+ 'response_received_count': 102,
+ 'responses_per_minute': 16.767123287671232,
+ 'robotstxt/request_count': 1,
+ 'robotstxt/response_count': 1,
+ 'robotstxt/response_status_count/200': 1,
+ 'scheduler/dequeued': 101,
+ 'scheduler/dequeued/memory': 101,
+ 'scheduler/enqueued': 101,
+ 'scheduler/enqueued/memory': 101,
+ 'start_time': datetime.datetime(2026, 11, 3, 16, 25, 57, 583505, tzinfo=datetime.timezone.utc)}
+2026-11-03 21:32:02,775 [scrapy.core.engine] INFO: Spider closed (finished)
+2026-11-03 21:32:02,779 [truthlens.run_reporting] INFO: Run summary saved: logs\runs\20261103T162557Z_6daf7f2dad1b4ab5bee55736c1d773af.json | status=completed

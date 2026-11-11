@@ -1,0 +1,186 @@
+{
+  "schema_version": "truthlens-run-v1",
+  "run_id": "20261031T160024Z_b838f442a1fc4714a45ee53ad158b63e",
+  "source": "The Nation",
+  "spider": "nation_sitemap",
+  "status": "completed_with_review_items",
+  "finish_reason": "finished",
+  "started_at": "2026-10-31T16:00:24.911642+00:00",
+  "finished_at": "2026-10-31T16:01:01.707782+00:00",
+  "duration_seconds": 36.796,
+  "log_file": "logs\\runs\\20261031T160024Z_b838f442a1fc4714a45ee53ad158b63e.log",
+  "counts": {
+    "requests_total": 10,
+    "responses_total": 10,
+    "retry_attempts": 0,
+    "items_processed": 8,
+    "new_articles": 0,
+    "unchanged_articles": 0,
+    "updated_articles": 0,
+    "baselines_created": 0,
+    "processing_changes": 0,
+    "snapshots_inserted": 8,
+    "snapshots_skipped": 0,
+    "review_only_records": 8,
+    "records_with_review_flags": 8,
+    "stale_observations": 0,
+    "replayed_observations": 0,
+    "rejected_records": 0,
+    "failed_requests": 0,
+    "item_errors": 0,
+    "spider_errors": 0
+  },
+  "failed_requests": [],
+  "rejected_records": [],
+  "review_records": [
+    {
+      "article_key": "nation:2026-10-31-lahore-tops-global-pollution-rankings-citywide-aqi-reaches-253",
+      "url": "https://www.nation.com.pk/31-Oct-2026/lahore-tops-global-pollution-rankings-citywide-aqi-reaches-253",
+      "change_status": "needs_review",
+      "validation_issues": [
+        "missing_body_container",
+        "missing_article_text"
+      ],
+      "cleaning_issues": [
+        "missing_content_blocks",
+        "empty_cleaned_text"
+      ]
+    },
+    {
+      "article_key": "nation:2026-10-31-punjab-private-mbbs-admissions-open-till-nov-6",
+      "url": "https://www.nation.com.pk/31-Oct-2026/punjab-private-mbbs-admissions-open-till-nov-6",
+      "change_status": "needs_review",
+      "validation_issues": [
+        "missing_body_container",
+        "missing_article_text"
+      ],
+      "cleaning_issues": [
+        "missing_content_blocks",
+        "empty_cleaned_text"
+      ]
+    },
+    {
+      "article_key": "nation:2026-10-31-anti-narcotics-awareness-seminar-held-sialkot-college",
+      "url": "https://www.nation.com.pk/31-Oct-2026/anti-narcotics-awareness-seminar-held-sialkot-college",
+      "change_status": "needs_review",
+      "validation_issues": [
+        "missing_body_container",
+        "missing_article_text"
+      ],
+      "cleaning_issues": [
+        "missing_content_blocks",
+        "empty_cleaned_text"
+      ]
+    },
+    {
+      "article_key": "nation:2026-10-31-french-ambassador-calls-cm-punjab-discusses-trade-investment-cooperation",
+      "url": "https://www.nation.com.pk/31-Oct-2026/french-ambassador-calls-cm-punjab-discusses-trade-investment-cooperation",
+      "change_status": "needs_review",
+      "validation_issues": [
+        "missing_body_container",
+        "missing_article_text"
+      ],
+      "cleaning_issues": [
+        "missing_content_blocks",
+        "empty_cleaned_text"
+      ]
+    },
+    {
+      "article_key": "nation:2026-10-31-aphc-leader-links-indian-policies-kashmir-israeli-practices-palestine",
+      "url": "https://www.nation.com.pk/31-Oct-2026/aphc-leader-links-indian-policies-kashmir-israeli-practices-palestine",
+      "change_status": "needs_review",
+      "validation_issues": [
+        "missing_body_container",
+        "missing_article_text"
+      ],
+      "cleaning_issues": [
+        "missing_content_blocks",
+        "empty_cleaned_text"
+      ]
+    },
+    {
+      "article_key": "nation:2026-10-31-ecp-targets-registration-174-845-women-voters-two-district-pilot-project",
+      "url": "https://www.nation.com.pk/31-Oct-2026/ecp-targets-registration-174-845-women-voters-two-district-pilot-project",
+      "change_status": "needs_review",
+      "validation_issues": [
+        "missing_body_container",
+        "missing_article_text"
+      ],
+      "cleaning_issues": [
+        "missing_content_blocks",
+        "empty_cleaned_text"
+      ]
+    },
+    {
+      "article_key": "nation:2026-10-31-qatar-offers-pakistani-travellers-free-30-day-visa-arrival-four-conditions",
+      "url": "https://www.nation.com.pk/31-Oct-2026/qatar-offers-pakistani-travellers-free-30-day-visa-arrival-four-conditions",
+      "change_status": "needs_review",
+      "validation_issues": [
+        "missing_body_container",
+        "missing_article_text"
+      ],
+      "cleaning_issues": [
+        "missing_content_blocks",
+        "empty_cleaned_text"
+      ]
+    },
+    {
+      "article_key": "nation:2026-10-31-dg-ispr-says-pakistan-saudi-defence-cooperation-expand-rules-wider-military-campaigns",
+      "url": "https://www.nation.com.pk/31-Oct-2026/dg-ispr-says-pakistan-saudi-defence-cooperation-expand-rules-wider-military-campaigns",
+      "change_status": "needs_review",
+      "validation_issues": [
+        "missing_body_container",
+        "missing_article_text"
+      ],
+      "cleaning_issues": [
+        "missing_content_blocks",
+        "empty_cleaned_text"
+      ]
+    }
+  ],
+  "item_errors": [],
+  "spider_errors": [],
+  "http_status_counts": {
+    "200": 10
+  },
+  "download_attempt_exceptions": {},
+  "scrapy_stats": {
+    "start_time": "2026-10-31 16:00:25.567568+00:00",
+    "log_count/INFO": 14,
+    "scheduler/enqueued/memory": 9,
+    "scheduler/enqueued": 9,
+    "scheduler/dequeued/memory": 9,
+    "scheduler/dequeued": 9,
+    "downloader/request_count": 10,
+    "downloader/request_method_count/GET": 10,
+    "downloader/request_bytes": 3312,
+    "downloader/response_count": 10,
+    "downloader/response_status_count/200": 10,
+    "downloader/response_bytes": 213296,
+    "httpcompression/response_bytes": 1373644,
+    "httpcompression/response_count": 10,
+    "response_received_count": 10,
+    "robotstxt/response_count": 1,
+    "robotstxt/response_status_count/200": 1,
+    "robotstxt/request_count": 1,
+    "request_depth_max": 1,
+    "log_count/WARNING": 24,
+    "mongodb/snapshots_inserted": 8,
+    "mongodb/snapshot_only": 8,
+    "item_scraped_count": 8,
+    "elapsed_time_seconds": 36.125,
+    "finish_time": "2026-10-31 16:01:01.693010+00:00",
+    "finish_reason": "finished",
+    "responses_per_minute": 16.666666666666668,
+    "items_per_minute": 13.333333333333334,
+    "feedexport/success_count/FileFeedStorage": 1
+  },
+  "notes": [
+    "requests_total includes robots.txt, listing pages, redirects, retries and article requests.",
+    "failed_requests lists terminal failures reported by the spider errback; retried attempts are separate.",
+    "review flags do not mean a record was dropped; review-only records are retained as snapshots.",
+    "updated_articles excludes new baselines and processing-method changes.",
+    "snapshots_inserted can include baselines and review records; it is not a count of article edits.",
+    "A running summary left behind after a forced termination is incomplete."
+  ]
+}

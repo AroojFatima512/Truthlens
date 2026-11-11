@@ -1,0 +1,91 @@
+{
+  "schema_version": "truthlens-run-v1",
+  "run_id": "20261031T163127Z_1936db9f06444a92be85950fd7a57ace",
+  "source": "Geo News",
+  "spider": "geo_sitemap",
+  "status": "completed_with_review_items",
+  "finish_reason": "finished",
+  "started_at": "2026-10-31T16:31:27.190723+00:00",
+  "finished_at": "2026-10-31T16:37:42.947144+00:00",
+  "duration_seconds": 375.756,
+  "log_file": "logs\\runs\\20261031T163127Z_1936db9f06444a92be85950fd7a57ace.log",
+  "counts": {
+    "requests_total": 102,
+    "responses_total": 102,
+    "retry_attempts": 0,
+    "items_processed": 100,
+    "new_articles": 99,
+    "unchanged_articles": 0,
+    "updated_articles": 1,
+    "baselines_created": 0,
+    "processing_changes": 0,
+    "snapshots_inserted": 100,
+    "snapshots_skipped": 0,
+    "review_only_records": 0,
+    "records_with_review_flags": 1,
+    "stale_observations": 0,
+    "replayed_observations": 0,
+    "rejected_records": 0,
+    "failed_requests": 0,
+    "item_errors": 0,
+    "spider_errors": 0
+  },
+  "failed_requests": [],
+  "rejected_records": [],
+  "review_records": [
+    {
+      "article_key": "geo:689108",
+      "url": "https://www.geo.tv/latest/689108-pakistan-win-toss-opt-to-bowl-first-against-sri-lanka-in-odi-tri-series-final",
+      "change_status": "new",
+      "validation_issues": [
+        "short_article_under_50_words"
+      ],
+      "cleaning_issues": []
+    }
+  ],
+  "item_errors": [],
+  "spider_errors": [],
+  "http_status_counts": {
+    "200": 102
+  },
+  "download_attempt_exceptions": {},
+  "scrapy_stats": {
+    "start_time": "2026-10-31 16:31:27.827560+00:00",
+    "log_count/INFO": 313,
+    "scheduler/enqueued/memory": 101,
+    "scheduler/enqueued": 101,
+    "scheduler/dequeued/memory": 101,
+    "scheduler/dequeued": 101,
+    "downloader/request_count": 102,
+    "downloader/request_method_count/GET": 102,
+    "downloader/request_bytes": 40662,
+    "downloader/response_count": 102,
+    "downloader/response_status_count/200": 102,
+    "downloader/response_bytes": 2630928,
+    "httpcompression/response_bytes": 13972251,
+    "httpcompression/response_count": 102,
+    "response_received_count": 102,
+    "robotstxt/response_count": 1,
+    "robotstxt/response_status_count/200": 1,
+    "robotstxt/request_count": 1,
+    "request_depth_max": 1,
+    "mongodb/snapshots_inserted": 100,
+    "mongodb/articles_new": 99,
+    "item_scraped_count": 100,
+    "mongodb/articles_metadata_changed": 1,
+    "log_count/WARNING": 1,
+    "elapsed_time_seconds": 375.1090000000004,
+    "finish_time": "2026-10-31 16:37:42.942813+00:00",
+    "finish_reason": "finished",
+    "responses_per_minute": 16.32,
+    "items_per_minute": 16.0
+  },
+  "notes": [
+    "requests_total includes robots.txt, listing pages, redirects, retries and article requests.",
+    "failed_requests lists terminal failures reported by the spider errback; retried attempts are separate.",
+    "review flags do not mean a record was dropped; review-only records are retained as snapshots.",
+    "updated_articles excludes new baselines and processing-method changes.",
+    "snapshots_inserted can include baselines and review records; it is not a count of article edits.",
+    "A running summary left behind after a forced termination is incomplete."
+  ]
+}

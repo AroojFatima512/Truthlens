@@ -1,0 +1,121 @@
+2026-10-31 04:29:41,063 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.logcount.LogCount',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.remote_control.RemoteControl',
+ 'truthlens.run_reporting.RunReportingExtension']
+2026-10-31 04:29:41,065 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'truthlens',
+ 'CONCURRENT_REQUESTS': 1,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 1,
+ 'DOWNLOAD_DELAY': 3,
+ 'DOWNLOAD_TIMEOUT': 30,
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'FEED_EXPORT_INDENT': 2,
+ 'LOG_LEVEL': 'INFO',
+ 'NEWSPIDER_MODULE': 'truthlens.spiders',
+ 'ROBOTSTXT_OBEY': True,
+ 'SPIDER_MODULES': ['truthlens.spiders'],
+ 'USER_AGENT': 'TruthLensResearchBot/0.1'}
+2026-10-31 04:29:41,461 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2026-10-31 04:29:41,466 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.start.StartSpiderMiddleware',
+ 'scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware',
+ 'scrapy.spidermiddlewares.metacopy.MetaCopyDetectionMiddleware']
+2026-10-31 04:29:41,592 [scrapy.middleware] INFO: Enabled item pipelines:
+['truthlens.pipelines.CleaningPipeline', 'truthlens.pipelines.MongoDBPipeline']
+2026-10-31 04:29:41,592 [scrapy.core.engine] INFO: Spider opened
+2026-10-31 04:29:41,644 [truthlens.pipelines] INFO: MongoDB connected: database=truthlens
+2026-10-31 04:29:41,648 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2026-10-31 04:29:41,652 [truthlens.run_reporting] INFO: Run started: 20261030T232941Z_bd846440e57f407e9ec8e9d6a3ddee59 | source=Dawn
+2026-10-31 04:29:41,657 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2026-10-31 04:29:41,664 [scrapy.extensions.remote_control] INFO: Remote control HTTP server listening on port 54709 (job 15336-4d9aa7dad73e445eb104a3a81a40ef99)
+2026-10-31 04:29:45,537 [dawn_sitemap] INFO: Sitemap: selected 40 article URLs.
+2026-10-31 04:29:48,651 [dawn_sitemap] INFO: Skipping non-Pakistan section: newspaper | https://www.dawn.com/news/2041092/tyre-makers-face-electronic-surveillance
+2026-10-31 04:29:51,841 [dawn_sitemap] INFO: Skipping non-Pakistan section: newspaper | https://www.dawn.com/news/2041093/pm-shehbaz-forms-body-to-review-proposed-lpg-policy-reforms
+2026-10-31 04:29:56,142 [dawn_sitemap] INFO: Skipping non-Pakistan section: newspaper | https://www.dawn.com/news/2041106/bugti-stresses-collective-efforts-to-combat-terrorism
+2026-10-31 04:29:59,932 [dawn_sitemap] INFO: Skipping non-Pakistan section: newspaper | https://www.dawn.com/news/2041107/makkah-pact-badr-accord-latest-milestones-in-ties-with-pakistan-says-turkish-envoy
+2026-10-31 04:30:02,980 [dawn_sitemap] INFO: Skipping non-Pakistan section: newspaper | https://www.dawn.com/news/2041108/bill-for-quarterly-gas-price-adjustments-tabled-in-senate
+2026-10-31 04:30:06,702 [dawn_sitemap] INFO: Skipping non-Pakistan section: newspaper | https://www.dawn.com/news/2041115/smoke-emitting-vehicles-fined
+2026-10-31 04:30:10,579 [dawn_sitemap] INFO: Skipping non-Pakistan section: newspaper | https://www.dawn.com/news/2041100/two-brothers-shot-dead-in-nasirabad
+2026-10-31 04:30:14,864 [dawn_sitemap] INFO: Skipping non-Pakistan section: newspaper | https://www.dawn.com/news/2041101/jui-f-slams-ministers-remarks-against-fazl
+2026-10-31 04:30:16,841 [dawn_sitemap] INFO: Skipping non-Pakistan section: newspaper | https://www.dawn.com/news/2041102/anp-announces-mpc-over-asghar-achakzais-arrest
+2026-10-31 04:30:21,139 [dawn_sitemap] INFO: Skipping non-Pakistan section: newspaper | https://www.dawn.com/news/2041103/four-of-a-family-found-dead-in-skardu-home
+2026-10-31 04:30:22,977 [dawn_sitemap] INFO: Skipping non-Pakistan section: newspaper | https://www.dawn.com/news/2041104/workplace-harassment-goes-beyond-sexual-conduct
+2026-10-31 04:30:26,063 [dawn_sitemap] INFO: Skipping non-Pakistan section: newspaper | https://www.dawn.com/news/2041105/army-targets-afghan-border-positions
+2026-10-31 04:30:29,291 [dawn_sitemap] INFO: Skipping non-Pakistan section: newspaper | https://www.dawn.com/news/2041094/netanyahus-path-to-power-becomes-complicated
+2026-10-31 04:30:32,333 [dawn_sitemap] INFO: Skipping non-Pakistan section: newspaper | https://www.dawn.com/news/2041095/barbs-fly-in-senate-over-rising-poverty-womens-detention
+2026-10-31 04:30:36,912 [dawn_sitemap] INFO: Skipping non-Pakistan section: newspaper | https://www.dawn.com/news/2041096/pakistan-warns-of-taliban-repression-as-un-expert-urges-accountability
+2026-10-31 04:30:38,287 [dawn_sitemap] INFO: Skipping non-Pakistan section: newspaper | https://www.dawn.com/news/2041097/us-orders-staff-to-leave-s-arabia-over-security-risks
+2026-10-31 04:30:41,495 [dawn_sitemap] INFO: Skipping non-Pakistan section: newspaper | https://www.dawn.com/news/2041098/qatari-delegation-arrives-in-tehran-for-peace-talks
+2026-10-31 04:30:41,639 [scrapy.extensions.logstats] INFO: Crawled 19 pages (at 19 pages/min), scraped 0 items (at 0 items/min)
+2026-10-31 04:30:43,948 [dawn_sitemap] INFO: Skipping non-Pakistan section: newspaper | https://www.dawn.com/news/2041099/hackers-steal-63bn-from-binance-in-massive-crypto-heist
+2026-10-31 04:30:47,442 [dawn_sitemap] INFO: Skipping non-Pakistan section: newspaper | https://www.dawn.com/news/2041109/pakistan-singapore-agree-to-prioritise-trade-expansion
+2026-10-31 04:30:50,416 [dawn_sitemap] INFO: Skipping non-Pakistan section: newspaper | https://www.dawn.com/news/2041110/kp-police-get-tech-to-monitor-counterterrorism-operations
+2026-10-31 04:30:53,970 [dawn_sitemap] INFO: Skipping non-Pakistan section: newspaper | https://www.dawn.com/news/2041111/ppp-presses-opposition-for-joint-electoral-reforms
+2026-10-31 04:30:56,223 [dawn_sitemap] INFO: Skipping non-Pakistan section: newspaper | https://www.dawn.com/news/2041112/cautiously-optimistic-on-iran-us-mediation-ispr-chief
+2026-10-31 04:31:00,272 [dawn_sitemap] INFO: Skipping non-Pakistan section: newspaper | https://www.dawn.com/news/2041113/islamabad-riyadh-explore-strategic-oil-storage-venture
+2026-10-31 04:31:04,642 [dawn_sitemap] INFO: Skipping non-Pakistan section: newspaper | https://www.dawn.com/news/2041114/fcc-warns-govt-against-ignoring-sc-verdicts
+2026-10-31 04:31:08,009 [dawn_sitemap] INFO: Skipping non-Pakistan section: newspaper | https://www.dawn.com/news/2040594/making-peace-with-regret
+2026-10-31 04:31:12,187 [dawn_sitemap] INFO: Skipping non-Pakistan section: newspaper | https://www.dawn.com/news/2040590/quiz-animals
+2026-10-31 04:31:13,999 [dawn_sitemap] INFO: Skipping non-Pakistan section: newspaper | https://www.dawn.com/news/2040592/poets-corner
+2026-10-31 04:31:16,235 [dawn_sitemap] INFO: Skipping non-Pakistan section: newspaper | https://www.dawn.com/news/2040593/mailbox
+2026-10-31 04:31:18,562 [dawn_sitemap] INFO: Skipping non-Pakistan section: newspaper | https://www.dawn.com/news/2040832/movie-review-the-magic-faraway-tree
+2026-10-31 04:31:22,729 [dawn_sitemap] INFO: Skipping non-Pakistan section: newspaper | https://www.dawn.com/news/2040833/cook-it-yourself
+2026-10-31 04:31:27,287 [dawn_sitemap] INFO: Skipping non-Pakistan section: newspaper | https://www.dawn.com/news/2040645/story-time-the-courage-to-speak
+2026-10-31 04:31:30,902 [dawn_sitemap] INFO: Skipping non-Pakistan section: newspaper | https://www.dawn.com/news/2040675/art-corner
+2026-10-31 04:31:35,373 [dawn_sitemap] INFO: Skipping non-Pakistan section: newspaper | https://www.dawn.com/news/2040679/website-review-draw-it-without-looking
+2026-10-31 04:31:39,588 [dawn_sitemap] INFO: Skipping non-Pakistan section: newspaper | https://www.dawn.com/news/2040681/story-time-the-haunted-house
+2026-10-31 04:31:41,648 [scrapy.extensions.logstats] INFO: Crawled 36 pages (at 17 pages/min), scraped 0 items (at 0 items/min)
+2026-10-31 04:31:43,737 [dawn_sitemap] INFO: Skipping non-Pakistan section: newspaper | https://www.dawn.com/news/2040686/the-weekly-weird
+2026-10-31 04:31:46,850 [dawn_sitemap] INFO: Skipping non-Pakistan section: newspaper | https://www.dawn.com/news/2040687/spotlight
+2026-10-31 04:31:50,637 [dawn_sitemap] INFO: Skipping non-Pakistan section: newspaper | https://www.dawn.com/news/2040829/story-time-the-passport-problem
+2026-10-31 04:31:53,220 [dawn_sitemap] INFO: Skipping non-Pakistan section: newspaper | https://www.dawn.com/news/2040830/opinion-the-beauty-of-detachment
+2026-10-31 04:31:57,737 [dawn_sitemap] INFO: Skipping non-Pakistan section: newspaper | https://www.dawn.com/news/2040831/story-time-a-universe-of-questions
+2026-10-31 04:32:01,848 [dawn_sitemap] INFO: Skipping non-Pakistan section: newspaper | https://www.dawn.com/news/2040644/book-review-who-was-winston-churchill
+2026-10-31 04:32:01,850 [scrapy.core.engine] INFO: Closing spider (finished)
+2026-10-31 04:32:01,852 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'dawn/skipped_non_pakistan': 40,
+ 'downloader/request_bytes': 12827,
+ 'downloader/request_count': 42,
+ 'downloader/request_method_count/GET': 42,
+ 'downloader/response_bytes': 1453276,
+ 'downloader/response_count': 42,
+ 'downloader/response_status_count/200': 42,
+ 'elapsed_time_seconds': 140.2039999999979,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2026, 10, 30, 23, 32, 1, 851227, tzinfo=datetime.timezone.utc),
+ 'httpcompression/response_bytes': 7320434,
+ 'httpcompression/response_count': 42,
+ 'items_per_minute': 0.0,
+ 'log_count/INFO': 48,
+ 'request_depth_max': 1,
+ 'response_received_count': 42,
+ 'responses_per_minute': 18.0,
+ 'robotstxt/request_count': 1,
+ 'robotstxt/response_count': 1,
+ 'robotstxt/response_status_count/200': 1,
+ 'scheduler/dequeued': 41,
+ 'scheduler/dequeued/memory': 41,
+ 'scheduler/enqueued': 41,
+ 'scheduler/enqueued/memory': 41,
+ 'start_time': datetime.datetime(2026, 10, 30, 23, 29, 41, 646721, tzinfo=datetime.timezone.utc)}
+2026-10-31 04:32:01,853 [scrapy.core.engine] INFO: Spider closed (finished)
+2026-10-31 04:32:01,858 [truthlens.run_reporting] INFO: Run summary saved: logs\runs\20261030T232941Z_bd846440e57f407e9ec8e9d6a3ddee59.json | status=completed

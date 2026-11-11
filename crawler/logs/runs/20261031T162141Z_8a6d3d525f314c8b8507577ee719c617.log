@@ -1,0 +1,112 @@
+2026-10-31 21:21:41,342 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.logcount.LogCount',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.feedexport.FeedExporter',
+ 'scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.remote_control.RemoteControl',
+ 'truthlens.run_reporting.RunReportingExtension']
+2026-10-31 21:21:41,343 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'truthlens',
+ 'CONCURRENT_REQUESTS': 1,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 1,
+ 'DOWNLOAD_DELAY': 3,
+ 'DOWNLOAD_TIMEOUT': 30,
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'FEED_EXPORT_INDENT': 2,
+ 'LOG_LEVEL': 'INFO',
+ 'NEWSPIDER_MODULE': 'truthlens.spiders',
+ 'ROBOTSTXT_OBEY': True,
+ 'SPIDER_MODULES': ['truthlens.spiders'],
+ 'USER_AGENT': 'TruthLensResearchBot/0.1'}
+2026-10-31 21:21:41,765 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2026-10-31 21:21:41,770 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.start.StartSpiderMiddleware',
+ 'scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware',
+ 'scrapy.spidermiddlewares.metacopy.MetaCopyDetectionMiddleware']
+2026-10-31 21:21:41,887 [scrapy.middleware] INFO: Enabled item pipelines:
+['truthlens.pipelines.CleaningPipeline', 'truthlens.pipelines.MongoDBPipeline']
+2026-10-31 21:21:41,887 [scrapy.core.engine] INFO: Spider opened
+2026-10-31 21:21:41,932 [truthlens.pipelines] INFO: MongoDB connected: database=truthlens
+2026-10-31 21:21:41,935 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2026-10-31 21:21:41,941 [truthlens.run_reporting] INFO: Run started: 20261031T162141Z_8a6d3d525f314c8b8507577ee719c617 | source=Aaj News
+2026-10-31 21:21:41,944 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2026-10-31 21:21:41,952 [scrapy.extensions.remote_control] INFO: Remote control HTTP server listening on port 54700 (job 16328-231c6c6e18534bc495de9bfabb55c1db)
+2026-10-31 21:21:46,323 [aaj_sitemap] INFO: Sitemap: selected 20 article URLs.
+2026-10-31 21:21:50,952 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330478798/pakistan-vs-sri-lanka-final-tri-nation-odi-series-326-runs-target-aaj-news
+2026-10-31 21:21:54,894 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330478799/petrol-prices-transport-fare-hike-lahore-to-islamabad-bus-fare-aaj-news
+2026-10-31 21:21:58,317 [aaj_sitemap] INFO: Extracted article: https://english.aaj.tv/news/330478800/syria-weighing-whether-to-join-makkah-pact-foreign-minister | paragraphs=11 | words=308
+2026-10-31 21:21:58,322 [truthlens.pipelines] INFO: Cleaned article: aaj:330478800 | characters=2002 | hash=7a5d57e06333
+2026-10-31 21:21:58,332 [truthlens.pipelines] INFO: MongoDB new: aaj:330478800 | version=1 | fields=none
+2026-10-31 21:22:02,196 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330478801/pakistan-vs-sri-lanka-final-326-runs-chase-babar-azam-out-for-zero-aaj-news
+2026-10-31 21:22:05,640 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330478802/israel-election-2026-results-hormuz-tensions-petrol-and-diesel-prices-increase-6-pm-headlines
+2026-10-31 21:22:08,998 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330478803/iran-supreme-leader-mojtaba-khamenei-us-israel-assets-military-directive-aaj-news
+2026-10-31 21:22:13,245 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330478804/karachi-defence-incident-ai-edited-video-police-investigation-aaj-news
+2026-10-31 21:22:16,999 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330478805/attock-wedding-ceremony-police-raid-33-people-detained-aaj-news
+2026-10-31 21:22:20,825 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330478807/karachi-police-update-fake-uniform-gang-short-term-abduction-case-aaj-news
+2026-10-31 21:22:24,153 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330478808/israel-election-2026-results-trump-iran-policy-us-action-on-iran-7-pm-headlines-31-oct-2026
+2026-10-31 21:22:27,645 [aaj_sitemap] INFO: Extracted article: https://english.aaj.tv/news/330478806/iran-has-no-plans-for-meetings-with-american-officials-foreign-minister | paragraphs=7 | words=178
+2026-10-31 21:22:27,648 [truthlens.pipelines] INFO: Cleaned article: aaj:330478806 | characters=1131 | hash=3561a377c8cf
+2026-10-31 21:22:27,666 [truthlens.pipelines] INFO: MongoDB new: aaj:330478806 | version=1 | fields=none
+2026-10-31 21:22:32,232 [aaj_sitemap] INFO: Extracted article: https://english.aaj.tv/news/330478789/irans-supreme-leader-warns-us-israel-against-new-attacks | paragraphs=10 | words=278
+2026-10-31 21:22:32,239 [truthlens.pipelines] INFO: Cleaned article: aaj:330478789 | characters=1794 | hash=de4f6f28f99a
+2026-10-31 21:22:32,253 [truthlens.pipelines] INFO: MongoDB new: aaj:330478789 | version=1 | fields=none
+2026-10-31 21:22:35,045 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330478809/sukkur-road-poles-murad-ali-shah-karachi-master-plan-aaj-news
+2026-10-31 21:22:39,404 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330478810/afghanistan-resistance-groups-taliban-forces-19-operations-in-12-provinces-aaj-news
+2026-10-31 21:22:41,938 [scrapy.extensions.logstats] INFO: Crawled 16 pages (at 16 pages/min), scraped 3 items (at 3 items/min)
+2026-10-31 21:22:42,989 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330478811/pakistan-inflation-flour-and-gas-prices-rising-cost-of-living-aaj-news
+2026-10-31 21:22:47,293 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330478812/how-to-avoid-online-financial-scams-and-how-cybercriminals-are-traced-awaz-ep192
+2026-10-31 21:22:50,111 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330478813/prices-change-across-pakistan-what-is-the-latest-update-08pm-headlines-31-oct-2026
+2026-10-31 21:22:53,012 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330478814/sukkur-development-project-electricity-poles-in-middle-of-road-poor-planning-aaj-news
+2026-10-31 21:22:56,987 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330478815/why-is-justice-for-cyber-fraud-victims-still-a-challenge-in-pakistan-awaz
+2026-10-31 21:23:01,113 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330478816/petrol-diesel-prices-transport-fares-increased-passengers-face-higher-costs-aaj-news
+2026-10-31 21:23:01,117 [scrapy.core.engine] INFO: Closing spider (finished)
+2026-10-31 21:23:01,123 [scrapy.extensions.feedexport] INFO: Stored json feed (3 items) in: data\aaj_test.json
+2026-10-31 21:23:01,126 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'aaj_sitemap/skipped_section': 17,
+ 'downloader/request_bytes': 7467,
+ 'downloader/request_count': 22,
+ 'downloader/request_method_count/GET': 22,
+ 'downloader/response_bytes': 619458,
+ 'downloader/response_count': 22,
+ 'downloader/response_status_count/200': 22,
+ 'elapsed_time_seconds': 79.1880000000001,
+ 'feedexport/success_count/FileFeedStorage': 1,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2026, 10, 31, 16, 23, 1, 122394, tzinfo=datetime.timezone.utc),
+ 'httpcompression/response_bytes': 2848152,
+ 'httpcompression/response_count': 22,
+ 'item_scraped_count': 3,
+ 'items_per_minute': 2.278481012658228,
+ 'log_count/INFO': 33,
+ 'mongodb/articles_new': 3,
+ 'mongodb/snapshots_inserted': 3,
+ 'request_depth_max': 1,
+ 'response_received_count': 22,
+ 'responses_per_minute': 16.70886075949367,
+ 'robotstxt/request_count': 1,
+ 'robotstxt/response_count': 1,
+ 'robotstxt/response_status_count/200': 1,
+ 'scheduler/dequeued': 21,
+ 'scheduler/dequeued/memory': 21,
+ 'scheduler/enqueued': 21,
+ 'scheduler/enqueued/memory': 21,
+ 'start_time': datetime.datetime(2026, 10, 31, 16, 21, 41, 934539, tzinfo=datetime.timezone.utc)}
+2026-10-31 21:23:01,138 [scrapy.core.engine] INFO: Spider closed (finished)
+2026-10-31 21:23:01,147 [truthlens.run_reporting] INFO: Run summary saved: logs\runs\20261031T162141Z_8a6d3d525f314c8b8507577ee719c617.json | status=completed

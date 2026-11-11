@@ -1,0 +1,98 @@
+{
+  "schema_version": "truthlens-run-v1",
+  "run_id": "20261031T164356Z_f76a0d5da201460d8f5b0c96f064ee66",
+  "source": "Express Tribune",
+  "spider": "tribune_sitemap",
+  "status": "completed_with_review_items",
+  "finish_reason": "finished",
+  "started_at": "2026-10-31T16:43:56.842920+00:00",
+  "finished_at": "2026-10-31T16:54:06.728436+00:00",
+  "duration_seconds": 609.886,
+  "log_file": "logs\\runs\\20261031T164356Z_f76a0d5da201460d8f5b0c96f064ee66.log",
+  "counts": {
+    "requests_total": 153,
+    "responses_total": 152,
+    "retry_attempts": 1,
+    "items_processed": 150,
+    "new_articles": 146,
+    "unchanged_articles": 4,
+    "updated_articles": 0,
+    "baselines_created": 0,
+    "processing_changes": 0,
+    "snapshots_inserted": 146,
+    "snapshots_skipped": 4,
+    "review_only_records": 0,
+    "records_with_review_flags": 1,
+    "stale_observations": 0,
+    "replayed_observations": 0,
+    "rejected_records": 0,
+    "failed_requests": 0,
+    "item_errors": 0,
+    "spider_errors": 0
+  },
+  "failed_requests": [],
+  "rejected_records": [],
+  "review_records": [
+    {
+      "article_key": "tribune:2637836",
+      "url": "https://tribune.com.pk/story/2637836/sindh-woos-asean-portuguese-for-trade",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author"
+      ],
+      "cleaning_issues": []
+    }
+  ],
+  "item_errors": [],
+  "spider_errors": [],
+  "http_status_counts": {
+    "200": 152
+  },
+  "download_attempt_exceptions": {
+    "downloader/exception_type_count/scrapy.exceptions.DownloadTimeoutError": 1
+  },
+  "scrapy_stats": {
+    "start_time": "2026-10-31 16:43:57.333908+00:00",
+    "log_count/INFO": 467,
+    "scheduler/enqueued/memory": 152,
+    "scheduler/enqueued": 152,
+    "scheduler/dequeued/memory": 152,
+    "scheduler/dequeued": 152,
+    "downloader/request_count": 153,
+    "downloader/request_method_count/GET": 153,
+    "downloader/request_bytes": 51404,
+    "downloader/response_count": 152,
+    "downloader/response_status_count/200": 152,
+    "downloader/response_bytes": 5815835,
+    "httpcompression/response_bytes": 27978593,
+    "httpcompression/response_count": 152,
+    "response_received_count": 152,
+    "robotstxt/response_count": 1,
+    "robotstxt/response_status_count/200": 1,
+    "robotstxt/request_count": 1,
+    "request_depth_max": 1,
+    "mongodb/snapshots_inserted": 146,
+    "mongodb/articles_new": 146,
+    "item_scraped_count": 150,
+    "downloader/exception_count": 1,
+    "downloader/exception_type_count/scrapy.exceptions.DownloadTimeoutError": 1,
+    "retry/count": 1,
+    "retry/reason_count/scrapy.exceptions.DownloadTimeoutError": 1,
+    "log_count/WARNING": 1,
+    "mongodb/snapshots_skipped": 4,
+    "mongodb/articles_unchanged": 4,
+    "elapsed_time_seconds": 609.3909999999996,
+    "finish_time": "2026-10-31 16:54:06.725548+00:00",
+    "finish_reason": "finished",
+    "responses_per_minute": 14.975369458128078,
+    "items_per_minute": 14.778325123152708
+  },
+  "notes": [
+    "requests_total includes robots.txt, listing pages, redirects, retries and article requests.",
+    "failed_requests lists terminal failures reported by the spider errback; retried attempts are separate.",
+    "review flags do not mean a record was dropped; review-only records are retained as snapshots.",
+    "updated_articles excludes new baselines and processing-method changes.",
+    "snapshots_inserted can include baselines and review records; it is not a count of article edits.",
+    "A running summary left behind after a forced termination is incomplete."
+  ]
+}

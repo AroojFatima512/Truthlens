@@ -1,0 +1,657 @@
+[
+ {
+  "story_id": "story-a9a068aa81",
+  "_id": {
+   "$oid": "6ae49d441bfe35ecd3d6061f"
+  },
+  "article_keys": [
+   "geo:686054",
+   "dawn:2036403"
+  ],
+  "sources": [
+   "Dawn",
+   "Geo News"
+  ],
+  "result": {
+   "articles": [
+    {
+     "id": "geo:686054",
+     "source": "Geo News",
+     "title": "Emergency, governor's rule imposed in KP as President Zardari approves summary on cabinet's advice",
+     "sentences": [
+      "Federal cabinet cites security concerns and failed talks.",
+      "Governor Kundi to lead 11-member advisory council.",
+      "Arrangement to remain in place for six months: law minister.",
+      "President Asif Ali Zardari on Sunday proclaimed an emergency and governor's rule in Khyber Pakhtunkhwa (KP) on the advice of Prime Minister Shehbaz Sharif, citing the province's worsening security situation.",
+      "\"The President approved and signed the summary upon the Prime Minister's advice under Articles 232 and 234 of the Constitution of Pakistan,\" the President Secretariat's Media Wing said in a press release.",
+      "The decision followed recommendations from the federal cabinet, formal advice from the prime minister and law-and-order reports submitted by relevant security institutions.",
+      "The statement also cited the breakdown of negotiations between the government delegation and the provincial leadership over the deteriorating security situation.",
+      "The Centre had alleged shortcomings in the provincial government's counterterrorism efforts as grounds for the decision.",
+      "The Constitution allows the federal government to make provisions during an emergency, including suspending some constitutional provisions relating to provincial bodies or authorities.",
+      "Law Minister Azam Nazeer Tarar told a news conference in Islamabad that KP Governor Faisal Karim Kundi would take charge with the assistance of an 11-member advisory council.",
+      "He said the arrangement would initially remain in place for six months.",
+      "The development comes amid heightened political tensions following a long march led by Khyber Pakhtunkhwa Chief Minister Sohail Afridi.",
+      "The march began in Lakki Marwat on October 4 after negotiations between the government and opposition failed to reach an agreement.",
+      "The talks broke down over disagreements concerning counterterrorism cooperation in KP and access to incarcerated PTI founder Imran Khan, including a meeting with his personal doctor.",
+      "The government and opposition traded accusations over the failure to reach an agreement as Afridi continued leading the march through the province.",
+      "Governor backs emergency in KP Following the move, KP Governor Faisal Karim Kundi said on Sunday that the province's people welcomed the presidential proclamation, adding that they wanted peace, stability, development and prosperity rather than unrest and insecurity.",
+      "In a video message addressed to KP residents, Kundi said the province's peace-loving people did not support terrorism or violent activities.",
+      "He said they had resolved not to support Fitna al-Khawarij and would stand shoulder to shoulder with security forces in the fight against terrorists until their last breath.",
+      "The governor said residents wanted a peaceful and prosperous future, with brotherly relations and mutual cooperation with other provinces.",
+      "He urged them to maintain peace and refrain from violating the law, inciting violence or engaging in rioting, warning that action would be taken against those who disturbed law and order or took the law into their own hands.",
+      "Fazlur Rehman terms act 'attack on democracy' Separately, Jamiat Ulema-e-Islam-Fazl (JUI-F) chief Maulana Fazlur Rehman has termed the imposition of an emergency and governor\u2019s rule an \"attack on democracy\", saying his party will reach out to the public and continue playing its role both inside and outside parliament.",
+      "Addressing a press conference, Fazlur Rehman said the government wanted the announcement of an end to the long march before accepting the protesters\u2019 demands.",
+      "He said PTI had demanded permission to meet the party\u2019s founder, Imran Khan.",
+      "The JUI-F chief said he had held discussions with Sohail Afridi, Barrister Gohar Ali Khan, Shahram Khan Tarakai and Asad Qaiser regarding the situation.",
+      "According to Fazlur Rehman, PTI representatives had said they were ready to call off the long march if their demands were accepted.",
+      "Army deployed to assist administration The federal government has also approved the deployment of the Pakistan Army in Khyber Pakhtunkhwa under Article 245 of the Constitution, according to a notification.",
+      "The army will assist the administration, protect citizens\u2019 lives and safeguard public property and government installations.",
+      "The deployment will remain in place for the duration of the emergency imposed on October 11.",
+      "The KP governor will determine the number of troops in consultation with GHQ and the Military Operations Directorate, the notification said."
+     ],
+     "bias": {
+      "score": 21.0,
+      "level": "Low",
+      "biased_sentence_share": 3.4,
+      "headline_p_biased": 0.2
+     },
+     "sentiment": {
+      "label": "neutral",
+      "polarity": 0.021,
+      "distribution": {
+       "positive": 1,
+       "neutral": 28,
+       "negative": 0
+      }
+     },
+     "entities": [
+      {
+       "text": "government",
+       "type": "ORG",
+       "count": 8
+      },
+      {
+       "text": "minister",
+       "type": "ORG",
+       "count": 6
+      },
+      {
+       "text": "opposition",
+       "type": "ORG",
+       "count": 2
+      }
+     ],
+     "selective_reporting": {
+      "score": 0.0,
+      "missing_entities": []
+     }
+    },
+    {
+     "id": "dawn:2036403",
+     "source": "Dawn",
+     "title": "TTAP condemns imposition of governor\u2019s rule, emergency in KP, calls move 'unconstitutional'",
+     "sentences": [
+      "ISLAMABAD: The Tehreek-i-Tahafuz Ayin-i-Pakistan (TTAP) on Sunday condemned the imposition of governor\u2019s rule and an emergency in Khyber Pakhtunkhwa, terming the move unconstitutional and contrary to democratic principles.",
+      "It announced that it would challenge governor\u2019s rule through the courts, assemblies and public forums.",
+      "It also said the long march would go ahead as planned.",
+      "Addressing a press conference, PTI Chairman Barrister Gohar Ali Khan said governor\u2019s rule and an emergency would not resolve the province\u2019s problems, stressing that counterterrorism efforts required a unified strategy developed through political consensus.",
+      "He rejected allegations that the KP government had failed to cooperate with the federal government in tackling terrorism, saying the provincial administration remained committed to eliminating the menace.",
+      "\u201cIf the problem of terrorism exists in 12 districts, why has governor\u2019s rule been imposed across the province?\u201d he asked.",
+      "Gohar said the PTI had consistently condemned terrorism in all its forms and maintained that the country\u2019s security and defence remained paramount.",
+      "However, he argued that counterterrorism measures should not be used to justify action against his party.",
+      "He said the PTI would challenge governor\u2019s rule through the courts, assemblies and public forums, adding that the party\u2019s struggle for constitutional and democratic rights would continue.",
+      "The PTI chairman also called for the release of political prisoners and the restoration of the legal rights of former prime minister and party founder Imran Khan.",
+      "He demanded that Imran be transferred to a hospital for treatment, that his family be allowed to meet him, and that details of his health and treatment be shared with them.",
+      "Gohar said the party had approached the Supreme Court and high courts 19 times seeking relief for its incarcerated founder.",
+      "He said the announcement of a long march for Aug 5 had been made to secure Imran\u2019s rights after the party failed to obtain relief through the courts.",
+      "He claimed that around 1,500 PTI workers were imprisoned in Punjab, while 10 members of the provincial assembly, including three ministers, and eight members of the National Assembly had also been arrested.",
+      "The PTI chairman rejected the government\u2019s narrative about his party, arguing that political action against the PTI should not be linked to efforts to eliminate terrorism.",
+      "He further claimed that terrorism had not been discussed during 15 meetings with government representatives before Oct 2.",
+      "He said the KP government had increased police capacity, provided security resources and participated in counterterrorism meetings.",
+      "Gohar said federal interference had weakened the provincial government\u2019s authority, adding that sidelining an elected chief minister was inconsistent with democratic principles.",
+      "Consensus needed on counterterrorism PTI Secretary General Salman Akram Raja said the party had consistently called for a mutually agreed strategy to address terrorism, arguing that decisions on security operations should be taken in consultation with all political parties.",
+      "Referring to the Parachinar agreement, he said the party\u2019s position had remained clear and that it was seeking the implementation of previously agreed decisions rather than the introduction of new conditions.",
+      "He said the party had cited the February 2026 meeting of the Apex Committee and a resolution adopted at a peace jirga as the basis for moving forward.",
+      "Raja said Chief Minister Sohail Afridi had taken a clear position and that the provincial government could not grant the federal government unrestricted authority to undertake whatever measures it considered appropriate.",
+      "\u201cWe cannot give anyone written permission to do whatever they want and then endorse it,\u201d he said.",
+      "He added that any decision concerning governor\u2019s rule or an emergency must be made in accordance with constitutional principles and political consensus.",
+      "Raja said negotiations had involved consultations with Mahmood Khan Achakzai and Allama Raja Nasir Abbas, while Maulana Fazlur Rehman and other political leaders had been trying to ensure the process succeeded.",
+      "He claimed that the talks had been progressing satisfactorily and that the imposition of an emergency was a hasty decision.",
+      "He also cited Senator Kamran Murtaza as saying that negotiations were moving in the right direction.",
+      "The TTAP leader described the arrest of a provincial assembly speaker as an extraordinary step, adding that the assembly remained in existence.",
+      "Despite what he described as a crackdown on the PTI, Raja said the party remained committed to its principles and was seeking peace and protection for innocent people.",
+      "He confirmed that there had been no change to the announcement of the long march by Chief Minister Sohail Afridi, saying peaceful protest was a fundamental constitutional right.",
+      "\u201cWe will not throw stones.",
+      "Through peaceful protest, we have to express our moral position,\u201d he said, adding that a large-scale, peaceful demonstration by citizens across the country would convey a strong message.",
+      "He said people would decide how to express their displeasure over what he described as actions against democracy, while distinguishing between political protest and revolutionary action.",
+      "National Action Plan must be implemented Majlis Wahdat-i-Muslimeen (MWM) chief Allama Raja Nasir Abbas said Pakistan was a federation whose provinces were united under a single Constitution, and criticised the treatment meted out to the PTI.",
+      "He claimed that Imran had received the majority of public support in the elections and alleged that the ruling establishment feared the public mandate and had continuously targeted the PTI.",
+      "Abbas blamed the government for the prevailing insecurity, saying the conduct of those in power had caused greater damage than the country\u2019s external enemies could inflict.",
+      "He called for the implementation of the National Action Plan (NAP) and said the seven days since the start of negotiations could have been used to make progress towards a political settlement.",
+      "Abbas further said the party could not support military operations in which ordinary citizens became victims, stressing that counterterrorism measures must protect civilians and contribute to lasting peace."
+     ],
+     "bias": {
+      "score": 23.2,
+      "level": "Low",
+      "biased_sentence_share": 10.5,
+      "headline_p_biased": 0.2
+     },
+     "sentiment": {
+      "label": "neutral",
+      "polarity": 0.0,
+      "distribution": {
+       "positive": 0,
+       "neutral": 38,
+       "negative": 0
+      }
+     },
+     "entities": [
+      {
+       "text": "government",
+       "type": "ORG",
+       "count": 9
+      },
+      {
+       "text": "minister",
+       "type": "ORG",
+       "count": 4
+      }
+     ],
+     "selective_reporting": {
+      "score": 33.3,
+      "missing_entities": [
+       "opposition"
+      ]
+     }
+    }
+   ],
+   "similarity_matrix": [
+    [
+     1.0,
+     0.869
+    ],
+    [
+     0.869,
+     1.0
+    ]
+   ],
+   "pairs": [
+    {
+     "a": "geo:686054",
+     "b": "dawn:2036403",
+     "similarity": 0.869,
+     "headline_diff": [
+      {
+       "op": "replace",
+       "a": "Emergency, governor's rule imposed",
+       "b": "TTAP condemns imposition of governor\u2019s rule, emergency"
+      },
+      {
+       "op": "equal",
+       "a": "in",
+       "b": "in"
+      },
+      {
+       "op": "replace",
+       "a": "KP as President Zardari approves summary on cabinet's advice",
+       "b": "KP, calls move 'unconstitutional'"
+      }
+     ],
+     "reworded_sentences": [],
+     "identical_sentences": 0,
+     "identical_pairs": [],
+     "only_in_a": [
+      "Federal cabinet cites security concerns and failed talks.",
+      "Governor Kundi to lead 11-member advisory council.",
+      "Arrangement to remain in place for six months: law minister.",
+      "The Constitution allows the federal government to make provisions during an emergency, including suspending some constitutional provisions relating to provincial bodies or authorities.",
+      "Law Minister Azam Nazeer Tarar told a news conference in Islamabad that KP Governor Faisal Karim Kundi would take charge with the assistance of an 11-member advisory council.",
+      "He said the arrangement would initially remain in place for six months.",
+      "The development comes amid heightened political tensions following a long march led by Khyber Pakhtunkhwa Chief Minister Sohail Afridi.",
+      "The talks broke down over disagreements concerning counterterrorism cooperation in KP and access to incarcerated PTI founder Imran Khan, including a meeting with his personal doctor.",
+      "In a video message addressed to KP residents, Kundi said the province's peace-loving people did not support terrorism or violent activities.",
+      "He said they had resolved not to support Fitna al-Khawarij and would stand shoulder to shoulder with security forces in the fight against terrorists until their last breath.",
+      "The governor said residents wanted a peaceful and prosperous future, with brotherly relations and mutual cooperation with other provinces.",
+      "He urged them to maintain peace and refrain from violating the law, inciting violence or engaging in rioting, warning that action would be taken against those who disturbed law and order or took the law into their own hands.",
+      "Fazlur Rehman terms act 'attack on democracy' Separately, Jamiat Ulema-e-Islam-Fazl (JUI-F) chief Maulana Fazlur Rehman has termed the imposition of an emergency and governor\u2019s rule an \"attack on democracy\", saying his party will reach out to the public and continue playing its role both inside and outside parliament.",
+      "He said PTI had demanded permission to meet the party\u2019s founder, Imran Khan.",
+      "The JUI-F chief said he had held discussions with Sohail Afridi, Barrister Gohar Ali Khan, Shahram Khan Tarakai and Asad Qaiser regarding the situation.",
+      "According to Fazlur Rehman, PTI representatives had said they were ready to call off the long march if their demands were accepted."
+     ],
+     "only_in_b": [
+      "It announced that it would challenge governor\u2019s rule through the courts, assemblies and public forums.",
+      "It also said the long march would go ahead as planned.",
+      "Addressing a press conference, PTI Chairman Barrister Gohar Ali Khan said governor\u2019s rule and an emergency would not resolve the province\u2019s problems, stressing that counterterrorism efforts required a unified strategy developed through political consensus.",
+      "\u201cIf the problem of terrorism exists in 12 districts, why has governor\u2019s rule been imposed across the province?\u201d he asked.",
+      "However, he argued that counterterrorism measures should not be used to justify action against his party.",
+      "He demanded that Imran be transferred to a hospital for treatment, that his family be allowed to meet him, and that details of his health and treatment be shared with them.",
+      "Gohar said the party had approached the Supreme Court and high courts 19 times seeking relief for its incarcerated founder.",
+      "He claimed that around 1,500 PTI workers were imprisoned in Punjab, while 10 members of the provincial assembly, including three ministers, and eight members of the National Assembly had also been arrested.",
+      "The PTI chairman rejected the government\u2019s narrative about his party, arguing that political action against the PTI should not be linked to efforts to eliminate terrorism.",
+      "He further claimed that terrorism had not been discussed during 15 meetings with government representatives before Oct 2.",
+      "He said the KP government had increased police capacity, provided security resources and participated in counterterrorism meetings.",
+      "Gohar said federal interference had weakened the provincial government\u2019s authority, adding that sidelining an elected chief minister was inconsistent with democratic principles.",
+      "Consensus needed on counterterrorism PTI Secretary General Salman Akram Raja said the party had consistently called for a mutually agreed strategy to address terrorism, arguing that decisions on security operations should be taken in consultation with all political parties.",
+      "Raja said Chief Minister Sohail Afridi had taken a clear position and that the provincial government could not grant the federal government unrestricted authority to undertake whatever measures it considered appropriate.",
+      "\u201cWe cannot give anyone written permission to do whatever they want and then endorse it,\u201d he said.",
+      "He added that any decision concerning governor\u2019s rule or an emergency must be made in accordance with constitutional principles and political consensus.",
+      "Raja said negotiations had involved consultations with Mahmood Khan Achakzai and Allama Raja Nasir Abbas, while Maulana Fazlur Rehman and other political leaders had been trying to ensure the process succeeded.",
+      "He claimed that the talks had been progressing satisfactorily and that the imposition of an emergency was a hasty decision.",
+      "He also cited Senator Kamran Murtaza as saying that negotiations were moving in the right direction.",
+      "Despite what he described as a crackdown on the PTI, Raja said the party remained committed to its principles and was seeking peace and protection for innocent people.",
+      "He confirmed that there had been no change to the announcement of the long march by Chief Minister Sohail Afridi, saying peaceful protest was a fundamental constitutional right.",
+      "\u201cWe will not throw stones.",
+      "Through peaceful protest, we have to express our moral position,\u201d he said, adding that a large-scale, peaceful demonstration by citizens across the country would convey a strong message.",
+      "He said people would decide how to express their displeasure over what he described as actions against democracy, while distinguishing between political protest and revolutionary action.",
+      "National Action Plan must be implemented Majlis Wahdat-i-Muslimeen (MWM) chief Allama Raja Nasir Abbas said Pakistan was a federation whose provinces were united under a single Constitution, and criticised the treatment meted out to the PTI.",
+      "Abbas further said the party could not support military operations in which ordinary citizens became victims, stressing that counterterrorism measures must protect civilians and contribute to lasting peace."
+     ]
+    }
+   ]
+  },
+  "computed_at": {
+   "$date": "2026-10-30T13:36:04.257Z"
+  }
+ },
+ {
+  "story_id": "story-8a38e95de0",
+  "_id": {
+   "$oid": "6ae49d441bfe35ecd3d60620"
+  },
+  "article_keys": [
+   "manual:9cc2c1135780278d",
+   "manual:97e7551e1a46e10c",
+   "manual:825d44a6eef01b3c"
+  ],
+  "sources": [
+   "Source A",
+   "Source B",
+   "Source C"
+  ],
+  "result": {
+   "articles": [
+    {
+     "id": "manual:9cc2c1135780278d",
+     "source": "Source A",
+     "title": "Province announces new school funding plan",
+     "sentences": [
+      "The provincial government on Monday announced a new plan to fund public schools.",
+      "The education minister said the plan would add 500 classrooms over three years.",
+      "Opposition leaders said the budget for the plan had not been published.",
+      "Teachers' unions have asked for a meeting with the minister next week."
+     ],
+     "bias": {
+      "score": 20.0,
+      "level": "Low",
+      "biased_sentence_share": 0.0,
+      "headline_p_biased": 0.2
+     },
+     "sentiment": {
+      "label": "neutral",
+      "polarity": 0.0,
+      "distribution": {
+       "positive": 0,
+       "neutral": 4,
+       "negative": 0
+      }
+     },
+     "entities": [
+      {
+       "text": "minister",
+       "type": "ORG",
+       "count": 2
+      },
+      {
+       "text": "government",
+       "type": "ORG",
+       "count": 1
+      },
+      {
+       "text": "opposition",
+       "type": "ORG",
+       "count": 1
+      },
+      {
+       "text": "budget",
+       "type": "ORG",
+       "count": 1
+      },
+      {
+       "text": "teachers",
+       "type": "ORG",
+       "count": 1
+      }
+     ],
+     "selective_reporting": {
+      "score": 16.7,
+      "missing_entities": [
+       "parents"
+      ]
+     }
+    },
+    {
+     "id": "manual:97e7551e1a46e10c",
+     "source": "Source B",
+     "title": "Controversial school plan slammed as empty promise",
+     "sentences": [
+      "The government unveiled yet another controversial school plan on Monday, which critics slammed as an empty promise.",
+      "The education minister claimed the scheme would add 500 classrooms over three years.",
+      "Furious opposition leaders said the budget had been hidden from the public.",
+      "Angry teachers are threatening protests across the province."
+     ],
+     "bias": {
+      "score": 61.3,
+      "level": "High",
+      "biased_sentence_share": 100.0,
+      "headline_p_biased": 0.95
+     },
+     "sentiment": {
+      "label": "negative",
+      "polarity": -0.45,
+      "distribution": {
+       "positive": 0,
+       "neutral": 1,
+       "negative": 3
+      }
+     },
+     "entities": [
+      {
+       "text": "government",
+       "type": "ORG",
+       "count": 1
+      },
+      {
+       "text": "minister",
+       "type": "ORG",
+       "count": 1
+      },
+      {
+       "text": "opposition",
+       "type": "ORG",
+       "count": 1
+      },
+      {
+       "text": "budget",
+       "type": "ORG",
+       "count": 1
+      },
+      {
+       "text": "teachers",
+       "type": "ORG",
+       "count": 1
+      }
+     ],
+     "selective_reporting": {
+      "score": 16.7,
+      "missing_entities": [
+       "parents"
+      ]
+     }
+    },
+    {
+     "id": "manual:825d44a6eef01b3c",
+     "source": "Source C",
+     "title": "Historic school plan set to transform education",
+     "sentences": [
+      "In a historic move, the provincial government on Monday launched a bold plan to transform public schools.",
+      "The education minister said the plan would add 500 classrooms over three years.",
+      "Parents across the province welcomed the announcement."
+     ],
+     "bias": {
+      "score": 40.0,
+      "level": "Moderate",
+      "biased_sentence_share": 33.3,
+      "headline_p_biased": 0.5
+     },
+     "sentiment": {
+      "label": "positive",
+      "polarity": 0.4,
+      "distribution": {
+       "positive": 2,
+       "neutral": 1,
+       "negative": 0
+      }
+     },
+     "entities": [
+      {
+       "text": "government",
+       "type": "ORG",
+       "count": 1
+      },
+      {
+       "text": "minister",
+       "type": "ORG",
+       "count": 1
+      },
+      {
+       "text": "parents",
+       "type": "ORG",
+       "count": 1
+      }
+     ],
+     "selective_reporting": {
+      "score": 60.0,
+      "missing_entities": [
+       "budget",
+       "opposition",
+       "teachers"
+      ]
+     }
+    }
+   ],
+   "similarity_matrix": [
+    [
+     1.0,
+     0.696,
+     0.757
+    ],
+    [
+     0.696,
+     1.0,
+     0.702
+    ],
+    [
+     0.757,
+     0.702,
+     1.0
+    ]
+   ],
+   "pairs": [
+    {
+     "a": "manual:9cc2c1135780278d",
+     "b": "manual:97e7551e1a46e10c",
+     "similarity": 0.696,
+     "headline_diff": [
+      {
+       "op": "replace",
+       "a": "Province announces new",
+       "b": "Controversial"
+      },
+      {
+       "op": "equal",
+       "a": "school",
+       "b": "school"
+      },
+      {
+       "op": "delete",
+       "a": "funding",
+       "b": ""
+      },
+      {
+       "op": "equal",
+       "a": "plan",
+       "b": "plan"
+      },
+      {
+       "op": "insert",
+       "a": "",
+       "b": "slammed as empty promise"
+      }
+     ],
+     "reworded_sentences": [
+      {
+       "a": 1,
+       "b": 1,
+       "similarity": 0.857,
+       "kind": "reworded",
+       "diff": [
+        {
+         "op": "equal",
+         "a": "The education minister",
+         "b": "The education minister"
+        },
+        {
+         "op": "replace",
+         "a": "said",
+         "b": "claimed"
+        },
+        {
+         "op": "equal",
+         "a": "the",
+         "b": "the"
+        },
+        {
+         "op": "replace",
+         "a": "plan",
+         "b": "scheme"
+        },
+        {
+         "op": "equal",
+         "a": "would add 500 classrooms over three years.",
+         "b": "would add 500 classrooms over three years."
+        }
+       ]
+      }
+     ],
+     "identical_sentences": 0,
+     "identical_pairs": [],
+     "only_in_a": [
+      "The provincial government on Monday announced a new plan to fund public schools.",
+      "Teachers' unions have asked for a meeting with the minister next week."
+     ],
+     "only_in_b": [
+      "The government unveiled yet another controversial school plan on Monday, which critics slammed as an empty promise.",
+      "Angry teachers are threatening protests across the province."
+     ]
+    },
+    {
+     "a": "manual:9cc2c1135780278d",
+     "b": "manual:825d44a6eef01b3c",
+     "similarity": 0.757,
+     "headline_diff": [
+      {
+       "op": "replace",
+       "a": "Province announces new",
+       "b": "Historic"
+      },
+      {
+       "op": "equal",
+       "a": "school",
+       "b": "school"
+      },
+      {
+       "op": "delete",
+       "a": "funding",
+       "b": ""
+      },
+      {
+       "op": "equal",
+       "a": "plan",
+       "b": "plan"
+      },
+      {
+       "op": "insert",
+       "a": "",
+       "b": "set to transform education"
+      }
+     ],
+     "reworded_sentences": [],
+     "identical_sentences": 1,
+     "identical_pairs": [
+      {
+       "a": 1,
+       "b": 1
+      }
+     ],
+     "only_in_a": [
+      "Teachers' unions have asked for a meeting with the minister next week."
+     ],
+     "only_in_b": [
+      "Parents across the province welcomed the announcement."
+     ]
+    },
+    {
+     "a": "manual:97e7551e1a46e10c",
+     "b": "manual:825d44a6eef01b3c",
+     "similarity": 0.702,
+     "headline_diff": [
+      {
+       "op": "replace",
+       "a": "Controversial",
+       "b": "Historic"
+      },
+      {
+       "op": "equal",
+       "a": "school plan",
+       "b": "school plan"
+      },
+      {
+       "op": "replace",
+       "a": "slammed as empty promise",
+       "b": "set to transform education"
+      }
+     ],
+     "reworded_sentences": [
+      {
+       "a": 1,
+       "b": 1,
+       "similarity": 0.857,
+       "kind": "reworded",
+       "diff": [
+        {
+         "op": "equal",
+         "a": "The education minister",
+         "b": "The education minister"
+        },
+        {
+         "op": "replace",
+         "a": "claimed",
+         "b": "said"
+        },
+        {
+         "op": "equal",
+         "a": "the",
+         "b": "the"
+        },
+        {
+         "op": "replace",
+         "a": "scheme",
+         "b": "plan"
+        },
+        {
+         "op": "equal",
+         "a": "would add 500 classrooms over three years.",
+         "b": "would add 500 classrooms over three years."
+        }
+       ]
+      }
+     ],
+     "identical_sentences": 0,
+     "identical_pairs": [],
+     "only_in_a": [
+      "The government unveiled yet another controversial school plan on Monday, which critics slammed as an empty promise.",
+      "Furious opposition leaders said the budget had been hidden from the public.",
+      "Angry teachers are threatening protests across the province."
+     ],
+     "only_in_b": [
+      "In a historic move, the provincial government on Monday launched a bold plan to transform public schools.",
+      "Parents across the province welcomed the announcement."
+     ]
+    }
+   ]
+  },
+  "computed_at": {
+   "$date": "2026-10-30T13:36:04.264Z"
+  }
+ }
+]

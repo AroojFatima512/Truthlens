@@ -1,0 +1,400 @@
+row,article_key,source,category,deberta_p_biased,deberta_bias,second_p_biased,second_bias,sentiment_model,stratum
+1,tribune:2637823,Express Tribune,opinion,0.0609,N,,,pos,opinion
+2,tribune:2638042,Express Tribune,entertainment,0.047,N,,,neu,news
+3,dawn:2040973,Dawn,opinion,0.0561,N,,,neu,opinion
+4,tribune:2638009,Express Tribune,lifestyle,0.0414,N,,,pos,news
+5,dawn:2040973,Dawn,opinion,0.0403,N,,,neu,opinion
+6,geo:684186,Geo News,news,0.0411,N,,,neg,news
+7,tribune:2637822,Express Tribune,opinion,0.0512,N,,,neu,opinion
+8,tribune:2637825,Express Tribune,opinion,0.9879,B,,,neg,opinion
+9,tribune:2637820,Express Tribune,opinion,0.9801,B,,,neu,opinion
+10,tribune:2637927,Express Tribune,sports,0.0469,N,,,neu,news
+11,tribune:2637824,Express Tribune,opinion,0.9712,B,,,neg,opinion
+12,dawn:2041137,Dawn,news,0.9851,B,,,neg,opinion
+13,tribune:2637824,Express Tribune,opinion,0.8529,B,,,neu,opinion
+14,aaj:330478728,Aaj News,sports,0.0811,N,,,pos,news
+15,tribune:2637822,Express Tribune,opinion,0.9074,B,,,neg,opinion
+16,tribune:2637821,Express Tribune,opinion,0.6973,B,,,neu,opinion
+17,geo:689111,Geo News,entertainment,0.8544,B,,,pos,news
+18,geo:689130,Geo News,offbeat,0.0753,N,,,neu,news
+19,nation:2026-11-01-govt-committed-protect-minority-communities-rights-kundi,The Nation,news,0.0442,N,,,pos,news
+20,nation:2026-10-31-sikandar-raza-becomes-oldest-player-score-t20i-century-40,The Nation,sports,0.0735,N,,,neu,news
+21,dawn:2041210,Dawn,news,0.1143,N,,,neg,news
+22,tribune:2637825,Express Tribune,opinion,0.907,B,,,neu,opinion
+23,aaj:330478763,Aaj News,lifestyle,0.0351,N,,,neu,news
+24,nation:2026-10-31-punjab-private-mbbs-admissions-open-till-nov-6,The Nation,education,0.0379,N,,,neu,news
+25,tribune:2637936,Express Tribune,sports,0.34,N,,,neu,news
+26,dawn:2041390,Dawn,news,0.0461,N,,,neu,news
+27,aaj:330478876,Aaj News,world,0.066,N,,,neu,news
+28,nation:2026-10-31-regionalisation-pakistan-afghanistan-conflict,The Nation,opinion,0.0572,N,,,neu,opinion
+29,nation:2026-10-31-trump-may-consider-major-iran-strike-midterm-setbacks-report,The Nation,world,0.0401,N,,,neg,news
+30,aaj:330478726,Aaj News,world,0.0397,N,,,neg,news
+31,tribune:2637822,Express Tribune,opinion,0.0351,N,,,pos,opinion
+32,aaj:330478790,Aaj News,sports,0.0546,N,,,neu,news
+33,tribune:2637850,Express Tribune,entertainment,0.0572,N,,,neu,news
+34,tribune:2637824,Express Tribune,opinion,0.1303,N,,,neu,opinion
+35,geo:689138,Geo News,world,0.0482,N,,,neg,news
+36,dawn:2041252,Dawn,pakistan,0.0473,N,,,neu,news
+37,dawn:2041209,Dawn,sports,0.0485,N,,,neu,news
+38,tribune:2637826,Express Tribune,opinion,0.0367,N,,,neu,opinion
+39,geo:684172,Geo News,news,0.0476,N,,,neg,news
+40,tribune:2637825,Express Tribune,opinion,0.9859,B,,,neu,opinion
+41,aaj:330478861,Aaj News,pakistan,0.0537,N,,,pos,news
+42,geo:689148,Geo News,pakistan,0.2528,N,,,pos,news
+43,tribune:2638018,Express Tribune,world,0.0338,N,,,neu,news
+44,tribune:2638005,Express Tribune,lifestyle,0.095,N,,,pos,news
+45,nation:2026-10-31-sikandar-raza-becomes-oldest-player-score-t20i-century-40,The Nation,sports,0.047,N,,,pos,news
+46,nation:2026-10-31-regionalisation-pakistan-afghanistan-conflict,The Nation,opinion,0.4858,N,,,neu,opinion
+47,dawn:2040973,Dawn,opinion,0.5156,B,,,pos,opinion
+48,tribune:2637826,Express Tribune,opinion,0.0359,N,,,neu,opinion
+49,geo:689156,Geo News,offbeat,0.0631,N,,,neu,news
+50,geo:689168,Geo News,offbeat,0.0574,N,,,neu,news
+51,dawn:2041137,Dawn,news,0.8964,B,,,neu,opinion
+52,geo:689119,Geo News,entertainment,0.9039,B,,,neg,news
+53,tribune:2637934,Express Tribune,sports,0.0548,N,,,neg,news
+54,geo:689166,Geo News,offbeat,0.1373,N,,,neg,news
+55,dawn:2041137,Dawn,news,0.047,N,,,neg,opinion
+56,tribune:2637820,Express Tribune,opinion,0.9852,B,,,neg,opinion
+57,aaj:330478761,Aaj News,other,0.0458,N,,,neu,news
+58,geo:689104,Geo News,sports,0.1049,N,,,pos,news
+59,tribune:2637824,Express Tribune,opinion,0.7631,B,,,pos,opinion
+60,nation:2026-10-31-regionalisation-pakistan-afghanistan-conflict,The Nation,opinion,0.0319,N,,,neu,opinion
+61,tribune:2637826,Express Tribune,opinion,0.8409,B,,,neg,opinion
+62,tribune:2637825,Express Tribune,opinion,0.9888,B,,,neu,opinion
+63,geo:685881,Geo News,news,0.0449,N,,,neu,news
+64,geo:689047,Geo News,offbeat,0.0455,N,,,neu,news
+65,tribune:2637803,Express Tribune,technology,0.0361,N,,,neu,news
+66,tribune:2637825,Express Tribune,opinion,0.9195,B,,,neg,opinion
+67,nation:2026-10-31-ai-chatbot-crime-confessions-raise-privacy-legal-concerns,The Nation,entertainment,0.0597,N,,,neu,news
+68,tribune:2637862,Express Tribune,business,0.036,N,,,neu,news
+69,geo:684157,Geo News,news,0.0798,N,,,neu,news
+70,geo:689050,Geo News,offbeat,0.0666,N,,,neg,news
+71,tribune:2638018,Express Tribune,world,0.0534,N,,,neg,news
+72,geo:689109,Geo News,health,0.0345,N,,,neu,news
+73,tribune:2637824,Express Tribune,opinion,0.0499,N,,,neu,opinion
+74,tribune:2637796,Express Tribune,technology,0.5464,B,,,neu,news
+75,tribune:2637931,Express Tribune,entertainment,0.089,N,,,neu,news
+76,dawn:2041167,Dawn,sports,0.2447,N,,,neu,news
+77,nation:2026-10-31-us-approves-dollar-2-1bn-sale-patriot-missiles-ukraine,The Nation,world,0.041,N,,,neu,news
+78,tribune:2638040,Express Tribune,pakistan,0.062,N,,,neg,news
+79,dawn:2041390,Dawn,news,0.0431,N,,,neu,news
+80,aaj:330478729,Aaj News,lifestyle,0.2602,N,,,pos,news
+81,dawn:2041137,Dawn,news,0.8106,B,,,pos,opinion
+82,geo:689069,Geo News,entertainment,0.0284,N,,,neu,news
+83,geo:689240,Geo News,entertainment,0.1656,N,,,neu,news
+84,dawn:2040959,Dawn,world,0.0456,N,,,neg,news
+85,tribune:2637898,Express Tribune,world,0.0342,N,,,neu,news
+86,tribune:2637858,Express Tribune,business,0.0408,N,,,neu,news
+87,dawn:2040973,Dawn,opinion,0.8908,B,,,neu,opinion
+88,dawn:2041168,Dawn,pakistan,0.0739,N,,,neu,news
+89,tribune:2637905,Express Tribune,sports,0.1122,N,,,neg,news
+90,nation:2026-11-01-tepa-seeks-rs-590m-ai-based-traffic-signals,The Nation,news,0.0439,N,,,neu,news
+91,tribune:2637947,Express Tribune,entertainment,0.0558,N,,,neu,news
+92,tribune:2638009,Express Tribune,lifestyle,0.0432,N,,,pos,news
+93,nation:2026-10-31-regionalisation-pakistan-afghanistan-conflict,The Nation,opinion,0.1946,N,,,neu,opinion
+94,dawn:2041137,Dawn,news,0.9747,B,,,neg,opinion
+95,tribune:2638096,Express Tribune,world,0.031,N,,,neu,news
+96,geo:689044,Geo News,offbeat,0.0537,N,,,neu,news
+97,aaj:330478728,Aaj News,sports,0.0624,N,,,neu,news
+98,geo:689156,Geo News,offbeat,0.1261,N,,,neu,news
+99,tribune:2637823,Express Tribune,opinion,0.0706,N,,,pos,opinion
+100,tribune:2637822,Express Tribune,opinion,0.0497,N,,,pos,opinion
+101,geo:689145,Geo News,entertainment,0.1177,N,,,neu,news
+102,nation:2026-10-31-regionalisation-pakistan-afghanistan-conflict,The Nation,opinion,0.0938,N,,,neu,opinion
+103,geo:689138,Geo News,world,0.035,N,,,neu,news
+104,tribune:2637862,Express Tribune,business,0.0385,N,,,neu,news
+105,nation:2026-11-01-tepa-seeks-rs-590m-ai-based-traffic-signals,The Nation,news,0.0568,N,,,neu,news
+106,tribune:2637825,Express Tribune,opinion,0.9699,B,,,neu,opinion
+107,tribune:2637823,Express Tribune,opinion,0.9822,B,,,neg,opinion
+108,tribune:2637800,Express Tribune,sports,0.1908,N,,,neu,news
+109,tribune:2637822,Express Tribune,opinion,0.3642,N,,,neg,opinion
+110,dawn:2041092,Dawn,news,0.048,N,,,neu,news
+111,tribune:2637825,Express Tribune,opinion,0.987,B,,,neu,opinion
+112,geo:689142,Geo News,offbeat,0.0439,N,,,neu,news
+113,tribune:2637822,Express Tribune,opinion,0.3051,N,,,neg,opinion
+114,nation:2026-10-31-uae-crush-india-six-wickets-end-cup-semi-final-hopes-hong-kong-sixes,The Nation,sports,0.0834,N,,,neu,news
+115,aaj:330478729,Aaj News,lifestyle,0.3171,N,,,neu,news
+116,geo:689151,Geo News,world,0.0522,N,,,neu,news
+117,aaj:330478763,Aaj News,lifestyle,0.0591,N,,,neu,news
+118,dawn:2041374,Dawn,pakistan,0.0383,N,,,neu,news
+119,tribune:2637823,Express Tribune,opinion,0.9833,B,,,neg,opinion
+120,tribune:2637824,Express Tribune,opinion,0.979,B,,,neu,opinion
+121,geo:689151,Geo News,world,0.0525,N,,,neu,news
+122,tribune:2637822,Express Tribune,opinion,0.9637,B,,,neg,opinion
+123,tribune:2637825,Express Tribune,opinion,0.989,B,,,neg,opinion
+124,tribune:2637824,Express Tribune,opinion,0.9804,B,,,neg,opinion
+125,dawn:2041092,Dawn,news,0.0606,N,,,neu,news
+126,aaj:330478766,Aaj News,pakistan,0.0434,N,,,neu,news
+127,tribune:2637821,Express Tribune,opinion,0.9608,B,,,neg,opinion
+128,dawn:2041137,Dawn,news,0.0889,N,,,neu,opinion
+129,tribune:2637820,Express Tribune,opinion,0.9867,B,,,neg,opinion
+130,tribune:2638030,Express Tribune,entertainment,0.0433,N,,,neu,news
+131,nation:2026-10-31-regionalisation-pakistan-afghanistan-conflict,The Nation,opinion,0.0477,N,,,neu,opinion
+132,aaj:330478862,Aaj News,world,0.0344,N,,,neg,news
+133,tribune:2637850,Express Tribune,entertainment,0.0709,N,,,neu,news
+134,tribune:2638007,Express Tribune,lifestyle,0.0552,N,,,neu,news
+135,aaj:330478876,Aaj News,world,0.043,N,,,neu,news
+136,tribune:2637941,Express Tribune,technology,0.3179,N,,,neu,news
+137,dawn:2040973,Dawn,opinion,0.9834,B,,,neg,opinion
+138,tribune:2637823,Express Tribune,opinion,0.7365,B,,,neg,opinion
+139,aaj:330478764,Aaj News,pakistan,0.0541,N,,,neu,news
+140,tribune:2637826,Express Tribune,opinion,0.9763,B,,,neg,opinion
+141,geo:689144,Geo News,entertainment,0.0663,N,,,pos,news
+142,nation:2026-10-31-musadik-malik-calls-satellite-technology-strengthen-disaster-preparedness,The Nation,pakistan,0.0675,N,,,neu,news
+143,dawn:2041192,Dawn,business,0.0557,N,,,neu,news
+144,tribune:2637822,Express Tribune,opinion,0.8049,B,,,neu,opinion
+145,tribune:2637826,Express Tribune,opinion,0.9465,B,,,neg,opinion
+146,tribune:2637996,Express Tribune,pakistan,0.0431,N,,,neu,news
+147,aaj:330478735,Aaj News,other,0.0682,N,,,neu,news
+148,tribune:2637860,Express Tribune,business,0.0388,N,,,neu,news
+149,nation:2026-10-31-regionalisation-pakistan-afghanistan-conflict,The Nation,opinion,0.0862,N,,,neg,opinion
+150,tribune:2637821,Express Tribune,opinion,0.9873,B,,,neg,opinion
+151,tribune:2637824,Express Tribune,opinion,0.0459,N,,,neu,opinion
+152,geo:685997,Geo News,news,0.0358,N,,,pos,news
+153,geo:685997,Geo News,news,0.0332,N,,,neu,news
+154,tribune:2637825,Express Tribune,opinion,0.125,N,,,neu,opinion
+155,tribune:2637824,Express Tribune,opinion,0.2532,N,,,neu,opinion
+156,tribune:2637826,Express Tribune,opinion,0.0779,N,,,neu,opinion
+157,tribune:2637807,Express Tribune,technology,0.0425,N,,,neu,news
+158,geo:689108,Geo News,sports,0.0665,N,,,neu,news
+159,geo:689171,Geo News,sports,0.8473,B,,,neg,news
+160,geo:689116,Geo News,business,0.0372,N,,,neu,news
+161,tribune:2637820,Express Tribune,opinion,0.0469,N,,,neu,opinion
+162,geo:689252,Geo News,entertainment,0.0776,N,,,neu,news
+163,dawn:2041210,Dawn,news,0.0336,N,,,neu,news
+164,tribune:2637825,Express Tribune,opinion,0.0468,N,,,neu,opinion
+165,nation:2026-10-31-regionalisation-pakistan-afghanistan-conflict,The Nation,opinion,0.0483,N,,,neu,opinion
+166,dawn:2041146,Dawn,news,0.0318,N,,,neg,news
+167,tribune:2637996,Express Tribune,pakistan,0.0369,N,,,neu,news
+168,nation:2026-11-01-kp-police-receive-drones-anti-drone-systems-armoured-vehicles-says-ig,The Nation,pakistan,0.1312,N,,,neu,news
+169,tribune:2637800,Express Tribune,sports,0.0419,N,,,pos,news
+170,tribune:2637917,Express Tribune,entertainment,0.5901,B,,,neg,news
+171,nation:2026-10-31-world-bank-approves-dollar-150m-sindh-property-tax-reforms,The Nation,business,0.0688,N,,,neu,news
+172,tribune:2637947,Express Tribune,entertainment,0.5464,B,,,neg,news
+173,tribune:2637806,Express Tribune,technology,0.0332,N,,,neg,news
+174,tribune:2637901,Express Tribune,technology,0.0434,N,,,neu,news
+175,tribune:2637820,Express Tribune,opinion,0.1689,N,,,neu,opinion
+176,tribune:2637826,Express Tribune,opinion,0.0672,N,,,neu,opinion
+177,tribune:2637906,Express Tribune,sports,0.0515,N,,,neu,news
+178,tribune:2637824,Express Tribune,opinion,0.9646,B,,,neg,opinion
+179,dawn:2041394,Dawn,news,0.0442,N,,,neu,news
+180,tribune:2637857,Express Tribune,business,0.0541,N,,,pos,news
+181,aaj:330478761,Aaj News,other,0.0482,N,,,neu,news
+182,tribune:2637820,Express Tribune,opinion,0.9791,B,,,neu,opinion
+183,dawn:2040973,Dawn,opinion,0.0403,N,,,neu,opinion
+184,nation:2026-11-01-aseefa-condoles-arif-zaman-qureshi-s-demise,The Nation,news,0.036,N,,,neu,news
+185,geo:689110,Geo News,offbeat,0.8074,B,,,neu,news
+186,dawn:2040959,Dawn,world,0.0545,N,,,neu,news
+187,dawn:2041192,Dawn,business,0.0307,N,,,neg,news
+188,nation:2026-10-31-trump-may-consider-major-iran-strike-midterm-setbacks-report,The Nation,world,0.1084,N,,,neg,news
+189,geo:689202,Geo News,entertainment,0.0415,N,,,neu,news
+190,tribune:2637825,Express Tribune,opinion,0.6243,B,,,neg,opinion
+191,tribune:2637823,Express Tribune,opinion,0.1469,N,,,neg,opinion
+192,dawn:2041137,Dawn,news,0.1859,N,,,neu,opinion
+193,geo:689127,Geo News,offbeat,0.0547,N,,,neu,news
+194,tribune:2637820,Express Tribune,opinion,0.4973,N,,,neu,opinion
+195,dawn:2041168,Dawn,pakistan,0.0474,N,,,neg,news
+196,nation:2026-10-31-uae-crush-india-six-wickets-end-cup-semi-final-hopes-hong-kong-sixes,The Nation,sports,0.0462,N,,,neu,news
+197,nation:2026-11-01-sri-lankan-hc-stronger-economic-ties-pakistan,The Nation,news,0.0638,N,,,pos,news
+198,nation:2026-10-30-sbp-raises-collateral-free-sme-loan-limit-rs50-million,The Nation,business,0.0366,N,,,neu,news
+199,tribune:2637826,Express Tribune,opinion,0.034,N,,,neu,opinion
+200,tribune:2637821,Express Tribune,opinion,0.0389,N,,,neu,opinion
+201,tribune:2637940,Express Tribune,technology,0.033,N,,,neu,news
+202,geo:685881,Geo News,news,0.0466,N,,,neu,news
+203,dawn:2041385,Dawn,news,0.0523,N,,,neg,news
+204,nation:2026-11-01-80-green-tractors-distributed-among-farmers-faisalabad,The Nation,news,0.0398,N,,,neu,news
+205,geo:689142,Geo News,offbeat,0.0429,N,,,neu,news
+206,tribune:2637796,Express Tribune,technology,0.3738,N,,,pos,news
+207,tribune:2637824,Express Tribune,opinion,0.9885,B,,,neu,opinion
+208,tribune:2637931,Express Tribune,entertainment,0.0623,N,,,pos,news
+209,aaj:330478764,Aaj News,pakistan,0.0413,N,,,neu,news
+210,dawn:2041252,Dawn,pakistan,0.0516,N,,,neu,news
+211,geo:689118,Geo News,pakistan,0.0443,N,,,neu,news
+212,tribune:2638010,Express Tribune,lifestyle,0.0574,N,,,neu,news
+213,tribune:2637821,Express Tribune,opinion,0.429,N,,,neg,opinion
+214,tribune:2637821,Express Tribune,opinion,0.2604,N,,,neu,opinion
+215,tribune:2637795,Express Tribune,lifestyle,0.0365,N,,,neu,news
+216,aaj:330478790,Aaj News,sports,0.0464,N,,,pos,news
+217,nation:2026-10-31-musadik-malik-calls-satellite-technology-strengthen-disaster-preparedness,The Nation,pakistan,0.0527,N,,,neu,news
+218,tribune:2637863,Express Tribune,business,0.0447,N,,,neu,news
+219,dawn:2041137,Dawn,news,0.9826,B,,,neg,opinion
+220,tribune:2637803,Express Tribune,technology,0.0384,N,,,neu,news
+221,tribune:2637820,Express Tribune,opinion,0.2146,N,,,neg,opinion
+222,dawn:2041394,Dawn,news,0.0614,N,,,neu,news
+223,geo:684172,Geo News,news,0.1384,N,,,neg,news
+224,tribune:2637825,Express Tribune,opinion,0.0598,N,,,neu,opinion
+225,nation:2026-10-31-regionalisation-pakistan-afghanistan-conflict,The Nation,opinion,0.0346,N,,,neu,opinion
+226,geo:689127,Geo News,offbeat,0.0782,N,,,neu,news
+227,dawn:2041137,Dawn,news,0.6632,B,,,neu,opinion
+228,tribune:2638046,Express Tribune,pakistan,0.0403,N,,,pos,news
+229,tribune:2637821,Express Tribune,opinion,0.0428,N,,,neu,opinion
+230,geo:689110,Geo News,offbeat,0.2034,N,,,neu,news
+231,tribune:2637820,Express Tribune,opinion,0.9611,B,,,neg,opinion
+232,tribune:2637826,Express Tribune,opinion,0.9621,B,,,neu,opinion
+233,tribune:2637823,Express Tribune,opinion,0.1165,N,,,neu,opinion
+234,aaj:330478726,Aaj News,world,0.0358,N,,,neu,news
+235,dawn:2041137,Dawn,news,0.8592,B,,,neu,opinion
+236,tribune:2637824,Express Tribune,opinion,0.9084,B,,,neu,opinion
+237,dawn:2041209,Dawn,sports,0.4032,N,,,pos,news
+238,geo:689065,Geo News,offbeat,0.0426,N,,,neu,news
+239,geo:689171,Geo News,sports,0.3453,N,,,pos,news
+240,tribune:2637934,Express Tribune,sports,0.0504,N,,,neu,news
+241,dawn:2041093,Dawn,business,0.0369,N,,,neu,news
+242,nation:2026-11-01-govt-committed-protect-minority-communities-rights-kundi,The Nation,news,0.0501,N,,,pos,news
+243,tribune:2637807,Express Tribune,technology,0.0509,N,,,neu,news
+244,tribune:2637824,Express Tribune,opinion,0.5997,B,,,neg,opinion
+245,geo:689144,Geo News,entertainment,0.1511,N,,,pos,news
+246,tribune:2638030,Express Tribune,entertainment,0.0487,N,,,neu,news
+247,tribune:2638005,Express Tribune,lifestyle,0.1083,N,,,neu,news
+248,geo:689168,Geo News,offbeat,0.0449,N,,,neu,news
+249,tribune:2637822,Express Tribune,opinion,0.9806,B,,,neg,opinion
+250,tribune:2637824,Express Tribune,opinion,0.8501,B,,,neu,opinion
+251,tribune:2637822,Express Tribune,opinion,0.8045,B,,,pos,opinion
+252,tribune:2638042,Express Tribune,entertainment,0.0555,N,,,neu,news
+253,nation:2026-10-31-ai-chatbot-crime-confessions-raise-privacy-legal-concerns,The Nation,entertainment,0.0758,N,,,neu,news
+254,dawn:2041366,Dawn,world,0.0582,N,,,neu,news
+255,dawn:2040973,Dawn,opinion,0.9655,B,,,neg,opinion
+256,tribune:2637820,Express Tribune,opinion,0.9864,B,,,neg,opinion
+257,nation:2026-11-01-pakistan-welcomes-us-offer-facilitate-dialogue-afghanistan-links-talks-action-militants,The Nation,pakistan,0.0404,N,,,neu,news
+258,geo:689106,Geo News,offbeat,0.0876,N,,,neu,news
+259,geo:689119,Geo News,entertainment,0.9861,B,,,neg,news
+260,tribune:2638028,Express Tribune,entertainment,0.0381,N,,,neu,news
+261,nation:2026-10-31-canada-eu-launch-alliance-strengthen-economic-defence-technology-ties,The Nation,world,0.0299,N,,,neu,news
+262,tribune:2638096,Express Tribune,world,0.0372,N,,,neu,news
+263,tribune:2637905,Express Tribune,sports,0.0383,N,,,pos,news
+264,geo:689252,Geo News,entertainment,0.045,N,,,neu,news
+265,nation:2026-11-01-80-green-tractors-distributed-among-farmers-faisalabad,The Nation,news,0.0337,N,,,neu,news
+266,geo:689158,Geo News,offbeat,0.6588,B,,,neu,news
+267,geo:689166,Geo News,offbeat,0.1027,N,,,neu,news
+268,tribune:2637940,Express Tribune,technology,0.0404,N,,,neu,news
+269,tribune:2637859,Express Tribune,business,0.0441,N,,,neu,news
+270,geo:689202,Geo News,entertainment,0.576,B,,,neu,news
+271,geo:689118,Geo News,pakistan,0.0406,N,,,neu,news
+272,tribune:2637820,Express Tribune,opinion,0.1552,N,,,neu,opinion
+273,geo:689111,Geo News,entertainment,0.1104,N,,,neu,news
+274,nation:2026-10-31-china-s-biotechnology-sector-shifts-manufacturing-exploring-pharma-innovation,The Nation,business,0.0369,N,,,pos,news
+275,tribune:2637823,Express Tribune,opinion,0.3139,N,,,neg,opinion
+276,dawn:2041137,Dawn,news,0.98,B,,,neg,opinion
+277,geo:684186,Geo News,news,0.1283,N,,,neu,news
+278,geo:689158,Geo News,offbeat,0.9192,B,,,neg,news
+279,geo:689116,Geo News,business,0.0954,N,,,neg,news
+280,tribune:2637826,Express Tribune,opinion,0.9825,B,,,neg,opinion
+281,tribune:2637860,Express Tribune,business,0.0455,N,,,neu,news
+282,nation:2026-10-31-diesel-price-rises-rs2-29-per-litre-petrol-rate-unchanged,The Nation,business,0.0434,N,,,neu,news
+283,geo:689174,Geo News,world,0.034,N,,,neu,news
+284,geo:689103,Geo News,other,0.3063,N,,,neu,news
+285,geo:684157,Geo News,news,0.1922,N,,,neu,news
+286,aaj:330478862,Aaj News,world,0.0327,N,,,neu,news
+287,tribune:2637821,Express Tribune,opinion,0.2081,N,,,neu,opinion
+288,tribune:2637904,Express Tribune,sports,0.7652,B,,,neu,news
+289,tribune:2637856,Express Tribune,business,0.0396,N,,,neu,news
+290,dawn:2040973,Dawn,opinion,0.146,N,,,neg,opinion
+291,aaj:330478792,Aaj News,pakistan,0.0547,N,,,neu,news
+292,dawn:2041193,Dawn,world,0.0441,N,,,neu,news
+293,geo:689104,Geo News,sports,0.0436,N,,,neu,news
+294,nation:2026-10-31-us-approves-dollar-2-1bn-sale-patriot-missiles-ukraine,The Nation,world,0.0327,N,,,neu,news
+295,dawn:2041137,Dawn,news,0.7418,B,,,neg,opinion
+296,tribune:2637823,Express Tribune,opinion,0.057,N,,,neg,opinion
+297,dawn:2041091,Dawn,business,0.0481,N,,,pos,news
+298,dawn:2040973,Dawn,opinion,0.0549,N,,,neu,opinion
+299,tribune:2638046,Express Tribune,pakistan,0.0558,N,,,neu,news
+300,geo:689130,Geo News,offbeat,0.0986,N,,,neu,news
+301,dawn:2041193,Dawn,world,0.6148,B,,,neu,news
+302,geo:689065,Geo News,offbeat,0.0342,N,,,neu,news
+303,dawn:2041093,Dawn,business,0.0576,N,,,neg,news
+304,tribune:2637858,Express Tribune,business,0.0479,N,,,neu,news
+305,nation:2026-11-01-sri-lankan-hc-stronger-economic-ties-pakistan,The Nation,news,0.0489,N,,,pos,news
+306,tribune:2637906,Express Tribune,sports,0.0511,N,,,neu,news
+307,geo:689106,Geo News,offbeat,0.4501,N,,,neg,news
+308,tribune:2637865,Express Tribune,business,0.0456,N,,,neu,news
+309,tribune:2637857,Express Tribune,business,0.0389,N,,,neu,news
+310,nation:2026-10-31-regionalisation-pakistan-afghanistan-conflict,The Nation,opinion,0.5905,B,,,neg,opinion
+311,tribune:2637824,Express Tribune,opinion,0.3072,N,,,neu,opinion
+312,nation:2026-10-31-regionalisation-pakistan-afghanistan-conflict,The Nation,opinion,0.2828,N,,,neg,opinion
+313,aaj:330478735,Aaj News,other,0.046,N,,,neg,news
+314,aaj:330478766,Aaj News,pakistan,0.0387,N,,,neu,news
+315,geo:689103,Geo News,other,0.9406,B,,,neg,news
+316,tribune:2637822,Express Tribune,opinion,0.8177,B,,,pos,opinion
+317,dawn:2040973,Dawn,opinion,0.2246,N,,,neu,opinion
+318,tribune:2637825,Express Tribune,opinion,0.9369,B,,,neu,opinion
+319,geo:689240,Geo News,entertainment,0.0438,N,,,pos,news
+320,dawn:2041167,Dawn,sports,0.5294,B,,,neu,news
+321,tribune:2637820,Express Tribune,opinion,0.9862,B,,,neg,opinion
+322,tribune:2637826,Express Tribune,opinion,0.0591,N,,,neu,opinion
+323,geo:689083,Geo News,business,0.0314,N,,,neu,news
+324,nation:2026-10-31-punjab-private-mbbs-admissions-open-till-nov-6,The Nation,education,0.0517,N,,,neu,news
+325,dawn:2041374,Dawn,pakistan,0.0558,N,,,pos,news
+326,tribune:2637820,Express Tribune,opinion,0.9796,B,,,neu,opinion
+327,tribune:2637825,Express Tribune,opinion,0.9895,B,,,neg,opinion
+328,tribune:2637918,Express Tribune,entertainment,0.0504,N,,,pos,news
+329,nation:2026-11-01-kp-police-receive-drones-anti-drone-systems-armoured-vehicles-says-ig,The Nation,pakistan,0.0592,N,,,neu,news
+330,nation:2026-10-31-china-s-biotechnology-sector-shifts-manufacturing-exploring-pharma-innovation,The Nation,business,0.0944,N,,,neu,news
+331,geo:689145,Geo News,entertainment,0.1074,N,,,pos,news
+332,geo:689069,Geo News,entertainment,0.0609,N,,,neu,news
+333,geo:689148,Geo News,pakistan,0.0614,N,,,pos,news
+334,nation:2026-10-31-regionalisation-pakistan-afghanistan-conflict,The Nation,opinion,0.0427,N,,,neu,opinion
+335,geo:689047,Geo News,offbeat,0.1028,N,,,neg,news
+336,dawn:2040973,Dawn,opinion,0.861,B,,,neg,opinion
+337,tribune:2637936,Express Tribune,sports,0.0403,N,,,neu,news
+338,tribune:2637939,Express Tribune,technology,0.0334,N,,,neu,news
+339,tribune:2637859,Express Tribune,business,0.0637,N,,,neu,news
+340,geo:689050,Geo News,offbeat,0.1017,N,,,neu,news
+341,tribune:2638028,Express Tribune,entertainment,0.0414,N,,,neu,news
+342,aaj:330478792,Aaj News,pakistan,0.0715,N,,,neu,news
+343,tribune:2637904,Express Tribune,sports,0.035,N,,,neu,news
+344,dawn:2041137,Dawn,news,0.0511,N,,,neg,opinion
+345,dawn:2040982,Dawn,technology,0.3603,N,,,neu,news
+346,geo:689254,Geo News,pakistan,0.0589,N,,,neu,news
+347,tribune:2637901,Express Tribune,technology,0.0375,N,,,neu,news
+348,dawn:2040973,Dawn,opinion,0.3401,N,,,neu,opinion
+349,tribune:2637820,Express Tribune,opinion,0.9879,B,,,neu,opinion
+350,geo:689109,Geo News,health,0.0456,N,,,neg,news
+351,tribune:2637823,Express Tribune,opinion,0.276,N,,,pos,opinion
+352,tribune:2637927,Express Tribune,sports,0.0661,N,,,neu,news
+353,nation:2026-10-31-world-bank-approves-dollar-150m-sindh-property-tax-reforms,The Nation,business,0.0677,N,,,neu,news
+354,dawn:2040973,Dawn,opinion,0.0625,N,,,neu,opinion
+355,tribune:2637826,Express Tribune,opinion,0.9067,B,,,neu,opinion
+356,dawn:2041091,Dawn,business,0.0327,N,,,neu,news
+357,tribune:2637822,Express Tribune,opinion,0.9601,B,,,pos,opinion
+358,tribune:2637826,Express Tribune,opinion,0.0714,N,,,neu,opinion
+359,tribune:2637863,Express Tribune,business,0.0511,N,,,neu,news
+360,geo:689096,Geo News,health,0.0495,N,,,neu,news
+361,tribune:2637865,Express Tribune,business,0.0523,N,,,pos,news
+362,dawn:2041137,Dawn,news,0.9664,B,,,neu,opinion
+363,geo:689254,Geo News,pakistan,0.0387,N,,,neu,news
+364,nation:2026-10-30-sbp-raises-collateral-free-sme-loan-limit-rs50-million,The Nation,business,0.0475,N,,,neu,news
+365,tribune:2637826,Express Tribune,opinion,0.7111,B,,,neu,opinion
+366,dawn:2041385,Dawn,news,0.0378,N,,,neg,news
+367,geo:689044,Geo News,offbeat,0.3647,N,,,neu,news
+368,geo:689096,Geo News,health,0.9826,B,,,neu,news
+369,dawn:2040973,Dawn,opinion,0.1837,N,,,neu,opinion
+370,dawn:2040973,Dawn,opinion,0.0669,N,,,neu,opinion
+371,tribune:2637820,Express Tribune,opinion,0.0537,N,,,neu,opinion
+372,nation:2026-10-31-regionalisation-pakistan-afghanistan-conflict,The Nation,opinion,0.1919,N,,,neu,opinion
+373,tribune:2637795,Express Tribune,lifestyle,0.9755,B,,,neu,news
+374,nation:2026-11-01-pakistan-welcomes-us-offer-facilitate-dialogue-afghanistan-links-talks-action-militants,The Nation,pakistan,0.0499,N,,,pos,news
+375,nation:2026-10-31-regionalisation-pakistan-afghanistan-conflict,The Nation,opinion,0.0351,N,,,neg,opinion
+376,tribune:2637826,Express Tribune,opinion,0.9839,B,,,neg,opinion
+377,nation:2026-11-01-aseefa-condoles-arif-zaman-qureshi-s-demise,The Nation,news,0.0412,N,,,neu,news
+378,geo:689080,Geo News,world,0.2389,N,,,neg,news
+379,dawn:2041137,Dawn,news,0.3936,N,,,neg,opinion
+380,tribune:2637821,Express Tribune,opinion,0.9873,B,,,neg,opinion
+381,nation:2026-10-31-regionalisation-pakistan-afghanistan-conflict,The Nation,opinion,0.0351,N,,,neu,opinion
+382,tribune:2637856,Express Tribune,business,0.0446,N,,,neg,news
+383,tribune:2638040,Express Tribune,pakistan,0.0904,N,,,neu,news
+384,tribune:2637918,Express Tribune,entertainment,0.0731,N,,,neu,news
+385,dawn:2041366,Dawn,world,0.0355,N,,,neg,news
+386,tribune:2637821,Express Tribune,opinion,0.9895,B,,,neg,opinion
+387,tribune:2637939,Express Tribune,technology,0.0458,N,,,neu,news
+388,nation:2026-10-31-diesel-price-rises-rs2-29-per-litre-petrol-rate-unchanged,The Nation,business,0.04,N,,,neu,news
+389,tribune:2637806,Express Tribune,technology,0.0409,N,,,neg,news
+390,tribune:2637822,Express Tribune,opinion,0.8827,B,,,pos,opinion
+391,geo:689083,Geo News,business,0.1256,N,,,neg,news
+392,dawn:2040982,Dawn,technology,0.1869,N,,,pos,news
+393,geo:689080,Geo News,world,0.0367,N,,,neu,news
+394,tribune:2637898,Express Tribune,world,0.0472,N,,,neu,news
+395,tribune:2637941,Express Tribune,technology,0.0537,N,,,pos,news
+396,aaj:330478861,Aaj News,pakistan,0.0337,N,,,neu,news
+397,tribune:2637825,Express Tribune,opinion,0.9895,B,,,neu,opinion
+398,nation:2026-10-31-canada-eu-launch-alliance-strengthen-economic-defence-technology-ties,The Nation,world,0.037,N,,,neu,news
+399,tribune:2637821,Express Tribune,opinion,0.984,B,,,neu,opinion

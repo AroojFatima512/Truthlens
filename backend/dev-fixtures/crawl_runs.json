@@ -1,0 +1,49 @@
+[
+ {
+  "started_at": {
+   "$date": "2026-10-11T15:00:00Z"
+  },
+  "finished_at": {
+   "$date": "2026-10-11T15:03:00Z"
+  },
+  "status": "completed",
+  "limit": 100,
+  "triggered_by": "cli",
+  "steps": [
+   {
+    "name": "crawl geo_sitemap",
+    "returncode": 0,
+    "seconds": 61.0,
+    "report": {
+     "source": "Geo News",
+     "status": "completed",
+     "counts": {
+      "new_articles": 10,
+      "updated_articles": 0
+     }
+    }
+   },
+   {
+    "name": "crawl dawn_sitemap",
+    "returncode": 0,
+    "seconds": 48.2,
+    "report": {
+     "source": "Dawn",
+     "status": "completed_with_review_items",
+     "counts": {
+      "new_articles": 7,
+      "updated_articles": 0
+     }
+    }
+   },
+   {
+    "name": "analyse",
+    "returncode": 0,
+    "seconds": 95.4
+   }
+  ],
+  "_id": {
+   "$oid": "6ae49d441bfe35ecd3d60622"
+  }
+ }
+]

@@ -1,0 +1,801 @@
+row,article_key,source,category,deberta_p_biased,deberta_bias,second_p_biased,second_bias,sentiment_model
+1,tribune:2637926,Express Tribune,sports,0.0525,N,,,neu
+2,geo:689155,Geo News,entertainment,0.3342,N,,,pos
+3,nation:2026-10-31-protesters-demand-justice-youth-s-death-alleged-police-firing,The Nation,news,0.0817,N,,,neg
+4,tribune:2637805,Express Tribune,pakistan,0.3584,N,,,neu
+5,nation:2026-10-31-golden-handcuffs,The Nation,news,0.1884,N,,,neu
+6,nation:2026-10-31-kp-govt-announces-reforms-improve-governance-public-services,The Nation,news,0.6703,B,,,neu
+7,nation:2026-10-31-educated-uncivil,The Nation,news,0.5445,B,,,neu
+8,dawn:2041173,Dawn,world,0.0828,N,,,neu
+9,nation:2026-10-31-building-control-directorate-issues-notice-maulana-fazlur-rehman-s-residence,The Nation,news,0.0609,N,,,neu
+10,nation:2026-10-31-pak-china-friendship-hospital-new-hope-free-quality-healthcare,The Nation,news,0.0844,N,,,pos
+11,dawn:2041143,Dawn,news,0.0501,N,,,neu
+12,dawn:2041105,Dawn,news,0.7254,B,,,neg
+13,nation:2026-10-31-protesters-demand-justice-youth-s-death-alleged-police-firing,The Nation,news,0.0499,N,,,neu
+14,dawn:2041140,Dawn,news,0.8186,B,,,neu
+15,nation:2026-10-31-diplomacy-rivalries,The Nation,news,0.8528,B,,,neg
+16,nation:2026-10-31-educated-uncivil,The Nation,news,0.388,N,,,neu
+17,nation:2026-10-31-role-technology-healthcare,The Nation,news,0.0899,N,,,neu
+18,nation:2026-10-31-gold-prices-decline-rs5-100-per-tola-rs420-536,The Nation,news,0.0329,N,,,neg
+19,geo:689136,Geo News,entertainment,0.0475,N,,,neu
+20,dawn:2041103,Dawn,news,0.0584,N,,,neg
+21,geo:689092,Geo News,news,0.523,B,,,neg
+22,tribune:2637914,Express Tribune,sports,0.4179,N,,,neu
+23,geo:689128,Geo News,entertainment,0.8486,B,,,neu
+24,tribune:2637834,Express Tribune,pakistan,0.0332,N,,,pos
+25,nation:2026-10-31-pak-china-friendship-hospital-new-hope-free-quality-healthcare,The Nation,news,0.053,N,,,neu
+26,geo:689092,Geo News,news,0.0471,N,,,neu
+27,dawn:2041140,Dawn,news,0.7731,B,,,neu
+28,geo:689169,Geo News,entertainment,0.9775,B,,,neu
+29,tribune:2637889,Express Tribune,pakistan,0.0434,N,,,neu
+30,dawn:2041140,Dawn,news,0.0498,N,,,neu
+31,nation:2026-10-31-educated-uncivil,The Nation,news,0.9875,B,,,neg
+32,nation:2026-10-31-empowering-smes,The Nation,news,0.3693,N,,,pos
+33,geo:689126,Geo News,entertainment,0.3696,N,,,pos
+34,nation:2026-10-31-apartheid-elections,The Nation,news,0.9071,B,,,neu
+35,geo:689155,Geo News,entertainment,0.1332,N,,,pos
+36,nation:2026-10-31-pakistan-urges-un-safeguard-global-maritime-trade-amid-rising-conflicts,The Nation,news,0.0578,N,,,neg
+37,nation:2026-10-31-punjab-cm-launches-historic-rs1-99-trillion-pivot-economic-plan,The Nation,news,0.0813,N,,,pos
+38,nation:2026-10-31-trump-claims-iran-war-will-get-wrapped-soon,The Nation,news,0.7312,B,,,neg
+39,nation:2026-10-31-golden-handcuffs,The Nation,news,0.9842,B,,,neg
+40,dawn:2041140,Dawn,news,0.9337,B,,,pos
+41,nation:2026-10-30-three-flour-mills-sealed-smuggling,The Nation,news,0.1872,N,,,neu
+42,geo:689092,Geo News,news,0.6266,B,,,neu
+43,geo:684187,Geo News,news,0.5812,B,,,pos
+44,geo:689134,Geo News,entertainment,0.5027,B,,,pos
+45,nation:2026-10-31-mp-rijas-reach-subsidiary-final-memorial-polo-cup,The Nation,news,0.779,B,,,pos
+46,dawn:2041200,Dawn,news,0.045,N,,,neu
+47,nation:2026-10-31-pak-china-friendship-hospital-new-hope-free-quality-healthcare,The Nation,news,0.0421,N,,,neu
+48,nation:2026-10-31-golden-handcuffs,The Nation,news,0.1292,N,,,pos
+49,geo:689128,Geo News,entertainment,0.812,B,,,neu
+50,nation:2026-10-31-fbr-destroys-illegal-cigarettes-worth-rs-570m-sukkur,The Nation,news,0.0661,N,,,neu
+51,nation:2026-10-31-pak-china-friendship-hospital-new-hope-free-quality-healthcare,The Nation,news,0.1394,N,,,neu
+52,nation:2026-10-31-embassy-russia-hosts-presentation-book-ukraine-war-beyond-headlines,The Nation,news,0.0396,N,,,pos
+53,nation:2026-10-31-gcuf-organises-seminar-highlight-role-ai-improving-learning-outcomes,The Nation,news,0.3091,N,,,neg
+54,dawn:2041176,Dawn,news,0.9175,B,,,neg
+55,nation:2026-10-31-pak-china-friendship-hospital-new-hope-free-quality-healthcare,The Nation,news,0.0892,N,,,neu
+56,dawn:2036160,Dawn,pakistan,0.0329,N,,,neu
+57,tribune:2637805,Express Tribune,pakistan,0.3614,N,,,neg
+58,geo:685964,Geo News,news,0.0602,N,,,neu
+59,dawn:2041143,Dawn,news,0.085,N,,,neu
+60,nation:2026-10-31-educated-uncivil,The Nation,news,0.2204,N,,,neu
+61,dawn:2041107,Dawn,news,0.739,B,,,neg
+62,nation:2026-10-31-mardan-cantonment-board-launches-campaign-stray-dogs,The Nation,news,0.0423,N,,,neg
+63,geo:689097,Geo News,entertainment,0.0519,N,,,neu
+64,geo:689102,Geo News,entertainment,0.0452,N,,,neu
+65,geo:689128,Geo News,entertainment,0.8549,B,,,neu
+66,geo:689133,Geo News,entertainment,0.1931,N,,,neu
+67,dawn:2041140,Dawn,news,0.5285,B,,,neu
+68,nation:2026-10-31-role-technology-healthcare,The Nation,news,0.3279,N,,,neg
+69,dawn:2041156,Dawn,world,0.0579,N,,,neu
+70,tribune:2637907,Express Tribune,world,0.0656,N,,,pos
+71,dawn:2041143,Dawn,news,0.6281,B,,,neu
+72,geo:689099,Geo News,entertainment,0.383,N,,,neu
+73,geo:689169,Geo News,entertainment,0.9868,B,,,neu
+74,geo:689149,Geo News,entertainment,0.9663,B,,,neg
+75,geo:689149,Geo News,entertainment,0.9645,B,,,neg
+76,nation:2026-10-31-pakistan-singapore-vow-deepen-ties-ai-education-trade,The Nation,news,0.0328,N,,,pos
+77,geo:689124,Geo News,world,0.9756,B,,,neu
+78,dawn:2041140,Dawn,news,0.8474,B,,,neg
+79,dawn:2041140,Dawn,news,0.965,B,,,neg
+80,nation:2026-10-31-embassy-russia-hosts-presentation-book-ukraine-war-beyond-headlines,The Nation,news,0.9343,B,,,neu
+81,nation:2026-10-31-ahsan-iqbal-orders-removal-bottlenecks-nha-projects-warns-cost-escalations,The Nation,news,0.0415,N,,,neu
+82,geo:689147,Geo News,entertainment,0.8485,B,,,pos
+83,nation:2026-10-31-pakistan-singapore-vow-deepen-ties-ai-education-trade,The Nation,news,0.0393,N,,,pos
+84,nation:2026-10-31-golden-handcuffs,The Nation,news,0.2428,N,,,neg
+85,geo:686065,Geo News,news,0.7832,B,,,neg
+86,tribune:2637852,Express Tribune,pakistan,0.7601,B,,,neg
+87,nation:2026-10-31-pakistan-s-diplomatic-renaissance,The Nation,news,0.7032,B,,,neu
+88,geo:689097,Geo News,entertainment,0.388,N,,,pos
+89,nation:2026-10-30-ali-dar-inaugurates-new-passage-data-darbar,The Nation,pakistan,0.0402,N,,,neu
+90,geo:689160,Geo News,entertainment,0.9387,B,,,neu
+91,dawn:2041178,Dawn,pakistan,0.8024,B,,,neu
+92,geo:689092,Geo News,news,0.2479,N,,,neu
+93,dawn:2041052,Dawn,pakistan,0.0577,N,,,pos
+94,dawn:2041140,Dawn,news,0.9539,B,,,neu
+95,geo:686013,Geo News,news,0.0328,N,,,neg
+96,nation:2026-10-30-violent-crime-falls-historic-rate-bahawalpur,The Nation,news,0.0865,N,,,pos
+97,nation:2026-10-31-three-illegal-lpg-stations-sealed,The Nation,news,0.0455,N,,,neu
+98,dawn:2036352,Dawn,pakistan,0.8802,B,,,neu
+99,nation:2026-10-31-punjab-government-targets-1-6m-acres-rawalpindi-division-wheat-cultivation,The Nation,news,0.0737,N,,,neu
+100,geo:689154,Geo News,entertainment,0.2011,N,,,neg
+101,nation:2026-10-31-golden-handcuffs,The Nation,news,0.7489,B,,,neu
+102,nation:2026-10-31-pakistan-tells-un-cannot-remain-idle-amid-cross-border-terrorism-afghanistan,The Nation,news,0.0411,N,,,neg
+103,nation:2026-10-31-pak-china-friendship-hospital-new-hope-free-quality-healthcare,The Nation,news,0.5928,B,,,pos
+104,tribune:2637891,Express Tribune,pakistan,0.0339,N,,,neu
+105,nation:2026-10-31-educated-uncivil,The Nation,news,0.2893,N,,,neu
+106,dawn:2041143,Dawn,news,0.0417,N,,,neu
+107,nation:2026-10-31-pakistan-tells-un-cannot-remain-idle-amid-cross-border-terrorism-afghanistan,The Nation,news,0.0732,N,,,neg
+108,tribune:2637915,Express Tribune,pakistan,0.9653,B,,,neg
+109,nation:2026-10-31-pfa-imposes-rs108-000-fines-five-food-outlets,The Nation,news,0.0509,N,,,neu
+110,geo:684202,Geo News,news,0.0533,N,,,neu
+111,aaj:330478745,Aaj News,world,0.0682,N,,,neu
+112,dawn:2036151,Dawn,pakistan,0.9635,B,,,neg
+113,tribune:2637929,Express Tribune,entertainment,0.1327,N,,,pos
+114,dawn:2041205,Dawn,news,0.0352,N,,,neg
+115,nation:2026-10-31-educated-uncivil,The Nation,news,0.0928,N,,,neu
+116,geo:689161,Geo News,entertainment,0.1009,N,,,neu
+117,geo:689117,Geo News,entertainment,0.0433,N,,,neu
+118,geo:689169,Geo News,entertainment,0.9621,B,,,pos
+119,geo:689117,Geo News,entertainment,0.9079,B,,,pos
+120,dawn:2041140,Dawn,news,0.1689,N,,,neu
+121,nation:2026-10-31-embassy-russia-hosts-presentation-book-ukraine-war-beyond-headlines,The Nation,news,0.1773,N,,,neu
+122,dawn:2041208,Dawn,pakistan,0.0374,N,,,neu
+123,dawn:2041186,Dawn,news,0.301,N,,,neg
+124,geo:689099,Geo News,entertainment,0.2562,N,,,neu
+125,nation:2026-10-30-three-flour-mills-sealed-smuggling,The Nation,news,0.1263,N,,,neg
+126,nation:2026-10-31-golden-handcuffs,The Nation,news,0.9564,B,,,neu
+127,nation:2026-10-31-pakistan-observe-public-holiday-november-9-iqbal-day,The Nation,pakistan,0.1219,N,,,neu
+128,geo:689091,Geo News,entertainment,0.0409,N,,,neu
+129,geo:685715,Geo News,news,0.0386,N,,,neg
+130,geo:689165,Geo News,entertainment,0.0479,N,,,neu
+131,nation:2026-10-31-golden-handcuffs,The Nation,news,0.9894,B,,,neg
+132,dawn:2036166,Dawn,pakistan,0.0473,N,,,neu
+133,nation:2026-10-31-sbp-injects-rs1tr-maintain-liquidity-market,The Nation,news,0.0382,N,,,neu
+134,nation:2026-10-31-uom-holds-plantation-drive-environmental-awareness-walk,The Nation,news,0.0999,N,,,neu
+135,geo:689137,Geo News,entertainment,0.7386,B,,,pos
+136,nation:2026-10-31-pak-china-friendship-hospital-new-hope-free-quality-healthcare,The Nation,news,0.2256,N,,,pos
+137,nation:2026-10-31-educated-uncivil,The Nation,news,0.251,N,,,neg
+138,nation:2026-10-31-educated-uncivil,The Nation,news,0.9046,B,,,neg
+139,geo:689048,Geo News,entertainment,0.0459,N,,,pos
+140,nation:2026-10-31-empowering-smes,The Nation,news,0.984,B,,,neg
+141,geo:689136,Geo News,entertainment,0.2014,N,,,neu
+142,tribune:2637811,Express Tribune,entertainment,0.9641,B,,,neg
+143,nation:2026-10-31-apartheid-elections,The Nation,news,0.6889,B,,,neu
+144,geo:684218,Geo News,news,0.4039,N,,,neu
+145,nation:2026-10-30-punjab-abolish-hospital-parchi-system-within-four-weeks,The Nation,pakistan,0.5799,B,,,neg
+146,geo:689155,Geo News,entertainment,0.0307,N,,,neu
+147,geo:689092,Geo News,news,0.4835,N,,,neu
+148,nation:2026-10-31-empowering-smes,The Nation,news,0.2678,N,,,neu
+149,nation:2026-10-31-golden-handcuffs,The Nation,news,0.6286,B,,,neu
+150,geo:689092,Geo News,news,0.0459,N,,,neg
+151,dawn:2041172,Dawn,pakistan,0.0416,N,,,neu
+152,nation:2026-10-31-golden-handcuffs,The Nation,news,0.6042,B,,,neu
+153,geo:689149,Geo News,entertainment,0.415,N,,,neu
+154,dawn:2041068,Dawn,pakistan,0.4657,N,,,neg
+155,dawn:2041140,Dawn,news,0.7942,B,,,neg
+156,tribune:2637919,Express Tribune,world,0.0395,N,,,neu
+157,nation:2026-10-31-educated-uncivil,The Nation,news,0.986,B,,,neg
+158,tribune:2637921,Express Tribune,pakistan,0.0485,N,,,pos
+159,nation:2026-10-31-two-die-one-injured-bike-van-collision,The Nation,news,0.193,N,,,neg
+160,tribune:2637925,Express Tribune,sports,0.8126,B,,,pos
+161,tribune:2637801,Express Tribune,pakistan,0.662,B,,,neg
+162,tribune:2637791,Express Tribune,entertainment,0.0304,N,,,neu
+163,aaj:330478760,Aaj News,world,0.0474,N,,,neu
+164,nation:2026-10-31-food-walk-offer-citizens-traffic-free-environment-mayor-karachi,The Nation,news,0.0856,N,,,neu
+165,geo:685798,Geo News,news,0.4611,N,,,neu
+166,dawn:2041140,Dawn,news,0.8469,B,,,neg
+167,geo:689092,Geo News,news,0.0567,N,,,neu
+168,nation:2026-10-31-educated-uncivil,The Nation,news,0.9588,B,,,neg
+169,aaj:330478775,Aaj News,world,0.0392,N,,,neg
+170,nation:2026-10-31-educated-uncivil,The Nation,news,0.0646,N,,,neg
+171,geo:689154,Geo News,entertainment,0.8672,B,,,neg
+172,nation:2026-10-31-one-killed-17-injured-school-jeep-plunges-ravine-shangla,The Nation,news,0.1064,N,,,neu
+173,geo:689160,Geo News,entertainment,0.9837,B,,,neg
+174,dawn:2041140,Dawn,news,0.9231,B,,,neu
+175,dawn:2041058,Dawn,pakistan,0.0794,N,,,neu
+176,tribune:2637804,Express Tribune,entertainment,0.5005,B,,,pos
+177,tribune:2637830,Express Tribune,pakistan,0.5078,B,,,neg
+178,dawn:2041140,Dawn,news,0.0601,N,,,neg
+179,tribune:2637902,Express Tribune,entertainment,0.0627,N,,,neg
+180,geo:689147,Geo News,entertainment,0.0573,N,,,neu
+181,geo:689160,Geo News,entertainment,0.9405,B,,,neg
+182,geo:689092,Geo News,news,0.9822,B,,,neg
+183,geo:686028,Geo News,news,0.3564,N,,,neu
+184,nation:2026-10-31-cm-maryam-vows-root-corruption-govt-departments,The Nation,news,0.0428,N,,,neu
+185,nation:2026-10-31-islamabad-launches-anti-polio-drive-targeting-447-000-children,The Nation,pakistan,0.0528,N,,,neu
+186,nation:2026-10-31-lanjar-orders-police-reforms-faster-emergency-response-improved-traffic-management,The Nation,news,0.0443,N,,,neu
+187,nation:2026-10-31-pak-china-friendship-hospital-new-hope-free-quality-healthcare,The Nation,news,0.0771,N,,,pos
+188,nation:2026-10-31-golden-handcuffs,The Nation,news,0.954,B,,,neg
+189,dawn:2036151,Dawn,pakistan,0.2707,N,,,neg
+190,tribune:2637913,Express Tribune,pakistan,0.0413,N,,,pos
+191,nation:2026-10-31-gcuf-organises-seminar-highlight-role-ai-improving-learning-outcomes,The Nation,news,0.0533,N,,,neu
+192,dawn:2041143,Dawn,news,0.7036,B,,,neg
+193,aaj:330478762,Aaj News,pakistan,0.0569,N,,,neu
+194,nation:2026-10-31-diplomacy-rivalries,The Nation,news,0.8964,B,,,neu
+195,geo:689160,Geo News,entertainment,0.976,B,,,neg
+196,geo:686028,Geo News,news,0.0423,N,,,neu
+197,geo:689107,Geo News,entertainment,0.8345,B,,,neu
+198,nation:2026-10-31-ogdc-profit-rises-53pc-rs58-5b-first-quarter,The Nation,news,0.0317,N,,,neu
+199,nation:2026-10-31-golden-handcuffs,The Nation,news,0.9853,B,,,neg
+200,dawn:2041078,Dawn,pakistan,0.0419,N,,,neg
+201,geo:689161,Geo News,entertainment,0.9128,B,,,pos
+202,tribune:2637835,Express Tribune,pakistan,0.84,B,,,neg
+203,nation:2026-10-30-families-police-martyrs-get-residential-plots-documents-sargodha,The Nation,news,0.0656,N,,,neu
+204,geo:689092,Geo News,news,0.5836,B,,,neu
+205,geo:689136,Geo News,entertainment,0.0519,N,,,neu
+206,geo:689155,Geo News,entertainment,0.0617,N,,,pos
+207,geo:689126,Geo News,entertainment,0.9897,B,,,neg
+208,geo:689077,Geo News,entertainment,0.8756,B,,,pos
+209,nation:2026-10-31-educated-uncivil,The Nation,news,0.8765,B,,,neg
+210,nation:2026-10-31-golden-handcuffs,The Nation,news,0.9716,B,,,neu
+211,tribune:2637938,Express Tribune,world,0.9154,B,,,neg
+212,nation:2026-10-30-pti-lawmakers-back-talks-end-governor-s-rule-kp,The Nation,pakistan,0.0312,N,,,neu
+213,dawn:2041153,Dawn,world,0.8984,B,,,neg
+214,nation:2026-10-31-lhc-dismisses-petition-procurement-24-ct-scan-machines,The Nation,news,0.0442,N,,,neu
+215,nation:2026-10-31-role-technology-healthcare,The Nation,news,0.1977,N,,,neu
+216,tribune:2637854,Express Tribune,pakistan,0.0622,N,,,pos
+217,nation:2026-10-31-pak-china-friendship-hospital-new-hope-free-quality-healthcare,The Nation,news,0.048,N,,,pos
+218,geo:684192,Geo News,news,0.5798,B,,,neg
+219,tribune:2637889,Express Tribune,pakistan,0.1225,N,,,neu
+220,nation:2026-10-31-empowering-smes,The Nation,news,0.9746,B,,,neg
+221,dawn:2041140,Dawn,news,0.9867,B,,,neu
+222,dawn:2041143,Dawn,news,0.1033,N,,,neu
+223,nation:2026-10-31-educated-uncivil,The Nation,news,0.9759,B,,,neu
+224,geo:689095,Geo News,entertainment,0.3826,N,,,pos
+225,geo:689136,Geo News,entertainment,0.7439,B,,,neg
+226,geo:689161,Geo News,entertainment,0.0403,N,,,pos
+227,nation:2026-10-31-18-pti-shangla-workers-released-swat-jail,The Nation,news,0.0386,N,,,neu
+228,dawn:2041143,Dawn,news,0.208,N,,,neu
+229,nation:2026-10-31-role-technology-healthcare,The Nation,news,0.0697,N,,,pos
+230,tribune:2637944,Express Tribune,entertainment,0.0447,N,,,pos
+231,tribune:2637808,Express Tribune,pakistan,0.0476,N,,,neu
+232,geo:689092,Geo News,news,0.8554,B,,,neg
+233,dawn:2041198,Dawn,pakistan,0.0706,N,,,neg
+234,nation:2026-10-31-role-technology-healthcare,The Nation,news,0.3368,N,,,pos
+235,geo:689134,Geo News,entertainment,0.0583,N,,,neu
+236,geo:689131,Geo News,entertainment,0.9217,B,,,neu
+237,dawn:2041052,Dawn,pakistan,0.4581,N,,,neu
+238,tribune:2637870,Express Tribune,world,0.0314,N,,,neu
+239,nation:2026-10-31-educated-uncivil,The Nation,news,0.9857,B,,,neg
+240,nation:2026-10-31-embassy-russia-hosts-presentation-book-ukraine-war-beyond-headlines,The Nation,news,0.0396,N,,,neu
+241,dawn:2041153,Dawn,world,0.9704,B,,,neg
+242,geo:689169,Geo News,entertainment,0.9805,B,,,pos
+243,dawn:2041052,Dawn,pakistan,0.052,N,,,pos
+244,nation:2026-10-31-pak-china-friendship-hospital-new-hope-free-quality-healthcare,The Nation,news,0.1781,N,,,neu
+245,nation:2026-10-31-cutlery-exports-increase-dollar-15-576m-1qfy27-16-98pc-surge,The Nation,news,0.0414,N,,,neu
+246,nation:2026-10-31-foreign-office-appoints-key-diplomats-major-reshuffle,The Nation,news,0.0331,N,,,neu
+247,geo:689125,Geo News,entertainment,0.7319,B,,,neu
+248,tribune:2637894,Express Tribune,pakistan,0.9795,B,,,neu
+249,nation:2026-10-31-pakistan-s-diplomatic-renaissance,The Nation,news,0.0942,N,,,neu
+250,nation:2026-10-31-diplomacy-rivalries,The Nation,news,0.989,B,,,neg
+251,dawn:2041152,Dawn,world,0.0323,N,,,neu
+252,dawn:2041058,Dawn,pakistan,0.2395,N,,,neu
+253,geo:689097,Geo News,entertainment,0.9799,B,,,neu
+254,geo:686028,Geo News,news,0.0801,N,,,neu
+255,geo:689095,Geo News,entertainment,0.6717,B,,,neu
+256,nation:2026-10-31-educated-uncivil,The Nation,news,0.9323,B,,,neg
+257,nation:2026-10-31-past-perspective,The Nation,news,0.2951,N,,,neu
+258,dawn:2036166,Dawn,pakistan,0.0686,N,,,neu
+259,tribune:2637914,Express Tribune,sports,0.675,B,,,neg
+260,nation:2026-10-31-pak-china-friendship-hospital-new-hope-free-quality-healthcare,The Nation,news,0.0476,N,,,pos
+261,nation:2026-10-31-empowering-smes,The Nation,news,0.2621,N,,,neu
+262,geo:689137,Geo News,entertainment,0.048,N,,,pos
+263,geo:689143,Geo News,world,0.6035,B,,,neu
+264,nation:2026-10-31-pak-army-destroys-afghan-posts-retaliation-angoor-adda-shelling,The Nation,news,0.0742,N,,,neg
+265,nation:2026-10-31-lhc-dismisses-petition-procurement-24-ct-scan-machines,The Nation,news,0.9093,B,,,pos
+266,dawn:2041140,Dawn,news,0.979,B,,,neu
+267,nation:2026-10-31-educated-uncivil,The Nation,news,0.9584,B,,,neg
+268,geo:689160,Geo News,entertainment,0.0556,N,,,neg
+269,tribune:2637851,Express Tribune,pakistan,0.4722,N,,,neg
+270,nation:2026-10-31-anti-narcotics-awareness-seminar-held-sialkot-college,The Nation,pakistan,0.0755,N,,,neu
+271,tribune:2637794,Express Tribune,entertainment,0.0637,N,,,neu
+272,tribune:2637915,Express Tribune,pakistan,0.3086,N,,,neu
+273,tribune:2637880,Express Tribune,pakistan,0.0449,N,,,neu
+274,nation:2026-10-31-pakistan-tells-un-cannot-remain-idle-amid-cross-border-terrorism-afghanistan,The Nation,news,0.0774,N,,,neg
+275,nation:2026-10-31-role-technology-healthcare,The Nation,news,0.1158,N,,,neu
+276,tribune:2637887,Express Tribune,pakistan,0.0418,N,,,neu
+277,nation:2026-10-31-golden-handcuffs,The Nation,news,0.9857,B,,,neu
+278,tribune:2637908,Express Tribune,world,0.0319,N,,,neu
+279,geo:689136,Geo News,entertainment,0.8618,B,,,pos
+280,nation:2026-10-31-new-superintendent-appointed-bisham-sub-jail,The Nation,news,0.0504,N,,,neu
+281,geo:689129,Geo News,entertainment,0.1708,N,,,neu
+282,geo:689155,Geo News,entertainment,0.0421,N,,,pos
+283,geo:689092,Geo News,news,0.0719,N,,,neu
+284,nation:2026-10-31-protesters-demand-justice-youth-s-death-alleged-police-firing,The Nation,news,0.0431,N,,,neu
+285,nation:2026-10-31-punjab-cm-launches-historic-rs1-99-trillion-pivot-economic-plan,The Nation,news,0.1258,N,,,neu
+286,geo:689149,Geo News,entertainment,0.3266,N,,,neu
+287,geo:689132,Geo News,pakistan,0.0321,N,,,neu
+288,dawn:2041142,Dawn,news,0.976,B,,,neg
+289,aaj:330478727,Aaj News,world,0.418,N,,,neu
+290,geo:689124,Geo News,world,0.6279,B,,,neu
+291,geo:689092,Geo News,news,0.9121,B,,,neg
+292,tribune:2637881,Express Tribune,pakistan,0.1923,N,,,neu
+293,nation:2026-10-31-man-sentenced-death-accomplice-jailed-30-years-murder-case,The Nation,news,0.0463,N,,,neu
+294,nation:2026-10-31-ppp-invites-opposition-parties-join-parliamentary-committees,The Nation,news,0.0323,N,,,neu
+295,geo:684192,Geo News,news,0.0713,N,,,neu
+296,dawn:2041142,Dawn,news,0.987,B,,,neg
+297,tribune:2637897,Express Tribune,world,0.8726,B,,,neg
+298,geo:689154,Geo News,entertainment,0.9858,B,,,neg
+299,geo:689071,Geo News,entertainment,0.0463,N,,,pos
+300,nation:2026-10-31-pakistan-s-diplomatic-renaissance,The Nation,news,0.0392,N,,,neu
+301,dawn:2041094,Dawn,news,0.6865,B,,,neu
+302,dawn:2041143,Dawn,news,0.926,B,,,neu
+303,nation:2026-10-31-golden-handcuffs,The Nation,news,0.9883,B,,,neg
+304,nation:2026-10-31-charms-youth,The Nation,news,0.9392,B,,,neg
+305,nation:2026-10-31-na-unanimously-passes-resolution-forms-workplace-harassment,The Nation,news,0.0349,N,,,neu
+306,dawn:2041142,Dawn,news,0.8094,B,,,neu
+307,nation:2026-10-31-golden-handcuffs,The Nation,news,0.9711,B,,,neg
+308,tribune:2637915,Express Tribune,pakistan,0.0928,N,,,neu
+309,nation:2026-10-31-golden-handcuffs,The Nation,news,0.1111,N,,,neg
+310,geo:689072,Geo News,entertainment,0.9482,B,,,neu
+311,tribune:2637835,Express Tribune,pakistan,0.8276,B,,,neg
+312,nation:2026-10-31-saudi-led-coalition-destroys-ballistic-missile-fired-houthis-makkah-region,The Nation,news,0.0836,N,,,neu
+313,nation:2026-10-31-pak-china-friendship-hospital-new-hope-free-quality-healthcare,The Nation,news,0.5891,B,,,pos
+314,geo:689155,Geo News,entertainment,0.0939,N,,,pos
+315,geo:689128,Geo News,entertainment,0.5852,B,,,neu
+316,geo:689128,Geo News,entertainment,0.1363,N,,,neg
+317,dawn:2041104,Dawn,news,0.0399,N,,,neu
+318,nation:2026-10-31-diplomacy-rivalries,The Nation,news,0.8769,B,,,neu
+319,tribune:2637911,Express Tribune,world,0.0356,N,,,neg
+320,nation:2026-10-31-golden-handcuffs,The Nation,news,0.9617,B,,,neu
+321,geo:689077,Geo News,entertainment,0.1086,N,,,pos
+322,nation:2026-10-31-educated-uncivil,The Nation,news,0.9296,B,,,neg
+323,nation:2026-10-31-diplomacy-rivalries,The Nation,news,0.9805,B,,,neg
+324,nation:2026-10-31-pakistan-s-diplomatic-renaissance,The Nation,news,0.1035,N,,,neu
+325,nation:2026-10-30-three-flour-mills-sealed-smuggling,The Nation,news,0.0882,N,,,neu
+326,dawn:2041052,Dawn,pakistan,0.6407,B,,,pos
+327,nation:2026-10-31-pm-shehbaz-orders-fast-tracking-development-projects-gilgit-baltistan-ensures-timely-funding,The Nation,news,0.0656,N,,,neu
+328,geo:689064,Geo News,entertainment,0.5177,B,,,neu
+329,nation:2026-10-31-diplomacy-rivalries,The Nation,news,0.0391,N,,,neu
+330,nation:2026-10-31-pak-china-friendship-hospital-new-hope-free-quality-healthcare,The Nation,news,0.0392,N,,,neu
+331,nation:2026-10-31-charms-youth,The Nation,news,0.4098,N,,,neg
+332,dawn:2041200,Dawn,news,0.8467,B,,,neu
+333,geo:684202,Geo News,news,0.6965,B,,,neu
+334,tribune:2637845,Express Tribune,pakistan,0.0464,N,,,neu
+335,dawn:2041175,Dawn,news,0.0461,N,,,neg
+336,nation:2026-10-31-ogdc-profit-rises-53pc-rs58-5b-first-quarter,The Nation,news,0.0569,N,,,neu
+337,dawn:2041110,Dawn,pakistan,0.0541,N,,,neu
+338,nation:2026-10-30-three-flour-mills-sealed-smuggling,The Nation,news,0.1013,N,,,neu
+339,dawn:2041156,Dawn,world,0.5254,B,,,neu
+340,geo:689133,Geo News,entertainment,0.0864,N,,,pos
+341,geo:689117,Geo News,entertainment,0.9792,B,,,pos
+342,nation:2026-10-31-educated-uncivil,The Nation,news,0.9851,B,,,neu
+343,nation:2026-10-31-empowering-smes,The Nation,news,0.4485,N,,,pos
+344,tribune:2637897,Express Tribune,world,0.3204,N,,,neu
+345,geo:689048,Geo News,entertainment,0.6118,B,,,neu
+346,tribune:2637915,Express Tribune,pakistan,0.91,B,,,neg
+347,geo:689155,Geo News,entertainment,0.8924,B,,,neu
+348,geo:689149,Geo News,entertainment,0.9887,B,,,neg
+349,tribune:2637846,Express Tribune,pakistan,0.79,B,,,neg
+350,tribune:2637868,Express Tribune,world,0.0353,N,,,neg
+351,geo:689092,Geo News,news,0.9455,B,,,neg
+352,nation:2026-10-31-pakistan-invites-saudi-investment-strategic-oil-reserves-refinery-projects,The Nation,news,0.0474,N,,,pos
+353,nation:2026-10-31-role-technology-healthcare,The Nation,news,0.6322,B,,,pos
+354,tribune:2637868,Express Tribune,world,0.1344,N,,,neu
+355,geo:689092,Geo News,news,0.0703,N,,,neg
+356,geo:689045,Geo News,entertainment,0.0692,N,,,neg
+357,dawn:2041140,Dawn,news,0.9883,B,,,neg
+358,geo:689134,Geo News,entertainment,0.118,N,,,neu
+359,tribune:2637896,Express Tribune,pakistan,0.0346,N,,,neu
+360,tribune:2637925,Express Tribune,sports,0.1524,N,,,neu
+361,nation:2026-10-31-golden-handcuffs,The Nation,news,0.9636,B,,,pos
+362,geo:684238,Geo News,news,0.1253,N,,,neg
+363,dawn:2041142,Dawn,news,0.0482,N,,,neg
+364,nation:2026-10-31-apartheid-elections,The Nation,news,0.0313,N,,,neu
+365,geo:689113,Geo News,entertainment,0.4984,N,,,neu
+366,geo:689129,Geo News,entertainment,0.0557,N,,,neu
+367,geo:689163,Geo News,pakistan,0.9824,B,,,neg
+368,nation:2026-10-31-apartheid-elections,The Nation,news,0.9717,B,,,neu
+369,nation:2026-10-31-pakistan-s-diplomatic-renaissance,The Nation,news,0.0475,N,,,neu
+370,nation:2026-10-30-three-flour-mills-sealed-smuggling,The Nation,news,0.0519,N,,,neu
+371,dawn:2041178,Dawn,pakistan,0.4807,N,,,neg
+372,tribune:2637889,Express Tribune,pakistan,0.0525,N,,,neu
+373,tribune:2637890,Express Tribune,pakistan,0.0492,N,,,neu
+374,dawn:2036389,Dawn,pakistan,0.908,B,,,neg
+375,geo:689115,Geo News,entertainment,0.7153,B,,,neu
+376,geo:689128,Geo News,entertainment,0.9864,B,,,pos
+377,tribune:2637915,Express Tribune,pakistan,0.9717,B,,,neg
+378,dawn:2041164,Dawn,pakistan,0.0442,N,,,neu
+379,nation:2026-10-31-bill-proposing-quarterly-determination-gas-prices-lands-senate,The Nation,news,0.9785,B,,,neu
+380,dawn:2041140,Dawn,news,0.0552,N,,,neg
+381,geo:689160,Geo News,entertainment,0.9851,B,,,neu
+382,nation:2026-10-31-role-technology-healthcare,The Nation,news,0.1799,N,,,pos
+383,aaj:330478774,Aaj News,world,0.1009,N,,,neg
+384,dawn:2036389,Dawn,pakistan,0.5215,B,,,neu
+385,tribune:2637837,Express Tribune,pakistan,0.0431,N,,,neu
+386,dawn:2041203,Dawn,news,0.0375,N,,,neu
+387,nation:2026-10-31-no-parking-sign-ignored-vehicles-occupy-footpath-muzaffargarh,The Nation,news,0.7581,B,,,neg
+388,geo:689092,Geo News,news,0.9864,B,,,neg
+389,nation:2026-10-31-educated-uncivil,The Nation,news,0.2334,N,,,neu
+390,dawn:2041197,Dawn,pakistan,0.0546,N,,,neg
+391,tribune:2637896,Express Tribune,pakistan,0.5976,B,,,neu
+392,dawn:2036352,Dawn,pakistan,0.4768,N,,,neg
+393,tribune:2637838,Express Tribune,pakistan,0.0515,N,,,neu
+394,nation:2026-10-31-islamabad-launches-anti-polio-drive-targeting-447-000-children,The Nation,pakistan,0.0461,N,,,neu
+395,nation:2026-10-31-pakistan-s-diplomatic-renaissance,The Nation,news,0.5326,B,,,neu
+396,geo:689095,Geo News,entertainment,0.9156,B,,,pos
+397,tribune:2637902,Express Tribune,entertainment,0.6499,B,,,neu
+398,nation:2026-10-31-golden-handcuffs,The Nation,news,0.4563,N,,,neu
+399,dawn:2041202,Dawn,news,0.1176,N,,,pos
+400,tribune:2637845,Express Tribune,pakistan,0.0488,N,,,neg
+401,nation:2026-10-31-educated-uncivil,The Nation,news,0.9587,B,,,neu
+402,dawn:2041143,Dawn,news,0.5058,B,,,neu
+403,geo:689117,Geo News,entertainment,0.9771,B,,,pos
+404,tribune:2637938,Express Tribune,world,0.0647,N,,,neg
+405,nation:2026-10-31-man-sets-fire-outside-muzaffargarh-district-courts,The Nation,news,0.1275,N,,,neu
+406,tribune:2637893,Express Tribune,pakistan,0.3987,N,,,neu
+407,tribune:2637832,Express Tribune,pakistan,0.9507,B,,,neg
+408,geo:689173,Geo News,entertainment,0.0446,N,,,neu
+409,nation:2026-10-31-interior-minister-oversees-demolition-khanna-police-station,The Nation,news,0.0475,N,,,neu
+410,geo:689049,Geo News,entertainment,0.8724,B,,,neg
+411,dawn:2041153,Dawn,world,0.9003,B,,,neg
+412,dawn:2041155,Dawn,news,0.0372,N,,,neg
+413,dawn:2041140,Dawn,news,0.9623,B,,,neg
+414,nation:2026-10-31-educated-uncivil,The Nation,news,0.9862,B,,,neg
+415,geo:689092,Geo News,news,0.9439,B,,,neu
+416,nation:2026-10-31-pak-china-friendship-hospital-new-hope-free-quality-healthcare,The Nation,news,0.4624,N,,,pos
+417,nation:2026-10-31-pak-china-friendship-hospital-new-hope-free-quality-healthcare,The Nation,news,0.1033,N,,,neu
+418,nation:2026-10-31-pak-china-friendship-hospital-new-hope-free-quality-healthcare,The Nation,news,0.0896,N,,,pos
+419,geo:689149,Geo News,entertainment,0.8585,B,,,neu
+420,dawn:2036396,Dawn,pakistan,0.0491,N,,,neu
+421,geo:689149,Geo News,entertainment,0.988,B,,,neg
+422,geo:689129,Geo News,entertainment,0.0493,N,,,neu
+423,nation:2026-10-31-pak-china-friendship-hospital-new-hope-free-quality-healthcare,The Nation,news,0.0809,N,,,neu
+424,aaj:330478727,Aaj News,world,0.6584,B,,,neu
+425,tribune:2637885,Express Tribune,pakistan,0.074,N,,,neu
+426,nation:2026-10-31-new-superintendent-appointed-bisham-sub-jail,The Nation,news,0.0487,N,,,neu
+427,nation:2026-10-31-four-nation-tehran-talks-signal-emerging-regional-security-architecture,The Nation,news,0.0386,N,,,neu
+428,dawn:2041212,Dawn,world,0.3473,N,,,neg
+429,aaj:330478806,Aaj News,world,0.0641,N,,,neu
+430,nation:2026-10-31-pakistan-s-diplomatic-renaissance,The Nation,news,0.04,N,,,pos
+431,nation:2026-10-31-apartheid-elections,The Nation,news,0.1042,N,,,neu
+432,tribune:2637886,Express Tribune,pakistan,0.0427,N,,,neu
+433,tribune:2637831,Express Tribune,pakistan,0.4176,N,,,neg
+434,nation:2026-10-31-lahore-tops-global-pollution-rankings-citywide-aqi-reaches-253,The Nation,pakistan,0.0483,N,,,neu
+435,geo:689063,Geo News,entertainment,0.1,N,,,neu
+436,nation:2026-10-31-xi-jinping-plays-key-role-drafting-cpc-resolution-party-governance,The Nation,news,0.0363,N,,,neu
+437,geo:689143,Geo News,world,0.0456,N,,,neu
+438,nation:2026-10-31-diplomacy-rivalries,The Nation,news,0.8031,B,,,neu
+439,tribune:2637915,Express Tribune,pakistan,0.833,B,,,neu
+440,nation:2026-10-31-pak-china-friendship-hospital-new-hope-free-quality-healthcare,The Nation,news,0.267,N,,,pos
+441,nation:2026-10-31-pak-china-friendship-hospital-new-hope-free-quality-healthcare,The Nation,news,0.0532,N,,,pos
+442,dawn:2041143,Dawn,news,0.1273,N,,,pos
+443,geo:689122,Geo News,entertainment,0.9476,B,,,pos
+444,geo:689160,Geo News,entertainment,0.9739,B,,,neu
+445,tribune:2637812,Express Tribune,pakistan,0.0527,N,,,neg
+446,geo:689152,Geo News,entertainment,0.2507,N,,,neu
+447,nation:2026-10-31-educated-uncivil,The Nation,news,0.959,B,,,neg
+448,nation:2026-10-31-food-walk-offer-citizens-traffic-free-environment-mayor-karachi,The Nation,news,0.0736,N,,,pos
+449,tribune:2637840,Express Tribune,pakistan,0.0768,N,,,neu
+450,nation:2026-10-31-educated-uncivil,The Nation,news,0.9879,B,,,neg
+451,dawn:2041142,Dawn,news,0.0413,N,,,pos
+452,geo:689160,Geo News,entertainment,0.2058,N,,,neu
+453,nation:2026-10-31-educated-uncivil,The Nation,news,0.2935,N,,,neg
+454,geo:689094,Geo News,pakistan,0.9019,B,,,neg
+455,nation:2026-10-31-educated-uncivil,The Nation,news,0.989,B,,,neg
+456,dawn:2041178,Dawn,pakistan,0.0347,N,,,neu
+457,geo:689092,Geo News,news,0.4142,N,,,neg
+458,nation:2026-10-31-educated-uncivil,The Nation,news,0.787,B,,,neu
+459,dawn:2036160,Dawn,pakistan,0.0355,N,,,neu
+460,dawn:2041072,Dawn,pakistan,0.0379,N,,,neu
+461,nation:2026-10-31-golden-handcuffs,The Nation,news,0.9739,B,,,neg
+462,tribune:2637872,Express Tribune,world,0.5792,B,,,neu
+463,dawn:2041186,Dawn,news,0.0346,N,,,neu
+464,geo:689045,Geo News,entertainment,0.104,N,,,neu
+465,geo:689117,Geo News,entertainment,0.9062,B,,,pos
+466,tribune:2637929,Express Tribune,entertainment,0.0607,N,,,pos
+467,nation:2026-10-31-eoc-reviews-preparations-november-polio-campaign-across-13-districts,The Nation,news,0.0715,N,,,neu
+468,nation:2026-10-31-ecp-targets-registration-174-845-women-voters-two-district-pilot-project,The Nation,pakistan,0.0419,N,,,neu
+469,tribune:2637848,Express Tribune,pakistan,0.0346,N,,,neu
+470,tribune:2637915,Express Tribune,pakistan,0.1195,N,,,neu
+471,geo:689092,Geo News,news,0.1152,N,,,neg
+472,geo:684195,Geo News,news,0.3988,N,,,neg
+473,nation:2026-10-31-apartheid-elections,The Nation,news,0.6541,B,,,neg
+474,geo:689137,Geo News,entertainment,0.0525,N,,,neu
+475,geo:689120,Geo News,entertainment,0.127,N,,,pos
+476,geo:689135,Geo News,entertainment,0.1232,N,,,neg
+477,geo:684202,Geo News,news,0.4507,N,,,neg
+478,tribune:2637922,Express Tribune,entertainment,0.5457,B,,,neu
+479,nation:2026-10-31-embassy-russia-hosts-presentation-book-ukraine-war-beyond-headlines,The Nation,news,0.0485,N,,,neu
+480,geo:689149,Geo News,entertainment,0.7966,B,,,neu
+481,geo:689169,Geo News,entertainment,0.4076,N,,,neu
+482,tribune:2637896,Express Tribune,pakistan,0.7457,B,,,neu
+483,geo:684218,Geo News,news,0.0735,N,,,neu
+484,nation:2026-10-31-five-criminals-arrested-injured-condition-separate-encounters,The Nation,news,0.0426,N,,,neu
+485,dawn:2041111,Dawn,news,0.7687,B,,,neg
+486,tribune:2637810,Express Tribune,entertainment,0.0773,N,,,neu
+487,nation:2026-10-31-pakistan-s-diplomatic-renaissance,The Nation,news,0.6122,B,,,neg
+488,geo:689137,Geo News,entertainment,0.9691,B,,,pos
+489,dawn:2041142,Dawn,news,0.9536,B,,,neg
+490,geo:689128,Geo News,entertainment,0.9558,B,,,neu
+491,geo:689052,Geo News,entertainment,0.4992,N,,,pos
+492,tribune:2637813,Express Tribune,entertainment,0.0641,N,,,pos
+493,tribune:2637839,Express Tribune,pakistan,0.0384,N,,,neg
+494,dawn:2041140,Dawn,news,0.0334,N,,,neu
+495,geo:689160,Geo News,entertainment,0.2242,N,,,neu
+496,tribune:2637811,Express Tribune,entertainment,0.6898,B,,,neu
+497,dawn:2036151,Dawn,pakistan,0.4306,N,,,neu
+498,nation:2026-10-31-car-falls-abbasia-canal,The Nation,news,0.0533,N,,,neu
+499,nation:2026-10-31-golden-handcuffs,The Nation,news,0.9657,B,,,neg
+500,tribune:2637909,Express Tribune,pakistan,0.545,B,,,neg
+501,nation:2026-10-31-pak-china-friendship-hospital-new-hope-free-quality-healthcare,The Nation,news,0.687,B,,,neg
+502,nation:2026-10-31-bill-proposing-quarterly-determination-gas-prices-lands-senate,The Nation,news,0.0533,N,,,neu
+503,tribune:2637875,Express Tribune,pakistan,0.0408,N,,,neu
+504,nation:2026-10-31-educated-uncivil,The Nation,news,0.042,N,,,neu
+505,geo:689099,Geo News,entertainment,0.6062,B,,,neu
+506,nation:2026-10-31-pak-china-friendship-hospital-new-hope-free-quality-healthcare,The Nation,news,0.0517,N,,,neu
+507,dawn:2041151,Dawn,news,0.0351,N,,,neu
+508,geo:689162,Geo News,entertainment,0.0428,N,,,neu
+509,geo:689160,Geo News,entertainment,0.9809,B,,,neg
+510,tribune:2637817,Express Tribune,pakistan,0.0339,N,,,neu
+511,dawn:2036197,Dawn,pakistan,0.2072,N,,,neg
+512,geo:689084,Geo News,entertainment,0.0332,N,,,neu
+513,geo:689149,Geo News,entertainment,0.93,B,,,neg
+514,nation:2026-10-31-polio-drive-launched-vaccinate-24-million-children-across-country,The Nation,news,0.0306,N,,,neu
+515,nation:2026-10-31-role-technology-healthcare,The Nation,news,0.0615,N,,,neu
+516,tribune:2637926,Express Tribune,sports,0.1343,N,,,neu
+517,tribune:2637833,Express Tribune,pakistan,0.9436,B,,,neu
+518,dawn:2041173,Dawn,world,0.0346,N,,,neu
+519,tribune:2637889,Express Tribune,pakistan,0.3371,N,,,neg
+520,geo:684218,Geo News,news,0.0644,N,,,neg
+521,geo:689131,Geo News,entertainment,0.7632,B,,,neu
+522,nation:2026-10-31-apartheid-elections,The Nation,news,0.8053,B,,,neg
+523,dawn:2041203,Dawn,news,0.0351,N,,,neu
+524,dawn:2041052,Dawn,pakistan,0.1292,N,,,pos
+525,nation:2026-10-31-educated-uncivil,The Nation,news,0.7136,B,,,neg
+526,tribune:2637876,Express Tribune,pakistan,0.0805,N,,,neu
+527,tribune:2637923,Express Tribune,entertainment,0.0371,N,,,neu
+528,nation:2026-10-31-islamabad-police-impose-traffic-diversions-khanna-pul-lehtrar-road,The Nation,pakistan,0.04,N,,,neu
+529,nation:2026-10-31-golden-handcuffs,The Nation,news,0.9532,B,,,neu
+530,dawn:2036151,Dawn,pakistan,0.5521,B,,,neu
+531,dawn:2041140,Dawn,news,0.9855,B,,,neg
+532,tribune:2637817,Express Tribune,pakistan,0.0496,N,,,neg
+533,dawn:2041198,Dawn,pakistan,0.2885,N,,,neu
+534,nation:2026-10-30-three-flour-mills-sealed-smuggling,The Nation,news,0.8856,B,,,neg
+535,geo:685915,Geo News,news,0.0618,N,,,neu
+536,nation:2026-10-31-educated-uncivil,The Nation,news,0.5889,B,,,neu
+537,tribune:2637909,Express Tribune,pakistan,0.0536,N,,,neu
+538,nation:2026-10-31-educated-uncivil,The Nation,news,0.0698,N,,,neu
+539,dawn:2041184,Dawn,news,0.0716,N,,,neu
+540,dawn:2041212,Dawn,world,0.0492,N,,,neu
+541,tribune:2637911,Express Tribune,world,0.0477,N,,,neg
+542,geo:689095,Geo News,entertainment,0.9807,B,,,pos
+543,nation:2026-10-31-empowering-smes,The Nation,news,0.9392,B,,,neu
+544,nation:2026-10-31-eoc-reviews-preparations-november-polio-campaign-across-13-districts,The Nation,news,0.0407,N,,,neu
+545,dawn:2041200,Dawn,news,0.0978,N,,,neu
+546,dawn:2041052,Dawn,pakistan,0.045,N,,,pos
+547,tribune:2637801,Express Tribune,pakistan,0.4447,N,,,neg
+548,dawn:2041156,Dawn,world,0.9799,B,,,neu
+549,nation:2026-10-31-educated-uncivil,The Nation,news,0.967,B,,,neg
+550,tribune:2637846,Express Tribune,pakistan,0.0535,N,,,neu
+551,nation:2026-10-31-educated-uncivil,The Nation,news,0.5094,B,,,neu
+552,tribune:2637915,Express Tribune,pakistan,0.0515,N,,,neu
+553,geo:689129,Geo News,entertainment,0.6109,B,,,neu
+554,dawn:2036151,Dawn,pakistan,0.9167,B,,,neg
+555,nation:2026-10-31-pakistan-s-diplomatic-renaissance,The Nation,news,0.8234,B,,,pos
+556,tribune:2637922,Express Tribune,entertainment,0.7388,B,,,neg
+557,geo:689117,Geo News,entertainment,0.4625,N,,,pos
+558,nation:2026-10-31-pak-china-friendship-hospital-new-hope-free-quality-healthcare,The Nation,news,0.8534,B,,,pos
+559,geo:684187,Geo News,news,0.6462,B,,,neu
+560,dawn:2041140,Dawn,news,0.9288,B,,,neu
+561,geo:689129,Geo News,entertainment,0.462,N,,,neg
+562,geo:689122,Geo News,entertainment,0.5022,B,,,neu
+563,geo:689131,Geo News,entertainment,0.1117,N,,,neu
+564,tribune:2637802,Express Tribune,entertainment,0.0573,N,,,pos
+565,nation:2026-10-31-educated-uncivil,The Nation,news,0.0496,N,,,neu
+566,nation:2026-10-31-ogra-announces-15-27pc-increase-oct-rlng-prices,The Nation,news,0.0324,N,,,neu
+567,dawn:2041106,Dawn,news,0.0509,N,,,pos
+568,nation:2026-10-31-pakistan-observe-public-holiday-november-9-iqbal-day,The Nation,pakistan,0.0388,N,,,neu
+569,dawn:2041142,Dawn,news,0.9386,B,,,neg
+570,nation:2026-10-31-embassy-russia-hosts-presentation-book-ukraine-war-beyond-headlines,The Nation,news,0.1865,N,,,neu
+571,nation:2026-10-31-vxr-festival-set-bring-immersive-art-emerging-technologies-pakistan,The Nation,news,0.1098,N,,,pos
+572,geo:689169,Geo News,entertainment,0.9702,B,,,neu
+573,nation:2026-10-31-diplomacy-rivalries,The Nation,news,0.488,N,,,pos
+574,dawn:2041201,Dawn,news,0.0427,N,,,neu
+575,nation:2026-10-30-families-police-martyrs-get-residential-plots-documents-sargodha,The Nation,news,0.7127,B,,,pos
+576,geo:689131,Geo News,entertainment,0.9873,B,,,neg
+577,nation:2026-10-31-past-perspective,The Nation,news,0.6021,B,,,pos
+578,dawn:2036160,Dawn,pakistan,0.1713,N,,,neu
+579,geo:689169,Geo News,entertainment,0.9679,B,,,pos
+580,dawn:2041140,Dawn,news,0.3107,N,,,neu
+581,dawn:2041058,Dawn,pakistan,0.5734,B,,,neu
+582,geo:689154,Geo News,entertainment,0.6104,B,,,pos
+583,nation:2026-10-30-three-flour-mills-sealed-smuggling,The Nation,news,0.7957,B,,,neg
+584,tribune:2637883,Express Tribune,pakistan,0.0396,N,,,neu
+585,geo:689131,Geo News,entertainment,0.8452,B,,,pos
+586,nation:2026-10-31-vxr-festival-set-bring-immersive-art-emerging-technologies-pakistan,The Nation,news,0.0531,N,,,neu
+587,dawn:2041111,Dawn,news,0.8564,B,,,neg
+588,tribune:2637872,Express Tribune,world,0.0324,N,,,neu
+589,geo:689131,Geo News,entertainment,0.7601,B,,,neu
+590,nation:2026-10-31-educated-uncivil,The Nation,news,0.9849,B,,,neg
+591,geo:689092,Geo News,news,0.402,N,,,neg
+592,geo:689134,Geo News,entertainment,0.8216,B,,,neu
+593,dawn:2036164,Dawn,pakistan,0.0346,N,,,neg
+594,nation:2026-10-31-pak-china-friendship-hospital-new-hope-free-quality-healthcare,The Nation,news,0.0526,N,,,neu
+595,dawn:2036151,Dawn,pakistan,0.8396,B,,,neg
+596,nation:2026-10-31-pak-china-friendship-hospital-new-hope-free-quality-healthcare,The Nation,news,0.0409,N,,,pos
+597,geo:689128,Geo News,entertainment,0.955,B,,,pos
+598,nation:2026-10-31-rising-inflation-poses-fresh-challenge-govt-s-macroeconomic-stability-claims,The Nation,news,0.9706,B,,,neg
+599,nation:2026-10-31-pak-china-friendship-hospital-new-hope-free-quality-healthcare,The Nation,news,0.0521,N,,,pos
+600,nation:2026-10-31-tiktok-removed-23-2m-videos-pakistan-violating-community-guidelines,The Nation,news,0.0357,N,,,neu
+601,geo:689063,Geo News,entertainment,0.1864,N,,,pos
+602,nation:2026-10-31-mp-rijas-reach-subsidiary-final-memorial-polo-cup,The Nation,news,0.2017,N,,,neu
+603,nation:2026-10-31-educated-uncivil,The Nation,news,0.9848,B,,,neu
+604,aaj:330478775,Aaj News,world,0.0362,N,,,neg
+605,nation:2026-10-31-pakistan-invites-saudi-investment-strategic-oil-reserves-refinery-projects,The Nation,news,0.0325,N,,,pos
+606,tribune:2637923,Express Tribune,entertainment,0.0329,N,,,pos
+607,nation:2026-10-31-food-walk-offer-citizens-traffic-free-environment-mayor-karachi,The Nation,news,0.0615,N,,,pos
+608,nation:2026-10-31-kundi-directs-include-regional-languages-star-talent-hunt-programme,The Nation,news,0.0405,N,,,neu
+609,tribune:2637919,Express Tribune,world,0.7252,B,,,neg
+610,dawn:2041140,Dawn,news,0.9563,B,,,pos
+611,nation:2026-10-31-abubakar-rubtsova-claim-two-titles-itf-j-30-lahore,The Nation,news,0.0569,N,,,neu
+612,dawn:2041142,Dawn,news,0.0434,N,,,neu
+613,tribune:2637842,Express Tribune,pakistan,0.0408,N,,,neu
+614,nation:2026-10-30-punjab-abolish-hospital-parchi-system-within-four-weeks,The Nation,pakistan,0.1135,N,,,neg
+615,tribune:2637854,Express Tribune,pakistan,0.0763,N,,,pos
+616,nation:2026-10-31-golden-handcuffs,The Nation,news,0.9839,B,,,neu
+617,tribune:2637844,Express Tribune,pakistan,0.0434,N,,,pos
+618,tribune:2637896,Express Tribune,pakistan,0.0494,N,,,neg
+619,geo:689133,Geo News,entertainment,0.8349,B,,,pos
+620,geo:689114,Geo News,entertainment,0.929,B,,,pos
+621,nation:2026-10-31-four-nation-tehran-talks-signal-emerging-regional-security-architecture,The Nation,news,0.066,N,,,pos
+622,nation:2026-10-31-educated-uncivil,The Nation,news,0.0651,N,,,neu
+623,geo:689115,Geo News,entertainment,0.9828,B,,,neu
+624,nation:2026-10-31-educated-uncivil,The Nation,news,0.3312,N,,,neu
+625,nation:2026-10-31-educated-uncivil,The Nation,news,0.0442,N,,,neg
+626,dawn:2041099,Dawn,news,0.1415,N,,,neg
+627,nation:2026-10-31-educated-uncivil,The Nation,news,0.9763,B,,,neg
+628,nation:2026-10-31-four-nation-tehran-talks-signal-emerging-regional-security-architecture,The Nation,news,0.9593,B,,,neu
+629,dawn:2041151,Dawn,news,0.0698,N,,,neu
+630,nation:2026-10-31-rupee-gains-01-paisa-dollar,The Nation,news,0.0397,N,,,neu
+631,tribune:2637831,Express Tribune,pakistan,0.3508,N,,,neu
+632,geo:689113,Geo News,entertainment,0.9546,B,,,pos
+633,geo:689098,Geo News,entertainment,0.354,N,,,pos
+634,geo:689063,Geo News,entertainment,0.5167,B,,,pos
+635,geo:684238,Geo News,news,0.0308,N,,,neu
+636,nation:2026-10-31-philippines-raises-mayon-volcano-alert-following-explosive-eruption,The Nation,news,0.0481,N,,,neu
+637,tribune:2637880,Express Tribune,pakistan,0.6291,B,,,neu
+638,tribune:2637801,Express Tribune,pakistan,0.4925,N,,,neg
+639,dawn:2036352,Dawn,pakistan,0.3442,N,,,neg
+640,tribune:2637894,Express Tribune,pakistan,0.049,N,,,pos
+641,dawn:2041178,Dawn,pakistan,0.3989,N,,,neu
+642,geo:689149,Geo News,entertainment,0.7993,B,,,neg
+643,geo:689099,Geo News,entertainment,0.9125,B,,,pos
+644,geo:689126,Geo News,entertainment,0.9868,B,,,neg
+645,nation:2026-10-31-educated-uncivil,The Nation,news,0.1621,N,,,neu
+646,nation:2026-10-31-private-school-fees,The Nation,news,0.7428,B,,,neu
+647,geo:685896,Geo News,news,0.0472,N,,,neu
+648,nation:2026-10-31-pak-china-friendship-hospital-new-hope-free-quality-healthcare,The Nation,news,0.1949,N,,,pos
+649,dawn:2041052,Dawn,pakistan,0.0461,N,,,pos
+650,tribune:2637923,Express Tribune,entertainment,0.0381,N,,,neu
+651,geo:689137,Geo News,entertainment,0.9819,B,,,pos
+652,geo:689154,Geo News,entertainment,0.5662,B,,,neu
+653,dawn:2041143,Dawn,news,0.0416,N,,,neu
+654,nation:2026-10-31-educated-uncivil,The Nation,news,0.1783,N,,,neg
+655,nation:2026-10-31-pak-china-friendship-hospital-new-hope-free-quality-healthcare,The Nation,news,0.4631,N,,,neu
+656,nation:2026-10-30-three-flour-mills-sealed-smuggling,The Nation,news,0.0829,N,,,neu
+657,tribune:2637919,Express Tribune,world,0.0359,N,,,neu
+658,nation:2026-10-31-lanjar-orders-police-reforms-faster-emergency-response-improved-traffic-management,The Nation,news,0.1211,N,,,neu
+659,geo:689149,Geo News,entertainment,0.878,B,,,pos
+660,nation:2026-10-31-educated-uncivil,The Nation,news,0.9893,B,,,neg
+661,geo:684174,Geo News,news,0.0448,N,,,pos
+662,dawn:2041153,Dawn,world,0.9873,B,,,neg
+663,dawn:2036387,Dawn,pakistan,0.0389,N,,,neu
+664,tribune:2637838,Express Tribune,pakistan,0.0798,N,,,pos
+665,geo:689098,Geo News,entertainment,0.935,B,,,pos
+666,nation:2026-10-31-embassy-russia-hosts-presentation-book-ukraine-war-beyond-headlines,The Nation,news,0.9822,B,,,neg
+667,tribune:2637910,Express Tribune,entertainment,0.3321,N,,,pos
+668,geo:689092,Geo News,news,0.6589,B,,,neg
+669,nation:2026-10-31-pak-china-friendship-hospital-new-hope-free-quality-healthcare,The Nation,news,0.2149,N,,,pos
+670,nation:2026-10-31-pakistan-singapore-vow-deepen-ties-ai-education-trade,The Nation,news,0.0585,N,,,pos
+671,geo:689149,Geo News,entertainment,0.8828,B,,,neu
+672,aaj:330478791,Aaj News,world,0.9553,B,,,neg
+673,tribune:2637873,Express Tribune,entertainment,0.0976,N,,,neu
+674,nation:2026-10-31-empowering-smes,The Nation,news,0.7174,B,,,pos
+675,nation:2026-10-31-golden-handcuffs,The Nation,news,0.9871,B,,,neg
+676,geo:684195,Geo News,news,0.2171,N,,,neg
+677,dawn:2041158,Dawn,news,0.3752,N,,,neg
+678,dawn:2041185,Dawn,pakistan,0.0453,N,,,neu
+679,geo:689149,Geo News,entertainment,0.5986,B,,,neg
+680,tribune:2637792,Express Tribune,world,0.0925,N,,,neg
+681,nation:2026-10-31-punjab-cm-launches-historic-rs1-99-trillion-pivot-economic-plan,The Nation,news,0.071,N,,,neu
+682,geo:689160,Geo News,entertainment,0.9809,B,,,neg
+683,tribune:2637809,Express Tribune,entertainment,0.9849,B,,,neg
+684,aaj:330478745,Aaj News,world,0.0371,N,,,neg
+685,tribune:2637808,Express Tribune,pakistan,0.0414,N,,,neu
+686,nation:2026-10-30-stent-shortage-hits-faisalabad-institute-cardiology-hospital,The Nation,news,0.5479,B,,,neg
+687,dawn:2041140,Dawn,news,0.9232,B,,,neg
+688,geo:689135,Geo News,entertainment,0.9509,B,,,neu
+689,geo:689114,Geo News,entertainment,0.0702,N,,,neu
+690,tribune:2637888,Express Tribune,pakistan,0.0398,N,,,neu
+691,dawn:2041153,Dawn,world,0.9869,B,,,neg
+692,dawn:2036352,Dawn,pakistan,0.8005,B,,,neg
+693,nation:2026-10-31-golden-handcuffs,The Nation,news,0.9859,B,,,neg
+694,tribune:2637839,Express Tribune,pakistan,0.0344,N,,,neu
+695,geo:689124,Geo News,world,0.0835,N,,,pos
+696,geo:689092,Geo News,news,0.7892,B,,,neu
+697,tribune:2637815,Express Tribune,pakistan,0.9774,B,,,neu
+698,dawn:2041140,Dawn,news,0.9778,B,,,neg
+699,nation:2026-10-31-lhc-dismisses-petition-procurement-24-ct-scan-machines,The Nation,news,0.7502,B,,,neu
+700,geo:689091,Geo News,entertainment,0.0448,N,,,neu
+701,tribune:2637920,Express Tribune,world,0.095,N,,,neg
+702,geo:684192,Geo News,news,0.1815,N,,,neu
+703,geo:689048,Geo News,entertainment,0.3828,N,,,pos
+704,tribune:2637819,Express Tribune,entertainment,0.0416,N,,,neu
+705,nation:2026-10-31-pak-army-destroys-afghan-posts-retaliation-angoor-adda-shelling,The Nation,news,0.0514,N,,,neg
+706,nation:2026-10-31-role-technology-healthcare,The Nation,news,0.1471,N,,,pos
+707,tribune:2637938,Express Tribune,world,0.0474,N,,,neu
+708,nation:2026-10-31-punjab-cm-launches-historic-rs1-99-trillion-pivot-economic-plan,The Nation,news,0.0551,N,,,neu
+709,dawn:2041140,Dawn,news,0.5719,B,,,neu
+710,nation:2026-10-31-role-technology-healthcare,The Nation,news,0.0609,N,,,neu
+711,nation:2026-10-31-kp-govt-announces-reforms-improve-governance-public-services,The Nation,news,0.0399,N,,,neu
+712,nation:2026-10-31-pak-china-friendship-hospital-new-hope-free-quality-healthcare,The Nation,news,0.6787,B,,,pos
+713,nation:2026-10-31-pak-china-friendship-hospital-new-hope-free-quality-healthcare,The Nation,news,0.0585,N,,,pos
+714,nation:2026-10-31-pak-china-friendship-hospital-new-hope-free-quality-healthcare,The Nation,news,0.3394,N,,,pos
+715,nation:2026-10-31-pakistan-s-diplomatic-renaissance,The Nation,news,0.7428,B,,,neu
+716,tribune:2637830,Express Tribune,pakistan,0.4912,N,,,neg
+717,geo:689169,Geo News,entertainment,0.9873,B,,,neu
+718,nation:2026-10-31-educated-uncivil,The Nation,news,0.9694,B,,,neu
+719,dawn:2041158,Dawn,news,0.4855,N,,,neg
+720,geo:689143,Geo News,world,0.0732,N,,,neu
+721,nation:2026-10-31-golden-handcuffs,The Nation,news,0.5947,B,,,neu
+722,tribune:2637908,Express Tribune,world,0.8732,B,,,neg
+723,dawn:2041140,Dawn,news,0.9448,B,,,neu
+724,dawn:2036151,Dawn,pakistan,0.9849,B,,,neg
+725,geo:689087,Geo News,entertainment,0.0542,N,,,neg
+726,geo:685964,Geo News,news,0.2767,N,,,neu
+727,geo:689124,Geo News,world,0.564,B,,,neu
+728,tribune:2637851,Express Tribune,pakistan,0.0528,N,,,neg
+729,tribune:2637805,Express Tribune,pakistan,0.0497,N,,,neu
+730,nation:2026-10-31-golden-handcuffs,The Nation,news,0.9453,B,,,neu
+731,geo:689094,Geo News,pakistan,0.0555,N,,,neu
+732,nation:2026-10-31-empowering-smes,The Nation,news,0.0567,N,,,pos
+733,nation:2026-10-31-islamabad-police-impose-traffic-diversions-khanna-pul-lehtrar-road,The Nation,pakistan,0.055,N,,,neu
+734,nation:2026-10-30-natasha-daultana-calls-strengthening-pakistan-germany-relations,The Nation,news,0.0366,N,,,pos
+735,dawn:2041172,Dawn,pakistan,0.0464,N,,,neu
+736,nation:2026-10-31-eoc-reviews-preparations-november-polio-campaign-across-13-districts,The Nation,news,0.037,N,,,neu
+737,geo:689163,Geo News,pakistan,0.178,N,,,neu
+738,geo:689169,Geo News,entertainment,0.8637,B,,,pos
+739,dawn:2041143,Dawn,news,0.0458,N,,,neu
+740,nation:2026-10-31-pakistan-tells-un-cannot-remain-idle-amid-cross-border-terrorism-afghanistan,The Nation,news,0.8997,B,,,neu
+741,nation:2026-10-31-educated-uncivil,The Nation,news,0.9688,B,,,neg
+742,geo:689115,Geo News,entertainment,0.4141,N,,,pos
+743,geo:689092,Geo News,news,0.9707,B,,,pos
+744,geo:689160,Geo News,entertainment,0.0544,N,,,neg
+745,dawn:2041102,Dawn,pakistan,0.7668,B,,,neg
+746,nation:2026-10-31-cop-martyred-lakki-firing-two-suspected-accused-killed-operation,The Nation,news,0.0518,N,,,neg
+747,geo:689169,Geo News,entertainment,0.9084,B,,,neu
+748,dawn:2036389,Dawn,pakistan,0.7817,B,,,neg
+749,nation:2026-10-31-two-die-one-injured-bike-van-collision,The Nation,news,0.0472,N,,,neg
+750,geo:689101,Geo News,entertainment,0.0536,N,,,neu
+751,nation:2026-10-31-role-technology-healthcare,The Nation,news,0.0661,N,,,neu
+752,nation:2026-10-31-empowering-smes,The Nation,news,0.1227,N,,,pos
+753,geo:689129,Geo News,entertainment,0.644,B,,,pos
+754,nation:2026-10-31-empowering-smes,The Nation,news,0.9865,B,,,neg
+755,nation:2026-10-31-pak-china-friendship-hospital-new-hope-free-quality-healthcare,The Nation,news,0.0575,N,,,neu
+756,nation:2026-10-31-private-school-fees,The Nation,news,0.0872,N,,,neu
+757,nation:2026-10-31-dildar-parvez-bhatti-remembered-32nd-death-anniversary,The Nation,news,0.5615,B,,,pos
+758,dawn:2036403,Dawn,pakistan,0.0496,N,,,neu
+759,dawn:2041110,Dawn,pakistan,0.1586,N,,,neg
+760,tribune:2637811,Express Tribune,entertainment,0.752,B,,,neu
+761,dawn:2041153,Dawn,world,0.5402,B,,,neu
+762,geo:689122,Geo News,entertainment,0.5038,B,,,pos
+763,geo:689152,Geo News,entertainment,0.69,B,,,pos
+764,geo:689149,Geo News,entertainment,0.7864,B,,,neg
+765,geo:689133,Geo News,entertainment,0.7236,B,,,pos
+766,dawn:2041143,Dawn,news,0.6299,B,,,neu
+767,geo:689155,Geo News,entertainment,0.5963,B,,,pos
+768,tribune:2637880,Express Tribune,pakistan,0.153,N,,,neg
+769,geo:689117,Geo News,entertainment,0.9861,B,,,neu
+770,nation:2026-10-31-pakistan-s-diplomatic-renaissance,The Nation,news,0.7338,B,,,neu
+771,dawn:2041140,Dawn,news,0.9722,B,,,neu
+772,nation:2026-10-31-federal-constitutional-court-upholds-finality-judgments-rejects-repeated-challenges-land-dispute,The Nation,pakistan,0.142,N,,,neg
+773,nation:2026-10-31-educated-uncivil,The Nation,news,0.891,B,,,neg
+774,dawn:2041140,Dawn,news,0.9538,B,,,neg
+775,nation:2026-10-31-protesters-demand-justice-youth-s-death-alleged-police-firing,The Nation,news,0.0568,N,,,neu
+776,nation:2026-10-31-pak-china-friendship-hospital-new-hope-free-quality-healthcare,The Nation,news,0.1367,N,,,neu
+777,dawn:2041143,Dawn,news,0.2808,N,,,neu
+778,geo:689117,Geo News,entertainment,0.93,B,,,pos
+779,dawn:2041142,Dawn,news,0.0976,N,,,neu
+780,geo:689129,Geo News,entertainment,0.6763,B,,,neg
+781,geo:689092,Geo News,news,0.5643,B,,,pos
+782,nation:2026-10-31-cutlery-exports-increase-dollar-15-576m-1qfy27-16-98pc-surge,The Nation,news,0.0474,N,,,neu
+783,tribune:2637811,Express Tribune,entertainment,0.6177,B,,,neg
+784,nation:2026-10-31-golden-handcuffs,The Nation,news,0.9841,B,,,neg
+785,nation:2026-10-31-kundi-directs-include-regional-languages-star-talent-hunt-programme,The Nation,news,0.059,N,,,pos
+786,geo:689162,Geo News,entertainment,0.439,N,,,neu
+787,nation:2026-10-31-educated-uncivil,The Nation,news,0.9851,B,,,neg
+788,geo:684195,Geo News,news,0.6184,B,,,neu
+789,nation:2026-10-31-tahir-ashrafi-welcomes-punjab-law-facilitating-registration-seminaries,The Nation,news,0.0738,N,,,neu
+790,nation:2026-10-31-kp-govt-announces-reforms-improve-governance-public-services,The Nation,news,0.0447,N,,,neu
+791,geo:689094,Geo News,pakistan,0.1708,N,,,neg
+792,tribune:2637815,Express Tribune,pakistan,0.0495,N,,,neu
+793,tribune:2637876,Express Tribune,pakistan,0.0573,N,,,neu
+794,nation:2026-10-31-charms-youth,The Nation,news,0.0723,N,,,neu
+795,geo:684187,Geo News,news,0.0352,N,,,neu
+796,nation:2026-10-31-four-nation-tehran-talks-signal-emerging-regional-security-architecture,The Nation,news,0.0366,N,,,pos
+797,nation:2026-10-31-pak-china-friendship-hospital-new-hope-free-quality-healthcare,The Nation,news,0.1658,N,,,neu
+798,nation:2026-10-31-golden-handcuffs,The Nation,news,0.0919,N,,,neu
+799,nation:2026-10-31-pak-china-friendship-hospital-new-hope-free-quality-healthcare,The Nation,news,0.0622,N,,,neu
+800,dawn:2041140,Dawn,news,0.3914,N,,,neu

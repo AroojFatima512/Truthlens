@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-primary: #1A73E8;
+  --color-bias-low: #22C55E;
+  --color-bias-medium: #F59E0B;
+  --color-bias-high: #EF4444;
+  --color-sentiment-positive: #10B981;
+  --color-sentiment-neutral: #6B7280;
+  --color-sentiment-negative: #F87171;
+  --color-bg-dark: #0F172A;
+  --color-bg-card: #1E293B;
+  --color-text-primary: #F1F5F9;
+  --color-text-muted: #94A3B8;
+
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+@layer base {
+  :root {
+    --bg-main: #FFFFFF;
+    --bg-card: #F8FAFC;
+    --text-main: #0F172A;
+    --text-muted: #475569;
+    --border-color: #E2E8F0;
+  }
+
+  :root.dark {
+    --bg-main: var(--color-bg-dark);
+    --bg-card: var(--color-bg-card);
+    --text-main: var(--color-text-primary);
+    --text-muted: var(--color-text-muted);
+    --border-color: #1E293B; /* gray-800 equivalent */
+  }
+
+  body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    font-family: var(--font-sans);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+}
+
+@layer utilities {
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .hide-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+}

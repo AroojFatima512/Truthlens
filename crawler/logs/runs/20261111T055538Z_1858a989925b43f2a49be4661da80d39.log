@@ -1,0 +1,374 @@
+2026-11-11 10:55:38,069 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.logcount.LogCount',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.remote_control.RemoteControl',
+ 'truthlens.run_reporting.RunReportingExtension']
+2026-11-11 10:55:38,071 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'truthlens',
+ 'CONCURRENT_REQUESTS': 1,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 1,
+ 'DOWNLOAD_DELAY': 3,
+ 'DOWNLOAD_TIMEOUT': 30,
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'FEED_EXPORT_INDENT': 2,
+ 'LOG_LEVEL': 'INFO',
+ 'NEWSPIDER_MODULE': 'truthlens.spiders',
+ 'ROBOTSTXT_OBEY': True,
+ 'SPIDER_MODULES': ['truthlens.spiders'],
+ 'USER_AGENT': 'TruthLensResearchBot/0.1'}
+2026-11-11 10:55:38,544 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2026-11-11 10:55:38,552 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.start.StartSpiderMiddleware',
+ 'scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware',
+ 'scrapy.spidermiddlewares.metacopy.MetaCopyDetectionMiddleware']
+2026-11-11 10:55:38,749 [scrapy.middleware] INFO: Enabled item pipelines:
+['truthlens.pipelines.CleaningPipeline',
+ 'truthlens.pipelines.MongoDBPipeline',
+ 'truthlens.export.RunJsonExportPipeline']
+2026-11-11 10:55:38,750 [scrapy.core.engine] INFO: Spider opened
+2026-11-11 10:55:38,793 [truthlens.pipelines] INFO: MongoDB connected: database=truthlens
+2026-11-11 10:55:38,797 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2026-11-11 10:55:38,800 [truthlens.run_reporting] INFO: Run started: 20261111T055538Z_1858a989925b43f2a49be4661da80d39 | source=Dawn
+2026-11-11 10:55:38,803 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2026-11-11 10:55:38,808 [scrapy.extensions.remote_control] INFO: Remote control HTTP server listening on port 56496 (job 15312-23c192fc4f104eb5ab67846df5a4a85e)
+2026-11-11 10:55:42,134 [dawn_sitemap] INFO: Sitemap: selected 100 article URLs.
+2026-11-11 10:55:47,115 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043632/na-body-wants-railways-land-retrieved-from-private-govt-departments | images=0 | videos=0
+2026-11-11 10:55:47,121 [truthlens.pipelines] INFO: Cleaned article: dawn:2043632 | characters=2599 | hash=34d80b1b4dae
+2026-11-11 10:55:47,134 [truthlens.pipelines] INFO: MongoDB new: dawn:2043632 | version=1 | fields=none
+2026-11-11 10:55:50,938 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043634/murree-admin-conducts-snow-emergency-drills | images=0 | videos=0
+2026-11-11 10:55:50,943 [truthlens.pipelines] INFO: Cleaned article: dawn:2043634 | characters=2904 | hash=d66703a64eac
+2026-11-11 10:55:50,955 [truthlens.pipelines] INFO: MongoDB new: dawn:2043634 | version=1 | fields=none
+2026-11-11 10:55:55,452 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043635/exhibition-explores-iqbals-saqi-nama-through-paintings | images=4 | videos=0
+2026-11-11 10:55:55,457 [truthlens.pipelines] INFO: Cleaned article: dawn:2043635 | characters=1902 | hash=2c93d440e17e
+2026-11-11 10:55:55,470 [truthlens.pipelines] INFO: MongoDB new: dawn:2043635 | version=1 | fields=none
+2026-11-11 10:55:59,021 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043638/government-committed-to-improving-road-network-minister | images=0 | videos=0
+2026-11-11 10:55:59,025 [truthlens.pipelines] INFO: Cleaned article: dawn:2043638 | characters=2438 | hash=dd83d5133c1f
+2026-11-11 10:55:59,034 [truthlens.pipelines] INFO: MongoDB new: dawn:2043638 | version=1 | fields=none
+2026-11-11 10:56:03,308 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043641/president-extends-felicitations-on-polands-independence-day | images=0 | videos=0
+2026-11-11 10:56:03,312 [truthlens.pipelines] INFO: Cleaned article: dawn:2043641 | characters=798 | hash=81d8dbc0d04f
+2026-11-11 10:56:03,332 [truthlens.pipelines] INFO: MongoDB new: dawn:2043641 | version=1 | fields=none
+2026-11-11 10:56:06,845 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043643/cda-plans-electric-bus-service-exclusively-for-women | images=0 | videos=0
+2026-11-11 10:56:06,852 [truthlens.pipelines] INFO: Cleaned article: dawn:2043643 | characters=2666 | hash=2ae253309d01
+2026-11-11 10:56:06,863 [truthlens.pipelines] INFO: MongoDB new: dawn:2043643 | version=1 | fields=none
+2026-11-11 10:56:11,916 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043644/two-killed-in-separate-incidents | images=0 | videos=0
+2026-11-11 10:56:11,919 [truthlens.pipelines] INFO: Cleaned article: dawn:2043644 | characters=795 | hash=706079bbd591
+2026-11-11 10:56:11,930 [truthlens.pipelines] INFO: MongoDB new: dawn:2043644 | version=1 | fields=none
+2026-11-11 10:56:15,422 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043646/minister-asked-to-enforce-protection-of-breast-feeding-ordinance | images=0 | videos=0
+2026-11-11 10:56:15,425 [truthlens.pipelines] INFO: Cleaned article: dawn:2043646 | characters=2249 | hash=ac0f93a7ac7d
+2026-11-11 10:56:15,436 [truthlens.pipelines] INFO: MongoDB new: dawn:2043646 | version=1 | fields=none
+2026-11-11 10:56:20,296 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043647/projects-worth-billions-launched-no-embezzlement-of-public-money-punjab-cm | images=0 | videos=0
+2026-11-11 10:56:20,304 [truthlens.pipelines] INFO: Cleaned article: dawn:2043647 | characters=4305 | hash=20c825d57f4c
+2026-11-11 10:56:20,316 [truthlens.pipelines] INFO: MongoDB new: dawn:2043647 | version=1 | fields=none
+2026-11-11 10:56:23,870 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043648/two-killed-in-separate-incidents | images=0 | videos=0
+2026-11-11 10:56:23,872 [truthlens.pipelines] INFO: Cleaned article: dawn:2043648 | characters=795 | hash=706079bbd591
+2026-11-11 10:56:23,880 [truthlens.pipelines] INFO: MongoDB new: dawn:2043648 | version=1 | fields=none
+2026-11-11 10:56:26,713 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043654/remand-of-slain-anchorpersons-husband-extended-for-four-days | images=0 | videos=0
+2026-11-11 10:56:26,720 [truthlens.pipelines] INFO: Cleaned article: dawn:2043654 | characters=3618 | hash=0f27813367f8
+2026-11-11 10:56:26,732 [truthlens.pipelines] INFO: MongoDB new: dawn:2043654 | version=1 | fields=none
+2026-11-11 10:56:30,343 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043656/one-killed-47-injured-after-bus-overturns-in-murree-area | images=1 | videos=0
+2026-11-11 10:56:30,347 [truthlens.pipelines] INFO: Cleaned article: dawn:2043656 | characters=1140 | hash=01ecc1fb89c0
+2026-11-11 10:56:30,356 [truthlens.pipelines] INFO: MongoDB new: dawn:2043656 | version=1 | fields=none
+2026-11-11 10:56:35,033 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043657/capital-police-set-up-dedicated-centre-for-vulnerable-minority-groups | images=0 | videos=0
+2026-11-11 10:56:35,036 [truthlens.pipelines] INFO: Cleaned article: dawn:2043657 | characters=1816 | hash=5aa409410996
+2026-11-11 10:56:35,045 [truthlens.pipelines] INFO: MongoDB new: dawn:2043657 | version=1 | fields=none
+2026-11-11 10:56:37,024 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043636/israel-parliament-divided-over-role-of-arab-parties-in-new-govt | images=1 | videos=0
+2026-11-11 10:56:37,028 [truthlens.pipelines] INFO: Cleaned article: dawn:2043636 | characters=3673 | hash=c5c59994e873
+2026-11-11 10:56:37,038 [truthlens.pipelines] INFO: MongoDB new: dawn:2043636 | version=1 | fields=none
+2026-11-11 10:56:38,794 [scrapy.extensions.logstats] INFO: Crawled 16 pages (at 16 pages/min), scraped 14 items (at 14 items/min)
+2026-11-11 10:56:41,276 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043637/hegseth-calls-impeachment-bid-a-farce | images=0 | videos=0
+2026-11-11 10:56:41,281 [truthlens.pipelines] INFO: Cleaned article: dawn:2043637 | characters=3461 | hash=7654ba8a6ed8
+2026-11-11 10:56:41,292 [truthlens.pipelines] INFO: MongoDB new: dawn:2043637 | version=1 | fields=none
+2026-11-11 10:56:45,421 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043639/jemima-alleges-violence-coercive-control-amp-abuse-by-russell-brand | images=0 | videos=0
+2026-11-11 10:56:45,424 [truthlens.pipelines] INFO: Cleaned article: dawn:2043639 | characters=1741 | hash=cd0b27d44a41
+2026-11-11 10:56:45,436 [truthlens.pipelines] INFO: MongoDB new: dawn:2043639 | version=1 | fields=none
+2026-11-11 10:56:49,173 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043640/white-house-taps-natalie-baker-to-be-islamabad-ambassador | images=0 | videos=0
+2026-11-11 10:56:49,178 [truthlens.pipelines] INFO: Cleaned article: dawn:2043640 | characters=1619 | hash=d9e35a9e943f
+2026-11-11 10:56:49,190 [truthlens.pipelines] INFO: MongoDB new: dawn:2043640 | version=1 | fields=none
+2026-11-11 10:56:52,243 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043622/index-rallies-5448-points-on-easing-tensions | images=1 | videos=0
+2026-11-11 10:56:52,248 [truthlens.pipelines] INFO: Cleaned article: dawn:2043622 | characters=2602 | hash=2b2f71718a10
+2026-11-11 10:56:52,258 [truthlens.pipelines] INFO: MongoDB new: dawn:2043622 | version=1 | fields=none
+2026-11-11 10:56:56,084 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043623/sai-terms-rs2530unit-gross-injustice | images=0 | videos=0
+2026-11-11 10:56:56,085 [truthlens.pipelines] INFO: Cleaned article: dawn:2043623 | characters=568 | hash=e1045be61806
+2026-11-11 10:56:56,094 [truthlens.pipelines] INFO: MongoDB new: dawn:2043623 | version=1 | fields=none
+2026-11-11 10:56:58,914 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043624/184-kinnow-exporters-get-access-to-uzbek-market | images=1 | videos=0
+2026-11-11 10:56:58,916 [truthlens.pipelines] INFO: Cleaned article: dawn:2043624 | characters=1391 | hash=a7e8d53e8b88
+2026-11-11 10:56:58,926 [truthlens.pipelines] INFO: MongoDB new: dawn:2043624 | version=1 | fields=none
+2026-11-11 10:57:02,111 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043627/diesel-rates-drop-but-lpg-surge-holds-up-relief-for-consumer | images=1 | videos=0
+2026-11-11 10:57:02,122 [truthlens.pipelines] INFO: Cleaned article: dawn:2043627 | characters=2992 | hash=c7a1ffa193fe
+2026-11-11 10:57:02,151 [truthlens.pipelines] INFO: MongoDB new: dawn:2043627 | version=1 | fields=none
+2026-11-11 10:57:05,288 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043630/fbr-ordered-to-explain-huge-fata-tax-waivers | images=1 | videos=0
+2026-11-11 10:57:05,297 [truthlens.pipelines] INFO: Cleaned article: dawn:2043630 | characters=4255 | hash=d9323035f0c0
+2026-11-11 10:57:05,313 [truthlens.pipelines] INFO: MongoDB new: dawn:2043630 | version=1 | fields=none
+2026-11-11 10:57:08,066 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043633/development-spending-stalls-despite-surplus | images=1 | videos=0
+2026-11-11 10:57:08,074 [truthlens.pipelines] INFO: Cleaned article: dawn:2043633 | characters=4336 | hash=9e7d9a3c77f0
+2026-11-11 10:57:08,090 [truthlens.pipelines] INFO: MongoDB new: dawn:2043633 | version=1 | fields=none
+2026-11-11 10:57:12,673 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043597/youth-urged-to-follow-iqbals-teachings | images=0 | videos=0
+2026-11-11 10:57:12,675 [truthlens.pipelines] INFO: Cleaned article: dawn:2043597 | characters=716 | hash=3b753070974c
+2026-11-11 10:57:12,687 [truthlens.pipelines] INFO: MongoDB new: dawn:2043597 | version=1 | fields=none
+2026-11-11 10:57:16,371 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043598/cardiology-institute-facing-shortage-of-staff-and-equipment | images=0 | videos=0
+2026-11-11 10:57:16,380 [truthlens.pipelines] INFO: Cleaned article: dawn:2043598 | characters=2471 | hash=407f40c63969
+2026-11-11 10:57:16,423 [truthlens.pipelines] INFO: MongoDB new: dawn:2043598 | version=1 | fields=none
+2026-11-11 10:57:19,193 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043599/punjab-ombudsperson-seeks-report-on-sth-scams | images=0 | videos=0
+2026-11-11 10:57:19,200 [truthlens.pipelines] INFO: Cleaned article: dawn:2043599 | characters=2935 | hash=a6c18561fc23
+2026-11-11 10:57:19,217 [truthlens.pipelines] INFO: MongoDB new: dawn:2043599 | version=1 | fields=none
+2026-11-11 10:57:23,362 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043601/pa-speaker-takes-on-fazl-asks-him-hard-questions | images=0 | videos=0
+2026-11-11 10:57:23,370 [truthlens.pipelines] INFO: Cleaned article: dawn:2043601 | characters=3213 | hash=d64b71b94d94
+2026-11-11 10:57:23,387 [truthlens.pipelines] INFO: MongoDB new: dawn:2043601 | version=1 | fields=none
+2026-11-11 10:57:28,161 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043603/uet-convocation-engineering-fundamental-pillar-of-national-development | images=0 | videos=0
+2026-11-11 10:57:28,169 [truthlens.pipelines] INFO: Cleaned article: dawn:2043603 | characters=2639 | hash=8191b6ec8d9d
+2026-11-11 10:57:28,194 [truthlens.pipelines] INFO: MongoDB new: dawn:2043603 | version=1 | fields=none
+2026-11-11 10:57:29,808 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043604/pmml-seeks-cms-apology | images=0 | videos=0
+2026-11-11 10:57:29,813 [truthlens.pipelines] INFO: Cleaned article: dawn:2043604 | characters=1612 | hash=eb5a31b5bb12
+2026-11-11 10:57:29,831 [truthlens.pipelines] INFO: MongoDB new: dawn:2043604 | version=1 | fields=none
+2026-11-11 10:57:33,023 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043605/ajoka-moves-to-cinema-with-biopic-on-bali-jatti | images=0 | videos=0
+2026-11-11 10:57:33,028 [truthlens.pipelines] INFO: Cleaned article: dawn:2043605 | characters=2281 | hash=fec45e3736a5
+2026-11-11 10:57:33,042 [truthlens.pipelines] INFO: MongoDB new: dawn:2043605 | version=1 | fields=none
+2026-11-11 10:57:36,795 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043606/poor-air-quality-not-linked-to-diwali-fireworks-in-india-report | images=0 | videos=0
+2026-11-11 10:57:36,827 [truthlens.pipelines] INFO: Cleaned article: dawn:2043606 | characters=6679 | hash=171b4a5a52a7
+2026-11-11 10:57:36,857 [truthlens.pipelines] INFO: MongoDB new: dawn:2043606 | version=1 | fields=none
+2026-11-11 10:57:38,797 [scrapy.extensions.logstats] INFO: Crawled 33 pages (at 17 pages/min), scraped 31 items (at 17 items/min)
+2026-11-11 10:57:41,115 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043607/sugarcane-growers-threaten-to-burn-crops | images=0 | videos=0
+2026-11-11 10:57:41,120 [truthlens.pipelines] INFO: Cleaned article: dawn:2043607 | characters=1809 | hash=1d04b2aebf99
+2026-11-11 10:57:41,134 [truthlens.pipelines] INFO: MongoDB new: dawn:2043607 | version=1 | fields=none
+2026-11-11 10:57:45,158 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043608/qureshi-moved-to-pic-days-after-he-collapsed-in-jail-alleges-lawyer | images=0 | videos=0
+2026-11-11 10:57:45,164 [truthlens.pipelines] INFO: Cleaned article: dawn:2043608 | characters=2581 | hash=4ed3e7b68c0e
+2026-11-11 10:57:45,179 [truthlens.pipelines] INFO: MongoDB new: dawn:2043608 | version=1 | fields=none
+2026-11-11 10:57:48,638 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043610/eight-indicted-in-foreign-womens-rape-case | images=1 | videos=0
+2026-11-11 10:57:48,643 [truthlens.pipelines] INFO: Cleaned article: dawn:2043610 | characters=1554 | hash=be8b83432ed0
+2026-11-11 10:57:48,669 [truthlens.pipelines] INFO: MongoDB new: dawn:2043610 | version=1 | fields=none
+2026-11-11 10:57:51,950 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043611/millers-demand-market-driven-wheat-policy-targeted-subsidy | images=1 | videos=0
+2026-11-11 10:57:51,956 [truthlens.pipelines] INFO: Cleaned article: dawn:2043611 | characters=2947 | hash=6fbf09d19c94
+2026-11-11 10:57:51,973 [truthlens.pipelines] INFO: MongoDB new: dawn:2043611 | version=1 | fields=none
+2026-11-11 10:57:56,294 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043582/sustained-psychological-support-stressed-for-school-collapse-survivors | images=0 | videos=0
+2026-11-11 10:57:56,303 [truthlens.pipelines] INFO: Cleaned article: dawn:2043582 | characters=3153 | hash=efee8b3a2b99
+2026-11-11 10:57:56,328 [truthlens.pipelines] INFO: MongoDB new: dawn:2043582 | version=1 | fields=none
+2026-11-11 10:57:59,716 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043584/atc-refuses-to-drop-terror-charges-in-paf-officer-murder-case | images=0 | videos=0
+2026-11-11 10:57:59,721 [truthlens.pipelines] INFO: Cleaned article: dawn:2043584 | characters=1654 | hash=e205e0a7d8f0
+2026-11-11 10:57:59,733 [truthlens.pipelines] INFO: MongoDB new: dawn:2043584 | version=1 | fields=none
+2026-11-11 10:58:02,711 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043585/jirga-opposes-relocation-of-bus-terminal-from-tank-city | images=0 | videos=0
+2026-11-11 10:58:02,718 [truthlens.pipelines] INFO: Cleaned article: dawn:2043585 | characters=2322 | hash=839f78969c68
+2026-11-11 10:58:02,739 [truthlens.pipelines] INFO: MongoDB new: dawn:2043585 | version=1 | fields=none
+2026-11-11 10:58:05,870 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043586/govts-response-sought-over-imposition-of-property-tax-by-cantt-boards | images=0 | videos=0
+2026-11-11 10:58:05,877 [truthlens.pipelines] INFO: Cleaned article: dawn:2043586 | characters=3897 | hash=3c467c1c0427
+2026-11-11 10:58:05,893 [truthlens.pipelines] INFO: MongoDB new: dawn:2043586 | version=1 | fields=none
+2026-11-11 10:58:08,939 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043587/drive-against-cervical-cancer-begins-in-chitral-today | images=0 | videos=0
+2026-11-11 10:58:08,946 [truthlens.pipelines] INFO: Cleaned article: dawn:2043587 | characters=2878 | hash=ae4f8d497906
+2026-11-11 10:58:08,961 [truthlens.pipelines] INFO: MongoDB new: dawn:2043587 | version=1 | fields=none
+2026-11-11 10:58:11,970 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043588/adviser-calls-for-involving-youth-in-policymaking | images=0 | videos=0
+2026-11-11 10:58:11,976 [truthlens.pipelines] INFO: Cleaned article: dawn:2043588 | characters=2564 | hash=0b392eaa6dca
+2026-11-11 10:58:11,993 [truthlens.pipelines] INFO: MongoDB new: dawn:2043588 | version=1 | fields=none
+2026-11-11 10:58:14,727 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043589/auqaf-dept-orders-crackdown-on-illegal-land-occupants | images=0 | videos=0
+2026-11-11 10:58:14,732 [truthlens.pipelines] INFO: Cleaned article: dawn:2043589 | characters=2061 | hash=0a9836839fef
+2026-11-11 10:58:14,749 [truthlens.pipelines] INFO: MongoDB new: dawn:2043589 | version=1 | fields=none
+2026-11-11 10:58:17,209 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043590/return-of-displaced-persons-from-tirah-in-phases-announced | images=1 | videos=0
+2026-11-11 10:58:17,217 [truthlens.pipelines] INFO: Cleaned article: dawn:2043590 | characters=3131 | hash=d3df59821e5d
+2026-11-11 10:58:17,231 [truthlens.pipelines] INFO: MongoDB new: dawn:2043590 | version=1 | fields=none
+2026-11-11 10:58:21,543 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043591/awkum-chinese-varsity-ink-accord-to-boost-research | images=0 | videos=0
+2026-11-11 10:58:21,548 [truthlens.pipelines] INFO: Cleaned article: dawn:2043591 | characters=2289 | hash=bd7eacf535c4
+2026-11-11 10:58:21,604 [truthlens.pipelines] INFO: MongoDB new: dawn:2043591 | version=1 | fields=none
+2026-11-11 10:58:24,895 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043592/lawyers-observe-strike-against-suspension-of-phc-powers-by-fcc | images=1 | videos=0
+2026-11-11 10:58:24,904 [truthlens.pipelines] INFO: Cleaned article: dawn:2043592 | characters=4558 | hash=64bcf32fd8d2
+2026-11-11 10:58:24,923 [truthlens.pipelines] INFO: MongoDB new: dawn:2043592 | version=1 | fields=none
+2026-11-11 10:58:30,378 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043593/matric-exams-postponed-in-north-waziristan | images=0 | videos=0
+2026-11-11 10:58:30,383 [truthlens.pipelines] INFO: Cleaned article: dawn:2043593 | characters=2201 | hash=91ed3f0d1c26
+2026-11-11 10:58:30,398 [truthlens.pipelines] INFO: MongoDB new: dawn:2043593 | version=1 | fields=none
+2026-11-11 10:58:32,894 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043594/one-dead-five-injured-in-kohistan-road-accident | images=0 | videos=0
+2026-11-11 10:58:32,898 [truthlens.pipelines] INFO: Cleaned article: dawn:2043594 | characters=1422 | hash=f9148c750927
+2026-11-11 10:58:32,912 [truthlens.pipelines] INFO: MongoDB new: dawn:2043594 | version=1 | fields=none
+2026-11-11 10:58:36,254 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043595/four-killed-as-car-ambushed-in-swabi | images=0 | videos=0
+2026-11-11 10:58:36,259 [truthlens.pipelines] INFO: Cleaned article: dawn:2043595 | characters=1706 | hash=4d65d3167d88
+2026-11-11 10:58:36,273 [truthlens.pipelines] INFO: MongoDB new: dawn:2043595 | version=1 | fields=none
+2026-11-11 10:58:38,800 [scrapy.extensions.logstats] INFO: Crawled 50 pages (at 17 pages/min), scraped 48 items (at 17 items/min)
+2026-11-11 10:58:39,663 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043596/jui-f-to-protest-anti-encroachment-drive-propaganda-against-fazl-on-15th | images=1 | videos=0
+2026-11-11 10:58:39,688 [truthlens.pipelines] INFO: Cleaned article: dawn:2043596 | characters=4167 | hash=c4e9410bf7f8
+2026-11-11 10:58:39,735 [truthlens.pipelines] INFO: MongoDB new: dawn:2043596 | version=1 | fields=none
+2026-11-11 10:58:44,201 [dawn_sitemap] WARNING: Validation issues: https://www.dawn.com/news/2043722/oil-rises-from-two-month-low-as-hormuz-shipping-attacks-offset-iran-truce-hopes | missing_author
+2026-11-11 10:58:44,202 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043722/oil-rises-from-two-month-low-as-hormuz-shipping-attacks-offset-iran-truce-hopes | images=0 | videos=0
+2026-11-11 10:58:44,205 [truthlens.pipelines] INFO: Cleaned article: dawn:2043722 | characters=675 | hash=043f274c49a3
+2026-11-11 10:58:44,217 [truthlens.pipelines] INFO: MongoDB new: dawn:2043722 | version=1 | fields=none
+2026-11-11 10:58:48,352 [dawn_sitemap] WARNING: Validation issues: https://www.dawn.com/news/2043723/russian-and-iranian-diplomats-discuss-middle-east-conflicts-in-moscow | missing_author
+2026-11-11 10:58:48,353 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043723/russian-and-iranian-diplomats-discuss-middle-east-conflicts-in-moscow | images=0 | videos=0
+2026-11-11 10:58:48,356 [truthlens.pipelines] INFO: Cleaned article: dawn:2043723 | characters=917 | hash=fe69dbd34253
+2026-11-11 10:58:48,368 [truthlens.pipelines] INFO: MongoDB new: dawn:2043723 | version=1 | fields=none
+2026-11-11 10:58:51,209 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043675/public-accounts-committee-seeks-to-delay-power-firms-sell-off-until-asset-valuation | images=1 | videos=0
+2026-11-11 10:58:51,217 [truthlens.pipelines] INFO: Cleaned article: dawn:2043675 | characters=3056 | hash=45c3e9553336
+2026-11-11 10:58:51,237 [truthlens.pipelines] INFO: MongoDB new: dawn:2043675 | version=1 | fields=none
+2026-11-11 10:58:54,398 [dawn_sitemap] WARNING: Validation issues: https://www.dawn.com/news/2043724/us-house-blocks-bid-to-impeach-defence-secretary-hegseth | tweet_text_missing
+2026-11-11 10:58:54,400 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043724/us-house-blocks-bid-to-impeach-defence-secretary-hegseth | images=1 | videos=0
+2026-11-11 10:58:54,410 [truthlens.pipelines] INFO: Cleaned article: dawn:2043724 | characters=4688 | hash=51d9855701c8
+2026-11-11 10:58:54,428 [truthlens.pipelines] INFO: MongoDB new: dawn:2043724 | version=1 | fields=none
+2026-11-11 10:58:58,349 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043674/rain-snow-in-northern-parts-of-the-country-from-today | images=1 | videos=0
+2026-11-11 10:58:58,356 [truthlens.pipelines] INFO: Cleaned article: dawn:2043674 | characters=3236 | hash=4092104405b5
+2026-11-11 10:58:58,371 [truthlens.pipelines] INFO: MongoDB new: dawn:2043674 | version=1 | fields=none
+2026-11-11 10:59:04,284 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043633 | images=1 | videos=0
+2026-11-11 10:59:04,365 [truthlens.pipelines] INFO: Cleaned article: dawn:2043633 | characters=4336 | hash=9e7d9a3c77f0
+2026-11-11 10:59:04,399 [truthlens.pipelines] INFO: MongoDB unchanged: dawn:2043633 | version=1 | fields=none
+2026-11-11 10:59:07,609 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043645/iran-urges-us-to-meet-terms-for-hormuz-opening | images=1 | videos=0
+2026-11-11 10:59:07,619 [truthlens.pipelines] INFO: Cleaned article: dawn:2043645 | characters=4711 | hash=705e939baae8
+2026-11-11 10:59:07,645 [truthlens.pipelines] INFO: MongoDB new: dawn:2043645 | version=1 | fields=none
+2026-11-11 10:59:10,405 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043642/saudi-arabia-intercepts-missiles-as-strikes-hit-sanaa | images=1 | videos=0
+2026-11-11 10:59:10,420 [truthlens.pipelines] INFO: Cleaned article: dawn:2043642 | characters=2890 | hash=94f527738e5c
+2026-11-11 10:59:10,442 [truthlens.pipelines] INFO: MongoDB new: dawn:2043642 | version=1 | fields=none
+2026-11-11 10:59:24,397 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043720/opposition-moves | images=0 | videos=0
+2026-11-11 10:59:24,400 [truthlens.pipelines] INFO: Cleaned article: dawn:2043720 | characters=2955 | hash=64e0329eff2f
+2026-11-11 10:59:24,413 [truthlens.pipelines] INFO: MongoDB new: dawn:2043720 | version=1 | fields=none
+2026-11-11 10:59:31,390 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043660/fazlur-rehmans-son-skips-nab-summons | images=1 | videos=0
+2026-11-11 10:59:31,394 [truthlens.pipelines] INFO: Cleaned article: dawn:2043660 | characters=1795 | hash=39aad21983b0
+2026-11-11 10:59:31,408 [truthlens.pipelines] INFO: MongoDB new: dawn:2043660 | version=1 | fields=none
+2026-11-11 10:59:34,526 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043655/pm-shehbaz-to-outline-pakistans-climate-priorities-at-cop31 | images=1 | videos=0
+2026-11-11 10:59:34,531 [truthlens.pipelines] INFO: Cleaned article: dawn:2043655 | characters=4264 | hash=858eddea6a14
+2026-11-11 10:59:34,546 [truthlens.pipelines] INFO: MongoDB new: dawn:2043655 | version=1 | fields=none
+2026-11-11 10:59:37,608 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043717/what-money-bought | images=1 | videos=0
+2026-11-11 10:59:37,619 [truthlens.pipelines] INFO: Cleaned article: dawn:2043717 | characters=6357 | hash=4710ea1deb77
+2026-11-11 10:59:37,635 [truthlens.pipelines] INFO: MongoDB new: dawn:2043717 | version=1 | fields=none
+2026-11-11 10:59:38,798 [scrapy.extensions.logstats] INFO: Crawled 63 pages (at 13 pages/min), scraped 61 items (at 13 items/min)
+2026-11-11 10:59:43,827 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043649 | images=1 | videos=0
+2026-11-11 10:59:43,829 [truthlens.pipelines] INFO: Cleaned article: dawn:2043649 | characters=545 | hash=d3d5bf6d8b5c
+2026-11-11 10:59:43,839 [truthlens.pipelines] INFO: MongoDB new: dawn:2043649 | version=1 | fields=none
+2026-11-11 10:59:47,167 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043710/unclaimed-accounts | images=0 | videos=0
+2026-11-11 10:59:47,170 [truthlens.pipelines] INFO: Cleaned article: dawn:2043710 | characters=1456 | hash=2d83454dbe9d
+2026-11-11 10:59:47,183 [truthlens.pipelines] INFO: MongoDB new: dawn:2043710 | version=1 | fields=none
+2026-11-11 10:59:48,976 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043696/us-fails-to-show-for-un-rights-review-yet-again | images=1 | videos=0
+2026-11-11 10:59:48,986 [truthlens.pipelines] INFO: Cleaned article: dawn:2043696 | characters=2872 | hash=33b0bf7018d8
+2026-11-11 10:59:49,002 [truthlens.pipelines] INFO: MongoDB new: dawn:2043696 | version=1 | fields=none
+2026-11-11 10:59:53,526 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043711/world-powers-have-to-adjust-their-ways | images=1 | videos=0
+2026-11-11 10:59:53,530 [truthlens.pipelines] INFO: Cleaned article: dawn:2043711 | characters=3469 | hash=928626c699c3
+2026-11-11 10:59:53,539 [truthlens.pipelines] INFO: MongoDB new: dawn:2043711 | version=1 | fields=none
+2026-11-11 10:59:56,479 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043688/father-and-son-among-seven-killed-by-israeli-fire-in-gaza-strip | images=1 | videos=0
+2026-11-11 10:59:56,488 [truthlens.pipelines] INFO: Cleaned article: dawn:2043688 | characters=4296 | hash=055bb80cd230
+2026-11-11 10:59:56,500 [truthlens.pipelines] INFO: MongoDB new: dawn:2043688 | version=1 | fields=none
+2026-11-11 10:59:58,596 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043716/hidden-cause-of-economic-imbalances | images=1 | videos=0
+2026-11-11 10:59:58,606 [truthlens.pipelines] INFO: Cleaned article: dawn:2043716 | characters=7302 | hash=1e1620a79b3b
+2026-11-11 10:59:58,616 [truthlens.pipelines] INFO: MongoDB new: dawn:2043716 | version=1 | fields=none
+2026-11-11 11:00:11,480 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043687/us-court-rules-spacex-must-face-sex-bias-claims | images=1 | videos=0
+2026-11-11 11:00:11,483 [truthlens.pipelines] INFO: Cleaned article: dawn:2043687 | characters=1414 | hash=26db4432be31
+2026-11-11 11:00:11,492 [truthlens.pipelines] INFO: MongoDB new: dawn:2043687 | version=1 | fields=none
+2026-11-11 11:00:19,031 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043672 | images=1 | videos=0
+2026-11-11 11:00:19,041 [truthlens.pipelines] INFO: Cleaned article: dawn:2043672 | characters=6556 | hash=61df0fac1869
+2026-11-11 11:00:19,056 [truthlens.pipelines] INFO: MongoDB new: dawn:2043672 | version=1 | fields=none
+2026-11-11 11:00:23,431 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043625/remittances-increase-14pc-to-148bn-in-four-months | images=1 | videos=0
+2026-11-11 11:00:23,435 [truthlens.pipelines] INFO: Cleaned article: dawn:2043625 | characters=2455 | hash=edf15caec9ed
+2026-11-11 11:00:23,446 [truthlens.pipelines] INFO: MongoDB new: dawn:2043625 | version=1 | fields=none
+2026-11-11 11:00:27,858 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043652/delays-fail-to-dampen-interest-in-islamabad-lg-polls-as-over-3500-file-nominations | images=1 | videos=0
+2026-11-11 11:00:27,863 [truthlens.pipelines] INFO: Cleaned article: dawn:2043652 | characters=4045 | hash=13a0da6f1754
+2026-11-11 11:00:27,871 [truthlens.pipelines] INFO: MongoDB new: dawn:2043652 | version=1 | fields=none
+2026-11-11 11:00:31,091 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043602/student-injured-as-roof-of-faisalabad-classroom-caves-in | images=1 | videos=0
+2026-11-11 11:00:31,095 [truthlens.pipelines] INFO: Cleaned article: dawn:2043602 | characters=2088 | hash=9ccfe38d0980
+2026-11-11 11:00:31,106 [truthlens.pipelines] INFO: MongoDB new: dawn:2043602 | version=1 | fields=none
+2026-11-11 11:00:34,838 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043626/islamabad-atc-refuses-to-drop-terror-charges-in-paf-officer-murder-case | images=1 | videos=0
+2026-11-11 11:00:34,841 [truthlens.pipelines] INFO: Cleaned article: dawn:2043626 | characters=1454 | hash=ad4e4c76e4d7
+2026-11-11 11:00:34,851 [truthlens.pipelines] INFO: MongoDB new: dawn:2043626 | version=1 | fields=none
+2026-11-11 11:00:38,794 [scrapy.extensions.logstats] INFO: Crawled 75 pages (at 12 pages/min), scraped 73 items (at 12 items/min)
+2026-11-11 11:00:39,809 [dawn_sitemap] WARNING: Validation issues: https://www.dawn.com/news/2043736/irans-pezeshkian-to-raise-us-israeli-environmental-crimes-at-cop31 | missing_author
+2026-11-11 11:00:39,810 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043736/irans-pezeshkian-to-raise-us-israeli-environmental-crimes-at-cop31 | images=0 | videos=0
+2026-11-11 11:00:39,812 [truthlens.pipelines] INFO: Cleaned article: dawn:2043736 | characters=936 | hash=7f8348efd26d
+2026-11-11 11:00:39,824 [truthlens.pipelines] INFO: MongoDB new: dawn:2043736 | version=1 | fields=none
+2026-11-11 11:00:44,037 [dawn_sitemap] WARNING: Validation issues: https://www.dawn.com/news/2043737/read-us-house-blocks-bid-to-impeach-defence-secretary-hegseth | missing_author
+2026-11-11 11:00:44,038 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043737/read-us-house-blocks-bid-to-impeach-defence-secretary-hegseth | images=0 | videos=0
+2026-11-11 11:00:44,041 [truthlens.pipelines] INFO: Cleaned article: dawn:2043737 | characters=937 | hash=2b935c22065c
+2026-11-11 11:00:44,052 [truthlens.pipelines] INFO: MongoDB new: dawn:2043737 | version=1 | fields=none
+2026-11-11 11:00:45,468 [dawn_sitemap] WARNING: Validation issues: https://www.dawn.com/news/2043738/were-here-to-do-a-job-aoc-criticises-democrats-for-missing-hegseth-impeachment-vote | missing_author
+2026-11-11 11:00:45,469 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043738/were-here-to-do-a-job-aoc-criticises-democrats-for-missing-hegseth-impeachment-vote | images=0 | videos=0
+2026-11-11 11:00:45,471 [truthlens.pipelines] INFO: Cleaned article: dawn:2043738 | characters=681 | hash=884c2c049982
+2026-11-11 11:00:45,481 [truthlens.pipelines] INFO: MongoDB new: dawn:2043738 | version=1 | fields=none
+2026-11-11 11:00:49,101 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043628/cda-challenges-court-order-protecting-bari-imam-house-from-demolition-in-islamabad | images=1 | videos=0
+2026-11-11 11:00:49,105 [truthlens.pipelines] INFO: Cleaned article: dawn:2043628 | characters=3319 | hash=392bf13b4ee6
+2026-11-11 11:00:49,114 [truthlens.pipelines] INFO: MongoDB new: dawn:2043628 | version=1 | fields=none
+2026-11-11 11:00:56,195 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043600/man-murdered-at-the-behest-of-wife-son-in-gujrat | images=1 | videos=0
+2026-11-11 11:00:56,199 [truthlens.pipelines] INFO: Cleaned article: dawn:2043600 | characters=1837 | hash=aa319ebef913
+2026-11-11 11:00:56,210 [truthlens.pipelines] INFO: MongoDB new: dawn:2043600 | version=1 | fields=none
+2026-11-11 11:01:03,646 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043610 | images=1 | videos=0
+2026-11-11 11:01:03,650 [truthlens.pipelines] INFO: Cleaned article: dawn:2043610 | characters=1554 | hash=be8b83432ed0
+2026-11-11 11:01:03,661 [truthlens.pipelines] INFO: MongoDB unchanged: dawn:2043610 | version=1 | fields=none
+2026-11-11 11:01:07,515 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043609/hammad-azhar-complains-of-cctv-surveillance-in-prison-cell | images=1 | videos=0
+2026-11-11 11:01:07,519 [truthlens.pipelines] INFO: Cleaned article: dawn:2043609 | characters=2812 | hash=cfd4f4b40c74
+2026-11-11 11:01:07,533 [truthlens.pipelines] INFO: MongoDB new: dawn:2043609 | version=1 | fields=none
+2026-11-11 11:01:16,233 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043596 | images=1 | videos=0
+2026-11-11 11:01:16,243 [truthlens.pipelines] INFO: Cleaned article: dawn:2043596 | characters=4167 | hash=c4e9410bf7f8
+2026-11-11 11:01:16,257 [truthlens.pipelines] INFO: MongoDB unchanged: dawn:2043596 | version=1 | fields=none
+2026-11-11 11:01:22,977 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043583/two-killed-in-firing-over-tiktok-video-dispute-in-charsadda | images=1 | videos=0
+2026-11-11 11:01:22,981 [truthlens.pipelines] INFO: Cleaned article: dawn:2043583 | characters=1167 | hash=d361425c1eec
+2026-11-11 11:01:22,993 [truthlens.pipelines] INFO: MongoDB new: dawn:2043583 | version=1 | fields=none
+2026-11-11 11:01:27,278 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043668/jirga-in-mirpur-bhutto-ends-14-year-old-hostility-involving-five-communities | images=1 | videos=0
+2026-11-11 11:01:27,308 [truthlens.pipelines] INFO: Cleaned article: dawn:2043668 | characters=4802 | hash=4ec42f08e8d7
+2026-11-11 11:01:27,326 [truthlens.pipelines] INFO: MongoDB new: dawn:2043668 | version=1 | fields=none
+2026-11-11 11:01:30,774 [dawn_sitemap] WARNING: Validation issues: https://www.dawn.com/news/2043743/us-treasury-chief-bessent-moved-to-military-base-after-iranian-threats-reports | missing_author
+2026-11-11 11:01:30,775 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043743/us-treasury-chief-bessent-moved-to-military-base-after-iranian-threats-reports | images=0 | videos=0
+2026-11-11 11:01:30,778 [truthlens.pipelines] INFO: Cleaned article: dawn:2043743 | characters=618 | hash=38c85836ddfd
+2026-11-11 11:01:30,788 [truthlens.pipelines] INFO: MongoDB new: dawn:2043743 | version=1 | fields=none
+2026-11-11 11:01:38,103 [dawn_sitemap] ERROR: Unexpected article URL: https://www.dawn.com/live/iran-israel-war
+2026-11-11 11:01:38,796 [scrapy.extensions.logstats] INFO: Crawled 87 pages (at 12 pages/min), scraped 84 items (at 11 items/min)
+2026-11-11 11:01:42,609 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043667/fire-destroys-hotels-hall-during-diwali-celebration-in-sukkur | images=1 | videos=0
+2026-11-11 11:01:42,611 [truthlens.pipelines] INFO: Cleaned article: dawn:2043667 | characters=765 | hash=3956db2457b6
+2026-11-11 11:01:42,620 [truthlens.pipelines] INFO: MongoDB new: dawn:2043667 | version=1 | fields=none
+2026-11-11 11:01:46,207 [dawn_sitemap] WARNING: Validation issues: https://www.dawn.com/news/2043745/transit-strike-over-high-fuel-prices-blocks-roads-in-chile | missing_author
+2026-11-11 11:01:46,208 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043745/transit-strike-over-high-fuel-prices-blocks-roads-in-chile | images=0 | videos=0
+2026-11-11 11:01:46,210 [truthlens.pipelines] INFO: Cleaned article: dawn:2043745 | characters=639 | hash=bca06d846695
+2026-11-11 11:01:46,223 [truthlens.pipelines] INFO: MongoDB new: dawn:2043745 | version=1 | fields=none
+2026-11-11 11:01:52,560 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043747/fight-or-flight-trump-mixes-signals-after-midterms | images=1 | videos=0
+2026-11-11 11:01:52,570 [truthlens.pipelines] INFO: Cleaned article: dawn:2043747 | characters=3881 | hash=9026b9ef0d5e
+2026-11-11 11:01:52,586 [truthlens.pipelines] INFO: MongoDB new: dawn:2043747 | version=1 | fields=none
+2026-11-11 11:01:56,910 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043746/pm-shehbaz-to-join-other-world-leaders-at-cop31-today-will-outline-pakistans-climate-priorities | images=1 | videos=0
+2026-11-11 11:01:56,920 [truthlens.pipelines] INFO: Cleaned article: dawn:2043746 | characters=4292 | hash=23a471403595
+2026-11-11 11:01:56,939 [truthlens.pipelines] INFO: MongoDB new: dawn:2043746 | version=1 | fields=none
+2026-11-11 11:02:00,940 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2043744/pti-founder-imran-khan-brought-to-pims-undergoes-eye-procedure | images=1 | videos=0
+2026-11-11 11:02:00,944 [truthlens.pipelines] INFO: Cleaned article: dawn:2043744 | characters=3339 | hash=2bedbc64c3fe
+2026-11-11 11:02:00,958 [truthlens.pipelines] INFO: MongoDB new: dawn:2043744 | version=1 | fields=none
+2026-11-11 11:02:00,963 [scrapy.core.engine] INFO: Closing spider (finished)
+2026-11-11 11:02:00,964 [truthlens.export] INFO: Run JSON saved: data\runs\dawn_sitemap\dawn_sitemap_2026-11-11_10-55-38.json | items=89
+2026-11-11 11:02:00,968 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 35424,
+ 'downloader/request_count': 108,
+ 'downloader/request_method_count/GET': 108,
+ 'downloader/response_bytes': 3667343,
+ 'downloader/response_count': 108,
+ 'downloader/response_status_count/200': 92,
+ 'downloader/response_status_count/302': 16,
+ 'dupefilter/filtered': 5,
+ 'elapsed_time_seconds': 382.17199999999957,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2026, 11, 11, 6, 2, 0, 967931, tzinfo=datetime.timezone.utc),
+ 'httpcompression/response_bytes': 17432387,
+ 'httpcompression/response_count': 92,
+ 'item_scraped_count': 89,
+ 'items_per_minute': 13.979057591623038,
+ 'log_count/ERROR': 1,
+ 'log_count/INFO': 280,
+ 'log_count/WARNING': 8,
+ 'mongodb/articles_new': 86,
+ 'mongodb/articles_unchanged': 3,
+ 'mongodb/snapshots_inserted': 86,
+ 'mongodb/snapshots_skipped': 3,
+ 'offsite/domains': 2,
+ 'offsite/filtered': 5,
+ 'request_depth_max': 1,
+ 'response_received_count': 92,
+ 'responses_per_minute': 14.450261780104713,
+ 'robotstxt/request_count': 1,
+ 'robotstxt/response_count': 1,
+ 'robotstxt/response_status_count/200': 1,
+ 'scheduler/dequeued': 107,
+ 'scheduler/dequeued/memory': 107,
+ 'scheduler/enqueued': 107,
+ 'scheduler/enqueued/memory': 107,
+ 'start_time': datetime.datetime(2026, 11, 11, 5, 55, 38, 796316, tzinfo=datetime.timezone.utc)}
+2026-11-11 11:02:00,972 [scrapy.core.engine] INFO: Spider closed (finished)
+2026-11-11 11:02:00,977 [truthlens.run_reporting] INFO: Run summary saved: logs\runs\20261111T055538Z_1858a989925b43f2a49be4661da80d39.json | status=completed_with_errors

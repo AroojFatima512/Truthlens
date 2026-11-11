@@ -1,0 +1,124 @@
+{
+  "schema_version": "truthlens-run-v1",
+  "run_id": "20261101T154758Z_f9b82d0397534a8ca498a4532b213e45",
+  "source": "The Nation",
+  "spider": "nation_sitemap",
+  "status": "completed_with_review_items",
+  "finish_reason": "finished",
+  "started_at": "2026-11-01T15:47:58.065320+00:00",
+  "finished_at": "2026-11-01T15:57:13.604610+00:00",
+  "duration_seconds": 555.539,
+  "log_file": "logs\\runs\\20261101T154758Z_f9b82d0397534a8ca498a4532b213e45.log",
+  "counts": {
+    "requests_total": 152,
+    "responses_total": 152,
+    "retry_attempts": 0,
+    "items_processed": 150,
+    "new_articles": 118,
+    "unchanged_articles": 31,
+    "updated_articles": 0,
+    "baselines_created": 0,
+    "processing_changes": 0,
+    "snapshots_inserted": 119,
+    "snapshots_skipped": 31,
+    "review_only_records": 1,
+    "records_with_review_flags": 4,
+    "stale_observations": 0,
+    "replayed_observations": 0,
+    "rejected_records": 0,
+    "failed_requests": 0,
+    "item_errors": 0,
+    "spider_errors": 0
+  },
+  "failed_requests": [],
+  "rejected_records": [],
+  "review_records": [
+    {
+      "article_key": "nation:2026-11-01-cartoon",
+      "url": "https://www.nation.com.pk/01-Nov-2026/cartoon",
+      "change_status": "needs_review",
+      "validation_issues": [
+        "missing_body_container",
+        "missing_article_text"
+      ],
+      "cleaning_issues": [
+        "missing_content_blocks",
+        "empty_cleaned_text"
+      ]
+    },
+    {
+      "article_key": "nation:2026-11-01-khalid-shaikh-receives-excellence-certificate",
+      "url": "https://www.nation.com.pk/01-Nov-2026/khalid-shaikh-receives-excellence-certificate",
+      "change_status": "new",
+      "validation_issues": [
+        "short_article_under_50_words"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "nation:2026-11-01-taxila-police-investigate-citizen-s-killing-angles",
+      "url": "https://www.nation.com.pk/01-Nov-2026/taxila-police-investigate-citizen-s-killing-angles",
+      "change_status": "new",
+      "validation_issues": [
+        "short_article_under_50_words"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "nation:2026-11-01-anti-polio-vaccination-campaign-begin-97-districts-tomorrow",
+      "url": "https://www.nation.com.pk/01-Nov-2026/anti-polio-vaccination-campaign-begin-97-districts-tomorrow",
+      "change_status": "new",
+      "validation_issues": [
+        "short_article_under_50_words"
+      ],
+      "cleaning_issues": []
+    }
+  ],
+  "item_errors": [],
+  "spider_errors": [],
+  "http_status_counts": {
+    "200": 152
+  },
+  "download_attempt_exceptions": {},
+  "scrapy_stats": {
+    "start_time": "2026-11-01 15:47:58.671039+00:00",
+    "log_count/INFO": 464,
+    "scheduler/enqueued/memory": 151,
+    "scheduler/enqueued": 151,
+    "scheduler/dequeued/memory": 151,
+    "scheduler/dequeued": 151,
+    "downloader/request_count": 152,
+    "downloader/request_method_count/GET": 152,
+    "downloader/request_bytes": 54265,
+    "downloader/response_count": 152,
+    "downloader/response_status_count/200": 152,
+    "downloader/response_bytes": 3667606,
+    "httpcompression/response_bytes": 22837288,
+    "httpcompression/response_count": 152,
+    "response_received_count": 152,
+    "robotstxt/response_count": 1,
+    "robotstxt/response_status_count/200": 1,
+    "robotstxt/request_count": 1,
+    "request_depth_max": 1,
+    "mongodb/snapshots_skipped": 31,
+    "mongodb/articles_unchanged": 31,
+    "item_scraped_count": 150,
+    "mongodb/snapshots_inserted": 119,
+    "mongodb/articles_new": 118,
+    "log_count/WARNING": 6,
+    "mongodb/snapshot_only": 1,
+    "elapsed_time_seconds": 554.9220000000005,
+    "finish_time": "2026-11-01 15:57:13.601612+00:00",
+    "finish_reason": "finished",
+    "responses_per_minute": 16.462093862815887,
+    "items_per_minute": 16.24548736462094
+  },
+  "notes": [
+    "requests_total includes robots.txt, listing pages, redirects, retries and article requests.",
+    "failed_requests lists terminal failures reported by the spider errback; retried attempts are separate.",
+    "review flags do not mean a record was dropped; review-only records are retained as snapshots.",
+    "updated_articles excludes new baselines and processing-method changes.",
+    "snapshots_inserted can include baselines and review records; it is not a count of article edits.",
+    "A running summary left behind after a forced termination is incomplete."
+  ]
+}

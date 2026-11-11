@@ -1,0 +1,126 @@
+2026-10-11 19:56:33,963 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.logcount.LogCount',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.feedexport.FeedExporter',
+ 'scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.remote_control.RemoteControl',
+ 'truthlens.run_reporting.RunReportingExtension']
+2026-10-11 19:56:33,967 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'truthlens',
+ 'CONCURRENT_REQUESTS': 1,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 1,
+ 'DOWNLOAD_DELAY': 3,
+ 'DOWNLOAD_TIMEOUT': 30,
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'FEED_EXPORT_INDENT': 2,
+ 'LOG_LEVEL': 'INFO',
+ 'NEWSPIDER_MODULE': 'truthlens.spiders',
+ 'ROBOTSTXT_OBEY': True,
+ 'SPIDER_MODULES': ['truthlens.spiders'],
+ 'USER_AGENT': 'TruthLensResearchBot/0.1'}
+2026-10-11 19:56:35,114 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2026-10-11 19:56:35,126 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.start.StartSpiderMiddleware',
+ 'scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware',
+ 'scrapy.spidermiddlewares.metacopy.MetaCopyDetectionMiddleware']
+2026-10-11 19:56:35,558 [scrapy.middleware] INFO: Enabled item pipelines:
+['truthlens.pipelines.CleaningPipeline', 'truthlens.pipelines.MongoDBPipeline']
+2026-10-11 19:56:35,559 [scrapy.core.engine] INFO: Spider opened
+2026-10-11 19:56:35,660 [truthlens.pipelines] INFO: MongoDB connected: database=truthlens
+2026-10-11 19:56:35,666 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2026-10-11 19:56:35,676 [truthlens.run_reporting] INFO: Run started: 20261011T145633Z_43a69794aac642999bb057227611b664 | source=Geo News
+2026-10-11 19:56:35,682 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2026-10-11 19:56:35,704 [scrapy.extensions.remote_control] INFO: Remote control HTTP server listening on port 53984 (job 8040-99065cbeba904fe5a345d531b5052f36)
+2026-10-11 19:56:40,684 [geo_news] INFO: Selected 10 article URLs.
+2026-10-11 19:56:43,289 [geo_news] INFO: Extracted article: https://www.geo.tv/latest/685881-ppp-pmln-understanding-for-appointment-of-preferred-judicial-nominees | images=1 | videos=0
+2026-10-11 19:56:43,308 [truthlens.pipelines] INFO: Cleaned article: geo:685881 | characters=2924 | hash=bc38441aaac0
+2026-10-11 19:56:43,406 [truthlens.pipelines] INFO: MongoDB unchanged: geo:685881 | version=1 | fields=none
+2026-10-11 19:56:45,847 [geo_news] INFO: Extracted article: https://www.geo.tv/latest/685896-islamabad-student-allegedly-dies-by-suicide-after-losing-millions-in-fake-us-university-admission-scam | images=1 | videos=1
+2026-10-11 19:56:45,858 [truthlens.pipelines] INFO: Cleaned article: geo:685896 | characters=3917 | hash=bda2ec4fa105
+2026-10-11 19:56:46,069 [truthlens.pipelines] INFO: MongoDB multiple_changes: geo:685896 | version=2 | fields=text.headline, text.subheadline, text.cleaned_text, metadata.updated_at
+2026-10-11 19:56:49,462 [geo_news] INFO: Extracted article: https://www.geo.tv/latest/685915-atc-disposes-of-imaan-hadis-plea-against-terrorism-provisions-in-security-breach-case | images=1 | videos=0
+2026-10-11 19:56:49,470 [truthlens.pipelines] INFO: Cleaned article: geo:685915 | characters=3715 | hash=3a55fbc75765
+2026-10-11 19:56:49,483 [truthlens.pipelines] INFO: MongoDB unchanged: geo:685915 | version=1 | fields=none
+2026-10-11 19:56:51,857 [geo_news] INFO: Extracted article: https://www.geo.tv/latest/685964-federal-govt-decides-to-impose-emergency-in-kp-sources | images=1 | videos=1
+2026-10-11 19:56:51,874 [truthlens.pipelines] INFO: Cleaned article: geo:685964 | characters=5479 | hash=2e2ecf34b8f4
+2026-10-11 19:56:51,902 [truthlens.pipelines] INFO: MongoDB metadata_changed: geo:685964 | version=2 | fields=metadata.updated_at
+2026-10-11 19:56:55,652 [geo_news] INFO: Extracted article: https://www.geo.tv/latest/685997-pakistan-condemns-houthi-attack-on-riyadh-airport-reaffirms-commitment-to-saudi-security | images=1 | videos=0
+2026-10-11 19:56:55,663 [truthlens.pipelines] INFO: Cleaned article: geo:685997 | characters=4400 | hash=38f8349ad1a8
+2026-10-11 19:56:55,707 [truthlens.pipelines] INFO: MongoDB new: geo:685997 | version=1 | fields=none
+2026-10-11 19:57:00,084 [geo_news] INFO: Extracted article: https://www.geo.tv/latest/686013-12-terrorists-afghan-taliban-personnel-killed-as-security-forces-foil-infiltration-bid-in-kurram | images=1 | videos=0
+2026-10-11 19:57:00,093 [truthlens.pipelines] INFO: Cleaned article: geo:686013 | characters=3697 | hash=1b37f7e13eb4
+2026-10-11 19:57:00,110 [truthlens.pipelines] INFO: MongoDB new: geo:686013 | version=1 | fields=none
+2026-10-11 19:57:17,376 [geo_news] INFO: Extracted article: https://www.geo.tv/latest/686028-pti-calls-centres-move-to-impose-emergency-in-kp-a-grave-political-mistake | images=1 | videos=1
+2026-10-11 19:57:17,395 [truthlens.pipelines] INFO: Cleaned article: geo:686028 | characters=4838 | hash=92a9fb16a187
+2026-10-11 19:57:17,431 [truthlens.pipelines] INFO: MongoDB new: geo:686028 | version=1 | fields=none
+2026-10-11 19:57:34,501 [geo_news] WARNING: Body container missing: https://www.geo.tv/latest/686046-kp-emergency-governors-rule-legal-experts-explain-govts-constitutional-powers
+2026-10-11 19:57:34,501 [geo_news] WARNING: Headline or text missing: https://www.geo.tv/latest/686046-kp-emergency-governors-rule-legal-experts-explain-govts-constitutional-powers
+2026-10-11 19:57:34,503 [geo_news] WARNING: Publication time missing: https://www.geo.tv/latest/686046-kp-emergency-governors-rule-legal-experts-explain-govts-constitutional-powers
+2026-10-11 19:57:34,504 [geo_news] WARNING: Subheadline missing: https://www.geo.tv/latest/686046-kp-emergency-governors-rule-legal-experts-explain-govts-constitutional-powers
+2026-10-11 19:57:34,504 [geo_news] INFO: Extracted article: https://www.geo.tv/latest/686046-kp-emergency-governors-rule-legal-experts-explain-govts-constitutional-powers | images=0 | videos=0
+2026-10-11 19:57:34,505 [geo_news] WARNING: Validation issues: https://www.geo.tv/latest/686046-kp-emergency-governors-rule-legal-experts-explain-govts-constitutional-powers | missing_body_container, missing_article_text, missing_subheadline, missing_published_at, missing_updated_at, missing_or_invalid_canonical
+2026-10-11 19:57:34,506 [truthlens.pipelines] WARNING: Cleaning needs review: geo:686046 | missing_content_blocks, empty_cleaned_text
+2026-10-11 19:57:34,510 [truthlens.pipelines] WARNING: Saved for review only: https://www.geo.tv/latest/686046-kp-emergency-governors-rule-legal-experts-explain-govts-constitutional-powers
+2026-10-11 19:57:35,672 [scrapy.extensions.logstats] INFO: Crawled 10 pages (at 10 pages/min), scraped 8 items (at 8 items/min)
+2026-10-11 19:57:39,984 [geo_news] INFO: Extracted article: https://www.geo.tv/latest/686054-emergency-governors-rule-imposed-in-kp-as-president-zardari-approves-summary-on-pms-advice | images=1 | videos=1
+2026-10-11 19:57:40,005 [truthlens.pipelines] INFO: Cleaned article: geo:686054 | characters=4451 | hash=02c79ee6dabb
+2026-10-11 19:57:40,052 [truthlens.pipelines] INFO: MongoDB new: geo:686054 | version=1 | fields=none
+2026-10-11 19:57:41,091 [geo_news] INFO: Extracted article: https://www.geo.tv/latest/686065-ministers-defend-kp-emergency-as-choice-between-daily-martyrdoms-tough-decision | images=1 | videos=1
+2026-10-11 19:57:41,104 [truthlens.pipelines] INFO: Cleaned article: geo:686065 | characters=4834 | hash=86c726ee8f28
+2026-10-11 19:57:41,130 [truthlens.pipelines] INFO: MongoDB new: geo:686065 | version=1 | fields=none
+2026-10-11 19:57:41,137 [scrapy.core.engine] INFO: Closing spider (finished)
+2026-10-11 19:57:41,142 [scrapy.extensions.feedexport] INFO: Stored json feed (10 items) in: data\matching\geo_20261011_195555.json
+2026-10-11 19:57:41,146 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 4431,
+ 'downloader/request_count': 12,
+ 'downloader/request_method_count/GET': 12,
+ 'downloader/response_bytes': 292679,
+ 'downloader/response_count': 12,
+ 'downloader/response_status_count/200': 12,
+ 'elapsed_time_seconds': 65.47712020000017,
+ 'feedexport/success_count/FileFeedStorage': 1,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2026, 10, 11, 14, 57, 41, 142180, tzinfo=datetime.timezone.utc),
+ 'httpcompression/response_bytes': 1549064,
+ 'httpcompression/response_count': 12,
+ 'item_scraped_count': 10,
+ 'items_per_minute': 9.230769230769232,
+ 'log_count/INFO': 35,
+ 'log_count/WARNING': 7,
+ 'mongodb/articles_metadata_changed': 1,
+ 'mongodb/articles_multiple_changes': 1,
+ 'mongodb/articles_new': 5,
+ 'mongodb/articles_unchanged': 2,
+ 'mongodb/snapshot_only': 1,
+ 'mongodb/snapshots_inserted': 8,
+ 'mongodb/snapshots_skipped': 2,
+ 'request_depth_max': 1,
+ 'response_received_count': 12,
+ 'responses_per_minute': 11.076923076923078,
+ 'robotstxt/request_count': 1,
+ 'robotstxt/response_count': 1,
+ 'robotstxt/response_status_count/200': 1,
+ 'scheduler/dequeued': 11,
+ 'scheduler/dequeued/memory': 11,
+ 'scheduler/enqueued': 11,
+ 'scheduler/enqueued/memory': 11,
+ 'start_time': datetime.datetime(2026, 10, 11, 14, 56, 35, 665055, tzinfo=datetime.timezone.utc)}
+2026-10-11 19:57:41,152 [scrapy.core.engine] INFO: Spider closed (finished)
+2026-10-11 19:57:41,160 [truthlens.run_reporting] INFO: Run summary saved: logs\runs\20261011T145633Z_43a69794aac642999bb057227611b664.json | status=completed_with_review_items

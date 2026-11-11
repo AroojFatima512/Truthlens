@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+env/
+.pytest_cache/
+
+# Node
+node_modules/
+dist/
+build/
+
+# Passwords / keys (keep .env.example)
+.env
+.env.*
+!.env.example
+
+# Trained models and big files: keep these on Google Drive
+ml-service/models/
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.onnx
+*.zip
+*.jsonl
+
+# Scrapy cache, editors, Windows
+.scrapy/
+httpcache/
+.vscode/
+.idea/
+Thumbs.db

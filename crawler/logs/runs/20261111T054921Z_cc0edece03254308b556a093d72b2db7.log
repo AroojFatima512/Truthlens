@@ -1,0 +1,390 @@
+2026-11-11 10:49:21,626 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.logcount.LogCount',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.remote_control.RemoteControl',
+ 'truthlens.run_reporting.RunReportingExtension']
+2026-11-11 10:49:21,628 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'truthlens',
+ 'CONCURRENT_REQUESTS': 1,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 1,
+ 'DOWNLOAD_DELAY': 3,
+ 'DOWNLOAD_TIMEOUT': 30,
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'FEED_EXPORT_INDENT': 2,
+ 'LOG_LEVEL': 'INFO',
+ 'NEWSPIDER_MODULE': 'truthlens.spiders',
+ 'ROBOTSTXT_OBEY': True,
+ 'SPIDER_MODULES': ['truthlens.spiders'],
+ 'USER_AGENT': 'TruthLensResearchBot/0.1'}
+2026-11-11 10:49:23,426 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2026-11-11 10:49:23,500 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.start.StartSpiderMiddleware',
+ 'scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware',
+ 'scrapy.spidermiddlewares.metacopy.MetaCopyDetectionMiddleware']
+2026-11-11 10:49:25,146 [scrapy.middleware] INFO: Enabled item pipelines:
+['truthlens.pipelines.CleaningPipeline',
+ 'truthlens.pipelines.MongoDBPipeline',
+ 'truthlens.export.RunJsonExportPipeline']
+2026-11-11 10:49:25,147 [scrapy.core.engine] INFO: Spider opened
+2026-11-11 10:49:25,306 [truthlens.pipelines] INFO: MongoDB connected: database=truthlens
+2026-11-11 10:49:25,309 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2026-11-11 10:49:25,311 [truthlens.run_reporting] INFO: Run started: 20261111T054921Z_cc0edece03254308b556a093d72b2db7 | source=Geo News
+2026-11-11 10:49:25,314 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2026-11-11 10:49:25,319 [scrapy.extensions.remote_control] INFO: Remote control HTTP server listening on port 55757 (job 1988-e7a45f87bad1445cbcab83dd760142eb)
+2026-11-11 10:49:27,905 [geo_sitemap] INFO: Sitemap: selected 100 article URLs.
+2026-11-11 10:49:32,633 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690468-jamie-foxxs-annual-halloween-festival-draws-police-attention | images=1 | videos=0
+2026-11-11 10:49:32,637 [truthlens.pipelines] INFO: Cleaned article: geo:690468 | characters=1805 | hash=aa94a3d603f7
+2026-11-11 10:49:32,802 [truthlens.pipelines] INFO: MongoDB new: geo:690468 | version=1 | fields=none
+2026-11-11 10:49:36,124 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690459-prince-william-issues-powerful-statement-after-women-in-pain-speak-out | images=1 | videos=0
+2026-11-11 10:49:36,129 [truthlens.pipelines] INFO: Cleaned article: geo:690459 | characters=1481 | hash=7ab5f54d15c4
+2026-11-11 10:49:36,140 [truthlens.pipelines] INFO: MongoDB new: geo:690459 | version=1 | fields=none
+2026-11-11 10:49:39,552 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690465-pm-shehbaz-leaves-for-turkiye-today-to-attend-cop31-summit | images=1 | videos=0
+2026-11-11 10:49:39,557 [truthlens.pipelines] INFO: Cleaned article: geo:690465 | characters=2915 | hash=9503b3996091
+2026-11-11 10:49:39,568 [truthlens.pipelines] INFO: MongoDB new: geo:690465 | version=1 | fields=none
+2026-11-11 10:49:41,156 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690467-meghans-mother-doria-makes-key-request-to-fbi-after-thomas-sr-arrest | images=1 | videos=0
+2026-11-11 10:49:41,162 [truthlens.pipelines] INFO: Cleaned article: geo:690467 | characters=1831 | hash=557624905605
+2026-11-11 10:49:41,174 [truthlens.pipelines] INFO: MongoDB new: geo:690467 | version=1 | fields=none
+2026-11-11 10:49:44,715 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690469-rachel-zegler-bradley-jaden-make-it-official-at-broadway-debut | images=1 | videos=0
+2026-11-11 10:49:44,719 [truthlens.pipelines] INFO: Cleaned article: geo:690469 | characters=1717 | hash=53c1dd99cbd3
+2026-11-11 10:49:44,729 [truthlens.pipelines] INFO: MongoDB new: geo:690469 | version=1 | fields=none
+2026-11-11 10:49:48,728 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690466-curry-rocks-pooles-sunglasses-sinks-3-pointer-in-viral-moment | images=1 | videos=0
+2026-11-11 10:49:48,732 [truthlens.pipelines] INFO: Cleaned article: geo:690466 | characters=1243 | hash=3659f8d86557
+2026-11-11 10:49:48,743 [truthlens.pipelines] INFO: MongoDB new: geo:690466 | version=1 | fields=none
+2026-11-11 10:49:50,794 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690474-kristen-bells-husband-dax-shepard-addresses-terrible-man-narrative | images=1 | videos=0
+2026-11-11 10:49:50,799 [truthlens.pipelines] INFO: Cleaned article: geo:690474 | characters=1833 | hash=814f8a64be1f
+2026-11-11 10:49:50,810 [truthlens.pipelines] INFO: MongoDB new: geo:690474 | version=1 | fields=none
+2026-11-11 10:49:54,691 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690471-trump-nominates-natalie-baker-as-next-us-ambassador-to-pakistan | images=1 | videos=1
+2026-11-11 10:49:54,694 [truthlens.pipelines] INFO: Cleaned article: geo:690471 | characters=2366 | hash=f344a7b72abe
+2026-11-11 10:49:54,700 [truthlens.pipelines] INFO: MongoDB new: geo:690471 | version=1 | fields=none
+2026-11-11 10:49:59,101 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690476-prince-harry-turns-meghans-pillar-of-strength-in-first-outing-amid-crisis | images=1 | videos=0
+2026-11-11 10:49:59,103 [truthlens.pipelines] INFO: Cleaned article: geo:690476 | characters=1384 | hash=a2bc25ed40e6
+2026-11-11 10:49:59,111 [truthlens.pipelines] INFO: MongoDB new: geo:690476 | version=1 | fields=none
+2026-11-11 10:50:03,271 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690475-usda-issues-health-alert-for-3-frozen-meat-poultry-products-find-out-details-inside | images=1 | videos=0
+2026-11-11 10:50:03,278 [truthlens.pipelines] INFO: Cleaned article: geo:690475 | characters=1125 | hash=c8c103b0fc9f
+2026-11-11 10:50:03,293 [truthlens.pipelines] INFO: MongoDB new: geo:690475 | version=1 | fields=none
+2026-11-11 10:50:07,497 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690463-scotland-suspends-cricket-ties-with-afghanistan-over-taliban-regimes-treatment-of-women | images=1 | videos=0
+2026-11-11 10:50:07,502 [truthlens.pipelines] INFO: Cleaned article: geo:690463 | characters=1961 | hash=28a95a1b358e
+2026-11-11 10:50:07,513 [truthlens.pipelines] INFO: MongoDB new: geo:690463 | version=1 | fields=none
+2026-11-11 10:50:09,874 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690481-hidden-tension-between-martha-stewart-craig-melvin-laid-bare-over-halloween | images=1 | videos=0
+2026-11-11 10:50:09,878 [truthlens.pipelines] INFO: Cleaned article: geo:690481 | characters=1736 | hash=1c2b52659d21
+2026-11-11 10:50:09,889 [truthlens.pipelines] INFO: MongoDB new: geo:690481 | version=1 | fields=none
+2026-11-11 10:50:14,340 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690478-starc-denies-knowledge-of-ball-tampering-plot-cricket-australia-rules-out-new-probe | images=1 | videos=0
+2026-11-11 10:50:14,348 [truthlens.pipelines] INFO: Cleaned article: geo:690478 | characters=3531 | hash=8de02e5cc7c8
+2026-11-11 10:50:14,362 [truthlens.pipelines] INFO: MongoDB new: geo:690478 | version=1 | fields=none
+2026-11-11 10:50:18,803 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690480-meghan-markle-reacts-to-reporters-asking-about-fathers-arrest | images=1 | videos=0
+2026-11-11 10:50:18,808 [truthlens.pipelines] INFO: Cleaned article: geo:690480 | characters=1648 | hash=421902e4125b
+2026-11-11 10:50:18,816 [truthlens.pipelines] INFO: MongoDB new: geo:690480 | version=1 | fields=none
+2026-11-11 10:50:22,919 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690479-ross-lynch-deletes-ex-jaz-sinclairs-photos-after-fans-nudge | images=1 | videos=0
+2026-11-11 10:50:22,924 [truthlens.pipelines] INFO: Cleaned article: geo:690479 | characters=1970 | hash=586e6a9172f9
+2026-11-11 10:50:22,934 [truthlens.pipelines] INFO: MongoDB new: geo:690479 | version=1 | fields=none
+2026-11-11 10:50:25,317 [scrapy.extensions.logstats] INFO: Crawled 17 pages (at 17 pages/min), scraped 15 items (at 15 items/min)
+2026-11-11 10:50:26,990 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690473-stubborn-william-harry-sad-truth-they-dont-need-each-other-anymore | images=1 | videos=0
+2026-11-11 10:50:26,994 [truthlens.pipelines] INFO: Cleaned article: geo:690473 | characters=2746 | hash=e47c72032661
+2026-11-11 10:50:27,002 [truthlens.pipelines] INFO: MongoDB new: geo:690473 | version=1 | fields=none
+2026-11-11 10:50:29,332 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690477-why-sit-as-ministers-cm-maryam-hits-back-at-critics-amid-corruption-allegations | images=1 | videos=1
+2026-11-11 10:50:29,335 [truthlens.pipelines] INFO: Cleaned article: geo:690477 | characters=2555 | hash=1adcaed0006d
+2026-11-11 10:50:29,346 [truthlens.pipelines] INFO: MongoDB new: geo:690477 | version=1 | fields=none
+2026-11-11 10:50:33,615 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690487-kendall-jenner-makes-surprising-confession-amid-jacob-elordi-romance | images=1 | videos=0
+2026-11-11 10:50:33,619 [truthlens.pipelines] INFO: Cleaned article: geo:690487 | characters=1663 | hash=c0a739f3e9ee
+2026-11-11 10:50:33,632 [truthlens.pipelines] INFO: MongoDB new: geo:690487 | version=1 | fields=none
+2026-11-11 10:50:38,090 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690482-warriors-backcourt-depth-hit-by-injuries-to-brandon-williams-will-richard | images=1 | videos=0
+2026-11-11 10:50:38,095 [truthlens.pipelines] INFO: Cleaned article: geo:690482 | characters=1546 | hash=28b99fa492f3
+2026-11-11 10:50:38,106 [truthlens.pipelines] INFO: MongoDB new: geo:690482 | version=1 | fields=none
+2026-11-11 10:50:41,075 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690485-bts-jimin-quietly-returns-to-military-during-arirang-world-tour-break | images=1 | videos=0
+2026-11-11 10:50:41,080 [truthlens.pipelines] INFO: Cleaned article: geo:690485 | characters=2149 | hash=f7984dd6ce3f
+2026-11-11 10:50:41,092 [truthlens.pipelines] INFO: MongoDB new: geo:690485 | version=1 | fields=none
+2026-11-11 10:50:44,601 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690486-stressed-meghan-watches-prince-harry-deliver-keynote-speech | images=1 | videos=0
+2026-11-11 10:50:44,605 [truthlens.pipelines] INFO: Cleaned article: geo:690486 | characters=939 | hash=22bb528c775f
+2026-11-11 10:50:44,615 [truthlens.pipelines] INFO: MongoDB new: geo:690486 | version=1 | fields=none
+2026-11-11 10:50:48,382 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690490-robert-de-niros-ex-toukie-smith-breathes-her-last-at-74 | images=1 | videos=0
+2026-11-11 10:50:48,386 [truthlens.pipelines] INFO: Cleaned article: geo:690490 | characters=1748 | hash=59749c114196
+2026-11-11 10:50:48,393 [truthlens.pipelines] INFO: MongoDB new: geo:690490 | version=1 | fields=none
+2026-11-11 10:50:51,729 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690493-ariana-grande-reveals-unusual-first-meeting-with-ben-stiller | images=1 | videos=0
+2026-11-11 10:50:51,731 [truthlens.pipelines] INFO: Cleaned article: geo:690493 | characters=1726 | hash=eb7ae39f0f44
+2026-11-11 10:50:51,740 [truthlens.pipelines] INFO: MongoDB new: geo:690493 | version=1 | fields=none
+2026-11-11 10:50:55,334 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690488-190m-case-ihc-orders-pti-lawyers-meeting-with-imran-khan-bushra-bibi-at-adiala-jail | images=1 | videos=1
+2026-11-11 10:50:55,338 [truthlens.pipelines] INFO: Cleaned article: geo:690488 | characters=3769 | hash=f00111c16163
+2026-11-11 10:50:55,350 [truthlens.pipelines] INFO: MongoDB new: geo:690488 | version=1 | fields=none
+2026-11-11 10:50:59,243 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690491-prince-harry-breaks-silence-on-children-safety-after-thomas-markle-arrest | images=1 | videos=0
+2026-11-11 10:50:59,246 [truthlens.pipelines] INFO: Cleaned article: geo:690491 | characters=1659 | hash=34e6aa538cad
+2026-11-11 10:50:59,256 [truthlens.pipelines] INFO: MongoDB new: geo:690491 | version=1 | fields=none
+2026-11-11 10:51:03,383 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690494-kim-kardashians-business-faces-backlash-over-holiday-calendar | images=1 | videos=0
+2026-11-11 10:51:03,390 [truthlens.pipelines] INFO: Cleaned article: geo:690494 | characters=1804 | hash=ac5e47280fe9
+2026-11-11 10:51:03,406 [truthlens.pipelines] INFO: MongoDB new: geo:690494 | version=1 | fields=none
+2026-11-11 10:51:06,570 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690492-deion-sanders-son-shilo-slams-nyc-rent-prices-amid-bankruptcy-trial | images=1 | videos=0
+2026-11-11 10:51:06,590 [truthlens.pipelines] INFO: Cleaned article: geo:690492 | characters=1917 | hash=2169526db0cb
+2026-11-11 10:51:06,648 [truthlens.pipelines] INFO: MongoDB new: geo:690492 | version=1 | fields=none
+2026-11-11 10:51:10,292 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690495-prince-william-team-shares-update-amid-harry-meghans-moving-appearance | images=1 | videos=0
+2026-11-11 10:51:10,297 [truthlens.pipelines] INFO: Cleaned article: geo:690495 | characters=1841 | hash=b8ec03969e5f
+2026-11-11 10:51:10,309 [truthlens.pipelines] INFO: MongoDB new: geo:690495 | version=1 | fields=none
+2026-11-11 10:51:12,328 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690489-heartbroken-kate-finally-gives-up-on-her-harry-plan | images=1 | videos=0
+2026-11-11 10:51:12,332 [truthlens.pipelines] INFO: Cleaned article: geo:690489 | characters=1532 | hash=41ccdef6c67f
+2026-11-11 10:51:12,342 [truthlens.pipelines] INFO: MongoDB new: geo:690489 | version=1 | fields=none
+2026-11-11 10:51:16,613 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690496-meghan-markle-puts-her-trauma-aside-to-console-grieving-mother | images=1 | videos=0
+2026-11-11 10:51:16,616 [truthlens.pipelines] INFO: Cleaned article: geo:690496 | characters=1254 | hash=ca93ee55c7e4
+2026-11-11 10:51:16,627 [truthlens.pipelines] INFO: MongoDB new: geo:690496 | version=1 | fields=none
+2026-11-11 10:51:20,996 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690499-chicago-heights-police-seek-owner-of-jacket-found-with-human-remains | images=1 | videos=0
+2026-11-11 10:51:21,001 [truthlens.pipelines] INFO: Cleaned article: geo:690499 | characters=1562 | hash=fb7d90a49aa7
+2026-11-11 10:51:21,013 [truthlens.pipelines] INFO: MongoDB new: geo:690499 | version=1 | fields=none
+2026-11-11 10:51:25,041 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690504-johnny-depp-makes-emotional-confession-after-return-to-hollywood | images=1 | videos=0
+2026-11-11 10:51:25,045 [truthlens.pipelines] INFO: Cleaned article: geo:690504 | characters=1361 | hash=db6f73eb7fea
+2026-11-11 10:51:25,053 [truthlens.pipelines] INFO: MongoDB new: geo:690504 | version=1 | fields=none
+2026-11-11 10:51:25,306 [scrapy.extensions.logstats] INFO: Crawled 34 pages (at 17 pages/min), scraped 32 items (at 17 items/min)
+2026-11-11 10:51:29,435 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690506-katseye-to-resume-tour-with-some-precautions-amid-megans-concussion | images=2 | videos=0
+2026-11-11 10:51:29,438 [truthlens.pipelines] INFO: Cleaned article: geo:690506 | characters=1857 | hash=7d3ab443e725
+2026-11-11 10:51:29,445 [truthlens.pipelines] INFO: MongoDB new: geo:690506 | version=1 | fields=none
+2026-11-11 10:51:33,457 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690500-taylor-swift-sparks-debut-hopes-with-cryptic-newsletter-to-fans | images=1 | videos=0
+2026-11-11 10:51:33,460 [truthlens.pipelines] INFO: Cleaned article: geo:690500 | characters=1226 | hash=8e456f8109f5
+2026-11-11 10:51:33,468 [truthlens.pipelines] INFO: MongoDB new: geo:690500 | version=1 | fields=none
+2026-11-11 10:51:35,897 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690508-taylor-swift-travis-kelces-mood-leaves-fans-questioning-their-exit | images=1 | videos=0
+2026-11-11 10:51:35,900 [truthlens.pipelines] INFO: Cleaned article: geo:690508 | characters=1356 | hash=2401519bfe79
+2026-11-11 10:51:35,909 [truthlens.pipelines] INFO: MongoDB new: geo:690508 | version=1 | fields=none
+2026-11-11 10:51:37,993 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690470-king-charles-prince-william-decide-on-harry-meghans-christmas-entry | images=1 | videos=0
+2026-11-11 10:51:37,995 [truthlens.pipelines] INFO: Cleaned article: geo:690470 | characters=1157 | hash=3baf65d6f3eb
+2026-11-11 10:51:38,005 [truthlens.pipelines] INFO: MongoDB new: geo:690470 | version=1 | fields=none
+2026-11-11 10:51:41,902 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690512-ozempics-new-warning-glp-1-weight-loss-drugs-linked-to-rare-vision-loss | images=1 | videos=0
+2026-11-11 10:51:41,905 [truthlens.pipelines] INFO: Cleaned article: geo:690512 | characters=1722 | hash=17353802ceb1
+2026-11-11 10:51:41,915 [truthlens.pipelines] INFO: MongoDB new: geo:690512 | version=1 | fields=none
+2026-11-11 10:51:44,484 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690513-cardi-b-travis-scott-set-to-lead-grand-theft-auto-vi-the-festival | images=1 | videos=0
+2026-11-11 10:51:44,486 [truthlens.pipelines] INFO: Cleaned article: geo:690513 | characters=1450 | hash=d5cd1395a6b0
+2026-11-11 10:51:44,493 [truthlens.pipelines] INFO: MongoDB new: geo:690513 | version=1 | fields=none
+2026-11-11 10:51:47,690 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690503-sarah-ferguson-read-to-face-court-for-andrew | images=1 | videos=0
+2026-11-11 10:51:47,694 [truthlens.pipelines] INFO: Cleaned article: geo:690503 | characters=2433 | hash=9eb8b1187d50
+2026-11-11 10:51:47,704 [truthlens.pipelines] INFO: MongoDB new: geo:690503 | version=1 | fields=none
+2026-11-11 10:51:51,962 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690502-lahore-tops-global-pollution-ranking-as-air-quality-turns-very-unhealthy | images=2 | videos=0
+2026-11-11 10:51:51,965 [truthlens.pipelines] INFO: Cleaned article: geo:690502 | characters=2524 | hash=93ff2886acc8
+2026-11-11 10:51:51,972 [truthlens.pipelines] INFO: MongoDB new: geo:690502 | version=1 | fields=none
+2026-11-11 10:51:54,739 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690509-daniel-radcliffe-gives-verdict-on-upcoming-harry-potter-series | images=1 | videos=0
+2026-11-11 10:51:54,742 [truthlens.pipelines] INFO: Cleaned article: geo:690509 | characters=1708 | hash=198e4f3da3ad
+2026-11-11 10:51:54,749 [truthlens.pipelines] INFO: MongoDB new: geo:690509 | version=1 | fields=none
+2026-11-11 10:51:57,812 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690511-meghan-sets-example-for-royal-family-with-yes-to-fbi-investigation | images=1 | videos=0
+2026-11-11 10:51:57,815 [truthlens.pipelines] INFO: Cleaned article: geo:690511 | characters=1109 | hash=f9419bd8876b
+2026-11-11 10:51:57,821 [truthlens.pipelines] INFO: MongoDB new: geo:690511 | version=1 | fields=none
+2026-11-11 10:52:01,894 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690510-miley-cyrus-still-feels-godmother-dolly-partons-presence | images=1 | videos=0
+2026-11-11 10:52:01,904 [truthlens.pipelines] INFO: Cleaned article: geo:690510 | characters=1376 | hash=3272ba173042
+2026-11-11 10:52:01,918 [truthlens.pipelines] INFO: MongoDB new: geo:690510 | version=1 | fields=none
+2026-11-11 10:52:06,215 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690518-phone-bans-new-rules-pupils-barred-from-keeping-devices-in-bags-at-school | images=1 | videos=0
+2026-11-11 10:52:06,220 [truthlens.pipelines] INFO: Cleaned article: geo:690518 | characters=1922 | hash=76d6949af829
+2026-11-11 10:52:06,233 [truthlens.pipelines] INFO: MongoDB new: geo:690518 | version=1 | fields=none
+2026-11-11 10:52:09,342 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690519-dana-white-says-no-to-trumps-press-secretary-job-offer | images=1 | videos=0
+2026-11-11 10:52:09,345 [truthlens.pipelines] INFO: Cleaned article: geo:690519 | characters=1697 | hash=8460345c9240
+2026-11-11 10:52:09,353 [truthlens.pipelines] INFO: MongoDB new: geo:690519 | version=1 | fields=none
+2026-11-11 10:52:13,524 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690517-mckenna-grace-continues-katniss-everdeen-tribute-ahead-of-hunger-games | images=1 | videos=0
+2026-11-11 10:52:13,526 [truthlens.pipelines] INFO: Cleaned article: geo:690517 | characters=981 | hash=e1fb32e2520f
+2026-11-11 10:52:13,535 [truthlens.pipelines] INFO: MongoDB new: geo:690517 | version=1 | fields=none
+2026-11-11 10:52:16,669 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690523-david-walliams-breaks-silence-after-women-accuse-him-of-grooming-sexual-harassment | images=1 | videos=0
+2026-11-11 10:52:16,674 [truthlens.pipelines] INFO: Cleaned article: geo:690523 | characters=1994 | hash=29ad285d047a
+2026-11-11 10:52:16,686 [truthlens.pipelines] INFO: MongoDB new: geo:690523 | version=1 | fields=none
+2026-11-11 10:52:20,749 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690524-november-full-moon-2026-date-peak-time-how-to-see-beaver-supermoon | images=1 | videos=0
+2026-11-11 10:52:20,752 [truthlens.pipelines] INFO: Cleaned article: geo:690524 | characters=1831 | hash=bf34867e3e2d
+2026-11-11 10:52:20,759 [truthlens.pipelines] INFO: MongoDB new: geo:690524 | version=1 | fields=none
+2026-11-11 10:52:25,122 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690522-sza-drops-top-secret-bombshell-after-szachella-announcement | images=2 | videos=0
+2026-11-11 10:52:25,125 [truthlens.pipelines] INFO: Cleaned article: geo:690522 | characters=1229 | hash=4558c51e3cfa
+2026-11-11 10:52:25,133 [truthlens.pipelines] INFO: MongoDB new: geo:690522 | version=1 | fields=none
+2026-11-11 10:52:25,318 [scrapy.extensions.logstats] INFO: Crawled 51 pages (at 17 pages/min), scraped 49 items (at 17 items/min)
+2026-11-11 10:52:27,826 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690527-anthropic-seeks-14-trillion-valuation-despite-democrats-victory-rattling-ai-stocks | images=1 | videos=0
+2026-11-11 10:52:27,828 [truthlens.pipelines] INFO: Cleaned article: geo:690527 | characters=1759 | hash=eb934f19ffc3
+2026-11-11 10:52:27,835 [truthlens.pipelines] INFO: MongoDB new: geo:690527 | version=1 | fields=none
+2026-11-11 10:52:32,147 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690529-russell-brands-ex-jemima-goldsmith-defends-herself-after-his-sentencing | images=1 | videos=0
+2026-11-11 10:52:32,153 [truthlens.pipelines] INFO: Cleaned article: geo:690529 | characters=1961 | hash=79caab3ef911
+2026-11-11 10:52:32,164 [truthlens.pipelines] INFO: MongoDB new: geo:690529 | version=1 | fields=none
+2026-11-11 10:52:36,373 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690526-duchess-sophie-finds-how-simple-bar-of-soap-is-helping-women-rebuild-their-lives | images=1 | videos=0
+2026-11-11 10:52:36,375 [truthlens.pipelines] INFO: Cleaned article: geo:690526 | characters=1643 | hash=c7c31ae13269
+2026-11-11 10:52:36,381 [truthlens.pipelines] INFO: MongoDB new: geo:690526 | version=1 | fields=none
+2026-11-11 10:52:39,798 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690531-no-threat-to-tarbela-dams-integrity-structure-wapda | images=1 | videos=0
+2026-11-11 10:52:39,803 [truthlens.pipelines] INFO: Cleaned article: geo:690531 | characters=2333 | hash=d26489655db2
+2026-11-11 10:52:39,812 [truthlens.pipelines] INFO: MongoDB new: geo:690531 | version=1 | fields=none
+2026-11-11 10:52:42,045 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690516-monarch-legacy-of-monsters-gets-exciting-season-3-update | images=1 | videos=0
+2026-11-11 10:52:42,047 [truthlens.pipelines] INFO: Cleaned article: geo:690516 | characters=1419 | hash=4e6cdd249237
+2026-11-11 10:52:42,054 [truthlens.pipelines] INFO: MongoDB new: geo:690516 | version=1 | fields=none
+2026-11-11 10:52:46,137 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690532-us-military-jets-leave-uk-bases-as-trump-declares-iran-war-effectively-over | images=1 | videos=0
+2026-11-11 10:52:46,141 [truthlens.pipelines] INFO: Cleaned article: geo:690532 | characters=1993 | hash=7f369d4559f7
+2026-11-11 10:52:46,152 [truthlens.pipelines] INFO: MongoDB new: geo:690532 | version=1 | fields=none
+2026-11-11 10:52:50,522 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690525-lady-gaga-sets-new-record-with-bruno-mars-collab-amid-lg8-buzz | images=1 | videos=0
+2026-11-11 10:52:50,525 [truthlens.pipelines] INFO: Cleaned article: geo:690525 | characters=915 | hash=19bc8e5ea6b8
+2026-11-11 10:52:50,533 [truthlens.pipelines] INFO: MongoDB new: geo:690525 | version=1 | fields=none
+2026-11-11 10:52:54,808 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690534-country-music-singers-father-issues-warning-after-sons-death | images=1 | videos=0
+2026-11-11 10:52:54,812 [truthlens.pipelines] INFO: Cleaned article: geo:690534 | characters=1403 | hash=810925a96f87
+2026-11-11 10:52:54,823 [truthlens.pipelines] INFO: MongoDB new: geo:690534 | version=1 | fields=none
+2026-11-11 10:52:57,813 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690530-duchess-sophies-surprise-appearance-with-reme-members-ahead-of-remembrance | images=1 | videos=0
+2026-11-11 10:52:57,817 [truthlens.pipelines] INFO: Cleaned article: geo:690530 | characters=1461 | hash=f06dca3bcbb7
+2026-11-11 10:52:57,824 [truthlens.pipelines] INFO: MongoDB new: geo:690530 | version=1 | fields=none
+2026-11-11 10:53:01,056 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690540-florence-pugh-mourns-her-the-wonder-director-sebastin-lelio | images=1 | videos=0
+2026-11-11 10:53:01,059 [truthlens.pipelines] INFO: Cleaned article: geo:690540 | characters=1986 | hash=8def0acbb4c0
+2026-11-11 10:53:01,068 [truthlens.pipelines] INFO: MongoDB new: geo:690540 | version=1 | fields=none
+2026-11-11 10:53:05,382 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690521-is-meghan-markles-future-really-at-stake-because-of-her-father | images=1 | videos=0
+2026-11-11 10:53:05,389 [truthlens.pipelines] INFO: Cleaned article: geo:690521 | characters=2892 | hash=35e36a794a6c
+2026-11-11 10:53:05,401 [truthlens.pipelines] INFO: MongoDB new: geo:690521 | version=1 | fields=none
+2026-11-11 10:53:09,510 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690535-dua-lipa-sends-fans-into-frenzy-with-first-glimpse-into-fourth-album | images=1 | videos=0
+2026-11-11 10:53:09,513 [truthlens.pipelines] INFO: Cleaned article: geo:690535 | characters=960 | hash=758b6f1e3363
+2026-11-11 10:53:09,523 [truthlens.pipelines] INFO: MongoDB new: geo:690535 | version=1 | fields=none
+2026-11-11 10:53:13,359 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690543-jensen-huang-divorce-how-much-could-his-wife-lori-huang-get | images=1 | videos=0
+2026-11-11 10:53:13,363 [truthlens.pipelines] INFO: Cleaned article: geo:690543 | characters=2257 | hash=111048d4a086
+2026-11-11 10:53:13,371 [truthlens.pipelines] INFO: MongoDB new: geo:690543 | version=1 | fields=none
+2026-11-11 10:53:16,043 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690542-defiant-hegseth-blasts-impeachment-effort-ahead-of-house-vote | images=1 | videos=0
+2026-11-11 10:53:16,049 [truthlens.pipelines] INFO: Cleaned article: geo:690542 | characters=3741 | hash=1a255677a215
+2026-11-11 10:53:16,059 [truthlens.pipelines] INFO: MongoDB new: geo:690542 | version=1 | fields=none
+2026-11-11 10:53:20,045 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690541-pm-calls-for-building-economically-stronger-energy-secure-pakistan | images=1 | videos=0
+2026-11-11 10:53:20,049 [truthlens.pipelines] INFO: Cleaned article: geo:690541 | characters=4651 | hash=00769d48f9e8
+2026-11-11 10:53:20,056 [truthlens.pipelines] INFO: MongoDB new: geo:690541 | version=1 | fields=none
+2026-11-11 10:53:24,301 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690533-details-about-maya-jamas-major-netflix-project | images=1 | videos=0
+2026-11-11 10:53:24,304 [truthlens.pipelines] INFO: Cleaned article: geo:690533 | characters=1308 | hash=ef2b0f2a4f9d
+2026-11-11 10:53:24,313 [truthlens.pipelines] INFO: MongoDB new: geo:690533 | version=1 | fields=none
+2026-11-11 10:53:25,302 [scrapy.extensions.logstats] INFO: Crawled 67 pages (at 16 pages/min), scraped 65 items (at 16 items/min)
+2026-11-11 10:53:27,540 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690544-gta-6-release-date-nears-xfinity-spectrum-offer-free-speed-boosts-for-launch | images=1 | videos=0
+2026-11-11 10:53:27,545 [truthlens.pipelines] INFO: Cleaned article: geo:690544 | characters=1693 | hash=b495559b09db
+2026-11-11 10:53:27,557 [truthlens.pipelines] INFO: MongoDB new: geo:690544 | version=1 | fields=none
+2026-11-11 10:53:31,063 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690537-sabrina-carpenter-gushes-over-proud-moments-of-2026 | images=1 | videos=0
+2026-11-11 10:53:31,067 [truthlens.pipelines] INFO: Cleaned article: geo:690537 | characters=1103 | hash=033f1a450b18
+2026-11-11 10:53:31,079 [truthlens.pipelines] INFO: MongoDB new: geo:690537 | version=1 | fields=none
+2026-11-11 10:53:34,892 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690545-palace-shares-update-on-perefect-representative-of-crown | images=1 | videos=0
+2026-11-11 10:53:34,894 [truthlens.pipelines] INFO: Cleaned article: geo:690545 | characters=1934 | hash=67fc3b7153ae
+2026-11-11 10:53:34,906 [truthlens.pipelines] INFO: MongoDB new: geo:690545 | version=1 | fields=none
+2026-11-11 10:53:38,858 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690553-rupert-grint-says-late-alan-rickman-was-so-nurturing-on-harry-potter-set | images=1 | videos=0
+2026-11-11 10:53:38,862 [truthlens.pipelines] INFO: Cleaned article: geo:690553 | characters=1225 | hash=a6e8af58aa19
+2026-11-11 10:53:38,871 [truthlens.pipelines] INFO: MongoDB new: geo:690553 | version=1 | fields=none
+2026-11-11 10:53:42,647 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690550-pakistan-sri-lanka-second-test-moved-from-lahore-to-rawalpindi-due-to-smog | images=1 | videos=0
+2026-11-11 10:53:42,651 [truthlens.pipelines] INFO: Cleaned article: geo:690550 | characters=966 | hash=500e77d1761e
+2026-11-11 10:53:42,664 [truthlens.pipelines] INFO: MongoDB new: geo:690550 | version=1 | fields=none
+2026-11-11 10:53:46,980 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690554-should-elephants-have-human-rights-us-court-weighs-freedom-for-two-zoo-animals | images=1 | videos=0
+2026-11-11 10:53:46,985 [truthlens.pipelines] INFO: Cleaned article: geo:690554 | characters=1864 | hash=3ca913a7b6b1
+2026-11-11 10:53:46,996 [truthlens.pipelines] INFO: MongoDB new: geo:690554 | version=1 | fields=none
+2026-11-11 10:53:50,605 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690548-unfccc-cop31-begins-in-trkiyes-antalya-heres-everything-to-know | images=1 | videos=0
+2026-11-11 10:53:50,610 [truthlens.pipelines] INFO: Cleaned article: geo:690548 | characters=2150 | hash=9c2711f8f1c1
+2026-11-11 10:53:50,620 [truthlens.pipelines] INFO: MongoDB new: geo:690548 | version=1 | fields=none
+2026-11-11 10:53:54,648 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690558-amazon-unveils-250-ai-powered-drone-camera-that-flies-around-your-house-to-catch-intruders | images=1 | videos=0
+2026-11-11 10:53:54,654 [truthlens.pipelines] INFO: Cleaned article: geo:690558 | characters=1790 | hash=17ff85018e32
+2026-11-11 10:53:54,668 [truthlens.pipelines] INFO: MongoDB new: geo:690558 | version=1 | fields=none
+2026-11-11 10:53:58,088 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690557-kris-jenner-71-celebrates-boyfriend-corey-gamble-on-his-46th-birthday | images=1 | videos=0
+2026-11-11 10:53:58,092 [truthlens.pipelines] INFO: Cleaned article: geo:690557 | characters=1562 | hash=14311ce0368b
+2026-11-11 10:53:58,100 [truthlens.pipelines] INFO: MongoDB new: geo:690557 | version=1 | fields=none
+2026-11-11 10:54:00,920 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690559-prince-harry-joins-forces-with-european-parliament-for-new-memorial | images=1 | videos=0
+2026-11-11 10:54:00,923 [truthlens.pipelines] INFO: Cleaned article: geo:690559 | characters=1805 | hash=0af3083409e3
+2026-11-11 10:54:00,930 [truthlens.pipelines] INFO: MongoDB new: geo:690559 | version=1 | fields=none
+2026-11-11 10:54:03,878 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690562-can-pete-hegseth-be-removed-from-office-us-impeachment-process-explained | images=1 | videos=0
+2026-11-11 10:54:03,884 [truthlens.pipelines] INFO: Cleaned article: geo:690562 | characters=2286 | hash=3faeaad8b5ba
+2026-11-11 10:54:03,901 [truthlens.pipelines] INFO: MongoDB new: geo:690562 | version=1 | fields=none
+2026-11-11 10:54:06,656 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690563-within-50-kilometers | images=1 | videos=0
+2026-11-11 10:54:06,665 [truthlens.pipelines] INFO: Cleaned article: geo:690563 | characters=3936 | hash=76f9574af993
+2026-11-11 10:54:06,679 [truthlens.pipelines] INFO: MongoDB new: geo:690563 | version=1 | fields=none
+2026-11-11 10:54:10,035 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690565-salik-says-he-did-not-name-maryam-in-corruption-remarks-response-to-notice-ready | images=1 | videos=0
+2026-11-11 10:54:10,039 [truthlens.pipelines] INFO: Cleaned article: geo:690565 | characters=4086 | hash=cee3b0151c91
+2026-11-11 10:54:10,053 [truthlens.pipelines] INFO: MongoDB new: geo:690565 | version=1 | fields=none
+2026-11-11 10:54:12,691 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690568-brenda-song-gives-parenting-advice-to-her-suite-life-costar-dylan-sprouse | images=1 | videos=1
+2026-11-11 10:54:12,694 [truthlens.pipelines] INFO: Cleaned article: geo:690568 | characters=1492 | hash=20a406c2281d
+2026-11-11 10:54:12,705 [truthlens.pipelines] INFO: MongoDB new: geo:690568 | version=1 | fields=none
+2026-11-11 10:54:16,717 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690570-halle-berrys-ex-olivier-martinez-asks-for-more-child-support | images=1 | videos=0
+2026-11-11 10:54:16,720 [truthlens.pipelines] INFO: Cleaned article: geo:690570 | characters=2096 | hash=72b5e38dc18e
+2026-11-11 10:54:16,729 [truthlens.pipelines] INFO: MongoDB new: geo:690570 | version=1 | fields=none
+2026-11-11 10:54:20,978 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690572-instagram-to-use-ai-to-guess-users-age-restrict-accounts-even-if-they-claim-to-be-adults | images=1 | videos=0
+2026-11-11 10:54:20,983 [truthlens.pipelines] INFO: Cleaned article: geo:690572 | characters=1819 | hash=9a3b9b31ffe2
+2026-11-11 10:54:20,993 [truthlens.pipelines] INFO: MongoDB new: geo:690572 | version=1 | fields=none
+2026-11-11 10:54:25,298 [scrapy.extensions.logstats] INFO: Crawled 83 pages (at 16 pages/min), scraped 81 items (at 16 items/min)
+2026-11-11 10:54:25,527 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690579-gta-vi-will-stream-to-xbox-one-on-day-one-via-xbox-cloud-gaming | images=1 | videos=0
+2026-11-11 10:54:25,532 [truthlens.pipelines] INFO: Cleaned article: geo:690579 | characters=2036 | hash=f4f3ab2803bb
+2026-11-11 10:54:25,543 [truthlens.pipelines] INFO: MongoDB new: geo:690579 | version=1 | fields=none
+2026-11-11 10:54:28,095 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690580-sade-will-not-attend-rock-roll-hall-of-fame-induction-sorry | images=1 | videos=0
+2026-11-11 10:54:28,100 [truthlens.pipelines] INFO: Cleaned article: geo:690580 | characters=1553 | hash=d41c4c112b64
+2026-11-11 10:54:28,111 [truthlens.pipelines] INFO: MongoDB new: geo:690580 | version=1 | fields=none
+2026-11-11 10:54:32,423 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690581-florence-pugh-sets-clear-boundaries-for-film-sets | images=1 | videos=0
+2026-11-11 10:54:32,427 [truthlens.pipelines] INFO: Cleaned article: geo:690581 | characters=1282 | hash=3b2526fe109d
+2026-11-11 10:54:32,438 [truthlens.pipelines] INFO: MongoDB new: geo:690581 | version=1 | fields=none
+2026-11-11 10:54:36,583 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690586-tankers-oil-facilities-remain-under-attack-despite-bets-on-iran-war-de-escalation | images=1 | videos=0
+2026-11-11 10:54:36,591 [truthlens.pipelines] INFO: Cleaned article: geo:690586 | characters=3779 | hash=334360572c59
+2026-11-11 10:54:36,601 [truthlens.pipelines] INFO: MongoDB new: geo:690586 | version=1 | fields=none
+2026-11-11 10:54:40,807 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690585-jenna-bush-hager-on-how-she-handled-sons-questions-about-love-life | images=1 | videos=0
+2026-11-11 10:54:40,812 [truthlens.pipelines] INFO: Cleaned article: geo:690585 | characters=1311 | hash=298e514ab674
+2026-11-11 10:54:40,822 [truthlens.pipelines] INFO: MongoDB new: geo:690585 | version=1 | fields=none
+2026-11-11 10:54:44,214 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690587-pete-hegseth-survives-impeachment-threat-as-republicans-derail-massies-push | images=1 | videos=0
+2026-11-11 10:54:44,220 [truthlens.pipelines] INFO: Cleaned article: geo:690587 | characters=3067 | hash=fa467d1e58fe
+2026-11-11 10:54:44,231 [truthlens.pipelines] INFO: MongoDB new: geo:690587 | version=1 | fields=none
+2026-11-11 10:54:48,157 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690561-kensington-palace-reveals-prince-williams-favourite-lionesses-moment | images=1 | videos=0
+2026-11-11 10:54:48,160 [truthlens.pipelines] INFO: Cleaned article: geo:690561 | characters=1385 | hash=a12dcf15dac5
+2026-11-11 10:54:48,171 [truthlens.pipelines] INFO: MongoDB new: geo:690561 | version=1 | fields=none
+2026-11-11 10:54:52,532 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690560-prince-harry-hailed-as-true-champion-amid-thomas-markles-second-arrest | images=1 | videos=0
+2026-11-11 10:54:52,536 [truthlens.pipelines] INFO: Cleaned article: geo:690560 | characters=1679 | hash=c05d8ad33e96
+2026-11-11 10:54:52,547 [truthlens.pipelines] INFO: MongoDB new: geo:690560 | version=1 | fields=none
+2026-11-11 10:54:56,276 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690583-brenda-song-makes-shocking-claims-about-disneys-suite-life-shows | images=1 | videos=0
+2026-11-11 10:54:56,280 [truthlens.pipelines] INFO: Cleaned article: geo:690583 | characters=1896 | hash=f611b4f50b13
+2026-11-11 10:54:56,292 [truthlens.pipelines] INFO: MongoDB new: geo:690583 | version=1 | fields=none
+2026-11-11 10:55:00,203 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690588-johnny-depp-ebenezer-salary | images=1 | videos=0
+2026-11-11 10:55:00,207 [truthlens.pipelines] INFO: Cleaned article: geo:690588 | characters=2242 | hash=722403e34154
+2026-11-11 10:55:00,213 [truthlens.pipelines] INFO: MongoDB new: geo:690588 | version=1 | fields=none
+2026-11-11 10:55:04,528 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690589-taylor-swift-travis-kelce-ohio-neighbours | images=1 | videos=0
+2026-11-11 10:55:04,533 [truthlens.pipelines] INFO: Cleaned article: geo:690589 | characters=2258 | hash=98f01c6070d3
+2026-11-11 10:55:04,548 [truthlens.pipelines] INFO: MongoDB new: geo:690589 | version=1 | fields=none
+2026-11-11 10:55:08,680 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690591-travis-bacon-on-being-nepo-baby-we-dont-get-to-choose-our-parents | images=1 | videos=0
+2026-11-11 10:55:08,685 [truthlens.pipelines] INFO: Cleaned article: geo:690591 | characters=1475 | hash=bca999299d6b
+2026-11-11 10:55:08,694 [truthlens.pipelines] INFO: MongoDB new: geo:690591 | version=1 | fields=none
+2026-11-11 10:55:13,002 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690594-the-iran-toll-on-trump | images=1 | videos=0
+2026-11-11 10:55:13,013 [truthlens.pipelines] INFO: Cleaned article: geo:690594 | characters=9235 | hash=696d64d42a0d
+2026-11-11 10:55:13,026 [truthlens.pipelines] INFO: MongoDB new: geo:690594 | version=1 | fields=none
+2026-11-11 10:55:16,671 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690602-usher-chris-brown-abruptly-cancel-sofi-stadium-concert-amid-tensions | images=1 | videos=0
+2026-11-11 10:55:16,677 [truthlens.pipelines] INFO: Cleaned article: geo:690602 | characters=1576 | hash=9f0ff34d237e
+2026-11-11 10:55:16,686 [truthlens.pipelines] INFO: MongoDB new: geo:690602 | version=1 | fields=none
+2026-11-11 10:55:20,543 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690598-prince-george-stuns-with-hidden-talent-as-prince-william-unveils-proud-moment | images=2 | videos=0
+2026-11-11 10:55:20,547 [truthlens.pipelines] INFO: Cleaned article: geo:690598 | characters=1505 | hash=d400f87c9f31
+2026-11-11 10:55:20,555 [truthlens.pipelines] INFO: MongoDB new: geo:690598 | version=1 | fields=none
+2026-11-11 10:55:24,684 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690603-christina-applegate-shares-possible-reason-of-her-health-struggles | images=1 | videos=0
+2026-11-11 10:55:24,689 [truthlens.pipelines] INFO: Cleaned article: geo:690603 | characters=1739 | hash=49a678a188f3
+2026-11-11 10:55:24,698 [truthlens.pipelines] INFO: MongoDB new: geo:690603 | version=1 | fields=none
+2026-11-11 10:55:25,320 [scrapy.extensions.logstats] INFO: Crawled 99 pages (at 16 pages/min), scraped 97 items (at 16 items/min)
+2026-11-11 10:55:28,560 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690601-first-test-sri-lanka-resume-first-innings-as-pakistan-look-to-dominate-day-3 | images=1 | videos=0
+2026-11-11 10:55:28,563 [truthlens.pipelines] INFO: Cleaned article: geo:690601 | characters=3319 | hash=99c5b2dce163
+2026-11-11 10:55:28,573 [truthlens.pipelines] INFO: MongoDB new: geo:690601 | version=1 | fields=none
+2026-11-11 10:55:32,788 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690600-k | images=1 | videos=0
+2026-11-11 10:55:32,789 [truthlens.pipelines] INFO: Cleaned article: geo:690600 | characters=1040 | hash=ce4c8375acc2
+2026-11-11 10:55:32,797 [truthlens.pipelines] INFO: MongoDB new: geo:690600 | version=1 | fields=none
+2026-11-11 10:55:35,215 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/690599-imran-taken-to-pims-overnight-for-check-up-ahead-of-court-ordered-jail-meeting | images=1 | videos=1
+2026-11-11 10:55:35,221 [truthlens.pipelines] INFO: Cleaned article: geo:690599 | characters=2786 | hash=ceb1ed59563d
+2026-11-11 10:55:35,233 [truthlens.pipelines] INFO: MongoDB new: geo:690599 | version=1 | fields=none
+2026-11-11 10:55:35,236 [scrapy.core.engine] INFO: Closing spider (finished)
+2026-11-11 10:55:35,237 [truthlens.export] INFO: Run JSON saved: data\runs\geo_sitemap\geo_sitemap_2026-11-11_10-49-25.json | items=100
+2026-11-11 10:55:35,241 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 40618,
+ 'downloader/request_count': 102,
+ 'downloader/request_method_count/GET': 102,
+ 'downloader/response_bytes': 2627591,
+ 'downloader/response_count': 102,
+ 'downloader/response_status_count/200': 102,
+ 'elapsed_time_seconds': 369.9380000000001,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2026, 11, 11, 5, 55, 35, 241512, tzinfo=datetime.timezone.utc),
+ 'httpcompression/response_bytes': 13961097,
+ 'httpcompression/response_count': 102,
+ 'item_scraped_count': 100,
+ 'items_per_minute': 16.260162601626014,
+ 'log_count/INFO': 313,
+ 'mongodb/articles_new': 100,
+ 'mongodb/snapshots_inserted': 100,
+ 'request_depth_max': 1,
+ 'response_received_count': 102,
+ 'responses_per_minute': 16.585365853658537,
+ 'robotstxt/request_count': 1,
+ 'robotstxt/response_count': 1,
+ 'robotstxt/response_status_count/200': 1,
+ 'scheduler/dequeued': 101,
+ 'scheduler/dequeued/memory': 101,
+ 'scheduler/enqueued': 101,
+ 'scheduler/enqueued/memory': 101,
+ 'start_time': datetime.datetime(2026, 11, 11, 5, 49, 25, 308091, tzinfo=datetime.timezone.utc)}
+2026-11-11 10:55:35,246 [scrapy.core.engine] INFO: Spider closed (finished)
+2026-11-11 10:55:35,250 [truthlens.run_reporting] INFO: Run summary saved: logs\runs\20261111T054921Z_cc0edece03254308b556a093d72b2db7.json | status=completed

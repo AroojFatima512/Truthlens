@@ -1,0 +1,248 @@
+row,article_key,source,category,deberta_p_biased,deberta_bias,second_p_biased,second_bias,sentiment_model,stratum
+1,geo:689327,Geo News,entertainment,0.9968,B,,,neu,entertainment: model flags
+2,nation:2026-11-03-geopolitics-ai-empires,The Nation,news,0.9958,B,,,neg,opinion: model flags
+3,tribune:2638297,Express Tribune,opinion,0.0024,N,,,neu,opinion: model clear
+4,tribune:2638485,Express Tribune,opinion,0.9199,B,,,neg,opinion: model flags
+5,nation:2026-11-03-geopolitics-ai-empires,The Nation,news,0.9963,B,,,neu,opinion: model flags
+6,tribune:2638690,Express Tribune,opinion,0.5697,B,,,neu,opinion: model flags
+7,tribune:2638149,Express Tribune,business,0.9969,B,,,neu,opinion: model flags
+8,nation:2026-11-04-samar-bilour-seeks-13-year-record-recruitments-kp-relief-dept,The Nation,news,0.0017,N,,,pos,recommendation wording
+9,tribune:2638688,Express Tribune,opinion,0.9246,B,,,pos,opinion: model flags
+10,tribune:2638053,Express Tribune,pakistan,0.0015,N,,,pos,recommendation wording
+11,dawn:2041633,Dawn,pakistan,0.0015,N,,,pos,PR wording
+12,tribune:2638148,Express Tribune,business,0.9944,B,,,neu,opinion: model flags
+13,tribune:2638692,Express Tribune,opinion,0.0018,N,,,neg,opinion: model clear
+14,tribune:2638618,Express Tribune,sports,0.0021,N,,,pos,sports wording
+15,tribune:2638148,Express Tribune,business,0.9965,B,,,neg,opinion: model flags
+16,tribune:2638480,Express Tribune,opinion,0.298,N,,,pos,opinion: model clear
+17,nation:2026-11-04-coca-cola-pak-recognised-sdpi-s-29th-sustainable-development-conference-plastic-road-project,The Nation,news,0.0017,N,,,pos,PR wording
+18,tribune:2638579,Express Tribune,pakistan,0.0033,N,,,neu,PR wording
+19,tribune:2638635,Express Tribune,entertainment,0.9326,B,,,neg,entertainment: model flags
+20,dawn:2042055,Dawn,world,0.0018,N,,,neu,recommendation wording
+21,nation:2026-11-02-teaching-age-artificial-intelligence,The Nation,news,0.0025,N,,,neu,opinion: model clear
+22,dawn:2041877,Dawn,pakistan,0.0049,N,,,neu,recommendation wording
+23,nation:2026-11-02-teaching-age-artificial-intelligence,The Nation,news,0.0021,N,,,neu,opinion: model clear
+24,nation:2026-11-04-buried-alive-silence,The Nation,news,0.002,N,,,neg,opinion: model clear
+25,geo:689668,Geo News,entertainment,0.9973,B,,,neu,entertainment: model flags
+26,tribune:2638686,Express Tribune,opinion,0.002,N,,,neu,opinion: model clear
+27,tribune:2638140,Express Tribune,opinion,0.8556,B,,,neu,opinion: model flags
+28,nation:2026-11-04-soldier-martyred-17-terrorists-killed-balochistan-operations,The Nation,news,0.9805,B,,,neu,PR wording
+29,geo:689697,Geo News,entertainment,0.9928,B,,,neu,entertainment: model flags
+30,geo:689564,Geo News,offbeat,0.9837,B,,,pos,entertainment: model flags
+31,geo:689349,Geo News,offbeat,0.9325,B,,,neg,entertainment: model flags
+32,tribune:2638114,Express Tribune,sports,0.9887,B,,,neu,sports wording
+33,tribune:2638691,Express Tribune,opinion,0.9685,B,,,neg,opinion: model flags
+34,nation:2026-11-04-healing-amid-hostility,The Nation,news,0.8747,B,,,neg,opinion: model flags
+35,tribune:2638561,Express Tribune,pakistan,0.0028,N,,,neu,recommendation wording
+36,tribune:2638691,Express Tribune,opinion,0.9971,B,,,neg,opinion: model flags
+37,tribune:2638140,Express Tribune,opinion,0.0126,N,,,neu,opinion: model clear
+38,tribune:2638686,Express Tribune,opinion,0.8786,B,,,pos,opinion: model flags
+39,tribune:2638149,Express Tribune,business,0.9569,B,,,pos,opinion: model flags
+40,tribune:2638410,Express Tribune,sports,0.0015,N,,,pos,sports wording
+41,geo:689402,Geo News,entertainment,0.9944,B,,,pos,entertainment: model flags
+42,nation:2026-11-03-sau-holds-consultative-session-sindh-youth-sports-policy-2026,The Nation,news,0.0016,N,,,pos,recommendation wording
+43,geo:689380,Geo News,offbeat,0.0016,N,,,neu,PR wording
+44,nation:2026-11-04-healing-amid-hostility,The Nation,news,0.9964,B,,,neu,opinion: model flags
+45,geo:689705,Geo News,entertainment,0.8791,B,,,neu,entertainment: model flags
+46,nation:2026-11-01-millennium-education-hosts-mqcap-2026,The Nation,news,0.002,N,,,pos,PR wording
+47,tribune:2638691,Express Tribune,opinion,0.9962,B,,,neg,opinion: model flags
+48,nation:2026-11-03-special-anti-polio-campaign-continue-till-november-8,The Nation,news,0.0016,N,,,neu,PR wording
+49,tribune:2638480,Express Tribune,opinion,0.9914,B,,,neu,opinion: model flags
+50,tribune:2638691,Express Tribune,opinion,0.9971,B,,,neu,opinion: model flags
+51,dawn:2041510,Dawn,news,0.0016,N,,,neg,opinion: model clear
+52,dawn:2041510,Dawn,news,0.9869,B,,,neg,opinion: model flags
+53,nation:2026-11-03-export-led-growth-sme-financing-key-economic-revival-says-aurangzeb,The Nation,business,0.0015,N,,,neu,recommendation wording
+54,tribune:2638148,Express Tribune,business,0.0035,N,,,neg,opinion: model clear
+55,geo:689324,Geo News,entertainment,0.9947,B,,,neg,entertainment: model flags
+56,tribune:2638523,Express Tribune,pakistan,0.0018,N,,,neu,recommendation wording
+57,tribune:2638686,Express Tribune,opinion,0.9959,B,,,neg,opinion: model flags
+58,nation:2026-11-02-teaching-age-artificial-intelligence,The Nation,news,0.0023,N,,,neu,opinion: model clear
+59,nation:2026-11-04-healing-amid-hostility,The Nation,news,0.0089,N,,,neu,opinion: model clear
+60,tribune:2638690,Express Tribune,opinion,0.0045,N,,,neu,opinion: model clear
+61,tribune:2638140,Express Tribune,opinion,0.9964,B,,,pos,opinion: model flags
+62,dawn:2041540,Dawn,news,0.0016,N,,,neu,recommendation wording
+63,tribune:2638145,Express Tribune,business,0.0017,N,,,neu,opinion: model clear
+64,nation:2026-11-04-buried-alive-silence,The Nation,news,0.9948,B,,,neu,opinion: model flags
+65,geo:689599,Geo News,entertainment,0.9609,B,,,pos,entertainment: model flags
+66,tribune:2638138,Express Tribune,opinion,0.9966,B,,,neg,opinion: model flags
+67,tribune:2638138,Express Tribune,opinion,0.7982,B,,,neu,opinion: model flags
+68,tribune:2638422,Express Tribune,entertainment,0.7535,B,,,neu,entertainment: model flags
+69,dawn:2041590,Dawn,world,0.0025,N,,,neu,recommendation wording
+70,nation:2026-11-04-healing-amid-hostility,The Nation,news,0.0579,N,,,neg,opinion: model clear
+71,tribune:2638412,Express Tribune,sports,0.0019,N,,,pos,sports wording
+72,nation:2026-11-04-buried-alive-silence,The Nation,news,0.9875,B,,,neg,opinion: model flags
+73,geo:689470,Geo News,entertainment,0.6065,B,,,neu,entertainment: model flags
+74,tribune:2638145,Express Tribune,business,0.0021,N,,,neg,opinion: model clear
+75,nation:2026-11-01-military-success-india-elevated-pak-global-diplomatic-standing-khawaja-asif,The Nation,news,0.0016,N,,,pos,PR wording
+76,tribune:2638409,Express Tribune,sports,0.0021,N,,,neu,sports wording
+77,nation:2026-11-04-dr-aamer-sets-deadlines-completion-higher-education-projects,The Nation,news,0.0015,N,,,pos,recommendation wording
+78,tribune:2638303,Express Tribune,opinion,0.8447,B,,,neg,opinion: model flags
+79,tribune:2638480,Express Tribune,opinion,0.9969,B,,,neg,opinion: model flags
+80,tribune:2638303,Express Tribune,opinion,0.0034,N,,,neu,opinion: model clear
+81,tribune:2638662,Express Tribune,world,0.0015,N,,,pos,PR wording
+82,tribune:2638417,Express Tribune,sports,0.0031,N,,,pos,sports wording
+83,nation:2026-11-03-darkest-day-kashmir,The Nation,news,0.0034,N,,,neu,opinion: model clear
+84,tribune:2638148,Express Tribune,business,0.0053,N,,,neg,opinion: model clear
+85,nation:2026-11-03-darkest-day-kashmir,The Nation,news,0.9971,B,,,neg,opinion: model flags
+86,geo:689721,Geo News,entertainment,0.9886,B,,,neu,entertainment: model flags
+87,tribune:2638484,Express Tribune,opinion,0.9756,B,,,neu,opinion: model flags
+88,nation:2026-11-04-healing-amid-hostility,The Nation,news,0.8061,B,,,pos,opinion: model flags
+89,aaj:330479051,Aaj News,pakistan,0.0021,N,,,neu,recommendation wording
+90,geo:689735,Geo News,entertainment,0.997,B,,,neu,entertainment: model flags
+91,dawn:2041595,Dawn,sports,0.9891,B,,,pos,sports wording
+92,tribune:2638149,Express Tribune,business,0.9926,B,,,neu,opinion: model flags
+93,nation:2026-11-02-gilgit-baltistan-vital-part-pakistan-beautiful-symbol-national-unity-cm-murad,The Nation,news,0.0017,N,,,pos,PR wording
+94,tribune:2638480,Express Tribune,opinion,0.0018,N,,,neu,opinion: model clear
+95,nation:2026-11-04-kumail-shah-calls-punjab-governor-saleem-haider-khan,The Nation,news,0.0016,N,,,pos,PR wording
+96,tribune:2638691,Express Tribune,opinion,0.9968,B,,,neu,opinion: model flags
+97,geo:689500,Geo News,entertainment,0.9972,B,,,neg,entertainment: model flags
+98,geo:689755,Geo News,offbeat,0.994,B,,,pos,entertainment: model flags
+99,aaj:330479245,Aaj News,world,0.0017,N,,,pos,PR wording
+100,tribune:2638298,Express Tribune,opinion,0.0017,N,,,neu,opinion: model clear
+101,nation:2026-11-04-buried-alive-silence,The Nation,news,0.8985,B,,,neu,opinion: model flags
+102,tribune:2638672,Express Tribune,entertainment,0.0019,N,,,neu,PR wording
+103,dawn:2041656,Dawn,world,0.9946,B,,,neg,PR wording
+104,geo:689401,Geo News,business,0.0015,N,,,neu,recommendation wording
+105,tribune:2638484,Express Tribune,opinion,0.9964,B,,,neg,opinion: model flags
+106,geo:689642,Geo News,entertainment,0.9615,B,,,neu,entertainment: model flags
+107,geo:689486,Geo News,sports,0.0016,N,,,neu,PR wording
+108,nation:2026-11-04-uk-pakistani-bank-launch-fully-funded-chevening-scholarships-pak-students,The Nation,news,0.0016,N,,,pos,PR wording
+109,tribune:2638300,Express Tribune,opinion,0.0075,N,,,neu,opinion: model clear
+110,aaj:330479255,Aaj News,world,0.0018,N,,,neu,recommendation wording
+111,nation:2026-11-03-pakistan-serve-key-trade-transit-corridor-central-asian-countries-sheikh,The Nation,news,0.0016,N,,,pos,PR wording
+112,tribune:2638485,Express Tribune,opinion,0.0157,N,,,neu,opinion: model clear
+113,tribune:2638484,Express Tribune,opinion,0.0017,N,,,neg,opinion: model clear
+114,tribune:2638135,Express Tribune,opinion,0.9967,B,,,neg,opinion: model flags
+115,tribune:2638230,Express Tribune,sports,0.0018,N,,,pos,sports wording
+116,nation:2026-11-01-sindh-home-minister-orders-enhanced-security-shahrah-e-bhutto-expressway,The Nation,news,0.0016,N,,,neu,recommendation wording
+117,tribune:2638224,Express Tribune,sports,0.004,N,,,neu,sports wording
+118,tribune:2638401,Express Tribune,pakistan,0.0016,N,,,neu,recommendation wording
+119,tribune:2638145,Express Tribune,business,0.0016,N,,,pos,opinion: model clear
+120,tribune:2638303,Express Tribune,opinion,0.0028,N,,,neu,opinion: model clear
+121,nation:2026-11-03-pakistan-achieves-milestone-successful-test-indigenous-fa-az-air-to-air-missile,The Nation,pakistan,0.0015,N,,,pos,PR wording
+122,tribune:2638303,Express Tribune,opinion,0.0017,N,,,neu,opinion: model clear
+123,nation:2026-11-02-kimi-antonelli-becomes-youngest-f1-world-champion-3rd-place-finish-mexico,The Nation,sports,0.0027,N,,,pos,sports wording
+124,nation:2026-11-03-darkest-day-kashmir,The Nation,news,0.0071,N,,,neg,opinion: model clear
+125,tribune:2638589,Express Tribune,sports,0.002,N,,,pos,sports wording
+126,tribune:2638451,Express Tribune,pakistan,0.0016,N,,,pos,recommendation wording
+127,tribune:2638136,Express Tribune,opinion,0.0016,N,,,neu,opinion: model clear
+128,tribune:2638171,Express Tribune,pakistan,0.0026,N,,,pos,PR wording
+129,tribune:2638409,Express Tribune,sports,0.0018,N,,,pos,PR wording
+130,tribune:2638484,Express Tribune,opinion,0.9102,B,,,neg,opinion: model flags
+131,tribune:2638451,Express Tribune,pakistan,0.0015,N,,,neu,recommendation wording
+132,tribune:2638484,Express Tribune,opinion,0.9965,B,,,neg,opinion: model flags
+133,tribune:2638486,Express Tribune,opinion,0.0019,N,,,neu,opinion: model clear
+134,tribune:2638486,Express Tribune,opinion,0.9957,B,,,neg,opinion: model flags
+135,geo:689732,Geo News,entertainment,0.9457,B,,,neu,entertainment: model flags
+136,aaj:330479051,Aaj News,pakistan,0.0015,N,,,neu,recommendation wording
+137,nation:2026-11-04-healing-amid-hostility,The Nation,news,0.9972,B,,,neg,opinion: model flags
+138,tribune:2638298,Express Tribune,opinion,0.9969,B,,,neg,opinion: model flags
+139,geo:689671,Geo News,entertainment,0.9938,B,,,neg,entertainment: model flags
+140,tribune:2638297,Express Tribune,opinion,0.9632,B,,,neu,opinion: model flags
+141,tribune:2638688,Express Tribune,opinion,0.9932,B,,,pos,opinion: model flags
+142,tribune:2638148,Express Tribune,business,0.996,B,,,neu,opinion: model flags
+143,nation:2026-11-02-sarsabz-farmers-claim-three-provincial-titles-punjab-s-wheat-yield-competition-2025-26,The Nation,business,0.0016,N,,,pos,PR wording
+144,nation:2026-11-03-bise-rawalpindi-begin-hssc-second-annual-exams-today,The Nation,news,0.0016,N,,,neu,PR wording
+145,tribune:2638686,Express Tribune,opinion,0.0027,N,,,neu,opinion: model clear
+146,tribune:2638323,Express Tribune,lifestyle,0.9727,B,,,pos,entertainment: model flags
+147,tribune:2638486,Express Tribune,opinion,0.4975,N,,,neg,opinion: model clear
+148,tribune:2638600,Express Tribune,sports,0.0025,N,,,neu,sports wording
+149,dawn:2041510,Dawn,news,0.9971,B,,,neg,opinion: model flags
+150,nation:2026-11-04-punjab-launches-chamkta-lahore-campaign-combat-smog,The Nation,news,0.0016,N,,,pos,PR wording
+151,tribune:2638208,Express Tribune,sports,0.0021,N,,,pos,sports wording
+152,nation:2026-11-03-geopolitics-ai-empires,The Nation,news,0.9971,B,,,neu,opinion: model flags
+153,nation:2026-11-03-geopolitics-ai-empires,The Nation,news,0.0087,N,,,neu,opinion: model clear
+154,nation:2026-11-04-maliha-topples-two-time-european-champion-immaf-world-c-ships,The Nation,news,0.005,N,,,pos,PR wording
+155,nation:2026-11-03-senator-anusha-delivers-nawaz-s-message-pak-china-governance-symposium,The Nation,news,0.0016,N,,,pos,PR wording
+156,nation:2026-10-31-pm-shehbaz-orders-round-the-clock-work-speed-construction-daanish-schools,The Nation,pakistan,0.0016,N,,,neu,recommendation wording
+157,nation:2026-11-03-point-law-creates-melbourne-cup-history,The Nation,sports,0.0033,N,,,pos,sports wording
+158,nation:2026-11-02-teaching-age-artificial-intelligence,The Nation,news,0.9916,B,,,neu,opinion: model flags
+159,tribune:2638246,Express Tribune,sports,0.002,N,,,neu,sports wording
+160,geo:689705,Geo News,entertainment,0.9584,B,,,neu,entertainment: model flags
+161,dawn:2041510,Dawn,news,0.0018,N,,,neg,opinion: model clear
+162,tribune:2638145,Express Tribune,business,0.0018,N,,,neu,opinion: model clear
+163,nation:2026-11-02-teaching-age-artificial-intelligence,The Nation,news,0.0018,N,,,pos,opinion: model clear
+164,tribune:2638303,Express Tribune,opinion,0.0687,N,,,neu,opinion: model clear
+165,aaj:330479043,Aaj News,world,0.0017,N,,,neu,PR wording
+166,tribune:2638220,Express Tribune,sports,0.9965,B,,,pos,sports wording
+167,tribune:2638279,Express Tribune,sports,0.0021,N,,,pos,sports wording
+168,tribune:2638402,Express Tribune,pakistan,0.0015,N,,,neu,recommendation wording
+169,nation:2026-11-03-geopolitics-ai-empires,The Nation,news,0.9921,B,,,neg,opinion: model flags
+170,nation:2026-11-02-nations-move-forward-left-behind-blueprint-pakistan-s-revival,The Nation,entertainment,0.9959,B,,,neu,entertainment: model flags
+171,nation:2026-11-04-756-000-children-administered-polio-drops-first-day-campaign,The Nation,news,0.0018,N,,,neu,recommendation wording
+172,tribune:2638302,Express Tribune,opinion,0.9633,B,,,neg,opinion: model flags
+173,tribune:2638230,Express Tribune,sports,0.002,N,,,neu,recommendation wording
+174,tribune:2638412,Express Tribune,sports,0.0018,N,,,pos,sports wording
+175,tribune:2638302,Express Tribune,opinion,0.8301,B,,,neu,opinion: model flags
+176,tribune:2638149,Express Tribune,business,0.9966,B,,,neu,opinion: model flags
+177,dawn:2041510,Dawn,news,0.1919,N,,,neg,opinion: model clear
+178,tribune:2638450,Express Tribune,business,0.0019,N,,,neu,PR wording
+179,nation:2026-11-03-hyra-arman-inside-journey-tiktok-star,The Nation,entertainment,0.9426,B,,,neu,entertainment: model flags
+180,nation:2026-11-03-govt-moves-end-lpg-monopolies-abolish-discretionary-quota-system-tarar,The Nation,pakistan,0.0019,N,,,neu,PR wording
+181,tribune:2638652,Express Tribune,pakistan,0.0024,N,,,neu,recommendation wording
+182,tribune:2638486,Express Tribune,opinion,0.9971,B,,,neg,opinion: model flags
+183,tribune:2638603,Express Tribune,sports,0.0019,N,,,pos,sports wording
+184,nation:2026-11-01-musadik-malik-calls-preventive-disaster-management-space-technology,The Nation,news,0.0018,N,,,pos,PR wording
+185,nation:2026-11-02-nations-move-forward-left-behind-blueprint-pakistan-s-revival,The Nation,entertainment,0.9932,B,,,neu,PR wording
+186,tribune:2638486,Express Tribune,opinion,0.9972,B,,,neu,opinion: model flags
+187,nation:2026-11-03-sindh-governor-visits-quaid-e-azam-s-birthplace-reviews-preservation-historical-artefacts,The Nation,news,0.0017,N,,,pos,PR wording
+188,geo:689381,Geo News,entertainment,0.9889,B,,,neu,entertainment: model flags
+189,tribune:2638140,Express Tribune,opinion,0.9971,B,,,pos,opinion: model flags
+190,tribune:2638298,Express Tribune,opinion,0.9962,B,,,pos,opinion: model flags
+191,tribune:2638691,Express Tribune,opinion,0.9944,B,,,pos,opinion: model flags
+192,tribune:2638602,Express Tribune,sports,0.0033,N,,,pos,sports wording
+193,tribune:2638114,Express Tribune,sports,0.9302,B,,,pos,sports wording
+194,tribune:2638582,Express Tribune,sports,0.0033,N,,,pos,sports wording
+195,tribune:2638138,Express Tribune,opinion,0.038,N,,,neu,opinion: model clear
+196,tribune:2638140,Express Tribune,opinion,0.0016,N,,,neu,opinion: model clear
+197,tribune:2638140,Express Tribune,opinion,0.9963,B,,,neg,opinion: model flags
+198,tribune:2638216,Express Tribune,pakistan,0.0018,N,,,pos,PR wording
+199,nation:2026-11-03-point-law-creates-melbourne-cup-history,The Nation,sports,0.0021,N,,,pos,sports wording
+200,tribune:2638302,Express Tribune,opinion,0.996,B,,,neg,opinion: model flags
+201,nation:2026-11-04-buried-alive-silence,The Nation,news,0.9941,B,,,neu,opinion: model flags
+202,dawn:2042071,Dawn,pakistan,0.0016,N,,,pos,PR wording
+203,nation:2026-11-02-governor-felicitates-people-gb-79th-independence-day,The Nation,news,0.0018,N,,,neu,PR wording
+204,geo:689590,Geo News,offbeat,0.0021,N,,,neu,recommendation wording
+205,nation:2026-11-03-sc-acquits-man-upholds-life-sentence-brother-murder-case,The Nation,news,0.0017,N,,,neu,recommendation wording
+206,tribune:2638149,Express Tribune,business,0.0031,N,,,neu,opinion: model clear
+207,tribune:2638302,Express Tribune,opinion,0.997,B,,,neu,opinion: model flags
+208,tribune:2638303,Express Tribune,opinion,0.9871,B,,,neu,opinion: model flags
+209,tribune:2638254,Express Tribune,lifestyle,0.0016,N,,,neu,recommendation wording
+210,tribune:2638690,Express Tribune,opinion,0.8208,B,,,pos,opinion: model flags
+211,tribune:2638589,Express Tribune,sports,0.7992,B,,,neu,sports wording
+212,tribune:2638302,Express Tribune,opinion,0.9941,B,,,neu,opinion: model flags
+213,tribune:2638149,Express Tribune,business,0.002,N,,,neg,opinion: model clear
+214,tribune:2638618,Express Tribune,sports,0.006,N,,,neu,sports wording
+215,nation:2026-11-03-darkest-day-kashmir,The Nation,news,0.9961,B,,,pos,opinion: model flags
+216,geo:689598,Geo News,entertainment,0.5054,B,,,neg,entertainment: model flags
+217,tribune:2638484,Express Tribune,opinion,0.0026,N,,,neu,opinion: model clear
+218,nation:2026-11-04-six-months-record-breaking-development-union-town-offers-fully-developed-possession-ready-plots-pine-avenue,The Nation,entertainment,0.6748,B,,,pos,PR wording
+219,geo:689513,Geo News,entertainment,0.8187,B,,,neu,entertainment: model flags
+220,nation:2026-11-03-darkest-day-kashmir,The Nation,news,0.9933,B,,,pos,opinion: model flags
+221,tribune:2638600,Express Tribune,sports,0.0018,N,,,neu,sports wording
+222,tribune:2638686,Express Tribune,opinion,0.9971,B,,,neg,opinion: model flags
+223,tribune:2638486,Express Tribune,opinion,0.9908,B,,,neg,opinion: model flags
+224,nation:2026-11-01-rs36-8m-disbursed-welfare-schemes-sukkur-range-10-months,The Nation,news,0.0018,N,,,pos,PR wording
+225,tribune:2638148,Express Tribune,business,0.0031,N,,,pos,opinion: model clear
+226,geo:689682,Geo News,entertainment,0.0023,N,,,neu,recommendation wording
+227,tribune:2638635,Express Tribune,entertainment,0.9615,B,,,pos,entertainment: model flags
+228,tribune:2638485,Express Tribune,opinion,0.012,N,,,neu,opinion: model clear
+229,tribune:2638297,Express Tribune,opinion,0.997,B,,,neu,opinion: model flags
+230,tribune:2638136,Express Tribune,opinion,0.0062,N,,,neg,opinion: model clear
+231,nation:2026-11-04-punjab-launches-chamkta-lahore-campaign-combat-smog,The Nation,news,0.0015,N,,,neu,PR wording
+232,tribune:2638690,Express Tribune,opinion,0.9655,B,,,neu,opinion: model flags
+233,geo:689482,Geo News,entertainment,0.9669,B,,,neu,entertainment: model flags
+234,geo:689502,Geo News,entertainment,0.5074,B,,,neg,entertainment: model flags
+235,tribune:2638656,Express Tribune,sports,0.0027,N,,,pos,sports wording
+236,dawn:2042069,Dawn,world,0.0017,N,,,neu,PR wording
+237,dawn:2041426,Dawn,pakistan,0.0017,N,,,neu,recommendation wording
+238,tribune:2638297,Express Tribune,opinion,0.0045,N,,,pos,opinion: model clear
+239,nation:2026-11-02-german-ambassador-calls-boosting-pakistan-germany-trade-praises-pakistan-s-peace-efforts,The Nation,pakistan,0.0016,N,,,neu,recommendation wording
+240,tribune:2638138,Express Tribune,opinion,0.9971,B,,,neu,opinion: model flags
+241,tribune:2638138,Express Tribune,opinion,0.0046,N,,,neu,opinion: model clear
+242,nation:2026-11-01-86-000-medicines-integrated-track-trace-system-mustafa-kamal,The Nation,news,0.0017,N,,,pos,PR wording
+243,tribune:2638302,Express Tribune,opinion,0.9971,B,,,neu,opinion: model flags
+244,geo:689732,Geo News,entertainment,0.9887,B,,,neg,entertainment: model flags
+245,tribune:2638692,Express Tribune,opinion,0.0019,N,,,neg,opinion: model clear
+246,nation:2026-11-04-buried-alive-silence,The Nation,news,0.0466,N,,,neg,opinion: model clear
+247,dawn:2041369,Dawn,pakistan,0.0021,N,,,pos,PR wording

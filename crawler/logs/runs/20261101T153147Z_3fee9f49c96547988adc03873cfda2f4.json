@@ -1,0 +1,307 @@
+{
+  "schema_version": "truthlens-run-v1",
+  "run_id": "20261101T153147Z_3fee9f49c96547988adc03873cfda2f4",
+  "source": "Dawn",
+  "spider": "dawn_sitemap",
+  "status": "completed_with_errors",
+  "finish_reason": "finished",
+  "started_at": "2026-11-01T15:31:47.587752+00:00",
+  "finished_at": "2026-11-01T15:38:28.149735+00:00",
+  "duration_seconds": 400.562,
+  "log_file": "logs\\runs\\20261101T153147Z_3fee9f49c96547988adc03873cfda2f4.log",
+  "counts": {
+    "requests_total": 109,
+    "responses_total": 109,
+    "retry_attempts": 0,
+    "items_processed": 72,
+    "new_articles": 67,
+    "unchanged_articles": 3,
+    "updated_articles": 0,
+    "baselines_created": 0,
+    "processing_changes": 0,
+    "snapshots_inserted": 69,
+    "snapshots_skipped": 3,
+    "review_only_records": 2,
+    "records_with_review_flags": 22,
+    "stale_observations": 0,
+    "replayed_observations": 0,
+    "rejected_records": 0,
+    "failed_requests": 0,
+    "item_errors": 0,
+    "spider_errors": 0
+  },
+  "failed_requests": [],
+  "rejected_records": [],
+  "review_records": [
+    {
+      "article_key": "dawn:2041350",
+      "url": "https://www.dawn.com/news/2041350/meeting-irans-7-conditions-will-keep-path-of-diplomacy-open-rezaei",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author",
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041351",
+      "url": "https://www.dawn.com/news/2041351/trump-says-us-still-has-to-take-care-of-one-or-two-targets-in-iran",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041354",
+      "url": "https://www.dawn.com/news/2041354/phantom-blade-zero-debuts-strongly",
+      "change_status": "needs_review",
+      "validation_issues": [
+        "missing_article_text",
+        "missing_author",
+        "updated_before_published"
+      ],
+      "cleaning_issues": [
+        "missing_content_blocks",
+        "empty_cleaned_text"
+      ]
+    },
+    {
+      "article_key": "dawn:2041363",
+      "url": "https://www.dawn.com/news/2041363/irgc-commander-says-iranian-forces-ready-for-any-enemy-scenario",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041365",
+      "url": "https://www.dawn.com/news/2041365/two-air-raids-hit-oil-facility-in-yemens-hodeidah-media-report-says",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041364",
+      "url": "https://www.dawn.com/news/2041364/binance-to-resume-withdrawals-after-covering-bulk-of-stolen-63bn",
+      "change_status": "new",
+      "validation_issues": [
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041367",
+      "url": "https://www.dawn.com/news/2041367/renewed-us-aggression-will-be-met-with-immediate-decisive-response-says-iran-army-spokesperson",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author",
+        "short_article_under_50_words",
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041372",
+      "url": "https://www.dawn.com/news/2041372/iran-designates-british-navy-air-force-as-terrorist-organisations",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author",
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041373",
+      "url": "https://www.dawn.com/news/2041373/iranian-official-says-epic-resilience-brought-us-face-to-face-with-reality",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author",
+        "short_article_under_50_words",
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041377",
+      "url": "https://www.dawn.com/news/2041377/iran-army-says-any-new-war-with-us-could-be-longer-than-previous-conflict",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041378",
+      "url": "https://www.dawn.com/news/2041378/uae-says-hoping-for-breakthrough-yet-braced-for-the-worst-in-iran-us-war",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041379",
+      "url": "https://www.dawn.com/news/2041379/yamaha-pulls-out-of-qatar-motogp-over-middle-east-situation",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author",
+        "short_article_under_50_words"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041380",
+      "url": "https://www.dawn.com/news/2041380/iranian-negotiators-in-doha-to-continue-talks-to-end-the-us-iran-war-official-says",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author",
+        "short_article_under_50_words"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041382",
+      "url": "https://www.dawn.com/news/2041382/major-blaze-caused-by-strike-at-industrial-complex-in-saudi-arabias-dammam-iranian-state-media",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author",
+        "short_article_under_50_words",
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041383",
+      "url": "https://www.dawn.com/news/2041383/canada-pushes-trade-diversification-strategy-beyond-us-targets-asean-deal-dawn-news-english",
+      "change_status": "needs_review",
+      "validation_issues": [
+        "missing_article_text",
+        "missing_author"
+      ],
+      "cleaning_issues": [
+        "missing_content_blocks",
+        "empty_cleaned_text"
+      ]
+    },
+    {
+      "article_key": "dawn:2041369",
+      "url": "https://www.dawn.com/news/2041369/pakistan-becomes-chair-of-g-24-bloc-of-developing-nations-reaffirms-pledge-to-fairer-global-financial-system",
+      "change_status": "new",
+      "validation_issues": [
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041385",
+      "url": "https://www.dawn.com/news/2041385/iran-submits-evidence-of-us-israeli-attacks-on-maritime-infrastructure-to-imo-warns-of-safety-risks-state-media",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041386",
+      "url": "https://www.dawn.com/news/2041386/mother-daughter-killed-as-houthi-drone-strikes-family-home-in-yemens-taiz-report",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author",
+        "short_article_under_50_words"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041389",
+      "url": "https://www.dawn.com/news/2041389/iran-cant-be-allowed-to-take-global-economy-hostage-us-official",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041390",
+      "url": "https://www.dawn.com/news/2041390/consultations-ongoing-over-hormuz-plan-but-conclusion-depends-on-us-answer-to-irans-offer-araghchi",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041381",
+      "url": "https://www.dawn.com/news/2041381/pakistans-past-and-future-make-a-bid-for-the-present",
+      "change_status": "new",
+      "validation_issues": [
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041394",
+      "url": "https://www.dawn.com/news/2041394/irans-araghchi-says-he-hopes-for-rationality-from-us",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author"
+      ],
+      "cleaning_issues": []
+    }
+  ],
+  "item_errors": [],
+  "spider_errors": [],
+  "http_status_counts": {
+    "200": 98,
+    "302": 11
+  },
+  "download_attempt_exceptions": {},
+  "scrapy_stats": {
+    "start_time": "2026-11-01 15:31:48.064280+00:00",
+    "log_count/INFO": 248,
+    "scheduler/enqueued/memory": 108,
+    "scheduler/enqueued": 108,
+    "scheduler/dequeued/memory": 108,
+    "scheduler/dequeued": 108,
+    "downloader/request_count": 109,
+    "downloader/request_method_count/GET": 109,
+    "downloader/request_bytes": 35391,
+    "downloader/response_count": 109,
+    "downloader/response_status_count/200": 98,
+    "downloader/response_bytes": 3547151,
+    "httpcompression/response_bytes": 17506560,
+    "httpcompression/response_count": 98,
+    "response_received_count": 98,
+    "robotstxt/response_count": 1,
+    "robotstxt/response_status_count/200": 1,
+    "robotstxt/request_count": 1,
+    "request_depth_max": 1,
+    "mongodb/snapshots_inserted": 69,
+    "mongodb/articles_new": 67,
+    "item_scraped_count": 72,
+    "dawn_sitemap/skipped_section": 23,
+    "log_count/WARNING": 26,
+    "downloader/response_status_count/302": 11,
+    "mongodb/snapshots_skipped": 3,
+    "mongodb/articles_unchanged": 3,
+    "dupefilter/filtered": 4,
+    "mongodb/snapshot_only": 2,
+    "log_count/ERROR": 1,
+    "elapsed_time_seconds": 400.0779999999995,
+    "finish_time": "2026-11-01 15:38:28.147474+00:00",
+    "finish_reason": "finished",
+    "responses_per_minute": 14.7,
+    "items_per_minute": 10.799999999999999
+  },
+  "notes": [
+    "requests_total includes robots.txt, listing pages, redirects, retries and article requests.",
+    "failed_requests lists terminal failures reported by the spider errback; retried attempts are separate.",
+    "review flags do not mean a record was dropped; review-only records are retained as snapshots.",
+    "updated_articles excludes new baselines and processing-method changes.",
+    "snapshots_inserted can include baselines and review records; it is not a count of article edits.",
+    "A running summary left behind after a forced termination is incomplete."
+  ]
+}

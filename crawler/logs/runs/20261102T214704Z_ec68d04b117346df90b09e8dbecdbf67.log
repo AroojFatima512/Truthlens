@@ -1,0 +1,439 @@
+2026-11-03 02:47:04,478 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.logcount.LogCount',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.remote_control.RemoteControl',
+ 'truthlens.run_reporting.RunReportingExtension']
+2026-11-03 02:47:04,479 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'truthlens',
+ 'CONCURRENT_REQUESTS': 1,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 1,
+ 'DOWNLOAD_DELAY': 3,
+ 'DOWNLOAD_TIMEOUT': 30,
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'FEED_EXPORT_INDENT': 2,
+ 'LOG_LEVEL': 'INFO',
+ 'NEWSPIDER_MODULE': 'truthlens.spiders',
+ 'ROBOTSTXT_OBEY': True,
+ 'SPIDER_MODULES': ['truthlens.spiders'],
+ 'USER_AGENT': 'TruthLensResearchBot/0.1'}
+2026-11-03 02:47:05,072 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2026-11-03 02:47:05,079 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.start.StartSpiderMiddleware',
+ 'scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware',
+ 'scrapy.spidermiddlewares.metacopy.MetaCopyDetectionMiddleware']
+2026-11-03 02:47:05,247 [scrapy.middleware] INFO: Enabled item pipelines:
+['truthlens.pipelines.CleaningPipeline',
+ 'truthlens.pipelines.MongoDBPipeline',
+ 'truthlens.export.RunJsonExportPipeline']
+2026-11-03 02:47:05,248 [scrapy.core.engine] INFO: Spider opened
+2026-11-03 02:47:05,290 [truthlens.pipelines] INFO: MongoDB connected: database=truthlens
+2026-11-03 02:47:05,293 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2026-11-03 02:47:05,296 [truthlens.run_reporting] INFO: Run started: 20261102T214704Z_ec68d04b117346df90b09e8dbecdbf67 | source=Dawn
+2026-11-03 02:47:05,298 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2026-11-03 02:47:05,303 [scrapy.extensions.remote_control] INFO: Remote control HTTP server listening on port 56609 (job 23812-640ecf4804764028a1894112b52aae10)
+2026-11-03 02:47:10,119 [dawn_sitemap] INFO: Sitemap: selected 100 article URLs.
+2026-11-03 02:47:14,113 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041531/five-killed-in-fresh-ethnic-violence-in-indias-manipur | images=1 | videos=0
+2026-11-03 02:47:14,114 [truthlens.pipelines] INFO: Cleaned article: dawn:2041531 | characters=1696 | hash=712ac002a170
+2026-11-03 02:47:14,121 [truthlens.pipelines] INFO: MongoDB unchanged: dawn:2041531 | version=1 | fields=none
+2026-11-03 02:47:17,268 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041460/pia-engineer-gunned-down-in-suspected-targeted-attack-in-karachis-gulistan-i-jauhar | images=1 | videos=0
+2026-11-03 02:47:17,269 [truthlens.pipelines] INFO: Cleaned article: dawn:2041460 | characters=1123 | hash=5825c6ca7517
+2026-11-03 02:47:17,275 [truthlens.pipelines] INFO: MongoDB unchanged: dawn:2041460 | version=1 | fields=none
+2026-11-03 02:47:24,284 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041465 | images=1 | videos=0
+2026-11-03 02:47:24,287 [truthlens.pipelines] INFO: Cleaned article: dawn:2041465 | characters=3228 | hash=6a0532d6aeec
+2026-11-03 02:47:24,295 [truthlens.pipelines] INFO: MongoDB unchanged: dawn:2041465 | version=1 | fields=none
+2026-11-03 02:47:28,708 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041450/rawalpindi-development-authority-plans-major-road-rehabilitation-scheme | images=1 | videos=0
+2026-11-03 02:47:28,711 [truthlens.pipelines] INFO: Cleaned article: dawn:2041450 | characters=2662 | hash=4fcd6af125a4
+2026-11-03 02:47:28,717 [truthlens.pipelines] INFO: MongoDB unchanged: dawn:2041450 | version=1 | fields=none
+2026-11-03 02:47:32,763 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041462/cm-inaugurates-rs250m-sindhi-muslim-food-walk | images=1 | videos=0
+2026-11-03 02:47:32,766 [truthlens.pipelines] INFO: Cleaned article: dawn:2041462 | characters=3503 | hash=9101812b7d6e
+2026-11-03 02:47:32,774 [truthlens.pipelines] INFO: MongoDB unchanged: dawn:2041462 | version=1 | fields=none
+2026-11-03 02:47:37,442 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041416/120-swabi-schools-sealed-over-poor-building-conditions | images=0 | videos=0
+2026-11-03 02:47:37,449 [truthlens.pipelines] INFO: Cleaned article: dawn:2041416 | characters=2617 | hash=ac417ae6c5e1
+2026-11-03 02:47:37,458 [truthlens.pipelines] INFO: MongoDB unchanged: dawn:2041416 | version=1 | fields=none
+2026-11-03 02:47:42,038 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041443/jhelums-ancient-padhri-village-faces-relentless-erosion | images=5 | videos=0
+2026-11-03 02:47:42,043 [truthlens.pipelines] INFO: Cleaned article: dawn:2041443 | characters=3963 | hash=fb1443c49707
+2026-11-03 02:47:42,054 [truthlens.pipelines] INFO: MongoDB unchanged: dawn:2041443 | version=1 | fields=none
+2026-11-03 02:47:44,878 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041451/islamabads-capital-development-authority-appoints-three-new-directors-general | images=1 | videos=0
+2026-11-03 02:47:44,881 [truthlens.pipelines] INFO: Cleaned article: dawn:2041451 | characters=2984 | hash=01d6654cb0c3
+2026-11-03 02:47:44,890 [truthlens.pipelines] INFO: MongoDB unchanged: dawn:2041451 | version=1 | fields=none
+2026-11-03 02:47:48,578 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041446/police-set-up-eight-pickets-for-paf-base-security-in-rawalpindi | images=1 | videos=0
+2026-11-03 02:47:48,581 [truthlens.pipelines] INFO: Cleaned article: dawn:2041446 | characters=1387 | hash=48fee6dc8a06
+2026-11-03 02:47:48,589 [truthlens.pipelines] INFO: MongoDB unchanged: dawn:2041446 | version=1 | fields=none
+2026-11-03 02:47:52,979 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041415/man-sentenced-to-life-for-assaulting-minor-sister-in-law | images=1 | videos=0
+2026-11-03 02:47:52,982 [truthlens.pipelines] INFO: Cleaned article: dawn:2041415 | characters=5333 | hash=f125daa7ad0d
+2026-11-03 02:47:52,991 [truthlens.pipelines] INFO: MongoDB unchanged: dawn:2041415 | version=1 | fields=none
+2026-11-03 02:47:56,898 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041421/kp-doctors-oppose-amendments-to-pharmacy-act-1967 | images=0 | videos=0
+2026-11-03 02:47:56,900 [truthlens.pipelines] INFO: Cleaned article: dawn:2041421 | characters=2289 | hash=32f5dab4b0ee
+2026-11-03 02:47:56,906 [truthlens.pipelines] INFO: MongoDB unchanged: dawn:2041421 | version=1 | fields=none
+2026-11-03 02:48:00,206 [dawn_sitemap] WARNING: Validation issues: https://www.dawn.com/news/2041578/saudi-strikes-on-port-oil-facility-in-yemen-wound-7-houthis | missing_author, tweet_text_missing
+2026-11-03 02:48:00,206 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041578/saudi-strikes-on-port-oil-facility-in-yemen-wound-7-houthis | images=0 | videos=0
+2026-11-03 02:48:00,207 [truthlens.pipelines] INFO: Cleaned article: dawn:2041578 | characters=525 | hash=5f296ba17344
+2026-11-03 02:48:00,215 [truthlens.pipelines] INFO: MongoDB unchanged: dawn:2041578 | version=1 | fields=none
+2026-11-03 02:48:04,077 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041426/governor-kundi-says-centre-failing-to-give-kp-support-it-deserves | images=1 | videos=0
+2026-11-03 02:48:04,082 [truthlens.pipelines] INFO: Cleaned article: dawn:2041426 | characters=4052 | hash=f082b895c245
+2026-11-03 02:48:04,091 [truthlens.pipelines] INFO: MongoDB unchanged: dawn:2041426 | version=1 | fields=none
+2026-11-03 02:48:05,306 [scrapy.extensions.logstats] INFO: Crawled 15 pages (at 15 pages/min), scraped 13 items (at 13 items/min)
+2026-11-03 02:48:06,462 [dawn_sitemap] WARNING: Validation issues: https://www.dawn.com/news/2041567/nine-people-dead-in-learjet-crash-in-south-florida-officials-say | tweet_text_missing
+2026-11-03 02:48:06,463 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041567/nine-people-dead-in-learjet-crash-in-south-florida-officials-say | images=1 | videos=0
+2026-11-03 02:48:06,468 [truthlens.pipelines] INFO: Cleaned article: dawn:2041567 | characters=2592 | hash=ba559dea13a0
+2026-11-03 02:48:06,478 [truthlens.pipelines] INFO: MongoDB unchanged: dawn:2041567 | version=1 | fields=none
+2026-11-03 02:48:10,634 [dawn_sitemap] WARNING: Validation issues: https://www.dawn.com/news/2041580/araghchi-arrives-in-ashgabat-for-talks-on-regional-developments-bilateral-ties | missing_author, short_article_under_50_words, tweet_text_missing
+2026-11-03 02:48:10,635 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041580/araghchi-arrives-in-ashgabat-for-talks-on-regional-developments-bilateral-ties | images=0 | videos=0
+2026-11-03 02:48:10,636 [truthlens.pipelines] INFO: Cleaned article: dawn:2041580 | characters=267 | hash=d3b0544bdb90
+2026-11-03 02:48:10,645 [truthlens.pipelines] INFO: MongoDB unchanged: dawn:2041580 | version=1 | fields=none
+2026-11-03 02:48:18,409 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041584/lahores-air-quality-index-crosses-530-as-pollution-reaches-hazardous-levels | images=2 | videos=0
+2026-11-03 02:48:18,413 [truthlens.pipelines] INFO: Cleaned article: dawn:2041584 | characters=4522 | hash=33ff523b7e26
+2026-11-03 02:48:18,418 [truthlens.pipelines] INFO: MongoDB unchanged: dawn:2041584 | version=1 | fields=none
+2026-11-03 02:48:21,691 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041582/ignites-national-incubation-centers-win-prestigious-international-award-in-london | images=2 | videos=0
+2026-11-03 02:48:21,693 [truthlens.pipelines] INFO: Cleaned article: dawn:2041582 | characters=3813 | hash=cda0f3ec88aa
+2026-11-03 02:48:21,697 [truthlens.pipelines] INFO: MongoDB unchanged: dawn:2041582 | version=1 | fields=none
+2026-11-03 02:48:26,513 [dawn_sitemap] WARNING: Validation issues: https://www.dawn.com/news/2041586/ryanair-quarterly-profit-falls-on-mideast-war-impact | missing_author
+2026-11-03 02:48:26,514 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041586/ryanair-quarterly-profit-falls-on-mideast-war-impact | images=0 | videos=0
+2026-11-03 02:48:26,515 [truthlens.pipelines] INFO: Cleaned article: dawn:2041586 | characters=576 | hash=90477a322f54
+2026-11-03 02:48:26,521 [truthlens.pipelines] INFO: MongoDB unchanged: dawn:2041586 | version=1 | fields=none
+2026-11-03 02:48:32,734 [dawn_sitemap] WARNING: Validation issues: https://www.dawn.com/news/2041588/saudi-civil-defence-sounds-all-clear-after-alerts-in-southern-cities | missing_author
+2026-11-03 02:48:32,735 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041588/saudi-civil-defence-sounds-all-clear-after-alerts-in-southern-cities | images=0 | videos=0
+2026-11-03 02:48:32,736 [truthlens.pipelines] INFO: Cleaned article: dawn:2041588 | characters=685 | hash=c6bcf0937ed3
+2026-11-03 02:48:32,742 [truthlens.pipelines] INFO: MongoDB unchanged: dawn:2041588 | version=1 | fields=none
+2026-11-03 02:48:36,883 [dawn_sitemap] WARNING: Validation issues: https://www.dawn.com/news/2041585/pakistan-assumes-chairmanship-of-sco-interbank-consortium-for-2026-27 | tweet_text_missing
+2026-11-03 02:48:36,884 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041585/pakistan-assumes-chairmanship-of-sco-interbank-consortium-for-2026-27 | images=1 | videos=0
+2026-11-03 02:48:36,886 [truthlens.pipelines] INFO: Cleaned article: dawn:2041585 | characters=2111 | hash=9c019f2181e1
+2026-11-03 02:48:36,892 [truthlens.pipelines] INFO: MongoDB unchanged: dawn:2041585 | version=1 | fields=none
+2026-11-03 02:48:41,512 [dawn_sitemap] WARNING: Validation issues: https://www.dawn.com/news/2041591/china-to-send-middle-east-envoy-on-regional-trips-in-november | missing_author, short_article_under_50_words
+2026-11-03 02:48:41,513 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041591/china-to-send-middle-east-envoy-on-regional-trips-in-november | images=0 | videos=0
+2026-11-03 02:48:41,513 [truthlens.pipelines] INFO: Cleaned article: dawn:2041591 | characters=194 | hash=0a4ff4b39f98
+2026-11-03 02:48:41,519 [truthlens.pipelines] INFO: MongoDB unchanged: dawn:2041591 | version=1 | fields=none
+2026-11-03 02:48:56,654 [dawn_sitemap] WARNING: Validation issues: https://www.dawn.com/news/2041596/us-midterms-trump-campaigns-alaska-court-ruling-and-voter-turnout-dawn-news-english | missing_article_text, missing_author
+2026-11-03 02:48:56,655 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041596/us-midterms-trump-campaigns-alaska-court-ruling-and-voter-turnout-dawn-news-english | images=0 | videos=0
+2026-11-03 02:48:56,656 [truthlens.pipelines] WARNING: Cleaning needs review: dawn:2041596 | missing_content_blocks, empty_cleaned_text
+2026-11-03 02:48:56,664 [truthlens.pipelines] WARNING: Saved for review only: https://www.dawn.com/news/2041596/us-midterms-trump-campaigns-alaska-court-ruling-and-voter-turnout-dawn-news-english
+2026-11-03 02:49:00,673 [dawn_sitemap] WARNING: Validation issues: https://www.dawn.com/news/2041597/chinas-xi-says-middle-east-shouldnt-become-battleground-for-great-power-rivalry | missing_author
+2026-11-03 02:49:00,673 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041597/chinas-xi-says-middle-east-shouldnt-become-battleground-for-great-power-rivalry | images=2 | videos=0
+2026-11-03 02:49:00,674 [truthlens.pipelines] INFO: Cleaned article: dawn:2041597 | characters=568 | hash=0f064d04ead0
+2026-11-03 02:49:00,678 [truthlens.pipelines] INFO: MongoDB unchanged: dawn:2041597 | version=1 | fields=none
+2026-11-03 02:49:04,686 [dawn_sitemap] WARNING: Validation issues: https://www.dawn.com/news/2041589/us-midterms-michigan-democrats-endorsement-of-republican-ruffles-critical-senate-race | tweet_text_missing
+2026-11-03 02:49:04,687 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041589/us-midterms-michigan-democrats-endorsement-of-republican-ruffles-critical-senate-race | images=1 | videos=0
+2026-11-03 02:49:04,694 [truthlens.pipelines] INFO: Cleaned article: dawn:2041589 | characters=5470 | hash=188d2c85eee2
+2026-11-03 02:49:04,705 [truthlens.pipelines] INFO: MongoDB unchanged: dawn:2041589 | version=1 | fields=none
+2026-11-03 02:49:05,312 [scrapy.extensions.logstats] INFO: Crawled 26 pages (at 11 pages/min), scraped 24 items (at 11 items/min)
+2026-11-03 02:49:09,452 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041598/is-cooking-oil-really-the-problem-dr-yousuf-kamal-mirza-explains-5-things-every-consumer-should-look-for | images=1 | videos=1
+2026-11-03 02:49:09,454 [truthlens.pipelines] INFO: Cleaned article: dawn:2041598 | characters=2113 | hash=a5032d81ecf3
+2026-11-03 02:49:09,460 [truthlens.pipelines] INFO: MongoDB unchanged: dawn:2041598 | version=1 | fields=none
+2026-11-03 02:49:12,717 [dawn_sitemap] WARNING: Validation issues: https://www.dawn.com/news/2041599/iran-says-considering-two-day-plan-to-reopen-hormuz | missing_author
+2026-11-03 02:49:12,718 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041599/iran-says-considering-two-day-plan-to-reopen-hormuz | images=0 | videos=0
+2026-11-03 02:49:12,719 [truthlens.pipelines] INFO: Cleaned article: dawn:2041599 | characters=594 | hash=3f4155469a51
+2026-11-03 02:49:12,723 [truthlens.pipelines] INFO: MongoDB unchanged: dawn:2041599 | version=1 | fields=none
+2026-11-03 02:49:16,682 [dawn_sitemap] WARNING: Validation issues: https://www.dawn.com/news/2041602/araghchi-says-irans-hormuz-proposal-revised-after-consultations-with-qatar-pakistan | missing_author
+2026-11-03 02:49:16,682 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041602/araghchi-says-irans-hormuz-proposal-revised-after-consultations-with-qatar-pakistan | images=0 | videos=0
+2026-11-03 02:49:16,684 [truthlens.pipelines] INFO: Cleaned article: dawn:2041602 | characters=880 | hash=049ffec0e502
+2026-11-03 02:49:16,689 [truthlens.pipelines] INFO: MongoDB unchanged: dawn:2041602 | version=1 | fields=none
+2026-11-03 02:49:20,146 [dawn_sitemap] WARNING: Validation issues: https://www.dawn.com/news/2041601/baqaei-calls-international-bodies-just-talk-not-action | missing_author, short_article_under_50_words, tweet_text_missing
+2026-11-03 02:49:20,147 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041601/baqaei-calls-international-bodies-just-talk-not-action | images=0 | videos=0
+2026-11-03 02:49:20,148 [truthlens.pipelines] INFO: Cleaned article: dawn:2041601 | characters=245 | hash=8e3663bc4ef5
+2026-11-03 02:49:20,155 [truthlens.pipelines] INFO: MongoDB unchanged: dawn:2041601 | version=1 | fields=none
+2026-11-03 02:49:24,578 [dawn_sitemap] WARNING: Validation issues: https://www.dawn.com/news/2041604/araghchi-says-us-must-lift-sanctions-end-blockade-for-hormuz-reopening | missing_author
+2026-11-03 02:49:24,578 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041604/araghchi-says-us-must-lift-sanctions-end-blockade-for-hormuz-reopening | images=0 | videos=0
+2026-11-03 02:49:24,579 [truthlens.pipelines] INFO: Cleaned article: dawn:2041604 | characters=904 | hash=c8ae63538d41
+2026-11-03 02:49:24,586 [truthlens.pipelines] INFO: MongoDB unchanged: dawn:2041604 | version=1 | fields=none
+2026-11-03 02:49:29,628 [dawn_sitemap] WARNING: Validation issues: https://www.dawn.com/news/2041605/iran-rules-out-transferring-60pc-enriched-uranium-to-third-country | missing_author, tweet_text_missing
+2026-11-03 02:49:29,628 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041605/iran-rules-out-transferring-60pc-enriched-uranium-to-third-country | images=0 | videos=0
+2026-11-03 02:49:29,629 [truthlens.pipelines] INFO: Cleaned article: dawn:2041605 | characters=303 | hash=7425ce1483b1
+2026-11-03 02:49:29,635 [truthlens.pipelines] INFO: MongoDB unchanged: dawn:2041605 | version=1 | fields=none
+2026-11-03 02:49:32,957 [dawn_sitemap] WARNING: Validation issues: https://www.dawn.com/news/2041600/iran-says-us-biggest-threat-to-nuclear-non-proliferation-treaty | missing_author, short_article_under_50_words, tweet_text_missing
+2026-11-03 02:49:32,957 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041600/iran-says-us-biggest-threat-to-nuclear-non-proliferation-treaty | images=0 | videos=0
+2026-11-03 02:49:32,957 [truthlens.pipelines] INFO: Cleaned article: dawn:2041600 | characters=312 | hash=a98d9fcdc7c8
+2026-11-03 02:49:32,966 [truthlens.pipelines] INFO: MongoDB unchanged: dawn:2041600 | version=1 | fields=none
+2026-11-03 02:49:35,641 [dawn_sitemap] WARNING: Validation issues: https://www.dawn.com/news/2041606/uae-state-oil-company-announces-openai-partnership | tweet_text_missing
+2026-11-03 02:49:35,641 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041606/uae-state-oil-company-announces-openai-partnership | images=1 | videos=0
+2026-11-03 02:49:35,643 [truthlens.pipelines] INFO: Cleaned article: dawn:2041606 | characters=2991 | hash=ea0f1d7b5010
+2026-11-03 02:49:35,651 [truthlens.pipelines] INFO: MongoDB unchanged: dawn:2041606 | version=1 | fields=none
+2026-11-03 02:49:39,457 [dawn_sitemap] WARNING: Validation issues: https://www.dawn.com/news/2041609/chinas-foreign-minister-pushes-for-dialogue-to-resolve-middle-east-conflict | missing_author
+2026-11-03 02:49:39,458 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041609/chinas-foreign-minister-pushes-for-dialogue-to-resolve-middle-east-conflict | images=0 | videos=0
+2026-11-03 02:49:39,459 [truthlens.pipelines] INFO: Cleaned article: dawn:2041609 | characters=539 | hash=c5e68be33576
+2026-11-03 02:49:39,466 [truthlens.pipelines] INFO: MongoDB unchanged: dawn:2041609 | version=1 | fields=none
+2026-11-03 02:49:41,264 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041610/laden-with-eggs-robots-race-up-sacred-chinese-mountain | images=1 | videos=0
+2026-11-03 02:49:41,266 [truthlens.pipelines] INFO: Cleaned article: dawn:2041610 | characters=1836 | hash=c3dd677a2acc
+2026-11-03 02:49:41,274 [truthlens.pipelines] INFO: MongoDB unchanged: dawn:2041610 | version=1 | fields=none
+2026-11-03 02:49:45,164 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041608/bangladesh-garment-workers-protesting-for-higher-wages-clash-with-police | images=5 | videos=0
+2026-11-03 02:49:45,167 [truthlens.pipelines] INFO: Cleaned article: dawn:2041608 | characters=3455 | hash=b0a0e15de551
+2026-11-03 02:49:45,178 [truthlens.pipelines] INFO: MongoDB media_changed: dawn:2041608 | version=2 | fields=media.images
+2026-11-03 02:49:49,865 [dawn_sitemap] WARNING: Validation issues: https://www.dawn.com/news/2041607/saudi-arabia-briefly-activates-emergency-alerts-in-3-cities-amid-hostilities-with-yemens-houthis | missing_author, tweet_text_missing
+2026-11-03 02:49:49,865 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041607/saudi-arabia-briefly-activates-emergency-alerts-in-3-cities-amid-hostilities-with-yemens-houthis | images=0 | videos=0
+2026-11-03 02:49:49,866 [truthlens.pipelines] INFO: Cleaned article: dawn:2041607 | characters=550 | hash=ba39c388ac8a
+2026-11-03 02:49:49,873 [truthlens.pipelines] INFO: MongoDB unchanged: dawn:2041607 | version=1 | fields=none
+2026-11-03 02:49:56,264 [dawn_sitemap] INFO: Skipping section newspaper supplement (The Business and Finance Weekly) | https://www.dawn.com/news/2041495
+2026-11-03 02:50:02,124 [dawn_sitemap] WARNING: Validation issues: https://www.dawn.com/news/2041612/iranians-have-left-doha-talks-draft-proposal-for-us-deal-being-circulated-official-says | missing_author, tweet_text_missing
+2026-11-03 02:50:02,124 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041612/iranians-have-left-doha-talks-draft-proposal-for-us-deal-being-circulated-official-says | images=0 | videos=0
+2026-11-03 02:50:02,125 [truthlens.pipelines] INFO: Cleaned article: dawn:2041612 | characters=688 | hash=a52429669b18
+2026-11-03 02:50:02,130 [truthlens.pipelines] INFO: MongoDB unchanged: dawn:2041612 | version=1 | fields=none
+2026-11-03 02:50:05,314 [scrapy.extensions.logstats] INFO: Crawled 40 pages (at 14 pages/min), scraped 37 items (at 13 items/min)
+2026-11-03 02:50:05,931 [dawn_sitemap] WARNING: Validation issues: https://www.dawn.com/news/2041615/oil-drops-over-4pc-on-hopes-of-progress-in-talks-on-ending-us-iran-war | missing_author
+2026-11-03 02:50:05,931 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041615/oil-drops-over-4pc-on-hopes-of-progress-in-talks-on-ending-us-iran-war | images=0 | videos=0
+2026-11-03 02:50:05,932 [truthlens.pipelines] INFO: Cleaned article: dawn:2041615 | characters=709 | hash=d7a98836b969
+2026-11-03 02:50:05,938 [truthlens.pipelines] INFO: MongoDB unchanged: dawn:2041615 | version=1 | fields=none
+2026-11-03 02:50:08,566 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041616/babar-shaheen-set-for-quaid-e-azam-trophy-opening-round-clash | images=1 | videos=0
+2026-11-03 02:50:08,569 [truthlens.pipelines] INFO: Cleaned article: dawn:2041616 | characters=3399 | hash=d83695fafaf2
+2026-11-03 02:50:08,576 [truthlens.pipelines] INFO: MongoDB unchanged: dawn:2041616 | version=1 | fields=none
+2026-11-03 02:50:10,626 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041595/dear-test-cricket-i-stayed-up | images=11 | videos=0
+2026-11-03 02:50:10,635 [truthlens.pipelines] INFO: Cleaned article: dawn:2041595 | characters=17179 | hash=9bc4f86edbbb
+2026-11-03 02:50:10,645 [truthlens.pipelines] INFO: MongoDB unchanged: dawn:2041595 | version=1 | fields=none
+2026-11-03 02:50:14,845 [dawn_sitemap] WARNING: Validation issues: https://www.dawn.com/news/2041617/kuwait-lifts-oil-output-to-highest-since-start-of-iran-war-source-says | missing_author
+2026-11-03 02:50:14,845 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041617/kuwait-lifts-oil-output-to-highest-since-start-of-iran-war-source-says | images=0 | videos=0
+2026-11-03 02:50:14,847 [truthlens.pipelines] INFO: Cleaned article: dawn:2041617 | characters=558 | hash=4b4a5c480e69
+2026-11-03 02:50:14,855 [truthlens.pipelines] INFO: MongoDB unchanged: dawn:2041617 | version=1 | fields=none
+2026-11-03 02:50:18,563 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041583/lhc-directs-jail-authorities-to-arrange-meeting-between-noreen-niazi-her-daughters | images=1 | videos=0
+2026-11-03 02:50:18,567 [truthlens.pipelines] INFO: Cleaned article: dawn:2041583 | characters=3668 | hash=091cdd84eea4
+2026-11-03 02:50:18,573 [truthlens.pipelines] INFO: MongoDB unchanged: dawn:2041583 | version=1 | fields=none
+2026-11-03 02:50:22,026 [dawn_sitemap] WARNING: Validation issues: https://www.dawn.com/news/2041618/uae-to-protect-energy-infrastructure-invest-in-new-export-routes-to-prepare-for-iran-war-minister-says | missing_author
+2026-11-03 02:50:22,026 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041618/uae-to-protect-energy-infrastructure-invest-in-new-export-routes-to-prepare-for-iran-war-minister-says | images=0 | videos=0
+2026-11-03 02:50:22,028 [truthlens.pipelines] INFO: Cleaned article: dawn:2041618 | characters=530 | hash=c11cd2222113
+2026-11-03 02:50:22,035 [truthlens.pipelines] INFO: MongoDB unchanged: dawn:2041618 | version=1 | fields=none
+2026-11-03 02:50:25,764 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041590/on-eve-of-midterms-final-polls-point-to-democratic-gains-but-can-republicans-hold-the-senate | images=3 | videos=0
+2026-11-03 02:50:25,770 [truthlens.pipelines] INFO: Cleaned article: dawn:2041590 | characters=9843 | hash=f88928d926f8
+2026-11-03 02:50:25,785 [truthlens.pipelines] INFO: MongoDB unchanged: dawn:2041590 | version=1 | fields=none
+2026-11-03 02:50:30,279 [dawn_sitemap] WARNING: Validation issues: https://www.dawn.com/news/2041619/china-fm-tells-iran-official-beijing-supports-safeguarding-sovereignty | missing_author
+2026-11-03 02:50:30,279 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041619/china-fm-tells-iran-official-beijing-supports-safeguarding-sovereignty | images=0 | videos=0
+2026-11-03 02:50:30,281 [truthlens.pipelines] INFO: Cleaned article: dawn:2041619 | characters=944 | hash=436f2cb94be1
+2026-11-03 02:50:30,288 [truthlens.pipelines] INFO: MongoDB unchanged: dawn:2041619 | version=1 | fields=none
+2026-11-03 02:50:34,882 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041621/pakistan-fined-for-slow-over-rate-in-tri-series-final | images=1 | videos=0
+2026-11-03 02:50:34,884 [truthlens.pipelines] INFO: Cleaned article: dawn:2041621 | characters=1372 | hash=5c857b6dbe48
+2026-11-03 02:50:34,891 [truthlens.pipelines] INFO: MongoDB unchanged: dawn:2041621 | version=1 | fields=none
+2026-11-03 02:50:37,073 [dawn_sitemap] WARNING: Validation issues: https://www.dawn.com/news/2041622/us-backed-44-billion-lng-project-in-pakistan-what-you-need-to-know-dawn-news-english | missing_article_text, missing_author
+2026-11-03 02:50:37,074 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041622/us-backed-44-billion-lng-project-in-pakistan-what-you-need-to-know-dawn-news-english | images=0 | videos=0
+2026-11-03 02:50:37,075 [truthlens.pipelines] WARNING: Cleaning needs review: dawn:2041622 | missing_content_blocks, empty_cleaned_text
+2026-11-03 02:50:37,081 [truthlens.pipelines] WARNING: Saved for review only: https://www.dawn.com/news/2041622/us-backed-44-billion-lng-project-in-pakistan-what-you-need-to-know-dawn-news-english
+2026-11-03 02:50:39,718 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041620/consumer-inflation-falls-to-96pc-in-oct-from-103pc-in-sept | images=1 | videos=0
+2026-11-03 02:50:39,720 [truthlens.pipelines] INFO: Cleaned article: dawn:2041620 | characters=2462 | hash=acb02499869d
+2026-11-03 02:50:39,728 [truthlens.pipelines] INFO: MongoDB unchanged: dawn:2041620 | version=1 | fields=none
+2026-11-03 02:50:43,899 [dawn_sitemap] WARNING: Validation issues: https://www.dawn.com/news/2041623/bill-clinton-criticises-us-attack-on-iran-says-war-lacked-careful-planning | missing_author, tweet_text_missing
+2026-11-03 02:50:43,900 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041623/bill-clinton-criticises-us-attack-on-iran-says-war-lacked-careful-planning | images=0 | videos=0
+2026-11-03 02:50:43,901 [truthlens.pipelines] INFO: Cleaned article: dawn:2041623 | characters=400 | hash=a29192300055
+2026-11-03 02:50:43,909 [truthlens.pipelines] INFO: MongoDB unchanged: dawn:2041623 | version=1 | fields=none
+2026-11-03 02:50:47,639 [dawn_sitemap] WARNING: Validation issues: https://www.dawn.com/news/2041625/araghchi-meredov-discuss-regional-developments-economic-cooperation | missing_author, tweet_text_missing
+2026-11-03 02:50:47,640 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041625/araghchi-meredov-discuss-regional-developments-economic-cooperation | images=0 | videos=0
+2026-11-03 02:50:47,641 [truthlens.pipelines] INFO: Cleaned article: dawn:2041625 | characters=776 | hash=0385c532074b
+2026-11-03 02:50:47,645 [truthlens.pipelines] INFO: MongoDB unchanged: dawn:2041625 | version=1 | fields=none
+2026-11-03 02:50:48,915 [dawn_sitemap] WARNING: Validation issues: https://www.dawn.com/news/2041614/uae-energy-minister-says-course-of-iran-war-cannot-be-predicted-but-we-will-be-more-prepared | missing_author, tweet_text_missing
+2026-11-03 02:50:48,916 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041614/uae-energy-minister-says-course-of-iran-war-cannot-be-predicted-but-we-will-be-more-prepared | images=0 | videos=0
+2026-11-03 02:50:48,917 [truthlens.pipelines] INFO: Cleaned article: dawn:2041614 | characters=340 | hash=38b9a8f2cc11
+2026-11-03 02:50:48,923 [truthlens.pipelines] INFO: MongoDB unchanged: dawn:2041614 | version=1 | fields=none
+2026-11-03 02:50:52,977 [dawn_sitemap] WARNING: Validation issues: https://www.dawn.com/news/2041628/totalenergies-chief-sees-no-gas-shortage-in-europe-this-winter | missing_author
+2026-11-03 02:50:52,978 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041628/totalenergies-chief-sees-no-gas-shortage-in-europe-this-winter | images=0 | videos=0
+2026-11-03 02:50:52,978 [truthlens.pipelines] INFO: Cleaned article: dawn:2041628 | characters=422 | hash=62ed26c01809
+2026-11-03 02:50:52,987 [truthlens.pipelines] INFO: MongoDB unchanged: dawn:2041628 | version=1 | fields=none
+2026-11-03 02:50:56,317 [dawn_sitemap] WARNING: Validation issues: https://www.dawn.com/news/2041629/tanker-hits-mine-catches-fire-in-restricted-high-risk-area-near-strait-of-hormuz-iranian-navy | missing_author, short_article_under_50_words, tweet_text_missing
+2026-11-03 02:50:56,318 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041629/tanker-hits-mine-catches-fire-in-restricted-high-risk-area-near-strait-of-hormuz-iranian-navy | images=0 | videos=0
+2026-11-03 02:50:56,319 [truthlens.pipelines] INFO: Cleaned article: dawn:2041629 | characters=217 | hash=f12f0f26d381
+2026-11-03 02:50:56,328 [truthlens.pipelines] INFO: MongoDB unchanged: dawn:2041629 | version=1 | fields=none
+2026-11-03 02:50:59,801 [dawn_sitemap] WARNING: Validation issues: https://www.dawn.com/news/2041630/iran-ministry-claims-unprecedented-harmony-among-top-decision-making-authorities | missing_author, short_article_under_50_words, tweet_text_missing
+2026-11-03 02:50:59,802 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041630/iran-ministry-claims-unprecedented-harmony-among-top-decision-making-authorities | images=0 | videos=0
+2026-11-03 02:50:59,803 [truthlens.pipelines] INFO: Cleaned article: dawn:2041630 | characters=257 | hash=0f3a8b32f16b
+2026-11-03 02:50:59,810 [truthlens.pipelines] INFO: MongoDB unchanged: dawn:2041630 | version=1 | fields=none
+2026-11-03 02:51:03,541 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041613/civilian-convicted-of-offences-against-state-cannot-claim-fundamental-rights-govt-says-in-report-to-lhc | images=0 | videos=0
+2026-11-03 02:51:03,545 [truthlens.pipelines] INFO: Cleaned article: dawn:2041613 | characters=5867 | hash=57dec98327c9
+2026-11-03 02:51:03,554 [truthlens.pipelines] INFO: MongoDB unchanged: dawn:2041613 | version=1 | fields=none
+2026-11-03 02:51:05,308 [scrapy.extensions.logstats] INFO: Crawled 58 pages (at 18 pages/min), scraped 55 items (at 18 items/min)
+2026-11-03 02:51:08,361 [dawn_sitemap] WARNING: Validation issues: https://www.dawn.com/news/2041632/totalenergies-expects-iran-war-to-accelerate-energy-transition | missing_author
+2026-11-03 02:51:08,361 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041632/totalenergies-expects-iran-war-to-accelerate-energy-transition | images=0 | videos=0
+2026-11-03 02:51:08,364 [truthlens.pipelines] INFO: Cleaned article: dawn:2041632 | characters=1041 | hash=648a760c2cc1
+2026-11-03 02:51:08,370 [truthlens.pipelines] INFO: MongoDB unchanged: dawn:2041632 | version=1 | fields=none
+2026-11-03 02:51:11,648 [dawn_sitemap] WARNING: Validation issues: https://www.dawn.com/news/2041635/oil-prices-down-over-6pc-on-hopes-of-us-iran-diplomacy | missing_author
+2026-11-03 02:51:11,649 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041635/oil-prices-down-over-6pc-on-hopes-of-us-iran-diplomacy | images=0 | videos=0
+2026-11-03 02:51:11,650 [truthlens.pipelines] INFO: Cleaned article: dawn:2041635 | characters=443 | hash=2fd23bb2c546
+2026-11-03 02:51:11,659 [truthlens.pipelines] INFO: MongoDB new: dawn:2041635 | version=1 | fields=none
+2026-11-03 02:51:13,540 [dawn_sitemap] WARNING: Validation issues: https://www.dawn.com/news/2041637/irans-top-security-official-discusses-middle-east-with-putin-state-media-says | missing_author, short_article_under_50_words, tweet_text_missing
+2026-11-03 02:51:13,541 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041637/irans-top-security-official-discusses-middle-east-with-putin-state-media-says | images=0 | videos=0
+2026-11-03 02:51:13,542 [truthlens.pipelines] INFO: Cleaned article: dawn:2041637 | characters=254 | hash=16a83a5e37c9
+2026-11-03 02:51:13,550 [truthlens.pipelines] INFO: MongoDB new: dawn:2041637 | version=1 | fields=none
+2026-11-03 02:51:17,345 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041634/pakistan-broadcasters-association-elects-new-board-directors-office-bearers | images=1 | videos=0
+2026-11-03 02:51:17,348 [truthlens.pipelines] INFO: Cleaned article: dawn:2041634 | characters=1163 | hash=a5d1499dbf6b
+2026-11-03 02:51:17,356 [truthlens.pipelines] INFO: MongoDB new: dawn:2041634 | version=1 | fields=none
+2026-11-03 02:51:21,198 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041627/govt-enlists-oil-refineries-to-shield-citizens-from-global-price-hikes | images=1 | videos=1
+2026-11-03 02:51:21,202 [truthlens.pipelines] INFO: Cleaned article: dawn:2041627 | characters=5806 | hash=9ef1b6e57a64
+2026-11-03 02:51:21,212 [truthlens.pipelines] INFO: MongoDB multiple_changes: dawn:2041627 | version=2 | fields=text.cleaned_text, metadata.updated_at
+2026-11-03 02:51:25,620 [dawn_sitemap] WARNING: Validation issues: https://www.dawn.com/news/2041640/iran-supreme-leader-grants-government-powers-in-talks-with-us | missing_author
+2026-11-03 02:51:25,621 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041640/iran-supreme-leader-grants-government-powers-in-talks-with-us | images=0 | videos=0
+2026-11-03 02:51:25,622 [truthlens.pipelines] INFO: Cleaned article: dawn:2041640 | characters=395 | hash=627f9bac7891
+2026-11-03 02:51:25,631 [truthlens.pipelines] INFO: MongoDB new: dawn:2041640 | version=1 | fields=none
+2026-11-03 02:51:29,165 [dawn_sitemap] WARNING: Validation issues: https://www.dawn.com/news/2041631/political-committee-denies-factionalism-within-pti-warns-against-violating-party-discipline | tweet_text_missing
+2026-11-03 02:51:29,166 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041631/political-committee-denies-factionalism-within-pti-warns-against-violating-party-discipline | images=1 | videos=0
+2026-11-03 02:51:29,170 [truthlens.pipelines] INFO: Cleaned article: dawn:2041631 | characters=7292 | hash=7b00689e3080
+2026-11-03 02:51:29,181 [truthlens.pipelines] INFO: MongoDB new: dawn:2041631 | version=1 | fields=none
+2026-11-03 02:51:33,251 [dawn_sitemap] WARNING: Validation issues: https://www.dawn.com/news/2041633/pm-directs-no-leniency-for-banks-slow-in-providing-loans-to-farmers-smes | tweet_text_missing
+2026-11-03 02:51:33,251 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041633/pm-directs-no-leniency-for-banks-slow-in-providing-loans-to-farmers-smes | images=1 | videos=0
+2026-11-03 02:51:33,255 [truthlens.pipelines] INFO: Cleaned article: dawn:2041633 | characters=4226 | hash=8cbd1227136f
+2026-11-03 02:51:33,263 [truthlens.pipelines] INFO: MongoDB new: dawn:2041633 | version=1 | fields=none
+2026-11-03 02:51:37,135 [dawn_sitemap] WARNING: Validation issues: https://www.dawn.com/news/2041639/tehran-is-holding-intensive-talks-with-mediators-foreign-minister-says | missing_author, tweet_text_missing
+2026-11-03 02:51:37,136 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041639/tehran-is-holding-intensive-talks-with-mediators-foreign-minister-says | images=0 | videos=0
+2026-11-03 02:51:37,138 [truthlens.pipelines] INFO: Cleaned article: dawn:2041639 | characters=430 | hash=5d5cd8a14f61
+2026-11-03 02:51:37,147 [truthlens.pipelines] INFO: MongoDB new: dawn:2041639 | version=1 | fields=none
+2026-11-03 02:51:41,788 [dawn_sitemap] WARNING: Validation issues: https://www.dawn.com/news/2041644/two-drones-intercepted-over-riyadh-coalition | missing_author, short_article_under_50_words, tweet_text_missing
+2026-11-03 02:51:41,788 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041644/two-drones-intercepted-over-riyadh-coalition | images=0 | videos=0
+2026-11-03 02:51:41,790 [truthlens.pipelines] INFO: Cleaned article: dawn:2041644 | characters=104 | hash=0c4ec8221e0d
+2026-11-03 02:51:41,797 [truthlens.pipelines] INFO: MongoDB new: dawn:2041644 | version=1 | fields=none
+2026-11-03 02:51:45,562 [dawn_sitemap] WARNING: Validation issues: https://www.dawn.com/news/2041645/yemens-houthis-advance-to-within-80km-of-aden-sources | missing_author
+2026-11-03 02:51:45,562 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041645/yemens-houthis-advance-to-within-80km-of-aden-sources | images=0 | videos=0
+2026-11-03 02:51:45,564 [truthlens.pipelines] INFO: Cleaned article: dawn:2041645 | characters=929 | hash=b30bd6a459cb
+2026-11-03 02:51:45,570 [truthlens.pipelines] INFO: MongoDB new: dawn:2041645 | version=1 | fields=none
+2026-11-03 02:51:48,526 [dawn_sitemap] WARNING: Validation issues: https://www.dawn.com/news/2041642/china-calls-for-middle-east-dialogue-in-talks-with-iran-saudi-arabia-oman | tweet_text_missing
+2026-11-03 02:51:48,527 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041642/china-calls-for-middle-east-dialogue-in-talks-with-iran-saudi-arabia-oman | images=2 | videos=0
+2026-11-03 02:51:48,529 [truthlens.pipelines] INFO: Cleaned article: dawn:2041642 | characters=2190 | hash=aca00781abf7
+2026-11-03 02:51:48,535 [truthlens.pipelines] INFO: MongoDB new: dawn:2041642 | version=1 | fields=none
+2026-11-03 02:51:51,254 [dawn_sitemap] WARNING: Validation issues: https://www.dawn.com/news/2041643/china-steps-up-diplomatic-efforts-on-mideast-crisis-meets-with-iranian-omani-and-saudi-officials | missing_author
+2026-11-03 02:51:51,255 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041643/china-steps-up-diplomatic-efforts-on-mideast-crisis-meets-with-iranian-omani-and-saudi-officials | images=1 | videos=0
+2026-11-03 02:51:51,257 [truthlens.pipelines] INFO: Cleaned article: dawn:2041643 | characters=836 | hash=9fae8d116874
+2026-11-03 02:51:51,265 [truthlens.pipelines] INFO: MongoDB new: dawn:2041643 | version=1 | fields=none
+2026-11-03 02:51:54,542 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041646/fridge-cyberattack-hits-supermarkets-across-europe | images=1 | videos=1
+2026-11-03 02:51:54,547 [truthlens.pipelines] INFO: Cleaned article: dawn:2041646 | characters=4201 | hash=c1a56ad344bd
+2026-11-03 02:51:54,558 [truthlens.pipelines] INFO: MongoDB new: dawn:2041646 | version=1 | fields=none
+2026-11-03 02:51:58,822 [dawn_sitemap] WARNING: Validation issues: https://www.dawn.com/news/2041647/ | missing_author, tweet_text_missing
+2026-11-03 02:51:58,823 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041647/ | images=0 | videos=0
+2026-11-03 02:51:58,824 [truthlens.pipelines] INFO: Cleaned article: dawn:2041647 | characters=583 | hash=96c764cb47b5
+2026-11-03 02:51:58,834 [truthlens.pipelines] INFO: MongoDB new: dawn:2041647 | version=1 | fields=none
+2026-11-03 02:52:02,928 [dawn_sitemap] WARNING: Validation issues: https://www.dawn.com/news/2041641/adrian-hamilton-manns-appointed-new-pia-chief-executive-officer | tweet_text_missing
+2026-11-03 02:52:02,930 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041641/adrian-hamilton-manns-appointed-new-pia-chief-executive-officer | images=1 | videos=0
+2026-11-03 02:52:02,934 [truthlens.pipelines] INFO: Cleaned article: dawn:2041641 | characters=2426 | hash=ad9b58dec87b
+2026-11-03 02:52:02,946 [truthlens.pipelines] INFO: MongoDB new: dawn:2041641 | version=1 | fields=none
+2026-11-03 02:52:05,307 [scrapy.extensions.logstats] INFO: Crawled 74 pages (at 16 pages/min), scraped 71 items (at 16 items/min)
+2026-11-03 02:52:06,555 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041626/forget-my-phone-can-hackers-access-my-fridge | images=4 | videos=0
+2026-11-03 02:52:06,559 [truthlens.pipelines] INFO: Cleaned article: dawn:2041626 | characters=4272 | hash=98ca8d717854
+2026-11-03 02:52:06,569 [truthlens.pipelines] INFO: MongoDB metadata_changed: dawn:2041626 | version=2 | fields=metadata.updated_at
+2026-11-03 02:52:11,443 [dawn_sitemap] WARNING: Validation issues: https://www.dawn.com/news/2041648/houthis-claim-attacks-on-jizan-dammam-airports-in-saudi-arabia | missing_author, tweet_text_missing
+2026-11-03 02:52:11,443 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041648/houthis-claim-attacks-on-jizan-dammam-airports-in-saudi-arabia | images=0 | videos=0
+2026-11-03 02:52:11,444 [truthlens.pipelines] INFO: Cleaned article: dawn:2041648 | characters=502 | hash=c38c10b25610
+2026-11-03 02:52:11,451 [truthlens.pipelines] INFO: MongoDB new: dawn:2041648 | version=1 | fields=none
+2026-11-03 02:52:14,484 [dawn_sitemap] WARNING: Validation issues: https://www.dawn.com/news/2041638/pakistan-china-discuss-regional-and-global-developments-in-high-level-meetings | tweet_text_missing
+2026-11-03 02:52:14,484 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041638/pakistan-china-discuss-regional-and-global-developments-in-high-level-meetings | images=2 | videos=1
+2026-11-03 02:52:14,488 [truthlens.pipelines] INFO: Cleaned article: dawn:2041638 | characters=5061 | hash=741237b8aec2
+2026-11-03 02:52:14,497 [truthlens.pipelines] INFO: MongoDB new: dawn:2041638 | version=1 | fields=none
+2026-11-03 02:52:18,443 [dawn_sitemap] WARNING: Validation issues: https://www.dawn.com/news/2041651/watch-chinas-fm-meets-key-leader-of-irans-top-security-body | missing_article_text, missing_author, tweet_text_missing
+2026-11-03 02:52:18,444 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041651/watch-chinas-fm-meets-key-leader-of-irans-top-security-body | images=0 | videos=0
+2026-11-03 02:52:18,444 [truthlens.pipelines] WARNING: Cleaning needs review: dawn:2041651 | missing_content_blocks, empty_cleaned_text
+2026-11-03 02:52:18,447 [truthlens.pipelines] WARNING: Saved for review only: https://www.dawn.com/news/2041651/watch-chinas-fm-meets-key-leader-of-irans-top-security-body
+2026-11-03 02:52:22,859 [dawn_sitemap] WARNING: Validation issues: https://www.dawn.com/news/2041652/why-the-us-midterms-matter-to-the-whole-world-dawn-news-english | missing_article_text, missing_author
+2026-11-03 02:52:22,860 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041652/why-the-us-midterms-matter-to-the-whole-world-dawn-news-english | images=0 | videos=0
+2026-11-03 02:52:22,860 [truthlens.pipelines] WARNING: Cleaning needs review: dawn:2041652 | missing_content_blocks, empty_cleaned_text
+2026-11-03 02:52:22,863 [truthlens.pipelines] WARNING: Saved for review only: https://www.dawn.com/news/2041652/why-the-us-midterms-matter-to-the-whole-world-dawn-news-english
+2026-11-03 02:52:26,783 [dawn_sitemap] WARNING: Validation issues: https://www.dawn.com/news/2041654/iran-russia-reaffirm-commitment-to-strategic-cooperation-state-media | missing_author
+2026-11-03 02:52:26,783 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041654/iran-russia-reaffirm-commitment-to-strategic-cooperation-state-media | images=0 | videos=0
+2026-11-03 02:52:26,785 [truthlens.pipelines] INFO: Cleaned article: dawn:2041654 | characters=467 | hash=7f035661ab0c
+2026-11-03 02:52:26,793 [truthlens.pipelines] INFO: MongoDB new: dawn:2041654 | version=1 | fields=none
+2026-11-03 02:52:29,477 [dawn_sitemap] WARNING: Validation issues: https://www.dawn.com/news/2033739/fuel-prices | missing_article_text, missing_author
+2026-11-03 02:52:29,478 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2033739/fuel-prices | images=0 | videos=0
+2026-11-03 02:52:29,478 [truthlens.pipelines] WARNING: Cleaning needs review: dawn:2033739 | missing_content_blocks, empty_cleaned_text
+2026-11-03 02:52:29,485 [truthlens.pipelines] WARNING: Saved for review only: https://www.dawn.com/news/2033739/fuel-prices
+2026-11-03 02:52:33,404 [dawn_sitemap] WARNING: Validation issues: https://www.dawn.com/news/2041655/oil-prices-plunge-on-us-iran-detente-hopes-ahead-of-midterms | missing_author
+2026-11-03 02:52:33,404 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041655/oil-prices-plunge-on-us-iran-detente-hopes-ahead-of-midterms | images=0 | videos=0
+2026-11-03 02:52:33,405 [truthlens.pipelines] INFO: Cleaned article: dawn:2041655 | characters=1090 | hash=c8818713277c
+2026-11-03 02:52:33,416 [truthlens.pipelines] INFO: MongoDB new: dawn:2041655 | version=1 | fields=none
+2026-11-03 02:52:37,281 [dawn_sitemap] WARNING: Validation issues: https://www.dawn.com/news/2041650/pti-lawyer-salman-safdar-says-he-met-imran-bushra-bibi-at-adiala-jail | tweet_text_missing
+2026-11-03 02:52:37,282 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041650/pti-lawyer-salman-safdar-says-he-met-imran-bushra-bibi-at-adiala-jail | images=2 | videos=0
+2026-11-03 02:52:37,285 [truthlens.pipelines] INFO: Cleaned article: dawn:2041650 | characters=3735 | hash=75a1a2654a84
+2026-11-03 02:52:37,293 [truthlens.pipelines] INFO: MongoDB new: dawn:2041650 | version=1 | fields=none
+2026-11-03 02:52:40,410 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041649/at-kazakhstan-forum-pakistan-presents-karachi-and-gwadar-ports-as-strategic-gateways-for-central-asian-trade | images=2 | videos=0
+2026-11-03 02:52:40,413 [truthlens.pipelines] INFO: Cleaned article: dawn:2041649 | characters=4573 | hash=634b20e931cb
+2026-11-03 02:52:40,424 [truthlens.pipelines] INFO: MongoDB new: dawn:2041649 | version=1 | fields=none
+2026-11-03 02:52:45,142 [dawn_sitemap] WARNING: Validation issues: https://www.dawn.com/news/2041657/us-greatest-military-setback-lies-in-collapse-of-its-image-of-power-iranian-commander-says | missing_author, tweet_text_missing
+2026-11-03 02:52:45,142 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041657/us-greatest-military-setback-lies-in-collapse-of-its-image-of-power-iranian-commander-says | images=0 | videos=0
+2026-11-03 02:52:45,143 [truthlens.pipelines] INFO: Cleaned article: dawn:2041657 | characters=775 | hash=6d7623a1fb92
+2026-11-03 02:52:45,153 [truthlens.pipelines] INFO: MongoDB new: dawn:2041657 | version=1 | fields=none
+2026-11-03 02:52:49,704 [dawn_sitemap] WARNING: Validation issues: https://www.dawn.com/news/2041658/tiktoker-mr-patlus-event-ends-in-tragedy-who-is-to-blame-zara-hat-kay-dawn-news | missing_article_text, missing_author
+2026-11-03 02:52:49,704 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041658/tiktoker-mr-patlus-event-ends-in-tragedy-who-is-to-blame-zara-hat-kay-dawn-news | images=0 | videos=0
+2026-11-03 02:52:49,705 [truthlens.pipelines] WARNING: Cleaning needs review: dawn:2041658 | missing_content_blocks, empty_cleaned_text
+2026-11-03 02:52:49,708 [truthlens.pipelines] WARNING: Saved for review only: https://www.dawn.com/news/2041658/tiktoker-mr-patlus-event-ends-in-tragedy-who-is-to-blame-zara-hat-kay-dawn-news
+2026-11-03 02:52:54,188 [dawn_sitemap] WARNING: Validation issues: https://www.dawn.com/news/2041659/is-maulana-fazal-ur-rehman-about-to-face-accountability-dawn-news | missing_article_text, missing_author
+2026-11-03 02:52:54,189 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041659/is-maulana-fazal-ur-rehman-about-to-face-accountability-dawn-news | images=0 | videos=0
+2026-11-03 02:52:54,190 [truthlens.pipelines] WARNING: Cleaning needs review: dawn:2041659 | missing_content_blocks, empty_cleaned_text
+2026-11-03 02:52:54,192 [truthlens.pipelines] WARNING: Saved for review only: https://www.dawn.com/news/2041659/is-maulana-fazal-ur-rehman-about-to-face-accountability-dawn-news
+2026-11-03 02:52:58,300 [dawn_sitemap] WARNING: Validation issues: https://www.dawn.com/news/2041660/tragedy-at-tiktoker-mr-patlus-mehndi-2-killed-in-stampede-dawn-news | missing_article_text, missing_author
+2026-11-03 02:52:58,301 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041660/tragedy-at-tiktoker-mr-patlus-mehndi-2-killed-in-stampede-dawn-news | images=0 | videos=0
+2026-11-03 02:52:58,302 [truthlens.pipelines] WARNING: Cleaning needs review: dawn:2041660 | missing_content_blocks, empty_cleaned_text
+2026-11-03 02:52:58,304 [truthlens.pipelines] WARNING: Saved for review only: https://www.dawn.com/news/2041660/tragedy-at-tiktoker-mr-patlus-mehndi-2-killed-in-stampede-dawn-news
+2026-11-03 02:53:01,755 [dawn_sitemap] WARNING: Validation issues: https://www.dawn.com/news/2041661/teaching-journalists-a-lesson-with-laws-press-freedom-at-risk-dawn-news | missing_article_text, missing_author
+2026-11-03 02:53:01,755 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041661/teaching-journalists-a-lesson-with-laws-press-freedom-at-risk-dawn-news | images=0 | videos=0
+2026-11-03 02:53:01,756 [truthlens.pipelines] WARNING: Cleaning needs review: dawn:2041661 | missing_content_blocks, empty_cleaned_text
+2026-11-03 02:53:01,762 [truthlens.pipelines] WARNING: Saved for review only: https://www.dawn.com/news/2041661/teaching-journalists-a-lesson-with-laws-press-freedom-at-risk-dawn-news
+2026-11-03 02:53:05,308 [scrapy.extensions.logstats] INFO: Crawled 89 pages (at 15 pages/min), scraped 86 items (at 15 items/min)
+2026-11-03 02:53:06,340 [dawn_sitemap] WARNING: Validation issues: https://www.dawn.com/news/2041662/is-pakistans-media-industry-heading-toward-decline-dawn-news | missing_article_text, missing_author
+2026-11-03 02:53:06,341 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041662/is-pakistans-media-industry-heading-toward-decline-dawn-news | images=0 | videos=0
+2026-11-03 02:53:06,342 [truthlens.pipelines] WARNING: Cleaning needs review: dawn:2041662 | missing_content_blocks, empty_cleaned_text
+2026-11-03 02:53:06,348 [truthlens.pipelines] WARNING: Saved for review only: https://www.dawn.com/news/2041662/is-pakistans-media-industry-heading-toward-decline-dawn-news
+2026-11-03 02:53:09,824 [dawn_sitemap] WARNING: Validation issues: https://www.dawn.com/news/2041663/yemeni-forces-say-they-recaptured-territory-from-houthis-in-taiz-province | missing_author
+2026-11-03 02:53:09,824 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041663/yemeni-forces-say-they-recaptured-territory-from-houthis-in-taiz-province | images=0 | videos=0
+2026-11-03 02:53:09,826 [truthlens.pipelines] INFO: Cleaned article: dawn:2041663 | characters=517 | hash=59edbe4af84c
+2026-11-03 02:53:09,833 [truthlens.pipelines] INFO: MongoDB new: dawn:2041663 | version=1 | fields=none
+2026-11-03 02:53:18,080 [dawn_sitemap] ERROR: Unexpected article URL: https://www.dawn.com/live/iran-israel-war
+2026-11-03 02:53:22,351 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2040441/defence-diplomacy | images=1 | videos=0
+2026-11-03 02:53:22,355 [truthlens.pipelines] INFO: Cleaned article: dawn:2040441 | characters=6433 | hash=5b8e3be25194
+2026-11-03 02:53:22,363 [truthlens.pipelines] INFO: MongoDB new: dawn:2040441 | version=1 | fields=none
+2026-11-03 02:53:25,922 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041664/over-a-million-abuse-images-found-on-phone-of-uk-man-who-drugged-raped-wife-prosecutor | images=1 | videos=0
+2026-11-03 02:53:25,924 [truthlens.pipelines] INFO: Cleaned article: dawn:2041664 | characters=2423 | hash=a9b89cc2897e
+2026-11-03 02:53:25,933 [truthlens.pipelines] INFO: MongoDB new: dawn:2041664 | version=1 | fields=none
+2026-11-03 02:53:29,567 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041653/govt-slashes-high-speed-diesel-price-by-rs776-per-litre-petrol-by-rs340 | images=0 | videos=0
+2026-11-03 02:53:29,571 [truthlens.pipelines] INFO: Cleaned article: dawn:2041653 | characters=4264 | hash=0f7725e050a3
+2026-11-03 02:53:29,582 [truthlens.pipelines] INFO: MongoDB new: dawn:2041653 | version=1 | fields=none
+2026-11-03 02:53:33,931 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2041656/trump-touts-washington-reflecting-pool-as-us-midterm-battle-reaches-finale | images=2 | videos=1
+2026-11-03 02:53:33,944 [truthlens.pipelines] INFO: Cleaned article: dawn:2041656 | characters=5451 | hash=e777a11b7858
+2026-11-03 02:53:33,960 [truthlens.pipelines] INFO: MongoDB new: dawn:2041656 | version=1 | fields=none
+2026-11-03 02:53:33,965 [scrapy.core.engine] INFO: Closing spider (finished)
+2026-11-03 02:53:33,966 [truthlens.export] INFO: Run JSON saved: data\runs\dawn_sitemap\dawn_sitemap_2026-11-03_02-47-05.json | items=92
+2026-11-03 02:53:33,973 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'dawn_sitemap/skipped_section': 1,
+ 'downloader/request_bytes': 35267,
+ 'downloader/request_count': 105,
+ 'downloader/request_method_count/GET': 105,
+ 'downloader/response_bytes': 3425412,
+ 'downloader/response_count': 105,
+ 'downloader/response_status_count/200': 96,
+ 'downloader/response_status_count/302': 9,
+ 'elapsed_time_seconds': 388.67199999999866,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2026, 11, 2, 21, 53, 33, 971880, tzinfo=datetime.timezone.utc),
+ 'httpcompression/response_bytes': 16553747,
+ 'httpcompression/response_count': 96,
+ 'item_scraped_count': 92,
+ 'items_per_minute': 14.22680412371134,
+ 'log_count/ERROR': 1,
+ 'log_count/INFO': 270,
+ 'log_count/WARNING': 79,
+ 'mongodb/articles_media_changed': 1,
+ 'mongodb/articles_metadata_changed': 1,
+ 'mongodb/articles_multiple_changes': 1,
+ 'mongodb/articles_new': 26,
+ 'mongodb/articles_unchanged': 53,
+ 'mongodb/snapshot_only': 10,
+ 'mongodb/snapshots_inserted': 39,
+ 'mongodb/snapshots_skipped': 53,
+ 'offsite/domains': 2,
+ 'offsite/filtered': 6,
+ 'request_depth_max': 1,
+ 'response_received_count': 96,
+ 'responses_per_minute': 14.845360824742269,
+ 'robotstxt/request_count': 1,
+ 'robotstxt/response_count': 1,
+ 'robotstxt/response_status_count/200': 1,
+ 'scheduler/dequeued': 104,
+ 'scheduler/dequeued/memory': 104,
+ 'scheduler/enqueued': 104,
+ 'scheduler/enqueued/memory': 104,
+ 'start_time': datetime.datetime(2026, 11, 2, 21, 47, 5, 292819, tzinfo=datetime.timezone.utc)}
+2026-11-03 02:53:33,979 [scrapy.core.engine] INFO: Spider closed (finished)
+2026-11-03 02:53:33,989 [truthlens.run_reporting] INFO: Run summary saved: logs\runs\20261102T214704Z_ec68d04b117346df90b09e8dbecdbf67.json | status=completed_with_errors

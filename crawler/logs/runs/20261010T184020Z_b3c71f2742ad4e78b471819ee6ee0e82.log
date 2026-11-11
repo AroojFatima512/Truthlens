@@ -1,0 +1,87 @@
+2026-10-10 23:40:20,659 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.logcount.LogCount',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.feedexport.FeedExporter',
+ 'scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.remote_control.RemoteControl',
+ 'truthlens.run_reporting.RunReportingExtension']
+2026-10-10 23:40:20,661 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'truthlens',
+ 'CONCURRENT_REQUESTS': 1,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 1,
+ 'DOWNLOAD_DELAY': 3,
+ 'DOWNLOAD_TIMEOUT': 30,
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'FEED_EXPORT_INDENT': 2,
+ 'LOG_LEVEL': 'INFO',
+ 'NEWSPIDER_MODULE': 'truthlens.spiders',
+ 'ROBOTSTXT_OBEY': True,
+ 'SPIDER_MODULES': ['truthlens.spiders'],
+ 'USER_AGENT': 'TruthLensResearchBot/0.1'}
+2026-10-10 23:40:21,385 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2026-10-10 23:40:21,393 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.start.StartSpiderMiddleware',
+ 'scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware',
+ 'scrapy.spidermiddlewares.metacopy.MetaCopyDetectionMiddleware']
+2026-10-10 23:40:21,540 [scrapy.middleware] INFO: Enabled item pipelines:
+['truthlens.pipelines.CleaningPipeline', 'truthlens.pipelines.MongoDBPipeline']
+2026-10-10 23:40:21,541 [scrapy.core.engine] INFO: Spider opened
+2026-10-10 23:40:21,686 [truthlens.pipelines] INFO: MongoDB connected: database=truthlens
+2026-10-10 23:40:21,689 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2026-10-10 23:40:21,692 [truthlens.run_reporting] INFO: Run started: 20261010T184020Z_b3c71f2742ad4e78b471819ee6ee0e82 | source=Geo News
+2026-10-10 23:40:21,696 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2026-10-10 23:40:21,710 [scrapy.extensions.remote_control] INFO: Remote control HTTP server listening on port 62851 (job 2788-318f71d5f0104699baf8f7dcca242c3e)
+2026-10-10 23:40:26,231 [geo_news] INFO: Selected 1 article URLs.
+2026-10-10 23:40:28,682 [geo_news] INFO: Extracted article: https://www.geo.tv/latest/685964-federal-govt-decides-to-impose-emergency-in-kp-sources | images=1 | videos=1
+2026-10-10 23:40:28,690 [truthlens.pipelines] INFO: Cleaned article: geo:685964 | characters=5479 | hash=2e2ecf34b8f4
+2026-10-10 23:40:28,843 [truthlens.pipelines] INFO: MongoDB new: geo:685964 | version=1 | fields=none
+2026-10-10 23:40:28,847 [scrapy.core.engine] INFO: Closing spider (finished)
+2026-10-10 23:40:28,849 [scrapy.extensions.feedexport] INFO: Stored json feed (1 items) in: data\geo_reporting_test.json
+2026-10-10 23:40:28,850 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 772,
+ 'downloader/request_count': 3,
+ 'downloader/request_method_count/GET': 3,
+ 'downloader/response_bytes': 56293,
+ 'downloader/response_count': 3,
+ 'downloader/response_status_count/200': 3,
+ 'elapsed_time_seconds': 7.160630900005344,
+ 'feedexport/success_count/FileFeedStorage': 1,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2026, 10, 10, 18, 40, 28, 848952, tzinfo=datetime.timezone.utc),
+ 'httpcompression/response_bytes': 338429,
+ 'httpcompression/response_count': 3,
+ 'item_scraped_count': 1,
+ 'items_per_minute': 8.571428571428571,
+ 'log_count/INFO': 9,
+ 'mongodb/articles_new': 1,
+ 'mongodb/snapshots_inserted': 1,
+ 'request_depth_max': 1,
+ 'response_received_count': 3,
+ 'responses_per_minute': 25.714285714285715,
+ 'robotstxt/request_count': 1,
+ 'robotstxt/response_count': 1,
+ 'robotstxt/response_status_count/200': 1,
+ 'scheduler/dequeued': 2,
+ 'scheduler/dequeued/memory': 2,
+ 'scheduler/enqueued': 2,
+ 'scheduler/enqueued/memory': 2,
+ 'start_time': datetime.datetime(2026, 10, 10, 18, 40, 21, 688318, tzinfo=datetime.timezone.utc)}
+2026-10-10 23:40:28,852 [scrapy.core.engine] INFO: Spider closed (finished)
+2026-10-10 23:40:28,854 [truthlens.run_reporting] INFO: Run summary saved: logs\runs\20261010T184020Z_b3c71f2742ad4e78b471819ee6ee0e82.json | status=completed

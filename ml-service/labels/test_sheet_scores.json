@@ -1,0 +1,38 @@
+{
+  "bias": {
+    "labelled_by_both": 399,
+    "agreement": 0.945,
+    "cohens_kappa": 0.828,
+    "gold_sentences": 377,
+    "gold_distribution": {
+      "B": 69,
+      "N": 308
+    },
+    "models": {
+      "DeBERTa (yours)": {
+        "n": 377,
+        "accuracy": 0.886,
+        "macro_f1": 0.818
+      },
+      "Second model": null
+    }
+  },
+  "sentiment": {
+    "labelled_by_both": 399,
+    "agreement": 0.86,
+    "cohens_kappa": 0.777,
+    "gold_sentences": 343,
+    "gold_distribution": {
+      "pos": 59,
+      "neu": 153,
+      "neg": 131
+    },
+    "models": {
+      "Sentiment model": {
+        "n": 343,
+        "accuracy": 0.746,
+        "macro_f1": 0.74
+      }
+    }
+  }
+}

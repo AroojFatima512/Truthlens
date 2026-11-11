@@ -1,0 +1,735 @@
+{
+  "schema_version": "truthlens-run-v1",
+  "run_id": "20261104T013640Z_bc34f94229aa497597467a1f6a3438d3",
+  "source": "Dawn",
+  "spider": "dawn_sitemap",
+  "status": "completed_with_errors",
+  "finish_reason": "finished",
+  "started_at": "2026-11-04T01:36:40.715874+00:00",
+  "finished_at": "2026-11-04T01:43:24.904284+00:00",
+  "duration_seconds": 404.188,
+  "log_file": "logs\\runs\\20261104T013640Z_bc34f94229aa497597467a1f6a3438d3.log",
+  "counts": {
+    "requests_total": 105,
+    "responses_total": 105,
+    "retry_attempts": 0,
+    "items_processed": 93,
+    "new_articles": 12,
+    "unchanged_articles": 61,
+    "updated_articles": 4,
+    "baselines_created": 0,
+    "processing_changes": 0,
+    "snapshots_inserted": 32,
+    "snapshots_skipped": 61,
+    "review_only_records": 16,
+    "records_with_review_flags": 62,
+    "stale_observations": 0,
+    "replayed_observations": 0,
+    "rejected_records": 0,
+    "failed_requests": 0,
+    "item_errors": 0,
+    "spider_errors": 0
+  },
+  "failed_requests": [],
+  "rejected_records": [],
+  "review_records": [
+    {
+      "article_key": "dawn:2041811",
+      "url": "https://www.dawn.com/news/2041811/watch-iran-shoots-down-us-mq-9-drone-over-hormuz",
+      "change_status": "needs_review",
+      "validation_issues": [
+        "missing_article_text",
+        "missing_author",
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": [
+        "missing_content_blocks",
+        "empty_cleaned_text"
+      ]
+    },
+    {
+      "article_key": "dawn:2041815",
+      "url": "https://www.dawn.com/news/2041815/saudi-aramco-profits-surge-as-middle-east-war-rattles-energy-markets",
+      "change_status": "unchanged",
+      "validation_issues": [
+        "missing_author"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041817",
+      "url": "https://www.dawn.com/news/2041817/irans-foreign-minister-says-talks-with-saudi-arabia-are-ongoing-yemen-fighting-intensifies",
+      "change_status": "unchanged",
+      "validation_issues": [
+        "missing_author",
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041818",
+      "url": "https://www.dawn.com/news/2041818/iran-chief-negotiator-says-ball-in-us-court-to-prevent-war",
+      "change_status": "unchanged",
+      "validation_issues": [
+        "missing_author"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041819",
+      "url": "https://www.dawn.com/news/2041819/lufthansa-says-2026-fuel-costs-to-be-2bn-euros-higher-amid-iran-war",
+      "change_status": "unchanged",
+      "validation_issues": [
+        "missing_author"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041820",
+      "url": "https://www.dawn.com/news/2041820/indian-national-killed-after-2-helicopters-collide-in-nepals-mount-everest-region",
+      "change_status": "unchanged",
+      "validation_issues": [
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041821",
+      "url": "https://www.dawn.com/news/2041821/asian-cup-latest-event-in-saudi-arabia-to-be-postponed-over-safety",
+      "change_status": "unchanged",
+      "validation_issues": [
+        "missing_author"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041827",
+      "url": "https://www.dawn.com/news/2041827/us-midterms-can-democrats-take-the-congress-election-analyst-larry-sabato-dawn-news-english",
+      "change_status": "needs_review",
+      "validation_issues": [
+        "missing_article_text",
+        "missing_author"
+      ],
+      "cleaning_issues": [
+        "missing_content_blocks",
+        "empty_cleaned_text"
+      ]
+    },
+    {
+      "article_key": "dawn:2041829",
+      "url": "https://www.dawn.com/news/2041829/oil-rises-as-peace-prospects-dim-after-us-hits-irans-qeshm-island",
+      "change_status": "unchanged",
+      "validation_issues": [
+        "missing_author"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041830",
+      "url": "https://www.dawn.com/news/2041830/oil-stabilises-as-asian-stocks-slide-ahead-of-us-midterms-dawn-news-english",
+      "change_status": "needs_review",
+      "validation_issues": [
+        "missing_article_text",
+        "missing_author"
+      ],
+      "cleaning_issues": [
+        "missing_content_blocks",
+        "empty_cleaned_text"
+      ]
+    },
+    {
+      "article_key": "dawn:2041831",
+      "url": "https://www.dawn.com/news/2041831/un-relief-chief-says-yemens-civilians-paying-brutal-price-as-taiz-runs-low-on-supplies",
+      "change_status": "unchanged",
+      "validation_issues": [
+        "missing_author",
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041833",
+      "url": "https://www.dawn.com/news/2041833/yemens-houthis-say-saudi-strikes-killed-17-people-over-2-days",
+      "change_status": "unchanged",
+      "validation_issues": [
+        "missing_author"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041838",
+      "url": "https://www.dawn.com/news/2041838/israel-denies-involvement-in-reported-us-strikes-on-qeshm-island",
+      "change_status": "unchanged",
+      "validation_issues": [
+        "missing_author"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041836",
+      "url": "https://www.dawn.com/news/2041836/saudi-led-coalition-says-intercepted-drone-in-makkah-region",
+      "change_status": "unchanged",
+      "validation_issues": [
+        "missing_author",
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041840",
+      "url": "https://www.dawn.com/news/2041840/explained-why-are-us-midterm-elections-so-important",
+      "change_status": "needs_review",
+      "validation_issues": [
+        "missing_article_text",
+        "missing_author"
+      ],
+      "cleaning_issues": [
+        "missing_content_blocks",
+        "empty_cleaned_text"
+      ]
+    },
+    {
+      "article_key": "dawn:2041834",
+      "url": "https://www.dawn.com/news/2041834/iran-unveils-huge-billboard-with-threat-against-trumps-life",
+      "change_status": "unchanged",
+      "validation_issues": [
+        "missing_author"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041843",
+      "url": "https://www.dawn.com/news/2041843/iranian-deputy-fm-says-tehran-is-not-shaping-policies-around-us-election",
+      "change_status": "unchanged",
+      "validation_issues": [
+        "missing_author",
+        "short_article_under_50_words"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041844",
+      "url": "https://www.dawn.com/news/2041844/qatar-says-remains-hopeful-of-a-us-iran-deal",
+      "change_status": "unchanged",
+      "validation_issues": [
+        "missing_author"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041846",
+      "url": "https://www.dawn.com/news/2041846/instagram-posts",
+      "change_status": "needs_review",
+      "validation_issues": [
+        "missing_article_text",
+        "missing_author"
+      ],
+      "cleaning_issues": [
+        "missing_content_blocks",
+        "empty_cleaned_text"
+      ]
+    },
+    {
+      "article_key": "dawn:2020744",
+      "url": "https://www.dawn.com/news/2020744/reels",
+      "change_status": "needs_review",
+      "validation_issues": [
+        "missing_article_text",
+        "missing_author"
+      ],
+      "cleaning_issues": [
+        "missing_content_blocks",
+        "empty_cleaned_text"
+      ]
+    },
+    {
+      "article_key": "dawn:2041849",
+      "url": "https://www.dawn.com/news/2041849/saudi-aramco-profits-surge-as-middle-east-war-rattles-energy-markets",
+      "change_status": "unchanged",
+      "validation_issues": [
+        "missing_author"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041851",
+      "url": "https://www.dawn.com/news/2041851/irgc-says-two-lucas-drones-downed-over-coastal-area-in-iran",
+      "change_status": "unchanged",
+      "validation_issues": [
+        "missing_author",
+        "short_article_under_50_words"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041852",
+      "url": "https://www.dawn.com/news/2041852/iran-has-right-to-self-defence-after-qeshm-island-strikes-deputy-fm",
+      "change_status": "unchanged",
+      "validation_issues": [
+        "missing_author"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041854",
+      "url": "https://www.dawn.com/news/2041854/iran-outlines-5-conditions-for-regional-security",
+      "change_status": "unchanged",
+      "validation_issues": [
+        "missing_author",
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041855",
+      "url": "https://www.dawn.com/news/2041855/iran-president-says-renewed-us-fighting-will-benefit-no-one",
+      "change_status": "unchanged",
+      "validation_issues": [
+        "missing_author"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041858",
+      "url": "https://www.dawn.com/news/2041858/iran-not-in-a-good-negotiating-position-trump",
+      "change_status": "unchanged",
+      "validation_issues": [
+        "missing_author",
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041857",
+      "url": "https://www.dawn.com/news/2041857/lufthansa-latest-airline-to-flag-ticket-price-hikes-amid-iran-war-energy-shock",
+      "change_status": "unchanged",
+      "validation_issues": [
+        "missing_author"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041862",
+      "url": "https://www.dawn.com/news/2041862/houthis-claim-multiple-missile-strikes-on-saudi-led-forces-in-yemen",
+      "change_status": "unchanged",
+      "validation_issues": [
+        "missing_author",
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041863",
+      "url": "https://www.dawn.com/news/2041863/houthis-claim-two-attacks-on-saudi-airport-airbase",
+      "change_status": "unchanged",
+      "validation_issues": [
+        "missing_author",
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041864",
+      "url": "https://www.dawn.com/news/2041864/iran-says-3-oil-tankers-hit-naval-mines-catch-fire-in-strait-of-hormuz",
+      "change_status": "unchanged",
+      "validation_issues": [
+        "missing_author"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041856",
+      "url": "https://www.dawn.com/news/2041856/ji-and-dar-hold-candid-discussions-on-fuel-relief-agree-to-continue-talks-in-coming-days",
+      "change_status": "unchanged",
+      "validation_issues": [
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041865",
+      "url": "https://www.dawn.com/news/2041865/im-not-looking-to-kill-lots-of-people-but-if-we-have-to-well-have-to-trump-on-iran",
+      "change_status": "unchanged",
+      "validation_issues": [
+        "missing_author",
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041866",
+      "url": "https://www.dawn.com/news/2041866/trump-claims-us-hit-iranian-anti-aircraft-facility-overnight",
+      "change_status": "unchanged",
+      "validation_issues": [
+        "missing_author",
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041867",
+      "url": "https://www.dawn.com/news/2041867/trump-says-us-will-stop-4bn-military-aid-to-israel-at-end-of-2026",
+      "change_status": "unchanged",
+      "validation_issues": [
+        "missing_author",
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041870",
+      "url": "https://www.dawn.com/news/2041870/iran-us-deal-still-out-of-reach-despite-diplomatic-push-iranian-official",
+      "change_status": "unchanged",
+      "validation_issues": [
+        "missing_author"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041868",
+      "url": "https://www.dawn.com/news/2041868/we-made-a-deal-months-ago-trump-says-us-will-stop-4-billion-funding-to-israel-at-end-of-2026",
+      "change_status": "unchanged",
+      "validation_issues": [
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041872",
+      "url": "https://www.dawn.com/news/2041872/iran-not-convinced-by-us-response-to-demands",
+      "change_status": "unchanged",
+      "validation_issues": [
+        "missing_author",
+        "short_article_under_50_words",
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041873",
+      "url": "https://www.dawn.com/news/2041873/photo-us-troops-load-an-artillery-piece-during-a-live-fire-exercise-in-the-middle-east",
+      "change_status": "needs_review",
+      "validation_issues": [
+        "missing_article_text",
+        "missing_author",
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": [
+        "missing_content_blocks",
+        "empty_cleaned_text"
+      ]
+    },
+    {
+      "article_key": "dawn:2041876",
+      "url": "https://www.dawn.com/news/2041876/oil-services-firms-face-major-cost-pressure-from-iran-crisis-execs-say",
+      "change_status": "unchanged",
+      "validation_issues": [
+        "missing_author"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041875",
+      "url": "https://www.dawn.com/news/2041875/soldier-martyred-17-terrorists-killed-in-intelligence-based-operations-in-balochistan-ispr",
+      "change_status": "unchanged",
+      "validation_issues": [
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041860",
+      "url": "https://www.dawn.com/news/2041860/cm-maryam-incensed-at-chaudhry-saliks-claims-of-corruption-in-punjab-sends-him-rs5bn-defamation-notice",
+      "change_status": "unchanged",
+      "validation_issues": [
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041878",
+      "url": "https://www.dawn.com/news/2041878/houthi-spokesperson-claims-further-attacks-on-saudi-led-forces-in-yemen",
+      "change_status": "unchanged",
+      "validation_issues": [
+        "missing_author",
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041881",
+      "url": "https://www.dawn.com/news/2041881/egypts-el-sisi-stresses-need-for-regional-de-escalation-backs-gulf-security",
+      "change_status": "unchanged",
+      "validation_issues": [
+        "missing_author"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041882",
+      "url": "https://www.dawn.com/news/2041882/iran-says-no-new-points-reached-in-talks-but-discussions-ongoing",
+      "change_status": "unchanged",
+      "validation_issues": [
+        "missing_author"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041883",
+      "url": "https://www.dawn.com/news/2041883/oil-prices-slide-about-2pc-to-multi-week-low-amid-peace-talks",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041884",
+      "url": "https://www.dawn.com/news/2041884/9-things-on-us-voters-minds-ahead-of-the-2026-midterm-elections-dawn-news-english",
+      "change_status": "needs_review",
+      "validation_issues": [
+        "missing_article_text",
+        "missing_author"
+      ],
+      "cleaning_issues": [
+        "missing_content_blocks",
+        "empty_cleaned_text"
+      ]
+    },
+    {
+      "article_key": "dawn:2033739",
+      "url": "https://www.dawn.com/news/2033739/fuel-prices",
+      "change_status": "needs_review",
+      "validation_issues": [
+        "missing_article_text",
+        "missing_author"
+      ],
+      "cleaning_issues": [
+        "missing_content_blocks",
+        "empty_cleaned_text"
+      ]
+    },
+    {
+      "article_key": "dawn:2041887",
+      "url": "https://www.dawn.com/news/2041887/irans-nuclear-case-biggest-lie-of-century-baqaei",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041888",
+      "url": "https://www.dawn.com/news/2041888/pakistan-govt-assures-domestic-gas-supply-during-winter-hints-at-fuel-price-relief",
+      "change_status": "needs_review",
+      "validation_issues": [
+        "missing_article_text",
+        "missing_author"
+      ],
+      "cleaning_issues": [
+        "missing_content_blocks",
+        "empty_cleaned_text"
+      ]
+    },
+    {
+      "article_key": "dawn:2041889",
+      "url": "https://www.dawn.com/news/2041889/saudi-arabia-reaffirms-its-commitment-to-firm-response-to-any-threat",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author",
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041891",
+      "url": "https://www.dawn.com/news/2041891/gulf-oil-flows-dip-in-october-from-post-iran-war-high-data-shows",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041892",
+      "url": "https://www.dawn.com/news/2041892/us-democrat-says-trump-desperate-after-announcing-cut-in-israel-aid",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author",
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041842",
+      "url": "https://www.dawn.com/news/2041842/binance-reveals-hackers-used-fake-job-interviews-malicious-code-in-63bn-heist",
+      "change_status": "multiple_changes",
+      "validation_issues": [
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041893",
+      "url": "https://www.dawn.com/news/2041893/drone-intercepted-in-saudi-arabias-eastern-region-coalition",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author",
+        "short_article_under_50_words",
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041894",
+      "url": "https://www.dawn.com/news/2041894/pakistan-iran-border-closure-pushes-lpg-prices-higher-zara-hat-kay-dawn-news",
+      "change_status": "needs_review",
+      "validation_issues": [
+        "missing_article_text",
+        "missing_author"
+      ],
+      "cleaning_issues": [
+        "missing_content_blocks",
+        "empty_cleaned_text"
+      ]
+    },
+    {
+      "article_key": "dawn:2041895",
+      "url": "https://www.dawn.com/news/2041895/rising-lpg-prices-in-pakistan-will-winter-bring-more-hardship-for-consumers-dawn-news",
+      "change_status": "needs_review",
+      "validation_issues": [
+        "missing_article_text",
+        "missing_author"
+      ],
+      "cleaning_issues": [
+        "missing_content_blocks",
+        "empty_cleaned_text"
+      ]
+    },
+    {
+      "article_key": "dawn:2041896",
+      "url": "https://www.dawn.com/news/2041896/another-police-encounter-in-punjab-are-extrajudicial-killings-becoming-systemic-dawn-news",
+      "change_status": "needs_review",
+      "validation_issues": [
+        "missing_article_text",
+        "missing_author"
+      ],
+      "cleaning_issues": [
+        "missing_content_blocks",
+        "empty_cleaned_text"
+      ]
+    },
+    {
+      "article_key": "dawn:2041897",
+      "url": "https://www.dawn.com/news/2041897/us-midterm-elections-results-to-shape-trumps-final-two-years-in-office-dawn-news",
+      "change_status": "needs_review",
+      "validation_issues": [
+        "missing_article_text",
+        "missing_author"
+      ],
+      "cleaning_issues": [
+        "missing_content_blocks",
+        "empty_cleaned_text"
+      ]
+    },
+    {
+      "article_key": "dawn:2041898",
+      "url": "https://www.dawn.com/news/2041898/facing-midterm-defeat-could-trump-launch-another-attack-on-iran-dawn-news",
+      "change_status": "needs_review",
+      "validation_issues": [
+        "missing_article_text",
+        "missing_author"
+      ],
+      "cleaning_issues": [
+        "missing_content_blocks",
+        "empty_cleaned_text"
+      ]
+    },
+    {
+      "article_key": "dawn:2041890",
+      "url": "https://www.dawn.com/news/2041890/pakistans-new-un-envoy-presents-credentials-to-secretary-general-in-new-york",
+      "change_status": "new",
+      "validation_issues": [
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2041921",
+      "url": "https://www.dawn.com/news/2041921/us-midterms-explained-when-will-the-results-come",
+      "change_status": "needs_review",
+      "validation_issues": [
+        "missing_article_text",
+        "missing_author"
+      ],
+      "cleaning_issues": [
+        "missing_content_blocks",
+        "empty_cleaned_text"
+      ]
+    },
+    {
+      "article_key": "dawn:2041885",
+      "url": "https://www.dawn.com/news/2041885/pakistan-successfully-tests-its-first-indigenously-developed-air-to-air-missile-faaz-ispr",
+      "change_status": "new",
+      "validation_issues": [
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": []
+    }
+  ],
+  "item_errors": [],
+  "spider_errors": [],
+  "http_status_counts": {
+    "200": 98,
+    "302": 7
+  },
+  "download_attempt_exceptions": {},
+  "scrapy_stats": {
+    "start_time": "2026-11-04 01:36:41.195009+00:00",
+    "log_count/INFO": 262,
+    "scheduler/enqueued/memory": 104,
+    "scheduler/enqueued": 104,
+    "scheduler/dequeued/memory": 104,
+    "scheduler/dequeued": 104,
+    "downloader/request_count": 105,
+    "downloader/request_method_count/GET": 105,
+    "downloader/request_bytes": 35509,
+    "downloader/response_count": 105,
+    "downloader/response_status_count/200": 98,
+    "downloader/response_bytes": 3636182,
+    "httpcompression/response_bytes": 17488519,
+    "httpcompression/response_count": 98,
+    "response_received_count": 98,
+    "robotstxt/response_count": 1,
+    "robotstxt/response_status_count/200": 1,
+    "robotstxt/request_count": 1,
+    "request_depth_max": 1,
+    "mongodb/snapshots_skipped": 61,
+    "mongodb/articles_unchanged": 61,
+    "item_scraped_count": 93,
+    "log_count/WARNING": 94,
+    "mongodb/snapshots_inserted": 32,
+    "mongodb/snapshot_only": 16,
+    "downloader/response_status_count/302": 7,
+    "offsite/domains": 1,
+    "offsite/filtered": 4,
+    "dawn_sitemap/skipped_section": 2,
+    "mongodb/articles_media_changed": 1,
+    "mongodb/articles_new": 12,
+    "log_count/ERROR": 1,
+    "mongodb/articles_multiple_changes": 3,
+    "elapsed_time_seconds": 403.70300000000134,
+    "finish_time": "2026-11-04 01:43:24.900282+00:00",
+    "finish_reason": "finished",
+    "responses_per_minute": 14.590570719602978,
+    "items_per_minute": 13.846153846153847
+  },
+  "notes": [
+    "requests_total includes robots.txt, listing pages, redirects, retries and article requests.",
+    "failed_requests lists terminal failures reported by the spider errback; retried attempts are separate.",
+    "review flags do not mean a record was dropped; review-only records are retained as snapshots.",
+    "updated_articles excludes new baselines and processing-method changes.",
+    "snapshots_inserted can include baselines and review records; it is not a count of article edits.",
+    "A running summary left behind after a forced termination is incomplete."
+  ]
+}

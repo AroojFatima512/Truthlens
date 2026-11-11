@@ -1,0 +1,115 @@
+2026-10-31 04:27:46,336 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.logcount.LogCount',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.remote_control.RemoteControl',
+ 'truthlens.run_reporting.RunReportingExtension']
+2026-10-31 04:27:46,337 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'truthlens',
+ 'CONCURRENT_REQUESTS': 1,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 1,
+ 'DOWNLOAD_DELAY': 3,
+ 'DOWNLOAD_TIMEOUT': 30,
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'FEED_EXPORT_INDENT': 2,
+ 'LOG_LEVEL': 'INFO',
+ 'NEWSPIDER_MODULE': 'truthlens.spiders',
+ 'ROBOTSTXT_OBEY': True,
+ 'SPIDER_MODULES': ['truthlens.spiders'],
+ 'USER_AGENT': 'TruthLensResearchBot/0.1'}
+2026-10-31 04:27:46,723 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2026-10-31 04:27:46,728 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.start.StartSpiderMiddleware',
+ 'scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware',
+ 'scrapy.spidermiddlewares.metacopy.MetaCopyDetectionMiddleware']
+2026-10-31 04:27:46,862 [scrapy.middleware] INFO: Enabled item pipelines:
+['truthlens.pipelines.CleaningPipeline', 'truthlens.pipelines.MongoDBPipeline']
+2026-10-31 04:27:46,862 [scrapy.core.engine] INFO: Spider opened
+2026-10-31 04:27:46,889 [truthlens.pipelines] INFO: MongoDB connected: database=truthlens
+2026-10-31 04:27:46,890 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2026-10-31 04:27:46,893 [truthlens.run_reporting] INFO: Run started: 20261030T232746Z_1803d62a777546f1957c169454108697 | source=Geo News
+2026-10-31 04:27:46,894 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2026-10-31 04:27:46,898 [scrapy.extensions.remote_control] INFO: Remote control HTTP server listening on port 54463 (job 21456-765494b1b45c4e2387431b1aa318035e)
+2026-10-31 04:27:50,819 [geo_sitemap] INFO: Sitemap: selected 30 article URLs.
+2026-10-31 04:27:55,646 [geo_sitemap] INFO: Skipping section entertainment | https://www.geo.tv/latest/689010-hollywood-arts-season-2-gets-uncertain-update-after-fan-excitement
+2026-10-31 04:27:59,913 [geo_sitemap] INFO: Skipping section entertainment | https://www.geo.tv/latest/689026-kylie-kelce-takes-over-internet-with-taylor-swift-episode-speculations
+2026-10-31 04:28:03,882 [geo_sitemap] INFO: Skipping section entertainment | https://www.geo.tv/latest/689036-spotify-plans-free-dance-party-harryween-for-harry-styles-fans
+2026-10-31 04:28:07,154 [geo_sitemap] INFO: Skipping section entertainment | https://www.geo.tv/latest/689015-a
+2026-10-31 04:28:11,352 [geo_sitemap] INFO: Skipping section entertainment | https://www.geo.tv/latest/689028-ashes-girl-of-your-dreams-tour-sparks-chaos-as-tickets-go-live
+2026-10-31 04:28:14,121 [geo_sitemap] INFO: Skipping section entertainment | https://www.geo.tv/latest/689042-halle-berry-reacts-as-olivier-martinez-retains-primary-custody-of-their-son
+2026-10-31 04:28:17,806 [geo_sitemap] INFO: Skipping section royals | https://www.geo.tv/latest/689039-duchess-sophie-stuns-kate-anne-meghan-with-another-jewel-to-her-crown
+2026-10-31 04:28:21,292 [geo_sitemap] INFO: Skipping section sci-tech | https://www.geo.tv/latest/689043-meta-settles-with-teen-during-trial-testing-claims-social-media-caused-depression-eating-disorders
+2026-10-31 04:28:25,586 [geo_sitemap] INFO: Skipping section viral | https://www.geo.tv/latest/689044-death-stranding-isolations-trailer-released-confirms-disney-premiere-in-2027
+2026-10-31 04:28:29,470 [geo_sitemap] INFO: Skipping section royals | https://www.geo.tv/latest/689046-prince-william-kate-dragged-into-meghans-controversy-with-new-claim
+2026-10-31 04:28:33,471 [geo_sitemap] INFO: Skipping section viral | https://www.geo.tv/latest/689047-wander-francos-182-million-mlb-career-in-jeopardy-as-court-revokes-pardon-is-he-going-to-jail
+2026-10-31 04:28:37,772 [geo_sitemap] INFO: Skipping section entertainment | https://www.geo.tv/latest/689045-j
+2026-10-31 04:28:41,563 [geo_sitemap] INFO: Skipping section entertainment | https://www.geo.tv/latest/689048-b
+2026-10-31 04:28:44,896 [geo_sitemap] INFO: Skipping section viral | https://www.geo.tv/latest/689050-ex-google-engineer-stops-saving-for-retirement-says-ai-could-kill-everyone-by-2036
+2026-10-31 04:28:46,906 [scrapy.extensions.logstats] INFO: Crawled 16 pages (at 16 pages/min), scraped 0 items (at 0 items/min)
+2026-10-31 04:28:48,445 [geo_sitemap] INFO: Skipping section entertainment | https://www.geo.tv/latest/689051-bryce-hall-attacked-by-men-in-shocking-halloween-clash
+2026-10-31 04:28:51,495 [geo_sitemap] INFO: Skipping section royals | https://www.geo.tv/latest/689052-is-this-hand-of-the-king-veteran-shares-touching-moment-with-king-charles
+2026-10-31 04:28:54,548 [geo_sitemap] INFO: Skipping section entertainment | https://www.geo.tv/latest/689049-g
+2026-10-31 04:28:58,388 [geo_sitemap] INFO: Skipping section entertainment | https://www.geo.tv/latest/689063-tim-mcgraw-clarifies-his-role-in-taylor-swift-and-travis-kelces-wedding
+2026-10-31 04:29:02,859 [geo_sitemap] INFO: Skipping section viral | https://www.geo.tv/latest/689065-dont-poke-russia-pentagon-warns-european-allies-against-provoking-putin
+2026-10-31 04:29:06,007 [geo_sitemap] INFO: Skipping section royals | https://www.geo.tv/latest/689059-king-charles-leaves-hosts-laughing-after-receiving-a-special-royal-welcome-gift
+2026-10-31 04:29:09,995 [geo_sitemap] INFO: Skipping section entertainment | https://www.geo.tv/latest/689068-harry-potter-series-casts-sorting-hat-fat-lady-and-more
+2026-10-31 04:29:14,284 [geo_sitemap] INFO: Skipping section entertainment | https://www.geo.tv/latest/689064-k
+2026-10-31 04:29:15,934 [geo_sitemap] INFO: Skipping section royals | https://www.geo.tv/latest/689069-royal-familys-remembrance-sunday-plans-revealed-as-king-charles-leads-tributes
+2026-10-31 04:29:18,661 [geo_sitemap] INFO: Extracted article: https://www.geo.tv/latest/689070-pakistan-cautiously-optimistic-on-iran-us-mediation-says-dg-ispr | images=1 | videos=0
+2026-10-31 04:29:18,664 [truthlens.pipelines] INFO: Cleaned article: geo:689070 | characters=3157 | hash=4920225c3abb
+2026-10-31 04:29:18,683 [truthlens.pipelines] INFO: MongoDB new: geo:689070 | version=1 | fields=none
+2026-10-31 04:29:22,942 [geo_sitemap] INFO: Skipping section entertainment | https://www.geo.tv/latest/689072-margaret-qualley-jack-antonoff-divorce
+2026-10-31 04:29:24,945 [geo_sitemap] INFO: Skipping section entertainment | https://www.geo.tv/latest/689077-brooklyn-beckham-addresses-nicola-peltz-marriage-hate-i-dont-care
+2026-10-31 04:29:28,563 [geo_sitemap] INFO: Skipping section entertainment | https://www.geo.tv/latest/689078-jessica-lange-hints-at-retirement-coming-to-an-end
+2026-10-31 04:29:32,201 [geo_sitemap] INFO: Skipping section royals | https://www.geo.tv/latest/689071-prince-edward-returns-to-royal-duties-with-special-anniversary-celebration-at-palace
+2026-10-31 04:29:36,266 [geo_sitemap] INFO: Skipping section royals | https://www.geo.tv/latest/689073-king-charles-finds-shady-spot-before-hearing-first-ladys-plans-at-seawall
+2026-10-31 04:29:38,991 [geo_sitemap] INFO: Skipping section entertainment | https://www.geo.tv/latest/689079-party-rock-anthem-singer-lauren-bennetts-death-suicide
+2026-10-31 04:29:38,992 [scrapy.core.engine] INFO: Closing spider (finished)
+2026-10-31 04:29:38,994 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 13006,
+ 'downloader/request_count': 32,
+ 'downloader/request_method_count/GET': 32,
+ 'downloader/response_bytes': 789207,
+ 'downloader/response_count': 32,
+ 'downloader/response_status_count/200': 32,
+ 'elapsed_time_seconds': 112.11000000000058,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2026, 10, 30, 23, 29, 38, 994936, tzinfo=datetime.timezone.utc),
+ 'geo_sitemap/skipped_section': 29,
+ 'httpcompression/response_bytes': 4201973,
+ 'httpcompression/response_count': 32,
+ 'item_scraped_count': 1,
+ 'items_per_minute': 0.5357142857142857,
+ 'log_count/INFO': 39,
+ 'mongodb/articles_new': 1,
+ 'mongodb/snapshots_inserted': 1,
+ 'request_depth_max': 1,
+ 'response_received_count': 32,
+ 'responses_per_minute': 17.142857142857142,
+ 'robotstxt/request_count': 1,
+ 'robotstxt/response_count': 1,
+ 'robotstxt/response_status_count/200': 1,
+ 'scheduler/dequeued': 31,
+ 'scheduler/dequeued/memory': 31,
+ 'scheduler/enqueued': 31,
+ 'scheduler/enqueued/memory': 31,
+ 'start_time': datetime.datetime(2026, 10, 30, 23, 27, 46, 890139, tzinfo=datetime.timezone.utc)}
+2026-10-31 04:29:38,996 [scrapy.core.engine] INFO: Spider closed (finished)
+2026-10-31 04:29:39,000 [truthlens.run_reporting] INFO: Run summary saved: logs\runs\20261030T232746Z_1803d62a777546f1957c169454108697.json | status=completed

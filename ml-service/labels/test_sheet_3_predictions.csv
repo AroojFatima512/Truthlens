@@ -1,0 +1,301 @@
+row,article_key,source,category,deberta_p_biased,deberta_bias,second_p_biased,second_bias,sentiment_model,stratum
+1,aaj:330479004,Aaj News,health,0.0015,N,,,neu,news
+2,nation:2026-11-02-dishonesty-s-short-life,The Nation,news,0.997,B,,,neg,opinion
+3,tribune:2638139,Express Tribune,opinion,0.0017,N,,,neg,opinion
+4,tribune:2638533,Express Tribune,lifestyle,0.0018,N,,,neu,news
+5,aaj:330479263,Aaj News,technology,0.0016,N,,,neu,news
+6,dawn:2041776,Dawn,news,0.0072,N,,,neu,opinion
+7,aaj:330479300,Aaj News,opinion,0.0315,N,,,neu,opinion
+8,tribune:2638255,Express Tribune,sports,0.0018,N,,,neu,news
+9,geo:689764,Geo News,world,0.0022,N,,,neu,news
+10,aaj:330479162,Aaj News,pakistan,0.0015,N,,,neu,news
+11,geo:689651,Geo News,news,0.9969,B,,,neg,opinion
+12,geo:689524,Geo News,news,0.002,N,,,neg,opinion
+13,geo:689469,Geo News,news,0.0027,N,,,neg,opinion
+14,tribune:2638631,Express Tribune,lifestyle,0.0015,N,,,pos,news
+15,dawn:2041838,Dawn,news,0.0015,N,,,neu,news
+16,tribune:2638150,Express Tribune,lifestyle,0.1333,N,,,neu,news
+17,dawn:2041879,Dawn,sports,0.0023,N,,,neg,news
+18,geo:689491,Geo News,sports,0.0033,N,,,neg,news
+19,tribune:2638134,Express Tribune,opinion,0.9955,B,,,neu,opinion
+20,dawn:2041504,Dawn,news,0.9972,B,,,neg,opinion
+21,nation:2026-11-02-shared-heritage,The Nation,news,0.0088,N,,,neu,opinion
+22,nation:2026-11-02-dishonesty-s-short-life,The Nation,news,0.9955,B,,,pos,opinion
+23,tribune:2638377,Express Tribune,pakistan,0.0018,N,,,pos,news
+24,aaj:330479150,Aaj News,other,0.0015,N,,,neu,news
+25,aaj:330478952,Aaj News,technology,0.0019,N,,,neu,news
+26,nation:2026-11-02-punjab-s-economic-pivot,The Nation,news,0.002,N,,,neu,opinion
+27,geo:689631,Geo News,business,0.0018,N,,,neu,news
+28,dawn:2041504,Dawn,news,0.0015,N,,,neg,opinion
+29,tribune:2638290,Express Tribune,lifestyle,0.6807,B,,,pos,news
+30,dawn:2041805,Dawn,news,0.0015,N,,,neu,news
+31,geo:689524,Geo News,news,0.0018,N,,,neu,opinion
+32,nation:2026-11-03-manifesto-national-preparation,The Nation,news,0.996,B,,,neu,opinion
+33,dawn:2041506,Dawn,world,0.9954,B,,,neu,opinion
+34,geo:689587,Geo News,offbeat,0.0017,N,,,neu,news
+35,aaj:330478981,Aaj News,sports,0.0017,N,,,neg,news
+36,nation:2026-11-04-russia-offers-scholarships-international-students-open-doors-olympiad,The Nation,education,0.0019,N,,,neu,news
+37,nation:2026-11-03-commissioner-reviews-polio-campaign-dengue-surveillance,The Nation,news,0.0015,N,,,neu,news
+38,geo:689275,Geo News,pakistan,0.0432,N,,,neu,news
+39,geo:689764,Geo News,world,0.0016,N,,,pos,news
+40,nation:2026-11-02-dishonesty-s-short-life,The Nation,news,0.8948,B,,,pos,opinion
+41,dawn:2041582,Dawn,other,0.0024,N,,,pos,news
+42,dawn:2041506,Dawn,world,0.9952,B,,,neg,opinion
+43,aaj:330479328,Aaj News,pakistan,0.0048,N,,,pos,news
+44,dawn:2042105,Dawn,business,0.0016,N,,,neu,news
+45,dawn:2041838,Dawn,news,0.0015,N,,,neu,news
+46,tribune:2638137,Express Tribune,opinion,0.9443,B,,,pos,opinion
+47,tribune:2638300,Express Tribune,opinion,0.9969,B,,,neg,opinion
+48,nation:2026-11-03-lahore-records-hazardous-air-quality-aqi-reaches-530,The Nation,news,0.002,N,,,neu,news
+49,tribune:2638473,Express Tribune,technology,0.0016,N,,,pos,news
+50,tribune:2638134,Express Tribune,opinion,0.0024,N,,,neu,opinion
+51,tribune:2638302,Express Tribune,opinion,0.7534,B,,,neu,opinion
+52,aaj:330478959,Aaj News,other,0.0016,N,,,neg,news
+53,nation:2026-11-03-pakistan-india-world-cup-clash-receives-8-4-million-ticket-applications,The Nation,sports,0.0016,N,,,neu,news
+54,aaj:330478978,Aaj News,opinion,0.0017,N,,,neu,opinion
+55,aaj:330479075,Aaj News,world,0.0015,N,,,neu,news
+56,tribune:2638147,Express Tribune,business,0.4128,N,,,neu,news
+57,tribune:2638689,Express Tribune,opinion,0.0024,N,,,neg,opinion
+58,nation:2026-11-04-russia-offers-scholarships-international-students-open-doors-olympiad,The Nation,education,0.0021,N,,,pos,news
+59,nation:2026-11-03-manifesto-national-preparation,The Nation,news,0.9851,B,,,neg,opinion
+60,tribune:2638341,Express Tribune,other,0.0015,N,,,neu,news
+61,tribune:2638631,Express Tribune,lifestyle,0.0033,N,,,pos,news
+62,geo:689325,Geo News,entertainment,0.0021,N,,,pos,news
+63,dawn:2041504,Dawn,news,0.0042,N,,,neg,opinion
+64,geo:689286,Geo News,entertainment,0.1511,N,,,pos,news
+65,dawn:2041608,Dawn,world,0.0015,N,,,neg,news
+66,dawn:2041913,Dawn,pakistan,0.0021,N,,,neu,news
+67,tribune:2638689,Express Tribune,opinion,0.8175,B,,,neu,opinion
+68,dawn:2041582,Dawn,other,0.002,N,,,pos,news
+69,dawn:2042096,Dawn,news,0.0015,N,,,neu,news
+70,geo:689747,Geo News,sports,0.0017,N,,,pos,news
+71,nation:2026-11-04-local-cement-despatches-1-17pc-october,The Nation,news,0.0016,N,,,neu,news
+72,nation:2026-11-04-trump-links-midterm-defeat-voter-unhappiness-fuel-costs-iran-war,The Nation,world,0.0016,N,,,neu,news
+73,tribune:2638689,Express Tribune,opinion,0.9958,B,,,neg,opinion
+74,dawn:2042096,Dawn,news,0.0015,N,,,neg,news
+75,tribune:2638253,Express Tribune,lifestyle,0.0017,N,,,pos,news
+76,nation:2026-11-02-shared-heritage,The Nation,news,0.997,B,,,neg,opinion
+77,geo:689747,Geo News,sports,0.0016,N,,,neu,news
+78,geo:689701,Geo News,offbeat,0.0017,N,,,pos,news
+79,nation:2026-11-04-tale-two-countries,The Nation,news,0.0301,N,,,neu,opinion
+80,nation:2026-11-02-quaid-e-azam-trophy-begin-november-3-20-regional-teams,The Nation,sports,0.002,N,,,neu,news
+81,dawn:2041804,Dawn,other,0.0017,N,,,pos,news
+82,tribune:2638134,Express Tribune,opinion,0.9924,B,,,neg,opinion
+83,aaj:330479300,Aaj News,opinion,0.9409,B,,,pos,opinion
+84,tribune:2638137,Express Tribune,opinion,0.0018,N,,,neu,opinion
+85,dawn:2041832,Dawn,technology,0.0015,N,,,neu,news
+86,geo:689270,Geo News,health,0.002,N,,,neg,news
+87,aaj:330479162,Aaj News,pakistan,0.0015,N,,,neu,news
+88,nation:2026-11-03-ecostar-s-qd-mini-led-lineup-brings-cinema-sports-gaming-life-world-way,The Nation,technology,0.0019,N,,,pos,news
+89,dawn:2041506,Dawn,world,0.0025,N,,,neu,opinion
+90,geo:689347,Geo News,business,0.0024,N,,,pos,news
+91,geo:689657,Geo News,world,0.0017,N,,,neu,news
+92,tribune:2638689,Express Tribune,opinion,0.9948,B,,,neu,opinion
+93,dawn:2041493,Dawn,business,0.0121,N,,,neg,opinion
+94,nation:2026-11-02-dishonesty-s-short-life,The Nation,news,0.0038,N,,,neu,opinion
+95,geo:689601,Geo News,offbeat,0.0015,N,,,neu,news
+96,geo:689491,Geo News,sports,0.0017,N,,,neu,news
+97,tribune:2638473,Express Tribune,technology,0.0016,N,,,neu,news
+98,aaj:330478978,Aaj News,opinion,0.0019,N,,,neu,opinion
+99,nation:2026-11-04-tale-two-countries,The Nation,news,0.0018,N,,,neu,opinion
+100,aaj:330478978,Aaj News,opinion,0.994,B,,,neg,opinion
+101,geo:689524,Geo News,news,0.0017,N,,,neg,opinion
+102,tribune:2638301,Express Tribune,opinion,0.9964,B,,,neg,opinion
+103,dawn:2042049,Dawn,technology,0.0017,N,,,pos,news
+104,aaj:330479296,Aaj News,opinion,0.9955,B,,,neu,opinion
+105,dawn:2041791,Dawn,opinion,0.9951,B,,,neg,opinion
+106,aaj:330479296,Aaj News,opinion,0.0025,N,,,neg,opinion
+107,geo:689316,Geo News,offbeat,0.0021,N,,,pos,news
+108,aaj:330479304,Aaj News,other,0.0019,N,,,neu,news
+109,geo:689311,Geo News,news,0.9961,B,,,neg,opinion
+110,dawn:2041859,Dawn,sports,0.952,B,,,pos,news
+111,dawn:2041886,Dawn,business,0.0018,N,,,neu,news
+112,geo:689534,Geo News,technology,0.0016,N,,,neu,news
+113,tribune:2638533,Express Tribune,lifestyle,0.0021,N,,,neu,news
+114,dawn:2041653,Dawn,business,0.0016,N,,,neu,news
+115,tribune:2638609,Express Tribune,entertainment,0.0016,N,,,neu,news
+116,aaj:330479179,Aaj News,world,0.0016,N,,,neu,news
+117,geo:689270,Geo News,health,0.0016,N,,,neu,news
+118,aaj:330479179,Aaj News,world,0.0021,N,,,neu,news
+119,nation:2026-11-02-punjab-s-economic-pivot,The Nation,news,0.2866,N,,,neu,opinion
+120,geo:689456,Geo News,technology,0.0015,N,,,neu,news
+121,geo:689657,Geo News,world,0.0017,N,,,pos,news
+122,nation:2026-11-04-tale-two-countries,The Nation,news,0.0022,N,,,neg,opinion
+123,tribune:2638440,Express Tribune,entertainment,0.0016,N,,,pos,news
+124,tribune:2638258,Express Tribune,lifestyle,0.0016,N,,,neu,news
+125,tribune:2638139,Express Tribune,opinion,0.9968,B,,,neg,opinion
+126,geo:689450,Geo News,offbeat,0.0016,N,,,neu,news
+127,aaj:330478981,Aaj News,sports,0.0016,N,,,neu,news
+128,tribune:2638435,Express Tribune,entertainment,0.0017,N,,,pos,news
+129,dawn:2041776,Dawn,news,0.9974,B,,,pos,opinion
+130,tribune:2638218,Express Tribune,world,0.0016,N,,,neu,news
+131,tribune:2638218,Express Tribune,world,0.002,N,,,neu,news
+132,tribune:2638140,Express Tribune,opinion,0.997,B,,,neg,opinion
+133,geo:689347,Geo News,business,0.0017,N,,,neu,news
+134,dawn:2041504,Dawn,news,0.0019,N,,,neu,opinion
+135,dawn:2041608,Dawn,world,0.0015,N,,,neu,news
+136,geo:689651,Geo News,news,0.9776,B,,,neg,opinion
+137,dawn:2041837,Dawn,pakistan,0.0017,N,,,neu,news
+138,tribune:2638440,Express Tribune,entertainment,0.0015,N,,,pos,news
+139,nation:2026-11-02-maryam-nawaz-gives-15-day-deadline-improve-cleanliness-across-punjab,The Nation,pakistan,0.0015,N,,,neu,news
+140,dawn:2041791,Dawn,opinion,0.0018,N,,,neu,opinion
+141,geo:689483,Geo News,offbeat,0.0015,N,,,neu,news
+142,tribune:2638435,Express Tribune,entertainment,0.0035,N,,,pos,news
+143,tribune:2638153,Express Tribune,lifestyle,0.0058,N,,,pos,news
+144,nation:2026-11-04-hailey-bieber-opens-health-battle-following-son-jack-s-birth,The Nation,entertainment,0.0018,N,,,pos,news
+145,nation:2026-11-03-china-s-solar-technology-plan-signals-new-phase-global-renewable-energy-industry,The Nation,business,0.0019,N,,,neu,news
+146,tribune:2638496,Express Tribune,business,0.0017,N,,,pos,news
+147,geo:689563,Geo News,pakistan,0.0015,N,,,neu,news
+148,nation:2026-11-04-mikaeel-makes-history-pakistan-wins-itf-j100-singles-title,The Nation,news,0.0018,N,,,neu,news
+149,geo:689456,Geo News,technology,0.0015,N,,,neg,news
+150,tribune:2638496,Express Tribune,business,0.0018,N,,,neg,news
+151,aaj:330479300,Aaj News,opinion,0.214,N,,,neu,opinion
+152,nation:2026-11-03-china-s-solar-technology-plan-signals-new-phase-global-renewable-energy-industry,The Nation,business,0.0017,N,,,neu,news
+153,tribune:2638258,Express Tribune,lifestyle,0.0039,N,,,pos,news
+154,tribune:2638545,Express Tribune,world,0.0018,N,,,neu,news
+155,tribune:2638214,Express Tribune,pakistan,0.0019,N,,,neg,news
+156,dawn:2041913,Dawn,pakistan,0.006,N,,,neg,news
+157,dawn:2041791,Dawn,opinion,0.0018,N,,,neg,opinion
+158,aaj:330479328,Aaj News,pakistan,0.002,N,,,neu,news
+159,dawn:2041776,Dawn,news,0.9958,B,,,neu,opinion
+160,dawn:2041776,Dawn,news,0.994,B,,,neu,opinion
+161,geo:689746,Geo News,offbeat,0.0017,N,,,neu,news
+162,dawn:2042019,Dawn,world,0.0018,N,,,pos,news
+163,tribune:2638341,Express Tribune,other,0.0044,N,,,neg,news
+164,dawn:2041839,Dawn,other,0.0024,N,,,pos,news
+165,geo:689701,Geo News,offbeat,0.0016,N,,,neu,news
+166,tribune:2638137,Express Tribune,opinion,0.0378,N,,,pos,opinion
+167,tribune:2638494,Express Tribune,business,0.0016,N,,,neu,news
+168,tribune:2638139,Express Tribune,opinion,0.8581,B,,,pos,opinion
+169,nation:2026-11-02-shared-heritage,The Nation,news,0.1431,N,,,neu,opinion
+170,dawn:2041493,Dawn,business,0.9957,B,,,neg,opinion
+171,tribune:2638653,Express Tribune,lifestyle,0.0078,N,,,neg,news
+172,tribune:2638475,Express Tribune,technology,0.0024,N,,,neu,news
+173,aaj:330479300,Aaj News,opinion,0.941,B,,,pos,opinion
+174,tribune:2638609,Express Tribune,entertainment,0.0039,N,,,pos,news
+175,nation:2026-11-02-dishonesty-s-short-life,The Nation,news,0.0572,N,,,neg,opinion
+176,tribune:2638494,Express Tribune,business,0.0017,N,,,neu,news
+177,geo:689311,Geo News,news,0.9965,B,,,neu,opinion
+178,nation:2026-11-04-trump-links-midterm-defeat-voter-unhappiness-fuel-costs-iran-war,The Nation,world,0.0017,N,,,neg,news
+179,dawn:2041506,Dawn,world,0.0017,N,,,neg,opinion
+180,tribune:2638147,Express Tribune,business,0.0266,N,,,neu,news
+181,nation:2026-11-02-punjab-s-economic-pivot,The Nation,news,0.0018,N,,,pos,opinion
+182,nation:2026-11-02-maryam-nawaz-gives-15-day-deadline-improve-cleanliness-across-punjab,The Nation,pakistan,0.0015,N,,,neu,news
+183,aaj:330479150,Aaj News,other,0.0017,N,,,neu,news
+184,geo:689469,Geo News,news,0.002,N,,,neu,opinion
+185,geo:689587,Geo News,offbeat,0.0014,N,,,neu,news
+186,nation:2026-11-01-anti-encroachment-drive-continues-kohat,The Nation,news,0.002,N,,,neu,news
+187,dawn:2041859,Dawn,sports,0.0018,N,,,pos,news
+188,nation:2026-11-03-gold-prices-remain-unchanged-silver-rates-decline,The Nation,business,0.0019,N,,,neu,news
+189,nation:2026-11-03-manifesto-national-preparation,The Nation,news,0.981,B,,,neu,opinion
+190,tribune:2638457,Express Tribune,entertainment,0.0016,N,,,neu,news
+191,aaj:330478953,Aaj News,sports,0.0022,N,,,neu,news
+192,tribune:2638301,Express Tribune,opinion,0.995,B,,,neg,opinion
+193,dawn:2041791,Dawn,opinion,0.997,B,,,neg,opinion
+194,dawn:2041506,Dawn,world,0.0021,N,,,neg,opinion
+195,tribune:2638290,Express Tribune,lifestyle,0.0044,N,,,pos,news
+196,geo:689524,Geo News,news,0.0016,N,,,neg,opinion
+197,aaj:330479157,Aaj News,other,0.0118,N,,,neu,news
+198,nation:2026-11-03-manifesto-national-preparation,The Nation,news,0.0017,N,,,neu,opinion
+199,aaj:330479013,Aaj News,other,0.002,N,,,neg,news
+200,aaj:330478991,Aaj News,lifestyle,0.0017,N,,,pos,news
+201,aaj:330479300,Aaj News,opinion,0.6683,B,,,neg,opinion
+202,tribune:2638268,Express Tribune,lifestyle,0.5651,B,,,pos,news
+203,geo:689524,Geo News,news,0.0017,N,,,neg,opinion
+204,nation:2026-11-03-gold-prices-remain-unchanged-silver-rates-decline,The Nation,business,0.0017,N,,,neu,news
+205,geo:689275,Geo News,pakistan,0.0021,N,,,neu,news
+206,tribune:2638268,Express Tribune,lifestyle,0.9645,B,,,pos,news
+207,geo:689286,Geo News,entertainment,0.0031,N,,,neu,news
+208,aaj:330479157,Aaj News,other,0.0016,N,,,pos,news
+209,geo:689589,Geo News,offbeat,0.0016,N,,,neu,news
+210,aaj:330478978,Aaj News,opinion,0.0023,N,,,neu,opinion
+211,tribune:2638137,Express Tribune,opinion,0.004,N,,,pos,opinion
+212,geo:689761,Geo News,offbeat,0.0016,N,,,neu,news
+213,dawn:2041879,Dawn,sports,0.0017,N,,,neg,news
+214,nation:2026-11-03-pakistan-india-world-cup-clash-receives-8-4-million-ticket-applications,The Nation,sports,0.0019,N,,,neu,news
+215,dawn:2041493,Dawn,business,0.9946,B,,,neu,opinion
+216,nation:2026-11-02-ai-models-mostly-smarter-top-scientists-openai-s-altman-says,The Nation,entertainment,0.0018,N,,,pos,news
+217,geo:689311,Geo News,news,0.8836,B,,,neu,opinion
+218,dawn:2042019,Dawn,world,0.0016,N,,,neu,news
+219,geo:689483,Geo News,offbeat,0.0016,N,,,neu,news
+220,geo:689325,Geo News,entertainment,0.5833,B,,,pos,news
+221,nation:2026-11-04-mikaeel-makes-history-pakistan-wins-itf-j100-singles-title,The Nation,news,0.0106,N,,,pos,news
+222,tribune:2638255,Express Tribune,sports,0.0019,N,,,neu,news
+223,aaj:330479075,Aaj News,world,0.0016,N,,,neu,news
+224,dawn:2041886,Dawn,business,0.0016,N,,,neg,news
+225,geo:689746,Geo News,offbeat,0.0056,N,,,neg,news
+226,tribune:2638139,Express Tribune,opinion,0.9957,B,,,neg,opinion
+227,tribune:2638134,Express Tribune,opinion,0.0032,N,,,neu,opinion
+228,aaj:330479304,Aaj News,other,0.002,N,,,neu,news
+229,geo:689469,Geo News,news,0.6547,B,,,neu,opinion
+230,dawn:2041837,Dawn,pakistan,0.0016,N,,,neu,news
+231,aaj:330479263,Aaj News,technology,0.0017,N,,,neu,news
+232,nation:2026-11-02-ai-models-mostly-smarter-top-scientists-openai-s-altman-says,The Nation,entertainment,0.0018,N,,,pos,news
+233,geo:689469,Geo News,news,0.9695,B,,,neu,opinion
+234,tribune:2638377,Express Tribune,pakistan,0.0015,N,,,pos,news
+235,geo:689311,Geo News,news,0.9972,B,,,neg,opinion
+236,dawn:2041653,Dawn,business,0.0017,N,,,neu,news
+237,tribune:2638301,Express Tribune,opinion,0.9973,B,,,neg,opinion
+238,aaj:330479296,Aaj News,opinion,0.0018,N,,,neu,opinion
+239,tribune:2638457,Express Tribune,entertainment,0.0016,N,,,neu,news
+240,geo:689601,Geo News,offbeat,0.0022,N,,,neu,news
+241,nation:2026-11-03-ecostar-s-qd-mini-led-lineup-brings-cinema-sports-gaming-life-world-way,The Nation,technology,0.0028,N,,,pos,news
+242,geo:689469,Geo News,news,0.997,B,,,neu,opinion
+243,nation:2026-11-02-shared-heritage,The Nation,news,0.0035,N,,,neu,opinion
+244,tribune:2638137,Express Tribune,opinion,0.5772,B,,,pos,opinion
+245,nation:2026-11-02-punjab-s-economic-pivot,The Nation,news,0.0019,N,,,neu,opinion
+246,nation:2026-11-03-uzbekistan-s-namangan-invites-pakistani-tourists-explore-pilgrimage-routes,The Nation,entertainment,0.0021,N,,,neu,news
+247,nation:2026-11-02-shared-heritage,The Nation,news,0.0906,N,,,neu,opinion
+248,geo:689371,Geo News,entertainment,0.002,N,,,neg,news
+249,dawn:2041580,Dawn,news,0.0017,N,,,neu,news
+250,nation:2026-11-03-commissioner-reviews-polio-campaign-dengue-surveillance,The Nation,news,0.0015,N,,,neu,news
+251,geo:689534,Geo News,technology,0.0016,N,,,pos,news
+252,aaj:330479004,Aaj News,health,0.0016,N,,,neu,news
+253,nation:2026-11-03-uzbekistan-s-namangan-invites-pakistani-tourists-explore-pilgrimage-routes,The Nation,entertainment,0.0021,N,,,pos,news
+254,tribune:2638545,Express Tribune,world,0.002,N,,,neg,news
+255,dawn:2041799,Dawn,news,0.0016,N,,,neg,news
+256,geo:689316,Geo News,offbeat,0.002,N,,,neu,news
+257,dawn:2041504,Dawn,news,0.0038,N,,,neu,opinion
+258,aaj:330478953,Aaj News,sports,0.0021,N,,,neg,news
+259,tribune:2638301,Express Tribune,opinion,0.9874,B,,,neg,opinion
+260,aaj:330478978,Aaj News,opinion,0.9964,B,,,neg,opinion
+261,tribune:2638153,Express Tribune,lifestyle,0.0015,N,,,neu,news
+262,dawn:2042105,Dawn,business,0.0015,N,,,neu,news
+263,aaj:330478952,Aaj News,technology,0.0015,N,,,neu,news
+264,geo:689311,Geo News,news,0.9965,B,,,neu,opinion
+265,dawn:2041493,Dawn,business,0.0018,N,,,pos,opinion
+266,tribune:2638150,Express Tribune,lifestyle,0.0016,N,,,neu,news
+267,tribune:2638301,Express Tribune,opinion,0.9968,B,,,neg,opinion
+268,dawn:2041839,Dawn,other,0.0019,N,,,pos,news
+269,aaj:330478959,Aaj News,other,0.0026,N,,,neu,news
+270,tribune:2638139,Express Tribune,opinion,0.9963,B,,,neg,opinion
+271,tribune:2638134,Express Tribune,opinion,0.9959,B,,,neu,opinion
+272,aaj:330478991,Aaj News,lifestyle,0.2067,N,,,neu,news
+273,dawn:2041832,Dawn,technology,0.0017,N,,,neu,news
+274,nation:2026-11-01-anti-encroachment-drive-continues-kohat,The Nation,news,0.0212,N,,,pos,news
+275,nation:2026-11-03-lahore-records-hazardous-air-quality-aqi-reaches-530,The Nation,news,0.002,N,,,neg,news
+276,aaj:330479296,Aaj News,opinion,0.6574,B,,,neg,opinion
+277,geo:689651,Geo News,news,0.9971,B,,,neg,opinion
+278,nation:2026-11-04-tale-two-countries,The Nation,news,0.0018,N,,,neg,opinion
+279,geo:689371,Geo News,entertainment,0.002,N,,,neg,news
+280,geo:689563,Geo News,pakistan,0.0017,N,,,neu,news
+281,tribune:2638475,Express Tribune,technology,0.0015,N,,,neu,news
+282,tribune:2638689,Express Tribune,opinion,0.9907,B,,,neu,opinion
+283,tribune:2638653,Express Tribune,lifestyle,0.0018,N,,,neu,news
+284,nation:2026-11-04-tale-two-countries,The Nation,news,0.0019,N,,,neg,opinion
+285,nation:2026-11-02-punjab-s-economic-pivot,The Nation,news,0.002,N,,,neu,opinion
+286,tribune:2638214,Express Tribune,pakistan,0.0016,N,,,neg,news
+287,aaj:330479013,Aaj News,other,0.0017,N,,,neg,news
+288,dawn:2041791,Dawn,opinion,0.0015,N,,,neu,opinion
+289,dawn:2041804,Dawn,other,0.0019,N,,,neu,news
+290,geo:689761,Geo News,offbeat,0.0018,N,,,neu,news
+291,nation:2026-11-02-quaid-e-azam-trophy-begin-november-3-20-regional-teams,The Nation,sports,0.002,N,,,neu,news
+292,tribune:2638253,Express Tribune,lifestyle,0.0018,N,,,pos,news
+293,dawn:2042049,Dawn,technology,0.0022,N,,,pos,news
+294,nation:2026-11-03-manifesto-national-preparation,The Nation,news,0.9956,B,,,neu,opinion
+295,geo:689651,Geo News,news,0.997,B,,,neu,opinion
+296,geo:689631,Geo News,business,0.0016,N,,,neu,news
+297,nation:2026-11-04-hailey-bieber-opens-health-battle-following-son-jack-s-birth,The Nation,entertainment,0.0017,N,,,neg,news
+298,geo:689589,Geo News,offbeat,0.0511,N,,,neu,news
+299,aaj:330479296,Aaj News,opinion,0.0693,N,,,neu,opinion
+300,geo:689450,Geo News,offbeat,0.0016,N,,,neg,news

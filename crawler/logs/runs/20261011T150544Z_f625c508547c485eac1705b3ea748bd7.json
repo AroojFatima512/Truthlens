@@ -1,0 +1,101 @@
+{
+  "schema_version": "truthlens-run-v1",
+  "run_id": "20261011T150544Z_f625c508547c485eac1705b3ea748bd7",
+  "source": "Dawn",
+  "spider": "dawn_news",
+  "status": "completed_with_review_items",
+  "finish_reason": "finished",
+  "started_at": "2026-10-11T15:05:44.553998+00:00",
+  "finished_at": "2026-10-11T15:06:29.002608+00:00",
+  "duration_seconds": 44.449,
+  "log_file": "logs\\runs\\20261011T150544Z_f625c508547c485eac1705b3ea748bd7.log",
+  "counts": {
+    "requests_total": 12,
+    "responses_total": 12,
+    "retry_attempts": 0,
+    "items_processed": 7,
+    "new_articles": 7,
+    "unchanged_articles": 0,
+    "updated_articles": 0,
+    "baselines_created": 0,
+    "processing_changes": 0,
+    "snapshots_inserted": 7,
+    "snapshots_skipped": 0,
+    "review_only_records": 0,
+    "records_with_review_flags": 2,
+    "stale_observations": 0,
+    "replayed_observations": 0,
+    "rejected_records": 0,
+    "failed_requests": 0,
+    "item_errors": 0,
+    "spider_errors": 0
+  },
+  "failed_requests": [],
+  "rejected_records": [],
+  "review_records": [
+    {
+      "article_key": "dawn:2036352",
+      "url": "https://www.dawn.com/news/2036352/emergency-governors-rule-imposed-in-kp-as-president-approves-cabinet-decision",
+      "change_status": "new",
+      "validation_issues": [
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2036382",
+      "url": "https://www.dawn.com/news/2036382/soldier-martyred-12-terrorists-killed-as-security-forces-foil-infiltration-attempt-in-kurram-ispr",
+      "change_status": "new",
+      "validation_issues": [
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": []
+    }
+  ],
+  "item_errors": [],
+  "spider_errors": [],
+  "http_status_counts": {
+    "200": 12
+  },
+  "download_attempt_exceptions": {},
+  "scrapy_stats": {
+    "start_time": "2026-10-11 15:05:45.545630+00:00",
+    "log_count/INFO": 30,
+    "scheduler/enqueued/memory": 11,
+    "scheduler/enqueued": 11,
+    "scheduler/dequeued/memory": 11,
+    "scheduler/dequeued": 11,
+    "downloader/request_count": 12,
+    "downloader/request_method_count/GET": 12,
+    "downloader/request_bytes": 3935,
+    "downloader/response_count": 12,
+    "downloader/response_status_count/200": 12,
+    "downloader/response_bytes": 390545,
+    "httpcompression/response_bytes": 1912649,
+    "httpcompression/response_count": 12,
+    "response_received_count": 12,
+    "robotstxt/response_count": 1,
+    "robotstxt/response_status_count/200": 1,
+    "robotstxt/request_count": 1,
+    "request_depth_max": 1,
+    "log_count/WARNING": 2,
+    "mongodb/snapshots_inserted": 7,
+    "mongodb/articles_new": 7,
+    "item_scraped_count": 7,
+    "dawn/skipped_non_pakistan": 3,
+    "elapsed_time_seconds": 43.43202240000028,
+    "finish_time": "2026-10-11 15:06:28.977650+00:00",
+    "finish_reason": "finished",
+    "responses_per_minute": 16.74418604651163,
+    "items_per_minute": 9.767441860465116,
+    "feedexport/success_count/FileFeedStorage": 1
+  },
+  "notes": [
+    "requests_total includes robots.txt, listing pages, redirects, retries and article requests.",
+    "failed_requests lists terminal failures reported by the spider errback; retried attempts are separate.",
+    "review flags do not mean a record was dropped; review-only records are retained as snapshots.",
+    "updated_articles excludes new baselines and processing-method changes.",
+    "snapshots_inserted can include baselines and review records; it is not a count of article edits.",
+    "A running summary left behind after a forced termination is incomplete."
+  ]
+}

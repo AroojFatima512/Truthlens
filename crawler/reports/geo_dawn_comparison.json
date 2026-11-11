@@ -1,0 +1,630 @@
+{
+  "method": "word_multiset_dice_greedy_v1",
+  "pair_selection": "manual",
+  "generated_at": "2026-10-11T09:56:58.136450+00:00",
+  "threshold": 0.45,
+  "left": {
+    "article_key": "geo:685964",
+    "author": "Web Desk",
+    "published_at": "2026-10-10T22:57:00+05:00",
+    "updated_at": "2026-10-10T23:26:41+05:00",
+    "crawled_at": "2026-10-10T19:47:46.686268+00:00",
+    "version_number": 1,
+    "content_hash": "2e2ecf34b8f4d79b2b02b426fcc6f064e6c4adb55454d0e46e701214d4c76aaf",
+    "state_hash": "c748be62b2333059ba4cdf5b4575ddc5429de3a6a31f670ef8927ae0cdd22358",
+    "validation_issues": [],
+    "cleaning_issues": []
+  },
+  "right": {
+    "article_key": "dawn:2036160",
+    "author": "News Desk",
+    "published_at": "2026-10-10 17:23:33+05:00",
+    "updated_at": "2026-10-11 00:01:10+05:00",
+    "crawled_at": "2026-10-10T19:31:25.289050+00:00",
+    "version_number": 1,
+    "content_hash": "497164431437a84f0cefcebb0bc9201c8cb233a82317162a7abd46e9c68e525b",
+    "state_hash": "62e672feed4a932a33203a33a57c046d995ed78596b20f66c2daa571266f4a11",
+    "validation_issues": [
+      "tweet_text_missing"
+    ],
+    "cleaning_issues": []
+  },
+  "matched_pairs": 4,
+  "paragraph_matches": [
+    {
+      "left_index": 1,
+      "right_index": null,
+      "left_text": "Cabinet meeting scheduled for Sunday morning: sources.",
+      "right_text": "",
+      "word_overlap": null
+    },
+    {
+      "left_index": 2,
+      "right_index": 3,
+      "left_text": "NA and Senate sessions to be summoned on Oct 13.",
+      "right_text": "NA, Senate sessions summoned on Tuesday",
+      "word_overlap": 0.625
+    },
+    {
+      "left_index": 3,
+      "right_index": null,
+      "left_text": "Section 144 imposed across Rawalpindi for one month.",
+      "right_text": "",
+      "word_overlap": null
+    },
+    {
+      "left_index": 4,
+      "right_index": null,
+      "left_text": "The federal government has decided to impose an emergency in Khyber Pakhtunkhwa amid the Pakistan Tehreek-e-Insaf’s (PTI) long march towards Islamabad, said well-informed sources on Saturday.",
+      "right_text": "",
+      "word_overlap": null
+    },
+    {
+      "left_index": 5,
+      "right_index": null,
+      "left_text": "The development came during a meeting between Prime Minister Shehbaz Sharif and President Asif Ali Zardari at Aiwan-e-Sadr.",
+      "right_text": "",
+      "word_overlap": null
+    },
+    {
+      "left_index": 6,
+      "right_index": 8,
+      "left_text": "The premier was accompanied by Deputy Prime Minister and Foreign Minister Ishaq Dar, Adviser to the Prime Minister on Political Affairs Rana Sanaullah, Interior Minister Mohsin Naqvi, Law Minister Azam Nazeer Tarar and others.",
+      "right_text": "A statement issued by the President House said the premier was accompanied by Deputy Prime Minister and Foreign Minister Ishaq Dar, Adviser to the PM on Political Affairs Rana Sanaullah, Interior Minister Mohsin Naqvi, Attorney General for Pakistan Mansoor Usman Awan and Law Minister Azam Nazeer Tarar.",
+      "word_overlap": 0.7654320987654321
+    },
+    {
+      "left_index": 7,
+      "right_index": 9,
+      "left_text": "PPP’s Senator Sherry Rehman, Syed Naveed Qamar, Senator Saleem Mandviwalla and Dr Asim Hussain were also present on the occasion.",
+      "right_text": "It said that PPP’s Sherry Rehman and Syed Naveed Qamar were also present.",
+      "word_overlap": 0.6285714285714286
+    },
+    {
+      "left_index": 8,
+      "right_index": 10,
+      "left_text": "“It was agreed in the meeting to convene separate sessions of the National Assembly and Senate on October 13,” read a statement issued by the President House.",
+      "right_text": "“It was agreed during the meeting to convene separate sessions of the National Assembly and the Senate on Tuesday (Oct 13),” the statement said.",
+      "word_overlap": 0.7450980392156863
+    },
+    {
+      "left_index": 9,
+      "right_index": null,
+      "left_text": "The insiders said that the federal cabinet meeting sought for 9:30am on Sunday to approve emergency in KP.",
+      "right_text": "",
+      "word_overlap": null
+    },
+    {
+      "left_index": 10,
+      "right_index": null,
+      "left_text": "Meanwhile, PM Shehbaz telephoned Jamiat Ulema-e-Islam (JUI-F) Chief Maulana Fazlur Rehman and congratulated him on performing Umrah.",
+      "right_text": "",
+      "word_overlap": null
+    },
+    {
+      "left_index": 11,
+      "right_index": null,
+      "left_text": "The PM invited the JUI-F chief to a meeting at the Prime Minister’s House, which the latter accepted.",
+      "right_text": "",
+      "word_overlap": null
+    },
+    {
+      "left_index": 12,
+      "right_index": null,
+      "left_text": "During the meeting, the JUI-F chief once again suggested to the premier to hold talks with PTI to end the ongoing political crisis in the country.",
+      "right_text": "",
+      "word_overlap": null
+    },
+    {
+      "left_index": 13,
+      "right_index": null,
+      "left_text": "He suggested resolving the issue through negotiations rather than imposing governor’s rule or an emergency in KP, the insiders added.",
+      "right_text": "",
+      "word_overlap": null
+    },
+    {
+      "left_index": 14,
+      "right_index": null,
+      "left_text": "He reiterated his support for meaningful talks between the government and the PTI to find a way forward.",
+      "right_text": "",
+      "word_overlap": null
+    },
+    {
+      "left_index": 15,
+      "right_index": null,
+      "left_text": "The prime minister briefed the JUI-F chief in detail on the government’s efforts to engage in dialogue with the opposition.",
+      "right_text": "",
+      "word_overlap": null
+    },
+    {
+      "left_index": 16,
+      "right_index": null,
+      "left_text": "PM Shehbaz said the government was making every possible effort to resolve the matter through mutual understanding, sources added.",
+      "right_text": "",
+      "word_overlap": null
+    },
+    {
+      "left_index": 17,
+      "right_index": null,
+      "left_text": "The JUI-F chief urged the prime minister to take his party’s core committee into confidence over the matter.",
+      "right_text": "",
+      "word_overlap": null
+    },
+    {
+      "left_index": 18,
+      "right_index": null,
+      "left_text": "He has sought more time from the PM to consult the opposition and PTI on resolving the ongoing political impasse, the sources added.",
+      "right_text": "",
+      "word_overlap": null
+    },
+    {
+      "left_index": 19,
+      "right_index": null,
+      "left_text": "The JUI-F chief, later, contacted opposition leaders and the PTI leadership in Islamabad.",
+      "right_text": "",
+      "word_overlap": null
+    },
+    {
+      "left_index": 20,
+      "right_index": null,
+      "left_text": "Federal cabinet to decide on KP emergency",
+      "right_text": "",
+      "word_overlap": null
+    },
+    {
+      "left_index": 21,
+      "right_index": null,
+      "left_text": "Speaking on Geo News programme 'Naya Pakistan', KP Governor Faisal Karim Kundi said that no official decision has been taken on imposing an emergency or governor's rule in the province.",
+      "right_text": "",
+      "word_overlap": null
+    },
+    {
+      "left_index": 22,
+      "right_index": null,
+      "left_text": "The governor said that said the federal cabinet would decide on Sunday whether to impose an emergency, governor's rule or both.",
+      "right_text": "",
+      "word_overlap": null
+    },
+    {
+      "left_index": 23,
+      "right_index": null,
+      "left_text": "The governor also criticised KP Chief Minister Sohail Afridi, saying he should resign if he could not protect the people of his province.",
+      "right_text": "",
+      "word_overlap": null
+    },
+    {
+      "left_index": 24,
+      "right_index": null,
+      "left_text": "Responding to a question, Kundi ruled out the possibility of further talks with the province's ruling party, the PTI.",
+      "right_text": "",
+      "word_overlap": null
+    },
+    {
+      "left_index": 25,
+      "right_index": null,
+      "left_text": "The governor said several PTI members were either under arrest or surrendering themselves.",
+      "right_text": "",
+      "word_overlap": null
+    },
+    {
+      "left_index": 26,
+      "right_index": null,
+      "left_text": "He alleged that the party did not want dialogue and questioned whether it could be considered a political party. Kundi further accused the PTI of engaging in talks only through confrontation and unrest.",
+      "right_text": "",
+      "word_overlap": null
+    },
+    {
+      "left_index": 27,
+      "right_index": null,
+      "left_text": "No room left to avoid emergency: Naqvi",
+      "right_text": "",
+      "word_overlap": null
+    },
+    {
+      "left_index": 28,
+      "right_index": null,
+      "left_text": "Severalty, Interior Minister Mohsin Naqvi said that there appears to be little room left to avoid an emergency, responding to a journalist’s question during an informal conversation with reporters.",
+      "right_text": "",
+      "word_overlap": null
+    },
+    {
+      "left_index": 29,
+      "right_index": null,
+      "left_text": "\"Is there any room left for an emergency not to be imposed?\" Naqvi remarked in response to a question.",
+      "right_text": "",
+      "word_overlap": null
+    },
+    {
+      "left_index": 30,
+      "right_index": null,
+      "left_text": "The interior minister asked them to suggest how the situation could be averted. He urged them to ask the relevant parties how many efforts he had made to find a solution.",
+      "right_text": "",
+      "word_overlap": null
+    },
+    {
+      "left_index": 31,
+      "right_index": null,
+      "left_text": "\"They themselves will tell you how far I went in my efforts to resolve the matter,\" Naqvi said.",
+      "right_text": "",
+      "word_overlap": null
+    },
+    {
+      "left_index": 32,
+      "right_index": null,
+      "left_text": "The interior minister added that no room for further options remained, according to his informal remarks to journalists.",
+      "right_text": "",
+      "word_overlap": null
+    },
+    {
+      "left_index": 33,
+      "right_index": null,
+      "left_text": "Section 144 imposed in Rawalpindi for one month",
+      "right_text": "",
+      "word_overlap": null
+    },
+    {
+      "left_index": 34,
+      "right_index": null,
+      "left_text": "Section 144 has been imposed across Rawalpindi district for one month, from October 10 to November 8, according to an official notification.",
+      "right_text": "",
+      "word_overlap": null
+    },
+    {
+      "left_index": 35,
+      "right_index": null,
+      "left_text": "Under the notification, public gatherings, rallies, processions, sit-ins and protests have been banned. The gathering of five or more people is also prohibited.",
+      "right_text": "",
+      "word_overlap": null
+    },
+    {
+      "left_index": 36,
+      "right_index": null,
+      "left_text": "The restrictions further ban carrying weapons, sticks and petrol bombs. Double riding on motorcycles and the use of loudspeakers have also been prohibited.",
+      "right_text": "",
+      "word_overlap": null
+    },
+    {
+      "left_index": 37,
+      "right_index": null,
+      "left_text": "According to the notification, Section 144 has been enforced in view of security concerns across the district.",
+      "right_text": "",
+      "word_overlap": null
+    },
+    {
+      "left_index": 38,
+      "right_index": null,
+      "left_text": "Legal action will be taken against those found violating the restrictions, the notification stated.",
+      "right_text": "",
+      "word_overlap": null
+    },
+    {
+      "left_index": 39,
+      "right_index": null,
+      "left_text": "PTI-led KP government and the federal government have been odds over various issues, particularly on the counter-terrorism policy. The federal government has repeatedly asked the PTI and the provincial government in KP to shun “extremist” politics and back the Centre’s anti-terrorism policy but has failed to receive a clear, positive response.",
+      "right_text": "",
+      "word_overlap": null
+    },
+    {
+      "left_index": 40,
+      "right_index": null,
+      "left_text": "In addition to this, the Imran Khan founded-parity, on October 4, launched a protest march towards the federal capital aimed at seeking the release of its jailed founding chairman Khan and what it describes as the restoration of constitutional supremacy.",
+      "right_text": "",
+      "word_overlap": null
+    },
+    {
+      "left_index": 41,
+      "right_index": null,
+      "left_text": "Khan, who has been in jail since August 2023, faces multiple cases ranging from corruption to terrorism since his ouster from power via the opposition's no-trust motion in April 2022.",
+      "right_text": "",
+      "word_overlap": null
+    },
+    {
+      "left_index": null,
+      "right_index": 1,
+      "left_text": "",
+      "right_text": "Key developments",
+      "word_overlap": null
+    },
+    {
+      "left_index": null,
+      "right_index": 2,
+      "left_text": "",
+      "right_text": "PM Shehbaz, President Zardari discuss country’s security and political situation",
+      "word_overlap": null
+    },
+    {
+      "left_index": null,
+      "right_index": 4,
+      "left_text": "",
+      "right_text": "KP Governor Kundi, Interior Minister Naqvi meet President Zardari",
+      "word_overlap": null
+    },
+    {
+      "left_index": null,
+      "right_index": 5,
+      "left_text": "",
+      "right_text": "PM and JUI-F chief speak on reducing tensions between Centre, KP govt; two also hold meeting at PM House",
+      "word_overlap": null
+    },
+    {
+      "left_index": null,
+      "right_index": 6,
+      "left_text": "",
+      "right_text": "Minister calls possible imposition of emergency a “last resort” but says things headed towards “last option”",
+      "word_overlap": null
+    },
+    {
+      "left_index": null,
+      "right_index": 7,
+      "left_text": "",
+      "right_text": "Prime Minister Shehbaz Sharif on Saturday met with President Asif Ali Zardari, with the country’s overall security and political situation coming under discussion as the federal government mulls imposing an emergency in Khyber Pakhtunkhwa.",
+      "word_overlap": null
+    },
+    {
+      "left_index": null,
+      "right_index": 11,
+      "left_text": "",
+      "right_text": "Later, KP Governor Faisal Karim Kundi and Naqvi called on President Zardari in a separate meeting, the President House said.",
+      "word_overlap": null
+    },
+    {
+      "left_index": null,
+      "right_index": 12,
+      "left_text": "",
+      "right_text": "The president was briefed on the country’s “overall security situation, particularly the worsening law and order situation” in KP. He was also informed about KP’s “security and matters relating to law and order in the country”.",
+      "word_overlap": null
+    },
+    {
+      "left_index": null,
+      "right_index": 13,
+      "left_text": "",
+      "right_text": "Sharing a video on X, Kundi wrote, “KP has sacrificed enough. Protecting lives and defeating terrorism must take precedence over political interests.”",
+      "word_overlap": null
+    },
+    {
+      "left_index": null,
+      "right_index": 14,
+      "left_text": "",
+      "right_text": "Earlier in the day, Minister for Kashmir Affairs and Gilgit-Baltistan Amir Muqam had also met Kundi at Governor House in Peshawar.",
+      "word_overlap": null
+    },
+    {
+      "left_index": null,
+      "right_index": 15,
+      "left_text": "",
+      "right_text": "The flurry of meetings followed heightened tensions between the PML-N-led federal government and the KP government led by the PTI — which is in opposition in the Centre. They have been at odds over various issues, particularly on the counterterrorism policy, which was one of the main reasons behind the breakdown of their Oct 3 talks.",
+      "word_overlap": null
+    },
+    {
+      "left_index": null,
+      "right_index": 16,
+      "left_text": "",
+      "right_text": "The PTI has said it was being left out of security decisions concerning KP, which the Centre has denied. It also calls for reviewing the counterterrorism policy, while the latter criticises the KP government’s efforts to combat terrorism in the province and objects to its stance on dialogue with the Afghan Taliban.",
+      "word_overlap": null
+    },
+    {
+      "left_index": null,
+      "right_index": 17,
+      "left_text": "",
+      "right_text": "In recent days, federal ministers have assailed the PTI for staging a protest long march, which it has been warned against, at a time when KP faces security challenges. They have also linked differences over the counterterrorism policy with the possibility of an emergency or governor’s rule in KP.",
+      "word_overlap": null
+    },
+    {
+      "left_index": null,
+      "right_index": 18,
+      "left_text": "",
+      "right_text": "Earlier on Saturday, Information Minister Attaullah Tarar assailed the KP government over a “lack of governance” in the province, alleging that the provincial administration was given Rs700 billion under the National Finance Commission for development projects.",
+      "word_overlap": null
+    },
+    {
+      "left_index": null,
+      "right_index": 19,
+      "left_text": "",
+      "right_text": "“You did not upgrade the Counter Terrorism Department, did not establish forensic labs, did not install safe city cameras, which should be installed in the merged districts and all the entry-exit points of KP’s districts,” he alleged.",
+      "word_overlap": null
+    },
+    {
+      "left_index": null,
+      "right_index": 20,
+      "left_text": "",
+      "right_text": "The information minister claimed that the PTI was instead spending this money on organising protests.",
+      "word_overlap": null
+    },
+    {
+      "left_index": null,
+      "right_index": 21,
+      "left_text": "",
+      "right_text": "Minister says things headed toward ‘last option’",
+      "word_overlap": null
+    },
+    {
+      "left_index": null,
+      "right_index": 22,
+      "left_text": "",
+      "right_text": "Speaking to Geo News on Saturday, Minister of State for Interior Affairs Tallal Chaudhry said that consultations were ongoing when asked about the imposition of an emergency in KP.",
+      "word_overlap": null
+    },
+    {
+      "left_index": null,
+      "right_index": 23,
+      "left_text": "",
+      "right_text": "“This is something that requires comprehensive consultations,” he said. “This is not something we are in favour of as we are a democratic government, and this is a last resort.”",
+      "word_overlap": null
+    },
+    {
+      "left_index": null,
+      "right_index": 24,
+      "left_text": "",
+      "right_text": "Chaudhry added that multiple options were being examined at different levels but questioned what other avenues were available, with the PTI failing to fulfil the federal government’s requests to cooperate in the fight against terrorism, and inciting people and speaking against national policy during the ongoing long march.",
+      "word_overlap": null
+    },
+    {
+      "left_index": null,
+      "right_index": 25,
+      "left_text": "",
+      "right_text": "“Again, I say consultations are ongoing, and this is a last resort. The options before this, such as talks and backdoor discussions … we tried everything. We will try to make sure we think through this last step if there is no other option, but it looks like things are headed towards the last option,” he stressed.",
+      "word_overlap": null
+    },
+    {
+      "left_index": null,
+      "right_index": 26,
+      "left_text": "",
+      "right_text": "The state minister added that ties with the PTI remained in place, as they are the opposition in parliament and currently govern KP.",
+      "word_overlap": null
+    },
+    {
+      "left_index": null,
+      "right_index": 27,
+      "left_text": "",
+      "right_text": "“I previously said that during the second round of talks, the interior minister met the prime minister and told him that the KP government is ready to cooperate in fighting terrorism,” Chaudhry recounted.",
+      "word_overlap": null
+    },
+    {
+      "left_index": null,
+      "right_index": 28,
+      "left_text": "",
+      "right_text": "“The prime minister told him to give KP whatever they need to fight terrorism on a political level, but they had to gather with us to fight terrorism and stand with our security forces.”",
+      "word_overlap": null
+    },
+    {
+      "left_index": null,
+      "right_index": 29,
+      "left_text": "",
+      "right_text": "Chaudhry added that the federal government gave the PTI relevance and space, even at the expense of the ruling PML-N’s political goals, and that the government was not focused on politics but on the state and maintaining peace.",
+      "word_overlap": null
+    },
+    {
+      "left_index": null,
+      "right_index": 30,
+      "left_text": "",
+      "right_text": "“We are ready to give everything and we have no ego. Whether we are in the government or opposition, our ego is Pakistan and it is not bigger than Pakistan,” he emphasised.",
+      "word_overlap": null
+    },
+    {
+      "left_index": null,
+      "right_index": 31,
+      "left_text": "",
+      "right_text": "“We hoped that we could do this together and on a single platform, but how many martyrs are the prime minister and chief of army staff going to carry on their shoulders? These people [the PTI] are not ready to carry the burden with us or stand with us, so what other option is left?”",
+      "word_overlap": null
+    },
+    {
+      "left_index": null,
+      "right_index": 32,
+      "left_text": "",
+      "right_text": "PM speaks to Fazl on reducing tensions between Centre, KP govt",
+      "word_overlap": null
+    },
+    {
+      "left_index": null,
+      "right_index": 33,
+      "left_text": "",
+      "right_text": "Separately, Jamiat Ulema-i-Islam—Fazl (JUI-F) chief Maulana Fazlur Rehman met PM Shehbaz in Islamabad after the two discussed reducing tensions between the Centre and the KP government during a phone call.",
+      "word_overlap": null
+    },
+    {
+      "left_index": null,
+      "right_index": 34,
+      "left_text": "",
+      "right_text": "According to a statement from the Prime Minister Office (PMO), the two held consultations on “important national and political matters”.",
+      "word_overlap": null
+    },
+    {
+      "left_index": null,
+      "right_index": 35,
+      "left_text": "",
+      "right_text": "An earlier statement by the JUI-F confirmed that Fazl had departed for the talks on the “country’s political situation”.",
+      "word_overlap": null
+    },
+    {
+      "left_index": null,
+      "right_index": 36,
+      "left_text": "",
+      "right_text": "JUI-F spokesperson Aslam Ghauri, in the statement, said Fazl also took the “PTI leadership into confidence” before heading for the meeting with the prime minister.",
+      "word_overlap": null
+    },
+    {
+      "left_index": null,
+      "right_index": 37,
+      "left_text": "",
+      "right_text": "An earlier statement from the PMO said PM Shehbaz had called the JUI-F chief and congratulated him on performing Umrah and extended an invitation for talks at the Prime Minister House.",
+      "word_overlap": null
+    },
+    {
+      "left_index": null,
+      "right_index": 38,
+      "left_text": "",
+      "right_text": "The two also discussed reducing tensions between the Centre and the KP government during the phone call, the statement said.",
+      "word_overlap": null
+    },
+    {
+      "left_index": null,
+      "right_index": 39,
+      "left_text": "",
+      "right_text": "The phone call follows recent contacts between Fazl, known for his engagement with politicians from across the board, and the opposition.",
+      "word_overlap": null
+    },
+    {
+      "left_index": null,
+      "right_index": 40,
+      "left_text": "",
+      "right_text": "On Tuesday, TTAP leaders called on Fazl at his residence, following which the veteran politician advised the federal government not to obstruct the PTI long march heading towards Islamabad, as protests were a democratic right enjoyed by all political parties.",
+      "word_overlap": null
+    },
+    {
+      "left_index": null,
+      "right_index": 41,
+      "left_text": "",
+      "right_text": "The next day, PM’s Adviser on Political Affairs Rana Sanaullah, Parliamentary Affairs Minister Tariq Fazal Chaudhry and National Assembly Speaker Ayaz Sadiq met the JUI-F chief.",
+      "word_overlap": null
+    },
+    {
+      "left_index": null,
+      "right_index": 42,
+      "left_text": "",
+      "right_text": "On Thursday, PTI MNA Junaid Akbar confirmed that Fazl had offered to play a role in ending the deadlock between the government and opposition, adding that the PTI’s “doors are open” to it.",
+      "word_overlap": null
+    },
+    {
+      "left_index": null,
+      "right_index": 43,
+      "left_text": "",
+      "right_text": "Speaking on Geo News, Akbar had said no framework had been put forward by Fazl regarding his role in the negotiations, although he noted that the JUI-F chief had been in touch with PTI leadership while he was away for Umrah.",
+      "word_overlap": null
+    },
+    {
+      "left_index": null,
+      "right_index": 44,
+      "left_text": "",
+      "right_text": "The same day, Defence Minister Khawaja Asif also hinted at efforts to restart negotiations between the Centre and the opposition, saying, “I wish a positive result comes out of the efforts of those involved in the talks. But, I have little hope.”",
+      "word_overlap": null
+    },
+    {
+      "left_index": null,
+      "right_index": 45,
+      "left_text": "",
+      "right_text": "Speaking to Dawn, JUI-F spokesman Aslam Ghauri said his party chief was playing the role of a “facilitator, not a mediator”.",
+      "word_overlap": null
+    },
+    {
+      "left_index": null,
+      "right_index": 46,
+      "left_text": "",
+      "right_text": "He distinguished the two roles by saying that a mediator would have the authority from opposition parties to make their own decision in light of their demands.",
+      "word_overlap": null
+    },
+    {
+      "left_index": null,
+      "right_index": 47,
+      "left_text": "",
+      "right_text": "“It is our (JUI-F’s) priority to bring both sides on table for resumption of talks,” he added, pointing out that they had urged the government to call a multi-party conference in Parliament House, where political and security issues should be discussed.",
+      "word_overlap": null
+    },
+    {
+      "left_index": null,
+      "right_index": 48,
+      "left_text": "",
+      "right_text": "The JUI-F leader said sitting at the table would benefit both sides, though the resumption of dialogue would mostly benefit the PTI because the KP government is “virtually being run by someone else and not by Chief Minister Sohail Afridi”.",
+      "word_overlap": null
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+fastapi>=0.110
+uvicorn[standard]>=0.29
+pydantic>=2.5
+numpy>=1.26
+torch>=2.2
+transformers>=4.44
+sentencepiece>=0.2
+protobuf>=4.25
+tokenizers>=0.19
+sentence-transformers>=3.0
+spacy>=3.7
+captum>=0.7
+# import script
+requests>=2.31
+pymongo>=4.6

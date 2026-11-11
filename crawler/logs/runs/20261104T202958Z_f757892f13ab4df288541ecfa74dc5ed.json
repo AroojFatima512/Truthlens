@@ -1,0 +1,101 @@
+{
+  "schema_version": "truthlens-run-v1",
+  "run_id": "20261104T202958Z_f757892f13ab4df288541ecfa74dc5ed",
+  "source": "Geo News",
+  "spider": "geo_sitemap",
+  "status": "completed_with_review_items",
+  "finish_reason": "finished",
+  "started_at": "2026-11-04T20:29:58.850873+00:00",
+  "finished_at": "2026-11-04T20:36:08.921027+00:00",
+  "duration_seconds": 370.07,
+  "log_file": "logs\\runs\\20261104T202958Z_f757892f13ab4df288541ecfa74dc5ed.log",
+  "counts": {
+    "requests_total": 102,
+    "responses_total": 102,
+    "retry_attempts": 0,
+    "items_processed": 100,
+    "new_articles": 96,
+    "unchanged_articles": 3,
+    "updated_articles": 0,
+    "baselines_created": 0,
+    "processing_changes": 0,
+    "snapshots_inserted": 97,
+    "snapshots_skipped": 3,
+    "review_only_records": 1,
+    "records_with_review_flags": 1,
+    "stale_observations": 0,
+    "replayed_observations": 0,
+    "rejected_records": 0,
+    "failed_requests": 0,
+    "item_errors": 0,
+    "spider_errors": 0
+  },
+  "failed_requests": [],
+  "rejected_records": [],
+  "review_records": [
+    {
+      "article_key": "geo:689700",
+      "url": "https://www.geo.tv/latest/689700-fact-check-does-viral-video-show-pakistani-soldiers-deployed-at-jeddah-airport",
+      "change_status": "needs_review",
+      "validation_issues": [
+        "missing_body_container",
+        "missing_article_text",
+        "missing_subheadline",
+        "missing_published_at",
+        "missing_updated_at",
+        "missing_or_invalid_canonical"
+      ],
+      "cleaning_issues": [
+        "missing_content_blocks",
+        "empty_cleaned_text"
+      ]
+    }
+  ],
+  "item_errors": [],
+  "spider_errors": [],
+  "http_status_counts": {
+    "200": 102
+  },
+  "download_attempt_exceptions": {},
+  "scrapy_stats": {
+    "start_time": "2026-11-04 20:30:01.387896+00:00",
+    "log_count/INFO": 311,
+    "scheduler/enqueued/memory": 101,
+    "scheduler/enqueued": 101,
+    "scheduler/dequeued/memory": 101,
+    "scheduler/dequeued": 101,
+    "downloader/request_count": 102,
+    "downloader/request_method_count/GET": 102,
+    "downloader/request_bytes": 40462,
+    "downloader/response_count": 102,
+    "downloader/response_status_count/200": 102,
+    "downloader/response_bytes": 2613586,
+    "httpcompression/response_bytes": 13861872,
+    "httpcompression/response_count": 102,
+    "response_received_count": 102,
+    "robotstxt/response_count": 1,
+    "robotstxt/response_status_count/200": 1,
+    "robotstxt/request_count": 1,
+    "request_depth_max": 1,
+    "mongodb/snapshots_skipped": 3,
+    "mongodb/articles_unchanged": 3,
+    "item_scraped_count": 100,
+    "mongodb/snapshots_inserted": 97,
+    "mongodb/articles_new": 96,
+    "log_count/WARNING": 7,
+    "mongodb/snapshot_only": 1,
+    "elapsed_time_seconds": 367.53199999999924,
+    "finish_time": "2026-11-04 20:36:08.916329+00:00",
+    "finish_reason": "finished",
+    "responses_per_minute": 16.675749318801092,
+    "items_per_minute": 16.348773841961854
+  },
+  "notes": [
+    "requests_total includes robots.txt, listing pages, redirects, retries and article requests.",
+    "failed_requests lists terminal failures reported by the spider errback; retried attempts are separate.",
+    "review flags do not mean a record was dropped; review-only records are retained as snapshots.",
+    "updated_articles excludes new baselines and processing-method changes.",
+    "snapshots_inserted can include baselines and review records; it is not a count of article edits.",
+    "A running summary left behind after a forced termination is incomplete."
+  ]
+}

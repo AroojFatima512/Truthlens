@@ -1,0 +1,161 @@
+{
+  "schema_version": "truthlens-run-v1",
+  "run_id": "20261111T055538Z_1858a989925b43f2a49be4661da80d39",
+  "source": "Dawn",
+  "spider": "dawn_sitemap",
+  "status": "completed_with_errors",
+  "finish_reason": "finished",
+  "started_at": "2026-11-11T05:55:38.066801+00:00",
+  "finished_at": "2026-11-11T06:02:00.974382+00:00",
+  "duration_seconds": 382.908,
+  "log_file": "logs\\runs\\20261111T055538Z_1858a989925b43f2a49be4661da80d39.log",
+  "counts": {
+    "requests_total": 108,
+    "responses_total": 108,
+    "retry_attempts": 0,
+    "items_processed": 89,
+    "new_articles": 86,
+    "unchanged_articles": 3,
+    "updated_articles": 0,
+    "baselines_created": 0,
+    "processing_changes": 0,
+    "snapshots_inserted": 86,
+    "snapshots_skipped": 3,
+    "review_only_records": 0,
+    "records_with_review_flags": 8,
+    "stale_observations": 0,
+    "replayed_observations": 0,
+    "rejected_records": 0,
+    "failed_requests": 0,
+    "item_errors": 0,
+    "spider_errors": 0
+  },
+  "failed_requests": [],
+  "rejected_records": [],
+  "review_records": [
+    {
+      "article_key": "dawn:2043722",
+      "url": "https://www.dawn.com/news/2043722/oil-rises-from-two-month-low-as-hormuz-shipping-attacks-offset-iran-truce-hopes",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2043723",
+      "url": "https://www.dawn.com/news/2043723/russian-and-iranian-diplomats-discuss-middle-east-conflicts-in-moscow",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2043724",
+      "url": "https://www.dawn.com/news/2043724/us-house-blocks-bid-to-impeach-defence-secretary-hegseth",
+      "change_status": "new",
+      "validation_issues": [
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2043736",
+      "url": "https://www.dawn.com/news/2043736/irans-pezeshkian-to-raise-us-israeli-environmental-crimes-at-cop31",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2043737",
+      "url": "https://www.dawn.com/news/2043737/read-us-house-blocks-bid-to-impeach-defence-secretary-hegseth",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2043738",
+      "url": "https://www.dawn.com/news/2043738/were-here-to-do-a-job-aoc-criticises-democrats-for-missing-hegseth-impeachment-vote",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2043743",
+      "url": "https://www.dawn.com/news/2043743/us-treasury-chief-bessent-moved-to-military-base-after-iranian-threats-reports",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2043745",
+      "url": "https://www.dawn.com/news/2043745/transit-strike-over-high-fuel-prices-blocks-roads-in-chile",
+      "change_status": "new",
+      "validation_issues": [
+        "missing_author"
+      ],
+      "cleaning_issues": []
+    }
+  ],
+  "item_errors": [],
+  "spider_errors": [],
+  "http_status_counts": {
+    "200": 92,
+    "302": 16
+  },
+  "download_attempt_exceptions": {},
+  "scrapy_stats": {
+    "start_time": "2026-11-11 05:55:38.796316+00:00",
+    "log_count/INFO": 280,
+    "scheduler/enqueued/memory": 107,
+    "scheduler/enqueued": 107,
+    "scheduler/dequeued/memory": 107,
+    "scheduler/dequeued": 107,
+    "downloader/request_count": 108,
+    "downloader/request_method_count/GET": 108,
+    "downloader/request_bytes": 35424,
+    "downloader/response_count": 108,
+    "downloader/response_status_count/200": 92,
+    "downloader/response_bytes": 3667343,
+    "httpcompression/response_bytes": 17432387,
+    "httpcompression/response_count": 92,
+    "response_received_count": 92,
+    "robotstxt/response_count": 1,
+    "robotstxt/response_status_count/200": 1,
+    "robotstxt/request_count": 1,
+    "request_depth_max": 1,
+    "mongodb/snapshots_inserted": 86,
+    "mongodb/articles_new": 86,
+    "item_scraped_count": 89,
+    "log_count/WARNING": 8,
+    "downloader/response_status_count/302": 16,
+    "mongodb/snapshots_skipped": 3,
+    "mongodb/articles_unchanged": 3,
+    "offsite/domains": 2,
+    "offsite/filtered": 5,
+    "dupefilter/filtered": 5,
+    "log_count/ERROR": 1,
+    "elapsed_time_seconds": 382.17199999999957,
+    "finish_time": "2026-11-11 06:02:00.967931+00:00",
+    "finish_reason": "finished",
+    "responses_per_minute": 14.450261780104713,
+    "items_per_minute": 13.979057591623038
+  },
+  "notes": [
+    "requests_total includes robots.txt, listing pages, redirects, retries and article requests.",
+    "failed_requests lists terminal failures reported by the spider errback; retried attempts are separate.",
+    "review flags do not mean a record was dropped; review-only records are retained as snapshots.",
+    "updated_articles excludes new baselines and processing-method changes.",
+    "snapshots_inserted can include baselines and review records; it is not a count of article edits.",
+    "A running summary left behind after a forced termination is incomplete."
+  ]
+}
