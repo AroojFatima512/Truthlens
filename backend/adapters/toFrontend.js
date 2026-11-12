@@ -172,18 +172,32 @@ function toComparison(cmpDoc, keyA, keyB) {
   // every reworded sentence, with its word changes seen from A (left) to B (right)
   const flip = (ops) => (ops || []).map((o) => ({ op: o.op === 'insert' ? 'delete' : o.op === 'delete' ? 'insert' : o.op, a: o.b, b: o.a }));
   const orient = (ops) => (swapped ? flip(ops) : (ops || []));
-  const sentencePairs = (pair.reworded_sentences || []).map((m) => ({
-    aIndex: m[sideA], bIndex: m[sideB],
-    aText: artA.sentences[m[sideA]], bText: artB.sentences[m[sideB]],
-    similarity: m.similarity ?? null,
-    ops: orient(m.diff),
-  })).sort((x, y) => x.aIndex - y.aIndex);
+  // similarity = how close the two sentences are in MEANING (Sentence-BERT), not in words. So each pair
+  // also gets the share of words the two sentences have in common:
+  //   kind 'reworded'   mostly the same words with some changed  -> show the changed words
+  //   kind 'paraphrase' the same point in different words        -> show both sentences as they are
+  const wc = (t) => String(t || '').split(/\s+/).filter(Boolean).length;
+  const sentencePairs = (pair.reworded_sentences || []).map((m) => {
+    const ops = orient(m.diff);
+    const aText = artA.sentences[m[sideA]]; const bText = artB.sentences[m[sideB]];
+    const shared = ops.filter((o) => o.op === 'equal').reduce((n, o) => n + wc(o.a), 0);
+    const wordOverlap = Math.round((shared / Math.max(1, wc(aText), wc(bText))) * 100) / 100;
+    return {
+      aIndex: m[sideA], bIndex: m[sideB], aText, bText,
+      similarity: m.similarity ?? null,
+      wordOverlap,
+      kind: wordOverlap >= 0.35 ? 'reworded' : 'paraphrase',
+      ops,
+    };
+  }).sort((x, y) => x.aIndex - y.aIndex || x.bIndex - y.bIndex);
+  // "Loaded language": only real rewordings, and only the short phrases that were swapped
   const quote = (t) => `"${t}"`;
-  for (const sp of sentencePairs) {
-    const parts = sp.ops.filter((o) => o.op !== 'equal').map((o) => (
+  const short = (t) => wc(t) <= 6;
+  for (const sp of sentencePairs.filter((x) => x.kind === 'reworded')) {
+    const parts = sp.ops.filter((o) => o.op !== 'equal' && short(o.a) && short(o.b)).map((o) => (
       o.op === 'replace' ? `${quote(o.b)} where ${artA.source} says ${quote(o.a)}`
         : o.op === 'insert' ? `adds ${quote(o.b)}`
-        : `drops ${quote(o.a)}`));
+        : `leaves out ${quote(o.a)}`));
     if (parts.length) keyDifferences.push({ type: 'framing', source: artB.source, detail: `Says ${parts.join('; ')}`, aIndex: sp.aIndex, bIndex: sp.bIndex });
   }
   if (onlyB.size) keyDifferences.push({ type: 'addition', source: artB.source, detail: `${onlyB.size} sentence(s) with no match in ${artA.source}` });

@@ -59,36 +59,65 @@ const Legend = () => (
   </div>
 );
 
-const HighlightedText = ({ text, highlightedWords, sentences }) => {
+// from / to: show only this part of the text (character offsets), used when the article page splits the
+// text into two cards around the right column. markSplits: put an invisible marker after every sentence
+// so the page can find where to split. The legend is shown with the part that starts at 0.
+const SENTENCE_END = /[.!?…]["”’)]?\s+/g;
+
+const HighlightedText = ({ text, highlightedWords, sentences, from = 0, to, markSplits = false }) => {
   const content = text || '';
+  const end = to ?? content.length;
   const biased = (sentences || []).filter((s) => s.biased ?? (s.pBiased ?? 0) >= 0.5);
   const listWords = new Set((highlightedWords || []).filter((w) => w.type !== 'entity').map((w) => w.word.toLowerCase()));
   const perSentence = biased.some((s) => s.biasWords?.length);
 
+  const marker = (pos) => <span key={`m-${pos}`} data-split={pos} />;
+  const plain = (a, b) => {
+    if (!markSplits) return [content.slice(a, b)];
+    const out = []; let last = a;
+    const piece = content.slice(a, b);
+    for (const m of piece.matchAll(SENTENCE_END)) {
+      const pos = a + m.index + m[0].length;
+      out.push(content.slice(last, pos), marker(pos));
+      last = pos;
+    }
+    if (last < b) out.push(content.slice(last, b));
+    return out;
+  };
+
   if (!biased.length) {
     // no per-sentence data (feed summary) or no Biased sentence: plain text
-    return <p className="text-gray-300 leading-relaxed text-lg">{content}</p>;
+    return <p className="text-gray-300 leading-relaxed text-lg">{plain(from, end)}</p>;
   }
 
   const spans = locate(content, biased);
-  const parts = [];
+  const segs = [];
   let last = 0;
-  spans.forEach(({ start, end, s }, i) => {
-    if (start > last) parts.push(content.slice(last, start));
-    const words = perSentence ? new Set((s.biasWords || []).map((w) => w.toLowerCase())) : listWords;
-    const pct = Math.round(100 * (s.pBiased ?? 0.5));
+  spans.forEach((sp) => {
+    if (sp.start > last) segs.push({ start: last, end: sp.start });
+    segs.push(sp);
+    last = sp.end;
+  });
+  if (last < content.length) segs.push({ start: last, end: content.length });
+
+  const parts = [];
+  segs.forEach((seg, i) => {
+    const a = Math.max(seg.start, from); const b = Math.min(seg.end, end);
+    if (a >= b) return;
+    if (!seg.s) { parts.push(...plain(a, b)); return; }
+    const words = perSentence ? new Set((seg.s.biasWords || []).map((w) => w.toLowerCase())) : listWords;
+    const pct = Math.round(100 * (seg.s.pBiased ?? 0.5));
     parts.push(
       <span key={`s-${i}`} className={SENTENCE_CLASS} title={`Rated biased by the model (${pct}%)`}>
-        {markWords(content.slice(start, end), words, `s-${i}`)}
+        {markWords(content.slice(a, b), words, `s-${i}`)}
       </span>,
     );
-    last = end;
+    if (markSplits && b === seg.end) parts.push(marker(seg.end));
   });
-  if (last < content.length) parts.push(content.slice(last));
 
   return (
     <>
-      <Legend />
+      {from === 0 && <Legend />}
       <div className="text-gray-300 leading-relaxed text-lg">{parts}</div>
     </>
   );

@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, useRef } from 'react';
+import useFlowAround from '../utils/useFlowAround';
 import { Link, useParams, useSearchParams } from 'react-router-dom';
 import Sidebar from '../components/common/Sidebar';
 import SideBySideLayout from '../components/comparison/SideBySideLayout';
@@ -72,6 +73,7 @@ const ComparisonPage = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [loading, setLoading] = useState(true);
   const [focusIds, setFocusIds] = useState([]);      // the two articles compared sentence by sentence
+  const flowRef = useRef(null);                      // two-column area: see utils/useFlowAround.js
   const [preferredId, setPreferredId] = useState(null);
   const [showSourceMenu, setShowSourceMenu] = useState(false);
 
@@ -198,6 +200,8 @@ const ComparisonPage = () => {
     if (next[0] === next[1]) next[1 - slot] = prev[slot];   // picking the other side's article swaps them
     return next;
   });
+
+  useFlowAround(flowRef, [comparison, filteredArticles.length, loading, focusIds.join()]);
 
   const sentimentCounts = useMemo(() => {
     const counts = { positive: 0, neutral: 0, negative: 0 };
@@ -435,9 +439,60 @@ const ComparisonPage = () => {
               </section>
             )}
 
-            <div className="grid gap-8 xl:grid-cols-[1.7fr_0.9fr]">
-              <div className="space-y-8">
-                <div className="bg-[#081b34] rounded-3xl border border-blue-900/60 p-6 shadow-[0_30px_60px_rgba(0,0,0,0.25)]">
+            {/* Wide screens: the score cards float on the right, and every box on the left that starts
+                below them takes the full width, so no empty column is left. Small screens: one column. */}
+            <div ref={flowRef} className="flex flex-col gap-8 xl:flow-root">
+              <aside data-flow="side" className="order-2 space-y-6 xl:float-right xl:w-[34%] xl:ml-8 xl:mb-8">
+                <div className="bg-bg-card rounded-3xl border border-gray-800 p-6 shadow-xl">
+                  <div className="flex items-center justify-between mb-4">
+                    <div>
+                      <p className="text-sm uppercase tracking-[0.3em] text-gray-500">Overall Similarity</p>
+                      <p className="text-3xl font-bold text-white">{similarityScore == null ? '–' : `${overallSimilarityPercentage}%`}</p>
+                    </div>
+                    <div className="flex items-center justify-center h-16 w-16 rounded-2xl bg-slate-900 text-white text-lg font-semibold">
+                      {similarityScore == null ? '–' : `${overallSimilarityPercentage}%`}
+                    </div>
+                  </div>
+                  <p className="text-sm text-gray-400">
+                    {similarityScore == null
+                      ? noComparisonText
+                      : `These articles are ${overallSimilarityPercentage >= 70 ? 'highly similar in content' : overallSimilarityPercentage >= 45 ? 'moderately aligned' : 'noticeably different in content'} (Sentence-BERT similarity of the full text).`}
+                  </p>
+                </div>
+
+                <div className="bg-bg-card rounded-3xl border border-gray-800 p-6 shadow-xl">
+                  <div className="flex items-center justify-between mb-4">
+                    <h3 className="text-lg font-semibold text-white">Bias Comparison</h3>
+                    <span className="text-sm text-gray-500">{filteredArticles.length} sources</span>
+                  </div>
+                  <div className="space-y-4">
+                    {overallBiasTrend.map((item) => (
+                      <div key={item.source} className="space-y-2">
+                        <div className="flex items-center justify-between text-sm text-gray-400">
+                          <span>{item.source}</span>
+                          <span>{item.bias}%</span>
+                        </div>
+                        <div className="h-2 rounded-full bg-gray-800 overflow-hidden">
+                          <div className="h-full rounded-full bg-blue-500" style={{ width: `${item.bias}%` }} />
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="bg-bg-card rounded-3xl border border-gray-800 p-6 shadow-xl">
+                  <div className="flex items-center justify-between mb-4">
+                    <h3 className="text-lg font-semibold text-white">Sentiment Comparison</h3>
+                    <span className="text-sm text-gray-500">{filteredArticles.length} articles</span>
+                  </div>
+                  <div className="h-52">
+                    <SentimentBarChart sentimentData={sentimentCounts} />
+                  </div>
+                </div>
+
+              </aside>
+              <div className="contents">
+                <div data-flow="main" className="order-1 flow-root xl:mb-8 bg-[#081b34] rounded-3xl border border-blue-900/60 p-6 shadow-[0_30px_60px_rgba(0,0,0,0.25)]">
                   <div className="flex flex-col gap-3 mb-6">
                     <div className="flex items-center gap-3">
                       <span className="h-10 w-1 rounded-full bg-blue-400" />
@@ -458,7 +513,7 @@ const ComparisonPage = () => {
                       <h4 className="text-sm uppercase tracking-[0.3em] text-blue-300">Emotional / Loaded Language</h4>
                       <div className="space-y-3">
                         {!hasComparison && <p className="text-sm text-slate-400">{noComparisonText}</p>}
-                        {hasComparison && framingDiffs.length === 0 && <p className="text-sm text-slate-400">No sentence is worded differently between these two articles.</p>}
+                        {hasComparison && framingDiffs.length === 0 && <p className="text-sm text-slate-400">No sentence was reworded word for word. "Changed Words" below shows the sentences that make the same point in different words.</p>}
                         {hasComparison && framingDiffs.length > 0 && (
                           <p className="text-xs text-slate-400">{framingDiffs.length} reworded sentence{framingDiffs.length === 1 ? '' : 's'} · word by word in "Changed Words" below</p>
                         )}
@@ -511,9 +566,9 @@ const ComparisonPage = () => {
                   </div>
                 </div>
 
-                {hasComparison && <ChangedWordsPanel comparison={comparison} />}
+                {hasComparison && <div data-flow="main" className="order-1 flow-root xl:mb-8"><ChangedWordsPanel comparison={comparison} /></div>}
 
-                <div className="grid gap-6 lg:grid-cols-2">
+                <div data-flow="main" className="order-1 grid gap-6 lg:grid-cols-2">
                   <div className="bg-bg-card rounded-3xl border border-gray-800 p-6 shadow-xl">
                     <h3 className="text-xl font-bold text-white mb-4">Comparison Summary</h3>
                     <p className="text-gray-300 leading-relaxed">{summaryText}</p>
@@ -534,55 +589,6 @@ const ComparisonPage = () => {
                 </div>
               </div>
 
-              <aside className="space-y-6 xl:sticky xl:top-8">
-                <div className="bg-bg-card rounded-3xl border border-gray-800 p-6 shadow-xl">
-                  <div className="flex items-center justify-between mb-4">
-                    <div>
-                      <p className="text-sm uppercase tracking-[0.3em] text-gray-500">Overall Similarity</p>
-                      <p className="text-3xl font-bold text-white">{similarityScore == null ? '–' : `${overallSimilarityPercentage}%`}</p>
-                    </div>
-                    <div className="flex items-center justify-center h-16 w-16 rounded-2xl bg-slate-900 text-white text-lg font-semibold">
-                      {similarityScore == null ? '–' : `${overallSimilarityPercentage}%`}
-                    </div>
-                  </div>
-                  <p className="text-sm text-gray-400">
-                    {similarityScore == null
-                      ? noComparisonText
-                      : `These articles are ${overallSimilarityPercentage >= 70 ? 'highly similar in content' : overallSimilarityPercentage >= 45 ? 'moderately aligned' : 'noticeably different in content'} (Sentence-BERT similarity of the full text).`}
-                  </p>
-                </div>
-
-                <div className="bg-bg-card rounded-3xl border border-gray-800 p-6 shadow-xl">
-                  <div className="flex items-center justify-between mb-4">
-                    <h3 className="text-lg font-semibold text-white">Bias Comparison</h3>
-                    <span className="text-sm text-gray-500">{filteredArticles.length} sources</span>
-                  </div>
-                  <div className="space-y-4">
-                    {overallBiasTrend.map((item) => (
-                      <div key={item.source} className="space-y-2">
-                        <div className="flex items-center justify-between text-sm text-gray-400">
-                          <span>{item.source}</span>
-                          <span>{item.bias}%</span>
-                        </div>
-                        <div className="h-2 rounded-full bg-gray-800 overflow-hidden">
-                          <div className="h-full rounded-full bg-blue-500" style={{ width: `${item.bias}%` }} />
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="bg-bg-card rounded-3xl border border-gray-800 p-6 shadow-xl">
-                  <div className="flex items-center justify-between mb-4">
-                    <h3 className="text-lg font-semibold text-white">Sentiment Comparison</h3>
-                    <span className="text-sm text-gray-500">{filteredArticles.length} articles</span>
-                  </div>
-                  <div className="h-52">
-                    <SentimentBarChart sentimentData={sentimentCounts} />
-                  </div>
-                </div>
-
-              </aside>
             </div>
           </main>
         </div>

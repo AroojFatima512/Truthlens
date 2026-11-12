@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useLayoutEffect } from 'react';
+import useFlowAround from '../utils/useFlowAround';
 import { useParams, Link } from 'react-router-dom';
 import Sidebar from '../components/common/Sidebar';
 import BiasScoreBadge from '../components/common/BiasScoreBadge';
@@ -25,6 +26,42 @@ const NewsDetailPage = () => {
   const [report, setReport] = useState(null);
   const [loading, setLoading] = useState(true);
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const flowRef = useRef(null);   // two-column area: see utils/useFlowAround.js
+  // Long articles: the text is split into two cards at a sentence end, so after the right column ends
+  // the text continues at full width (the card wraps around the column). null = one card.
+  const [splitAt, setSplitAt] = useState(null);
+  const [measureTick, setMeasureTick] = useState(0);
+  useFlowAround(flowRef, [article, report, loading, splitAt]);
+
+  // re-measure whenever the right column changes size or the page width changes
+  useEffect(() => {
+    const c = flowRef.current;
+    const side = c?.querySelector('[data-flow="side"]');
+    if (!c || !side || typeof ResizeObserver === 'undefined') return undefined;
+    let frame = 0; let lastWidth = c.clientWidth; let lastSide = side.offsetHeight;
+    const ro = new ResizeObserver(() => {
+      if (c.clientWidth === lastWidth && side.offsetHeight === lastSide) return;   // e.g. the first call
+      lastWidth = c.clientWidth; lastSide = side.offsetHeight;
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(() => { setSplitAt(null); setMeasureTick((t) => t + 1); });
+    });
+    ro.observe(c); ro.observe(side);
+    return () => { ro.disconnect(); cancelAnimationFrame(frame); };
+  }, [article, loading]);
+
+  useLayoutEffect(() => {
+    if (splitAt !== null) return;
+    const c = flowRef.current;
+    const side = c?.querySelector('[data-flow="side"]');
+    const card = c?.querySelector('article');
+    if (!side || !card || getComputedStyle(side).float === 'none') return;
+    const sideBottom = side.getBoundingClientRect().bottom + (parseFloat(getComputedStyle(side).marginBottom) || 0);
+    if (card.getBoundingClientRect().bottom <= sideBottom + 120) return;     // the article ends near the column: keep one card
+    const m = [...card.querySelectorAll('[data-split]')].find((el) => el.getBoundingClientRect().top >= sideBottom);
+    const pos = m ? Number(m.dataset.split) : null;
+    if (pos && pos < (article?.content || '').length - 20) setSplitAt(pos);
+  }, [article, report, splitAt, measureTick]);
+  useEffect(() => { setSplitAt(null); }, [id]);
   const { savedArticles, toggleSaveArticle } = useSavedArticles();
   const { settings } = useSettings();
   const isSaved = article ? savedArticles.some(a => a.id === article.id) : false;
@@ -103,103 +140,11 @@ const NewsDetailPage = () => {
           <ArrowLeft size={16} className="mr-2" /> Back to Feed
         </Link>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          
-          {/* Left Column: Article Content */}
-          <div className="lg:col-span-2 flex flex-col gap-6">
-            <article className="bg-bg-card rounded-2xl border border-gray-800 p-4 md:p-6 shadow-xl">
-              <div className="flex flex-wrap items-center gap-3 mb-4 border-b border-gray-800 pb-4">
-                <span className="bg-gray-800 text-white px-3 py-1 rounded-md text-sm font-medium border border-gray-700">
-                  {article.source}
-                </span>
-                <span className="text-primary bg-primary/10 px-3 py-1 rounded-md text-sm font-medium">
-                  {article.category}
-                </span>
-                <div className="flex items-center gap-1 text-gray-400 text-sm ml-auto">
-                  <Clock size={14} /> {formatDate(article.publishedAt)}
-                </div>
-              </div>
-
-              <h1 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-tight">
-                {article.headline}
-              </h1>
-
-              <div className="prose prose-invert max-w-none">
-                <HighlightedText text={article.content} highlightedWords={article.highlightedWords} sentences={article.sentences} />
-              </div>
-
-              <div className="mt-6 pt-4 border-t border-gray-800 flex flex-wrap gap-3 items-center justify-between">
-                <div className="flex gap-3">
-                  <button 
-                    onClick={handleShare}
-                    className="flex items-center gap-2 px-3 py-2 bg-gray-800/80 hover:bg-gray-700 text-white rounded-xl transition-all duration-300 text-sm font-medium hover:shadow-lg hover:-translate-y-0.5 border border-gray-700/50"
-                  >
-                    <Share2 size={16} className="text-gray-400 group-hover:text-white" /> Share
-                  </button>
-                  <button 
-                    onClick={toggleSave}
-                    className={`flex items-center gap-2 px-3 py-2 rounded-xl transition-all duration-300 text-sm font-medium hover:shadow-lg hover:-translate-y-0.5 border ${
-                      isSaved ? 'bg-blue-600/20 border-blue-500/50 text-blue-400' : 'bg-gray-800/80 hover:bg-gray-700 text-white border-gray-700/50'
-                    }`}
-                  >
-                    <Bookmark size={16} className={isSaved ? "text-blue-400" : "text-gray-400"} fill={isSaved ? "currentColor" : "none"} /> 
-                    {isSaved ? 'Saved' : 'Save'}
-                  </button>
-                  <a href={article.sourceUrl} target="_blank" rel="noreferrer" className="flex items-center gap-2 px-3 py-2 bg-gray-800/80 hover:bg-gray-700 text-white rounded-xl transition-all duration-300 text-sm font-medium hover:shadow-lg hover:-translate-y-0.5 border border-gray-700/50">
-                    <ExternalLink size={16} className="text-gray-400 group-hover:text-white" /> Original
-                  </a>
-                </div>
-                
-                {article.relatedArticleIds?.length > 0 && (
-                  <Link 
-                    to={article.storyId ? `/compare?story=${encodeURIComponent(article.storyId)}&with=${article.id}` : `/compare/${article.id}/${article.relatedArticleIds[0]}`}
-                    className="flex items-center gap-2 px-4 py-2 bg-primary hover:bg-blue-500 text-white rounded-xl transition-all duration-300 shadow-lg shadow-primary/20 hover:shadow-primary/40 font-medium hover:-translate-y-0.5 group"
-                  >
-                    <Layers size={16} className="group-hover:rotate-12 transition-transform duration-300" /> Compare Source
-                  </Link>
-                )}
-              </div>
-            </article>
-            
-            {/* Explainable AI Panel */}
-            <div className="bg-bg-card rounded-2xl border border-gray-800 p-4 shadow-xl">
-              <h3 className="text-base font-bold text-white mb-3 border-b border-gray-800 pb-3">Explainable AI Analysis</h3>
-              {article.highlightedWords?.length > 0 ? (
-                <ul className="space-y-3">
-                  {article.highlightedWords.map((hw, i) => (
-                    <li key={i} className="flex items-start gap-3 bg-gray-900/50 p-3 rounded-lg border border-gray-800">
-                      <div className={`mt-0.5 px-2 py-1 rounded text-xs font-bold uppercase tracking-wider ${
-                        hw.type === 'biased' ? 'bg-yellow-500/20 text-yellow-500' :
-                        hw.type === 'manipulative' ? 'bg-red-500/20 text-red-500' :
-                        'bg-blue-500/20 text-blue-500'
-                      }`}>
-                        {hw.type}
-                      </div>
-                      <div>
-                        <span className="text-white font-medium">"{hw.word}"</span>
-                        <p className="text-sm text-gray-400 mt-1">{hw.reason || 'Detected as significant entity'}</p>
-                      </div>
-                    </li>
-                  ))}
-                </ul>
-              ) : (
-                <p className="text-gray-400">No significant bias flags detected in this article.</p>
-              )}
-            </div>
-
-            {/* Story Evolution Timeline Panel */}
-            <div className="mb-4">
-              <StoryEvolutionTimeline versionHistory={article.versionHistory} />
-            </div>
-
-            {/* FR-09: the exact words that changed between saved versions */}
-            <div className="mb-4">
-              <VersionChanges articleId={article.id} />
-            </div>
-          </div>
-
+        {/* Wide screens: the analysis cards float on the right; every box on the left that starts below
+            them takes the full width, so no empty column is left. Small screens: one column. */}
+        <div ref={flowRef} className="flex flex-col gap-6 lg:flow-root">
           {/* Right Column: Analysis Widgets */}
-          <div className="flex flex-col gap-4 pl-1 lg:pl-4 self-start">
+          <div data-flow="side" className="order-2 flex flex-col gap-4 lg:float-right lg:w-1/3 lg:pl-6 lg:mb-6">
             
             <div className="bg-bg-card rounded-2xl border border-gray-800 p-4 shadow-xl">
               <div className="flex justify-between items-center mb-4">
@@ -268,6 +213,143 @@ const NewsDetailPage = () => {
             <EntityPanel entities={article.entities} />
 
           </div>
+
+          {/* Left Column: Article Content */}
+          <div className="contents">
+            <article data-flow="main" className={`order-1 flow-root bg-bg-card border border-gray-800 p-4 md:p-6 shadow-xl ${splitAt ? 'relative z-10 -mb-px rounded-t-2xl border-b-0 pb-0 md:pb-0' : 'rounded-2xl lg:mb-6'}`}>
+              <div className="flex flex-wrap items-center gap-3 mb-4 border-b border-gray-800 pb-4">
+                <span className="bg-gray-800 text-white px-3 py-1 rounded-md text-sm font-medium border border-gray-700">
+                  {article.source}
+                </span>
+                <span className="text-primary bg-primary/10 px-3 py-1 rounded-md text-sm font-medium">
+                  {article.category}
+                </span>
+                <div className="flex items-center gap-1 text-gray-400 text-sm ml-auto">
+                  <Clock size={14} /> {formatDate(article.publishedAt)}
+                </div>
+              </div>
+
+              <h1 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-tight">
+                {article.headline}
+              </h1>
+
+              <div className="prose prose-invert max-w-none">
+                <HighlightedText text={article.content} highlightedWords={article.highlightedWords} sentences={article.sentences}
+                  to={splitAt ?? undefined} markSplits={splitAt === null} />
+              </div>
+
+              {!splitAt && (
+              <div className="mt-6 pt-4 border-t border-gray-800 flex flex-wrap gap-3 items-center justify-between">
+                <div className="flex gap-3">
+                  <button 
+                    onClick={handleShare}
+                    className="flex items-center gap-2 px-3 py-2 bg-gray-800/80 hover:bg-gray-700 text-white rounded-xl transition-all duration-300 text-sm font-medium hover:shadow-lg hover:-translate-y-0.5 border border-gray-700/50"
+                  >
+                    <Share2 size={16} className="text-gray-400 group-hover:text-white" /> Share
+                  </button>
+                  <button 
+                    onClick={toggleSave}
+                    className={`flex items-center gap-2 px-3 py-2 rounded-xl transition-all duration-300 text-sm font-medium hover:shadow-lg hover:-translate-y-0.5 border ${
+                      isSaved ? 'bg-blue-600/20 border-blue-500/50 text-blue-400' : 'bg-gray-800/80 hover:bg-gray-700 text-white border-gray-700/50'
+                    }`}
+                  >
+                    <Bookmark size={16} className={isSaved ? "text-blue-400" : "text-gray-400"} fill={isSaved ? "currentColor" : "none"} /> 
+                    {isSaved ? 'Saved' : 'Save'}
+                  </button>
+                  <a href={article.sourceUrl} target="_blank" rel="noreferrer" className="flex items-center gap-2 px-3 py-2 bg-gray-800/80 hover:bg-gray-700 text-white rounded-xl transition-all duration-300 text-sm font-medium hover:shadow-lg hover:-translate-y-0.5 border border-gray-700/50">
+                    <ExternalLink size={16} className="text-gray-400 group-hover:text-white" /> Original
+                  </a>
+                </div>
+                
+                {article.relatedArticleIds?.length > 0 && (
+                  <Link 
+                    to={article.storyId ? `/compare?story=${encodeURIComponent(article.storyId)}&with=${article.id}` : `/compare/${article.id}/${article.relatedArticleIds[0]}`}
+                    className="flex items-center gap-2 px-4 py-2 bg-primary hover:bg-blue-500 text-white rounded-xl transition-all duration-300 shadow-lg shadow-primary/20 hover:shadow-primary/40 font-medium hover:-translate-y-0.5 group"
+                  >
+                    <Layers size={16} className="group-hover:rotate-12 transition-transform duration-300" /> Compare Source
+                  </Link>
+                )}
+              </div>
+              )}
+            </article>
+
+            {/* the rest of a long article, at full width below the right column */}
+            {splitAt && (
+              <div data-flow="main" className="order-1 flow-root lg:mb-6 bg-bg-card rounded-b-2xl rounded-tr-2xl border border-gray-800 px-4 md:px-6 pb-4 md:pb-6 pt-1 shadow-xl">
+                <div className="prose prose-invert max-w-none">
+                  <HighlightedText text={article.content} highlightedWords={article.highlightedWords} sentences={article.sentences} from={splitAt} />
+                </div>
+              <div className="mt-6 pt-4 border-t border-gray-800 flex flex-wrap gap-3 items-center justify-between">
+                <div className="flex gap-3">
+                  <button 
+                    onClick={handleShare}
+                    className="flex items-center gap-2 px-3 py-2 bg-gray-800/80 hover:bg-gray-700 text-white rounded-xl transition-all duration-300 text-sm font-medium hover:shadow-lg hover:-translate-y-0.5 border border-gray-700/50"
+                  >
+                    <Share2 size={16} className="text-gray-400 group-hover:text-white" /> Share
+                  </button>
+                  <button 
+                    onClick={toggleSave}
+                    className={`flex items-center gap-2 px-3 py-2 rounded-xl transition-all duration-300 text-sm font-medium hover:shadow-lg hover:-translate-y-0.5 border ${
+                      isSaved ? 'bg-blue-600/20 border-blue-500/50 text-blue-400' : 'bg-gray-800/80 hover:bg-gray-700 text-white border-gray-700/50'
+                    }`}
+                  >
+                    <Bookmark size={16} className={isSaved ? "text-blue-400" : "text-gray-400"} fill={isSaved ? "currentColor" : "none"} /> 
+                    {isSaved ? 'Saved' : 'Save'}
+                  </button>
+                  <a href={article.sourceUrl} target="_blank" rel="noreferrer" className="flex items-center gap-2 px-3 py-2 bg-gray-800/80 hover:bg-gray-700 text-white rounded-xl transition-all duration-300 text-sm font-medium hover:shadow-lg hover:-translate-y-0.5 border border-gray-700/50">
+                    <ExternalLink size={16} className="text-gray-400 group-hover:text-white" /> Original
+                  </a>
+                </div>
+                
+                {article.relatedArticleIds?.length > 0 && (
+                  <Link 
+                    to={article.storyId ? `/compare?story=${encodeURIComponent(article.storyId)}&with=${article.id}` : `/compare/${article.id}/${article.relatedArticleIds[0]}`}
+                    className="flex items-center gap-2 px-4 py-2 bg-primary hover:bg-blue-500 text-white rounded-xl transition-all duration-300 shadow-lg shadow-primary/20 hover:shadow-primary/40 font-medium hover:-translate-y-0.5 group"
+                  >
+                    <Layers size={16} className="group-hover:rotate-12 transition-transform duration-300" /> Compare Source
+                  </Link>
+                )}
+              </div>
+              </div>
+            )}
+            
+            {/* Explainable AI Panel */}
+            <div data-flow="main" className="order-1 flow-root lg:mb-6 bg-bg-card rounded-2xl border border-gray-800 p-4 shadow-xl">
+              <h3 className="text-base font-bold text-white mb-3 border-b border-gray-800 pb-3">Explainable AI Analysis</h3>
+              {article.highlightedWords?.length > 0 ? (
+                <ul className="space-y-3">
+                  {article.highlightedWords.map((hw, i) => (
+                    <li key={i} className="flex items-start gap-3 bg-gray-900/50 p-3 rounded-lg border border-gray-800">
+                      <div className={`mt-0.5 px-2 py-1 rounded text-xs font-bold uppercase tracking-wider ${
+                        hw.type === 'biased' ? 'bg-yellow-500/20 text-yellow-500' :
+                        hw.type === 'manipulative' ? 'bg-red-500/20 text-red-500' :
+                        'bg-blue-500/20 text-blue-500'
+                      }`}>
+                        {hw.type}
+                      </div>
+                      <div>
+                        <span className="text-white font-medium">"{hw.word}"</span>
+                        <p className="text-sm text-gray-400 mt-1">{hw.reason || 'Detected as significant entity'}</p>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <p className="text-gray-400">No significant bias flags detected in this article.</p>
+              )}
+            </div>
+
+            {/* Story Evolution Timeline Panel */}
+            <div data-flow="main" className="order-1 flow-root lg:mb-6">
+              <StoryEvolutionTimeline versionHistory={article.versionHistory} />
+            </div>
+
+            {/* FR-09: the exact words that changed between saved versions */}
+            <div data-flow="main" className="order-1 flow-root lg:mb-6">
+              <VersionChanges articleId={article.id} />
+            </div>
+          </div>
+
 
         </div>
       </main>

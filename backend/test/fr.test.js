@@ -32,7 +32,8 @@ test('FR-07/08: comparison lists every reworded sentence with its word changes',
   const sp = body.sentencePairs[0];
   assert.ok(sp.aText && sp.bText && sp.ops.some((o) => o.op !== 'equal'));
   assert.equal(sp.ops.map((o) => o.a).filter(Boolean).join(' ').replace(/\s+/g, ' '), sp.aText.replace(/\s+/g, ' '), 'left side rebuilds sentence A');
-  assert.equal(body.keyDifferences.filter((d) => d.type === 'framing').length, p.reworded_sentences.length, 'no 3-sentence limit');
+  assert.equal(body.keyDifferences.filter((d) => d.type === 'framing').length, body.sentencePairs.filter((x) => x.kind === 'reworded').length, 'every real rewording, no 3-sentence limit');
+  assert.ok(body.sentencePairs.every((x) => x.wordOverlap >= 0 && x.wordOverlap <= 1 && ['reworded', 'paraphrase'].includes(x.kind)));
   assert.ok(Array.isArray(body.onlyInA) && Array.isArray(body.onlyInB) && Array.isArray(body.headlineOps));
   // reversed order: words flip sides
   const rev = (await call('GET', `/compare/${p.b.replace(':', '-')}/${p.a.replace(':', '-')}`)).body;
@@ -116,4 +117,18 @@ test('FR-15: article lists people, organisations and places', async () => {
   assert.equal(g.people.length, persons.size, 'every person once');
   assert.ok(g.people.every((p, i, arr) => i === 0 || arr[i - 1].count >= p.count), 'most mentioned first');
   assert.ok(!JSON.stringify(g).includes('"DATE"'), 'dates are not entities here');
+});
+
+test('a sentence that makes the same point in different words is a paraphrase, not a rewording', () => {
+  const { toComparison } = require('../adapters/toFrontend');
+  const { diffWords } = require('../lib/wordDiff');
+  const A = ['With the right policies and investment, Pakistan has the potential to turn its expanding digital audience into a significant contributor to economic growth.', 'The minister said the plan would add 500 classrooms.'];
+  const B = ['If Pakistan can turn its digital ambitions into practical action, technology could become one of the strongest drivers of economic growth.', 'The minister claimed the scheme would add 500 classrooms.'];
+  const cmp = { story_id: 's', result: { articles: [{ id: 'x:1', source: 'X', title: 'h', sentences: A, entities: [] }, { id: 'y:1', source: 'Y', title: 'h', sentences: B, entities: [] }],
+    pairs: [{ a: 'x:1', b: 'y:1', similarity: 0.8, headline_diff: [], identical_pairs: [], only_in_a: [], only_in_b: [],
+      reworded_sentences: [0, 1].map((i) => ({ a: i, b: i, similarity: 0.83, diff: diffWords(A[i], B[i]) })) }] } };
+  const r = toComparison(cmp, 'x:1', 'y:1');
+  assert.deepEqual(r.sentencePairs.map((x) => x.kind), ['paraphrase', 'reworded']);
+  const framing = r.keyDifferences.filter((d) => d.type === 'framing');
+  assert.equal(framing.length, 1); assert.match(framing[0].detail, /"claimed" where X says "said"/);
 });
