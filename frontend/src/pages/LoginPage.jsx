@@ -4,6 +4,8 @@ import { useAuth } from '../context/AuthContext';
 import { useSettings } from '../context/SettingsContext';
 import { ShieldCheck, Mail, Lock, Key, ArrowLeft, LogIn, Eye, EyeOff, Layers, FileText, BarChart2, Image as ImageIcon, BrainCircuit, Search, Shield, User } from 'lucide-react';
 import toast from 'react-hot-toast';
+import GoogleButton from '../components/auth/GoogleButton';
+import VerifyEmailNotice from '../components/auth/VerifyEmailNotice';
 import { motion } from 'framer-motion';
 
 const LoginPage = () => {
@@ -13,19 +15,23 @@ const LoginPage = () => {
   
   const [step, setStep] = useState(1);
   const [twoFACode, setTwoFACode] = useState('');
+  const [ticket, setTicket] = useState(null);   // proof that step 1 passed, sent with the 2FA code
+  const [unverified, setUnverified] = useState(null);   // e-mail that still has to be verified
   
   const [loading, setLoading] = useState(false);
-  const { login, verifyLogin2FA } = useAuth();
+  const { login, verifyLogin2FA, loginWithGoogle } = useAuth();
   const { settings } = useSettings();
   const navigate = useNavigate();
 
   const handleLoginSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+    setUnverified(null);
 
     try {
       const res = await login(email, password, false);
       if (res.requires2FA) {
+        setTicket(res.ticket);
         setStep(2);
         toast.success('Credentials valid! Enter 2FA code.');
       } else {
@@ -35,7 +41,8 @@ const LoginPage = () => {
         navigate(redirectPath);
       }
     } catch (err) {
-      toast.error(err.message || 'Invalid email or password.');
+      if (err.code === 'EMAIL_NOT_VERIFIED') setUnverified(err.email || email);
+      else toast.error(err.message || 'Invalid email or password.');
     } finally {
       setLoading(false);
     }
@@ -50,7 +57,7 @@ const LoginPage = () => {
 
     setLoading(true);
     try {
-      await verifyLogin2FA(email, twoFACode);
+      await verifyLogin2FA(email, twoFACode, false, ticket);
       
       const redirectPath = settings.defaultLandingPage === 'Dashboard' ? '/dashboard' : 
                            settings.defaultLandingPage === 'Trending Topics' ? '/dashboard?tab=Trending Topics' : 
@@ -58,6 +65,21 @@ const LoginPage = () => {
       navigate(redirectPath);
     } catch (err) {
       toast.error(err.message || 'Invalid code. Try again.');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const landingPath = () => (settings.defaultLandingPage === 'Dashboard' ? '/dashboard'
+    : settings.defaultLandingPage === 'Trending Topics' ? '/dashboard?tab=Trending Topics' : '/feed');
+
+  const handleGoogle = async (credential) => {
+    setLoading(true);
+    try {
+      const res = await loginWithGoogle(credential, false);
+      if (res.token) navigate(landingPath());
+    } catch (err) {
+      toast.error(err.message || 'Google sign-in failed');
     } finally {
       setLoading(false);
     }
@@ -123,7 +145,7 @@ const LoginPage = () => {
       </div>
 
       {/* Right Side - Form */}
-      <div className="w-full lg:w-1/2 flex items-center justify-center p-4 sm:p-6 lg:p-8 bg-[#0a0a0a] h-[60%] lg:h-full overflow-hidden hide-scrollbar">
+      <div className="w-full lg:w-1/2 flex items-center justify-center p-4 sm:p-6 lg:p-8 bg-[#0a0a0a] h-[60%] lg:h-full overflow-y-auto hide-scrollbar">
         <motion.div 
           initial={{ opacity: 0, x: 30 }}
           animate={{ opacity: 1, x: 0 }}
@@ -190,7 +212,9 @@ const LoginPage = () => {
                   </div>
                 </div>
 
-                <div className="mb-3 lg:mb-4"></div>
+                <div className="flex justify-end mb-3 lg:mb-4">
+                  <Link to="/forgot-password" className="text-[11px] lg:text-[12px] text-blue-500 hover:text-blue-400 transition font-medium">Forgot password?</Link>
+                </div>
 
                 <motion.button
                   whileHover={{ scale: 1.02 }}
@@ -202,9 +226,18 @@ const LoginPage = () => {
                   <LogIn size={16} className="lg:w-4 lg:h-4" strokeWidth={2} />
                   {loading ? 'Logging in...' : 'Log In'}
                 </motion.button>
+                {unverified && <VerifyEmailNotice email={unverified} compact />}
               </form>
 
               {/* Social Login Options */}
+              <div className="relative my-3 lg:my-4">
+                <div className="absolute inset-0 flex items-center"><div className="w-full border-t border-[#222]"></div></div>
+                <div className="relative flex justify-center text-[9px] lg:text-[11px]">
+                  <span className="px-3 bg-[#0a0a0a] text-gray-500 uppercase tracking-widest font-medium">or</span>
+                </div>
+              </div>
+              <GoogleButton onCredential={handleGoogle} disabled={loading} />
+
               <div className="mt-3 lg:mt-4 text-center text-[12px] lg:text-[13px] text-gray-400">
                 Don't have an account?{' '}
                 <Link to="/register" className="font-semibold text-blue-500 hover:text-blue-400 transition">Sign up</Link>

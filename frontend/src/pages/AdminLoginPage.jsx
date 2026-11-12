@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { Mail, Lock, Key, Eye, EyeOff, ShieldCheck, User, LogIn, Shield, ArrowLeft } from 'lucide-react';
 import toast from 'react-hot-toast';
+import GoogleButton from '../components/auth/GoogleButton';
 import { motion } from 'framer-motion';
 
 const AdminLoginPage = () => {
@@ -12,7 +13,8 @@ const AdminLoginPage = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   const [step, setStep] = useState(1); // 1 = Login, 2 = 2FA
-  const { login, verifyLogin2FA } = useAuth();
+  const [ticket, setTicket] = useState(null);   // proof that step 1 (password or Google) passed
+  const { login, verifyLogin2FA, loginWithGoogle } = useAuth();
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -24,6 +26,7 @@ const AdminLoginPage = () => {
         // Step 1: Validate credentials
         const res = await login(email, password, true);
         if (res && res.requires2FA) {
+           setTicket(res.ticket);
            setStep(2);
            toast.success('Credentials verified. Please enter 2FA code.');
         } else {
@@ -31,11 +34,27 @@ const AdminLoginPage = () => {
         }
       } else {
         // Step 2: Validate 2FA immediately
-        await verifyLogin2FA(email, twoFACode, true);
+        await verifyLogin2FA(email, twoFACode, true, ticket);
         navigate('/admin/dashboard');
       }
     } catch (err) {
       toast.error(err.message || 'Invalid admin credentials. Access denied.');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // Google proves who the admin is; the authenticator code is still asked afterwards
+  const handleGoogle = async (credential) => {
+    setLoading(true);
+    try {
+      const res = await loginWithGoogle(credential, true);
+      if (res.requires2FA) {
+        setEmail(res.email); setTicket(res.ticket); setStep(2);
+        toast.success('Google account verified. Please enter 2FA code.');
+      } else if (res.token) navigate('/admin/dashboard');
+    } catch (err) {
+      toast.error(err.message || 'Google sign-in failed');
     } finally {
       setLoading(false);
     }
@@ -277,7 +296,7 @@ const AdminLoginPage = () => {
                 </div>
 
                 <div className="flex justify-end mb-2 lg:mb-3">
-                  <a href="#" className="text-[11px] lg:text-[12px] text-[#D32F2F] hover:text-red-400 transition font-medium">Forgot Password?</a>
+                  <Link to="/admin/forgot-password" className="text-[11px] lg:text-[12px] text-[#D32F2F] hover:text-red-400 transition font-medium">Forgot Password?</Link>
                 </div>
               </motion.div>
             )}
@@ -336,14 +355,11 @@ const AdminLoginPage = () => {
                 </div>
               </div>
 
-              <motion.button 
-                whileHover={{ backgroundColor: "rgba(153, 27, 27, 0.1)" }}
-                whileTap={{ scale: 0.98 }}
-                type="button" 
-                className="w-full flex justify-center items-center gap-1.5 py-2 lg:py-2.5 px-4 border border-red-900/30 rounded-lg lg:rounded-xl text-white bg-transparent focus:outline-none transition font-semibold text-[12px] lg:text-[13px]"
-              >
-                <ShieldCheck size={16} className="lg:w-4 lg:h-4 text-[#D32F2F]" strokeWidth={2} /> Login with SSO
-              </motion.button>
+              <GoogleButton onCredential={handleGoogle} disabled={loading} />
+              <Link to="/login"
+                className="mt-2.5 w-full flex justify-center items-center gap-1.5 py-2 lg:py-2.5 px-4 border border-red-900/30 rounded-lg lg:rounded-xl text-white bg-transparent hover:bg-red-900/10 transition font-semibold text-[12px] lg:text-[13px]">
+                <User size={16} className="lg:w-4 lg:h-4 text-[#D32F2F]" strokeWidth={2} /> Login as User
+              </Link>
             </motion.div>
           )}
 

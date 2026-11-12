@@ -4,6 +4,8 @@ import { useAuth } from '../context/AuthContext';
 import { useSettings } from '../context/SettingsContext';
 import { ShieldCheck, Mail, Lock, User, Key, ArrowLeft, Eye, EyeOff, UserPlus, BrainCircuit, BarChart, Search } from 'lucide-react';
 import toast from 'react-hot-toast';
+import GoogleButton from '../components/auth/GoogleButton';
+import VerifyEmailNotice from '../components/auth/VerifyEmailNotice';
 import { motion } from 'framer-motion';
 
 const RegisterPage = () => {
@@ -21,8 +23,9 @@ const RegisterPage = () => {
   const [qrCodeUrl, setQrCodeUrl] = useState('');
   const [twoFACode, setTwoFACode] = useState('');
   const [loading, setLoading] = useState(false);
+  const [ticket, setTicket] = useState(null);
   
-  const { register, confirmRegistration2FA } = useAuth();
+  const { register, confirmRegistration2FA, loginWithGoogle } = useAuth();
   const { settings } = useSettings();
   const navigate = useNavigate();
 
@@ -53,6 +56,7 @@ const RegisterPage = () => {
       });
       
       setQrCodeUrl(res.qrCodeUrl);
+      setTicket(res.ticket);
       setStep(2);
       toast.success('Account created! Please set up 2FA.');
     } catch (err) {
@@ -71,7 +75,13 @@ const RegisterPage = () => {
 
     setLoading(true);
     try {
-      await confirmRegistration2FA(formData.email, twoFACode);
+      try {
+        await confirmRegistration2FA(formData.email, twoFACode, ticket);
+      } catch (err) {
+        // The code is right; the account starts working once the e-mailed link is opened
+        if (err.code === 'EMAIL_NOT_VERIFIED') { setStep(3); toast.success('Authenticator linked. Now verify your e-mail.'); return; }
+        throw err;
+      }
       setTimeout(() => {
         const redirectPath = settings.defaultLandingPage === 'Dashboard' ? '/dashboard' : 
                              settings.defaultLandingPage === 'Trending Topics' ? '/dashboard?tab=Trending Topics' : 
@@ -80,6 +90,19 @@ const RegisterPage = () => {
       }, 1000);
     } catch (err) {
       toast.error(err.message || 'Invalid code. Try again.');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // Sign up with Google: the account is created and signed in at once (no password, no 2FA setup)
+  const handleGoogle = async (credential) => {
+    setLoading(true);
+    try {
+      const res = await loginWithGoogle(credential, false);
+      if (res.token) navigate(settings.defaultLandingPage === 'Dashboard' ? '/dashboard' : settings.defaultLandingPage === 'Trending Topics' ? '/dashboard?tab=Trending Topics' : '/feed');
+    } catch (err) {
+      toast.error(err.message || 'Google sign-up failed');
     } finally {
       setLoading(false);
     }
@@ -209,7 +232,7 @@ const RegisterPage = () => {
       </div>
 
       {/* Left Side - Form */}
-      <div className="w-full lg:w-1/2 order-2 lg:order-1 flex items-center justify-center p-4 sm:p-6 lg:p-8 bg-[#0a0a0a] h-[60%] lg:h-full overflow-hidden hide-scrollbar">
+      <div className="w-full lg:w-1/2 order-2 lg:order-1 flex items-center justify-center p-4 sm:p-6 lg:p-8 bg-[#0a0a0a] h-[60%] lg:h-full overflow-y-auto hide-scrollbar">
         <motion.div 
           initial={{ opacity: 0, x: 30 }}
           animate={{ opacity: 1, x: 0 }}
@@ -350,6 +373,13 @@ const RegisterPage = () => {
               </form>
 
               {/* Social Login Options */}
+              <div className="relative my-3">
+                <div className="absolute inset-0 flex items-center"><div className="w-full border-t border-[#222]"></div></div>
+                <div className="relative flex justify-center text-[9px] lg:text-[11px]">
+                  <span className="px-3 bg-[#0a0a0a] text-gray-500 uppercase tracking-widest font-medium">or</span>
+                </div>
+              </div>
+              <GoogleButton onCredential={handleGoogle} text="signup_with" disabled={loading} />
               <div className="mt-3 lg:mt-4 text-center text-[12px] lg:text-[13px] text-gray-400">
                 Already have an account?{' '}
                 <Link to="/login" className="font-semibold text-blue-500 hover:text-blue-400 transition">Log in</Link>
@@ -394,6 +424,13 @@ const RegisterPage = () => {
                   {loading ? 'Verifying...' : 'Verify & Complete'}
                 </motion.button>
               </form>
+            </div>
+          )}
+
+          {step === 3 && (
+            <div className="relative z-10">
+              <VerifyEmailNotice email={formData.email} />
+              <Link to="/login" className="mt-4 block text-center text-[12px] lg:text-[13px] font-semibold text-blue-500 hover:text-blue-400 transition">Already verified? Log in</Link>
             </div>
           )}
         </motion.div>

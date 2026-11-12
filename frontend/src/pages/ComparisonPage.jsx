@@ -4,7 +4,7 @@ import { Link, useParams, useSearchParams } from 'react-router-dom';
 import Sidebar from '../components/common/Sidebar';
 import SideBySideLayout from '../components/comparison/SideBySideLayout';
 import ChangedWordsPanel from '../components/comparison/ChangedWordsPanel';
-import SentimentBarChart from '../components/charts/SentimentBarChart';
+import ComparisonSidePanel from '../components/comparison/ComparisonSidePanel';
 import { fetchArticleById, fetchComparison, fetchStory, fetchStories } from '../services/newsService';
 import { Download, Share2, Layers, X, Plus, ChevronDown } from 'lucide-react';
 
@@ -203,14 +203,6 @@ const ComparisonPage = () => {
 
   useFlowAround(flowRef, [comparison, filteredArticles.length, loading, focusIds.join()]);
 
-  const sentimentCounts = useMemo(() => {
-    const counts = { positive: 0, neutral: 0, negative: 0 };
-    filteredArticles.forEach((article) => {
-      counts[article.sentiment] = (counts[article.sentiment] || 0) + 1;
-    });
-    return counts;
-  }, [filteredArticles]);
-
   const similarityScore = comparison?.semanticSimilarity ?? null;   // from the ML comparison; null = not the same story
 
   const overallSimilarityPercentage = similarityScore == null ? 0 : Math.round(similarityScore * 100);
@@ -263,10 +255,6 @@ const ComparisonPage = () => {
     return items;
   }, [filteredArticles, hasComparison, framingDiffs, omissionDiffs, pairArticles]);
 
-  const overallBiasTrend = useMemo(
-    () => filteredArticles.map((article) => ({ source: article.source, bias: article.biasScore })),
-    [filteredArticles]
-  );
 
   const uniqueCategories = useMemo(
     () => ['All Categories', ...Array.from(new Set(pool.map((article) => article.category)))],
@@ -442,54 +430,9 @@ const ComparisonPage = () => {
             {/* Wide screens: the score cards float on the right, and every box on the left that starts
                 below them takes the full width, so no empty column is left. Small screens: one column. */}
             <div ref={flowRef} className="flex flex-col gap-8 xl:flow-root">
-              <aside data-flow="side" className="order-2 space-y-6 xl:float-right xl:w-[34%] xl:ml-8 xl:mb-8">
-                <div className="bg-bg-card rounded-3xl border border-gray-800 p-6 shadow-xl">
-                  <div className="flex items-center justify-between mb-4">
-                    <div>
-                      <p className="text-sm uppercase tracking-[0.3em] text-gray-500">Overall Similarity</p>
-                      <p className="text-3xl font-bold text-white">{similarityScore == null ? '–' : `${overallSimilarityPercentage}%`}</p>
-                    </div>
-                    <div className="flex items-center justify-center h-16 w-16 rounded-2xl bg-slate-900 text-white text-lg font-semibold">
-                      {similarityScore == null ? '–' : `${overallSimilarityPercentage}%`}
-                    </div>
-                  </div>
-                  <p className="text-sm text-gray-400">
-                    {similarityScore == null
-                      ? noComparisonText
-                      : `These articles are ${overallSimilarityPercentage >= 70 ? 'highly similar in content' : overallSimilarityPercentage >= 45 ? 'moderately aligned' : 'noticeably different in content'} (Sentence-BERT similarity of the full text).`}
-                  </p>
-                </div>
-
-                <div className="bg-bg-card rounded-3xl border border-gray-800 p-6 shadow-xl">
-                  <div className="flex items-center justify-between mb-4">
-                    <h3 className="text-lg font-semibold text-white">Bias Comparison</h3>
-                    <span className="text-sm text-gray-500">{filteredArticles.length} sources</span>
-                  </div>
-                  <div className="space-y-4">
-                    {overallBiasTrend.map((item) => (
-                      <div key={item.source} className="space-y-2">
-                        <div className="flex items-center justify-between text-sm text-gray-400">
-                          <span>{item.source}</span>
-                          <span>{item.bias}%</span>
-                        </div>
-                        <div className="h-2 rounded-full bg-gray-800 overflow-hidden">
-                          <div className="h-full rounded-full bg-blue-500" style={{ width: `${item.bias}%` }} />
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="bg-bg-card rounded-3xl border border-gray-800 p-6 shadow-xl">
-                  <div className="flex items-center justify-between mb-4">
-                    <h3 className="text-lg font-semibold text-white">Sentiment Comparison</h3>
-                    <span className="text-sm text-gray-500">{filteredArticles.length} articles</span>
-                  </div>
-                  <div className="h-52">
-                    <SentimentBarChart sentimentData={sentimentCounts} />
-                  </div>
-                </div>
-
+              <aside data-flow="side" className="order-2 space-y-5 xl:float-right xl:w-[34%] xl:ml-8 xl:mb-8">
+                <ComparisonSidePanel articles={filteredArticles} comparison={hasComparison ? comparison : null}
+                  similarity={similarityScore == null ? null : overallSimilarityPercentage} noComparisonText={noComparisonText} />
               </aside>
               <div className="contents">
                 <div data-flow="main" className="order-1 flow-root xl:mb-8 bg-[#081b34] rounded-3xl border border-blue-900/60 p-6 shadow-[0_30px_60px_rgba(0,0,0,0.25)]">

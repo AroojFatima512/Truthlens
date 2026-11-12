@@ -2,15 +2,14 @@ import React, { useState, useEffect, useRef, useLayoutEffect } from 'react';
 import useFlowAround from '../utils/useFlowAround';
 import { useParams, Link } from 'react-router-dom';
 import Sidebar from '../components/common/Sidebar';
-import BiasScoreBadge from '../components/common/BiasScoreBadge';
-import SentimentTag from '../components/common/SentimentTag';
 import HighlightedText from '../components/news/HighlightedText';
 import VersionHistory from '../components/news/VersionHistory';
 import CredibilityRating from '../components/news/CredibilityRating';
+import AtAGlanceCard from '../components/news/AtAGlanceCard';
 import { fetchArticleById } from '../services/newsService';
 import { fetchBiasReport } from '../services/biasService';
 import { formatDate } from '../utils/formatters';
-import { ArrowLeft, Clock, Share2, Bookmark, ExternalLink, Layers, Menu, BarChart2 } from 'lucide-react';
+import { ArrowLeft, Clock, Share2, Bookmark, ExternalLink, Layers, Menu } from 'lucide-react';
 import toast from 'react-hot-toast';
 import { useSavedArticles } from '../context/SavedArticlesContext';
 import { useSettings } from '../context/SettingsContext';
@@ -168,35 +167,7 @@ const NewsDetailPage = () => {
               dimensions, sentiment, people & places) is on the Full Report page. Keeping this column short
               lets the article text wrap around it and use the full width below, so no empty space is left. */}
           <div data-flow="side" className="order-2 flex flex-col gap-4 lg:float-right lg:w-1/3 lg:pl-6 lg:mb-6">
-            <div className="bg-bg-card rounded-2xl border border-gray-800 p-4 shadow-xl">
-              <h3 className="text-base font-bold text-white mb-3">At a Glance</h3>
-              <div className="grid grid-cols-2 gap-3 mb-3">
-                <div className="rounded-xl bg-gray-900/60 border border-gray-800 p-3 flex flex-col items-center gap-1.5">
-                  <span className="text-[10px] uppercase tracking-wider text-gray-500 font-bold">Bias</span>
-                  <BiasScoreBadge score={article.biasScore} showLabel />
-                </div>
-                <div className="rounded-xl bg-gray-900/60 border border-gray-800 p-3 flex flex-col items-center gap-1.5">
-                  <span className="text-[10px] uppercase tracking-wider text-gray-500 font-bold">Sentiment</span>
-                  <SentimentTag sentiment={article.sentiment} />
-                </div>
-              </div>
-              {article.biasSignals?.totalSentences > 0 && (
-                <p className="text-xs text-gray-400 mb-3">
-                  {article.biasSignals.biasedSentences} of {article.biasSignals.totalSentences} sentences rated biased · {Math.max(1, Math.ceil((article.content || '').split(/\s+/).length / 200))} min read
-                </p>
-              )}
-              <div className="flex flex-col gap-2">
-                <Link to={`/report/${article.id}`} className="flex items-center justify-center gap-2 px-3 py-2 rounded-xl bg-primary hover:bg-blue-500 text-white text-sm font-semibold transition-colors">
-                  <BarChart2 size={16} /> Full Report: why this score
-                </Link>
-                {article.relatedArticleIds?.length > 0 && (
-                  <Link to={article.storyId ? `/compare?story=${encodeURIComponent(article.storyId)}&with=${article.id}` : `/compare/${article.id}/${article.relatedArticleIds[0]}`}
-                    className="flex items-center justify-center gap-2 px-3 py-2 rounded-xl border border-gray-700 hover:bg-gray-800 text-gray-200 text-sm font-medium transition-colors">
-                    <Layers size={16} /> Compare {article.relatedArticleIds.length + 1} outlets
-                  </Link>
-                )}
-              </div>
-            </div>
+            <AtAGlanceCard article={article} />
 
             {/* FR-12: readers rate this article's credibility */}
             <div data-stretch className="flex flex-col [&>*]:flex-1"><CredibilityRating articleId={article.id} /></div>

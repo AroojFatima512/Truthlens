@@ -34,6 +34,9 @@ import SourceManagementPage from './pages/SourceManagementPage';
 import UserManagementPage from './pages/UserManagementPage';
 import AdminFeedbackPage from './pages/AdminFeedbackPage';
 import AdminDataQualityPage from './pages/AdminDataQualityPage';
+import ForgotPasswordPage from './pages/ForgotPasswordPage';
+import ResetPasswordPage from './pages/ResetPasswordPage';
+import VerifyEmailPage from './pages/VerifyEmailPage';
 import AdminSettingsPage from './pages/AdminSettingsPage';
 
 function App() {
@@ -54,6 +57,12 @@ function App() {
                 <Route path="/login" element={<GuestRoute><LoginPage /></GuestRoute>} />
                 <Route path="/register" element={<GuestRoute><RegisterPage /></GuestRoute>} />
                 <Route path="/admin/login" element={<GuestRoute><AdminLoginPage /></GuestRoute>} />
+                <Route path="/forgot-password" element={<GuestRoute><ForgotPasswordPage /></GuestRoute>} />
+                <Route path="/admin/forgot-password" element={<GuestRoute><ForgotPasswordPage /></GuestRoute>} />
+                {/* opened from the e-mailed link; works whether or not someone is logged in */}
+                <Route path="/reset-password" element={<ResetPasswordPage />} />
+                <Route path="/admin/reset-password" element={<ResetPasswordPage />} />
+                <Route path="/verify-email" element={<VerifyEmailPage />} />
 
                 {/* Protected User Routes */}
                 <Route element={<ProtectedRoute role="user" />}>

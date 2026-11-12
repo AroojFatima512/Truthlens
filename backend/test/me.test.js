@@ -3,6 +3,7 @@
 // stand-in ML service (no MongoDB or Python needed).
 process.env.ADMIN_PASSWORD = 'Adm1nPass!';
 process.env.DEV_2FA_CODE = '123456';
+process.env.EMAIL_DOMAIN_CHECK = 'off';
 const test = require('node:test'); const assert = require('node:assert');
 const dbmod = require('../db'); const fake = require('./fakedb'); dbmod.getDb = () => fake;
 const express = require('express');
@@ -38,14 +39,18 @@ test.before(async () => {
 });
 test.after(() => { server.close(); mlServer.close(); });
 
+// Tests here are about other things: a new account counts as having clicked its verification link.
+const autoVerify = async (path, body, r) => { if (path === '/auth/register' && r.status === 201) await fake.collection('users').updateOne({ email: String(body.email).toLowerCase() }, { $set: { emailVerified: true } }); };
 const call = async (method, path, body, token) => {
   const r = await fetch(base + path, { method, headers: { 'Content-Type': 'application/json', ...(token ? { Authorization: `Bearer ${token}` } : {}) }, body: body ? JSON.stringify(body) : undefined });
-  return { status: r.status, body: await r.json() };
+  const out = { status: r.status, body: await r.json() };
+  await autoVerify(path, body, out);
+  return out;
 };
 async function newReader(email) {
   await call('POST', '/auth/register', { name: email.split('@')[0], email, password: 'secret12' });
-  await call('POST', '/auth/login', { email, password: 'secret12' });
-  return (await call('POST', '/auth/verify-2fa', { email, token: '123456' })).body.token;
+  const { ticket } = (await call('POST', '/auth/login', { email, password: 'secret12' })).body;
+  return (await call('POST', '/auth/verify-2fa', { email, token: '123456', ticket })).body.token;
 }
 const ARTICLE = 'The corrupt minister rammed the budget through parliament on Monday. Officials said the plan starts in May and will cost more than expected.';
 
@@ -90,8 +95,8 @@ test('anonymous feedback hides the sender from admins only', async () => {
   await call('PUT', '/me/privacy', { anonymousFeedback: true }, t);
   await call('POST', '/feedback', { type: 'Issue', title: 'Anon issue', desc: 'Something is off' }, t);
   assert.equal((await call('GET', '/feedback/mine', null, t)).body[0].title, 'Anon issue', 'sender still sees it');
-  await call('POST', '/auth/login', { email: 'admin@truthlens.com', password: 'Adm1nPass!', isAdminLogin: true });
-  const admin = (await call('POST', '/auth/verify-2fa', { email: 'admin@truthlens.com', token: '123456', isAdminLogin: true })).body.token;
+  const at = (await call('POST', '/auth/login', { email: 'admin@truthlens.com', password: 'Adm1nPass!', isAdminLogin: true })).body.ticket;
+  const admin = (await call('POST', '/auth/verify-2fa', { email: 'admin@truthlens.com', token: '123456', isAdminLogin: true, ticket: at })).body.token;
   const item = (await call('GET', '/feedback', null, admin)).body.find((f) => f.title === 'Anon issue');
   assert.ok(item.anonymous && item.userEmail === null && item.userName === null && item.userId === null);
 });
@@ -104,8 +109,8 @@ test('alerts count articles crawled since the previous login', async () => {
   assert.ok(r.examples.every((e) => e.id && !e.id.includes(':')));
   assert.equal((await call('GET', '/me/alerts?since=2030-01-01T00:00:00Z', null, t)).body.newArticles, 0);
   // second login records the previous one
-  await call('POST', '/auth/login', { email: 'al@test.com', password: 'secret12' });
-  const v = (await call('POST', '/auth/verify-2fa', { email: 'al@test.com', token: '123456' })).body;
+  const lt = (await call('POST', '/auth/login', { email: 'al@test.com', password: 'secret12' })).body.ticket;
+  const v = (await call('POST', '/auth/verify-2fa', { email: 'al@test.com', token: '123456', ticket: lt })).body;
   assert.ok(v.user.prevLoginAt, 'prevLoginAt set on the second login');
 });
 

@@ -1,5 +1,5 @@
 import React, { createContext, useState, useContext, useEffect } from 'react';
-import { loginUser, loginAdmin, registerUser, verify2FA, logoutUser } from '../services/authService';
+import { loginUser, loginAdmin, registerUser, verify2FA, logoutUser, googleSignIn } from '../services/authService';
 import toast from 'react-hot-toast';
 
 const AuthContext = createContext();
@@ -19,30 +19,36 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   // Step 1: Login
+  // Returns { requires2FA, email, ticket }, or { token, user } for an account without an authenticator
+  // app (made with Google, password added later): then the session starts straight away.
   const login = async (email, password, isAdmin = false) => {
-    try {
-      if (isAdmin) {
-        return await loginAdmin(email, password);
-      } else {
-        return await loginUser(email, password);
-      }
-    } catch (error) {
-      throw error;
-    }
+    const response = isAdmin ? await loginAdmin(email, password) : await loginUser(email, password);
+    if (response?.token) { startSession(response); toast.success('Login successful!'); }
+    return response;
   };
 
-  // Step 2: Verify 2FA (isAdmin = true when it comes from the Admin Login page)
-  const verifyLogin2FA = async (email, token, isAdmin = false) => {
-    try {
-      const response = await verify2FA(email, token, isAdmin);
-      setUser(response.user);
-      localStorage.setItem('truthlens_user', JSON.stringify(response.user));
-      localStorage.setItem('truthlens_token', response.token);
-      toast.success('Login successful!');
-      return response.user;
-    } catch (error) {
-      throw error;
+  const startSession = (response) => {
+    setUser(response.user);
+    localStorage.setItem('truthlens_user', JSON.stringify(response.user));
+    localStorage.setItem('truthlens_token', response.token);
+  };
+
+  // Step 2: Verify 2FA (isAdmin = true when it comes from the Admin Login page; ticket from step 1)
+  const verifyLogin2FA = async (email, token, isAdmin = false, ticket = null) => {
+    const response = await verify2FA(email, token, isAdmin, ticket);
+    startSession(response);
+    toast.success('Login successful!');
+    return response.user;
+  };
+
+  // "Continue with Google": readers are signed in at once; admins get { requires2FA, email, ticket }
+  const loginWithGoogle = async (credential, isAdmin = false) => {
+    const response = await googleSignIn(credential, isAdmin);
+    if (response.token) {
+      startSession(response);
+      toast.success(response.created ? `Welcome to TruthLens, ${response.user.name}!` : 'Login successful!');
     }
+    return response;
   };
 
   const register = async (userData) => {
@@ -56,9 +62,9 @@ export const AuthProvider = ({ children }) => {
   };
 
   // Step 2 of registration (verify the first code to confirm 2FA setup)
-  const confirmRegistration2FA = async (email, token) => {
+  const confirmRegistration2FA = async (email, token, ticket = null) => {
     try {
-      const response = await verify2FA(email, token);
+      const response = await verify2FA(email, token, false, ticket);
       setUser(response.user);
       localStorage.setItem('truthlens_user', JSON.stringify(response.user));
       localStorage.setItem('truthlens_token', response.token);
@@ -88,6 +94,7 @@ export const AuthProvider = ({ children }) => {
     loading,
     login,
     verifyLogin2FA,
+    loginWithGoogle,
     register,
     confirmRegistration2FA,
     updateUser,

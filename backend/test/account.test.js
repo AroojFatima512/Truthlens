@@ -2,6 +2,7 @@
 // Account, feedback and user-management endpoints against an in-memory database (no MongoDB needed).
 process.env.ADMIN_PASSWORD = 'Adm1nPass!';
 process.env.DEV_2FA_CODE = '123456';
+process.env.EMAIL_DOMAIN_CHECK = 'off';
 const test = require('node:test'); const assert = require('node:assert');
 const dbmod = require('../db'); const fake = require('./fakedb'); dbmod.getDb = () => fake;
 const express = require('express');
@@ -13,14 +14,18 @@ app.use('/api/auth', auth); app.use('/api/feedback', require('../routes/feedback
 let base, server;
 test.before(async () => { await auth.init(); server = app.listen(0); base = `http://localhost:${server.address().port}/api`; });
 test.after(() => server.close());
+// Tests here are about other things: a new account counts as having clicked its verification link.
+const autoVerify = async (path, body, r) => { if (path === '/auth/register' && r.status === 201) await fake.collection('users').updateOne({ email: String(body.email).toLowerCase() }, { $set: { emailVerified: true } }); };
 const call = async (method, path, body, token) => {
   const r = await fetch(base + path, { method, headers: { 'Content-Type': 'application/json', ...(token ? { Authorization: `Bearer ${token}` } : {}) }, body: body ? JSON.stringify(body) : undefined });
-  return { status: r.status, body: await r.json() };
+  const out = { status: r.status, body: await r.json() };
+  await autoVerify(path, body, out);
+  return out;
 };
 async function login(email, password, isAdminLogin = false) {
   const r1 = await call('POST', '/auth/login', { email, password, isAdminLogin });
   if (r1.status !== 200) return { status: r1.status, body: r1.body };
-  return call('POST', '/auth/verify-2fa', { email, token: '123456', isAdminLogin });
+  return call('POST', '/auth/verify-2fa', { email, token: '123456', isAdminLogin, ticket: r1.body.ticket });
 }
 
 test('reader: edit name, change password, delete account (all saved)', async () => {

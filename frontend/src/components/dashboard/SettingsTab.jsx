@@ -229,6 +229,7 @@ const HelpRow = ({ icon: Icon, title, subtitle, href }) => (
 
 const AccountSettingsPanel = () => {
   const { user, logout, updateUser } = useAuth();
+  const noPassword = user?.hasPassword === false;   // signed up with Google, no password yet
   const { clearSavedArticles } = useSavedArticles();
   const [activeModal, setActiveModal] = useState(null);
   const [loadingActions, setLoadingActions] = useState({});
@@ -295,8 +296,9 @@ const AccountSettingsPanel = () => {
     if (newPassword.length < 6) return toast.error('New password must be at least 6 characters.');
     setSaving(true);
     try {
-      await changePassword(oldPassword, newPassword);
-      toast.success('Password changed. Use the new one next time you log in.');
+      await changePassword(noPassword ? '' : oldPassword, newPassword);
+      toast.success(noPassword ? 'Password set. You can now also log in with your e-mail and password.' : 'Password changed. Use the new one next time you log in.');
+      if (noPassword) updateUser({ ...user, hasPassword: true });
       closeModal();
     } catch (err) {
       toast.error(err.message);
@@ -362,7 +364,7 @@ const AccountSettingsPanel = () => {
           <div className="px-6">
             <AccountRow label="Name" value={user?.name} onClick={() => setActiveModal('editProfile')} />
             <AccountRow label="Email" value={user?.email} onClick={() => setActiveModal('editProfile')} />
-            <AccountRow label="Change Password" value="********" onClick={() => setActiveModal('changePassword')} />
+            <AccountRow label={noPassword ? "Set a Password" : "Change Password"} value={noPassword ? "Signed in with Google" : "********"} onClick={() => setActiveModal('changePassword')} />
             <AccountRow label="Delete Account" isDanger={true} onClick={() => setActiveModal('deleteAccount')} />
           </div>
         </div>
@@ -496,9 +498,10 @@ const AccountSettingsPanel = () => {
       </Modal>
 
       {/* Change Password Modal */}
-      <Modal isOpen={activeModal === 'changePassword'} onClose={closeModal} title="Change Password">
+      <Modal isOpen={activeModal === 'changePassword'} onClose={closeModal} title={noPassword ? 'Set a Password' : 'Change Password'}>
         <form onSubmit={handleChangePassword} className="space-y-4">
-          <div>
+          {noPassword && <p className="text-sm text-gray-500 dark:text-gray-400">You sign in with Google. Set a password to also log in with your e-mail.</p>}
+          {!noPassword && <div>
             <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">Current Password</label>
             <input 
               type="password" 
@@ -508,7 +511,7 @@ const AccountSettingsPanel = () => {
               className="w-full bg-gray-50 dark:bg-gray-900/50 border border-gray-200 dark:border-gray-700 rounded-xl px-4 py-2.5 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all font-mono tracking-widest placeholder:tracking-normal" 
               placeholder="Enter current password"
             />
-          </div>
+          </div>}
           <div>
             <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">New Password</label>
             <input 
@@ -542,15 +545,15 @@ const AccountSettingsPanel = () => {
           </div>
           
           <div className="pt-2">
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">Your password</label>
+            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">{noPassword ? 'Your e-mail address' : 'Your password'}</label>
             <input 
-              type="password" 
+              type={noPassword ? 'email' : 'password'} 
               value={deletePassword} 
               onChange={e => setDeletePassword(e.target.value)} 
               required 
               autoComplete="current-password"
               className="w-full bg-gray-50 dark:bg-gray-900/50 border border-gray-200 dark:border-gray-700 rounded-xl px-4 py-2.5 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-red-500/50 transition-all" 
-              placeholder="Enter your password"
+              placeholder={noPassword ? user?.email : 'Enter your password'}
             />
           </div>
           <div>
