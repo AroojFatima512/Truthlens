@@ -253,10 +253,12 @@ function storyLinks(comparisons) {
 }
 
 // ---------------------------------------------------------------- admin
-function toSource({ name, url, articlesCount, lastCrawled }, i) {
+const STATUS_LABEL = { active: 'Active', paused: 'Paused', removed: 'Removed' };
+function toSource({ name, url, articlesCount, lastCrawled, category, status, updatedAt, updatedBy }, i) {
   return {
-    id: `src_${String(i + 1).padStart(2, '0')}`, name, url, category: 'General News', status: 'Active',
-    credibilityScore: null, lastCrawled: iso(lastCrawled), articlesCount,
+    id: `src_${String(i + 1).padStart(2, '0')}`, name, url, category: category || 'General News',
+    status: STATUS_LABEL[status] || 'Active', credibilityScore: null, lastCrawled: iso(lastCrawled), articlesCount,
+    updatedAt: iso(updatedAt), updatedBy: updatedBy || null,
   };
 }
 

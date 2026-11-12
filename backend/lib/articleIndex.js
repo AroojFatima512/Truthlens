@@ -9,6 +9,7 @@ const { getDb } = require('../db');
 const { storyLinks, toId, registerKeyPrefixes } = require('../adapters/toFrontend');
 const { categoryOf, reportUnmatched } = require('./categories');
 const genericImages = require('./genericImages');
+const sourceSettings = require('./sourceSettings');
 
 const TOPIC_TYPES = new Set(['PERSON', 'ORG', 'GPE', 'NORP', 'EVENT', 'LAW', 'LOC', 'FAC']);
 // Dates may be stored as strings ("2026-10-11 11:49:00+05:00" from Dawn, ISO from others) or as real dates
@@ -40,13 +41,16 @@ async function build() {
   const started = Date.now();
   // articles an admin removed from the site (Data Quality page, FR-13)
   const hidden = new Set((await db.collection('hidden_articles').find({}, { projection: { articleKey: 1 } }).toArray()).map((h) => h.articleKey));
+  // outlets an admin removed from the site (Manage Sources)
+  await sourceSettings.refresh();
+  const removed = sourceSettings.removedSources();
   const [allDocs, comps] = await Promise.all([
     db.collection('articles').find({ analysis: { $exists: true } }, { projection: INDEX_PROJECTION }).toArray(),
     db.collection('comparisons').find({}, {
       projection: { story_id: 1, article_keys: 1, computed_at: 1, 'result.pairs.a': 1, 'result.pairs.b': 1, 'result.pairs.similarity': 1 },
     }).toArray(),
   ]);
-  const docs = allDocs.filter((d) => !hidden.has(d.article_key));
+  const docs = allDocs.filter((d) => !hidden.has(d.article_key) && !removed.has(d.source));
   const links = storyLinks(comps.filter((c) => Array.isArray(c.result?.pairs)));
   genericImages.updateFromUrls(docs.map((d) => d.image_url));   // logos / banners shared by many articles
 
@@ -153,8 +157,9 @@ function invalidate() {
   if (current) rebuild().catch((err) => console.error('Article index rebuild failed:', err.message));
 }
 
-// Was this article removed from the site by an admin?
-async function isHidden(articleKey) {
+// Was this article removed from the site by an admin (on its own, or with its whole outlet)?
+async function isHidden(articleKey, source) {
+  if (source && sourceSettings.isRemoved(source)) return true;
   return Boolean(await getDb().collection('hidden_articles').findOne({ articleKey }));
 }
 

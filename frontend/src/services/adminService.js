@@ -17,8 +17,15 @@ export const deleteUser = async (id) => {
   try { return (await api.delete(`/admin/users/${id}`)).data; } catch (e) { throw apiError(e, 'Could not delete the user'); }
 };
 
-// Editing sources is after the evaluation; kept so the Source Management page still works.
-export const saveSources = async () => true;
+// Manage Sources: status 'active' | 'paused' | 'removed', homepage, category (stored in source_settings)
+export const updateSource = async (name, fields) => {
+  try { return (await api.patch(`/admin/sources/${encodeURIComponent(name)}`, fields)).data; } catch (e) { throw apiError(e, 'Could not update the source'); }
+};
+export const setAllPaused = async (paused) => {
+  try { return (await api.post('/admin/sources/pause-all', { paused })).data; } catch (e) { throw apiError(e, 'Could not update the sources'); }
+};
+// { running, outlets, skipped, last: { startedAt, finishedAt, exitCode, error } }
+export const fetchCrawlStatus = async () => (await api.get('/admin/crawl-status')).data;
 
 // FR-13 Data Quality: flagged / low-quality articles for the admin to examine
 // params: { reason, status: 'open'|'reviewed'|'hidden'|'all', source, page, pageSize }

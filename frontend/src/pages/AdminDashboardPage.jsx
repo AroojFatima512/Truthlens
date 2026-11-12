@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Sidebar from '../components/common/Sidebar';
 import { useNavigate } from 'react-router-dom';
-import { fetchStats, fetchActivity, fetchCrawlRuns, startCrawl } from '../services/adminService';
+import { fetchStats, fetchActivity, fetchCrawlRuns, fetchCrawlStatus, startCrawl } from '../services/adminService';
 import toast from 'react-hot-toast';
 import { fetchOverview } from '../services/newsService';
 import { Database, FileText, Users, MessageSquare, Calendar, ChevronRight, Menu, Play, Loader2, CheckCircle, XCircle } from 'lucide-react';
@@ -29,6 +29,7 @@ const AdminDashboardPage = () => {
   const [lastRun, setLastRun] = useState(null);
   const [crawlLimit, setCrawlLimit] = useState(3);
   const [crawling, setCrawling] = useState(false);
+  const [crawlStatus, setCrawlStatus] = useState(null);   // { running, outlets, skipped, last: { startedAt, error, ... } }
 
   const loadAll = () => {
     fetchStats().then((data) => data && setStats(data)).catch((err) => console.error('Could not load stats', err));
@@ -36,33 +37,42 @@ const AdminDashboardPage = () => {
     fetchActivity().then((list) => setActivities(list.map((a, i) => ({ id: i, type: a.type, text: a.text, date: fmtDate(a.at), time: fmtTime(a.at) }))))
       .catch((err) => console.error('Could not load activity', err));
     fetchCrawlRuns().then((runs) => setLastRun(runs[0] || null)).catch(() => {});
+    fetchCrawlStatus().then((st) => { setCrawlStatus(st); if (st.running) setCrawling(true); }).catch(() => {});
   };
   useEffect(() => { loadAll(); }, []);
 
 
+  // While a crawl runs: the backend says when the pipeline process has ended (and with which error);
+  // crawl_runs (written by the pipeline) gives the per-outlet counts. Only runs that started with this
+  // crawl count, so an older finished run is never mistaken for this one.
   useEffect(() => {
     if (!crawling) return undefined;
     const timer = setInterval(async () => {
       try {
-        const latest = (await fetchCrawlRuns())[0];
-        setLastRun(latest || null);
-        if (latest && latest.status !== 'running') {
-          setCrawling(false);
-          if (latest.status === 'completed') toast.success('Crawl finished. New articles are analysed.');
-          else toast.error('The crawl finished with errors. Check the backend terminal.');
-          loadAll();
-        }
+        const [st, runs] = await Promise.all([fetchCrawlStatus(), fetchCrawlRuns()]);
+        setCrawlStatus(st);
+        const since = st.last?.startedAt ? new Date(st.last.startedAt).getTime() - 5000 : 0;
+        const mine = runs.find((r) => r.startedAt && new Date(r.startedAt).getTime() >= since) || null;
+        if (st.running) { setLastRun(mine || { status: 'running', startedAt: st.last?.startedAt, steps: [] }); return; }
+        setCrawling(false);
+        setLastRun(mine || runs[0] || null);
+        if (st.last?.error) toast.error(st.last.error, { duration: 8000 });
+        else if (!mine || mine.status === 'completed') toast.success('Crawl finished. New articles are analysed.');
+        else toast.error('The crawl finished with errors. Check the backend terminal.');
+        loadAll();
       } catch { /* keep polling */ }
-    }, 5000);
+    }, 4000);
     return () => clearInterval(timer);
   }, [crawling]);
 
   const handleRunCrawl = async () => {
     try {
-      await startCrawl(crawlLimit);
+      const started = await startCrawl(crawlLimit);
       setCrawling(true);
+      setCrawlStatus((st) => ({ ...(st || {}), running: true, last: null }));
       setLastRun({ status: 'running', startedAt: new Date().toISOString(), steps: [] });
-      toast.success(`Crawl started (${crawlLimit} articles per outlet). This takes a few minutes.`);
+      const skipped = started.skipped?.length ? ` Skipping ${started.skipped.join(', ')}.` : '';
+      toast.success(`Crawl started (${crawlLimit} articles per outlet). This takes a few minutes.${skipped}`);
     } catch (err) {
       toast.error(err.response?.data?.message || 'Could not start the crawl');
     }
@@ -173,8 +183,16 @@ const AdminDashboardPage = () => {
             <div className="flex-1">
               <h3 className="text-[17px] font-bold text-gray-900 dark:text-white tracking-tight mb-1">News Crawler</h3>
               <p className="text-[13px] text-gray-500 dark:text-gray-400">
-                Crawls every news outlet the crawler has a spider for, then analyses the new articles with the ML service.
+                Crawls every active outlet, then analyses the new articles with the ML service.
+                {crawlStatus?.skipped?.length > 0 && (
+                  <span className="text-amber-500 dark:text-amber-400"> Skipped (paused or removed on Manage Sources): {crawlStatus.skipped.join(', ')}.</span>
+                )}
               </p>
+              {!crawling && crawlStatus?.last?.error && (
+                <p className="text-[12px] mt-2 flex items-start gap-1.5 text-red-500 dark:text-red-400">
+                  <XCircle size={13} className="mt-0.5 shrink-0" /> Last attempt {fmtDate(crawlStatus.last.startedAt)}, {fmtTime(crawlStatus.last.startedAt)}: {crawlStatus.last.error}
+                </p>
+              )}
               <p className="text-[12px] mt-2 flex items-center gap-1.5 text-gray-400">
                 {!lastRun && 'No crawl has been run yet.'}
                 {lastRun?.status === 'running' && <><Loader2 size={13} className="animate-spin text-amber-400" /> Running since {fmtTime(lastRun.startedAt)}…</>}
@@ -190,7 +208,8 @@ const AdminDashboardPage = () => {
                 <option value={30}>30 per outlet</option>
                 <option value={100}>100 per outlet</option>
               </select>
-              <button onClick={handleRunCrawl} disabled={crawling}
+              <button onClick={handleRunCrawl} disabled={crawling || (crawlStatus && crawlStatus.outlets?.length === 0 && crawlStatus.skipped?.length > 0)}
+                title={crawlStatus?.outlets?.length === 0 && crawlStatus?.skipped?.length ? 'Every outlet is paused or removed' : undefined}
                 className="flex items-center gap-2 px-5 py-2.5 bg-[#D32F2F] text-white rounded-lg hover:bg-[#B71C1C] transition shadow-md shadow-red-900/20 font-medium text-sm disabled:opacity-60">
                 {crawling ? <Loader2 size={16} className="animate-spin" /> : <Play size={16} />} {crawling ? 'Crawling…' : 'Run crawl now'}
               </button>

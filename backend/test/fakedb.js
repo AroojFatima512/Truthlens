@@ -58,7 +58,12 @@ function collection(docs) {
       if (ks && docs.some((x) => ks.every((k) => x[k] === d[k]))) { const e = new Error('duplicate key'); e.code = 11000; throw e; }
       d._id = d._id || `oid${docs.length}${Date.now()}`; docs.push(d); return { insertedId: d._id };
     },
-    async updateOne(f, u) { const d = docs.find((x) => match(x, f)); if (d) Object.assign(d, u.$set || {}); return { matchedCount: d ? 1 : 0 }; },
+    async updateOne(f, u, o = {}) {
+      const d = docs.find((x) => match(x, f));
+      if (d) Object.assign(d, u.$set || {});
+      else if (o.upsert) await this.insertOne({ ...f, ...(u.$setOnInsert || {}), ...(u.$set || {}) });
+      return { matchedCount: d ? 1 : 0, upsertedCount: !d && o.upsert ? 1 : 0 };
+    },
     async updateMany(f, u) { const ds = docs.filter((x) => match(x, f)); ds.forEach((d) => Object.assign(d, u.$set || {})); return { matchedCount: ds.length }; },
     async deleteMany(f = {}) { let n = 0; for (let i = docs.length - 1; i >= 0; i--) if (match(docs[i], f)) { docs.splice(i, 1); n++; } return { deletedCount: n }; },
     async insertMany(list) { for (const d of list) await this.insertOne(d); return { insertedCount: list.length }; },

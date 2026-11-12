@@ -9,6 +9,7 @@ const express = require('express');
 const { getDb } = require('../db');
 const { toArticle, toBiasReport, toComparison, toKey, iso } = require('../adapters/toFrontend');
 const { getIndex, isHidden } = require('../lib/articleIndex');
+const sourceSettings = require('../lib/sourceSettings');
 const { diffWords, diffTexts } = require('../lib/wordDiff');
 const { optionalAuth } = require('../middleware/auth');
 const { CATEGORIES } = require('../lib/categories');
@@ -224,8 +225,10 @@ router.get('/stories', wrap(async (req, res) => {
 // GET /api/stories/:storyId  -> every article on one story, oldest first (Timeline, Compare source picker)
 router.get('/stories/:storyId', wrap(async (req, res) => {
   const index = await getIndex();
+  const removed = sourceSettings.removedSources();                 // outlets removed on Manage Sources
   const docs = (await getDb().collection('articles')
-    .find({ story_id: req.params.storyId, analysis: { $exists: true } }, { projection: LIST_PROJECTION }).toArray());
+    .find({ story_id: req.params.storyId, analysis: { $exists: true } }, { projection: LIST_PROJECTION }).toArray())
+    .filter((d) => !removed.has(d.source));
   const items = docs.map((d) => index.byKey.get(d.article_key) || { key: d.article_key, related: [], similarity: null, ts: 0 });
   items.sort((a, b) => (a.ts || 0) - (b.ts || 0));
   const byKey = new Map(docs.map((d) => [d.article_key, d]));
@@ -237,7 +240,7 @@ router.get('/stories/:storyId', wrap(async (req, res) => {
 router.get('/articles/:id', optionalAuth, wrap(async (req, res) => {
   const doc = await getDb().collection('articles').findOne({ article_key: toKey(req.params.id) }, { projection: PROJECTION });
   if (!doc || !doc.analysis) return res.status(404).json({ message: 'Article not found or not analysed yet' });
-  if (req.user?.role !== 'admin' && await isHidden(doc.article_key)) return res.status(404).json({ message: 'This article has been removed by an admin' });
+  if (req.user?.role !== 'admin' && await isHidden(doc.article_key, doc.source)) return res.status(404).json({ message: 'This article has been removed by an admin' });
   const it = (await getIndex()).byKey.get(doc.article_key);
   res.json(toArticle(doc, { related: it?.related || [], similarity: it?.similarity ?? null, full: true }));
 }));

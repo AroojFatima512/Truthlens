@@ -6,6 +6,7 @@ const { getDb } = require('../db');
 const { requireAdmin } = require('../middleware/auth');
 const { toSource, iso } = require('../adapters/toFrontend');
 const { invalidate } = require('../lib/articleIndex');
+const sourceSettings = require('../lib/sourceSettings');
 
 const router = express.Router();
 router.use(requireAdmin);
@@ -23,15 +24,22 @@ const homepageFrom = (articleUrl) => {
   try { return new URL(articleUrl).origin; } catch { return null; }
 };
 
+const sourceNames = async (db) => (await db.collection('articles').distinct('source')).filter(Boolean).sort();
+
 async function listSources(db) {
-  const names = (await db.collection('articles').distinct('source')).filter(Boolean).sort();
+  const names = await sourceNames(db);
+  await sourceSettings.refresh();
   return Promise.all(names.map(async (name) => {
     const articles = db.collection('articles');
     const [articlesCount, last] = await Promise.all([
       articles.countDocuments({ source: name }),
       articles.find({ source: name }, { projection: { crawled_at: 1, url: 1 } }).sort({ crawled_at: -1 }).limit(1).toArray(),
     ]);
-    return { name, url: HOMEPAGES[name] || homepageFrom(last[0]?.url), articlesCount, lastCrawled: last[0]?.crawled_at || null };
+    const s = sourceSettings.get(name);
+    return {
+      name, url: s?.homepage || HOMEPAGES[name] || homepageFrom(last[0]?.url), articlesCount, lastCrawled: last[0]?.crawled_at || null,
+      category: s?.category || 'General News', status: s?.status || 'active', updatedAt: s?.updatedAt || null, updatedBy: s?.updatedBy || null,
+    };
   }));
 }
 
@@ -44,12 +52,47 @@ router.get('/stats', async (req, res) => {
     db.collection('feedback').countDocuments({ status: { $ne: 'resolved' } }),
     db.collection('articles').distinct('source'),
   ]);
-  res.json({ totalArticles, activeSources: sources.filter(Boolean).length, totalUsers, pendingFeedback });
+  await sourceSettings.refresh();
+  res.json({ totalArticles, activeSources: sources.filter((s) => s && sourceSettings.statusOf(s) === 'active').length, totalUsers, pendingFeedback });
 });
 
 // GET /api/admin/sources  -> same shape as mockSources
 router.get('/sources', async (req, res) => {
   res.json((await listSources(getDb())).map(toSource));
+});
+
+// PATCH /api/admin/sources/:name  { status?: 'active'|'paused'|'removed', homepage?, category? }
+//   paused  = not crawled, articles stay on the site; removed = not crawled and hidden from readers
+router.patch('/sources/:name', async (req, res) => {
+  try {
+    const db = getDb();
+    const name = req.params.name;
+    if (!(await sourceNames(db)).includes(name)) return res.status(404).json({ message: `No outlet called "${name}"` });
+    const before = sourceSettings.statusOf(name);
+    const { status, homepage, category } = req.body || {};
+    const error = await sourceSettings.update(name, { status, homepage, category }, req.user.email);
+    if (error) return res.status(400).json({ message: error });
+    if ((before === 'removed') !== (sourceSettings.statusOf(name) === 'removed')) invalidate();   // show / hide its articles
+    res.json((await listSources(db)).map(toSource).find((s) => s.name === name));
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: 'Server error' });
+  }
+});
+
+// POST /api/admin/sources/pause-all { paused: true|false }  -> pause or resume every outlet that is not removed
+router.post('/sources/pause-all', async (req, res) => {
+  try {
+    const db = getDb();
+    const target = req.body?.paused === false ? 'active' : 'paused';
+    for (const name of await sourceNames(db)) {
+      if (sourceSettings.statusOf(name) !== 'removed') await sourceSettings.update(name, { status: target }, req.user.email);
+    }
+    res.json((await listSources(db)).map(toSource));
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: 'Server error' });
+  }
 });
 
 // GET /api/admin/users  -> never sends passwords or 2FA secrets
@@ -137,21 +180,83 @@ router.get('/activity', async (req, res) => {
   }
 });
 
-// POST /api/admin/crawl {limit}  -> starts run_pipeline.py; the UI polls /crawl-runs
+// POST /api/admin/crawl {limit}  -> starts run_pipeline.py; the UI polls /crawl-status and /crawl-runs
 // .env: ML_DIR, ML_PYTHON, CRAWLER_DIR, CRAWLER_PYTHON
+//
+// Only active outlets are crawled. When some outlets are paused or removed on Manage Sources, the
+// backend adds  --outlets "Dawn,Geo News,..."  (the active outlets' names, exactly as in article.source).
+// run_pipeline.py must accept that option (see the guide for Person A). With every outlet active the
+// option is left out, so the command is exactly the one the pipeline already supports.
 let running = false;
-router.post('/crawl', (req, res) => {
+let lastCrawl = null;            // { startedAt, finishedAt, exitCode, outlets, skipped, error }
+const TAIL = 4000;
+
+const friendlyError = (code, tail) => {
+  if (/unrecognized arguments:.*--outlets/.test(tail)) {
+    return 'The crawler cannot skip paused outlets yet: run_pipeline.py needs the new --outlets option (Person A). Resume all outlets to crawl them all until then.';
+  }
+  const last = tail.trim().split(/\r?\n/).filter(Boolean).pop();
+  return `The crawl stopped with an error (exit code ${code})${last ? `: ${last.slice(0, 300)}` : ''}. The backend terminal shows the full output.`;
+};
+
+router.post('/crawl', async (req, res) => {
   if (running) return res.status(409).json({ message: 'A crawl is already running' });
   const limit = String(Math.max(1, Math.min(Number(req.body?.limit) || 3, 100)));
   const { ML_DIR, ML_PYTHON, CRAWLER_DIR, CRAWLER_PYTHON } = process.env;
   if (!ML_DIR || !ML_PYTHON || !CRAWLER_DIR) return res.status(500).json({ message: 'Crawler paths are not set in .env' });
+
+  const names = await sourceNames(getDb());
+  await sourceSettings.refresh();
+  const outlets = names.filter((n) => sourceSettings.statusOf(n) === 'active');
+  const skipped = names.filter((n) => !outlets.includes(n));
+  if (names.length && !outlets.length) {
+    return res.status(400).json({ message: 'Every outlet is paused or removed. Resume at least one on Manage Sources.' });
+  }
+
+  const args = [path.join(ML_DIR, 'scripts', 'run_pipeline.py'), '--crawler-dir', CRAWLER_DIR,
+    '--crawler-python', CRAWLER_PYTHON || ML_PYTHON, '--limit', limit, '--triggered-by', `admin:${req.user.email}`];
+  if (skipped.length) args.push('--outlets', outlets.join(','));
+
   running = true;
-  const child = spawn(ML_PYTHON, [path.join(ML_DIR, 'scripts', 'run_pipeline.py'), '--crawler-dir', CRAWLER_DIR,
-    '--crawler-python', CRAWLER_PYTHON || ML_PYTHON, '--limit', limit, '--triggered-by', `admin:${req.user.email}`],
-  { cwd: ML_DIR });
-  child.on('error', () => { running = false; });
-  child.on('close', () => { running = false; invalidate(); });   // show the new articles straight away
-  res.status(202).json({ started: true, limit: Number(limit) });
+  lastCrawl = { startedAt: new Date().toISOString(), finishedAt: null, exitCode: null, outlets, skipped, error: null };
+  const record = lastCrawl;
+  let tail = '';
+  const finish = (code, error) => {
+    if (record.finishedAt) return;
+    running = false;
+    Object.assign(record, { finishedAt: new Date().toISOString(), exitCode: code, error });
+    invalidate();                                                  // show the new articles straight away
+  };
+
+  let child;
+  try {
+    child = spawn(ML_PYTHON, args, { cwd: ML_DIR });
+  } catch (err) {
+    finish(null, `Could not start the crawler: ${err.message}`);
+    return res.status(500).json({ message: record.error });
+  }
+  // The pipeline's output goes to the backend terminal. Reading it also keeps the pipe from filling
+  // up, which would otherwise freeze a long crawl.
+  const keep = (chunk) => { tail = (tail + chunk.toString()).slice(-TAIL); };
+  child.stdout?.on('data', (c) => { process.stdout.write(`[crawl] ${c}`); keep(c); });
+  child.stderr?.on('data', (c) => { process.stderr.write(`[crawl] ${c}`); keep(c); });
+  child.on('error', (err) => finish(null, `Could not start the crawler (${err.code || err.message}). Check ML_PYTHON and ML_DIR in .env.`));
+  child.on('close', (code) => finish(code, code === 0 ? null : friendlyError(code, tail)));
+  res.status(202).json({ started: true, limit: Number(limit), outlets, skipped });
+});
+
+// GET /api/admin/crawl-status -> { running, outlets, skipped, last: { startedAt, finishedAt, exitCode, error } }
+//   outlets / skipped = what the next "Run crawl now" will crawl / skip
+router.get('/crawl-status', async (req, res) => {
+  try {
+    const names = await sourceNames(getDb());
+    await sourceSettings.refresh();
+    const outlets = names.filter((n) => sourceSettings.statusOf(n) === 'active');
+    res.json({ running, outlets, skipped: names.filter((n) => !outlets.includes(n)), last: lastCrawl });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: 'Server error' });
+  }
 });
 
 module.exports = router;
