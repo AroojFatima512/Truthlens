@@ -103,6 +103,9 @@ def main():
     step("analyse", [args.ml_python, str(HERE / "analyze_crawled.py"), "--api", args.api, "--mongo", args.mongo,
                      "--db", args.db, "--days", str(args.days)], HERE.parent)
 
+    step("fix logo images", [args.ml_python, str(HERE / "fix_images.py"), "--mongo", args.mongo, "--db", args.db,
+                             "--apply"], HERE.parent)
+
     status = "completed" if ok else "failed"
     db.crawl_runs.update_one({"_id": run_id}, {"$set": {"status": status, "finished_at": now()}})
     print(f"\nPipeline {status}. Run recorded in crawl_runs ({run_id}).")

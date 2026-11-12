@@ -82,6 +82,32 @@ def gold(r):
     return None, "none"
 
 
+def kappa(pairs):
+    """Cohen's kappa for two annotators' yes/no labels: [(a, b), ...]."""
+    n = len(pairs)
+    if not n:
+        return None
+    po = sum(a == b for a, b in pairs) / n
+    pa, pb = sum(a for a, _ in pairs) / n, sum(b for _, b in pairs) / n
+    pe = pa * pb + (1 - pa) * (1 - pb)
+    return 1.0 if pe == 1 else (po - pe) / (1 - pe)
+
+
+def agreement(rows):
+    """Word-level and sentence-level Cohen's kappa between words_A and words_B (rows both filled).
+    Word level: every word of every sentence is a yes/no decision ("is this a biased word?").
+    Sentence level: "does this sentence have a single biased word at all, or is it framing only (-)?"."""
+    words, sents = [], []
+    for r in rows:
+        if not (filled(r.get("words_A")) and filled(r.get("words_B"))):
+            continue
+        a, b = set(words_in(r["words_A"])), set(words_in(r["words_B"]))
+        for w in WORD.findall(r["sentence"]):
+            words.append((w.lower() in a, w.lower() in b))
+        sents.append((bool(a), bool(b)))
+    return kappa(words), kappa(sents), len(words), len(sents)
+
+
 def check(path):
     rows = list(csv.DictReader(open(path, encoding="utf-8-sig")))
     typos, tp, fp, fn, same, both = [], 0, 0, 0, 0, 0
@@ -104,6 +130,9 @@ def check(path):
     if both:
         f1 = 2 * tp / (2 * tp + fp + fn) if tp + fp + fn else 1.0
         print(f"agreement: same words in {same / both:.0%} of sentences; word-level F1 between you {f1:.2f}")
+        kw, ks, nw, ns = agreement(rows)
+        print(f"Cohen's kappa: word level {kw:.2f} ({nw} words), sentence level 'has a biased word or not' {ks:.2f} "
+              f"({ns} sentences)   [0.41-0.60 moderate, 0.61-0.80 substantial, >0.80 almost perfect]")
     disputed = sum(1 for r in rows if filled(r.get("words_A")) and filled(r.get("words_B"))
                    and set(words_in(r["words_A"])) != set(words_in(r["words_B"])) and not filled(r.get("final_words")))
     print(f"{disputed} sentence(s) where you differ and final_words is empty (then only the words you both marked count)")

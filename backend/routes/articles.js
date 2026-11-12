@@ -142,12 +142,15 @@ function toStoryCard(story) {
   }
   const sims = story.articles.map((a) => a.similarity).filter((s) => typeof s === 'number');
   const lead = story.articles[0];
+  const pic = story.articles.find((a) => a.image && !a.imageFrom) || story.articles.find((a) => a.image);
   return {
     storyId: story.storyId,
     headline: lead.headline,
     category: lead.category,
     publishedAt: iso(lead.ts),
-    image: (story.articles.find((a) => a.image) || {}).image || '/news_bg.png',
+    // an outlet's own photo first; credit the outlet whose photo it is
+    image: pic?.image || '/news_bg.png',
+    imageCredit: pic ? (pic.imageFrom || pic.source) : null,
     outletCount: outlets.length,
     articleCount: story.articles.length,
     similarity: sims.length ? Math.round(Math.max(...sims) * 100) : null,

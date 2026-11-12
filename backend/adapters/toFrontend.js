@@ -59,7 +59,8 @@ function toArticle(doc, { related = [], similarity = null, full = true } = {}) {
     category: categoryOf(doc.section),                    // grouped: Pakistan, World, Business, Opinion, ...
     section: cap(doc.section) || null,                     // the outlet's own section name
     publishedAt: iso(doc.published_at),
-    thumbnail: doc.image_url || '/news_bg.png',
+    thumbnail: doc.image_url || '/news_bg.png',             // '/news_bg.png' = no photo: the UI shows a no-photo tile
+    photoCredit: doc.image_from?.source || null,           // photo taken from another outlet's report of the same story
     biasScore: round(a.bias?.score),
     biasLevel: a.bias?.level || null,                      // "Low" | "Moderate" | "High"
     sentiment: a.sentiment?.label || 'neutral',

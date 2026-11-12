@@ -4,6 +4,7 @@ import { Sparkles, Settings } from 'lucide-react';
 import { useSettings } from '../../context/SettingsContext';
 import { fetchRecommendations } from '../../services/meService';
 import { formatDate } from '../../utils/formatters';
+import ArticleImage from '../common/ArticleImage';
 
 // "Recommended for you": unread articles on the stories, people, places and organisations
 // the reader has been reading (GET /api/me/recommendations). Turned off in Settings > Preferences.
@@ -41,7 +42,9 @@ const RecommendedArticles = ({ limit = 6 }) => {
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3">
         {(data?.items || []).map((a) => (
           <Link key={a.id} to={`/news/${a.id}`} className="group flex gap-3 p-2.5 rounded-xl border border-gray-800 hover:border-blue-700/50 hover:bg-gray-800/30 transition-colors">
-            <img src={a.thumbnail} alt="" className="w-20 h-16 object-cover rounded-lg shrink-0 bg-gray-800" onError={(e) => { e.currentTarget.style.visibility = 'hidden'; }} />
+            <div className="relative w-20 h-16 shrink-0 rounded-lg overflow-hidden bg-gray-800">
+              <ArticleImage src={a.thumbnail} category={a.category} compact className="w-full h-full object-cover" />
+            </div>
             <div className="min-w-0 flex flex-col">
               <p className="text-[10px] text-gray-500">{a.source} · {formatDate(a.publishedAt)}</p>
               <p className="text-[12px] font-semibold text-gray-100 leading-snug line-clamp-2 group-hover:text-blue-300">{a.headline}</p>

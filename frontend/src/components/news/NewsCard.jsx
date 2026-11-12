@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { formatDate } from '../../utils/formatters';
 import BiasScoreBadge from '../common/BiasScoreBadge';
 import SentimentTag from '../common/SentimentTag';
+import ArticleImage from '../common/ArticleImage';
 import { Layers } from 'lucide-react';
 
 const NewsCard = ({ article }) => {
@@ -15,14 +16,8 @@ const NewsCard = ({ article }) => {
   return (
     <motion.div variants={item} whileHover={{ y: -5 }} className="bg-bg-card border border-gray-800 rounded-xl overflow-hidden hover:border-gray-600 transition-all duration-300 shadow-lg group flex flex-col h-full">
       <div className="relative h-48 overflow-hidden">
-        <img 
-          src={article.thumbnail} 
-          alt={article.headline} 
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-          onError={(e) => {
-            e.target.src = 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=600&auto=format&fit=crop';
-          }}
-        />
+        <ArticleImage src={article.thumbnail} alt={article.headline} category={article.category} source={article.source}
+          credit={article.photoCredit} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
         <div className="absolute top-3 left-3 flex flex-col gap-2">
           <span className="bg-gray-900/80 backdrop-blur text-white text-xs px-2.5 py-1 rounded-md font-medium border border-gray-700/50">
             {article.source}

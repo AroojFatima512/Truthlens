@@ -7,6 +7,7 @@ import { logUserActivity } from '../utils/historyService';
 import NewSinceBanner from '../components/common/NewSinceBanner';
 import Pagination from '../components/common/Pagination';
 import StoryCard from '../components/news/StoryCard';
+import ArticleImage from '../components/common/ArticleImage';
 import { X, Search, ChevronDown, Bookmark, Menu, ShieldCheck, Newspaper, Layers } from 'lucide-react';
 import { formatDate } from '../utils/formatters';
 import { motion } from 'framer-motion';
@@ -396,11 +397,9 @@ const NewsFeedPage = () => {
                           
                           {/* Left: Thumbnail */}
                           <div className="w-full md:w-36 lg:w-44 h-full shrink-0 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-800 relative bg-gray-100 dark:bg-gray-800">
-                            <img 
-                              src={article.thumbnail} 
-                              alt={article.headline} 
-                              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
-                            />
+                            <ArticleImage src={article.thumbnail} alt={article.headline} category={article.category}
+                              source={article.source} credit={article.photoCredit}
+                              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" />
                             {/* Mobile-only badge */}
                             <div className="absolute bottom-2 left-2 md:hidden">
                               <div className="px-2 py-1 rounded bg-black/60 backdrop-blur-md text-white text-[10px] font-medium">

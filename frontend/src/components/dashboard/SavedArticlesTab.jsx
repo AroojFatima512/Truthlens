@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Search, Filter, Bookmark, Folder, Calendar, Clock, MoreVertical, ChevronDown, Trash2 } from 'lucide-react';
 import { useSavedArticles } from '../../context/SavedArticlesContext';
 import { Link } from 'react-router-dom';
+import ArticleImage from '../common/ArticleImage';
 
 const SavedArticlesTab = () => {
   const { savedArticles, toggleSaveArticle } = useSavedArticles();
@@ -186,11 +187,9 @@ const SavedArticlesTab = () => {
                 
                 {/* Left: Thumbnail */}
                 <div className="w-full md:w-36 lg:w-44 h-full shrink-0 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-800 relative bg-gray-100 dark:bg-gray-800">
-                  <img 
-                    src={article.thumbnail || 'https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=400&auto=format&fit=crop'} 
-                    alt={article.headline} 
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
-                  />
+                  <ArticleImage src={article.thumbnail} alt={article.headline} category={article.category}
+                    source={article.source} credit={article.photoCredit}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" />
                   {/* Mobile-only badge */}
                   <div className="absolute bottom-2 left-2 md:hidden">
                     <div className="px-2 py-1 rounded bg-black/60 backdrop-blur-md text-white text-[10px] font-medium">

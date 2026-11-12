@@ -1,0 +1,74 @@
+{
+  "test": "labels\\splits\\test.csv",
+  "n": 699,
+  "biased": 121,
+  "threshold": 0.5,
+  "models": {
+    "old": {
+      "accuracy": 0.8669527896995708,
+      "macro_f1": 0.7871533018790703,
+      "biased_precision": 0.5933333333333334,
+      "biased_recall": 0.7355371900826446,
+      "biased_f1": 0.6568265682656828,
+      "confusion": {
+        "gold_B_pred_B": 89,
+        "gold_B_pred_N": 32,
+        "gold_N_pred_B": 61,
+        "gold_N_pred_N": 517
+      },
+      "by_sheet": {
+        "test_sheet.csv": {
+          "n": 399,
+          "biased": 81,
+          "accuracy": 0.8596491228070176,
+          "macro_f1": 0.7907081303859123,
+          "biased_precision": 0.6404494382022472,
+          "biased_recall": 0.7037037037037037,
+          "biased_f1": 0.6705882352941176
+        },
+        "test_sheet_4.csv": {
+          "n": 300,
+          "biased": 40,
+          "accuracy": 0.8766666666666667,
+          "macro_f1": 0.7797575348717237,
+          "biased_precision": 0.5245901639344263,
+          "biased_recall": 0.8,
+          "biased_f1": 0.6336633663366338
+        }
+      }
+    },
+    "new": {
+      "accuracy": 0.9184549356223176,
+      "macro_f1": 0.8649394408832513,
+      "biased_precision": 0.7318840579710145,
+      "biased_recall": 0.8347107438016529,
+      "biased_f1": 0.7799227799227799,
+      "confusion": {
+        "gold_B_pred_B": 101,
+        "gold_B_pred_N": 20,
+        "gold_N_pred_B": 37,
+        "gold_N_pred_N": 541
+      },
+      "by_sheet": {
+        "test_sheet.csv": {
+          "n": 399,
+          "biased": 81,
+          "accuracy": 0.9298245614035088,
+          "macro_f1": 0.8944444444444445,
+          "biased_precision": 0.8045977011494253,
+          "biased_recall": 0.8641975308641975,
+          "biased_f1": 0.8333333333333334
+        },
+        "test_sheet_4.csv": {
+          "n": 300,
+          "biased": 40,
+          "accuracy": 0.9033333333333333,
+          "macro_f1": 0.8121721107968652,
+          "biased_precision": 0.6078431372549019,
+          "biased_recall": 0.775,
+          "biased_f1": 0.6813186813186813
+        }
+      }
+    }
+  }
+}

@@ -19,7 +19,7 @@ const time = (v) => {
 };
 
 const INDEX_PROJECTION = {
-  article_key: 1, source: 1, headline: 1, section: 1, published_at: 1, crawled_at: 1, story_id: 1, image_url: 1,
+  article_key: 1, source: 1, headline: 1, section: 1, published_at: 1, crawled_at: 1, story_id: 1, image_url: 1, 'image_from.source': 1,
   'analysis.bias.score': 1, 'analysis.bias.level': 1, 'analysis.sentiment.label': 1,
   'analysis.entities.text': 1, 'analysis.entities.type': 1,
 };
@@ -62,6 +62,7 @@ async function build() {
       sentiment: d.analysis?.sentiment?.label || 'neutral',
       storyId: d.story_id || null,
       image: d.image_url || null,
+      imageFrom: d.image_from?.source || null,   // photo borrowed from another outlet's report
       topics,
       related: link.related.filter((k) => k !== d.article_key),
       similarity: link.similarity,

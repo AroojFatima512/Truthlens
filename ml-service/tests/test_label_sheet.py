@@ -77,3 +77,16 @@ def test_biased_per_article_allows_more_biased_sentences(monkeypatch, tmp_path):
                       "--biased-per-article", "3", "--first-seen-since", "2026-11-01")
     picked = Counter(r["picked_as"] for r in pred)
     assert picked["likely_B"] == 24 and picked["likely_N"] == 8 and len(sheet) == 32
+
+
+def test_word_sheet_kappa():
+    import pytest
+    import importlib, sys
+    from pathlib import Path
+    sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
+    mws = importlib.import_module("make_word_sheet")
+    assert mws.kappa([(1, 1), (0, 0), (1, 0), (0, 0)]) == pytest.approx(0.5)
+    rows = [{"sentence": "A shameless and corrupt regime.", "words_A": "shameless, corrupt", "words_B": "shameless"},
+            {"sentence": "Rain on Monday.", "words_A": "-", "words_B": "-"}]
+    kw, ks, nw, ns = mws.agreement(rows)
+    assert nw == 8 and ns == 2 and ks == pytest.approx(1.0) and 0 < kw < 1
