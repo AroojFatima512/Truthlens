@@ -243,14 +243,20 @@ router.get('/articles/:id', optionalAuth, wrap(async (req, res) => {
 }));
 
 // GET /api/articles/:id/versions  (FR-09)
-// Every saved version of an article (article_snapshots + the current one) and, between each two
-// consecutive versions, which headline words and which sentences / words changed. Newest change first.
+// Every saved version of an article (article_snapshots + the current one) with its bias score and
+// sentiment where the ML service analysed it, and, between each two consecutive versions, which
+// headline words and which sentences / words changed. Versions oldest first, changes newest first.
+const TEXT_FIELDS = ['cleaned_text', 'article_text', 'text', 'body'];   // older snapshots may keep the text elsewhere
+const textOf = (d) => TEXT_FIELDS.map((f) => d?.[f]).find((t) => typeof t === 'string' && t.trim()) || '';
+
 router.get('/articles/:id/versions', wrap(async (req, res) => {
   const key = toKey(req.params.id);
   const db = getDb();
-  const fields = { headline: 1, cleaned_text: 1, version_number: 1, crawled_at: 1 };
-  const current = await db.collection('articles').findOne({ article_key: key },
-    { projection: { ...fields, last_changed_at: 1, version_first_seen_at: 1, last_checked_at: 1 } });
+  const fields = { headline: 1, version_number: 1, crawled_at: 1, content_hash: 1, ...Object.fromEntries(TEXT_FIELDS.map((f) => [f, 1])) };
+  const current = await db.collection('articles').findOne({ article_key: key }, {
+    projection: { ...fields, last_changed_at: 1, version_first_seen_at: 1, analysis_history: 1, analysis_meta: 1,
+      'analysis.bias.score': 1, 'analysis.bias.level': 1, 'analysis.sentiment.label': 1 },
+  });
   if (!current) return res.status(404).json({ message: 'Article not found' });
   const snaps = await db.collection('article_snapshots').find({ article_key: key }, { projection: fields })
     .sort({ version_number: 1 }).toArray();
@@ -261,14 +267,33 @@ router.get('/articles/:id/versions', wrap(async (req, res) => {
   byVersion.set(currentVersion, { ...current, date: current.version_first_seen_at || current.last_changed_at || current.crawled_at });
   const versions = [...byVersion.entries()].sort((a, b) => a[0] - b[0]).map(([version, v]) => ({ version, ...v }));
 
+  // bias + sentiment per version: earlier analyses (analysis_history) and the current one
+  const analysed = new Map((current.analysis_history || []).filter((h) => h.version_number != null)
+    .map((h) => [h.version_number, { bias: h.bias_score, sentiment: h.sentiment }]));
+  if (current.analysis?.bias) {
+    analysed.set(current.analysis_meta?.version_number ?? currentVersion,
+      { bias: current.analysis.bias.score, level: current.analysis.bias.level, sentiment: current.analysis.sentiment?.label });
+  }
+  let previous = null;
+  const out = versions.map((v) => {
+    let a = analysed.get(v.version) || null;
+    let how = a ? 'own' : null;
+    // a version with the same text as the one before (only details changed) has the same analysis
+    if (!a && previous && previous.analysis && textOf(v) && textOf(v) === textOf(previous) && v.headline === previous.headline) { a = previous.analysis; how = 'same-text'; }
+    const item = { ...v, analysis: a, analysisSource: how };
+    previous = item;
+    return item;
+  });
+
   const transitions = [];
-  for (let i = 1; i < versions.length; i += 1) {
-    const before = versions[i - 1]; const after = versions[i];
+  for (let i = 1; i < out.length; i += 1) {
+    const before = out[i - 1]; const after = out[i];
+    const tb = textOf(before); const ta = textOf(after);
     const headlineChanged = (before.headline || '') !== (after.headline || '');
-    const textChanged = (before.cleaned_text || '') !== (after.cleaned_text || '');
-    // a snapshot without text (older crawler versions) can't be compared word by word
-    const comparable = Boolean(before.cleaned_text && after.cleaned_text);
-    const body = textChanged && comparable ? diffTexts(before.cleaned_text, after.cleaned_text) : { changes: [], unchanged: null };
+    const comparable = Boolean(tb && ta);
+    const hashChanged = before.content_hash && after.content_hash && before.content_hash !== after.content_hash;
+    const textChanged = comparable ? tb !== ta : Boolean(hashChanged);
+    const body = textChanged && comparable ? diffTexts(tb, ta) : { changes: [], unchanged: null };
     transitions.push({
       fromVersion: before.version, toVersion: after.version,
       fromDate: iso(before.date), toDate: iso(after.date),
@@ -278,7 +303,13 @@ router.get('/articles/:id/versions', wrap(async (req, res) => {
     });
   }
   res.json({
-    versions: versions.map((v) => ({ version: v.version, date: iso(v.date), headline: v.headline })),
+    versions: out.map((v) => ({
+      version: v.version, date: iso(v.date), headline: v.headline, textSaved: Boolean(textOf(v)),
+      biasScore: v.analysis?.bias == null ? null : Math.round(v.analysis.bias),
+      biasLevel: v.analysis?.level || null,
+      sentiment: v.analysis?.sentiment || null,
+      analysisSource: v.analysisSource,              // 'own' | 'same-text' (same text as the previous version) | null
+    })),
     transitions: transitions.reverse(),
   });
 }));

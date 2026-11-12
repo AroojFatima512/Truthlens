@@ -5,8 +5,8 @@ import Sidebar from '../components/common/Sidebar';
 import BiasScoreBadge from '../components/common/BiasScoreBadge';
 import SentimentTag from '../components/common/SentimentTag';
 import HighlightedText from '../components/news/HighlightedText';
-import StoryEvolutionTimeline from '../components/news/StoryEvolutionTimeline';
-import VersionChanges from '../components/news/VersionChanges';
+import VersionHistory from '../components/news/VersionHistory';
+import BiasExplanation from '../components/news/BiasExplanation';
 import CredibilityRating from '../components/news/CredibilityRating';
 import EntityPanel from '../components/news/EntityPanel';
 import BiasRadarChart from '../components/charts/BiasRadarChart';
@@ -314,39 +314,14 @@ const NewsDetailPage = () => {
             )}
             
             {/* Explainable AI Panel */}
-            <div data-flow="main" className="order-1 flow-root lg:mb-6 bg-bg-card rounded-2xl border border-gray-800 p-4 shadow-xl">
-              <h3 className="text-base font-bold text-white mb-3 border-b border-gray-800 pb-3">Explainable AI Analysis</h3>
-              {article.highlightedWords?.length > 0 ? (
-                <ul className="space-y-3">
-                  {article.highlightedWords.map((hw, i) => (
-                    <li key={i} className="flex items-start gap-3 bg-gray-900/50 p-3 rounded-lg border border-gray-800">
-                      <div className={`mt-0.5 px-2 py-1 rounded text-xs font-bold uppercase tracking-wider ${
-                        hw.type === 'biased' ? 'bg-yellow-500/20 text-yellow-500' :
-                        hw.type === 'manipulative' ? 'bg-red-500/20 text-red-500' :
-                        'bg-blue-500/20 text-blue-500'
-                      }`}>
-                        {hw.type}
-                      </div>
-                      <div>
-                        <span className="text-white font-medium">"{hw.word}"</span>
-                        <p className="text-sm text-gray-400 mt-1">{hw.reason || 'Detected as significant entity'}</p>
-                      </div>
-                    </li>
-                  ))}
-                </ul>
-              ) : (
-                <p className="text-gray-400">No significant bias flags detected in this article.</p>
-              )}
+            {/* FR-17 Explainable AI: why the article got its bias score */}
+            <div data-flow="main" className="order-1 flow-root lg:mb-6">
+              <BiasExplanation article={article} report={report} />
             </div>
 
-            {/* Story Evolution Timeline Panel */}
+            {/* FR-09 Version History: each saved version, its bias and sentiment, and the words that changed */}
             <div data-flow="main" className="order-1 flow-root lg:mb-6">
-              <StoryEvolutionTimeline versionHistory={article.versionHistory} />
-            </div>
-
-            {/* FR-09: the exact words that changed between saved versions */}
-            <div data-flow="main" className="order-1 flow-root lg:mb-6">
-              <VersionChanges articleId={article.id} />
+              <VersionHistory articleId={article.id} />
             </div>
           </div>
 

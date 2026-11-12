@@ -132,3 +132,24 @@ test('a sentence that makes the same point in different words is a paraphrase, n
   const framing = r.keyDifferences.filter((d) => d.type === 'framing');
   assert.equal(framing.length, 1); assert.match(framing[0].detail, /"claimed" where X says "said"/);
 });
+
+test('versions carry bias/sentiment and fall back to other text fields', async () => {
+  const key = 'geo:685964';
+  const { body } = await call('GET', `/articles/${key.replace(':', '-')}/versions`);
+  const v3 = body.versions.find((v) => v.version === 3); const v2 = body.versions.find((v) => v.version === 2);
+  assert.equal(v2.biasScore, 20, 'version 2 from analysis_history');
+  assert.ok(v3.biasScore != null && v3.analysisSource === 'own');
+  // a snapshot whose text is under article_text is still compared word by word
+  const doc = articles.find((a) => a.article_key === 'geo:685896');
+  await fake.collection('article_snapshots').insertMany([{ article_key: doc.article_key, version_number: 0, headline: doc.headline, article_text: `${doc.cleaned_text}\n\nA sentence only the first version had.`, crawled_at: '2026-10-01T00:00:00Z' }]);
+  const t = (await call('GET', `/articles/${doc.article_key.replace(':', '-')}/versions`)).body.transitions.find((x) => x.fromVersion === 0);
+  assert.ok(t.comparable && t.textChanged && t.changes.some((c) => c.type === 'removed'));
+});
+
+test('article explains its bias score', async () => {
+  const doc = analysed.find((a) => a.analysis.sentences.some((s) => s.biased));
+  const a = (await call('GET', `/articles/${doc.article_key.replace(':', '-')}`)).body;
+  assert.equal(a.biasSignals.totalSentences, doc.analysis.sentences.length);
+  assert.equal(a.biasSignals.biasedSentences, doc.analysis.sentences.filter((s) => s.biased).length);
+  assert.equal(a.biasSignals.headlineBias, Math.round(doc.analysis.bias.headline_p_biased * 100));
+});

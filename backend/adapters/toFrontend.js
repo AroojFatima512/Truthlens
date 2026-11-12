@@ -100,7 +100,15 @@ function toArticle(doc, { related = [], similarity = null, full = true } = {}) {
         : `Pushed the bias model towards "Biased" (strength ${Math.round(w.score * 100)}%)`,
     })),
     namedEntities: entities.slice(0, 10).map((e) => e.text),
-    entities: full ? groupEntities(entities) : undefined,  // { people, organisations, places, other }: [{ name, type, count }]
+    entities: full ? groupEntities(entities) : undefined,
+    // what the bias score is made of (Explainable AI summary on the article page)
+    biasSignals: full ? {
+      biasedSentences: (a.sentences || []).filter((x) => x.biased ?? (x.p_biased ?? 0) >= 0.5).length,
+      totalSentences: (a.sentences || []).length,
+      biasedShare: a.bias?.biased_sentence_share == null ? null : Math.round(a.bias.biased_sentence_share * 100),
+      headlineBias: a.bias?.headline_p_biased == null ? null : Math.round(a.bias.headline_p_biased * 100),
+      wordMethod: a.highlight_method || 'attribution',
+    } : undefined,  // { people, organisations, places, other }: [{ name, type, count }]
     topicTags: [cap(doc.section), ...entities.filter((e) => ['GPE', 'ORG', 'PERSON'].includes(e.type))
       .slice(0, 3).map((e) => e.text)].filter(Boolean),
     relatedArticleIds: related.filter((k) => k !== doc.article_key).map(toId),
