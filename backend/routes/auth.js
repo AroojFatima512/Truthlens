@@ -18,6 +18,7 @@ const { requireAuth } = require('../middleware/auth');
 const { verifyGoogleToken, clientId: googleClientId } = require('../lib/googleAuth');
 const { sendMail } = require('../lib/mailer');
 const { checkEmailDomain } = require('../lib/emailCheck');
+const { emailProblem, isDisposable, passwordProblem, nameProblem, cleanName } = require('../lib/validation');
 
 const router = express.Router();
 const JWT_SECRET = process.env.JWT_SECRET || 'truthlens-super-secret-key';
@@ -103,6 +104,11 @@ async function finishLogin(user) {
 // Called once by server.js after MongoDB connects: unique emails + the first admin account.
 async function init() {
   await users().createIndex({ email: 1 }, { unique: true });
+  if (process.env.DEV_2FA_CODE) {
+    console.warn(`\n  WARNING: DEV_2FA_CODE is set in .env, so the code "${process.env.DEV_2FA_CODE}" passes EVERY 2FA check`
+      + '\n  (readers and admin). That is for development only: delete the line from .env before the demo.'
+      + '\n  Then use the 6-digit code from the authenticator app (admin: "node scripts/admin-2fa.js" shows its QR code).\n');
+  }
   const email = normEmail(process.env.ADMIN_EMAIL || 'admin@truthlens.com');
   if (await users().findOne({ email })) return;
 
@@ -129,10 +135,13 @@ async function init() {
 
 // 1. REGISTER: always creates a reader; nobody can sign up as admin
 router.post('/register', wrap(async (req, res) => {
-  const { name, password } = req.body;
+  const { password } = req.body;
+  const name = cleanName(req.body.name);
   const email = normEmail(req.body.email);
-  if (!name || !email || !password) return res.status(400).json({ message: 'Name, email and password are required' });
-  if (String(password).length < 6) return res.status(400).json({ message: 'Password must be at least 6 characters' });
+  const problem = nameProblem(name) || emailProblem(email)
+    || (isDisposable(email) ? 'Temporary (throw-away) e-mail addresses are not accepted. Use your own e-mail.' : null)
+    || passwordProblem(password, { email, name });
+  if (problem) return res.status(400).json({ message: problem });
   const domainProblem = await checkEmailDomain(email);
   if (domainProblem) return res.status(400).json({ message: domainProblem });
   const existing = await users().findOne({ email });
@@ -178,6 +187,7 @@ router.post('/register', wrap(async (req, res) => {
 // 2. LOGIN (step 1): check email + password
 router.post('/login', wrap(async (req, res) => {
   const { password, isAdminLogin } = req.body;
+  if (emailProblem(req.body.email)) return res.status(400).json({ message: emailProblem(req.body.email) });
   const user = await users().findOne({ email: normEmail(req.body.email) });
 
   if (user && !user.passwordHash) {
@@ -288,7 +298,7 @@ const frontendUrl = () => (process.env.FRONTEND_URL || 'http://localhost:5173').
 router.post('/forgot-password', wrap(async (req, res) => {
   const email = normEmail(req.body.email);
   const answer = { message: 'If an account with that e-mail exists, a reset link has been sent to it. The link works for 30 minutes.' };
-  if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) return res.status(400).json({ message: 'Enter a valid e-mail address' });
+  if (emailProblem(email)) return res.status(400).json({ message: emailProblem(email) });
   const user = await users().findOne({ email });
   if (!user || user.status === 'Blocked') return res.json(answer);
 
@@ -340,9 +350,10 @@ router.post('/reset-password', wrap(async (req, res) => {
   const { token, password } = req.body;
   const r = await findReset(token);
   if (!r) return res.status(400).json({ message: 'This reset link is invalid or has expired. Ask for a new one.' });
-  if (String(password || '').length < 6) return res.status(400).json({ message: 'Password must be at least 6 characters' });
   const user = await users().findOne({ id: r.userId });
   if (!user) return res.status(400).json({ message: 'This reset link is invalid or has expired. Ask for a new one.' });
+  const weak = passwordProblem(password, { email: user.email, name: user.name });
+  if (weak) return res.status(400).json({ message: weak });
   const set = { passwordHash: await bcrypt.hash(String(password), 10), passwordChangedAt: new Date().toISOString() };
   // The reset link reached the inbox, so the address is proven. A never-verified account's 2FA key was
   // set up by someone who never proved the address was theirs, so it is dropped.
@@ -393,9 +404,9 @@ router.get('/me', requireAuth, wrap(async (req, res) => {
 
 // PATCH /api/auth/me  { name }   -> returns the updated profile
 router.patch('/me', requireAuth, wrap(async (req, res) => {
-  const name = String(req.body.name || '').trim();
-  if (name.length < 2) return res.status(400).json({ message: 'Name must be at least 2 characters' });
-  if (name.length > 60) return res.status(400).json({ message: 'Name is too long' });
+  const name = cleanName(req.body.name);
+  const bad = nameProblem(name);
+  if (bad) return res.status(400).json({ message: bad });
   const user = await currentUser(req);
   if (!user) return res.status(404).json({ message: 'Account not found' });
   await users().updateOne({ id: user.id }, { $set: { name } });
@@ -411,7 +422,8 @@ router.post('/change-password', requireAuth, wrap(async (req, res) => {
   if (user.passwordHash && !(await bcrypt.compare(String(currentPassword || ''), user.passwordHash))) {
     return res.status(400).json({ message: 'Current password is incorrect' });
   }
-  if (String(newPassword || '').length < 6) return res.status(400).json({ message: 'New password must be at least 6 characters' });
+  const weak = passwordProblem(newPassword, { email: user.email, name: user.name });
+  if (weak) return res.status(400).json({ message: weak });
   if (user.passwordHash && await bcrypt.compare(String(newPassword), user.passwordHash)) {
     return res.status(400).json({ message: 'New password must be different from the current one' });
   }

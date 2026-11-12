@@ -6,6 +6,8 @@ import { ShieldCheck, Mail, Lock, Key, ArrowLeft, LogIn, Eye, EyeOff, Layers, Fi
 import toast from 'react-hot-toast';
 import GoogleButton from '../components/auth/GoogleButton';
 import VerifyEmailNotice from '../components/auth/VerifyEmailNotice';
+import EmailHint from '../components/auth/EmailHint';
+import { emailProblem } from '../utils/validation';
 import { motion } from 'framer-motion';
 
 const LoginPage = () => {
@@ -17,6 +19,7 @@ const LoginPage = () => {
   const [twoFACode, setTwoFACode] = useState('');
   const [ticket, setTicket] = useState(null);   // proof that step 1 passed, sent with the 2FA code
   const [unverified, setUnverified] = useState(null);   // e-mail that still has to be verified
+  const [emailTouched, setEmailTouched] = useState(false);
   
   const [loading, setLoading] = useState(false);
   const { login, verifyLogin2FA, loginWithGoogle } = useAuth();
@@ -25,6 +28,8 @@ const LoginPage = () => {
 
   const handleLoginSubmit = async (e) => {
     e.preventDefault();
+    setEmailTouched(true);
+    if (emailProblem(email)) return;
     setLoading(true);
     setUnverified(null);
 
@@ -181,11 +186,15 @@ const LoginPage = () => {
                       type="email"
                       required
                       value={email}
+                      maxLength={254}
+                      autoComplete="email"
                       onChange={(e) => setEmail(e.target.value)}
+                      onBlur={() => setEmailTouched(true)}
                       className="block w-full pl-9 lg:pl-10 pr-3.5 py-1.5 lg:py-2 border border-[#222] rounded-lg lg:rounded-xl bg-transparent text-white placeholder-gray-600 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition text-[12px] lg:text-[13px]"
                       placeholder="youremail@example.com"
                     />
                   </div>
+                  <EmailHint email={email} touched={emailTouched} onFix={setEmail} />
                 </div>
 
                 <div className="mb-1.5 lg:mb-2">

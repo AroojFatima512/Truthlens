@@ -4,6 +4,8 @@ import { Mail, KeyRound, MailCheck } from 'lucide-react';
 import toast from 'react-hot-toast';
 import AuthCard, { useAuthTheme } from '../components/auth/AuthCard';
 import { requestPasswordReset } from '../services/authService';
+import EmailHint from '../components/auth/EmailHint';
+import { emailProblem } from '../utils/validation';
 
 // /forgot-password and /admin/forgot-password: e-mails a one-time link to choose a new password.
 // The answer is the same whether or not the e-mail has an account, so nobody can find out who is registered.
@@ -12,9 +14,12 @@ const ForgotPasswordPage = () => {
   const [email, setEmail] = useState('');
   const [sent, setSent] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [touched, setTouched] = useState(false);
 
   const submit = async (e) => {
     e.preventDefault();
+    setTouched(true);
+    if (emailProblem(email)) return;
     setLoading(true);
     try {
       await requestPasswordReset(email.trim());
@@ -51,10 +56,11 @@ const ForgotPasswordPage = () => {
           <span className="block text-xs font-medium text-gray-300 mb-1.5">E-mail address</span>
           <span className="relative block">
             <Mail className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-500" strokeWidth={1.5} />
-            <input type="email" required autoFocus value={email} onChange={(e) => setEmail(e.target.value)}
+            <input type="email" required autoFocus maxLength={254} autoComplete="email" value={email} onChange={(e) => setEmail(e.target.value)} onBlur={() => setTouched(true)}
               placeholder={t.admin ? 'admin@truthlens.com' : 'youremail@example.com'}
               className={`block w-full pl-10 pr-3.5 py-2.5 border border-[#222] rounded-xl bg-transparent text-white placeholder-gray-600 focus:outline-none focus:ring-1 transition text-sm ${t.ring}`} />
           </span>
+          <EmailHint email={email} touched={touched} onFix={setEmail} />
         </label>
         <button type="submit" disabled={loading} className={`w-full py-2.5 rounded-xl text-white font-semibold text-sm transition disabled:opacity-60 ${t.button}`}>
           {loading ? 'Sending…' : 'Send reset link'}

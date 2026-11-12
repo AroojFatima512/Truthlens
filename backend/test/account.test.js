@@ -29,8 +29,8 @@ async function login(email, password, isAdminLogin = false) {
 }
 
 test('reader: edit name, change password, delete account (all saved)', async () => {
-  assert.equal((await call('POST', '/auth/register', { name: 'Sara', email: 'sara@test.com', password: 'secret12' })).status, 201);
-  let { body } = await login('sara@test.com', 'secret12');
+  assert.equal((await call('POST', '/auth/register', { name: 'Sara', email: 'sara@test.com', password: 'Secret#12' })).status, 201);
+  let { body } = await login('sara@test.com', 'Secret#12');
   const token = body.token;
   assert.ok(body.user.lastLoginAt);
 
@@ -39,16 +39,16 @@ test('reader: edit name, change password, delete account (all saved)', async () 
   assert.equal((await call('PATCH', '/auth/me', { name: 'Sara Khan' }, token)).body.name, 'Sara Khan');
   assert.equal((await call('GET', '/auth/me', null, token)).body.name, 'Sara Khan', 'name stored');
 
-  assert.equal((await call('POST', '/auth/change-password', { currentPassword: 'wrong', newPassword: 'newpass99' }, token)).status, 400);
-  assert.equal((await call('POST', '/auth/change-password', { currentPassword: 'secret12', newPassword: '123' }, token)).status, 400);
-  assert.equal((await call('POST', '/auth/change-password', { currentPassword: 'secret12', newPassword: 'newpass99' }, token)).status, 200);
-  assert.equal((await call('POST', '/auth/login', { email: 'sara@test.com', password: 'secret12' })).status, 401, 'old password stops working');
-  assert.equal((await login('sara@test.com', 'newpass99')).status, 200, 'new password works');
+  assert.equal((await call('POST', '/auth/change-password', { currentPassword: 'wrong', newPassword: 'Newpass#99' }, token)).status, 400);
+  assert.equal((await call('POST', '/auth/change-password', { currentPassword: 'Secret#12', newPassword: '123' }, token)).status, 400);
+  assert.equal((await call('POST', '/auth/change-password', { currentPassword: 'Secret#12', newPassword: 'Newpass#99' }, token)).status, 200);
+  assert.equal((await call('POST', '/auth/login', { email: 'sara@test.com', password: 'Secret#12' })).status, 401, 'old password stops working');
+  assert.equal((await login('sara@test.com', 'Newpass#99')).status, 200, 'new password works');
 
   await call('POST', '/feedback', { type: 'Issue', title: 'Wrong score', desc: 'Article 5 looks biased' }, token);
   assert.equal((await call('DELETE', '/auth/me', { password: 'wrong' }, token)).status, 400);
-  assert.equal((await call('DELETE', '/auth/me', { password: 'newpass99' }, token)).status, 200);
-  assert.equal((await call('POST', '/auth/login', { email: 'sara@test.com', password: 'newpass99' })).status, 401, 'account gone');
+  assert.equal((await call('DELETE', '/auth/me', { password: 'Newpass#99' }, token)).status, 200);
+  assert.equal((await call('POST', '/auth/login', { email: 'sara@test.com', password: 'Newpass#99' })).status, 401, 'account gone');
   const all = (await call('GET', '/feedback', null, (await login('admin@truthlens.com', 'Adm1nPass!', true)).body.token)).body;
   const kept = all.find((f) => f.title === 'Wrong score');
   assert.ok(kept && kept.userId === 'deleted-user' && kept.userEmail === null, 'feedback kept but anonymised');
@@ -60,10 +60,10 @@ test('admin account cannot be deleted through the reader endpoint', async () => 
 });
 
 test('feedback: readers see only their own, admins see all and resolve', async () => {
-  await call('POST', '/auth/register', { name: 'Ali', email: 'ali@test.com', password: 'secret12' });
-  await call('POST', '/auth/register', { name: 'Bina', email: 'bina@test.com', password: 'secret12' });
-  const ali = (await login('ali@test.com', 'secret12')).body.token;
-  const bina = (await login('bina@test.com', 'secret12')).body.token;
+  await call('POST', '/auth/register', { name: 'Ali', email: 'ali@test.com', password: 'Secret#12' });
+  await call('POST', '/auth/register', { name: 'Bina', email: 'bina@test.com', password: 'Secret#12' });
+  const ali = (await login('ali@test.com', 'Secret#12')).body.token;
+  const bina = (await login('bina@test.com', 'Secret#12')).body.token;
   const admin = (await login('admin@truthlens.com', 'Adm1nPass!', true)).body.token;
 
   assert.equal((await call('POST', '/feedback', { title: 'x', desc: 'y' })).status, 401, 'login needed');
@@ -85,18 +85,18 @@ test('feedback: readers see only their own, admins see all and resolve', async (
 });
 
 test('admin: block, unblock and delete readers; admins protected', async () => {
-  await call('POST', '/auth/register', { name: 'Omar', email: 'omar@test.com', password: 'secret12' });
+  await call('POST', '/auth/register', { name: 'Omar', email: 'omar@test.com', password: 'Secret#12' });
   const admin = (await login('admin@truthlens.com', 'Adm1nPass!', true)).body.token;
-  const reader = (await login('omar@test.com', 'secret12')).body.token;
+  const reader = (await login('omar@test.com', 'Secret#12')).body.token;
   const list = (await call('GET', '/admin/users', null, admin)).body;
   const omar = list.find((u) => u.email === 'omar@test.com');
   assert.ok(omar && !('passwordHash' in omar) && !('twoFASecret' in omar), 'no secrets in the list');
 
   assert.equal((await call('PATCH', `/admin/users/${omar.id}`, { status: 'Blocked' }, reader)).status, 403);
   assert.equal((await call('PATCH', `/admin/users/${omar.id}`, { status: 'Blocked' }, admin)).status, 200);
-  assert.equal((await call('POST', '/auth/login', { email: 'omar@test.com', password: 'secret12' })).status, 403, 'blocked user cannot log in');
+  assert.equal((await call('POST', '/auth/login', { email: 'omar@test.com', password: 'Secret#12' })).status, 403, 'blocked user cannot log in');
   assert.equal((await call('PATCH', `/admin/users/${omar.id}`, { status: 'Active' }, admin)).status, 200);
-  assert.equal((await call('POST', '/auth/login', { email: 'omar@test.com', password: 'secret12' })).status, 200);
+  assert.equal((await call('POST', '/auth/login', { email: 'omar@test.com', password: 'Secret#12' })).status, 200);
 
   assert.equal((await call('PATCH', '/admin/users/admin_1', { status: 'Blocked' }, admin)).status, 400);
   assert.equal((await call('DELETE', '/admin/users/admin_1', null, admin)).status, 400);

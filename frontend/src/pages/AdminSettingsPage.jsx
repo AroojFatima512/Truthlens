@@ -4,6 +4,7 @@ import { useAuth } from '../context/AuthContext';
 import { changePassword } from '../services/authService';
 import { Menu, User, Lock, Eye, EyeOff, Loader2, ShieldCheck } from 'lucide-react';
 import toast from 'react-hot-toast';
+import PasswordChecklist, { passwordReady } from '../components/auth/PasswordChecklist';
 
 // Admin account: details and password change (saved in MongoDB).
 const AdminSettingsPage = () => {
@@ -17,8 +18,9 @@ const AdminSettingsPage = () => {
 
   const submit = async (e) => {
     e.preventDefault();
-    if (next.length < 6) return toast.error('New password must be at least 6 characters');
+    if (!passwordReady(next, { email: user?.email, name: user?.name })) return toast.error('The new password does not meet all the rules shown under it yet.');
     if (next !== confirm) return toast.error('The new passwords do not match');
+    if (next === current) return toast.error('The new password must be different from the current one');
     setSaving(true);
     try {
       await changePassword(current, next);
@@ -84,19 +86,20 @@ const AdminSettingsPage = () => {
               <form onSubmit={submit} className="p-6 space-y-4">
                 {[
                   ['Current password', current, setCurrent, 'current-password'],
-                  ['New password (at least 6 characters)', next, setNext, 'new-password'],
+                  ['New password', next, setNext, 'new-password'],
                   ['Confirm new password', confirm, setConfirm, 'new-password'],
                 ].map(([label, value, set, ac]) => (
                   <div key={label}>
                     <label className="block text-xs font-medium text-gray-400 mb-1.5">{label}</label>
                     <div className="relative">
-                      <input type={show ? 'text' : 'password'} value={value} onChange={(e) => set(e.target.value)} autoComplete={ac} required className={input} />
+                      <input type={show ? 'text' : 'password'} value={value} onChange={(e) => set(e.target.value)} autoComplete={ac} required maxLength={64} className={input} />
                       <button type="button" onClick={() => setShow(!show)} className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-300">
                         {show ? <EyeOff size={16} /> : <Eye size={16} />}
                       </button>
                     </div>
                   </div>
                 ))}
+                {(next || confirm) && <PasswordChecklist password={next} email={user?.email} name={user?.name} confirm={confirm} />}
                 <button type="submit" disabled={saving} className="flex items-center gap-2 px-5 py-2.5 bg-[#D32F2F] text-white rounded-lg hover:bg-[#B71C1C] transition font-medium text-sm disabled:opacity-60">
                   {saving && <Loader2 size={16} className="animate-spin" />} Change Password
                 </button>

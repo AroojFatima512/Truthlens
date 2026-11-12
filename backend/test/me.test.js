@@ -48,8 +48,8 @@ const call = async (method, path, body, token) => {
   return out;
 };
 async function newReader(email) {
-  await call('POST', '/auth/register', { name: email.split('@')[0], email, password: 'secret12' });
-  const { ticket } = (await call('POST', '/auth/login', { email, password: 'secret12' })).body;
+  await call('POST', '/auth/register', { name: 'Test Reader', email, password: 'Secret#12' });
+  const { ticket } = (await call('POST', '/auth/login', { email, password: 'Secret#12' })).body;
   return (await call('POST', '/auth/verify-2fa', { email, token: '123456', ticket })).body.token;
 }
 const ARTICLE = 'The corrupt minister rammed the budget through parliament on Monday. Officials said the plan starts in May and will cost more than expected.';
@@ -109,7 +109,7 @@ test('alerts count articles crawled since the previous login', async () => {
   assert.ok(r.examples.every((e) => e.id && !e.id.includes(':')));
   assert.equal((await call('GET', '/me/alerts?since=2030-01-01T00:00:00Z', null, t)).body.newArticles, 0);
   // second login records the previous one
-  const lt = (await call('POST', '/auth/login', { email: 'al@test.com', password: 'secret12' })).body.ticket;
+  const lt = (await call('POST', '/auth/login', { email: 'al@test.com', password: 'Secret#12' })).body.ticket;
   const v = (await call('POST', '/auth/verify-2fa', { email: 'al@test.com', token: '123456', ticket: lt })).body;
   assert.ok(v.user.prevLoginAt, 'prevLoginAt set on the second login');
 });

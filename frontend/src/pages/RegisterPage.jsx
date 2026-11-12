@@ -6,6 +6,9 @@ import { ShieldCheck, Mail, Lock, User, Key, ArrowLeft, Eye, EyeOff, UserPlus, B
 import toast from 'react-hot-toast';
 import GoogleButton from '../components/auth/GoogleButton';
 import VerifyEmailNotice from '../components/auth/VerifyEmailNotice';
+import PasswordChecklist, { passwordReady } from '../components/auth/PasswordChecklist';
+import EmailHint from '../components/auth/EmailHint';
+import { nameProblem, emailProblem, isDisposable, normEmail, cleanName } from '../utils/validation';
 import { motion } from 'framer-motion';
 
 const RegisterPage = () => {
@@ -29,20 +32,23 @@ const RegisterPage = () => {
   const { settings } = useSettings();
   const navigate = useNavigate();
 
+  const [touched, setTouched] = useState({});
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
+  const touch = (e) => setTouched((t) => ({ ...t, [e.target.name]: true }));
+  const ctx = { email: formData.email, name: formData.name };
 
   const handleRegisterSubmit = async (e) => {
     e.preventDefault();
 
-    if (formData.password !== formData.confirmPassword) {
-      toast.error('Passwords do not match');
-      return;
-    }
-
-    if (formData.password.length < 6) {
-      toast.error('Password must be at least 6 characters');
+    setTouched({ name: true, email: true, password: true });
+    const problem = nameProblem(formData.name) || emailProblem(formData.email)
+      || (isDisposable(formData.email) ? 'Temporary (throw-away) e-mail addresses are not accepted. Use your own e-mail.' : null)
+      || (!passwordReady(formData.password, ctx) ? 'Your password does not meet all the rules shown under it yet.' : null)
+      || (formData.password !== formData.confirmPassword ? 'Passwords do not match' : null);
+    if (problem) {
+      toast.error(problem);
       return;
     }
 
@@ -50,8 +56,8 @@ const RegisterPage = () => {
 
     try {
       const res = await register({
-        name: formData.name,
-        email: formData.email,
+        name: cleanName(formData.name),
+        email: normEmail(formData.email),
         password: formData.password
       });
       
@@ -268,12 +274,16 @@ const RegisterPage = () => {
                       type="text"
                       name="name"
                       required
+                      maxLength={60}
+                      autoComplete="name"
                       value={formData.name}
                       onChange={handleChange}
+                      onBlur={touch}
                       className="block w-full pl-9 lg:pl-10 pr-3.5 py-1.5 lg:py-2 border border-[#222] rounded-lg lg:rounded-xl bg-transparent text-white placeholder-gray-600 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition text-[12px] lg:text-[13px]"
                       placeholder="Enter your full name"
                     />
                   </div>
+                  {touched.name && nameProblem(formData.name) && <p className="mt-1 text-[11px] text-red-400">{nameProblem(formData.name)}</p>}
                 </div>
 
                 <div className="mb-2 lg:mb-2.5">
@@ -286,12 +296,17 @@ const RegisterPage = () => {
                       type="email"
                       name="email"
                       required
+                      maxLength={254}
+                      autoComplete="email"
                       value={formData.email}
                       onChange={handleChange}
+                      onBlur={touch}
                       className="block w-full pl-9 lg:pl-10 pr-3.5 py-1.5 lg:py-2 border border-[#222] rounded-lg lg:rounded-xl bg-transparent text-white placeholder-gray-600 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition text-[12px] lg:text-[13px]"
                       placeholder="youremail@example.com"
                     />
                   </div>
+                  <EmailHint email={formData.email} touched={touched.email} onFix={(fixed) => setFormData({ ...formData, email: fixed })} />
+                  {isDisposable(formData.email) && <p className="mt-1 text-[11px] text-red-400">Temporary (throw-away) e-mail addresses are not accepted.</p>}
                 </div>
 
                 <div className="grid grid-cols-2 gap-3 lg:gap-4 mb-2 lg:mb-2.5">
@@ -305,6 +320,8 @@ const RegisterPage = () => {
                         type={showPassword ? 'text' : 'password'}
                         name="password"
                         required
+                        maxLength={64}
+                        autoComplete="new-password"
                         value={formData.password}
                         onChange={handleChange}
                         className="block w-full pl-9 lg:pl-10 pr-10 py-1.5 lg:py-2 border border-[#222] rounded-lg lg:rounded-xl bg-transparent text-white placeholder-gray-600 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition text-[12px] lg:text-[13px] font-mono tracking-wider"
@@ -330,6 +347,8 @@ const RegisterPage = () => {
                         type={showConfirmPassword ? 'text' : 'password'}
                         name="confirmPassword"
                         required
+                        maxLength={64}
+                        autoComplete="new-password"
                         value={formData.confirmPassword}
                         onChange={handleChange}
                         className="block w-full pl-9 lg:pl-10 pr-10 py-1.5 lg:py-2 border border-[#222] rounded-lg lg:rounded-xl bg-transparent text-white placeholder-gray-600 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition text-[12px] lg:text-[13px] font-mono tracking-wider"
@@ -345,6 +364,11 @@ const RegisterPage = () => {
                     </div>
                   </div>
                 </div>
+                {(formData.password || touched.password) && (
+                  <div className="mb-2 lg:mb-2.5">
+                    <PasswordChecklist password={formData.password} email={formData.email} name={formData.name} confirm={formData.confirmPassword ? formData.confirmPassword : undefined} />
+                  </div>
+                )}
 
                 <div className="py-1 mb-2 lg:mb-3">
                   <div className="flex items-center gap-2">

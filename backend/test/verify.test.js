@@ -29,8 +29,8 @@ const call = async (method, path, body) => {
 const mails = mailer.captureForTests();
 const verifyMails = (to) => mails.filter((m) => /Verify your e-mail/.test(m.subject) && (!to || m.to === to));
 const tokenIn = (m) => m.text.match(/verify-email\?token=([a-f0-9]+)/)[1];
-const register = (email, password = 'secret12') => call('POST', '/auth/register', { name: 'Test', email, password });
-const login = (email, password = 'secret12') => call('POST', '/auth/login', { email, password });
+const register = (email, password = 'Secret#12') => call('POST', '/auth/register', { name: 'Test', email, password });
+const login = (email, password = 'Secret#12') => call('POST', '/auth/login', { email, password });
 
 test.before(async () => { await auth.init(); server = app.listen(0); base = `http://localhost:${server.address().port}/api`; });
 test.after(() => server.close());
@@ -90,20 +90,20 @@ test('links expire after 24 hours', async () => {
 });
 
 test('nobody can block an address: signing up again replaces a never-verified account', async () => {
-  await register('victim@example.com', 'squatter1');
-  const again = await register('victim@example.com', 'realowner1');
+  await register('victim@example.com', 'Squatter#1');
+  const again = await register('victim@example.com', 'Realowner#1');
   assert.equal(again.status, 201);
   await call('POST', '/auth/verify-email', { token: tokenIn(verifyMails('victim@example.com').pop()) });
-  assert.equal((await login('victim@example.com', 'squatter1')).status, 401);
-  assert.equal((await login('victim@example.com', 'realowner1')).status, 200);
-  assert.equal((await register('victim@example.com', 'another1')).body.message, 'User already exists', 'a verified account is kept');
+  assert.equal((await login('victim@example.com', 'Squatter#1')).status, 401);
+  assert.equal((await login('victim@example.com', 'Realowner#1')).status, 200);
+  assert.equal((await register('victim@example.com', 'Another#1')).body.message, 'User already exists', 'a verified account is kept');
 });
 
 test('Google sign-in proves the address: a never-verified account is verified and the old password dropped', async () => {
-  await register('gil@gmail.com', 'squatter1');
+  await register('gil@gmail.com', 'Squatter#1');
   const g = await call('POST', '/auth/google', { credential: googleToken('gil@gmail.com') });
   assert.equal(g.status, 200); assert.ok(g.body.token); assert.equal(g.body.user.emailVerified, true); assert.equal(g.body.user.hasPassword, false);
-  assert.equal((await login('gil@gmail.com', 'squatter1')).status, 401);
+  assert.equal((await login('gil@gmail.com', 'Squatter#1')).status, 401);
   const fresh = await call('POST', '/auth/google', { credential: googleToken('brand.new@gmail.com') });
   assert.equal(fresh.body.user.emailVerified, true);
 });
@@ -112,14 +112,14 @@ test('a password reset link also proves the address', async () => {
   await register('rana@example.com');
   await call('POST', '/auth/forgot-password', { email: 'rana@example.com' });
   const resetToken = mails.filter((m) => /Reset your/.test(m.subject)).pop().text.match(/reset-password\?token=([a-f0-9]+)/)[1];
-  assert.equal((await call('POST', '/auth/reset-password', { token: resetToken, password: 'fresh1234' })).status, 200);
-  const l = await login('rana@example.com', 'fresh1234');
+  assert.equal((await call('POST', '/auth/reset-password', { token: resetToken, password: 'Fresh#1234' })).status, 200);
+  const l = await login('rana@example.com', 'Fresh#1234');
   assert.equal(l.status, 200);
   assert.ok(l.body.token, 'the unproven 2FA key was dropped, so no code is asked');
 });
 
 test('accounts made before verification existed, and the admin, are not affected', async () => {
-  await fake.collection('users').insertOne({ id: 'usr_old', name: 'Old', email: 'old@example.com', passwordHash: await require('bcryptjs').hash('secret12', 10), role: 'reader', twoFASecret: 'JBSWY3DPEHPK3PXP', status: 'Active' });
+  await fake.collection('users').insertOne({ id: 'usr_old', name: 'Old', email: 'old@example.com', passwordHash: await require('bcryptjs').hash('Secret#12', 10), role: 'reader', twoFASecret: 'JBSWY3DPEHPK3PXP', status: 'Active' });
   assert.equal((await login('old@example.com')).status, 200);
   assert.equal((await call('POST', '/auth/login', { email: 'admin@truthlens.com', password: 'Adm1nPass!', isAdminLogin: true })).status, 200);
 });

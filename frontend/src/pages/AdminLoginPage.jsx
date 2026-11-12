@@ -4,6 +4,8 @@ import { useAuth } from '../context/AuthContext';
 import { Mail, Lock, Key, Eye, EyeOff, ShieldCheck, User, LogIn, Shield, ArrowLeft } from 'lucide-react';
 import toast from 'react-hot-toast';
 import GoogleButton from '../components/auth/GoogleButton';
+import EmailHint from '../components/auth/EmailHint';
+import { emailProblem } from '../utils/validation';
 import { motion } from 'framer-motion';
 
 const AdminLoginPage = () => {
@@ -14,11 +16,13 @@ const AdminLoginPage = () => {
   const [loading, setLoading] = useState(false);
   const [step, setStep] = useState(1); // 1 = Login, 2 = 2FA
   const [ticket, setTicket] = useState(null);   // proof that step 1 (password or Google) passed
+  const [emailTouched, setEmailTouched] = useState(false);
   const { login, verifyLogin2FA, loginWithGoogle } = useAuth();
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (step === 1) { setEmailTouched(true); if (emailProblem(email)) return; }
     setLoading(true);
 
     try {
@@ -264,11 +268,15 @@ const AdminLoginPage = () => {
                       type="email"
                       required
                       value={email}
+                      maxLength={254}
+                      autoComplete="email"
                       onChange={(e) => setEmail(e.target.value)}
+                      onBlur={() => setEmailTouched(true)}
                       className="block w-full pl-9 lg:pl-10 pr-3.5 py-1.5 lg:py-2 border border-[#222] rounded-lg lg:rounded-xl bg-transparent text-white placeholder-gray-600 focus:outline-none focus:border-[#D32F2F] focus:ring-1 focus:ring-[#D32F2F] transition text-[12px] lg:text-[13px]"
                       placeholder="admin@truthlens.com"
                     />
                   </div>
+                  <EmailHint email={email} touched={emailTouched} onFix={setEmail} />
                 </div>
 
                 <div className="mb-1.5 lg:mb-2">

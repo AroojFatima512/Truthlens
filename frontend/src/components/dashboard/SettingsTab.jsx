@@ -12,6 +12,8 @@ import { clearHistory, getHistory } from '../../utils/historyService';
 import { fetchPrivacy, savePrivacy } from '../../services/meService';
 import toast from 'react-hot-toast';
 import { updateProfile, changePassword, deleteAccount, } from '../../services/authService';
+import PasswordChecklist, { passwordReady } from '../auth/PasswordChecklist';
+import { nameProblem } from '../../utils/validation';
 import { fetchMyFeedback } from '../../services/feedbackService';
 
 // --- Shared Components ---
@@ -277,6 +279,7 @@ const AccountSettingsPanel = () => {
   // Saved in MongoDB (PATCH /api/auth/me)
   const handleEditProfile = async (e) => {
     e.preventDefault();
+    if (nameProblem(editName)) return toast.error(nameProblem(editName));
     setSaving(true);
     try {
       const profile = await updateProfile(editName);
@@ -293,7 +296,8 @@ const AccountSettingsPanel = () => {
   // Saved in MongoDB (POST /api/auth/change-password); the old password stops working
   const handleChangePassword = async (e) => {
     e.preventDefault();
-    if (newPassword.length < 6) return toast.error('New password must be at least 6 characters.');
+    if (!passwordReady(newPassword, { email: user?.email, name: user?.name })) return toast.error('The new password does not meet all the rules shown under it yet.');
+    if (!noPassword && newPassword === oldPassword) return toast.error('The new password must be different from the current one.');
     setSaving(true);
     try {
       await changePassword(noPassword ? '' : oldPassword, newPassword);
@@ -520,9 +524,11 @@ const AccountSettingsPanel = () => {
               onChange={e => setNewPassword(e.target.value)} 
               required 
               className="w-full bg-gray-50 dark:bg-gray-900/50 border border-gray-200 dark:border-gray-700 rounded-xl px-4 py-2.5 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all font-mono tracking-widest placeholder:tracking-normal" 
-              placeholder="At least 6 characters"
-              minLength={6}
+              placeholder="Choose a strong password"
+              maxLength={64}
+              autoComplete="new-password"
             />
+            {newPassword && <PasswordChecklist password={newPassword} email={user?.email} name={user?.name} light />}
           </div>
           <div className="pt-4 flex justify-end gap-3">
             <button type="button" onClick={closeModal} className="px-5 py-2.5 text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors rounded-xl">Cancel</button>
