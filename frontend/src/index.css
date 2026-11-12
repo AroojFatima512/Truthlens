@@ -41,6 +41,11 @@
     font-family: var(--font-sans);
     transition: background-color 0.3s ease, color 0.3s ease;
   }
+  /* admin pages: dark red background from the very first paint (see utils/adminArea.js) */
+  :root.admin-area, :root.admin-area body {
+    background-color: #0a0505;
+    transition: none;
+  }
 }
 
 @layer utilities {
@@ -51,4 +56,20 @@
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
   }
+}
+
+/* Scrollbars are hidden on every screen. Pages and panels still scroll up/down and left/right
+   (mouse wheel, trackpad, touch, keyboard); only the bars themselves are not drawn.
+   !important so no other style can bring them back. */
+html, body, * {
+  scrollbar-width: none !important;        /* Chrome 121+, Edge, Firefox */
+  -ms-overflow-style: none !important;     /* old Edge */
+}
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+*::-webkit-scrollbar {                      /* older Chrome, Safari */
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  background: transparent !important;
 }

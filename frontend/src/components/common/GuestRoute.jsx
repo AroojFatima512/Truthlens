@@ -1,6 +1,7 @@
 import React from 'react';
 import { Navigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
+import RouteLoader from './RouteLoader';
 import { useSettings } from '../../context/SettingsContext';
 import { homePathFor } from '../../utils/homePath';
 
@@ -10,7 +11,7 @@ const GuestRoute = ({ children }) => {
   const { user, loading } = useAuth();
   const { settings } = useSettings();
 
-  if (loading) return <div className="min-h-screen flex items-center justify-center bg-bg-dark"><div className="w-12 h-12 border-4 border-primary border-t-transparent rounded-full animate-spin"></div></div>;
+  if (loading) return <RouteLoader />;
 
   if (user) return <Navigate to={homePathFor(user, settings)} replace />;
 

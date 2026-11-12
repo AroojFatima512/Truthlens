@@ -5,14 +5,14 @@ import BiasScoreBadge from '../common/BiasScoreBadge';
 // FR-17 Explainable AI: WHY the article got its bias score, in plain language, built only from the
 // ML service's own outputs: how many sentences it rated biased, the headline's rating, the strongest
 // bias dimensions, and the words that pushed it towards "biased", shown inside their sentences.
-const DIMENSIONS = {
+export const DIMENSIONS = {
   politicalFraming: ['Political framing', 'the story is framed from one political side'],
   emotionalLanguage: ['Emotional language', 'emotionally loaded or subjective wording'],
   sourceAttribution: ['Source attribution', 'claims that are not attributed to a named source'],
   headlineMismatch: ['Headline mismatch', "the headline's tone does not match the article"],
   selectiveReporting: ['Selective reporting', 'facts that other outlets report are left out'],
 };
-const SNAKE = { politicalFraming: 'political_framing', emotionalLanguage: 'emotional_language', sourceAttribution: 'source_attribution', headlineMismatch: 'headline_mismatch', selectiveReporting: 'selective_reporting' };
+export const SNAKE = { politicalFraming: 'political_framing', emotionalLanguage: 'emotional_language', sourceAttribution: 'source_attribution', headlineMismatch: 'headline_mismatch', selectiveReporting: 'selective_reporting' };
 const PREVIEW = 4;
 const escape = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 

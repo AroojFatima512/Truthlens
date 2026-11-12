@@ -6,19 +6,21 @@ import BiasScoreBadge from '../components/common/BiasScoreBadge';
 import SentimentTag from '../components/common/SentimentTag';
 import HighlightedText from '../components/news/HighlightedText';
 import VersionHistory from '../components/news/VersionHistory';
-import BiasExplanation from '../components/news/BiasExplanation';
 import CredibilityRating from '../components/news/CredibilityRating';
-import EntityPanel from '../components/news/EntityPanel';
-import BiasRadarChart from '../components/charts/BiasRadarChart';
-import SentimentBarChart from '../components/charts/SentimentBarChart';
 import { fetchArticleById } from '../services/newsService';
 import { fetchBiasReport } from '../services/biasService';
 import { formatDate } from '../utils/formatters';
-import { ArrowLeft, Clock, FileText, Share2, Bookmark, ExternalLink, Layers, Menu } from 'lucide-react';
+import { ArrowLeft, Clock, Share2, Bookmark, ExternalLink, Layers, Menu, BarChart2 } from 'lucide-react';
 import toast from 'react-hot-toast';
 import { useSavedArticles } from '../context/SavedArticlesContext';
 import { useSettings } from '../context/SettingsContext';
 import { logUserActivity } from '../utils/historyService';
+
+const clearStretch = (side) => {
+  const el = side?.querySelector('[data-stretch]');
+  if (el) el.style.minHeight = '';
+  if (side) side.dataset.stretch = '0';
+};
 
 const NewsDetailPage = () => {
   const { id } = useParams();
@@ -38,10 +40,11 @@ const NewsDetailPage = () => {
     const c = flowRef.current;
     const side = c?.querySelector('[data-flow="side"]');
     if (!c || !side || typeof ResizeObserver === 'undefined') return undefined;
-    let frame = 0; let lastWidth = c.clientWidth; let lastSide = side.offsetHeight;
+    const natural = () => side.offsetHeight - Number(side.dataset.stretch || 0);   // height without our stretch
+    let frame = 0; let lastWidth = c.clientWidth; let lastSide = natural();
     const ro = new ResizeObserver(() => {
-      if (c.clientWidth === lastWidth && side.offsetHeight === lastSide) return;   // e.g. the first call
-      lastWidth = c.clientWidth; lastSide = side.offsetHeight;
+      if (c.clientWidth === lastWidth && natural() === lastSide) return;   // e.g. the first call, or our own stretch
+      lastWidth = c.clientWidth; lastSide = natural();
       cancelAnimationFrame(frame);
       frame = requestAnimationFrame(() => { setSplitAt(null); setMeasureTick((t) => t + 1); });
     });
@@ -55,13 +58,31 @@ const NewsDetailPage = () => {
     const side = c?.querySelector('[data-flow="side"]');
     const card = c?.querySelector('article');
     if (!side || !card || getComputedStyle(side).float === 'none') return;
+    clearStretch(side);                                                    // measure the column at its natural height
     const sideBottom = side.getBoundingClientRect().bottom + (parseFloat(getComputedStyle(side).marginBottom) || 0);
     if (card.getBoundingClientRect().bottom <= sideBottom + 120) return;     // the article ends near the column: keep one card
     const m = [...card.querySelectorAll('[data-split]')].find((el) => el.getBoundingClientRect().top >= sideBottom);
     const pos = m ? Number(m.dataset.split) : null;
     if (pos && pos < (article?.content || '').length - 20) setSplitAt(pos);
   }, [article, report, splitAt, measureTick]);
+  // The text can only break at a sentence end, so the first card usually runs a few lines past the right
+  // column. Stretch the column's last card by that much so no empty strip is left beside the text.
+  useLayoutEffect(() => {
+    const c = flowRef.current;
+    const side = c?.querySelector('[data-flow="side"]');
+    const last = side?.querySelector('[data-stretch]');
+    if (!last) return;
+    clearStretch(side);
+    const card = c.querySelector('article');
+    if (!card || getComputedStyle(side).float === 'none') return;
+    const gap = Math.floor(card.getBoundingClientRect().bottom - side.getBoundingClientRect().bottom - (parseFloat(getComputedStyle(side).marginBottom) || 0)) - 1;
+    if (gap > 0 && gap <= (splitAt === null ? 130 : 400)) {
+      last.style.minHeight = `${last.offsetHeight + gap}px`;
+      side.dataset.stretch = String(gap);
+    }
+  });
   useEffect(() => { setSplitAt(null); }, [id]);
+
   const { savedArticles, toggleSaveArticle } = useSavedArticles();
   const { settings } = useSettings();
   const isSaved = article ? savedArticles.some(a => a.id === article.id) : false;
@@ -143,75 +164,42 @@ const NewsDetailPage = () => {
         {/* Wide screens: the analysis cards float on the right; every box on the left that starts below
             them takes the full width, so no empty column is left. Small screens: one column. */}
         <div ref={flowRef} className="flex flex-col gap-6 lg:flow-root">
-          {/* Right Column: Analysis Widgets */}
+          {/* Right column: a short "at a glance" card. The detailed analysis (Explainable AI, bias
+              dimensions, sentiment, people & places) is on the Full Report page. Keeping this column short
+              lets the article text wrap around it and use the full width below, so no empty space is left. */}
           <div data-flow="side" className="order-2 flex flex-col gap-4 lg:float-right lg:w-1/3 lg:pl-6 lg:mb-6">
-            
             <div className="bg-bg-card rounded-2xl border border-gray-800 p-4 shadow-xl">
-              <div className="flex justify-between items-center mb-4">
-                <h3 className="text-base font-bold text-white">Overall Assessment</h3>
-                <Link to={`/report/${article.id}`} className="text-xs text-primary hover:text-blue-400 font-medium">Full Report &rarr;</Link>
-              </div>
-              
-              <div className="flex flex-col items-center justify-center py-3 border-b border-gray-800 mb-4">
-                <div className="relative mb-2">
-                  <BiasScoreBadge score={article.biasScore} size="lg" showLabel />
+              <h3 className="text-base font-bold text-white mb-3">At a Glance</h3>
+              <div className="grid grid-cols-2 gap-3 mb-3">
+                <div className="rounded-xl bg-gray-900/60 border border-gray-800 p-3 flex flex-col items-center gap-1.5">
+                  <span className="text-[10px] uppercase tracking-wider text-gray-500 font-bold">Bias</span>
+                  <BiasScoreBadge score={article.biasScore} showLabel />
                 </div>
-                <p className="text-sm text-gray-400 mt-2">Overall Bias Rating</p>
-              </div>
-
-              <div className="mb-4">
-                <h4 className="text-sm font-medium text-gray-300 mb-2">Bias Dimensions</h4>
-                {report && <BiasRadarChart data={report.dimensions} />}
-              </div>
-
-              <div>
-                <h4 className="text-sm font-medium text-gray-300 mb-2 flex items-center justify-between">
-                  Tone & Sentiment
+                <div className="rounded-xl bg-gray-900/60 border border-gray-800 p-3 flex flex-col items-center gap-1.5">
+                  <span className="text-[10px] uppercase tracking-wider text-gray-500 font-bold">Sentiment</span>
                   <SentimentTag sentiment={article.sentiment} />
-                </h4>
-                {report && <SentimentBarChart sentimentData={report.sentimentBreakdown} />}
+                </div>
+              </div>
+              {article.biasSignals?.totalSentences > 0 && (
+                <p className="text-xs text-gray-400 mb-3">
+                  {article.biasSignals.biasedSentences} of {article.biasSignals.totalSentences} sentences rated biased · {Math.max(1, Math.ceil((article.content || '').split(/\s+/).length / 200))} min read
+                </p>
+              )}
+              <div className="flex flex-col gap-2">
+                <Link to={`/report/${article.id}`} className="flex items-center justify-center gap-2 px-3 py-2 rounded-xl bg-primary hover:bg-blue-500 text-white text-sm font-semibold transition-colors">
+                  <BarChart2 size={16} /> Full Report: why this score
+                </Link>
+                {article.relatedArticleIds?.length > 0 && (
+                  <Link to={article.storyId ? `/compare?story=${encodeURIComponent(article.storyId)}&with=${article.id}` : `/compare/${article.id}/${article.relatedArticleIds[0]}`}
+                    className="flex items-center justify-center gap-2 px-3 py-2 rounded-xl border border-gray-700 hover:bg-gray-800 text-gray-200 text-sm font-medium transition-colors">
+                    <Layers size={16} /> Compare {article.relatedArticleIds.length + 1} outlets
+                  </Link>
+                )}
               </div>
             </div>
 
             {/* FR-12: readers rate this article's credibility */}
-            <CredibilityRating articleId={article.id} />
-
-            <div className="bg-bg-card rounded-2xl border border-gray-800 p-4 shadow-xl">
-              <h3 className="text-base font-bold text-white mb-3">Article Metadata</h3>
-              <div className="space-y-3">
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-gray-800 flex items-center justify-center text-gray-400"><FileText size={16} /></div>
-                  <div>
-                    <p className="text-xs text-gray-500 uppercase font-bold tracking-wider">Word Count</p>
-                    <p className="text-white font-medium">{article.content.split(' ').length} words</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-gray-800 flex items-center justify-center text-gray-400"><Clock size={16} /></div>
-                  <div>
-                    <p className="text-xs text-gray-500 uppercase font-bold tracking-wider">Reading Time</p>
-                    <p className="text-white font-medium">{Math.ceil(article.content.split(' ').length / 200)} mins</p>
-                  </div>
-                </div>
-              </div>
-
-              {article.topicTags?.length > 0 && (
-                <div className="mt-4 pt-4 border-t border-gray-800">
-                  <p className="text-xs text-gray-500 uppercase font-bold tracking-wider mb-2">Topics</p>
-                  <div className="flex flex-wrap gap-2">
-                    {article.topicTags.map(tag => (
-                      <span key={tag} className="px-2 py-1 bg-gray-800 text-gray-300 text-xs rounded-md border border-gray-700">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
-
-            {/* FR-15: everyone and everything the article mentions */}
-            <EntityPanel entities={article.entities} />
-
+            <div data-stretch className="flex flex-col [&>*]:flex-1"><CredibilityRating articleId={article.id} /></div>
           </div>
 
           {/* Left Column: Article Content */}
@@ -314,10 +302,6 @@ const NewsDetailPage = () => {
             )}
             
             {/* Explainable AI Panel */}
-            {/* FR-17 Explainable AI: why the article got its bias score */}
-            <div data-flow="main" className="order-1 flow-root lg:mb-6">
-              <BiasExplanation article={article} report={report} />
-            </div>
 
             {/* FR-09 Version History: each saved version, its bias and sentiment, and the words that changed */}
             <div data-flow="main" className="order-1 flow-root lg:mb-6">

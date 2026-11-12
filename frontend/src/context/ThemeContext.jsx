@@ -1,8 +1,12 @@
 import React, { createContext, useContext, useEffect } from 'react';
+import { syncAdminArea } from '../utils/adminArea';
 
 // TruthLens uses one dark theme everywhere (readers: dark blue, admins: dark red).
 // The light/dark switch was removed because several pages only have dark styles.
-if (typeof document !== 'undefined') document.documentElement.classList.add('dark');   // before the first paint
+if (typeof document !== 'undefined') {                       // before the first paint
+  document.documentElement.classList.add('dark');
+  syncAdminArea(window.location.pathname);                    // red background straight away on admin pages
+}
 
 const ThemeContext = createContext({ theme: 'dark' });
 
