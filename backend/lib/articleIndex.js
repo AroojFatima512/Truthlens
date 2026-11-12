@@ -8,6 +8,7 @@
 const { getDb } = require('../db');
 const { storyLinks, toId, registerKeyPrefixes } = require('../adapters/toFrontend');
 const { categoryOf, reportUnmatched } = require('./categories');
+const genericImages = require('./genericImages');
 
 const TOPIC_TYPES = new Set(['PERSON', 'ORG', 'GPE', 'NORP', 'EVENT', 'LAW', 'LOC', 'FAC']);
 // Dates may be stored as strings ("2026-10-11 11:49:00+05:00" from Dawn, ISO from others) or as real dates
@@ -19,7 +20,7 @@ const time = (v) => {
 };
 
 const INDEX_PROJECTION = {
-  article_key: 1, source: 1, headline: 1, section: 1, published_at: 1, crawled_at: 1, story_id: 1, image_url: 1, 'image_from.source': 1,
+  article_key: 1, source: 1, headline: 1, section: 1, published_at: 1, crawled_at: 1, story_id: 1, image_url: 1,
   'analysis.bias.score': 1, 'analysis.bias.level': 1, 'analysis.sentiment.label': 1,
   'analysis.entities.text': 1, 'analysis.entities.type': 1,
 };
@@ -37,13 +38,17 @@ function topicsOf(entities) {
 async function build() {
   const db = getDb();
   const started = Date.now();
-  const [docs, comps] = await Promise.all([
+  // articles an admin removed from the site (Data Quality page, FR-13)
+  const hidden = new Set((await db.collection('hidden_articles').find({}, { projection: { articleKey: 1 } }).toArray()).map((h) => h.articleKey));
+  const [allDocs, comps] = await Promise.all([
     db.collection('articles').find({ analysis: { $exists: true } }, { projection: INDEX_PROJECTION }).toArray(),
     db.collection('comparisons').find({}, {
       projection: { story_id: 1, article_keys: 1, computed_at: 1, 'result.pairs.a': 1, 'result.pairs.b': 1, 'result.pairs.similarity': 1 },
     }).toArray(),
   ]);
+  const docs = allDocs.filter((d) => !hidden.has(d.article_key));
   const links = storyLinks(comps.filter((c) => Array.isArray(c.result?.pairs)));
+  genericImages.updateFromUrls(docs.map((d) => d.image_url));   // logos / banners shared by many articles
 
   const items = docs.map((d) => {
     const topics = topicsOf(d.analysis?.entities);
@@ -61,8 +66,7 @@ async function build() {
       level: d.analysis?.bias?.level ?? null,
       sentiment: d.analysis?.sentiment?.label || 'neutral',
       storyId: d.story_id || null,
-      image: d.image_url || null,
-      imageFrom: d.image_from?.source || null,   // photo borrowed from another outlet's report
+      image: genericImages.photoOf(d.image_url),
       topics,
       related: link.related.filter((k) => k !== d.article_key),
       similarity: link.similarity,
@@ -149,4 +153,9 @@ function invalidate() {
   if (current) rebuild().catch((err) => console.error('Article index rebuild failed:', err.message));
 }
 
-module.exports = { getIndex, rebuild, watch, invalidate, time };
+// Was this article removed from the site by an admin?
+async function isHidden(articleKey) {
+  return Boolean(await getDb().collection('hidden_articles').findOne({ articleKey }));
+}
+
+module.exports = { getIndex, rebuild, watch, invalidate, time, isHidden };

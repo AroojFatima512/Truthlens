@@ -16,6 +16,7 @@ function toKey(id) {
 }
 
 const { categoryOf } = require('../lib/categories');
+const { photoOf } = require('../lib/genericImages');
 
 const cap = (s) => (s ? s.charAt(0).toUpperCase() + s.slice(1) : s);
 const round = (n) => (typeof n === 'number' ? Math.round(n) : null);
@@ -39,6 +40,31 @@ function firstSentences(doc, n = 2) {
 // options.related:    [articleKey, ...] other outlets' articles on the same story
 // options.similarity: 0..1, best semantic similarity to another outlet's version of this story
 // options.full:       include full text (detail page); the feed only needs the summary
+// People, organisations and places mentioned in an article (spaCy entity types), most mentioned first
+const ENTITY_GROUPS = {
+  PERSON: 'people',
+  ORG: 'organisations', NORP: 'organisations',
+  GPE: 'places', LOC: 'places', FAC: 'places',
+  EVENT: 'other', LAW: 'other', PRODUCT: 'other', WORK_OF_ART: 'other',
+};
+function groupEntities(entities) {
+  const out = { people: [], organisations: [], places: [], other: [] };
+  const seen = new Map();
+  for (const e of entities || []) {
+    const group = ENTITY_GROUPS[e.type];
+    const name = String(e.text || '').replace(/\s+/g, ' ').trim();
+    if (!group || name.length < 2) continue;
+    const key = `${group}:${name.toLowerCase().replace(/^the /, '')}`;
+    const n = Number(e.count) > 0 ? Number(e.count) : 1;     // the ML service already counts mentions
+    if (seen.has(key)) { seen.get(key).count += n; continue; }
+    const item = { name, type: e.type, count: n };
+    seen.set(key, item);
+    out[group].push(item);
+  }
+  for (const g of Object.keys(out)) out[g].sort((x, y) => y.count - x.count || x.name.localeCompare(y.name));
+  return out;
+}
+
 function toArticle(doc, { related = [], similarity = null, full = true } = {}) {
   const a = doc.analysis || {};
   const entities = a.entities || [];
@@ -59,8 +85,7 @@ function toArticle(doc, { related = [], similarity = null, full = true } = {}) {
     category: categoryOf(doc.section),                    // grouped: Pakistan, World, Business, Opinion, ...
     section: cap(doc.section) || null,                     // the outlet's own section name
     publishedAt: iso(doc.published_at),
-    thumbnail: doc.image_url || '/news_bg.png',             // '/news_bg.png' = no photo: the UI shows a no-photo tile
-    photoCredit: doc.image_from?.source || null,           // photo taken from another outlet's report of the same story
+    thumbnail: photoOf(doc.image_url),                     // null = no real photo (logo / shared banner): the UI shows a placeholder
     biasScore: round(a.bias?.score),
     biasLevel: a.bias?.level || null,                      // "Low" | "Moderate" | "High"
     sentiment: a.sentiment?.label || 'neutral',
@@ -75,6 +100,7 @@ function toArticle(doc, { related = [], similarity = null, full = true } = {}) {
         : `Pushed the bias model towards "Biased" (strength ${Math.round(w.score * 100)}%)`,
     })),
     namedEntities: entities.slice(0, 10).map((e) => e.text),
+    entities: full ? groupEntities(entities) : undefined,  // { people, organisations, places, other }: [{ name, type, count }]
     topicTags: [cap(doc.section), ...entities.filter((e) => ['GPE', 'ORG', 'PERSON'].includes(e.type))
       .slice(0, 3).map((e) => e.text)].filter(Boolean),
     relatedArticleIds: related.filter((k) => k !== doc.article_key).map(toId),
@@ -143,11 +169,22 @@ function toComparison(cmpDoc, keyA, keyB) {
       detail: `Does not mention ${missing.slice(0, 4).join(', ')}, which ${other.source} mentions`,
     });
   }
-  for (const m of (pair.reworded_sentences || []).slice(0, 3)) {
-    const change = m.diff.find((op) => op.op === 'replace');
-    if (!change) continue;
-    const [fromWords, toWords] = swapped ? [change.b, change.a] : [change.a, change.b];
-    keyDifferences.push({ type: 'framing', source: artB.source, detail: `Says "${toWords}" where ${artA.source} says "${fromWords}"` });
+  // every reworded sentence, with its word changes seen from A (left) to B (right)
+  const flip = (ops) => (ops || []).map((o) => ({ op: o.op === 'insert' ? 'delete' : o.op === 'delete' ? 'insert' : o.op, a: o.b, b: o.a }));
+  const orient = (ops) => (swapped ? flip(ops) : (ops || []));
+  const sentencePairs = (pair.reworded_sentences || []).map((m) => ({
+    aIndex: m[sideA], bIndex: m[sideB],
+    aText: artA.sentences[m[sideA]], bText: artB.sentences[m[sideB]],
+    similarity: m.similarity ?? null,
+    ops: orient(m.diff),
+  })).sort((x, y) => x.aIndex - y.aIndex);
+  const quote = (t) => `"${t}"`;
+  for (const sp of sentencePairs) {
+    const parts = sp.ops.filter((o) => o.op !== 'equal').map((o) => (
+      o.op === 'replace' ? `${quote(o.b)} where ${artA.source} says ${quote(o.a)}`
+        : o.op === 'insert' ? `adds ${quote(o.b)}`
+        : `drops ${quote(o.a)}`));
+    if (parts.length) keyDifferences.push({ type: 'framing', source: artB.source, detail: `Says ${parts.join('; ')}`, aIndex: sp.aIndex, bIndex: sp.bIndex });
   }
   if (onlyB.size) keyDifferences.push({ type: 'addition', source: artB.source, detail: `${onlyB.size} sentence(s) with no match in ${artA.source}` });
   if (onlyA.size) keyDifferences.push({ type: 'addition', source: artA.source, detail: `${onlyA.size} sentence(s) with no match in ${artB.source}` });
@@ -165,6 +202,16 @@ function toComparison(cmpDoc, keyA, keyB) {
     keyDifferences,
     diffTextA: diffText(artA, tagA, onlyA),
     diffTextB: diffText(artB, tagB, onlyB),
+    // FR-07 / FR-08: the full sentence-by-sentence comparison of these two articles
+    sourceA: artA.source,
+    sourceB: artB.source,
+    headlineA: artA.title,
+    headlineB: artB.title,
+    headlineOps: orient(pair.headline_diff),
+    sentencePairs,                                    // matching sentences worded differently, with word changes
+    identicalCount: (pair.identical_pairs || []).length,
+    onlyInA: [...onlyA],                              // sentences with no match in the other article
+    onlyInB: [...onlyB],
   };
 }
 
@@ -191,4 +238,4 @@ function toSource({ name, url, articlesCount, lastCrawled }, i) {
   };
 }
 
-module.exports = { toId, toKey, registerKeyPrefixes, iso, toArticle, toBiasReport, toComparison, storyLinks, toSource };
+module.exports = { toId, toKey, registerKeyPrefixes, groupEntities, iso, toArticle, toBiasReport, toComparison, storyLinks, toSource };

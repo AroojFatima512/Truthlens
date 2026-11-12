@@ -52,10 +52,10 @@ function collection(docs) {
     async estimatedDocumentCount() { return docs.length; },
     async distinct(field, f = {}) { return [...new Set(docs.filter((d) => match(d, f)).map((d) => d[field]).filter((v) => v !== undefined))]; },
     // writes (used by the auth, feedback and admin tests)
-    async createIndex(spec, o = {}) { if (o.unique) this.uniqueKey = Object.keys(spec)[0]; },
+    async createIndex(spec, o = {}) { if (o.unique) this.uniqueKeys = Object.keys(spec); },
     async insertOne(d) {
-      const k = this.uniqueKey;
-      if (k && docs.some((x) => x[k] === d[k])) { const e = new Error('duplicate key'); e.code = 11000; throw e; }
+      const ks = this.uniqueKeys;
+      if (ks && docs.some((x) => ks.every((k) => x[k] === d[k]))) { const e = new Error('duplicate key'); e.code = 11000; throw e; }
       d._id = d._id || `oid${docs.length}${Date.now()}`; docs.push(d); return { insertedId: d._id };
     },
     async updateOne(f, u) { const d = docs.find((x) => match(x, f)); if (d) Object.assign(d, u.$set || {}); return { matchedCount: d ? 1 : 0 }; },

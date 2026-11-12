@@ -89,3 +89,8 @@ def test_endpoint_returns_sentence_words(fake, monkeypatch):
                                                       {"index": 5, "text": "A plain move.", "p_biased": 0.70}]})
     sw = r.json()["sentence_words"]
     assert [w["word"] for w in sw["4"]] == ["shameless"] and sw["5"] == []
+
+
+def test_words_inside_quotes_are_not_highlighted(fake):
+    out = words.sentence_words([{"index": 0, "text": "The minister called it “shameless” and corrupt.", "p_biased": 0.9}])
+    assert [w["word"] for w in out[0]] == ["corrupt"]

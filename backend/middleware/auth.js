@@ -20,4 +20,12 @@ function requireAdmin(req, res, next) {
     (req.user.role === 'admin' ? next() : res.status(403).json({ message: 'Admins only' })));
 }
 
-module.exports = { requireAuth, requireAdmin };
+// Reads the login if there is one, but lets guests through (req.user stays undefined)
+function optionalAuth(req, res, next) {
+  const header = req.headers.authorization || '';
+  const token = header.startsWith('Bearer ') ? header.slice(7) : null;
+  if (token) { try { req.user = jwt.verify(token, JWT_SECRET); } catch { /* treat as guest */ } }
+  return next();
+}
+
+module.exports = { requireAuth, requireAdmin, optionalAuth };

@@ -22,6 +22,8 @@ app.use(express.json());
 app.use('/api/auth', authRoutes);
 app.use('/api/feedback', feedbackRoutes);
 app.use('/api', articleRoutes);          // /api/articles, /api/compare, /api/stories, /api/stats/topics
+app.use('/api', require('./routes/ratings'));   // /api/articles/:id/credibility (reader ratings)
+app.use('/api/admin/quality', require('./routes/quality'));   // Data Quality page (admin)
 app.use('/api/admin', adminRoutes);      // admin JWT required
 app.use('/api/stats', statsRoutes);      // /api/stats/overview, /api/stats/trending (dashboards)
 app.use('/api/me', meRoutes);            // history, privacy, alerts, recommendations (login required)

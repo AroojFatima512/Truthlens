@@ -39,6 +39,37 @@ def settings() -> tuple[float, float]:
     return gate, thr
 
 
+# Words inside quotation marks are someone else's words (the labelling rule: do not mark them), so they
+# are not highlighted. A quote may open or close in a neighbouring sentence. ’ or ' followed by a letter
+# is an apostrophe (Pakistan’s), not a closing quote.
+_SINGLE = [re.compile(r"(?<!\w)‘(?:[^’]|’(?=\w))*’(?!\w)"), re.compile(r"(?<!\w)'(?:[^']|'(?=\w))*'(?!\w)")]
+
+
+def quoted_spans(text: str) -> list[tuple[int, int]]:
+    """Character ranges of `text` that are inside quotation marks."""
+    spans = []
+    close, open_ = text.find("”"), text.find("“")
+    if close != -1 and (open_ == -1 or close < open_):            # closes a quote opened in an earlier sentence
+        spans.append((0, close + 1))
+    spans += [m.span() for m in re.finditer(r"“[^”]*(?:”|$)", text)]
+    idx = [i for i, c in enumerate(text) if c == '"']
+    if len(idx) % 2 == 1 and idx[0] > 0 and not text[idx[0] - 1].isspace():
+        spans.append((0, idx[0] + 1))                              # straight " closing an earlier quote
+        idx = idx[1:]
+    spans += [(a, b + 1) for a, b in zip(idx[0::2], idx[1::2])]
+    if len(idx) % 2 == 1:
+        spans.append((idx[-1], len(text)))                         # opened here, closed in a later sentence
+    for q in _SINGLE:
+        spans += [m.span() for m in q.finditer(text)]
+    return spans
+
+
+def outside_quotes(text: str) -> list[bool]:
+    """For each word of WORD.findall(text): True if it is not inside quotation marks."""
+    spans = quoted_spans(text)
+    return [not any(a <= m.start() < b for a, b in spans) for m in WORD.finditer(text)]
+
+
 def word_probs(sentences: list[str]) -> list[list[tuple[str, float]]]:
     """[(word, p(biased word)), ...] for each sentence."""
     torch, tok, model, _ = _model()
@@ -68,8 +99,9 @@ def sentence_words(sentences: list[dict]) -> dict[int, list[dict]]:
     out: dict[int, list[dict]] = {}
     for s, wp in zip(chosen, word_probs([s["text"] for s in chosen])):
         seen, marked = set(), []
-        for w, p in wp:
-            if p >= thr and w.lower() not in seen:
+        own = outside_quotes(s["text"]) if config.WORD_SKIP_QUOTES else [True] * len(wp)
+        for (w, p), mine in zip(wp, own):
+            if p >= thr and mine and w.lower() not in seen:
                 seen.add(w.lower())
                 marked.append({"word": w.lower(), "score": round(p, 4)})
         out[int(s["index"])] = marked

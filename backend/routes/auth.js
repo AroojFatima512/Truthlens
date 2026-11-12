@@ -189,6 +189,7 @@ router.delete('/me', requireAuth, wrap(async (req, res) => {
   }
   await users().deleteOne({ id: user.id });
   await getDb().collection('history').deleteMany({ userId: user.id });
+  await getDb().collection('article_ratings').deleteMany({ userId: user.id });
   // Keep their feedback for the admins, but no longer linked to a person
   await getDb().collection('feedback').updateMany({ userId: user.id }, { $set: { userId: 'deleted-user', userEmail: null, userName: 'Deleted user' } });
   res.json({ message: 'Account deleted' });

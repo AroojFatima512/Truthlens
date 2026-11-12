@@ -28,6 +28,8 @@ BIAS_WORDS_MODEL_DIR = os.getenv("BIAS_WORDS_MODEL_DIR", "models/bias_words")
 # A sentence's words can be highlighted when the sentence model labels it Biased (p >= 0.5, its normal decision).
 WORD_GATE = float(os.getenv("WORD_GATE", "0.5"))
 WORD_THRESHOLD = float(os.environ["WORD_THRESHOLD"]) if os.getenv("WORD_THRESHOLD") else None
+# Do not highlight words inside quotation marks (someone else's words). WORD_SKIP_QUOTES=0 turns it off.
+WORD_SKIP_QUOTES = os.getenv("WORD_SKIP_QUOTES", "1") != "0"
 
 # Article bias % -> label shown on the UI ("68% - High Bias"). Tune these on your own data.
 BIAS_LOW_BELOW = float(os.getenv("BIAS_LOW_BELOW", "35"))

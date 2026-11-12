@@ -30,11 +30,12 @@ from pymongo import MongoClient
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from app.duplicates import find_duplicates  # noqa: E402  (plain Python, loads no model)
+from app.boilerplate import find_boilerplate, strip_boilerplate  # noqa: E402
 
 TEXT_FIELDS = {"article_key": 1, "source": 1, "url": 1, "headline": 1, "cleaned_text": 1, "published_at": 1,
                "content_hash": 1, "analysis_content_hash": 1, "story_id": 1, "analysis": 1, "analysis_meta": 1,
                "version_number": 1, "version_first_seen_at": 1, "crawled_at": 1, "category": 1,
-               "duplicate_of": 1, "topic_id": 1}   # never load raw_html
+               "duplicate_of": 1, "topic_id": 1, "analysis_body_hash": 1}   # never load raw_html
 
 
 def now():
@@ -108,18 +109,42 @@ def main():
             print(f"      = {by_k[k].get('headline', '')[:60]}")
     cleaned = [a for a in cleaned if a["article_key"] not in dup]
 
+    # ---- 0b. page boilerplate (a paragraph repeated in 3+ articles of one outlet) --------------------
+    bp = find_boilerplate([{"source": a.get("source"), "text": a["cleaned_text"]} for a in cleaned])
+    db.boilerplate_blocks.delete_many({})
+    if bp:
+        db.boilerplate_blocks.insert_many([{"source": src, "text": k, "articles": n}
+                                           for src, c in bp.items() for k, n in c.items()])
+        print(f"{sum(len(c) for c in bp.values())} boilerplate paragraph(s) left out of the analysis, e.g.:")
+        for src, c in bp.items():
+            for k, n in sorted(c.items(), key=lambda kv: -kv[1])[:3]:
+                print(f"    {src} ({n} articles): {k[:90]}")
+
+    def body(a):
+        return strip_boilerplate(a["cleaned_text"], a.get("source"), bp)[0]
+
+    def text_hash(t):
+        return hashlib.sha256(t.encode("utf-8")).hexdigest()
+
     # ---- 1-2. analyse new or changed articles --------------------------------------------------
+    # analysed before boilerplate removal existed = analysed on the full text
     todo = [a for a in cleaned
-            if a.get("content_hash") and (args.force or a.get("analysis_content_hash") != a["content_hash"])]
+            if a.get("content_hash") and (args.force or a.get("analysis_content_hash") != a["content_hash"]
+                                          or (a.get("analysis_body_hash") or text_hash(a["cleaned_text"]))
+                                          != text_hash(body(a)))]
     print(f"{len(todo)} article(s) need analysis")
     for n, a in enumerate(todo, 1):
         try:
-            res = post(args.api, "/analyze", {"title": a.get("headline", ""), "body": a["cleaned_text"],
+            res = post(args.api, "/analyze", {"title": a.get("headline", ""), "body": body(a),
                                               "explain_top_k": args.explain_top_k})
         except requests.HTTPError as e:
             print(f"  [{n}/{len(todo)}] skipped {a['article_key']}: {e}")
             continue
+        clean_body, n_removed = strip_boilerplate(a["cleaned_text"], a.get("source"), bp)
         update = {"$set": {"analysis": res, "analysis_content_hash": a["content_hash"], "analyzed_at": now(),
+                           "analysis_body_hash": text_hash(clean_body), "boilerplate_removed": n_removed,
+                           # the text without boilerplate, for the article page (null = same as cleaned_text)
+                           "body_text": clean_body if n_removed else None,
                            # which version of the text this analysis belongs to (for the Timeline screen)
                            "analysis_meta": {"version_number": a.get("version_number"), "headline": a.get("headline"),
                                              "seen_at": a.get("version_first_seen_at") or a.get("crawled_at")
@@ -143,7 +168,7 @@ def main():
         print("No recent analysed articles to group.")
         return
     payload = {"articles": [{"id": a["article_key"], "source": a.get("source"), "title": a.get("headline", ""),
-                             "body": a["cleaned_text"], "published_at": a.get("published_at"),
+                             "body": body(a), "published_at": a.get("published_at"),
                              "category": a.get("category")} for a in recent]}
     if args.threshold is not None:
         payload["threshold"] = args.threshold
@@ -192,7 +217,7 @@ def main():
         chosen = list(latest.values())[:5]
         result = post(args.api, "/compare", {"articles": [
             {"id": a["article_key"], "source": a.get("source"), "title": a.get("headline", ""),
-             "body": a["cleaned_text"], "analysis": a.get("analysis")} for a in chosen]})
+             "body": body(a), "analysis": a.get("analysis")} for a in chosen]})
         for art in result["articles"]:
             arts.update_one({"article_key": art["id"]},
                             {"$set": {"analysis.dimensions.selective_reporting": art["selective_reporting"]["score"]}})

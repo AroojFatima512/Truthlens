@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Compass, Clock, Bookmark, Star, Settings, LayoutDashboard, Users, Database, MessageSquare, LogOut, Sun, Moon, Home, Layers, TrendingUp, Activity, User, ShieldCheck, ScanText } from 'lucide-react';
+import { Compass, Clock, Bookmark, Star, Settings, LayoutDashboard, Users, Database, MessageSquare, LogOut, Sun, Moon, Home, Layers, TrendingUp, Activity, User, ShieldCheck, ScanText, ShieldAlert } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 
 const Sidebar = ({ isOpen, closeSidebar }) => {
@@ -66,6 +66,7 @@ const Sidebar = ({ isOpen, closeSidebar }) => {
     { name: 'Manage Sources', icon: <Database size={16} />, path: '/admin/sources' },
     { name: 'Manage Users', icon: <Users size={16} />, path: '/admin/users' },
     { name: 'User Feedback', icon: <MessageSquare size={16} />, path: '/admin/feedback' },
+    { name: 'Data Quality', icon: <ShieldAlert size={16} />, path: '/admin/quality' },
     { name: 'Settings', icon: <Settings size={16} />, path: '/admin/settings' },
   ];
 

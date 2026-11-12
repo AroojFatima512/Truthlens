@@ -7,10 +7,10 @@ import { logUserActivity } from '../utils/historyService';
 import NewSinceBanner from '../components/common/NewSinceBanner';
 import Pagination from '../components/common/Pagination';
 import StoryCard from '../components/news/StoryCard';
-import ArticleImage from '../components/common/ArticleImage';
 import { X, Search, ChevronDown, Bookmark, Menu, ShieldCheck, Newspaper, Layers } from 'lucide-react';
 import { formatDate } from '../utils/formatters';
 import { motion } from 'framer-motion';
+import ArticleThumb from '../components/news/ArticleThumb';
 
 // The feed asks the backend for ONE page at a time (GET /api/feed or /api/stories). Filters, sorting
 // and search run on the server over every article in the database, not just the ones on screen.
@@ -40,6 +40,9 @@ const NewsFeedPage = () => {
   const [showSortDropdown, setShowSortDropdown] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [selectedFilters, setSelectedFilters] = useState(NO_FILTERS);
+  // FR-11: custom date range { from: 'YYYY-MM-DD', to: 'YYYY-MM-DD' } (either may be empty); null = none
+  const [customRange, setCustomRange] = useState(null);
+  const [rangeDraft, setRangeDraft] = useState({ from: '', to: '' });
   const [currentPage, setCurrentPage] = useState(1);
   const { savedArticles, toggleSaveArticle } = useSavedArticles();
   const loggedSearchRef = useRef(new Set());
@@ -73,6 +76,7 @@ const NewsFeedPage = () => {
   useEffect(() => {
     setSortOption(view === 'stories' ? 'Latest' : 'Relevance');
     setSelectedFilters(NO_FILTERS);
+    setCustomRange(null);
     setCurrentPage(1);
     setActiveDropdown(null);
   }, [view]);
@@ -84,7 +88,9 @@ const NewsFeedPage = () => {
       q: query || undefined,
       category: activeTopic !== 'All' ? activeTopic : undefined,
       source: f['Source'] || undefined,
-      date: DATE_PARAM[f['Date']],
+      date: customRange ? undefined : DATE_PARAM[f['Date']],
+      from: customRange?.from || undefined,
+      to: customRange?.to || undefined,
       page: currentPage,
     };
     const request = view === 'stories'
@@ -121,7 +127,7 @@ const NewsFeedPage = () => {
       setError('Could not load the news. Is the backend running?');
       setData({ view, items: [], total: 0, pages: 1 });
     }).finally(() => { if (id === requestRef.current) setLoading(false); });
-  }, [view, query, activeTopic, selectedFilters, sortOption, currentPage]);
+  }, [view, query, activeTopic, selectedFilters, customRange, sortOption, currentPage]);
 
   const setView = (next) => {
     const params = new URLSearchParams(searchParams);
@@ -145,7 +151,21 @@ const NewsFeedPage = () => {
     setCurrentPage(1);
   };
 
+  const shortDay = (d) => new Date(`${d}T00:00:00`).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+  const applyRange = () => {
+    const { from, to } = rangeDraft;
+    if (!from && !to) return;
+    const [a, b] = from && to && from > to ? [to, from] : [from, to];
+    setCustomRange({ from: a, to: b });
+    const label = a && b ? (a === b ? shortDay(a) : `${shortDay(a)} – ${shortDay(b)}`) : a ? `From ${shortDay(a)}` : `Until ${shortDay(b)}`;
+    setSelectedFilters((prev) => ({ ...prev, Date: label }));
+    setActiveDropdown(null);
+    setCurrentPage(1);
+  };
+  const todayIso = new Date(Date.now() - new Date().getTimezoneOffset() * 60000).toISOString().slice(0, 10);
+
   const setFilter = (pill, value) => {
+    if (pill === 'Date') setCustomRange(null);
     setSelectedFilters((prev) => ({ ...prev, [pill]: value }));
     setActiveDropdown(null);
     setCurrentPage(1);
@@ -327,6 +347,7 @@ const NewsFeedPage = () => {
                    <button 
                      onClick={() => {
                        setSelectedFilters(NO_FILTERS);
+                       setCustomRange(null);
                        setActiveDropdown(null);
                        setCurrentPage(1);
                      }} 
@@ -344,7 +365,7 @@ const NewsFeedPage = () => {
                        </button>
                        
                        {activeDropdown === pill && (
-                         <div className="absolute top-full left-0 mt-2 w-48 bg-white dark:bg-[#111827] border border-gray-200 dark:border-gray-800 rounded-lg shadow-xl overflow-hidden z-20 animate-in fade-in zoom-in-95 duration-200">
+                         <div className={`absolute top-full left-0 mt-2 ${pill === 'Date' ? 'w-64' : 'w-48'} bg-white dark:bg-[#111827] border border-gray-200 dark:border-gray-800 rounded-lg shadow-xl overflow-hidden z-20 animate-in fade-in zoom-in-95 duration-200`}>
                            <button 
                              onClick={() => setFilter(pill, null)}
                              className="w-full text-left px-4 py-2.5 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors font-medium border-b border-gray-100 dark:border-gray-800"
@@ -360,6 +381,21 @@ const NewsFeedPage = () => {
                                {opt}
                              </button>
                            ))}
+                           {pill === 'Date' && (
+                             <div className="border-t border-gray-100 dark:border-gray-800 p-3 space-y-2">
+                               <p className="text-xs font-semibold text-gray-600 dark:text-gray-300">Custom range</p>
+                               <label className="flex items-center justify-between gap-2 text-xs text-gray-500 dark:text-gray-400">From
+                                 <input type="date" aria-label="From date" value={rangeDraft.from} max={todayIso} onChange={(e) => setRangeDraft((r) => ({ ...r, from: e.target.value }))}
+                                   className="rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-[#0c1727] px-2 py-1 text-xs text-gray-900 dark:text-white [color-scheme:dark]" />
+                               </label>
+                               <label className="flex items-center justify-between gap-2 text-xs text-gray-500 dark:text-gray-400">To
+                                 <input type="date" aria-label="To date" value={rangeDraft.to} max={todayIso} onChange={(e) => setRangeDraft((r) => ({ ...r, to: e.target.value }))}
+                                   className="rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-[#0c1727] px-2 py-1 text-xs text-gray-900 dark:text-white [color-scheme:dark]" />
+                               </label>
+                               <button type="button" onClick={applyRange} disabled={!rangeDraft.from && !rangeDraft.to}
+                                 className="w-full rounded-md bg-blue-600 hover:bg-blue-500 disabled:opacity-40 text-white text-xs font-semibold py-1.5">Apply range</button>
+                             </div>
+                           )}
                          </div>
                        )}
                      </div>
@@ -397,9 +433,8 @@ const NewsFeedPage = () => {
                           
                           {/* Left: Thumbnail */}
                           <div className="w-full md:w-36 lg:w-44 h-full shrink-0 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-800 relative bg-gray-100 dark:bg-gray-800">
-                            <ArticleImage src={article.thumbnail} alt={article.headline} category={article.category}
-                              source={article.source} credit={article.photoCredit}
-                              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" />
+                            <ArticleThumb src={article.thumbnail} source={article.source} category={article.category}
+                              imgClassName="group-hover:scale-105 transition-transform duration-500 ease-out" />
                             {/* Mobile-only badge */}
                             <div className="absolute bottom-2 left-2 md:hidden">
                               <div className="px-2 py-1 rounded bg-black/60 backdrop-blur-md text-white text-[10px] font-medium">

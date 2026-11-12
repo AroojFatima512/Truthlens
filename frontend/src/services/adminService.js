@@ -19,3 +19,9 @@ export const deleteUser = async (id) => {
 
 // Editing sources is after the evaluation; kept so the Source Management page still works.
 export const saveSources = async () => true;
+
+// FR-13 Data Quality: flagged / low-quality articles for the admin to examine
+// params: { reason, status: 'open'|'reviewed'|'hidden'|'all', source, page, pageSize }
+export const fetchQuality = async (params = {}) => (await api.get('/admin/quality', { params })).data;
+export const setReviewed = async (id, reviewed) => (await api.post(`/admin/quality/${id}/review`, { reviewed })).data;
+export const setHidden = async (id, hidden) => (await api.post(`/admin/quality/${id}/hide`, { hidden })).data;

@@ -2,6 +2,7 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { Link, useParams, useSearchParams } from 'react-router-dom';
 import Sidebar from '../components/common/Sidebar';
 import SideBySideLayout from '../components/comparison/SideBySideLayout';
+import ChangedWordsPanel from '../components/comparison/ChangedWordsPanel';
 import SentimentBarChart from '../components/charts/SentimentBarChart';
 import { fetchArticleById, fetchComparison, fetchStory, fetchStories } from '../services/newsService';
 import { Download, Share2, Layers, X, Plus, ChevronDown } from 'lucide-react';
@@ -458,7 +459,11 @@ const ComparisonPage = () => {
                       <div className="space-y-3">
                         {!hasComparison && <p className="text-sm text-slate-400">{noComparisonText}</p>}
                         {hasComparison && framingDiffs.length === 0 && <p className="text-sm text-slate-400">No sentence is worded differently between these two articles.</p>}
-                        {framingDiffs.slice(0, 3).map((diff, index) => {
+                        {hasComparison && framingDiffs.length > 0 && (
+                          <p className="text-xs text-slate-400">{framingDiffs.length} reworded sentence{framingDiffs.length === 1 ? '' : 's'} · word by word in "Changed Words" below</p>
+                        )}
+                        <div className="space-y-3 max-h-[30rem] overflow-y-auto pr-1">
+                        {framingDiffs.map((diff, index) => {
                           const colorClass = diff.type === 'framing' ? 'border-blue-500/40 bg-blue-950/70 text-blue-100' : diff.type === 'omission' ? 'border-amber-500/40 bg-amber-950/70 text-amber-100' : 'border-emerald-500/40 bg-emerald-950/70 text-emerald-100';
                           return (
                             <div key={`difference-${index}`} className={`rounded-3xl border p-4 ${colorClass}`}>
@@ -470,6 +475,7 @@ const ComparisonPage = () => {
                             </div>
                           );
                         })}
+                        </div>
                       </div>
                     </div>
 
@@ -504,6 +510,8 @@ const ComparisonPage = () => {
                     </div>
                   </div>
                 </div>
+
+                {hasComparison && <ChangedWordsPanel comparison={comparison} />}
 
                 <div className="grid gap-6 lg:grid-cols-2">
                   <div className="bg-bg-card rounded-3xl border border-gray-800 p-6 shadow-xl">

@@ -85,6 +85,7 @@ router.delete('/users/:id', async (req, res) => {
     if (user.role === 'admin') return res.status(400).json({ message: 'Admin accounts cannot be deleted' });
     await users.deleteOne({ id: user.id });
     await getDb().collection('history').deleteMany({ userId: user.id });
+    await getDb().collection('article_ratings').deleteMany({ userId: user.id });
     await getDb().collection('feedback').updateMany({ userId: user.id }, { $set: { userId: 'deleted-user', userEmail: null, userName: 'Deleted user' } });
     res.json({ id: user.id, deleted: true });
   } catch (err) {

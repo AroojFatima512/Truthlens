@@ -33,6 +33,7 @@ import AdminDashboardPage from './pages/AdminDashboardPage';
 import SourceManagementPage from './pages/SourceManagementPage';
 import UserManagementPage from './pages/UserManagementPage';
 import AdminFeedbackPage from './pages/AdminFeedbackPage';
+import AdminDataQualityPage from './pages/AdminDataQualityPage';
 import AdminSettingsPage from './pages/AdminSettingsPage';
 
 function App() {
@@ -74,6 +75,7 @@ function App() {
                   <Route path="/admin/sources" element={<SourceManagementPage />} />
                   <Route path="/admin/users" element={<UserManagementPage />} />
                   <Route path="/admin/feedback" element={<AdminFeedbackPage />} />
+                  <Route path="/admin/quality" element={<AdminDataQualityPage />} />
                   <Route path="/admin/settings" element={<AdminSettingsPage />} />
                 </Route>
                 </Routes>

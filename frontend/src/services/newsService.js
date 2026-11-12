@@ -81,3 +81,14 @@ export const fetchFeed = async (params = {}) => (await api.get('/feed', { params
 // -> { items: [{ storyId, headline, category, publishedAt, image, outletCount, similarity, biasGap,
 //                outlets: [{ id, source, headline, biasScore, biasLevel, sentiment }], compareIds }], total, page, pages, facets }
 export const fetchStories = async (params = {}) => (await api.get('/stories', { params })).data;
+
+// FR-09: saved versions of an article and which words changed between them
+export const fetchArticleVersions = async (id) => (await api.get(`/articles/${id}/versions`)).data;
+
+// FR-12: reader credibility ratings for one article -> { average, count, distribution, mine }
+export const fetchCredibility = async (id) => (await api.get(`/articles/${id}/credibility`)).data;
+export const rateCredibility = async (id, rating, reason) => {
+  try { return (await api.put(`/articles/${id}/credibility`, { rating, reason })).data; }
+  catch (e) { throw new Error(e.response?.data?.message || 'Could not save your rating'); }
+};
+export const removeCredibility = async (id) => (await api.delete(`/articles/${id}/credibility`)).data;

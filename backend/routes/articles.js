@@ -8,7 +8,9 @@
 const express = require('express');
 const { getDb } = require('../db');
 const { toArticle, toBiasReport, toComparison, toKey, iso } = require('../adapters/toFrontend');
-const { getIndex } = require('../lib/articleIndex');
+const { getIndex, isHidden } = require('../lib/articleIndex');
+const { diffWords, diffTexts } = require('../lib/wordDiff');
+const { optionalAuth } = require('../middleware/auth');
 const { CATEGORIES } = require('../lib/categories');
 
 const router = express.Router();
@@ -40,6 +42,7 @@ async function searchKeys(index, q) {
 
 function applyFilters(items, query, matches) {
   const { source, category, sentiment, bias, coverage, date } = query;
+  const range = dateRange(query);
   let out = items;
   if (matches) out = out.filter((it) => matches.all.has(it.key));
   if (source && source !== 'All') out = out.filter((it) => it.source === source);
@@ -52,7 +55,19 @@ function applyFilters(items, query, matches) {
   if (coverage === 'multi') out = out.filter((it) => it.related.length > 0);
   if (coverage === 'single') out = out.filter((it) => it.related.length === 0);
   if (DATE_RANGES[date]) { const from = Date.now() - DATE_RANGES[date]; out = out.filter((it) => (it.ts || 0) >= from); }
+  if (range) out = out.filter((it) => it.ts && it.ts >= range.from && it.ts <= range.to);
   return out;
+}
+
+// Custom date range (FR-11): ?from=YYYY-MM-DD&to=YYYY-MM-DD, both days included, Pakistan time.
+// Either end may be left out.
+function dateRange({ from, to }) {
+  const day = (s) => (/^\d{4}-\d{2}-\d{2}$/.test(String(s || '')) ? s : null);
+  const f = day(from); const t = day(to);
+  if (!f && !t) return null;
+  const start = f ? Date.parse(`${f}T00:00:00+05:00`) : 0;
+  const end = t ? Date.parse(`${t}T23:59:59.999+05:00`) : Infinity;
+  return start <= end ? { from: start, to: end } : { from: end, to: start };
 }
 
 const SORTS = {
@@ -142,15 +157,12 @@ function toStoryCard(story) {
   }
   const sims = story.articles.map((a) => a.similarity).filter((s) => typeof s === 'number');
   const lead = story.articles[0];
-  const pic = story.articles.find((a) => a.image && !a.imageFrom) || story.articles.find((a) => a.image);
   return {
     storyId: story.storyId,
     headline: lead.headline,
     category: lead.category,
     publishedAt: iso(lead.ts),
-    // an outlet's own photo first; credit the outlet whose photo it is
-    image: pic?.image || '/news_bg.png',
-    imageCredit: pic ? (pic.imageFrom || pic.source) : null,
+    image: (story.articles.find((a) => a.image) || {}).image || null,   // null = none of the versions has a real photo
     outletCount: outlets.length,
     articleCount: story.articles.length,
     similarity: sims.length ? Math.round(Math.max(...sims) * 100) : null,
@@ -187,6 +199,8 @@ router.get('/stories', wrap(async (req, res) => {
   if (source && source !== 'All') stories = stories.filter((s) => s.outlets.includes(source));
   if (category && !['All', 'All Categories'].includes(category)) stories = stories.filter((s) => s.articles.some((a) => a.category === category));
   if (DATE_RANGES[date]) { const from = Date.now() - DATE_RANGES[date]; stories = stories.filter((s) => (s.ts || 0) >= from); }
+  const range = dateRange(req.query);
+  if (range) stories = stories.filter((s) => s.ts && s.ts >= range.from && s.ts <= range.to);
 
   let cards = stories.map((s) => ({ ...toStoryCard(s), ts: s.ts }));
   const sort = STORY_SORTS[req.query.sort] || STORY_SORTS.latest;
@@ -220,11 +234,53 @@ router.get('/stories/:storyId', wrap(async (req, res) => {
 
 // ---------------------------------------------------------------- one article
 // GET /api/articles/:id   (id like "geo-685964")
-router.get('/articles/:id', wrap(async (req, res) => {
+router.get('/articles/:id', optionalAuth, wrap(async (req, res) => {
   const doc = await getDb().collection('articles').findOne({ article_key: toKey(req.params.id) }, { projection: PROJECTION });
   if (!doc || !doc.analysis) return res.status(404).json({ message: 'Article not found or not analysed yet' });
+  if (req.user?.role !== 'admin' && await isHidden(doc.article_key)) return res.status(404).json({ message: 'This article has been removed by an admin' });
   const it = (await getIndex()).byKey.get(doc.article_key);
   res.json(toArticle(doc, { related: it?.related || [], similarity: it?.similarity ?? null, full: true }));
+}));
+
+// GET /api/articles/:id/versions  (FR-09)
+// Every saved version of an article (article_snapshots + the current one) and, between each two
+// consecutive versions, which headline words and which sentences / words changed. Newest change first.
+router.get('/articles/:id/versions', wrap(async (req, res) => {
+  const key = toKey(req.params.id);
+  const db = getDb();
+  const fields = { headline: 1, cleaned_text: 1, version_number: 1, crawled_at: 1 };
+  const current = await db.collection('articles').findOne({ article_key: key },
+    { projection: { ...fields, last_changed_at: 1, version_first_seen_at: 1, last_checked_at: 1 } });
+  if (!current) return res.status(404).json({ message: 'Article not found' });
+  const snaps = await db.collection('article_snapshots').find({ article_key: key }, { projection: fields })
+    .sort({ version_number: 1 }).toArray();
+
+  const byVersion = new Map();
+  snaps.forEach((s, i) => byVersion.set(s.version_number ?? i + 1, { ...s, date: s.crawled_at }));
+  const currentVersion = current.version_number ?? (snaps.length ? Math.max(...byVersion.keys()) + 1 : 1);
+  byVersion.set(currentVersion, { ...current, date: current.version_first_seen_at || current.last_changed_at || current.crawled_at });
+  const versions = [...byVersion.entries()].sort((a, b) => a[0] - b[0]).map(([version, v]) => ({ version, ...v }));
+
+  const transitions = [];
+  for (let i = 1; i < versions.length; i += 1) {
+    const before = versions[i - 1]; const after = versions[i];
+    const headlineChanged = (before.headline || '') !== (after.headline || '');
+    const textChanged = (before.cleaned_text || '') !== (after.cleaned_text || '');
+    // a snapshot without text (older crawler versions) can't be compared word by word
+    const comparable = Boolean(before.cleaned_text && after.cleaned_text);
+    const body = textChanged && comparable ? diffTexts(before.cleaned_text, after.cleaned_text) : { changes: [], unchanged: null };
+    transitions.push({
+      fromVersion: before.version, toVersion: after.version,
+      fromDate: iso(before.date), toDate: iso(after.date),
+      headlineOps: headlineChanged ? diffWords(before.headline, after.headline) : null,
+      textChanged, comparable,
+      changes: body.changes, unchangedSentences: body.unchanged,
+    });
+  }
+  res.json({
+    versions: versions.map((v) => ({ version: v.version, date: iso(v.date), headline: v.headline })),
+    transitions: transitions.reverse(),
+  });
 }));
 
 // GET /api/articles/:id/report

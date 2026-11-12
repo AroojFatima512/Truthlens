@@ -5,6 +5,9 @@ import BiasScoreBadge from '../components/common/BiasScoreBadge';
 import SentimentTag from '../components/common/SentimentTag';
 import HighlightedText from '../components/news/HighlightedText';
 import StoryEvolutionTimeline from '../components/news/StoryEvolutionTimeline';
+import VersionChanges from '../components/news/VersionChanges';
+import CredibilityRating from '../components/news/CredibilityRating';
+import EntityPanel from '../components/news/EntityPanel';
 import BiasRadarChart from '../components/charts/BiasRadarChart';
 import SentimentBarChart from '../components/charts/SentimentBarChart';
 import { fetchArticleById } from '../services/newsService';
@@ -188,10 +191,15 @@ const NewsDetailPage = () => {
             <div className="mb-4">
               <StoryEvolutionTimeline versionHistory={article.versionHistory} />
             </div>
+
+            {/* FR-09: the exact words that changed between saved versions */}
+            <div className="mb-4">
+              <VersionChanges articleId={article.id} />
+            </div>
           </div>
 
           {/* Right Column: Analysis Widgets */}
-          <div className="flex flex-col gap-4 pl-1 lg:pl-4 sticky top-20 self-start">
+          <div className="flex flex-col gap-4 pl-1 lg:pl-4 self-start">
             
             <div className="bg-bg-card rounded-2xl border border-gray-800 p-4 shadow-xl">
               <div className="flex justify-between items-center mb-4">
@@ -219,6 +227,9 @@ const NewsDetailPage = () => {
                 {report && <SentimentBarChart sentimentData={report.sentimentBreakdown} />}
               </div>
             </div>
+
+            {/* FR-12: readers rate this article's credibility */}
+            <CredibilityRating articleId={article.id} />
 
             <div className="bg-bg-card rounded-2xl border border-gray-800 p-4 shadow-xl">
               <h3 className="text-base font-bold text-white mb-3">Article Metadata</h3>
@@ -252,6 +263,9 @@ const NewsDetailPage = () => {
                 </div>
               )}
             </div>
+
+            {/* FR-15: everyone and everything the article mentions */}
+            <EntityPanel entities={article.entities} />
 
           </div>
 
