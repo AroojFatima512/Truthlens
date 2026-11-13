@@ -1,0 +1,20 @@
+2026-11-13T13:13:31: 
+2026-11-13T13:13:31:   WARNING: DEV_2FA_CODE is set in .env, so the code "123456" passes EVERY 2FA check
+2026-11-13T13:13:31:   (readers and admin). That is for development only: delete the line from .env before the demo.
+2026-11-13T13:13:31:   Then use the 6-digit code from the authenticator app (admin: "node scripts/admin-2fa.js" shows its QR code).
+2026-11-13T13:13:31: 
+2026-11-13T13:26:19: 
+2026-11-13T13:26:19:   WARNING: DEV_2FA_CODE is set in .env, so the code "123456" passes EVERY 2FA check
+2026-11-13T13:26:19:   (readers and admin). That is for development only: delete the line from .env before the demo.
+2026-11-13T13:26:19:   Then use the 6-digit code from the authenticator app (admin: "node scripts/admin-2fa.js" shows its QR code).
+2026-11-13T13:26:19: 
+2026-11-13T13:31:00: 
+2026-11-13T13:31:00:   WARNING: DEV_2FA_CODE is set in .env, so the code "123456" passes EVERY 2FA check
+2026-11-13T13:31:00:   (readers and admin). That is for development only: delete the line from .env before the demo.
+2026-11-13T13:31:00:   Then use the 6-digit code from the authenticator app (admin: "node scripts/admin-2fa.js" shows its QR code).
+2026-11-13T13:31:00: 
+2026-11-13T13:48:15: 
+2026-11-13T13:48:15:   WARNING: DEV_2FA_CODE is set in .env, so the code "123456" passes EVERY 2FA check
+2026-11-13T13:48:15:   (readers and admin). That is for development only: delete the line from .env before the demo.
+2026-11-13T13:48:15:   Then use the 6-digit code from the authenticator app (admin: "node scripts/admin-2fa.js" shows its QR code).
+2026-11-13T13:48:15: 

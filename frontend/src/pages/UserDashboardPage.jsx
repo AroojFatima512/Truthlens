@@ -7,6 +7,7 @@ import TrendingTopicsTab from '../components/dashboard/TrendingTopicsTab';
 import SavedArticlesTab from '../components/dashboard/SavedArticlesTab';
 import SettingsTab from '../components/dashboard/SettingsTab';
 import HistoryTab from '../components/dashboard/HistoryTab';
+import BiasTrendsTab from '../components/dashboard/BiasTrendsTab';
 import { fetchOverview } from '../services/newsService';
 import RecommendedArticles from '../components/news/RecommendedArticles';
 import NewSinceBanner from '../components/common/NewSinceBanner';
@@ -166,6 +167,9 @@ const UserDashboardPage = () => {
 
       case 'Trending Topics':
         return <TrendingTopicsTab />;
+
+      case 'Bias Trends':
+        return <BiasTrendsTab />;
 
       case 'Settings':
         return <SettingsTab />;

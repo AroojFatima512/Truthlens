@@ -2,6 +2,10 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useSearchParams, Link } from 'react-router-dom';
 import Sidebar from '../components/common/Sidebar';
 import { fetchFeed, fetchStories } from '../services/newsService';
+import { fetchPreferences } from '../services/preferencesService';
+import { useAuth } from '../context/AuthContext';
+import { Heart } from 'lucide-react';
+import toast from 'react-hot-toast';
 import { useSavedArticles } from '../context/SavedArticlesContext';
 import { logUserActivity } from '../utils/historyService';
 import NewSinceBanner from '../components/common/NewSinceBanner';
@@ -44,6 +48,15 @@ const NewsFeedPage = () => {
   const [customRange, setCustomRange] = useState(null);
   const [rangeDraft, setRangeDraft] = useState({ from: '', to: '' });
   const [currentPage, setCurrentPage] = useState(1);
+  // UC-22 "For you": only the reader's favourite topics and outlets (chosen in Settings > Preferences)
+  const { user } = useAuth();
+  const [prefs, setPrefs] = useState(null);
+  const [forYou, setForYou] = useState(false);
+  useEffect(() => {
+    if (!user || user.role === 'admin') return;
+    fetchPreferences().then(setPrefs).catch(() => setPrefs(null));
+  }, [user]);
+  const hasPrefs = Boolean(prefs && (prefs.topics.length || prefs.outlets.length));
   const { savedArticles, toggleSaveArticle } = useSavedArticles();
   const loggedSearchRef = useRef(new Set());
   const requestRef = useRef(0);
@@ -109,6 +122,8 @@ const NewsFeedPage = () => {
         sentiment: f['Sentiment']?.toLowerCase(),
         bias: f['Bias Level']?.replace(' Bias', ''),   // 'Low' | 'Moderate' | 'High', set by the ML service
         coverage: f['Coverage'] === 'Multiple outlets' ? 'multi' : f['Coverage'] === 'Single outlet' ? 'single' : undefined,
+        favTopics: forYou && hasPrefs ? prefs.topics.join(',') || undefined : undefined,
+        favSources: forYou && hasPrefs ? prefs.outlets.join(',') || undefined : undefined,
         pageSize: ARTICLE_PAGE_SIZE,
       });
     setLoading(true);
@@ -127,7 +142,7 @@ const NewsFeedPage = () => {
       setError('Could not load the news. Is the backend running?');
       setData({ view, items: [], total: 0, pages: 1 });
     }).finally(() => { if (id === requestRef.current) setLoading(false); });
-  }, [view, query, activeTopic, selectedFilters, customRange, sortOption, currentPage]);
+  }, [view, query, activeTopic, selectedFilters, customRange, sortOption, currentPage, forYou, hasPrefs]);   // eslint-disable-line react-hooks/exhaustive-deps
 
   const setView = (next) => {
     const params = new URLSearchParams(searchParams);
@@ -263,6 +278,19 @@ const NewsFeedPage = () => {
 
               {/* Topic Categories */}
               <div className="flex items-center gap-1.5 overflow-x-auto hide-scrollbar pb-1">
+                {view !== 'stories' && prefs && (
+                  <button type="button"
+                    onClick={() => {
+                      if (!hasPrefs) { toast('Choose your favourite topics and outlets in Dashboard → Settings → Preferences.', { icon: '💡' }); return; }
+                      setForYou((v) => !v); setCurrentPage(1);
+                    }}
+                    title={hasPrefs ? `Your favourites: ${[...prefs.topics, ...prefs.outlets].join(', ')}` : 'Choose favourites in Settings > Preferences'}
+                    className={`whitespace-nowrap inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[12px] font-semibold transition-all border ${forYou
+                      ? 'text-rose-600 dark:text-rose-300 bg-rose-50 dark:bg-rose-900/20 border-rose-200 dark:border-rose-800/50'
+                      : 'text-gray-600 dark:text-gray-300 border-gray-200 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800'}`}>
+                    <Heart size={13} className={forYou ? 'fill-current' : ''} /> For you
+                  </button>
+                )}
                 {topics.map(topic => (
                   <button
                     key={topic}

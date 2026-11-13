@@ -1,0 +1,20 @@
+2026-11-13T13:13:29: ◇ injected env (21) from .env // tip: ◈ encrypted .env [www.dotenvx.com]
+2026-11-13T13:13:31: MongoDB connected: truthlens
+2026-11-13T13:13:31: Server running on port 5000
+2026-11-13T13:13:31: Categories: these sections are shown as "Other" (edit backend/lib/categories.js to move them): prism, branded-content, rawalpindi
+2026-11-13T13:13:32: Article index ready: 3131 articles, 409 compared stories (0.4 s)
+2026-11-13T13:26:18: ◇ injected env (21) from .env // tip: ⌘ enable debugging { debug: true }
+2026-11-13T13:26:19: MongoDB connected: truthlens
+2026-11-13T13:26:19: Server running on port 5000
+2026-11-13T13:26:20: Categories: these sections are shown as "Other" (edit backend/lib/categories.js to move them): prism, branded-content, rawalpindi
+2026-11-13T13:26:20: Article index ready: 3131 articles, 409 compared stories (0.6 s)
+2026-11-13T13:30:59: ◇ injected env (21) from .env // tip: ⌁ auth for agents [www.vestauth.com]
+2026-11-13T13:31:00: MongoDB connected: truthlens
+2026-11-13T13:31:00: Server running on port 5000
+2026-11-13T13:31:01: Categories: these sections are shown as "Other" (edit backend/lib/categories.js to move them): prism, branded-content, rawalpindi
+2026-11-13T13:31:01: Article index ready: 3131 articles, 409 compared stories (0.5 s)
+2026-11-13T13:48:14: ◇ injected env (21) from .env // tip: ⌘ override existing { override: true }
+2026-11-13T13:48:15: MongoDB connected: truthlens
+2026-11-13T13:48:15: Server running on port 5000
+2026-11-13T13:48:15: Categories: these sections are shown as "Other" (edit backend/lib/categories.js to move them): prism, branded-content, rawalpindi
+2026-11-13T13:48:15: Article index ready: 3131 articles, 409 compared stories (0.3 s)

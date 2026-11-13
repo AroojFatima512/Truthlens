@@ -9,4 +9,20 @@ api.interceptors.request.use((config) => {
   return config;
 });
 
+// A logged-in request answered 401 = the login token expired or is no longer valid. SessionWatcher
+// (components/common/SessionWatcher.jsx) logs the user out cleanly and sends them to the login page.
+api.interceptors.response.use(
+  (response) => response,
+  (error) => {
+    if (error.response?.status === 401 && error.config?.headers?.Authorization) {
+      window.dispatchEvent(new CustomEvent('truthlens:session-expired'));
+    }
+    // no answer at all: the backend is down or restarting (ConnectionBanner shows it and waits)
+    if (!error.response && error.code !== 'ERR_CANCELED') {
+      window.dispatchEvent(new CustomEvent('truthlens:server-unreachable'));
+    }
+    return Promise.reject(error);
+  },
+);
+
 export default api;

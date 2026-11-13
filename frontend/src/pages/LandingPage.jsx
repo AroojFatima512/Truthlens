@@ -8,11 +8,12 @@ import PageTransition from '../components/common/PageTransition';
 import { useAuth } from '../context/AuthContext';
 import { useSettings } from '../context/SettingsContext';
 import { homePathFor } from '../utils/homePath';
-import { fetchOverview } from '../services/newsService';
+import { fetchOverview, fetchModelMetrics } from '../services/newsService';
 
 // Test-set accuracy of the deployed bias model (plain DeBERTa-v3-base, MBIC test set, 311 sentences).
-// Update this if a different model is deployed.
+// Shown until the ML side stores its evaluation in model_metrics (then that figure is shown instead).
 const MODEL_ACCURACY = 85.5;
+const pct = (v) => (typeof v === 'number' ? Math.round((v <= 1 ? v * 100 : v) * 10) / 10 : null);
 
 const AnimatedCounter = ({ end, suffix = "", duration = 2 }) => {
   const [count, setCount] = useState(0);
@@ -46,6 +47,14 @@ const LandingPage = () => {
 
   // Real numbers from the database (public endpoint, works without logging in)
   const [overview, setOverview] = useState(null);
+  const [biasModel, setBiasModel] = useState(null);   // { accuracy, dataset, testSize, evaluatedAt, ... }
+  useEffect(() => {
+    fetchModelMetrics().then((list) => setBiasModel(list.find((m) => m.model === 'bias-sentence') || null));
+  }, []);
+  const accuracy = pct(biasModel?.accuracy) ?? MODEL_ACCURACY;
+  const accuracyNote = biasModel
+    ? `${biasModel.name || 'Bias model'}: accuracy on ${biasModel.dataset || 'the test set'}${biasModel.testSize ? ` (${biasModel.testSize} sentences)` : ''}${biasModel.f1 != null ? `, F1 ${pct(biasModel.f1)}%` : ''}`
+    : 'DeBERTa bias model, accuracy on the MBIC test set (311 sentences)';
   useEffect(() => {
     fetchOverview().then(setOverview).catch((err) => console.error('Could not load stats', err));
   }, []);
@@ -212,9 +221,9 @@ const LandingPage = () => {
                 </div>
                 <div className="flex flex-col text-left">
                   <div className="text-2xl lg:text-3xl font-extrabold text-gray-900 dark:text-white mb-0.5 tracking-tight transition-colors duration-300">
-                    <AnimatedCounter end={MODEL_ACCURACY} suffix="%" duration={2.5} />
+                    <AnimatedCounter key={accuracy} end={accuracy} suffix="%" duration={2.5} />
                   </div>
-                  <div title="DeBERTa bias model, accuracy on the MBIC test set" className="text-gray-500 dark:text-gray-400 text-[10px] lg:text-xs font-bold uppercase tracking-wider transition-colors duration-300">Bias Model Accuracy</div>
+                  <div title={accuracyNote} className="text-gray-500 dark:text-gray-400 text-[10px] lg:text-xs font-bold uppercase tracking-wider transition-colors duration-300">Bias Model Accuracy</div>
                 </div>
               </div>
 

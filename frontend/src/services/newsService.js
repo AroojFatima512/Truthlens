@@ -92,3 +92,11 @@ export const rateCredibility = async (id, rating, reason) => {
   catch (e) { throw new Error(e.response?.data?.message || 'Could not save your rating'); }
 };
 export const removeCredibility = async (id) => (await api.delete(`/articles/${id}/credibility`)).data;
+
+// UC-32 bias trend per outlet: params { outlets: 'Dawn,Geo News', from, to, span, interval: auto|day|week|month }
+export const fetchBiasTrend = async (params = {}) => (await api.get('/stats/bias-trend', { params })).data;
+
+// NFR-11: latest evaluation of each ML model (written by the ML side into model_metrics), [] if none yet
+export const fetchModelMetrics = async () => {
+  try { return (await api.get('/stats/model')).data; } catch { return []; }
+};

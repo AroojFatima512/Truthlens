@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Sidebar from '../components/common/Sidebar';
-import { fetchUsers, setUserStatus, deleteUser } from '../services/adminService';
-import { Search, Trash2, ChevronDown, ChevronUp, Menu, Ban, CheckCircle } from 'lucide-react';
+import { fetchUsers, setUserStatus, deleteUser, inviteUser, resendInvite } from '../services/adminService';
+import { Search, Trash2, ChevronDown, ChevronUp, Menu, Ban, CheckCircle, UserPlus, Mail, X, Lock } from 'lucide-react';
+import EmailHint from '../components/auth/EmailHint';
+import { nameProblem, emailProblem } from '../utils/validation';
 import toast from 'react-hot-toast';
 
 const ITEMS_PER_PAGE = 4;
@@ -23,6 +25,25 @@ const UserManagementPage = () => {
   }, []);
 
   // Real actions, saved in MongoDB. Admin accounts can't be blocked or deleted.
+  // UC-33: add a reader. They get an e-mail to choose their own password.
+  const [adding, setAdding] = useState(null);         // { name, email, touched } while the dialog is open
+  const [sending, setSending] = useState(false);
+  const handleInvite = async (e) => {
+    e.preventDefault();
+    const problem = nameProblem(adding.name) || emailProblem(adding.email);
+    if (problem) { setAdding({ ...adding, touched: true }); toast.error(problem); return; }
+    setSending(true);
+    try {
+      const created = await inviteUser(adding.name, adding.email);
+      setUsers((list) => [{ ...created, invitePending: true }, ...list]);
+      toast.success(`Invitation sent to ${created.email}`);
+      setAdding(null);
+    } catch (err) { toast.error(err.message); } finally { setSending(false); }
+  };
+  const handleResend = async (u) => {
+    try { await resendInvite(u.id); toast.success(`New invitation sent to ${u.email}`); } catch (err) { toast.error(err.message); }
+  };
+
   const handleToggleBlock = async (u) => {
     const status = u.status === 'Blocked' ? 'Active' : 'Blocked';
     if (status === 'Blocked' && !window.confirm(`Block ${u.email}? They will not be able to log in until unblocked.`)) return;
@@ -143,7 +164,10 @@ const UserManagementPage = () => {
               <p className="text-gray-600 dark:text-gray-400 text-sm transition-colors">View and manage registered accounts across the platform.</p>
             </div>
             
-            <p className="text-[12px] text-gray-500 dark:text-gray-400 max-w-xs">Readers create their own accounts (with 2FA) on the Sign Up page.</p>
+            <button type="button" onClick={() => setAdding({ name: '', email: '', touched: false })}
+              className="flex items-center gap-2 px-4 py-2.5 bg-[#D32F2F] text-white rounded-lg hover:bg-[#B71C1C] transition shadow-md dark:shadow-lg shadow-red-900/20 font-medium text-sm">
+              <UserPlus size={17} /> Add User
+            </button>
           </div>
 
           <div className="bg-white dark:bg-[#110505] border border-red-200 dark:border-red-900/20 rounded-xl overflow-hidden shadow-sm dark:shadow-lg flex flex-col transition-colors">
@@ -231,6 +255,8 @@ const UserManagementPage = () => {
                             {user.status}
                           </span>
                         </div>
+                        {user.invitePending && <span className="mt-1 inline-flex items-center gap-1 rounded bg-amber-500/10 border border-amber-500/30 px-1.5 py-0.5 text-[10px] font-semibold text-amber-400"><Mail size={10} /> Invited</span>}
+                        {user.locked && <span className="mt-1 ml-1 inline-flex items-center gap-1 rounded bg-red-500/10 border border-red-500/30 px-1.5 py-0.5 text-[10px] font-semibold text-red-400" title="Too many wrong passwords; unlocks by itself after 15 minutes"><Lock size={10} /> Locked</span>}
                       </td>
                       <td className="p-4 px-6 text-right">
                         <div className="flex items-center justify-end gap-2.5">
@@ -238,6 +264,11 @@ const UserManagementPage = () => {
                             <span className="text-[11px] text-gray-500">Protected</span>
                           ) : (
                             <>
+                              {user.invitePending && (
+                                <button onClick={() => handleResend(user)} title="Send the invitation again" className="w-8 h-8 flex items-center justify-center text-gray-400 dark:text-gray-500 bg-red-50 dark:bg-[#1a0505] border border-red-200 dark:border-red-900/20 hover:text-gray-900 dark:hover:text-white hover:border-red-300 dark:hover:border-red-500/50 hover:bg-red-100 dark:hover:bg-red-950/40 rounded-lg transition-colors">
+                                  <Mail size={14} />
+                                </button>
+                              )}
                               <button onClick={() => handleToggleBlock(user)} className="w-8 h-8 flex items-center justify-center text-gray-400 dark:text-gray-500 bg-red-50 dark:bg-[#1a0505] border border-red-200 dark:border-red-900/20 hover:text-gray-900 dark:hover:text-white hover:border-red-300 dark:hover:border-red-500/50 hover:bg-red-100 dark:hover:bg-red-950/40 rounded-lg transition-colors" title={user.status === 'Blocked' ? 'Unblock user' : 'Block user'}>
                                 {user.status === 'Blocked' ? <CheckCircle size={14} /> : <Ban size={14} />}
                               </button>
@@ -292,6 +323,34 @@ const UserManagementPage = () => {
           </div>
         </main>
       </div>
+      {adding && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4" onClick={() => setAdding(null)}>
+          <form role="dialog" aria-label="Add user" onSubmit={handleInvite} onClick={(e) => e.stopPropagation()}
+            className="w-full max-w-md rounded-xl bg-white dark:bg-[#110505] border border-red-200 dark:border-red-900/30 shadow-2xl p-6 space-y-4">
+            <div className="flex items-center justify-between">
+              <h2 className="text-lg font-bold text-gray-900 dark:text-white flex items-center gap-2"><UserPlus size={18} className="text-[#D32F2F]" /> Add a reader</h2>
+              <button type="button" onClick={() => setAdding(null)} aria-label="Close" className="p-1 text-gray-400 hover:text-white"><X size={18} /></button>
+            </div>
+            <p className="text-xs text-gray-500 dark:text-gray-400">They get an e-mail with a link to choose their own password (valid 72 hours). At their first login they link an authenticator app.</p>
+            <label className="block">
+              <span className="block text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-1.5">Full name</span>
+              <input value={adding.name} maxLength={60} required onChange={(e) => setAdding({ ...adding, name: e.target.value })} placeholder="e.g. Sana Malik"
+                className="w-full px-3 py-2.5 rounded-lg bg-red-50 dark:bg-[#1a0505] border border-red-200 dark:border-red-900/30 text-sm text-gray-900 dark:text-white focus:outline-none focus:border-red-500/50" />
+              {adding.touched && nameProblem(adding.name) && <span className="mt-1 block text-[11px] text-red-400">{nameProblem(adding.name)}</span>}
+            </label>
+            <label className="block">
+              <span className="block text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-1.5">E-mail</span>
+              <input type="email" value={adding.email} maxLength={254} required onChange={(e) => setAdding({ ...adding, email: e.target.value })} onBlur={() => setAdding({ ...adding, touched: true })} placeholder="name@gmail.com"
+                className="w-full px-3 py-2.5 rounded-lg bg-red-50 dark:bg-[#1a0505] border border-red-200 dark:border-red-900/30 text-sm text-gray-900 dark:text-white focus:outline-none focus:border-red-500/50" />
+              <EmailHint email={adding.email} touched={adding.touched} onFix={(fixed) => setAdding({ ...adding, email: fixed })} />
+            </label>
+            <div className="flex justify-end gap-2 pt-1">
+              <button type="button" onClick={() => setAdding(null)} className="px-4 py-2 text-sm rounded-lg border border-red-200 dark:border-red-900/30 text-gray-700 dark:text-gray-300 hover:bg-red-100 dark:hover:bg-red-950/40">Cancel</button>
+              <button type="submit" disabled={sending} className="px-4 py-2 text-sm rounded-lg bg-[#D32F2F] text-white hover:bg-[#B71C1C] disabled:opacity-50 inline-flex items-center gap-2"><Mail size={15} /> {sending ? 'Sending…' : 'Send invitation'}</button>
+            </div>
+          </form>
+        </div>
+      )}
     </div>
   );
 };

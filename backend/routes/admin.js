@@ -1,12 +1,12 @@
 // Admin API: dashboard counts, sources, users, crawl runs, and the "Run crawl now" button.
 const express = require('express');
-const path = require('path');
-const { spawn } = require('child_process');
 const { getDb } = require('../db');
 const { requireAdmin } = require('../middleware/auth');
 const { toSource, iso } = require('../adapters/toFrontend');
 const { invalidate } = require('../lib/articleIndex');
 const sourceSettings = require('../lib/sourceSettings');
+const crawler = require('../lib/crawler');
+const crawlSchedule = require('../lib/crawlSchedule');
 
 const router = express.Router();
 router.use(requireAdmin);
@@ -95,11 +95,39 @@ router.post('/sources/pause-all', async (req, res) => {
   }
 });
 
+// POST /api/admin/users { name, email }      UC-33: add a reader; they get an invitation e-mail
+// POST /api/admin/users/:id/invite            send the invitation again (until they set a password)
+router.post('/users', async (req, res) => {
+  try {
+    const admin = await getDb().collection('users').findOne({ id: req.user.id });
+    const r = await require('./auth').inviteUser(req.body || {}, { email: req.user.email, name: admin?.name });
+    if (r.error) return res.status(r.status).json({ message: r.error });
+    res.status(201).json(r.user);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: 'Server error' });
+  }
+});
+router.post('/users/:id/invite', async (req, res) => {
+  try {
+    const admin = await getDb().collection('users').findOne({ id: req.user.id });
+    const r = await require('./auth').resendInvite(req.params.id, { email: req.user.email, name: admin?.name });
+    if (r.error) return res.status(r.status).json({ message: r.error });
+    res.json(r.user);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: 'Server error' });
+  }
+});
+
 // GET /api/admin/users  -> never sends passwords or 2FA secrets
 router.get('/users', async (req, res) => {
-  const users = await getDb().collection('users')
-    .find({}, { projection: { password: 0, passwordHash: 0, twoFASecret: 0 } }).toArray();
-  res.json(users.map(({ _id, ...u }) => ({ id: String(_id), ...u })));
+  const users = await getDb().collection('users').find({}, { projection: { password: 0, twoFASecret: 0 } }).toArray();
+  res.json(users.map(({ _id, passwordHash, googleId, failedLogins, lastFailedLoginAt, ...u }) => ({
+    id: String(_id), ...u,
+    invitePending: Boolean(u.invitedAt) && !passwordHash && !googleId,          // added by an admin, no password chosen yet
+    locked: Boolean(u.lockedUntil && new Date(u.lockedUntil) > new Date()),     // too many wrong passwords (UC-5)
+  })));
 });
 
 // PATCH /api/admin/users/:id { status: 'Active' | 'Blocked' }   (readers only; admins can't be blocked here)
@@ -129,6 +157,7 @@ router.delete('/users/:id', async (req, res) => {
     await users.deleteOne({ id: user.id });
     await getDb().collection('history').deleteMany({ userId: user.id });
     await getDb().collection('article_ratings').deleteMany({ userId: user.id });
+    await getDb().collection('bookmarks').deleteMany({ userId: user.id });
     await getDb().collection('feedback').updateMany({ userId: user.id }, { $set: { userId: 'deleted-user', userEmail: null, userName: 'Deleted user' } });
     res.json({ id: user.id, deleted: true });
   } catch (err) {
@@ -180,79 +209,36 @@ router.get('/activity', async (req, res) => {
   }
 });
 
-// POST /api/admin/crawl {limit}  -> starts run_pipeline.py; the UI polls /crawl-status and /crawl-runs
-// .env: ML_DIR, ML_PYTHON, CRAWLER_DIR, CRAWLER_PYTHON
-//
-// Only active outlets are crawled. When some outlets are paused or removed on Manage Sources, the
-// backend adds  --outlets "Dawn,Geo News,..."  (the active outlets' names, exactly as in article.source).
-// run_pipeline.py must accept that option (see the guide for Person A). With every outlet active the
-// option is left out, so the command is exactly the one the pipeline already supports.
-let running = false;
-let lastCrawl = null;            // { startedAt, finishedAt, exitCode, outlets, skipped, error }
-const TAIL = 4000;
-
-const friendlyError = (code, tail) => {
-  if (/unrecognized arguments:.*--outlets/.test(tail)) {
-    return 'The crawler cannot skip paused outlets yet: run_pipeline.py needs the new --outlets option (Person A). Resume all outlets to crawl them all until then.';
-  }
-  const last = tail.trim().split(/\r?\n/).filter(Boolean).pop();
-  return `The crawl stopped with an error (exit code ${code})${last ? `: ${last.slice(0, 300)}` : ''}. The backend terminal shows the full output.`;
-};
-
+// POST /api/admin/crawl {limit}  -> starts run_pipeline.py (lib/crawler.js); the UI polls /crawl-status
 router.post('/crawl', async (req, res) => {
-  if (running) return res.status(409).json({ message: 'A crawl is already running' });
-  const limit = String(Math.max(1, Math.min(Number(req.body?.limit) || 3, 100)));
-  const { ML_DIR, ML_PYTHON, CRAWLER_DIR, CRAWLER_PYTHON } = process.env;
-  if (!ML_DIR || !ML_PYTHON || !CRAWLER_DIR) return res.status(500).json({ message: 'Crawler paths are not set in .env' });
-
-  const names = await sourceNames(getDb());
-  await sourceSettings.refresh();
-  const outlets = names.filter((n) => sourceSettings.statusOf(n) === 'active');
-  const skipped = names.filter((n) => !outlets.includes(n));
-  if (names.length && !outlets.length) {
-    return res.status(400).json({ message: 'Every outlet is paused or removed. Resume at least one on Manage Sources.' });
-  }
-
-  const args = [path.join(ML_DIR, 'scripts', 'run_pipeline.py'), '--crawler-dir', CRAWLER_DIR,
-    '--crawler-python', CRAWLER_PYTHON || ML_PYTHON, '--limit', limit, '--triggered-by', `admin:${req.user.email}`];
-  if (skipped.length) args.push('--outlets', outlets.join(','));
-
-  running = true;
-  lastCrawl = { startedAt: new Date().toISOString(), finishedAt: null, exitCode: null, outlets, skipped, error: null };
-  const record = lastCrawl;
-  let tail = '';
-  const finish = (code, error) => {
-    if (record.finishedAt) return;
-    running = false;
-    Object.assign(record, { finishedAt: new Date().toISOString(), exitCode: code, error });
-    invalidate();                                                  // show the new articles straight away
-  };
-
-  let child;
   try {
-    child = spawn(ML_PYTHON, args, { cwd: ML_DIR });
+    const r = await crawler.startCrawl({ limit: req.body?.limit, triggeredBy: `admin:${req.user.email}` });
+    res.status(r.status).json(r.body);
   } catch (err) {
-    finish(null, `Could not start the crawler: ${err.message}`);
-    return res.status(500).json({ message: record.error });
+    console.error(err);
+    res.status(500).json({ message: 'Server error' });
   }
-  // The pipeline's output goes to the backend terminal. Reading it also keeps the pipe from filling
-  // up, which would otherwise freeze a long crawl.
-  const keep = (chunk) => { tail = (tail + chunk.toString()).slice(-TAIL); };
-  child.stdout?.on('data', (c) => { process.stdout.write(`[crawl] ${c}`); keep(c); });
-  child.stderr?.on('data', (c) => { process.stderr.write(`[crawl] ${c}`); keep(c); });
-  child.on('error', (err) => finish(null, `Could not start the crawler (${err.code || err.message}). Check ML_PYTHON and ML_DIR in .env.`));
-  child.on('close', (code) => finish(code, code === 0 ? null : friendlyError(code, tail)));
-  res.status(202).json({ started: true, limit: Number(limit), outlets, skipped });
 });
 
-// GET /api/admin/crawl-status -> { running, outlets, skipped, last: { startedAt, finishedAt, exitCode, error } }
-//   outlets / skipped = what the next "Run crawl now" will crawl / skip
+// GET /api/admin/crawl-status -> { running, outlets, skipped, last, schedule }
+//   outlets / skipped = what the next crawl will cover / skip; schedule = the automatic crawl settings
 router.get('/crawl-status', async (req, res) => {
   try {
-    const names = await sourceNames(getDb());
-    await sourceSettings.refresh();
-    const outlets = names.filter((n) => sourceSettings.statusOf(n) === 'active');
-    res.json({ running, outlets, skipped: names.filter((n) => !outlets.includes(n)), last: lastCrawl });
+    const { outlets, skipped } = await crawler.plan();
+    res.json({ running: crawler.isRunning(), outlets, skipped, last: crawler.last(), schedule: await crawlSchedule.get() });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: 'Server error' });
+  }
+});
+
+// PUT /api/admin/crawl-schedule { enabled, everyHours: 1|3|6|12|24, limit: 3|30|100 }  (UC-29)
+router.put('/crawl-schedule', async (req, res) => {
+  try {
+    const { enabled, everyHours, limit } = req.body || {};
+    const r = await crawlSchedule.update({ enabled, everyHours, limit }, req.user.email);
+    if (r.error) return res.status(400).json({ message: r.error });
+    res.json(r.schedule);
   } catch (err) {
     console.error(err);
     res.status(500).json({ message: 'Server error' });

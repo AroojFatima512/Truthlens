@@ -99,3 +99,29 @@ test('pause all / resume all, and no crawl when nothing is active', async () => 
   assert.ok(r.body.filter((s) => s.name !== 'Dawn').every((s) => s.status === 'Active'));
   await call('PATCH', '/admin/sources/Dawn', { status: 'active' });
 });
+
+test('automatic crawl schedule (UC-29): saved, validated, runs when due, once, then waits', async () => {
+  const schedule = require('../lib/crawlSchedule');
+  assert.equal((await call('GET', '/admin/crawl-status')).body.schedule.enabled, false, 'off by default');
+  assert.equal((await call('PUT', '/admin/crawl-schedule', { enabled: true, everyHours: 5 })).status, 400);
+  assert.equal((await call('PUT', '/admin/crawl-schedule', { enabled: true, everyHours: 6, limit: 7 })).status, 400);
+  const on = await call('PUT', '/admin/crawl-schedule', { enabled: true, everyHours: 6, limit: 30 });
+  assert.equal(on.status, 200); assert.equal(on.body.updatedBy, 'admin@truthlens.com');
+  const due = new Date(on.body.nextRunAt);
+  assert.ok(Math.abs(due - Date.now() - 6 * 3600 * 1000) < 5000, 'first run 6 hours from now');
+
+  assert.equal(await schedule.tick(new Date()), 'not-due');
+  fs.rmSync(ARGS, { force: true });
+  const later = new Date(due.getTime() + 1000);
+  assert.equal(await schedule.tick(later), 'started');
+  await waitCrawl();
+  const args = JSON.parse(fs.readFileSync(ARGS));
+  assert.deepEqual(args.slice(args.indexOf('--limit'), args.indexOf('--limit') + 2), ['--limit', '30']);
+  assert.equal(args[args.indexOf('--triggered-by') + 1], 'schedule');
+  assert.equal(await schedule.tick(later), 'not-due', 'next one is 6 hours later, not right away');
+  assert.equal((await schedule.get()).nextRunAt.getTime(), later.getTime() + 6 * 3600 * 1000);
+
+  const off = await call('PUT', '/admin/crawl-schedule', { enabled: false });
+  assert.equal(off.body.enabled, false); assert.equal(off.body.nextRunAt, null);
+  assert.equal(await schedule.tick(new Date(Date.now() + 99 * 3600 * 1000)), 'not-due');
+});

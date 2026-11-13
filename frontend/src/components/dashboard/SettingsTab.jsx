@@ -13,6 +13,7 @@ import { fetchPrivacy, savePrivacy } from '../../services/meService';
 import toast from 'react-hot-toast';
 import { updateProfile, changePassword, deleteAccount, } from '../../services/authService';
 import PasswordChecklist, { passwordReady } from '../auth/PasswordChecklist';
+import FavouritesCard from './FavouritesCard';
 import { nameProblem } from '../../utils/validation';
 import { fetchMyFeedback } from '../../services/feedbackService';
 
@@ -71,6 +72,9 @@ const PreferencesPanel = () => {
 
   return (
     <div className="flex flex-col gap-6 animate-in slide-in-from-right-4 duration-300">
+      {/* UC-22 favourite topics and outlets (saved with the account) */}
+      <FavouritesCard />
+
       {/* General Preferences */}
       <div className="bg-white dark:bg-bg-card rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm overflow-hidden">
         <div className="px-6 py-4 border-b border-gray-200 dark:border-gray-800 flex items-center gap-3">
@@ -232,7 +236,7 @@ const HelpRow = ({ icon: Icon, title, subtitle, href }) => (
 const AccountSettingsPanel = () => {
   const { user, logout, updateUser } = useAuth();
   const noPassword = user?.hasPassword === false;   // signed up with Google, no password yet
-  const { clearSavedArticles } = useSavedArticles();
+  const { savedArticles, clearSavedArticles } = useSavedArticles();
   const [activeModal, setActiveModal] = useState(null);
   const [loadingActions, setLoadingActions] = useState({});
 
@@ -340,7 +344,7 @@ const AccountSettingsPanel = () => {
       exportedAt: new Date().toISOString(),
       account: user,
       feedback,
-      savedArticles: read('truthlens_saved_articles'),
+      savedArticles,
       privacy,
       history,
       settings: read('truthlens_settings'),

@@ -81,12 +81,14 @@ export const AuthProvider = ({ children }) => {
     localStorage.setItem('truthlens_user', JSON.stringify(profile));
   };
 
-  const logout = () => {
+  // message: shown instead of "Logged out successfully" (e.g. after inactivity); null = no message
+  const logout = (message = 'Logged out successfully') => {
     setUser(null);
     localStorage.removeItem('truthlens_user');
     localStorage.removeItem('truthlens_token');
+    localStorage.removeItem('truthlens_last_active');
     logoutUser();
-    toast.success('Logged out successfully');
+    if (message) toast.success(message, { id: 'logout' });
   };
 
   const value = {

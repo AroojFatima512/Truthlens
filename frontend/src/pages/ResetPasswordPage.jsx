@@ -14,6 +14,7 @@ const ResetPasswordPage = () => {
   const navigate = useNavigate();
   const [params] = useSearchParams();
   const token = params.get('token') || '';
+  const invite = params.get('invite') === '1';          // UC-33: an admin added this account
   const [link, setLink] = useState(null);            // null = checking, { valid, email }
   const [password, setPassword] = useState('');
   const [again, setAgain] = useState('');
@@ -31,7 +32,7 @@ const ResetPasswordPage = () => {
     try {
       await resetPassword(token, password);
       setDone(true);
-      toast.success('Password changed');
+      toast.success(invite ? 'Password set' : 'Password changed');
     } catch (err) {
       toast.error(err.message);
       setLink(await checkResetToken(token));
@@ -45,7 +46,8 @@ const ResetPasswordPage = () => {
   }
   if (done) {
     return (
-      <AuthCard icon={CheckCircle2} title="Password changed" subtitle="You can now log in with your new password.">
+      <AuthCard icon={CheckCircle2} title={invite ? 'Your account is ready' : 'Password changed'}
+        subtitle={invite ? 'Log in with your e-mail and new password. The first time, you will scan a QR code with an authenticator app (Google or Microsoft Authenticator).' : 'You can now log in with your new password.'}>
         <button onClick={() => navigate(t.loginPath)} className={`w-full py-2.5 rounded-xl text-white font-semibold text-sm transition ${t.button}`}>Go to {t.admin ? 'Admin Login' : 'Login'}</button>
       </AuthCard>
     );
@@ -67,7 +69,7 @@ const ResetPasswordPage = () => {
   );
 
   return (
-    <AuthCard icon={ShieldCheck} title="Choose a new password" subtitle={`For ${link.email}`}>
+    <AuthCard icon={ShieldCheck} title={invite ? 'Welcome to TruthLens' : 'Choose a new password'} subtitle={invite ? `Choose a password for ${link.email}` : `For ${link.email}`}>
       <form onSubmit={submit} className="space-y-4">
         <label className="block">
           <span className="flex items-center justify-between text-xs font-medium text-gray-300 mb-1.5">

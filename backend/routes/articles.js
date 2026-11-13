@@ -53,6 +53,12 @@ function applyFilters(items, query, matches) {
   }
   if (sentiment) out = out.filter((it) => it.sentiment === sentiment.toLowerCase());
   if (bias) out = out.filter((it) => it.level === bias);
+  // UC-22 "For you": articles in the reader's favourite topics OR from their favourite outlets
+  const list = (v) => String(v || '').split(',').map((x) => x.trim().toLowerCase()).filter(Boolean);
+  const favTopics = list(query.favTopics); const favSources = list(query.favSources);
+  if (favTopics.length || favSources.length) {
+    out = out.filter((it) => favTopics.includes(it.category.toLowerCase()) || favSources.includes(it.source.toLowerCase()));
+  }
   if (coverage === 'multi') out = out.filter((it) => it.related.length > 0);
   if (coverage === 'single') out = out.filter((it) => it.related.length === 0);
   if (DATE_RANGES[date]) { const from = Date.now() - DATE_RANGES[date]; out = out.filter((it) => (it.ts || 0) >= from); }

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Compass, Clock, Bookmark, Star, Settings, LayoutDashboard, Users, Database, MessageSquare, LogOut, Sun, Moon, Home, Layers, TrendingUp, Activity, User, ShieldCheck, ScanText, ShieldAlert } from 'lucide-react';
+import { Compass, Clock, Bookmark, Star, Settings, LayoutDashboard, Users, Database, MessageSquare, LogOut, Sun, Moon, Home, Layers, TrendingUp, Activity, User, ShieldCheck, ScanText, ShieldAlert, LineChart } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 
 const Sidebar = ({ isOpen, closeSidebar }) => {
@@ -54,6 +54,7 @@ const Sidebar = ({ isOpen, closeSidebar }) => {
     { name: 'Analyze Article', icon: <ScanText size={16} />, path: '/analyze' },
     { name: 'Dashboard', icon: <LayoutDashboard size={16} />, path: '/dashboard' },
     { name: 'Trending Topics', icon: <TrendingUp size={16} />, path: '/dashboard?tab=Trending Topics' },
+    { name: 'Bias Trends', icon: <LineChart size={16} />, path: '/dashboard?tab=Bias Trends' },
     { name: 'Saved Articles', icon: <Bookmark size={16} />, path: '/dashboard?tab=Saved Articles' },
     { name: 'History', icon: <Clock size={16} />, path: '/dashboard?tab=History' },
     { name: 'Feedback', icon: <MessageSquare size={16} />, path: '/feedback' },

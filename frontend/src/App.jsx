@@ -37,6 +37,8 @@ import AdminDataQualityPage from './pages/AdminDataQualityPage';
 import ForgotPasswordPage from './pages/ForgotPasswordPage';
 import ResetPasswordPage from './pages/ResetPasswordPage';
 import VerifyEmailPage from './pages/VerifyEmailPage';
+import SessionWatcher from './components/common/SessionWatcher';
+import ConnectionBanner from './components/common/ConnectionBanner';
 import AdminSettingsPage from './pages/AdminSettingsPage';
 
 function App() {
@@ -47,6 +49,8 @@ function App() {
           <SavedArticlesProvider>
             <Toaster position="top-right" toastOptions={{ style: { background: '#1E293B', color: '#fff', border: '1px solid #374151' } }} />
             <Router>
+              <SessionWatcher />
+              <ConnectionBanner />
               <AnimatedGlobalWrapper>
                 <Routes>
                 {/* Public Routes for visitors and readers (admins are sent to their dashboard) */}

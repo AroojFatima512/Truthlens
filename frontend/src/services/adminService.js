@@ -13,6 +13,13 @@ const apiError = (error, fallback) => new Error(error.response?.data?.message ||
 export const setUserStatus = async (id, status) => {            // 'Active' | 'Blocked'
   try { return (await api.patch(`/admin/users/${id}`, { status })).data; } catch (e) { throw apiError(e, 'Could not update the user'); }
 };
+// UC-33: add a reader by e-mail invitation; resend while they haven't chosen a password
+export const inviteUser = async (name, email) => {
+  try { return (await api.post('/admin/users', { name, email })).data; } catch (e) { throw apiError(e, 'Could not add the user'); }
+};
+export const resendInvite = async (id) => {
+  try { return (await api.post(`/admin/users/${id}/invite`)).data; } catch (e) { throw apiError(e, 'Could not send the invitation'); }
+};
 export const deleteUser = async (id) => {
   try { return (await api.delete(`/admin/users/${id}`)).data; } catch (e) { throw apiError(e, 'Could not delete the user'); }
 };
@@ -26,6 +33,10 @@ export const setAllPaused = async (paused) => {
 };
 // { running, outlets, skipped, last: { startedAt, finishedAt, exitCode, error } }
 export const fetchCrawlStatus = async () => (await api.get('/admin/crawl-status')).data;
+// UC-29 automatic crawls: { enabled, everyHours: 1|3|6|12|24, limit: 3|30|100 }
+export const saveCrawlSchedule = async (fields) => {
+  try { return (await api.put('/admin/crawl-schedule', fields)).data; } catch (e) { throw new Error(e.response?.data?.message || 'Could not save the schedule'); }
+};
 
 // FR-13 Data Quality: flagged / low-quality articles for the admin to examine
 // params: { reason, status: 'open'|'reviewed'|'hidden'|'all', source, page, pageSize }

@@ -1,0 +1,36 @@
+2026-11-13T13:26:25: INFO:     Started server process [2788]
+2026-11-13T13:26:25: INFO:     Waiting for application startup.
+2026-11-13T13:27:27: D:\Complete FYP\FYP Report-1\FYP 1\ml-service\.venv\Lib\site-packages\torch\jit\_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+2026-11-13T13:27:27:   warnings.warn(
+2026-11-13T13:27:28: Loading weights:   0%|          | 0/202 [00:00<?, ?it/s]Loading weights:  13%|#3        | 27/202 [00:00<00:00, 218.02it/s]Loading weights:  24%|##4       | 49/202 [00:00<00:00, 180.91it/s]Loading weights:  34%|###3      | 68/202 [00:00<00:00, 162.73it/s]Loading weights: 100%|##########| 202/202 [00:00<00:00, 496.73it/s]
+2026-11-13T13:27:30: Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-11-13T13:27:30: Loading weights:   0%|          | 0/201 [00:00<?, ?it/s]Loading weights: 100%|##########| 201/201 [00:00<00:00, 11107.45it/s]
+2026-11-13T13:27:31: [transformers] [1mRobertaForSequenceClassification LOAD REPORT[0m from: cardiffnlp/twitter-roberta-base-sentiment-latest
+2026-11-13T13:27:31: Key                         | Status     |  | 
+2026-11-13T13:27:31: ----------------------------+------------+--+-
+2026-11-13T13:27:31: roberta.pooler.dense.bias   | UNEXPECTED |  | 
+2026-11-13T13:27:31: roberta.pooler.dense.weight | UNEXPECTED |  | 
+2026-11-13T13:27:31: 
+2026-11-13T13:27:31: Notes:
+2026-11-13T13:27:31: - UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+2026-11-13T13:27:49: Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|##########| 103/103 [00:00<00:00, 1446.47it/s]
+2026-11-13T13:27:49: INFO:     Application startup complete.
+2026-11-13T13:27:49: INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2026-11-13T13:31:02: INFO:     Started server process [19600]
+2026-11-13T13:31:02: INFO:     Waiting for application startup.
+2026-11-13T13:31:13: D:\Complete FYP\FYP Report-1\FYP 1\ml-service\.venv\Lib\site-packages\torch\jit\_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+2026-11-13T13:31:13:   warnings.warn(
+2026-11-13T13:31:14: Loading weights:   0%|          | 0/202 [00:00<?, ?it/s]Loading weights:   2%|1         | 4/202 [00:00<00:05, 36.29it/s]Loading weights:   8%|7         | 16/202 [00:00<00:03, 61.34it/s]Loading weights: 100%|##########| 202/202 [00:00<00:00, 566.73it/s]
+2026-11-13T13:31:15: Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-11-13T13:31:16: Loading weights:   0%|          | 0/201 [00:00<?, ?it/s]Loading weights: 100%|##########| 201/201 [00:00<00:00, 14530.42it/s]
+2026-11-13T13:31:16: [transformers] [1mRobertaForSequenceClassification LOAD REPORT[0m from: cardiffnlp/twitter-roberta-base-sentiment-latest
+2026-11-13T13:31:16: Key                         | Status     |  | 
+2026-11-13T13:31:16: ----------------------------+------------+--+-
+2026-11-13T13:31:16: roberta.pooler.dense.weight | UNEXPECTED |  | 
+2026-11-13T13:31:16: roberta.pooler.dense.bias   | UNEXPECTED |  | 
+2026-11-13T13:31:16: 
+2026-11-13T13:31:16: Notes:
+2026-11-13T13:31:16: - UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+2026-11-13T13:31:19: Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|##########| 103/103 [00:00<00:00, 1609.99it/s]
+2026-11-13T13:31:20: INFO:     Application startup complete.
+2026-11-13T13:31:20: INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)

@@ -46,7 +46,7 @@ const generateToken = (user) => jwt.sign(
 );
 
 // Never send the password hash, 2FA secret or Google id to the browser
-const publicProfile = ({ _id, passwordHash, twoFASecret, googleId, ...profile }) => ({ ...profile, hasPassword: Boolean(passwordHash) });
+const publicProfile = ({ _id, passwordHash, twoFASecret, googleId, failedLogins, lockedUntil, lastFailedLoginAt, ...profile }) => ({ ...profile, hasPassword: Boolean(passwordHash) });
 
 // Proof that step 1 (password or Google) was passed, valid for 10 minutes, needed by /verify-2fa
 const TICKET_MINUTES = 10;
@@ -90,6 +90,34 @@ async function sendVerification(user) {
 <p><a href="${link}" style="display:inline-block;padding:10px 18px;background:#2563eb;color:#fff;border-radius:8px;text-decoration:none">Verify my e-mail</a></p>
 <p>The link works for ${VERIFY_HOURS} hours. If you didn't sign up for TruthLens, ignore this e-mail and the account will not be activated.</p><p>TruthLens</p>`,
   }).catch((err) => console.error('Could not send the verification e-mail:', err.message));
+}
+
+// ---- UC-5 account lock after wrong passwords (kept on the account, so a server restart doesn't clear it)
+const MAX_PASSWORD_FAILS = 5;
+const LOCK_MINUTES = 15;
+const lockedFor = (user) => {                                     // minutes left, or 0
+  const ms = user.lockedUntil ? new Date(user.lockedUntil).getTime() - Date.now() : 0;
+  return ms > 0 ? Math.ceil(ms / 60000) : 0;
+};
+const LOCKED = (user) => ({
+  code: 'ACCOUNT_LOCKED', minutes: lockedFor(user),
+  message: `Too many wrong passwords. This account is locked for ${lockedFor(user)} more minute${lockedFor(user) === 1 ? '' : 's'}. You can unlock it now with "Forgot password".`,
+});
+// counts a wrong password -> { fails } or, when this one locked the account, { locked: <user> }
+async function wrongPassword(user) {
+  const fails = (user.failedLogins || 0) + 1;
+  if (fails < MAX_PASSWORD_FAILS) {
+    await users().updateOne({ id: user.id }, { $set: { failedLogins: fails, lastFailedLoginAt: new Date().toISOString() } });
+    return { fails };
+  }
+  const lockedUntil = new Date(Date.now() + LOCK_MINUTES * 60000).toISOString();
+  await users().updateOne({ id: user.id }, { $set: { failedLogins: 0, lockedUntil, lastFailedLoginAt: new Date().toISOString() } });
+  sendMail({
+    to: user.email,
+    subject: 'Your TruthLens account was locked',
+    text: `Hi ${user.name || ''},\n\nSomeone entered a wrong password for your TruthLens account ${MAX_PASSWORD_FAILS} times in a row, so it is locked for ${LOCK_MINUTES} minutes.\nIf this was you, wait or use "Forgot password" to choose a new one. If it wasn't you, we recommend changing your password.\n\nTruthLens`,
+  }).catch(() => {});
+  return { locked: { ...user, lockedUntil }, fails };
 }
 
 // Signs the user in: remembers the login time and returns { token, user }
@@ -191,15 +219,33 @@ router.post('/login', wrap(async (req, res) => {
   const user = await users().findOne({ email: normEmail(req.body.email) });
 
   if (user && !user.passwordHash) {
+    if (user.invitedAt && !user.googleId) return res.status(401).json({ message: 'Open the invitation e-mail to choose your password first (or use "Forgot password" for a new link).' });
     return res.status(401).json({ message: 'This account signs in with Google. Use "Continue with Google", or set a password with "Forgot password".' });
   }
+  // UC-5: after 5 wrong passwords in a row the account is locked for 15 minutes (reset password unlocks it)
+  if (user && lockedFor(user)) return res.status(423).json(LOCKED(user));
   if (!user || !(await bcrypt.compare(String(password || ''), user.passwordHash))) {
+    if (user) {
+      const { locked, fails } = await wrongPassword(user);
+      if (locked) return res.status(423).json(LOCKED(locked));
+      const left = MAX_PASSWORD_FAILS - fails;
+      if (left <= 2) return res.status(401).json({ message: `Invalid credentials. ${left} more wrong ${left === 1 ? 'try' : 'tries'} will lock this account for ${LOCK_MINUTES} minutes.` });
+    }
     return res.status(401).json({ message: 'Invalid credentials' });
   }
+  if (user.failedLogins) await users().updateOne({ id: user.id }, { $set: { failedLogins: 0, lockedUntil: null } });
   if (user.status === 'Blocked') return res.status(403).json({ message: 'This account is blocked' });
   const wrongForm = roleMismatch(user, isAdminLogin);
   if (wrongForm) return res.status(403).json({ message: wrongForm });
   if (user.emailVerified === false) return res.status(403).json(NOT_VERIFIED(user.email));
+  // Accounts an admin added (UC-33) link their authenticator app at their first login: show the QR code
+  // with the code step until a code has been entered correctly once.
+  if (user.twoFAPending) {
+    let secret = user.twoFASecret;
+    if (!secret) { secret = authenticator.generateSecret(); await users().updateOne({ id: user.id }, { $set: { twoFASecret: secret } }); }
+    const qrCodeUrl = await qrcode.toDataURL(authenticator.keyuri(user.email, 'TruthLens', secret));
+    return res.json({ message: 'Link your authenticator app, then enter its code.', requires2FA: true, email: user.email, ticket: makeTicket(user, isAdminLogin), twoFASetup: { qrCodeUrl, manualSecret: secret } });
+  }
   // Accounts made with Google that later set a password have no authenticator app linked
   if (!user.twoFASecret) return res.json(await finishLogin(user));
 
@@ -225,6 +271,7 @@ router.post('/verify-2fa', wrap(async (req, res) => {
 
   if (!isValid && !isDevCode) { failed(email); return res.status(401).json({ message: 'Invalid 2FA code' }); }
   fails.delete(email);
+  if (user.twoFAPending) { await users().updateOne({ id: user.id }, { $set: { twoFAPending: false } }); user.twoFAPending = false; }
   // The code is right (so the authenticator app is set up), but the e-mail still has to be verified
   if (user.emailVerified === false) return res.status(403).json(NOT_VERIFIED(user.email));
   res.json(await finishLogin(user));
@@ -354,7 +401,7 @@ router.post('/reset-password', wrap(async (req, res) => {
   if (!user) return res.status(400).json({ message: 'This reset link is invalid or has expired. Ask for a new one.' });
   const weak = passwordProblem(password, { email: user.email, name: user.name });
   if (weak) return res.status(400).json({ message: weak });
-  const set = { passwordHash: await bcrypt.hash(String(password), 10), passwordChangedAt: new Date().toISOString() };
+  const set = { passwordHash: await bcrypt.hash(String(password), 10), passwordChangedAt: new Date().toISOString(), failedLogins: 0, lockedUntil: null };
   // The reset link reached the inbox, so the address is proven. A never-verified account's 2FA key was
   // set up by someone who never proved the address was theirs, so it is dropped.
   if (user.emailVerified === false) Object.assign(set, { emailVerified: true, verifiedAt: new Date().toISOString(), twoFASecret: null, twoFAEnabled: false });
@@ -364,6 +411,51 @@ router.post('/reset-password', wrap(async (req, res) => {
   fails.delete(user.email);
   res.json({ message: 'Password changed. You can log in with it now.', role: user.role });
 }));
+
+// ---------------------------------------------------------------- UC-33 accounts an admin adds
+// The admin enters a name and an e-mail; the person gets an invitation e-mail with a link (72 hours) to
+// choose their own password. The admin never sees or sets a password. At the first login the person
+// links an authenticator app (2FA), like everyone who signs up.
+const INVITE_HOURS = 72;
+async function sendInvite(user, invitedByName) {
+  const token = crypto.randomBytes(32).toString('hex');
+  await resets().updateMany({ userId: user.id, usedAt: null }, { $set: { usedAt: new Date(), replaced: true } });
+  await resets().insertOne({ userId: user.id, email: user.email, tokenHash: hashToken(token), createdAt: new Date(), expiresAt: new Date(Date.now() + INVITE_HOURS * 3600 * 1000), usedAt: null, invite: true });
+  const link = `${frontendUrl()}/reset-password?token=${token}&invite=1`;
+  await sendMail({
+    to: user.email,
+    subject: "You've been invited to TruthLens",
+    text: `Hi ${user.name},\n\n${invitedByName || 'An administrator'} created a TruthLens account for you. TruthLens compares how Pakistani news outlets cover the same story and shows bias in their wording.\n\nChoose your password here (the link works for ${INVITE_HOURS} hours):\n${link}\n\nThe first time you log in, you'll link an authenticator app such as Google Authenticator.\n\nTruthLens`,
+    html: `<p>Hi ${user.name},</p><p>${invitedByName || 'An administrator'} created a TruthLens account for you. TruthLens compares how Pakistani news outlets cover the same story and shows bias in their wording.</p>
+<p><a href="${link}" style="display:inline-block;padding:10px 18px;background:#2563eb;color:#fff;border-radius:8px;text-decoration:none">Choose my password</a></p>
+<p>The link works for ${INVITE_HOURS} hours. The first time you log in, you'll link an authenticator app such as Google Authenticator.</p><p>TruthLens</p>`,
+  }).catch((err) => console.error('Could not send the invitation e-mail:', err.message));
+}
+
+// -> { user } or { error, status }
+async function inviteUser({ name, email }, admin) {
+  const cleaned = cleanName(name); const address = normEmail(email);
+  const problem = nameProblem(cleaned) || emailProblem(address)
+    || (isDisposable(address) ? 'Temporary (throw-away) e-mail addresses are not accepted.' : null) || await checkEmailDomain(address);
+  if (problem) return { error: problem, status: 400 };
+  if (await users().findOne({ email: address })) return { error: 'An account with this e-mail already exists', status: 409 };
+  const user = {
+    id: 'usr_' + Date.now(), name: cleaned, email: address, passwordHash: null, role: 'reader',
+    twoFAEnabled: true, twoFAPending: true, emailVerified: false, status: 'Active',
+    joinedDate: new Date().toISOString(), invitedAt: new Date().toISOString(), invitedBy: admin.email,
+  };
+  await users().insertOne(user);
+  await sendInvite(user, admin.name);
+  return { user: publicProfile(user) };
+}
+
+async function resendInvite(userId, admin) {
+  const user = await users().findOne({ id: userId });
+  if (!user) return { error: 'User not found', status: 404 };
+  if (user.passwordHash || !user.invitedAt) return { error: 'This person has already set a password', status: 400 };
+  await sendInvite(user, admin.name);
+  return { user: publicProfile(user) };
+}
 
 // ---------------------------------------------------------------- e-mail verification
 // POST /api/auth/verify-email { token }        the link from the e-mail (works for 24 hours, once)
@@ -446,6 +538,8 @@ router.delete('/me', requireAuth, wrap(async (req, res) => {
   await getDb().collection('password_resets').deleteMany({ userId: user.id });
   await getDb().collection('history').deleteMany({ userId: user.id });
   await getDb().collection('article_ratings').deleteMany({ userId: user.id });
+  await getDb().collection('bookmarks').deleteMany({ userId: user.id });
+  await getDb().collection('email_verifications').deleteMany({ userId: user.id });
   // Keep their feedback for the admins, but no longer linked to a person
   await getDb().collection('feedback').updateMany({ userId: user.id }, { $set: { userId: 'deleted-user', userEmail: null, userName: 'Deleted user' } });
   res.json({ message: 'Account deleted' });
@@ -453,3 +547,5 @@ router.delete('/me', requireAuth, wrap(async (req, res) => {
 
 module.exports = router;
 module.exports.init = init;
+module.exports.inviteUser = inviteUser;
+module.exports.resendInvite = resendInvite;

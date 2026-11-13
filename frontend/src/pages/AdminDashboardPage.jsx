@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import Sidebar from '../components/common/Sidebar';
 import { useNavigate } from 'react-router-dom';
-import { fetchStats, fetchActivity, fetchCrawlRuns, fetchCrawlStatus, startCrawl } from '../services/adminService';
+import { fetchStats, fetchActivity, fetchCrawlRuns, fetchCrawlStatus, startCrawl, saveCrawlSchedule } from '../services/adminService';
 import toast from 'react-hot-toast';
 import { fetchOverview } from '../services/newsService';
-import { Database, FileText, Users, MessageSquare, Calendar, ChevronRight, Menu, Play, Loader2, CheckCircle, XCircle } from 'lucide-react';
+import { Database, FileText, Users, MessageSquare, Calendar, ChevronRight, Menu, Play, Loader2, CheckCircle, XCircle, Timer } from 'lucide-react';
 
 const fmtDate = (iso) => (iso ? new Date(iso).toLocaleDateString('en-US', { month: 'short', day: '2-digit', year: 'numeric' }) : '');
 const fmtTime = (iso) => (iso ? new Date(iso).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' }) : '');
@@ -29,7 +29,20 @@ const AdminDashboardPage = () => {
   const [lastRun, setLastRun] = useState(null);
   const [crawlLimit, setCrawlLimit] = useState(3);
   const [crawling, setCrawling] = useState(false);
-  const [crawlStatus, setCrawlStatus] = useState(null);   // { running, outlets, skipped, last: { startedAt, error, ... } }
+  const [crawlStatus, setCrawlStatus] = useState(null);   // { running, outlets, skipped, last: { startedAt, error, ... }, schedule }
+  const [savingSchedule, setSavingSchedule] = useState(false);
+  const schedule = crawlStatus?.schedule;
+  // UC-29: automatic crawl every N hours (the backend starts it; this only saves the setting)
+  const changeSchedule = async (fields) => {
+    setSavingSchedule(true);
+    try {
+      const saved = await saveCrawlSchedule(fields);
+      setCrawlStatus((st) => ({ ...(st || {}), schedule: saved }));
+      toast.success(saved.enabled ? `Automatic crawl every ${saved.everyHours} hour${saved.everyHours === 1 ? '' : 's'} (${saved.limit} per outlet)` : 'Automatic crawl turned off');
+    } catch (err) {
+      toast.error(err.message);
+    } finally { setSavingSchedule(false); }
+  };
 
   const loadAll = () => {
     fetchStats().then((data) => data && setStats(data)).catch((err) => console.error('Could not load stats', err));
@@ -201,6 +214,7 @@ const AdminDashboardPage = () => {
                 {lastRun?.steps?.filter((st) => st.source).map((st) => ` · ${st.source}: ${st.newArticles ?? 0} new`).join('')}
               </p>
             </div>
+            <div className="flex flex-col gap-2.5">
             <div className="flex items-center gap-3">
               <select value={crawlLimit} onChange={(e) => setCrawlLimit(Number(e.target.value))} disabled={crawling}
                 className="px-3 py-2.5 border border-red-200 dark:border-red-900/30 rounded-lg bg-red-50 dark:bg-[#1a0505] text-gray-700 dark:text-gray-300 text-sm focus:outline-none">
@@ -213,6 +227,29 @@ const AdminDashboardPage = () => {
                 className="flex items-center gap-2 px-5 py-2.5 bg-[#D32F2F] text-white rounded-lg hover:bg-[#B71C1C] transition shadow-md shadow-red-900/20 font-medium text-sm disabled:opacity-60">
                 {crawling ? <Loader2 size={16} className="animate-spin" /> : <Play size={16} />} {crawling ? 'Crawling…' : 'Run crawl now'}
               </button>
+            </div>
+            {/* UC-29: automatic crawl */}
+            <div className="flex flex-wrap items-center gap-2 text-[12px] text-gray-500 dark:text-gray-400">
+              <Timer size={14} className="text-[#D32F2F]" />
+              <span className="font-medium text-gray-700 dark:text-gray-300">Automatic crawl</span>
+              <select aria-label="Automatic crawl" value={schedule?.enabled ? String(schedule.everyHours) : 'off'} disabled={!schedule || savingSchedule}
+                onChange={(e) => changeSchedule(e.target.value === 'off' ? { enabled: false } : { enabled: true, everyHours: Number(e.target.value) })}
+                className="px-2 py-1.5 border border-red-200 dark:border-red-900/30 rounded-lg bg-red-50 dark:bg-[#1a0505] text-gray-700 dark:text-gray-300 text-[12px] focus:outline-none">
+                <option value="off">Off</option>
+                {[1, 3, 6, 12, 24].map((h) => <option key={h} value={String(h)}>Every {h === 1 ? 'hour' : `${h} hours`}</option>)}
+              </select>
+              {schedule?.enabled && (
+                <select aria-label="Articles per outlet for automatic crawls" value={schedule.limit} disabled={savingSchedule}
+                  onChange={(e) => changeSchedule({ limit: Number(e.target.value) })}
+                  className="px-2 py-1.5 border border-red-200 dark:border-red-900/30 rounded-lg bg-red-50 dark:bg-[#1a0505] text-gray-700 dark:text-gray-300 text-[12px] focus:outline-none">
+                  {[3, 30, 100].map((n) => <option key={n} value={n}>{n} per outlet</option>)}
+                </select>
+              )}
+              {schedule?.enabled && schedule.nextRunAt && <span>Next: {fmtDate(schedule.nextRunAt)}, {fmtTime(schedule.nextRunAt)}</span>}
+              {schedule?.lastResult && schedule.lastResult !== 'started' && (
+                <span className="basis-full text-red-500 dark:text-red-400">Last automatic crawl could not start: {schedule.lastResult}</span>
+              )}
+            </div>
             </div>
           </div>
 

@@ -8,11 +8,17 @@
 //   PUT    /api/me/privacy             save privacy settings
 //   GET    /api/me/alerts              what is new since the previous login
 //   GET    /api/me/recommendations     articles picked from what this reader has read
+//   GET    /api/me/bookmarks           saved articles, newest first
+//   PUT    /api/me/bookmarks/:id       save one   { headline, source, ... }  (a copy of the card)
+//   DELETE /api/me/bookmarks/:id       remove one;  DELETE /api/me/bookmarks  removes all
+//   POST   /api/me/bookmarks/import    { items: [...] }  bookmarks kept in this browser before they moved here
+//   GET    /api/me/preferences         favourite topics and outlets;  PUT saves them
 const express = require('express');
 const { getDb } = require('../db');
 const { requireAuth } = require('../middleware/auth');
 const { toArticle, toKey } = require('../adapters/toFrontend');
 const { getIndex } = require('../lib/articleIndex');
+const { CATEGORIES } = require('../lib/categories');
 
 const router = express.Router();
 router.use(requireAuth);
@@ -147,6 +153,9 @@ router.get('/recommendations', wrap(async (req, res) => {
   const index = await getIndex();
   const all = index.items;
   const read = [...readKeys].map((k) => index.byKey.get(k)).filter(Boolean);
+  const prefs = prefsOf(await currentUser(req));
+  const favTopic = (it) => prefs.topics.includes(it.category);
+  const favOutlet = (it) => prefs.outlets.includes(it.source);
   const unread = all.filter((it) => !readKeys.has(it.key));
   const newest = Math.max(...all.map((it) => it.ts || 0), 1);
 
@@ -163,15 +172,25 @@ router.get('/recommendations', wrap(async (req, res) => {
         .sort((a, b) => topicCount.get(b).n - topicCount.get(a).n);
       const otherOutlet = sameStory && sameStory.source !== it.source;   // the comparison TruthLens is about
       const score = (sameStory ? 5 : 0) + (otherOutlet ? 1 : 0) + Math.min(shared.length, 4)
-        + (readSections.has(it.section) ? 0.5 : 0) + 0.5 * ((it.ts || 0) / newest);
+        + (readSections.has(it.section) ? 0.5 : 0) + 0.5 * ((it.ts || 0) / newest)
+        + (favTopic(it) ? 1.5 : 0) + (favOutlet(it) ? 1 : 0);
       const short = sameStory ? `"${sameStory.headline.slice(0, 60)}${sameStory.headline.length > 60 ? '…' : ''}"` : '';
       const reason = otherOutlet ? `${it.source}'s version of a story you read (${short})`
         : sameStory ? `More on a story you read (${short})`
-        : shared.length ? `Mentions ${shared.slice(0, 2).map((k) => topicCount.get(k).name).join(' and ')}, like articles you read` : null;
+        : shared.length ? `Mentions ${shared.slice(0, 2).map((k) => topicCount.get(k).name).join(' and ')}, like articles you read`
+        : favTopic(it) ? `${it.category}, one of your favourite topics`
+        : favOutlet(it) ? `From ${it.source}, one of your favourite outlets` : null;
       return { it, score, reason };
     }).filter((x) => x.reason).sort((a, b) => b.score - a.score).slice(0, limit);
   }
 
+  // favourite topics / outlets fill in (and are all there is for a reader with no history yet)
+  if (picks.length < limit && (prefs.topics.length || prefs.outlets.length)) {
+    const have = new Set(picks.map((x) => x.it.key));
+    picks = picks.concat(unread.filter((it) => !have.has(it.key) && (favTopic(it) || favOutlet(it)))
+      .slice(0, limit - picks.length)
+      .map((it) => ({ it, score: 0, reason: favTopic(it) ? `${it.category}, one of your favourite topics` : `From ${it.source}, one of your favourite outlets` })));
+  }
   const personalized = picks.length > 0;
   if (picks.length < limit) {   // fill with stories several outlets covered, newest first (the index is newest first)
     const have = new Set(picks.map((x) => x.it.key));
@@ -186,9 +205,91 @@ router.get('/recommendations', wrap(async (req, res) => {
   res.json({
     personalized,
     basedOn: read.length,
+    preferences: prefs,
     items: picks.filter((x) => byKey.has(x.it.key))
       .map(({ it, reason }) => ({ ...toArticle(byKey.get(it.key), { related: it.related, similarity: it.similarity, full: false }), reason })),
   });
+}));
+
+// ---------------------------------------------------------------- preferences (UC-22)
+// Favourite topics (the site's categories) and outlets. Used by "For you" on the News Feed and by
+// the recommendations on the Dashboard.
+const prefsOf = (user) => ({ topics: user?.preferences?.topics || [], outlets: user?.preferences?.outlets || [] });
+
+router.get('/preferences', wrap(async (req, res) => {
+  const index = await getIndex();
+  const outlets = [...new Set(index.items.map((it) => it.source))].sort();
+  res.json({ ...prefsOf(await currentUser(req)), available: { topics: CATEGORIES, outlets } });
+}));
+
+router.put('/preferences', wrap(async (req, res) => {
+  const user = await currentUser(req);
+  if (!user) return res.status(404).json({ message: 'Account not found' });
+  const index = await getIndex();
+  const knownOutlets = new Set(index.items.map((it) => it.source));
+  const pick = (v, allowed) => [...new Set((Array.isArray(v) ? v : []).filter((x) => allowed.has(x)))];
+  const next = {
+    topics: 'topics' in req.body ? pick(req.body.topics, new Set(CATEGORIES)) : prefsOf(user).topics,
+    outlets: 'outlets' in req.body ? pick(req.body.outlets, knownOutlets) : prefsOf(user).outlets,
+  };
+  await users().updateOne({ id: user.id }, { $set: { preferences: next } });
+  res.json(next);
+}));
+
+// ---------------------------------------------------------------- bookmarks (saved articles)
+// One document per saved article: { userId, articleId, savedAt, article: <copy of the card> }.
+// The copy keeps the card readable even if the article is later removed from the site.
+const bookmarks = () => getDb().collection('bookmarks');
+const MAX_BOOKMARKS = 1000;
+const CARD_FIELDS = ['headline', 'title', 'source', 'category', 'section', 'biasScore', 'bias', 'sentiment', 'publishedAt',
+  'thumbnail', 'summary', 'match', 'similarity', 'sourceUrl', 'storyId', 'url'];
+const cardOf = (a = {}) => Object.fromEntries(CARD_FIELDS.filter((k) => a[k] !== undefined && a[k] !== null)
+  .map((k) => [k, typeof a[k] === 'string' ? a[k].slice(0, 600) : a[k]])
+  .filter(([, v]) => ['string', 'number', 'boolean'].includes(typeof v)));
+const validId = (id) => typeof id === 'string' && /^[a-z0-9-]{1,40}-[\w-]{1,80}$/i.test(id);
+const toCard = (b) => ({ ...b.article, id: b.articleId, savedAt: b.savedAt });
+
+router.get('/bookmarks', wrap(async (req, res) => {
+  const list = await bookmarks().find({ userId: req.user.id }).sort({ savedAt: -1 }).limit(MAX_BOOKMARKS).toArray();
+  res.json(list.map(toCard));
+}));
+
+router.put('/bookmarks/:id', wrap(async (req, res) => {
+  if (req.user.role === 'admin') return res.status(403).json({ message: 'Admins do not have bookmarks' });
+  const articleId = req.params.id;
+  if (!validId(articleId)) return res.status(400).json({ message: 'Unknown article' });
+  const existing = await bookmarks().findOne({ userId: req.user.id, articleId });
+  if (!existing && (await bookmarks().countDocuments({ userId: req.user.id })) >= MAX_BOOKMARKS) {
+    return res.status(400).json({ message: `You can save up to ${MAX_BOOKMARKS} articles. Remove some first.` });
+  }
+  const savedAt = existing?.savedAt || new Date().toISOString();
+  await bookmarks().updateOne({ userId: req.user.id, articleId },
+    { $set: { article: cardOf(req.body), savedAt }, $setOnInsert: { userId: req.user.id, articleId } }, { upsert: true });
+  res.json(toCard({ articleId, savedAt, article: cardOf(req.body) }));
+}));
+
+router.delete('/bookmarks/:id', wrap(async (req, res) => {
+  await bookmarks().deleteOne({ userId: req.user.id, articleId: req.params.id });
+  res.json({ removed: req.params.id });
+}));
+
+router.delete('/bookmarks', wrap(async (req, res) => {
+  const { deletedCount } = await bookmarks().deleteMany({ userId: req.user.id });
+  res.json({ removed: deletedCount });
+}));
+
+router.post('/bookmarks/import', wrap(async (req, res) => {
+  if (req.user.role === 'admin') return res.status(403).json({ message: 'Admins do not have bookmarks' });
+  const items = Array.isArray(req.body.items) ? req.body.items.slice(0, MAX_BOOKMARKS) : [];
+  let added = 0;
+  for (const it of items) {
+    if (!validId(it?.id) || await bookmarks().findOne({ userId: req.user.id, articleId: it.id })) continue;
+    const when = new Date(it.savedAt);
+    await bookmarks().insertOne({ userId: req.user.id, articleId: it.id, article: cardOf(it), savedAt: Number.isNaN(when.getTime()) ? new Date().toISOString() : when.toISOString() });
+    added += 1;
+  }
+  const list = await bookmarks().find({ userId: req.user.id }).sort({ savedAt: -1 }).limit(MAX_BOOKMARKS).toArray();
+  res.json({ added, items: list.map(toCard) });
 }));
 
 module.exports = router;

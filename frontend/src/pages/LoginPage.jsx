@@ -18,6 +18,7 @@ const LoginPage = () => {
   const [step, setStep] = useState(1);
   const [twoFACode, setTwoFACode] = useState('');
   const [ticket, setTicket] = useState(null);   // proof that step 1 passed, sent with the 2FA code
+  const [setup, setSetup] = useState(null);     // { qrCodeUrl, manualSecret } at the first login of an account an admin added
   const [unverified, setUnverified] = useState(null);   // e-mail that still has to be verified
   const [emailTouched, setEmailTouched] = useState(false);
   
@@ -37,6 +38,7 @@ const LoginPage = () => {
       const res = await login(email, password, false);
       if (res.requires2FA) {
         setTicket(res.ticket);
+        setSetup(res.twoFASetup || null);
         setStep(2);
         toast.success('Credentials valid! Enter 2FA code.');
       } else {
@@ -260,9 +262,17 @@ const LoginPage = () => {
                 <Key className="w-6 h-6" strokeWidth={1.5} />
               </motion.div>
               <h2 className="text-[22px] lg:text-[26px] font-semibold text-white mb-2 tracking-tight">Two-Factor Auth</h2>
-              <p className="text-[13px] lg:text-[14px] text-gray-400 mb-6 max-w-[240px] mx-auto">
-                Enter the 6-digit code from your authenticator app.
+              <p className={`text-[13px] lg:text-[14px] text-gray-400 mb-6 mx-auto ${setup ? 'max-w-[300px]' : 'max-w-[240px]'}`}>
+                {setup ? 'First login: scan this QR code with Google or Microsoft Authenticator, then enter the 6-digit code it shows.' : 'Enter the 6-digit code from your authenticator app.'}
               </p>
+              {setup && (
+                <div className="mb-5">
+                  <div className="bg-white p-3 rounded-xl inline-block shadow-[0_0_20px_rgba(255,255,255,0.1)]">
+                    <img src={setup.qrCodeUrl} alt="2FA QR Code" className="w-32 h-32 lg:w-36 lg:h-36" />
+                  </div>
+                  <p className="mt-2 text-[10px] text-gray-500 break-all">Can't scan? Enter this key: <span className="font-mono text-gray-300 select-all">{setup.manualSecret}</span></p>
+                </div>
+              )}
 
               <form onSubmit={handle2FASubmit} className="space-y-4 lg:space-y-6">
                 <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.3 }}>

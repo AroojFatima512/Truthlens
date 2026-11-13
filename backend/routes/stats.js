@@ -137,4 +137,81 @@ router.get('/trending', wrap(async (req, res) => {
   });
 }));
 
+// ---------------------------------------------------------------- UC-32 bias trend per outlet
+// GET /api/stats/bias-trend?outlets=Dawn,Geo%20News&from=YYYY-MM-DD&to=YYYY-MM-DD (or &span=30 days)&interval=auto|day|week|month
+//   -> { from, to, interval, periods: [...], outlets: [all outlet names],
+//        series: [{ source, points: [{ period, label, avg, count }], avg, count, change }] }
+// Days are counted in Pakistan time. Without dates: the 30 days up to the newest article.
+const PKT = 5 * HOUR;
+const DAY = 24 * HOUR;
+const dayKey = (t) => new Date(t + PKT).toISOString().slice(0, 10);
+const startOfDay = (key) => Date.parse(`${key}T00:00:00+05:00`);
+function periodOf(t, interval) {
+  const key = dayKey(t);
+  if (interval === 'month') return key.slice(0, 7);
+  if (interval === 'week') {                                       // weeks start on Monday
+    const d = new Date(`${key}T00:00:00Z`); const dow = (d.getUTCDay() + 6) % 7;
+    return new Date(d.getTime() - dow * DAY).toISOString().slice(0, 10);
+  }
+  return key;
+}
+const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+const labelOf = (period, interval) => {
+  const [y, m, d] = period.split('-').map(Number);
+  if (interval === 'month') return `${MONTHS[m - 1]} ${y}`;
+  return interval === 'week' ? `Week of ${d} ${MONTHS[m - 1]}` : `${d} ${MONTHS[m - 1]}`;
+};
+
+router.get('/bias-trend', wrap(async (req, res) => {
+  const all = (await loadArticles()).filter((a) => a.at && typeof a.bias === 'number');
+  const outletsAll = [...new Set(all.map((a) => a.source))].sort();
+  const wanted = String(req.query.outlets || '').split(',').map((s) => s.trim()).filter((s) => outletsAll.includes(s));
+  const outlets = wanted.length ? wanted : outletsAll;
+
+  const isDay = (v) => /^\d{4}-\d{2}-\d{2}$/.test(String(v || ''));
+  const newest = all.reduce((m, a) => Math.max(m, a.at), 0) || Date.now();
+  let to = isDay(req.query.to) ? req.query.to : dayKey(newest);
+  const span = Math.min(Math.max(Number(req.query.span) || 30, 1), 3660);   // "last N days" (up to the newest article)
+  let from = isDay(req.query.from) ? req.query.from : dayKey(startOfDay(to) - (span - 1) * DAY);
+  if (from > to) [from, to] = [to, from];
+  const start = startOfDay(from); const end = startOfDay(to) + DAY - 1;
+  const days = Math.round((end - start) / DAY);
+  let interval = ['day', 'week', 'month'].includes(req.query.interval) ? req.query.interval : 'auto';
+  if (interval === 'auto') interval = days <= 45 ? 'day' : days <= 210 ? 'week' : 'month';
+  if (interval === 'day' && days > 400) interval = 'week';         // keep the chart readable
+
+  // every period in the range, so gaps (no articles) stay visible as gaps
+  const periods = [];
+  for (let t = start; t <= end; t += DAY) { const p = periodOf(t, interval); if (periods[periods.length - 1] !== p) periods.push(p); }
+
+  const inRange = all.filter((a) => a.at >= start && a.at <= end && outlets.includes(a.source));
+  const series = outlets.map((source) => {
+    const mine = inRange.filter((a) => a.source === source);
+    const by = groupBy(mine, (a) => periodOf(a.at, interval));
+    const points = periods.map((p) => {
+      const list = by.get(p) || [];
+      return { period: p, label: labelOf(p, interval), avg: list.length ? Math.round(list.reduce((s, a) => s + a.bias, 0) / list.length) : null, count: list.length };
+    });
+    const filled = points.filter((pt) => pt.avg != null);
+    return {
+      source, points,
+      avg: mine.length ? Math.round(mine.reduce((s, a) => s + a.bias, 0) / mine.length) : null,
+      count: mine.length,
+      change: filled.length >= 2 ? filled[filled.length - 1].avg - filled[0].avg : null,
+    };
+  });
+  res.json({ from, to, interval, periods: periods.map((p) => ({ period: p, label: labelOf(p, interval) })), outlets: outletsAll, series });
+}));
+
+// GET /api/stats/model -> the latest evaluation of each ML model (NFR-11), or [] when none is stored yet.
+// Person A's evaluation script writes one document per run into `model_metrics`:
+//   { model: 'bias-sentence', name, dataset, testSize, accuracy, precision, recall, f1, macroF1,
+//     confusionMatrix: [[tn, fp], [fn, tp]], labels: ['unbiased', 'biased'], evaluatedAt }
+router.get('/model', wrap(async (req, res) => {
+  const docs = await getDb().collection('model_metrics').find({}, { projection: { _id: 0 } }).sort({ evaluatedAt: -1 }).toArray();
+  const latest = new Map();
+  for (const d of docs) if (d.model && !latest.has(d.model)) latest.set(d.model, d);
+  res.json([...latest.values()]);
+}));
+
 module.exports = router;
