@@ -1,0 +1,305 @@
+[
+{
+  "source": "Dawn",
+  "run_id": "20261113T145031Z_4ab6ddccf4984e0691c171af21a16045",
+  "extraction_version": "dawn-extract-v1",
+  "article_id": "2044304",
+  "article_key": "dawn:2044304",
+  "url": "https://www.dawn.com/news/2044304/us-treasurys-bessent-says-he-wont-be-cowed-by-death-threats",
+  "http_status": 200,
+  "response_encoding": "utf-8",
+  "canonical_url": "https://www.dawn.com/news/2044304",
+  "canonical_url_source": "link[rel=canonical]",
+  "headline": "US Treasury's Bessent says he won't be cowed by death threats",
+  "subheadline": null,
+  "description": "US Treasury Secretary Scott Bessent tells CNBC that he will not be cowed by Iranian threats against his life, after...",
+  "description_source": "meta[property=\"og:description\"]",
+  "author": null,
+  "author_parts": [],
+  "published_at": "2026-11-13 18:25:55+05:00",
+  "updated_at": "2026-11-13 19:21:04+05:00",
+  "timestamp_sources": {
+    "published_at": "meta[property=\"article:published_time\"]",
+    "updated_at": "meta[property=\"article:modified_time\"]"
+  },
+  "article_text": "US Treasury Secretary Scott Bessent tells CNBC that he will not be cowed by Iranian threats against his life, after recently moving from his Washington, DC, residence to a US military base, Reuters reports.\n\n“Why am I going to be afraid when the brave military personnel in the Gulf [and] President (Donald) Trump, constantly receive death threats?” he says.",
+  "content_blocks": [
+    {
+      "type": "paragraph",
+      "text": "US Treasury Secretary Scott Bessent tells CNBC that he will not be cowed by Iranian threats against his life, after recently moving from his Washington, DC, residence to a US military base, Reuters reports.",
+      "html": "<p>US Treasury Secretary Scott Bessent tells <em>CNBC</em> that he will not be cowed by Iranian threats against his life, after recently moving from his Washington, DC, residence to a US military base, <em>Reuters</em> reports.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "“Why am I going to be afraid when the brave military personnel in the Gulf [and] President (Donald) Trump, constantly receive death threats?” he says.",
+      "html": "<p>“Why am I going to be afraid when the brave military personnel in the Gulf [and] President (Donald) Trump, constantly receive death threats?” he says.</p>"
+    }
+  ],
+  "article_html": "<div dir=\"auto\" class=\"story__content  flow-root    pt-1 mt-1 text-4 sm:text-4.5  overflow-visible\"><p>US Treasury Secretary Scott Bessent tells <em>CNBC</em> that he will not be cowed by Iranian threats against his life, after recently moving from his Washington, DC, residence to a US military base, <em>Reuters</em> reports.</p>\n<p>“Why am I going to be afraid when the brave military personnel in the Gulf [and] President (Donald) Trump, constantly receive death threats?” he says.</p>\n\n    </div>",
+  "image_url": "https://www.dawn.com/_img/social-default.jpg",
+  "images": [],
+  "videos": [],
+  "tweets": [],
+  "tweet_embed_count": 0,
+  "media_detection_scope": "URLs_and_extracted_metadata_not_media_bytes",
+  "embed_detection_scope": "downloaded_article_body_html_only",
+  "language": "en",
+  "language_source": "English source configuration",
+  "section": null,
+  "crawled_at": "2026-11-13T14:50:40.616238+00:00",
+  "discovered_from": "https://www.dawn.com/feeds/sitemap",
+  "processing_status": "cleaned",
+  "validation_issues": [
+    "missing_author"
+  ],
+  "validation_status": "needs_review",
+  "category": "news",
+  "cleaned_text": "US Treasury Secretary Scott Bessent tells CNBC that he will not be cowed by Iranian threats against his life, after recently moving from his Washington, DC, residence to a US military base, Reuters reports.\n\n“Why am I going to be afraid when the brave military personnel in the Gulf [and] President (Donald) Trump, constantly receive death threats?” he says.",
+  "cleaned_blocks": [
+    {
+      "source_block_index": 0,
+      "type": "paragraph",
+      "text": "US Treasury Secretary Scott Bessent tells CNBC that he will not be cowed by Iranian threats against his life, after recently moving from his Washington, DC, residence to a US military base, Reuters reports."
+    },
+    {
+      "source_block_index": 1,
+      "type": "paragraph",
+      "text": "“Why am I going to be afraid when the brave military personnel in the Gulf [and] President (Donald) Trump, constantly receive death threats?” he says."
+    }
+  ],
+  "cleaning_version": "truthlens-clean-v1",
+  "cleaned_at": "2026-11-13T14:50:40.617240+00:00",
+  "cleaning_issues": [],
+  "cleaning_status": "cleaned",
+  "content_hash_version": "sha256-headline-subheadline-body-v1",
+  "content_hash": "7089b81d003220292328d6cf0120fd5beac42924699943ccbf62ea4f8caba32d",
+  "text_hash": "4d0d457c95cd1e9d5af0e32f28d667ae123a4b57696de5a6fef6e9dc1ba796c4",
+  "metadata_hash": "c049d51da430e4223ccef4309d0abc838903b73afcea0f23a3912c3fa71b7ddd",
+  "media_hash": "045e051ca589e4e47b9f5000dd6527df1e1840799c5722a4d23553850b02acd0",
+  "quality_hash": "5d14f5c0b8b5af9389fb94bc200304277188c1633579764f6172b31015e5e4af",
+  "state_hash": "e0d587a05ffe9a879a5154c2230d324d0952a34274f1f23459fd065366b56186",
+  "tracking_version": "truthlens-state-v1",
+  "change_status": "media_changed",
+  "changed_fields": [
+    "media.image_url"
+  ],
+  "field_changes": {
+    "media.image_url": {
+      "before": null,
+      "after": "https://www.dawn.com/_img/social-default.jpg"
+    }
+  },
+  "body_diff": "",
+  "text_changed": false,
+  "text_reanalysis_required": false,
+  "version_number": 2,
+  "version_first_seen_at": "2026-11-13T14:50:40.616238+00:00",
+  "last_changed_at": "2026-11-13T14:50:40.616238+00:00",
+  "last_checked_at": "2026-11-13T14:50:40.616238+00:00",
+  "tracking_observation_count": 2,
+  "snapshot_saved": true,
+  "change_detection_scope": "extracted_text_metadata_media_references_and_quality"
+},
+{
+  "source": "Dawn",
+  "run_id": "20261113T145031Z_4ab6ddccf4984e0691c171af21a16045",
+  "extraction_version": "dawn-extract-v1",
+  "article_id": "2044310",
+  "article_key": "dawn:2044310",
+  "url": "https://www.dawn.com/news/2044310/us-treasury-chief-says-federal-reserve-should-not-hike-rates-over-iran-war-energy-shock",
+  "http_status": 200,
+  "response_encoding": "utf-8",
+  "canonical_url": "https://www.dawn.com/news/2044310",
+  "canonical_url_source": "link[rel=canonical]",
+  "headline": "US Treasury chief says Federal Reserve should not hike rates over Iran war energy shock",
+  "subheadline": null,
+  "description": "US Treasury Secretary Scott Bessent says the Federal Reserve should have an open mind and not hike rates because of...",
+  "description_source": "meta[property=\"og:description\"]",
+  "author": null,
+  "author_parts": [],
+  "published_at": "2026-11-13 19:23:08+05:00",
+  "updated_at": "2026-11-13 19:23:08+05:00",
+  "timestamp_sources": {
+    "published_at": "meta[property=\"article:published_time\"]",
+    "updated_at": "meta[property=\"article:modified_time\"]"
+  },
+  "article_text": "US Treasury Secretary Scott Bessent says the Federal Reserve should have an open mind and not hike rates because of an “energy supply shock” tied to the Iran war, Reuters reports.\n\n“I think the Fed should understand that this is an energy supply shock,” while the underlying US economy is very strong, Bessent said in an interview on CNBC.\n\n“So I think that to hike too much into an energy supply shock when it’s coming down, these are very noisy numbers,” he explains. “You know, the Fed’s supposed to look into the future, not look in the rearview mirror.”\n\nThe US central bank left its policy rate on hold last month, with Fed Chairman Kevin Warsh saying policymakers would be watching for data to help decide whether more monetary policy tightening would be needed.\n\n“I’m not going to tell the Fed what to do. I am going to say they should have an open mind,” Bessent says, noting that the Fed did three rate cuts over the same period last year. “And now to reverse just based on an energy supply shock, a reversal in a dramatic way isn’t something that I would do if I were on the Fed. But I’m not on the Fed.”",
+  "content_blocks": [
+    {
+      "type": "paragraph",
+      "text": "US Treasury Secretary Scott Bessent says the Federal Reserve should have an open mind and not hike rates because of an “energy supply shock” tied to the Iran war, Reuters reports.",
+      "html": "<p>US Treasury Secretary Scott Bessent says the Federal Reserve should have an open mind and not hike rates because of an “energy supply shock” tied to the Iran war, <em>Reuters</em> reports.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "“I think the Fed should understand that this is an energy supply shock,” while the underlying US economy is very strong, Bessent said in an interview on CNBC.",
+      "html": "<p>“I think the Fed should understand that this is an energy supply shock,” while the underlying US economy is very strong, Bessent said in an interview on <em>CNBC</em>.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "“So I think that to hike too much into an energy supply shock when it’s coming down, these are very noisy numbers,” he explains. “You know, the Fed’s supposed to look into the future, not look in the rearview mirror.”",
+      "html": "<p>“So I think that to hike too much into an energy supply shock when it’s coming down, these are very noisy numbers,” he explains. “You know, the Fed’s supposed to look into the future, not look in the rearview mirror.”</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "The US central bank left its policy rate on hold last month, with Fed Chairman Kevin Warsh saying policymakers would be watching for data to help decide whether more monetary policy tightening would be needed.",
+      "html": "<p>The US central bank left its policy rate on hold last month, with Fed Chairman Kevin Warsh saying policymakers would be watching for data to help decide whether more monetary policy tightening would be needed.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "“I’m not going to tell the Fed what to do. I am going to say they should have an open mind,” Bessent says, noting that the Fed did three rate cuts over the same period last year. “And now to reverse just based on an energy supply shock, a reversal in a dramatic way isn’t something that I would do if I were on the Fed. But I’m not on the Fed.”",
+      "html": "<p>“I’m not going to tell the Fed what to do. I am going to say they should have an open mind,” Bessent says, noting that the Fed did three rate cuts over the same period last year. “And now to reverse just based on an energy supply shock, a reversal in a dramatic way isn’t something that I would do if I were on the Fed. But I’m not on the Fed.”</p>"
+    }
+  ],
+  "article_html": "<div dir=\"auto\" class=\"story__content  flow-root    pt-1 mt-1 text-4 sm:text-4.5  overflow-visible\"><p>US Treasury Secretary Scott Bessent says the Federal Reserve should have an open mind and not hike rates because of an “energy supply shock” tied to the Iran war, <em>Reuters</em> reports.</p>\n<p>“I think the Fed should understand that this is an energy supply shock,” while the underlying US economy is very strong, Bessent said in an interview on <em>CNBC</em>.</p>\n<p>“So I think that to hike too much into an energy supply shock when it’s coming down, these are very noisy numbers,” he explains. “You know, the Fed’s supposed to look into the future, not look in the rearview mirror.”</p>\n<p>The US central bank left its policy rate on hold last month, with Fed Chairman Kevin Warsh saying policymakers would be watching for data to help decide whether more monetary policy tightening would be needed.</p>\n<p>“I’m not going to tell the Fed what to do. I am going to say they should have an open mind,” Bessent says, noting that the Fed did three rate cuts over the same period last year. “And now to reverse just based on an energy supply shock, a reversal in a dramatic way isn’t something that I would do if I were on the Fed. But I’m not on the Fed.”</p>\n\n    </div>",
+  "image_url": "https://www.dawn.com/_img/social-default.jpg",
+  "images": [],
+  "videos": [],
+  "tweets": [],
+  "tweet_embed_count": 0,
+  "media_detection_scope": "URLs_and_extracted_metadata_not_media_bytes",
+  "embed_detection_scope": "downloaded_article_body_html_only",
+  "language": "en",
+  "language_source": "English source configuration",
+  "section": null,
+  "crawled_at": "2026-11-13T14:50:44.023311+00:00",
+  "discovered_from": "https://www.dawn.com/feeds/sitemap",
+  "processing_status": "cleaned",
+  "validation_issues": [
+    "missing_author"
+  ],
+  "validation_status": "needs_review",
+  "category": "news",
+  "cleaned_text": "US Treasury Secretary Scott Bessent says the Federal Reserve should have an open mind and not hike rates because of an “energy supply shock” tied to the Iran war, Reuters reports.\n\n“I think the Fed should understand that this is an energy supply shock,” while the underlying US economy is very strong, Bessent said in an interview on CNBC.\n\n“So I think that to hike too much into an energy supply shock when it’s coming down, these are very noisy numbers,” he explains. “You know, the Fed’s supposed to look into the future, not look in the rearview mirror.”\n\nThe US central bank left its policy rate on hold last month, with Fed Chairman Kevin Warsh saying policymakers would be watching for data to help decide whether more monetary policy tightening would be needed.\n\n“I’m not going to tell the Fed what to do. I am going to say they should have an open mind,” Bessent says, noting that the Fed did three rate cuts over the same period last year. “And now to reverse just based on an energy supply shock, a reversal in a dramatic way isn’t something that I would do if I were on the Fed. But I’m not on the Fed.”",
+  "cleaned_blocks": [
+    {
+      "source_block_index": 0,
+      "type": "paragraph",
+      "text": "US Treasury Secretary Scott Bessent says the Federal Reserve should have an open mind and not hike rates because of an “energy supply shock” tied to the Iran war, Reuters reports."
+    },
+    {
+      "source_block_index": 1,
+      "type": "paragraph",
+      "text": "“I think the Fed should understand that this is an energy supply shock,” while the underlying US economy is very strong, Bessent said in an interview on CNBC."
+    },
+    {
+      "source_block_index": 2,
+      "type": "paragraph",
+      "text": "“So I think that to hike too much into an energy supply shock when it’s coming down, these are very noisy numbers,” he explains. “You know, the Fed’s supposed to look into the future, not look in the rearview mirror.”"
+    },
+    {
+      "source_block_index": 3,
+      "type": "paragraph",
+      "text": "The US central bank left its policy rate on hold last month, with Fed Chairman Kevin Warsh saying policymakers would be watching for data to help decide whether more monetary policy tightening would be needed."
+    },
+    {
+      "source_block_index": 4,
+      "type": "paragraph",
+      "text": "“I’m not going to tell the Fed what to do. I am going to say they should have an open mind,” Bessent says, noting that the Fed did three rate cuts over the same period last year. “And now to reverse just based on an energy supply shock, a reversal in a dramatic way isn’t something that I would do if I were on the Fed. But I’m not on the Fed.”"
+    }
+  ],
+  "cleaning_version": "truthlens-clean-v1",
+  "cleaned_at": "2026-11-13T14:50:44.025312+00:00",
+  "cleaning_issues": [],
+  "cleaning_status": "cleaned",
+  "content_hash_version": "sha256-headline-subheadline-body-v1",
+  "content_hash": "c9e8b7d5f9d7c0162860d53002baefa266ba4d44288dbefc5e2390521cfef4cc",
+  "text_hash": "943fa1e9e3a780ac0f70714bc317dd726e32dfd526d86d75eeeb0bcbf9823219",
+  "metadata_hash": "caac5a412567bb5eb23b6d649d4a53add63a8f4d1b780ba956c199488b7df0d7",
+  "media_hash": "045e051ca589e4e47b9f5000dd6527df1e1840799c5722a4d23553850b02acd0",
+  "quality_hash": "5d14f5c0b8b5af9389fb94bc200304277188c1633579764f6172b31015e5e4af",
+  "state_hash": "8f81cef02fa3a9feabb4ae19ff7ff4092e4b09792fb36491a8ac9f72bd9f1758",
+  "tracking_version": "truthlens-state-v1",
+  "change_status": "media_changed",
+  "changed_fields": [
+    "media.image_url"
+  ],
+  "field_changes": {
+    "media.image_url": {
+      "before": null,
+      "after": "https://www.dawn.com/_img/social-default.jpg"
+    }
+  },
+  "body_diff": "",
+  "text_changed": false,
+  "text_reanalysis_required": false,
+  "version_number": 2,
+  "version_first_seen_at": "2026-11-13T14:50:44.023311+00:00",
+  "last_changed_at": "2026-11-13T14:50:44.023311+00:00",
+  "last_checked_at": "2026-11-13T14:50:44.023311+00:00",
+  "tracking_observation_count": 2,
+  "snapshot_saved": true,
+  "change_detection_scope": "extracted_text_metadata_media_references_and_quality"
+},
+{
+  "source": "Dawn",
+  "run_id": "20261113T145031Z_4ab6ddccf4984e0691c171af21a16045",
+  "extraction_version": "dawn-extract-v1",
+  "article_id": "2044311",
+  "article_key": "dawn:2044311",
+  "url": "https://www.dawn.com/news/2044311/see-satellite-image-appears-to-show-blazing-tanker-in-strait-of-hormuz",
+  "http_status": 200,
+  "response_encoding": "utf-8",
+  "canonical_url": "https://www.dawn.com/news/2044311",
+  "canonical_url_source": "link[rel=canonical]",
+  "headline": "SEE: Satellite image appears to show blazing tanker in Strait of Hormuz",
+  "subheadline": null,
+  "description": null,
+  "description_source": "meta[property=\"og:description\"]",
+  "author": null,
+  "author_parts": [],
+  "published_at": "2026-11-13 19:35:02+05:00",
+  "updated_at": "2026-11-13 19:35:02+05:00",
+  "timestamp_sources": {
+    "published_at": "meta[property=\"article:published_time\"]",
+    "updated_at": "meta[property=\"article:modified_time\"]"
+  },
+  "article_text": "",
+  "content_blocks": [],
+  "article_html": "<div dir=\"auto\" class=\"story__content  flow-root    pt-1 mt-1 text-4 sm:text-4.5  overflow-visible\">    <figure class=\"media  w-full  w-full  media--  media--embed  media--uneven media--tweet\" data-original-src=\"https://x.com/iribnews_irib/status/2121240058720112744\">\n        <div class=\"media__item  media__item--twitter  \"><span>\n    <blockquote class=\"twitter-tweet\" lang=\"en\">\n        <a href=\"https://twitter.com/iribnews_irib/status/2121240058720112744\"></a>\n    </blockquote>\n</span></div>\n        \n    </figure>\n\n    </div>",
+  "image_url": "https://www.dawn.com/_img/social-default.jpg",
+  "images": [],
+  "videos": [],
+  "tweets": [
+    {
+      "provider": "X/Twitter",
+      "tweet_id": "2121240058720112744",
+      "url": "https://twitter.com/iribnews_irib/status/2121240058720112744",
+      "embed_url": null,
+      "text": null,
+      "text_status": "missing",
+      "completeness": "not_verified",
+      "html": "<blockquote class=\"twitter-tweet\" lang=\"en\">\n        <a href=\"https://twitter.com/iribnews_irib/status/2121240058720112744\"></a>\n    </blockquote>"
+    }
+  ],
+  "tweet_embed_count": 1,
+  "media_detection_scope": "URLs_and_extracted_metadata_not_media_bytes",
+  "embed_detection_scope": "downloaded_article_body_html_only",
+  "language": "en",
+  "language_source": "English source configuration",
+  "section": null,
+  "crawled_at": "2026-11-13T14:50:48.520840+00:00",
+  "discovered_from": "https://www.dawn.com/feeds/sitemap",
+  "processing_status": "collected",
+  "validation_issues": [
+    "missing_article_text",
+    "missing_author",
+    "tweet_text_missing"
+  ],
+  "validation_status": "needs_review",
+  "category": "news",
+  "cleaned_text": "",
+  "cleaned_blocks": [],
+  "cleaning_version": "truthlens-clean-v1",
+  "cleaned_at": "2026-11-13T14:50:48.520840+00:00",
+  "cleaning_issues": [
+    "missing_content_blocks",
+    "empty_cleaned_text"
+  ],
+  "cleaning_status": "needs_review",
+  "content_hash_version": "sha256-headline-subheadline-body-v1",
+  "content_hash": null,
+  "change_status": "needs_review",
+  "text_reanalysis_required": false
+}
+]

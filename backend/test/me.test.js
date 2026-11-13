@@ -79,6 +79,24 @@ test('history is saved per account and respects the privacy pauses', async () =>
   assert.equal((await call('GET', '/me/history', null, t)).body.length, 0);
 });
 
+test('opening the same article twice keeps one history entry (moved to the top); other articles are separate', async () => {
+  const t = await newReader('dup@test.com');
+  const open = (articleId, extra = {}) => call('POST', '/me/history', { type: 'analysis', title: `Article ${articleId}`, articleId, bias: '40%', ...extra }, t);
+  await open('geo-1'); await open('geo-2');
+  const again = await open('geo-1', { bias: '42%' });
+  assert.equal(again.body.added, 0);
+  await call('POST', '/me/history', { type: 'search', title: 'Search: "x"' }, t);
+  await call('POST', '/me/history', { type: 'search', title: 'Search: "x"' }, t);
+  const h = (await call('GET', '/me/history', null, t)).body;
+  assert.equal(h.filter((x) => x.articleId === 'geo-1').length, 1);
+  assert.equal(h.filter((x) => x.title === 'Search: "x"').length, 1);
+  assert.equal(h.length, 3);
+  assert.equal(h.find((x) => x.articleId === 'geo-1').bias, '42%', 'latest details kept');
+  // much later, reading it again counts as a new visit
+  await fake.collection('history').updateOne({ userId: (await fake.collection('users').findOne({ email: 'dup@test.com' })).id, articleId: 'geo-1' }, { $set: { createdAt: new Date(Date.now() - 31 * 60 * 1000) } });
+  assert.equal((await open('geo-1')).body.added, 1);
+});
+
 test('retention deletes old history; bulk import keeps dates', async () => {
   const t = await newReader('r1@test.com');
   const old = new Date(Date.now() - 40 * 24 * 3600 * 1000).toISOString();

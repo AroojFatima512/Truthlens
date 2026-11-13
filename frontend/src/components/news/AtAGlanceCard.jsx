@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Zap, AlertCircle, AlertTriangle, CheckCircle2, Frown, Meh, Smile, Users, BarChart2, ChevronRight, Layers } from 'lucide-react';
+import { AlertCircle, AlertTriangle, CheckCircle2, Frown, Meh, Smile, Users, BarChart2, ChevronRight, Layers } from 'lucide-react';
 import GlowCard, { GlowTile } from '../common/GlowCard';
 import { getBiasLabel } from '../../utils/biasColorMapper';
 
@@ -18,11 +18,11 @@ const SENTIMENT_STYLE = {
 };
 export const biasLevelOf = (score) => (score > 60 ? 'high' : score > 30 ? 'moderate' : 'low');
 
-const Ring = ({ className, Icon }) => (
-  <span className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-full border-2 ${className}`}>
-    <Icon size={22} strokeWidth={2} />
-  </span>
-);
+// a small coloured icon next to the tile's label (one circle only, never covering the value)
+const TileIcon = ({ className, Icon }) => {
+  const color = className.split(' ').find((c) => c.startsWith('text-'));
+  return <Icon size={18} strokeWidth={2.2} className={`shrink-0 ${color}`} aria-hidden />;
+};
 
 const AtAGlanceCard = ({ article }) => {
   const b = BIAS_STYLE[biasLevelOf(article.biasScore ?? 0)];
@@ -33,22 +33,22 @@ const AtAGlanceCard = ({ article }) => {
   const others = article.relatedArticleIds?.length || 0;
 
   return (
-    <GlowCard tone="teal" icon={Zap} iconClassName="text-amber-300 fill-amber-300" title="At a Glance" subtitle="Quick verdict on this article">
+    <GlowCard tone="teal" title="At a Glance" subtitle="Quick verdict on this article">
       <div className="grid grid-cols-2 gap-3 mb-3">
-        <GlowTile className="flex items-start justify-between gap-2">
-          <div className="min-w-0">
-            <p className="text-[11px] font-bold uppercase tracking-wider text-sky-300 mb-0.5">Bias</p>
-            <p className="text-[26px] font-extrabold text-white leading-none mb-1.5">{article.biasScore ?? '–'}%</p>
-            <span className={`inline-block rounded-md border px-2 py-0.5 text-[11px] font-semibold ${b.pill}`}>{getBiasLabel(article.biasScore ?? 0)}</span>
+        <GlowTile className="min-w-0">
+          <div className="flex items-center justify-between gap-2 mb-1">
+            <p className="text-[11px] font-bold uppercase tracking-wider text-sky-300">Bias</p>
+            <TileIcon className={b.ring} Icon={b.Icon} />
           </div>
-          <Ring className={b.ring} Icon={b.Icon} />
+          <p className="text-[26px] font-extrabold text-white leading-none mb-2">{article.biasScore ?? '–'}%</p>
+          <span className={`inline-block whitespace-nowrap rounded-md border px-2 py-0.5 text-[11px] font-semibold ${b.pill}`}>{getBiasLabel(article.biasScore ?? 0)}</span>
         </GlowTile>
-        <GlowTile className="flex items-start justify-between gap-2">
-          <div className="min-w-0">
-            <p className="text-[11px] font-bold uppercase tracking-wider text-sky-300 mb-0.5">Sentiment</p>
-            <p className={`text-[20px] font-extrabold leading-tight capitalize ${s.text}`}>{sentiment}</p>
+        <GlowTile className="min-w-0">
+          <div className="flex items-center justify-between gap-2 mb-1">
+            <p className="text-[11px] font-bold uppercase tracking-wider text-sky-300">Sentiment</p>
+            <TileIcon className={s.ring} Icon={s.Icon} />
           </div>
-          <Ring className={s.ring} Icon={s.Icon} />
+          <p className={`text-[20px] font-extrabold leading-tight capitalize truncate ${s.text}`}>{sentiment}</p>
         </GlowTile>
       </div>
 

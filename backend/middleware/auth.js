@@ -9,10 +9,11 @@ function requireAuth(req, res, next) {
   if (!token) return res.status(401).json({ message: 'Login required' });
   try {
     req.user = jwt.verify(token, JWT_SECRET);
-    return next();
   } catch {
     return res.status(401).json({ message: 'Session expired, please log in again' });
   }
+  require('../lib/userActivity').touch(req.user.id);   // "last seen" for Manage Users (at most once a minute)
+  return next();
 }
 
 function requireAdmin(req, res, next) {

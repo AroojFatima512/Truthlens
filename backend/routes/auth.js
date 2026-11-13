@@ -549,3 +549,13 @@ module.exports = router;
 module.exports.init = init;
 module.exports.inviteUser = inviteUser;
 module.exports.resendInvite = resendInvite;
+
+// Admin > Manage Users: send a sign-up verification e-mail again
+async function resendVerificationFor(userId) {
+  const user = await users().findOne({ id: userId });
+  if (!user) return { status: 404, error: 'User not found' };
+  if (user.emailVerified !== false) return { status: 400, error: 'This account is already verified' };
+  await sendVerification(user);
+  return { user };
+}
+module.exports.resendVerificationFor = resendVerificationFor;

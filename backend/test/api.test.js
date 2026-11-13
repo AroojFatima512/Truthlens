@@ -90,7 +90,7 @@ test('admin routes need an admin token and return mock shapes', async () => {
   const reader = jwt.sign({ id: 'u1', email: 'r@x.com', role: 'reader' }, 'truthlens-super-secret-key');
   assert.equal((await get('/admin/stats', reader)).status, 403);
   const admin = jwt.sign({ id: 'a1', email: 'admin@truthlens.com', role: 'admin' }, 'truthlens-super-secret-key');
-  const stats = (await get('/admin/stats', admin)).body; assert.deepEqual(keys(stats), ['activeSources', 'pendingFeedback', 'totalArticles', 'totalUsers']);
+  const stats = (await get('/admin/stats', admin)).body; assert.deepEqual(keys(stats), ['activeSources', 'invitedUsers', 'pendingFeedback', 'totalArticles', 'totalUsers', 'unverifiedUsers']);
   const src = (await get('/admin/sources', admin)).body; assert.deepEqual(missing(keys(mockSources[0]), keys(src[0])), []);
   const runs = (await get('/admin/crawl-runs', admin)).body; assert.equal(runs[0].status, 'completed');
   console.log('  stats:', JSON.stringify(stats), '| sources:', src.map((x) => `${x.name} ${x.articlesCount}`).join(', '), '| run steps:', runs[0].steps.length);

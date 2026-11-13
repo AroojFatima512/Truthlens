@@ -53,6 +53,10 @@ class ArticleIn(BaseModel):
     body: str
     published_at: str | None = None
     category: str | None = None      # "opinion" pieces are kept out of news stories (config.SEPARATE_OPINION)
+    opinion: bool | None = None      # set by the caller when known (app/opinion.py); otherwise worked out here
+    url: str | None = None
+    section: str | None = None
+    author: str | None = None
     analysis: dict | None = None     # pass the stored /analyze result to avoid recomputing entities
 
 

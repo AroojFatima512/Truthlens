@@ -15,6 +15,8 @@ import { useSavedArticles } from '../context/SavedArticlesContext';
 import { useSettings } from '../context/SettingsContext';
 import { logUserActivity } from '../utils/historyService';
 
+const recentlyLogged = new Map();   // articleId -> when it was last added to History (this tab)
+
 const clearStretch = (side) => {
   const el = side?.querySelector('[data-stretch]');
   if (el) el.style.minHeight = '';
@@ -119,17 +121,22 @@ const NewsDetailPage = () => {
           toast.success('Article auto-saved based on your settings.', { icon: '🔖' });
         }
 
-        // Log Analysis to History exactly once per article per session
-        if (!loggedAnalysisRef.current.has(articleData.id)) {
+        // Log the article to History once. The page can load twice when it opens (route animation,
+        // React's development double-run), so this remembers recent logs outside the component too;
+        // the server also merges repeats of the same article within 30 minutes.
+        const last = recentlyLogged.get(articleData.id) || 0;
+        if (!loggedAnalysisRef.current.has(articleData.id) && Date.now() - last > 30 * 60 * 1000) {
+          recentlyLogged.set(articleData.id, Date.now());
+          loggedAnalysisRef.current.add(articleData.id);
           logUserActivity('analysis', {
             articleId: articleData.id,
             title: articleData.headline || articleData.title,
             source: articleData.source,
+            sentiment: articleData.sentiment,
             originalDate: formatDate(articleData.publishedAt),
-            bias: articleData.biasScore ? `${articleData.biasScore}%` : 'N/A',
-            match: articleData.similarity ? `${articleData.similarity}%` : 'N/A'
+            bias: typeof articleData.biasScore === 'number' ? `${articleData.biasScore}%` : 'N/A',
+            match: typeof articleData.similarity === 'number' ? `${articleData.similarity}%` : 'N/A'
           });
-          loggedAnalysisRef.current.add(articleData.id);
         }
 
       } catch (err) {

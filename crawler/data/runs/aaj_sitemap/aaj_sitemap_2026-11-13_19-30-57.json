@@ -1,0 +1,404 @@
+[
+{
+  "source": "Aaj News",
+  "run_id": "20261113T143056Z_fd03062559aa4095bc6f4d5f0a7285a7",
+  "extraction_version": "aaj-extract-v1",
+  "article_id": "330480581",
+  "article_key": "aaj:330480581",
+  "url": "https://english.aaj.tv/news/330480581/spacex-to-attempt-first-starship-spacecraft-recovery-on-land-in-15th-flight",
+  "http_status": 200,
+  "response_encoding": "utf-8",
+  "canonical_url": "https://english.aaj.tv/news/330480581/spacex-to-attempt-first-starship-spacecraft-recovery-on-land-in-15th-flight",
+  "canonical_url_source": "link[rel=canonical]/og:url",
+  "headline": "SpaceX to attempt first Starship spacecraft recovery on land in 15th flight",
+  "subheadline": null,
+  "description": "SpaceX to attempt first catch of Starship's spacecraft on flight planned for Friday",
+  "description_source": "meta[property=\"og:description\"]",
+  "author": "Reuters",
+  "author_parts": [
+    "Reuters"
+  ],
+  "published_at": "2026-11-13 19:09:58+05:00",
+  "updated_at": "2026-11-13 19:09:58+05:00",
+  "timestamp_sources": {
+    "published_at": "meta[property=\"article:published_time\"]",
+    "updated_at": "meta/JSON-LD"
+  },
+  "article_text": "SpaceX’s latest Starship flight planned for Friday will include its first attempt to ​catch the spacecraft at its Texas launch site rather than discarding it in the ocean, a key test of Elon Musk’s bid to ‌make a fully reusable rocket system.\n\nThe 407-foot-tall (124 m) Starship rocket is scheduled to launch at 4:45 p.m. CT (2245 GMT) from SpaceX’s Starbase launch facilities in South Texas for its 15th flight since 2023 and the second to carry a batch of operational Starlink satellites. That makes the mission both a revenue-generating endeavour for its satellite connectivity business and a high-stakes ​test for a rocket still in development.\n\nSpaceX as of Friday morning had not received a launch licence from the US Federal Aviation Administration. ​The FAA, which has typically issued licenses a day prior to past Starship launches, did not immediately respond to a ⁠request for comment.\n\nMusk’s space and AI colossus views the next-generation Starship rocket as crucial to expanding its Starlink network with more satellites and, in the ​future, deploying a vast swarm of AI data-processing satellites called Starmind, as the company increasingly positions itself as an infrastructure giant.\n\nSpaceX last launched Starship in September, ​taking the rocket and its satellites to orbit for the first time despite some engines shutting down mid-flight. That mission, planned to last 10 hours, ended after roughly 3 hours with an intact splashdown in the Pacific Ocean.\n\nFor Friday’s mission, the company expects to return to Texas both Starship’s Super Heavy booster and the Starship upper stage it launches ​to space. The upper stage — the top half of the rocket that serves as the spacecraft — will return some 22 hours after launch. SpaceX has ​said it would be a “breakthrough moment in making Starship a reliable, rapidly reusable rocket” if all goes as planned.\n\nMAKING WAY FOR STARSHIP\n\nSpaceX has returned the 236-foot-tall Super Heavy ‌booster three ⁠times to its launchpad after sending Starship to space, falling back vertically into large mechanical arms fixed to its launch tower some 10 minutes after launch. The last such “tower catch” was in March 2025.\n\nFor the 15th mission, SpaceX will need to move the Super Heavy booster off the launchpad to make way for Starship, which is expected to fall from space after completing 14 orbits around Earth. That sets up the debut Starship catch to occur around 2:45 p.m. ​CT (2045 GMT) on Saturday.\n\nMusk has said ​he expects to enter a weekly ⁠cadence of Starship launches by the first half of 2027, while SpaceX has said it could begin launching Starship from a new Florida launchpad by the end of 2026.\n\nNASA has helped fund Starship’s development with roughly $3.2 billion delivered ​to SpaceX since selecting the rocket in 2021 to serve as a moon lander for its astronauts under the ​multibillion-dollar US Artemis moon ⁠program. SpaceX has put at least $15 billion of its own funds into the rocket’s development.\n\nNASA and SpaceX expect Starship to land humans on the moon by 2028, though several major testing milestones remain that analysts and industry engineers believe will push that timeline back. Those milestones include demonstrating complex fuel transfers between Starship “tanker” rockets ⁠in orbit, ​a key process that will enable Starship to travel beyond Earth’s orbit to the moon.\n\nJeff Bezos’ ​Blue Origin is also developing a moon lander, Blue Moon, for NASA under the Artemis programme. Blue Moon is poised to join Starship and another spacecraft, NASA’s Orion capsule, in Earth’s orbit ​next year for Artemis III, a docking test mission before NASA’s planned moon landing missions begin with Artemis IV.",
+  "content_blocks": [
+    {
+      "type": "paragraph",
+      "text": "SpaceX’s latest Starship flight planned for Friday will include its first attempt to ​catch the spacecraft at its Texas launch site rather than discarding it in the ocean, a key test of Elon Musk’s bid to ‌make a fully reusable rocket system.",
+      "html": "<p><strong>SpaceX’s latest Starship flight planned for Friday will include its first attempt to ​catch the spacecraft at its Texas launch site rather than discarding it in the ocean, a key test of Elon Musk’s bid to ‌make a fully reusable rocket system.</strong></p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "The 407-foot-tall (124 m) Starship rocket is scheduled to launch at 4:45 p.m. CT (2245 GMT) from SpaceX’s Starbase launch facilities in South Texas for its 15th flight since 2023 and the second to carry a batch of operational Starlink satellites. That makes the mission both a revenue-generating endeavour for its satellite connectivity business and a high-stakes ​test for a rocket still in development.",
+      "html": "<p>The 407-foot-tall (124 m) Starship rocket is scheduled to launch at 4:45 p.m. CT (2245 GMT) from SpaceX’s Starbase launch facilities in South Texas for its 15th flight since 2023 and the second to carry a batch of operational Starlink satellites. That makes the mission both a revenue-generating endeavour for its satellite connectivity business and a high-stakes ​test for a rocket still in development.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "SpaceX as of Friday morning had not received a launch licence from the US Federal Aviation Administration. ​The FAA, which has typically issued licenses a day prior to past Starship launches, did not immediately respond to a ⁠request for comment.",
+      "html": "<p>SpaceX as of Friday morning had not received a launch licence from the US Federal Aviation Administration. ​The FAA, which has typically issued licenses a day prior to past Starship launches, did not immediately respond to a ⁠request for comment.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Musk’s space and AI colossus views the next-generation Starship rocket as crucial to expanding its Starlink network with more satellites and, in the ​future, deploying a vast swarm of AI data-processing satellites called Starmind, as the company increasingly positions itself as an infrastructure giant.",
+      "html": "<p>Musk’s space and AI colossus views the next-generation Starship rocket as crucial to expanding its Starlink network with more satellites and, in the ​future, deploying a vast swarm of AI data-processing satellites called Starmind, as the company increasingly positions itself as an infrastructure giant.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "SpaceX last launched Starship in September, ​taking the rocket and its satellites to orbit for the first time despite some engines shutting down mid-flight. That mission, planned to last 10 hours, ended after roughly 3 hours with an intact splashdown in the Pacific Ocean.",
+      "html": "<p>SpaceX last launched Starship in September, ​taking the rocket and its satellites to orbit for the first time despite some engines shutting down mid-flight. That mission, planned to last 10 hours, ended after roughly 3 hours with an intact splashdown in the Pacific Ocean.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "For Friday’s mission, the company expects to return to Texas both Starship’s Super Heavy booster and the Starship upper stage it launches ​to space. The upper stage — the top half of the rocket that serves as the spacecraft — will return some 22 hours after launch. SpaceX has ​said it would be a “breakthrough moment in making Starship a reliable, rapidly reusable rocket” if all goes as planned.",
+      "html": "<p>For Friday’s mission, the company expects to return to Texas both Starship’s Super Heavy booster and the Starship upper stage it launches ​to space. The upper stage — the top half of the rocket that serves as the spacecraft — will return some 22 hours after launch. SpaceX has ​said it would be a “breakthrough moment in making Starship a reliable, rapidly reusable rocket” if all goes as planned.</p>"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "MAKING WAY FOR STARSHIP",
+      "html": "<h3><a id=\"making-way-for-starship\" href=\"#making-way-for-starship\" class=\"heading-permalink\" aria-hidden=\"true\" tabindex=\"-1\" title=\"Permalink\"></a>MAKING WAY FOR STARSHIP</h3>"
+    },
+    {
+      "type": "paragraph",
+      "text": "SpaceX has returned the 236-foot-tall Super Heavy ‌booster three ⁠times to its launchpad after sending Starship to space, falling back vertically into large mechanical arms fixed to its launch tower some 10 minutes after launch. The last such “tower catch” was in March 2025.",
+      "html": "<p>SpaceX has returned the 236-foot-tall Super Heavy ‌booster three ⁠times to its launchpad after sending Starship to space, falling back vertically into large mechanical arms fixed to its launch tower some 10 minutes after launch. The last such “tower catch” was in March 2025.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "For the 15th mission, SpaceX will need to move the Super Heavy booster off the launchpad to make way for Starship, which is expected to fall from space after completing 14 orbits around Earth. That sets up the debut Starship catch to occur around 2:45 p.m. ​CT (2045 GMT) on Saturday.",
+      "html": "<p>For the 15th mission, SpaceX will need to move the Super Heavy booster off the launchpad to make way for Starship, which is expected to fall from space after completing 14 orbits around Earth. That sets up the debut Starship catch to occur around 2:45 p.m. ​CT (2045 GMT) on Saturday.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Musk has said ​he expects to enter a weekly ⁠cadence of Starship launches by the first half of 2027, while SpaceX has said it could begin launching Starship from a new Florida launchpad by the end of 2026.",
+      "html": "<p>Musk has said ​he expects to enter a weekly ⁠cadence of Starship launches by the first half of 2027, while SpaceX has said it could begin launching Starship from a new Florida launchpad by the end of 2026.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "NASA has helped fund Starship’s development with roughly $3.2 billion delivered ​to SpaceX since selecting the rocket in 2021 to serve as a moon lander for its astronauts under the ​multibillion-dollar US Artemis moon ⁠program. SpaceX has put at least $15 billion of its own funds into the rocket’s development.",
+      "html": "<p>NASA has helped fund Starship’s development with roughly $3.2 billion delivered ​to SpaceX since selecting the rocket in 2021 to serve as a moon lander for its astronauts under the ​multibillion-dollar US Artemis moon ⁠program. SpaceX has put at least $15 billion of its own funds into the rocket’s development.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "NASA and SpaceX expect Starship to land humans on the moon by 2028, though several major testing milestones remain that analysts and industry engineers believe will push that timeline back. Those milestones include demonstrating complex fuel transfers between Starship “tanker” rockets ⁠in orbit, ​a key process that will enable Starship to travel beyond Earth’s orbit to the moon.",
+      "html": "<p>NASA and SpaceX expect Starship to land humans on the moon by 2028, though several major testing milestones remain that analysts and industry engineers believe will push that timeline back. Those milestones include demonstrating complex fuel transfers between Starship “tanker” rockets ⁠in orbit, ​a key process that will enable Starship to travel beyond Earth’s orbit to the moon.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Jeff Bezos’ ​Blue Origin is also developing a moon lander, Blue Moon, for NASA under the Artemis programme. Blue Moon is poised to join Starship and another spacecraft, NASA’s Orion capsule, in Earth’s orbit ​next year for Artemis III, a docking test mission before NASA’s planned moon landing missions begin with Artemis IV.",
+      "html": "<p>Jeff Bezos’ ​Blue Origin is also developing a moon lander, Blue Moon, for NASA under the Artemis programme. Blue Moon is poised to join Starship and another spacecraft, NASA’s Orion capsule, in Earth’s orbit ​next year for Artemis III, a docking test mission before NASA’s planned moon landing missions begin with Artemis IV.</p>"
+    }
+  ],
+  "article_html": "<div dir=\"auto\" class=\"story__content  flow-root    text-4 leading-tight text-black\"><p><strong>SpaceX’s latest Starship flight planned for Friday will include its first attempt to ​catch the spacecraft at its Texas launch site rather than discarding it in the ocean, a key test of Elon Musk’s bid to ‌make a fully reusable rocket system.</strong></p>\n<p>The 407-foot-tall (124 m) Starship rocket is scheduled to launch at 4:45 p.m. CT (2245 GMT) from SpaceX’s Starbase launch facilities in South Texas for its 15th flight since 2023 and the second to carry a batch of operational Starlink satellites. That makes the mission both a revenue-generating endeavour for its satellite connectivity business and a high-stakes ​test for a rocket still in development.</p>\n<p>SpaceX as of Friday morning had not received a launch licence from the US Federal Aviation Administration. ​The FAA, which has typically issued licenses a day prior to past Starship launches, did not immediately respond to a ⁠request for comment.</p>\n<p>Musk’s space and AI colossus views the next-generation Starship rocket as crucial to expanding its Starlink network with more satellites and, in the ​future, deploying a vast swarm of AI data-processing satellites called Starmind, as the company increasingly positions itself as an infrastructure giant.</p>\n<p>SpaceX last launched Starship in September, ​taking the rocket and its satellites to orbit for the first time despite some engines shutting down mid-flight. That mission, planned to last 10 hours, ended after roughly 3 hours with an intact splashdown in the Pacific Ocean.</p>\n<p>For Friday’s mission, the company expects to return to Texas both Starship’s Super Heavy booster and the Starship upper stage it launches ​to space. The upper stage — the top half of the rocket that serves as the spacecraft — will return some 22 hours after launch. SpaceX has ​said it would be a “breakthrough moment in making Starship a reliable, rapidly reusable rocket” if all goes as planned.</p>\n<h3><a id=\"making-way-for-starship\" href=\"#making-way-for-starship\" class=\"heading-permalink\" aria-hidden=\"true\" tabindex=\"-1\" title=\"Permalink\"></a>MAKING WAY FOR STARSHIP</h3>\n<p>SpaceX has returned the 236-foot-tall Super Heavy ‌booster three ⁠times to its launchpad after sending Starship to space, falling back vertically into large mechanical arms fixed to its launch tower some 10 minutes after launch. The last such “tower catch” was in March 2025.</p>\n<p>For the 15th mission, SpaceX will need to move the Super Heavy booster off the launchpad to make way for Starship, which is expected to fall from space after completing 14 orbits around Earth. That sets up the debut Starship catch to occur around 2:45 p.m. ​CT (2045 GMT) on Saturday.</p>\n<p>Musk has said ​he expects to enter a weekly ⁠cadence of Starship launches by the first half of 2027, while SpaceX has said it could begin launching Starship from a new Florida launchpad by the end of 2026.</p>\n<p>NASA has helped fund Starship’s development with roughly $3.2 billion delivered ​to SpaceX since selecting the rocket in 2021 to serve as a moon lander for its astronauts under the ​multibillion-dollar US Artemis moon ⁠program. SpaceX has put at least $15 billion of its own funds into the rocket’s development.</p>\n<p>NASA and SpaceX expect Starship to land humans on the moon by 2028, though several major testing milestones remain that analysts and industry engineers believe will push that timeline back. Those milestones include demonstrating complex fuel transfers between Starship “tanker” rockets ⁠in orbit, ​a key process that will enable Starship to travel beyond Earth’s orbit to the moon.</p>\n<p>Jeff Bezos’ ​Blue Origin is also developing a moon lander, Blue Moon, for NASA under the Artemis programme. Blue Moon is poised to join Starship and another spacecraft, NASA’s Orion capsule, in Earth’s orbit ​next year for Artemis III, a docking test mission before NASA’s planned moon landing missions begin with Artemis IV.</p>\n\n    </div>",
+  "image_url": "https://i.aaj.tv/large/2026/11/13190812c7ebcb5.webp",
+  "images": [],
+  "videos": [],
+  "tweets": [],
+  "tweet_embed_count": 0,
+  "media_detection_scope": "URLs_and_extracted_metadata_not_media_bytes",
+  "embed_detection_scope": "downloaded_article_body_html_only",
+  "language": "en",
+  "language_source": "English source configuration",
+  "section": "world",
+  "tags": [
+    "South Texas",
+    "Jeff Bezos'",
+    "US Federal Aviation Administration",
+    "Musk",
+    "FAA",
+    "SpaceX",
+    "pacific ocean",
+    "NASA",
+    "Earth",
+    "Florida",
+    "Texas",
+    "Elon Musk"
+  ],
+  "crawled_at": "2026-11-13T14:31:04.283641+00:00",
+  "discovered_from": "https://english.aaj.tv/feeds/sitemap",
+  "processing_status": "cleaned",
+  "validation_issues": [],
+  "validation_status": "passed_basic_checks",
+  "category": "world",
+  "cleaned_text": "SpaceX’s latest Starship flight planned for Friday will include its first attempt to catch the spacecraft at its Texas launch site rather than discarding it in the ocean, a key test of Elon Musk’s bid to ‌make a fully reusable rocket system.\n\nThe 407-foot-tall (124 m) Starship rocket is scheduled to launch at 4:45 p.m. CT (2245 GMT) from SpaceX’s Starbase launch facilities in South Texas for its 15th flight since 2023 and the second to carry a batch of operational Starlink satellites. That makes the mission both a revenue-generating endeavour for its satellite connectivity business and a high-stakes test for a rocket still in development.\n\nSpaceX as of Friday morning had not received a launch licence from the US Federal Aviation Administration. The FAA, which has typically issued licenses a day prior to past Starship launches, did not immediately respond to a ⁠request for comment.\n\nMusk’s space and AI colossus views the next-generation Starship rocket as crucial to expanding its Starlink network with more satellites and, in the future, deploying a vast swarm of AI data-processing satellites called Starmind, as the company increasingly positions itself as an infrastructure giant.\n\nSpaceX last launched Starship in September, taking the rocket and its satellites to orbit for the first time despite some engines shutting down mid-flight. That mission, planned to last 10 hours, ended after roughly 3 hours with an intact splashdown in the Pacific Ocean.\n\nFor Friday’s mission, the company expects to return to Texas both Starship’s Super Heavy booster and the Starship upper stage it launches to space. The upper stage — the top half of the rocket that serves as the spacecraft — will return some 22 hours after launch. SpaceX has said it would be a “breakthrough moment in making Starship a reliable, rapidly reusable rocket” if all goes as planned.\n\nMAKING WAY FOR STARSHIP\n\nSpaceX has returned the 236-foot-tall Super Heavy ‌booster three ⁠times to its launchpad after sending Starship to space, falling back vertically into large mechanical arms fixed to its launch tower some 10 minutes after launch. The last such “tower catch” was in March 2025.\n\nFor the 15th mission, SpaceX will need to move the Super Heavy booster off the launchpad to make way for Starship, which is expected to fall from space after completing 14 orbits around Earth. That sets up the debut Starship catch to occur around 2:45 p.m. CT (2045 GMT) on Saturday.\n\nMusk has said he expects to enter a weekly ⁠cadence of Starship launches by the first half of 2027, while SpaceX has said it could begin launching Starship from a new Florida launchpad by the end of 2026.\n\nNASA has helped fund Starship’s development with roughly $3.2 billion delivered to SpaceX since selecting the rocket in 2021 to serve as a moon lander for its astronauts under the multibillion-dollar US Artemis moon ⁠program. SpaceX has put at least $15 billion of its own funds into the rocket’s development.\n\nNASA and SpaceX expect Starship to land humans on the moon by 2028, though several major testing milestones remain that analysts and industry engineers believe will push that timeline back. Those milestones include demonstrating complex fuel transfers between Starship “tanker” rockets ⁠in orbit, a key process that will enable Starship to travel beyond Earth’s orbit to the moon.\n\nJeff Bezos’ Blue Origin is also developing a moon lander, Blue Moon, for NASA under the Artemis programme. Blue Moon is poised to join Starship and another spacecraft, NASA’s Orion capsule, in Earth’s orbit next year for Artemis III, a docking test mission before NASA’s planned moon landing missions begin with Artemis IV.",
+  "cleaned_blocks": [
+    {
+      "source_block_index": 0,
+      "type": "paragraph",
+      "text": "SpaceX’s latest Starship flight planned for Friday will include its first attempt to catch the spacecraft at its Texas launch site rather than discarding it in the ocean, a key test of Elon Musk’s bid to ‌make a fully reusable rocket system."
+    },
+    {
+      "source_block_index": 1,
+      "type": "paragraph",
+      "text": "The 407-foot-tall (124 m) Starship rocket is scheduled to launch at 4:45 p.m. CT (2245 GMT) from SpaceX’s Starbase launch facilities in South Texas for its 15th flight since 2023 and the second to carry a batch of operational Starlink satellites. That makes the mission both a revenue-generating endeavour for its satellite connectivity business and a high-stakes test for a rocket still in development."
+    },
+    {
+      "source_block_index": 2,
+      "type": "paragraph",
+      "text": "SpaceX as of Friday morning had not received a launch licence from the US Federal Aviation Administration. The FAA, which has typically issued licenses a day prior to past Starship launches, did not immediately respond to a ⁠request for comment."
+    },
+    {
+      "source_block_index": 3,
+      "type": "paragraph",
+      "text": "Musk’s space and AI colossus views the next-generation Starship rocket as crucial to expanding its Starlink network with more satellites and, in the future, deploying a vast swarm of AI data-processing satellites called Starmind, as the company increasingly positions itself as an infrastructure giant."
+    },
+    {
+      "source_block_index": 4,
+      "type": "paragraph",
+      "text": "SpaceX last launched Starship in September, taking the rocket and its satellites to orbit for the first time despite some engines shutting down mid-flight. That mission, planned to last 10 hours, ended after roughly 3 hours with an intact splashdown in the Pacific Ocean."
+    },
+    {
+      "source_block_index": 5,
+      "type": "paragraph",
+      "text": "For Friday’s mission, the company expects to return to Texas both Starship’s Super Heavy booster and the Starship upper stage it launches to space. The upper stage — the top half of the rocket that serves as the spacecraft — will return some 22 hours after launch. SpaceX has said it would be a “breakthrough moment in making Starship a reliable, rapidly reusable rocket” if all goes as planned."
+    },
+    {
+      "source_block_index": 6,
+      "type": "heading",
+      "text": "MAKING WAY FOR STARSHIP"
+    },
+    {
+      "source_block_index": 7,
+      "type": "paragraph",
+      "text": "SpaceX has returned the 236-foot-tall Super Heavy ‌booster three ⁠times to its launchpad after sending Starship to space, falling back vertically into large mechanical arms fixed to its launch tower some 10 minutes after launch. The last such “tower catch” was in March 2025."
+    },
+    {
+      "source_block_index": 8,
+      "type": "paragraph",
+      "text": "For the 15th mission, SpaceX will need to move the Super Heavy booster off the launchpad to make way for Starship, which is expected to fall from space after completing 14 orbits around Earth. That sets up the debut Starship catch to occur around 2:45 p.m. CT (2045 GMT) on Saturday."
+    },
+    {
+      "source_block_index": 9,
+      "type": "paragraph",
+      "text": "Musk has said he expects to enter a weekly ⁠cadence of Starship launches by the first half of 2027, while SpaceX has said it could begin launching Starship from a new Florida launchpad by the end of 2026."
+    },
+    {
+      "source_block_index": 10,
+      "type": "paragraph",
+      "text": "NASA has helped fund Starship’s development with roughly $3.2 billion delivered to SpaceX since selecting the rocket in 2021 to serve as a moon lander for its astronauts under the multibillion-dollar US Artemis moon ⁠program. SpaceX has put at least $15 billion of its own funds into the rocket’s development."
+    },
+    {
+      "source_block_index": 11,
+      "type": "paragraph",
+      "text": "NASA and SpaceX expect Starship to land humans on the moon by 2028, though several major testing milestones remain that analysts and industry engineers believe will push that timeline back. Those milestones include demonstrating complex fuel transfers between Starship “tanker” rockets ⁠in orbit, a key process that will enable Starship to travel beyond Earth’s orbit to the moon."
+    },
+    {
+      "source_block_index": 12,
+      "type": "paragraph",
+      "text": "Jeff Bezos’ Blue Origin is also developing a moon lander, Blue Moon, for NASA under the Artemis programme. Blue Moon is poised to join Starship and another spacecraft, NASA’s Orion capsule, in Earth’s orbit next year for Artemis III, a docking test mission before NASA’s planned moon landing missions begin with Artemis IV."
+    }
+  ],
+  "cleaning_version": "truthlens-clean-v1",
+  "cleaned_at": "2026-11-13T14:31:04.296601+00:00",
+  "cleaning_issues": [],
+  "cleaning_status": "cleaned",
+  "content_hash_version": "sha256-headline-subheadline-body-v1",
+  "content_hash": "02fdb23dca9ccb921991f7bb2e56c016d11068728742148f391b9676176fbd3a",
+  "text_hash": "e3dabfc35ee185c145ba883b15c77a435f8fd434c2fe2ca91050b2b4422b1379",
+  "metadata_hash": "e68fb4bd163a09370ae92d64ad4b684659cb912690ac5bf270719173307ba9a9",
+  "media_hash": "b1c07bd50ef04f884eb6e191e3c0b384716cb7437f77911b7bec14ae51c1c8e3",
+  "quality_hash": "b8df83551d01c6666f62539b00ca8b1811a94ed92bc0b0df16544df4ef1278c6",
+  "state_hash": "07cd8d57768abe2019d560b615be5717494d30c1acd4219114a0e6d8b182f77a",
+  "tracking_version": "truthlens-state-v1",
+  "change_status": "new",
+  "changed_fields": [],
+  "field_changes": {},
+  "body_diff": "",
+  "text_changed": null,
+  "text_reanalysis_required": true,
+  "version_number": 1,
+  "version_first_seen_at": "2026-11-13T14:31:04.283641+00:00",
+  "last_changed_at": "2026-11-13T14:31:04.283641+00:00",
+  "last_checked_at": "2026-11-13T14:31:04.283641+00:00",
+  "tracking_observation_count": 1,
+  "snapshot_saved": true,
+  "change_detection_scope": "extracted_text_metadata_media_references_and_quality"
+},
+{
+  "source": "Aaj News",
+  "run_id": "20261113T143056Z_fd03062559aa4095bc6f4d5f0a7285a7",
+  "extraction_version": "aaj-extract-v1",
+  "article_id": "330480583",
+  "article_key": "aaj:330480583",
+  "url": "https://english.aaj.tv/news/330480583/former-nvidia-ceo-huang-had-a-relationship-with-a-second-employee-sources-say",
+  "http_status": 200,
+  "response_encoding": "utf-8",
+  "canonical_url": "https://english.aaj.tv/news/330480583/former-nvidia-ceo-huang-had-a-relationship-with-a-second-employee-sources-say",
+  "canonical_url_source": "link[rel=canonical]/og:url",
+  "headline": "Former Nvidia CEO Huang had a relationship with a second employee, sources say",
+  "subheadline": null,
+  "description": "Jensen Huang reportedly had an intimate relationship with a second employee, following revelations of two other extramarital affairs",
+  "description_source": "meta[property=\"og:description\"]",
+  "author": "Reuters",
+  "author_parts": [
+    "Reuters"
+  ],
+  "published_at": "2026-11-13 19:27:03+05:00",
+  "updated_at": "2026-11-13 19:27:03+05:00",
+  "timestamp_sources": {
+    "published_at": "meta[property=\"article:published_time\"]",
+    "updated_at": "meta/JSON-LD"
+  },
+  "article_text": "Ousted Nvidia CEO Jensen Huang ​had an intimate relationship with a second employee, according to two people ‌familiar with the matter, Reuters has learned.\n\nThe revelation follows two other extramarital affairs that led to his resignation Thursday. The two women are Alice Huang, whom US intelligence suspects of being ​a Chinese spy, and Kimberly Powell, Nvidia’s vice president of health ​care.\n\nReuters is not naming the second employee. Attempts to reach the ⁠woman were not successful.\n\nNvidia declined to comment. Powell, Jensen Huang, and a representative ​for Nvidia’s board did not reply to requests for comment. Alice Huang could ​not be reached for comment.\n\nJensen Huang admitted to an affair in a November 8 statement following the reports of his relationship with Alice Huang, without referring to her by name.\n\nThe former ​Nvidia CEO’s decision to resign from the company could disrupt the AI industry ​that he helped shape. Nvidia has used its financial strength to help create an industry ‌around ⁠AI through complex financial arrangements that ease the purchase of the company’s chips. It has backed cloud computing companies and AI labs in order to do so.\n\nPressure on Jensen Huang, who is 63 and married, to resign mounted after reports ​of his affair with ​Alice Huang.\n\nNvidia’s board ⁠appointed finance chief Colette Kress as interim CEO while it conducts a search to replace Jensen Huang. The board is ​considering internal and external candidates for the job.\n\nEarlier this month, ​Nvidia’s board ⁠launched a probe, led by independent directors with outside legal counsel, into whether Jensen Huang had been targeted by a foreign intelligence operation. It also expressed confidence ⁠in him ​at the time.\n\nShares fell 5.5% on Thursday ​in active trading. The stock has shed more than 30% of its value since its early October ​peak.",
+  "content_blocks": [
+    {
+      "type": "paragraph",
+      "text": "Ousted Nvidia CEO Jensen Huang ​had an intimate relationship with a second employee, according to two people ‌familiar with the matter, Reuters has learned.",
+      "html": "<p><strong>Ousted Nvidia CEO Jensen Huang ​had an intimate relationship with a second employee, according to two people ‌familiar with the matter, <em>Reuters</em> has learned.</strong></p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "The revelation follows two other extramarital affairs that led to his resignation Thursday. The two women are Alice Huang, whom US intelligence suspects of being ​a Chinese spy, and Kimberly Powell, Nvidia’s vice president of health ​care.",
+      "html": "<p>The revelation follows two other extramarital affairs that led to his resignation Thursday. The two women are Alice Huang, whom US intelligence suspects of being ​a Chinese spy, and Kimberly Powell, Nvidia’s vice president of health ​care.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Reuters is not naming the second employee. Attempts to reach the ⁠woman were not successful.",
+      "html": "<p>Reuters is not naming the second employee. Attempts to reach the ⁠woman were not successful.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Nvidia declined to comment. Powell, Jensen Huang, and a representative ​for Nvidia’s board did not reply to requests for comment. Alice Huang could ​not be reached for comment.",
+      "html": "<p>Nvidia declined to comment. Powell, Jensen Huang, and a representative ​for Nvidia’s board did not reply to requests for comment. Alice Huang could ​not be reached for comment.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Jensen Huang admitted to an affair in a November 8 statement following the reports of his relationship with Alice Huang, without referring to her by name.",
+      "html": "<p>Jensen Huang admitted to an affair in a November 8 statement following the reports of his relationship with Alice Huang, without referring to her by name.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "The former ​Nvidia CEO’s decision to resign from the company could disrupt the AI industry ​that he helped shape. Nvidia has used its financial strength to help create an industry ‌around ⁠AI through complex financial arrangements that ease the purchase of the company’s chips. It has backed cloud computing companies and AI labs in order to do so.",
+      "html": "<p>The former ​Nvidia CEO’s decision to resign from the company could disrupt the AI industry ​that he helped shape. Nvidia has used its financial strength to help create an industry ‌around ⁠AI through complex financial arrangements that ease the purchase of the company’s chips. It has backed cloud computing companies and AI labs in order to do so.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Pressure on Jensen Huang, who is 63 and married, to resign mounted after reports ​of his affair with ​Alice Huang.",
+      "html": "<p>Pressure on Jensen Huang, who is 63 and married, to resign mounted after reports ​of his affair with ​Alice Huang.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Nvidia’s board ⁠appointed finance chief Colette Kress as interim CEO while it conducts a search to replace Jensen Huang. The board is ​considering internal and external candidates for the job.",
+      "html": "<p>Nvidia’s board ⁠appointed finance chief Colette Kress as interim CEO while it conducts a search to replace Jensen Huang. The board is ​considering internal and external candidates for the job.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Earlier this month, ​Nvidia’s board ⁠launched a probe, led by independent directors with outside legal counsel, into whether Jensen Huang had been targeted by a foreign intelligence operation. It also expressed confidence ⁠in him ​at the time.",
+      "html": "<p>Earlier this month, ​Nvidia’s board ⁠launched a probe, led by independent directors with outside legal counsel, into whether Jensen Huang had been targeted by a foreign intelligence operation. It also expressed confidence ⁠in him ​at the time.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Shares fell 5.5% on Thursday ​in active trading. The stock has shed more than 30% of its value since its early October ​peak.",
+      "html": "<p>Shares fell 5.5% on Thursday ​in active trading. The stock has shed more than 30% of its value since its early October ​peak.</p>"
+    }
+  ],
+  "article_html": "<div dir=\"auto\" class=\"story__content  flow-root    text-4 leading-tight text-black\"><p><strong>Ousted Nvidia CEO Jensen Huang ​had an intimate relationship with a second employee, according to two people ‌familiar with the matter, <em>Reuters</em> has learned.</strong></p>\n<p>The revelation follows two other extramarital affairs that led to his resignation Thursday. The two women are Alice Huang, whom US intelligence suspects of being ​a Chinese spy, and Kimberly Powell, Nvidia’s vice president of health ​care.</p>\n<p>Reuters is not naming the second employee. Attempts to reach the ⁠woman were not successful.</p>\n<p>Nvidia declined to comment. Powell, Jensen Huang, and a representative ​for Nvidia’s board did not reply to requests for comment. Alice Huang could ​not be reached for comment.</p>\n<p>Jensen Huang admitted to an affair in a November 8 statement following the reports of his relationship with Alice Huang, without referring to her by name.</p>\n<p>The former ​Nvidia CEO’s decision to resign from the company could disrupt the AI industry ​that he helped shape. Nvidia has used its financial strength to help create an industry ‌around ⁠AI through complex financial arrangements that ease the purchase of the company’s chips. It has backed cloud computing companies and AI labs in order to do so.</p>\n<p>Pressure on Jensen Huang, who is 63 and married, to resign mounted after reports ​of his affair with ​Alice Huang.</p>\n<p>Nvidia’s board ⁠appointed finance chief Colette Kress as interim CEO while it conducts a search to replace Jensen Huang. The board is ​considering internal and external candidates for the job.</p>\n<p>Earlier this month, ​Nvidia’s board ⁠launched a probe, led by independent directors with outside legal counsel, into whether Jensen Huang had been targeted by a foreign intelligence operation. It also expressed confidence ⁠in him ​at the time.</p>\n<p>Shares fell 5.5% on Thursday ​in active trading. The stock has shed more than 30% of its value since its early October ​peak.</p>\n\n    </div>",
+  "image_url": "https://i.aaj.tv/large/2026/11/1319252092615b7.webp",
+  "images": [],
+  "videos": [],
+  "tweets": [],
+  "tweet_embed_count": 0,
+  "media_detection_scope": "URLs_and_extracted_metadata_not_media_bytes",
+  "embed_detection_scope": "downloaded_article_body_html_only",
+  "language": "en",
+  "language_source": "English source configuration",
+  "section": "technology",
+  "tags": [
+    "Kimberly Powell",
+    "Colette Kress",
+    "Alice Huang",
+    "Powell",
+    "Jensen Huang",
+    "Nvidia",
+    "Reuters"
+  ],
+  "crawled_at": "2026-11-13T14:31:11.575864+00:00",
+  "discovered_from": "https://english.aaj.tv/feeds/sitemap",
+  "processing_status": "cleaned",
+  "validation_issues": [],
+  "validation_status": "passed_basic_checks",
+  "category": "technology",
+  "cleaned_text": "Ousted Nvidia CEO Jensen Huang had an intimate relationship with a second employee, according to two people ‌familiar with the matter, Reuters has learned.\n\nThe revelation follows two other extramarital affairs that led to his resignation Thursday. The two women are Alice Huang, whom US intelligence suspects of being a Chinese spy, and Kimberly Powell, Nvidia’s vice president of health care.\n\nReuters is not naming the second employee. Attempts to reach the ⁠woman were not successful.\n\nNvidia declined to comment. Powell, Jensen Huang, and a representative for Nvidia’s board did not reply to requests for comment. Alice Huang could not be reached for comment.\n\nJensen Huang admitted to an affair in a November 8 statement following the reports of his relationship with Alice Huang, without referring to her by name.\n\nThe former Nvidia CEO’s decision to resign from the company could disrupt the AI industry that he helped shape. Nvidia has used its financial strength to help create an industry ‌around ⁠AI through complex financial arrangements that ease the purchase of the company’s chips. It has backed cloud computing companies and AI labs in order to do so.\n\nPressure on Jensen Huang, who is 63 and married, to resign mounted after reports of his affair with Alice Huang.\n\nNvidia’s board ⁠appointed finance chief Colette Kress as interim CEO while it conducts a search to replace Jensen Huang. The board is considering internal and external candidates for the job.\n\nEarlier this month, Nvidia’s board ⁠launched a probe, led by independent directors with outside legal counsel, into whether Jensen Huang had been targeted by a foreign intelligence operation. It also expressed confidence ⁠in him at the time.\n\nShares fell 5.5% on Thursday in active trading. The stock has shed more than 30% of its value since its early October peak.",
+  "cleaned_blocks": [
+    {
+      "source_block_index": 0,
+      "type": "paragraph",
+      "text": "Ousted Nvidia CEO Jensen Huang had an intimate relationship with a second employee, according to two people ‌familiar with the matter, Reuters has learned."
+    },
+    {
+      "source_block_index": 1,
+      "type": "paragraph",
+      "text": "The revelation follows two other extramarital affairs that led to his resignation Thursday. The two women are Alice Huang, whom US intelligence suspects of being a Chinese spy, and Kimberly Powell, Nvidia’s vice president of health care."
+    },
+    {
+      "source_block_index": 2,
+      "type": "paragraph",
+      "text": "Reuters is not naming the second employee. Attempts to reach the ⁠woman were not successful."
+    },
+    {
+      "source_block_index": 3,
+      "type": "paragraph",
+      "text": "Nvidia declined to comment. Powell, Jensen Huang, and a representative for Nvidia’s board did not reply to requests for comment. Alice Huang could not be reached for comment."
+    },
+    {
+      "source_block_index": 4,
+      "type": "paragraph",
+      "text": "Jensen Huang admitted to an affair in a November 8 statement following the reports of his relationship with Alice Huang, without referring to her by name."
+    },
+    {
+      "source_block_index": 5,
+      "type": "paragraph",
+      "text": "The former Nvidia CEO’s decision to resign from the company could disrupt the AI industry that he helped shape. Nvidia has used its financial strength to help create an industry ‌around ⁠AI through complex financial arrangements that ease the purchase of the company’s chips. It has backed cloud computing companies and AI labs in order to do so."
+    },
+    {
+      "source_block_index": 6,
+      "type": "paragraph",
+      "text": "Pressure on Jensen Huang, who is 63 and married, to resign mounted after reports of his affair with Alice Huang."
+    },
+    {
+      "source_block_index": 7,
+      "type": "paragraph",
+      "text": "Nvidia’s board ⁠appointed finance chief Colette Kress as interim CEO while it conducts a search to replace Jensen Huang. The board is considering internal and external candidates for the job."
+    },
+    {
+      "source_block_index": 8,
+      "type": "paragraph",
+      "text": "Earlier this month, Nvidia’s board ⁠launched a probe, led by independent directors with outside legal counsel, into whether Jensen Huang had been targeted by a foreign intelligence operation. It also expressed confidence ⁠in him at the time."
+    },
+    {
+      "source_block_index": 9,
+      "type": "paragraph",
+      "text": "Shares fell 5.5% on Thursday in active trading. The stock has shed more than 30% of its value since its early October peak."
+    }
+  ],
+  "cleaning_version": "truthlens-clean-v1",
+  "cleaned_at": "2026-11-13T14:31:11.582777+00:00",
+  "cleaning_issues": [],
+  "cleaning_status": "cleaned",
+  "content_hash_version": "sha256-headline-subheadline-body-v1",
+  "content_hash": "dcd4d8d6375d2e80f5a0f3000f2ab072f750b018a0e4cd950b9654c817f01d00",
+  "text_hash": "2fad85685563ed3c3bd6b74cd21b50ba1847a739188cb561af4f1a529777ab23",
+  "metadata_hash": "c1a029e908be8720382e5aa1f007a1ab63835da92de5ea58e16cbd6372ba105d",
+  "media_hash": "ba205dbd88c280f7fcb374782750c8d2fced41fef7d4ad3ad8581f10efac69fb",
+  "quality_hash": "b8df83551d01c6666f62539b00ca8b1811a94ed92bc0b0df16544df4ef1278c6",
+  "state_hash": "c4f0df8965b432cf42696ae7ae1ab403c4b147014aa89fb95cd3b7b1544e85ed",
+  "tracking_version": "truthlens-state-v1",
+  "change_status": "new",
+  "changed_fields": [],
+  "field_changes": {},
+  "body_diff": "",
+  "text_changed": null,
+  "text_reanalysis_required": true,
+  "version_number": 1,
+  "version_first_seen_at": "2026-11-13T14:31:11.575864+00:00",
+  "last_changed_at": "2026-11-13T14:31:11.575864+00:00",
+  "last_checked_at": "2026-11-13T14:31:11.575864+00:00",
+  "tracking_observation_count": 1,
+  "snapshot_saved": true,
+  "change_detection_scope": "extracted_text_metadata_media_references_and_quality"
+}
+]

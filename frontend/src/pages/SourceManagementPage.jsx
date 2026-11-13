@@ -11,6 +11,8 @@ import { Plus, Search, Edit2, Trash2, PauseCircle, PlayCircle, ExternalLink, Men
 // Adding an outlet needs a new spider in the crawler first, so Add Source stays disabled.
 const ADD_HINT = 'A new outlet needs a spider in the crawler first (Person A). Once it crawls, the outlet appears here by itself.';
 const CATEGORIES = ['General News', 'Business', 'Sports', 'Technology', 'Entertainment', 'Regional', 'Opinion'];
+const fmtDate = (iso) => new Date(iso).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+const fmtTime = (iso) => new Date(iso).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' });
 const fmtDateTime = (iso) => (iso ? new Date(iso).toLocaleString('en-GB', { day: 'numeric', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' }) : 'Never');
 const STATUS_STYLE = {
   Active: 'bg-green-100 dark:bg-green-500/10 text-green-700 dark:text-green-400 border border-green-200 dark:border-green-500/20',
@@ -159,48 +161,56 @@ const SourceManagementPage = () => {
               </div>
             </div>
 
-            <div className="overflow-x-auto">
-              <table className="w-full text-left border-collapse">
+            {/* Fixed column widths so the whole table fits the page on laptops and desktops (no sideways
+                scrolling). Category moves under the name below 1280 px; Last crawled hides on phones. */}
+            <div className="overflow-x-auto lg:overflow-x-visible">
+              <table className="w-full min-w-[640px] lg:min-w-0 table-fixed text-left border-collapse">
                 <thead>
                   <tr className="bg-red-50 dark:bg-[#1a0505] border-b border-red-200 dark:border-red-900/20 transition-colors">
-                    <th className="p-4 px-6 text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-widest">Source Name</th>
-                    <th className="p-4 px-6 text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-widest">Category</th>
-                    <th className="p-4 px-6 text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-widest">Status</th>
-                    <th className="p-4 px-6 text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-widest">Last Crawled</th>
-                    <th className="p-4 px-6 text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-widest">Articles</th>
-                    <th className="p-4 px-6 text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-widest text-right">Actions</th>
+                    <th className="py-4 px-4 text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider align-middle">Source Name</th>
+                    <th className="py-4 px-4 text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider align-middle w-[14%] hidden xl:table-cell">Category</th>
+                    <th className="py-4 px-4 text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider align-middle w-[136px]">Status</th>
+                    <th className="py-4 px-4 text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider align-middle w-[17%] hidden md:table-cell">Last Crawled</th>
+                    <th className="py-4 px-4 text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider align-middle w-[96px] text-right">Articles</th>
+                    <th className="py-4 px-4 text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider align-middle w-[140px] text-right">Actions</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-red-100 dark:divide-red-900/10">
                   {filteredSources.map(source => (
                     <tr key={source.id} className={`hover:bg-red-50 dark:hover:bg-red-950/20 transition-colors ${source.status === 'Removed' ? 'opacity-60' : ''}`}>
-                      <td className="p-4 px-6">
-                        <div className="flex items-center gap-4">
-                          <div className="w-10 h-10 rounded bg-white dark:bg-[#1a0505] border border-red-200 dark:border-red-900/30 flex items-center justify-center font-bold text-gray-600 dark:text-gray-300 text-xs shadow-inner">
+                      <td className="py-4 px-4">
+                        <div className="flex items-center gap-3 min-w-0">
+                          <div className="shrink-0 w-10 h-10 rounded bg-white dark:bg-[#1a0505] border border-red-200 dark:border-red-900/30 flex items-center justify-center font-bold text-gray-600 dark:text-gray-300 text-xs shadow-inner">
                             {source.name.substring(0, 2).toUpperCase()}
                           </div>
-                          <div>
-                            <p className="text-sm font-bold text-gray-900 dark:text-white mb-0.5">{source.name}</p>
-                            <a href={source.url} target="_blank" rel="noreferrer" className="text-[11px] text-[#D32F2F] hover:text-red-800 dark:text-red-400 dark:hover:text-red-300 transition-colors flex items-center gap-1 font-medium tracking-wide">
-                              {(source.url || '').replace(/^https?:\/\//, '')} <ExternalLink size={10} />
+                          <div className="min-w-0">
+                            <p className="text-sm font-bold text-gray-900 dark:text-white mb-0.5 truncate" title={source.name}>{source.name}</p>
+                            <a href={source.url} target="_blank" rel="noreferrer" title={source.url} className="text-[11px] text-[#D32F2F] hover:text-red-800 dark:text-red-400 dark:hover:text-red-300 transition-colors flex items-center gap-1 font-medium tracking-wide min-w-0">
+                              <span className="truncate">{(source.url || '').replace(/^https?:\/\//, '')}</span> <ExternalLink size={10} className="shrink-0" />
                             </a>
+                            <p className="xl:hidden text-[11px] text-gray-500 dark:text-gray-400 mt-0.5 truncate">{source.category}</p>
                           </div>
                         </div>
                       </td>
-                      <td className="p-4 px-6 text-sm text-gray-600 dark:text-gray-300 font-medium">{source.category}</td>
-                      <td className="p-4 px-6">
+                      <td className="py-4 px-4 text-sm text-gray-600 dark:text-gray-300 font-medium hidden xl:table-cell">{source.category}</td>
+                      <td className="py-4 px-4">
                         {(() => { const Icon = STATUS_ICON[source.status] || PlayCircle; return (
                           <span title={source.updatedBy ? `Changed by ${source.updatedBy}, ${fmtDateTime(source.updatedAt)}` : undefined} className={`inline-flex items-center px-2.5 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider ${STATUS_STYLE[source.status] || STATUS_STYLE.Active}`}>
                             <Icon size={12} className="mr-1.5" strokeWidth={2.5} /> {source.status}
                           </span>
                         ); })()}
                       </td>
-                      <td className="p-4 px-6">
-                        <span className="text-xs font-medium text-gray-600 dark:text-gray-300">{fmtDateTime(source.lastCrawled)}</span>
+                      <td className="py-4 px-4 hidden md:table-cell">
+                        {source.lastCrawled ? (
+                          <span className="block text-xs font-medium text-gray-600 dark:text-gray-300 leading-5">
+                            <span className="block whitespace-nowrap">{fmtDate(source.lastCrawled)}</span>
+                            <span className="block whitespace-nowrap text-gray-500 dark:text-gray-400">{fmtTime(source.lastCrawled)}</span>
+                          </span>
+                        ) : <span className="text-xs text-gray-500">Never</span>}
                       </td>
-                      <td className="p-4 px-6 text-sm text-gray-600 dark:text-gray-300 font-medium">{(source.articlesCount || 0).toLocaleString()}</td>
-                      <td className="p-4 px-6 text-right">
-                        <div className="flex items-center justify-end gap-2">
+                      <td className="py-4 px-4 text-sm text-gray-600 dark:text-gray-300 font-medium text-right tabular-nums">{(source.articlesCount || 0).toLocaleString()}</td>
+                      <td className="py-4 px-4 text-right">
+                        <div className="flex items-center justify-end gap-1">
                           <button onClick={() => setEditing({ name: source.name, url: source.url || '', category: source.category })} disabled={busy !== null} className={iconBtn} title="Edit homepage and category" aria-label={`Edit ${source.name}`}>
                             <Edit2 size={16} />
                           </button>

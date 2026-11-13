@@ -1,0 +1,114 @@
+{
+  "schema_version": "truthlens-run-v1",
+  "run_id": "20261113T145031Z_4ab6ddccf4984e0691c171af21a16045",
+  "source": "Dawn",
+  "spider": "dawn_sitemap",
+  "status": "completed_with_review_items",
+  "finish_reason": "finished",
+  "started_at": "2026-11-13T14:50:31.536622+00:00",
+  "finished_at": "2026-11-13T14:50:48.529843+00:00",
+  "duration_seconds": 16.993,
+  "log_file": "logs\\runs\\20261113T145031Z_4ab6ddccf4984e0691c171af21a16045.log",
+  "counts": {
+    "requests_total": 5,
+    "responses_total": 5,
+    "retry_attempts": 0,
+    "items_processed": 3,
+    "new_articles": 0,
+    "unchanged_articles": 0,
+    "updated_articles": 2,
+    "baselines_created": 0,
+    "processing_changes": 0,
+    "snapshots_inserted": 3,
+    "snapshots_skipped": 0,
+    "review_only_records": 1,
+    "records_with_review_flags": 3,
+    "stale_observations": 0,
+    "replayed_observations": 0,
+    "rejected_records": 0,
+    "failed_requests": 0,
+    "item_errors": 0,
+    "spider_errors": 0
+  },
+  "failed_requests": [],
+  "rejected_records": [],
+  "review_records": [
+    {
+      "article_key": "dawn:2044304",
+      "url": "https://www.dawn.com/news/2044304/us-treasurys-bessent-says-he-wont-be-cowed-by-death-threats",
+      "change_status": "media_changed",
+      "validation_issues": [
+        "missing_author"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2044310",
+      "url": "https://www.dawn.com/news/2044310/us-treasury-chief-says-federal-reserve-should-not-hike-rates-over-iran-war-energy-shock",
+      "change_status": "media_changed",
+      "validation_issues": [
+        "missing_author"
+      ],
+      "cleaning_issues": []
+    },
+    {
+      "article_key": "dawn:2044311",
+      "url": "https://www.dawn.com/news/2044311/see-satellite-image-appears-to-show-blazing-tanker-in-strait-of-hormuz",
+      "change_status": "needs_review",
+      "validation_issues": [
+        "missing_article_text",
+        "missing_author",
+        "tweet_text_missing"
+      ],
+      "cleaning_issues": [
+        "missing_content_blocks",
+        "empty_cleaned_text"
+      ]
+    }
+  ],
+  "item_errors": [],
+  "spider_errors": [],
+  "http_status_counts": {
+    "200": 5
+  },
+  "download_attempt_exceptions": {},
+  "scrapy_stats": {
+    "start_time": "2026-11-13 14:50:32.053679+00:00",
+    "log_count/INFO": 14,
+    "scheduler/enqueued/memory": 4,
+    "scheduler/enqueued": 4,
+    "scheduler/dequeued/memory": 4,
+    "scheduler/dequeued": 4,
+    "downloader/request_count": 5,
+    "downloader/request_method_count/GET": 5,
+    "downloader/request_bytes": 1473,
+    "downloader/response_count": 5,
+    "downloader/response_status_count/200": 5,
+    "downloader/response_bytes": 121568,
+    "httpcompression/response_bytes": 593150,
+    "httpcompression/response_count": 5,
+    "response_received_count": 5,
+    "robotstxt/response_count": 1,
+    "robotstxt/response_status_count/200": 1,
+    "robotstxt/request_count": 1,
+    "request_depth_max": 1,
+    "log_count/WARNING": 5,
+    "mongodb/snapshots_inserted": 3,
+    "mongodb/articles_media_changed": 2,
+    "item_scraped_count": 3,
+    "mongodb/snapshot_only": 1,
+    "elapsed_time_seconds": 16.485000000000582,
+    "finish_time": "2026-11-13 14:50:48.527918+00:00",
+    "finish_reason": "finished",
+    "responses_per_minute": 18.75,
+    "items_per_minute": 11.25
+  },
+  "notes": [
+    "requests_total includes robots.txt, listing pages, redirects, retries and article requests.",
+    "failed_requests lists terminal failures reported by the spider errback; retried attempts are separate.",
+    "review flags do not mean a record was dropped; review-only records are retained as snapshots.",
+    "updated_articles excludes new baselines and processing-method changes.",
+    "snapshots_inserted can include baselines and review records; it is not a count of article edits.",
+    "A running summary left behind after a forced termination is incomplete."
+  ]
+}

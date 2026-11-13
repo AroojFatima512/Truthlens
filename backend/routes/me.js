@@ -67,6 +67,8 @@ router.put('/privacy', wrap(async (req, res) => {
 
 // ---------------------------------------------------------------- history
 const HISTORY_TYPES = ['analysis', 'search', 'export'];
+const REPEAT_ARTICLE_MS = 30 * 60 * 1000;
+const REPEAT_SEARCH_MS = 2 * 60 * 1000;
 const KEEP_FIELDS = ['title', 'subtitle', 'source', 'articleId', 'originalDate', 'bias', 'match', 'results', 'sentiment'];
 const MAX_ITEMS = 500;
 
@@ -100,8 +102,25 @@ router.post('/history', wrap(async (req, res) => {
     .filter((it) => !(it.type === 'search' && privacy.pauseSearchHistory))
     .filter((it) => !(it.type === 'analysis' && privacy.pauseReadingHistory))
     .map((it) => cleanItem(it, req.user.id)).filter(Boolean);
-  if (allowed.length) await history().insertMany(allowed);
-  res.status(allowed.length ? 201 : 200).json({ saved: allowed.length, skipped: incoming.length - allowed.length });
+  // Opening the same article again within 30 minutes (or the page loading twice) moves its entry to
+  // the top instead of adding a duplicate; the same search within 2 minutes is kept once.
+  const fresh = [];
+  for (const it of allowed) {
+    const migrated = Array.isArray(req.body.items);
+    const windowMs = it.type === 'analysis' && it.articleId ? REPEAT_ARTICLE_MS : it.type === 'search' ? REPEAT_SEARCH_MS : 0;
+    if (!migrated && windowMs) {
+      const same = it.type === 'analysis' ? { articleId: it.articleId } : { title: it.title };
+      const prev = await history().findOne({ userId: req.user.id, type: it.type, ...same, createdAt: { $gt: new Date(Date.now() - windowMs) } });
+      if (prev) {
+        const { id, userId, ...fields } = it;
+        await history().updateOne({ id: prev.id }, { $set: fields });
+        continue;
+      }
+    }
+    fresh.push(it);
+  }
+  if (fresh.length) await history().insertMany(fresh);
+  res.status(allowed.length ? 201 : 200).json({ saved: allowed.length, added: fresh.length, skipped: incoming.length - allowed.length });
 }));
 
 router.delete('/history', wrap(async (req, res) => {

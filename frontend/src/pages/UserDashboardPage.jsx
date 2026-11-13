@@ -73,8 +73,11 @@ const UserDashboardPage = () => {
               <div className="bg-white dark:bg-[#111827] border border-gray-100 dark:border-gray-800 rounded-2xl p-3.5 shadow-sm transition-transform hover:scale-[1.02]">
                 <h3 className="text-[10px] font-semibold text-gray-500 dark:text-gray-400 mb-1.5 uppercase tracking-wider">Sources Monitored</h3>
                 <p className="text-xl font-bold text-gray-900 dark:text-white mb-2">{num(overview?.sources?.length)}</p>
-                <div className="flex items-center gap-1 text-xs font-medium text-emerald-500 bg-emerald-50 dark:bg-emerald-500/10 w-fit px-2 py-1 rounded-md truncate max-w-full">
-                  {overview?.sources?.map((x) => x.name).join(', ') || '–'}
+                {/* every outlet, wrapping onto a second line instead of being cut off */}
+                <div className="flex flex-wrap gap-1">
+                  {overview?.sources?.length ? overview.sources.map((x) => (
+                    <span key={x.name} className="whitespace-nowrap text-[11px] font-medium text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-500/10 px-1.5 py-0.5 rounded-md">{x.name}</span>
+                  )) : <span className="text-xs text-gray-400">–</span>}
                 </div>
               </div>
               {/* Card 3 */}

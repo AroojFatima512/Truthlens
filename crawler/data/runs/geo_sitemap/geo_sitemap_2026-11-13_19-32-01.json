@@ -1,0 +1,591 @@
+[
+{
+  "source": "Geo News",
+  "run_id": "20261113T143200Z_2704913c20a5498db6c2a2d8ed082f88",
+  "extraction_version": "geo-extract-v1",
+  "media_detection_scope": "URLs_and_extracted_metadata_not_media_bytes",
+  "article_id": "690959",
+  "article_key": "geo:690959",
+  "url": "https://www.geo.tv/latest/690959-islamabad-to-go-fully-cashless-by-december-31",
+  "http_status": 200,
+  "response_encoding": "utf-8",
+  "canonical_url": "https://www.geo.tv/latest/690959-islamabad-to-go-fully-cashless-by-december-31",
+  "canonical_url_source": "link[rel=canonical]",
+  "headline": "Islamabad to go fully cashless by December 31",
+  "subheadline": "State minister says all ICT and CDA departments to stop accepting cash payments after November 30",
+  "author": "Web Desk",
+  "author_parts": [
+    "Web Desk"
+  ],
+  "published_at": "2026-11-13T19:18:00+05:00",
+  "updated_at": "2026-11-13T19:18:46+05:00",
+  "timestamp_sources": {
+    "published_at": "meta[property='article:published_time']",
+    "updated_at": "meta[property='article:modified_time']"
+  },
+  "article_text": "The federal government has decided to make Islamabad the country’s first fully cashless city, with December 31 set as the deadline.\n\nChairing a meeting in the federal capital, Minister of State for Interior Talal Chaudhry said consultation and suggestions from all stakeholders are important for the successful implementation of the cashless Islamabad initiative.\n\nThe minister said no cash payments will be accepted at any department of Islamabad Capital Territory (ICT) or the Capital Development Authority (CDA) after November 30.\n\nHe said the government aims to bring all merchants in Islamabad into the cashless payment system by December 31. He said around 26,000 merchants in Islamabad have already been connected to the digital payment system.\n\nTalal Chaudhry said digital payment facilities will be provided at every level, from street vendors to major business centres.\n\nInternationally, the shift towards digital payments continues to reshape urban economies, although the pace of adoption varies across countries.\n\nNordic nations remain among the world's leading markets for digital payments, with Sweden reporting particularly low cash usage.\n\nMainland China, meanwhile, relies heavily on QR-based mobile payment platforms, particularly Alipay and WeChat Pay, which are widely used for everyday transactions.",
+  "content_blocks": [
+    {
+      "type": "paragraph",
+      "text": "The federal government has decided to make Islamabad the country’s first fully cashless city, with December 31 set as the deadline.",
+      "html": "<p>The federal government has decided to make Islamabad the country’s first fully cashless city, with December 31 set as the deadline.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Chairing a meeting in the federal capital, Minister of State for Interior Talal Chaudhry said consultation and suggestions from all stakeholders are important for the successful implementation of the cashless Islamabad initiative.",
+      "html": "<p>Chairing a meeting in the federal capital, Minister of State for Interior Talal Chaudhry said consultation and suggestions from all stakeholders are important for the successful implementation of the cashless Islamabad initiative.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "The minister said no cash payments will be accepted at any department of Islamabad Capital Territory (ICT) or the Capital Development Authority (CDA) after November 30.",
+      "html": "<p>The minister said no cash payments will be accepted at any department of Islamabad Capital Territory (ICT) or the Capital Development Authority (CDA) after November 30.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "He said the government aims to bring all merchants in Islamabad into the cashless payment system by December 31. He said around 26,000 merchants in Islamabad have already been connected to the digital payment system.",
+      "html": "<p>He said the government aims to bring all merchants in Islamabad into the cashless payment system by December 31. He said around 26,000 merchants in Islamabad have already been connected to the digital payment system.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Talal Chaudhry said digital payment facilities will be provided at every level, from street vendors to major business centres.",
+      "html": "<p>Talal Chaudhry said digital payment facilities will be provided at every level, from street vendors to major business centres.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Internationally, the shift towards digital payments continues to reshape urban economies, although the pace of adoption varies across countries.",
+      "html": "<p>Internationally, the shift towards digital payments continues to reshape urban economies, although the pace of adoption varies across countries.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Nordic nations remain among the world's leading markets for digital payments, with Sweden reporting particularly low cash usage.",
+      "html": "<p>Nordic nations remain among the world's leading markets for digital payments, with Sweden reporting particularly low cash usage. </p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Mainland China, meanwhile, relies heavily on QR-based mobile payment platforms, particularly Alipay and WeChat Pay, which are widely used for everyday transactions.",
+      "html": "<p>Mainland China, meanwhile, relies heavily on QR-based mobile payment platforms, particularly Alipay and WeChat Pay, which are widely used for everyday transactions.</p>"
+    }
+  ],
+  "article_html": "<div class=\"content-area\">\r\n                            <link rel=\"stylesheet\" href=\"https://www.geo.tv/assets/front/css/videojs/css/video-js.css?i=88888\" type=\"text/css\" media=\"all\">\r\n    <link rel=\"stylesheet\" href=\"https://www.geo.tv/assets/front/css/videojs/css/videojs.ads.css\" type=\"text/css\" media=\"all\">\r\n    <link rel=\"stylesheet\" href=\"https://www.geo.tv/assets/front/css/videojs/css/videojs.ima.css\" type=\"text/css\" media=\"all\">\r\n    <link rel=\"stylesheet\" href=\"https://www.geo.tv/assets/front/css/videojs/css/videojs.socialshare.css\" type=\"text/css\" media=\"all\">\r\n\r\n    <script src=\"https://imasdk.googleapis.com/js/sdkloader/ima3.js\"></script>\r\n    <script type=\"text/javascript\" src=\"https://www.geo.tv/assets/front/js/videojs/js/video.js\"></script>\r\n    <script type=\"text/javascript\" src=\"https://www.geo.tv/assets/front/js/videojs/js/videojs-contrib-hls.js\"></script>\r\n    <script type=\"text/javascript\" src=\"https://www.geo.tv/assets/front/js/videojs/js/videojs.ads.js\"></script>\r\n    <script type=\"text/javascript\" src=\"https://www.geo.tv/assets/front/js/videojs/js/videojs.ima.js\"></script>\r\n    <script type=\"text/javascript\" src=\"https://www.geo.tv/assets/front/js/videojs/js/videojs.socialshare.js?ver=1.1.4343\"></script>\r\n<div class=\"medium-insert-images ui-sortable\"><figure contenteditable=\"false\">\n    <img src=\"https://www.geo.tv/assets/uploads/updates/2026-11-13/690959_6337788_updates.jpg\" alt=\"A view of the Faisal Mosque in Islamabad on January 8, 2022. — INP\" width=\"700\" height=\"400\" class=\"\">\n\n<figcaption contenteditable=\"true\" class=\"\">A view of the Faisal Mosque in Islamabad on January 8, 2022. — INP</figcaption></figure></div><p>The federal government has decided to make Islamabad the country’s first fully cashless city, with December 31 set as the deadline.</p><p>Chairing a meeting in the federal capital, Minister of State for Interior Talal Chaudhry said consultation and suggestions from all stakeholders are important for the successful implementation of the cashless Islamabad initiative.</p><div class=\"medium-insert-embeds\" contenteditable=\"false\">\n\t<figure>\n\t\t<div class=\"medium-insert-embed\">\n\t\t\t<div class=\"embed_external_url tweetPost\" id=\"2121170991665549606\" style=\"width: 100%;height: 100%;\"><div class=\"twitter-tweet twitter-tweet-rendered\" style=\"display: flex; max-width: 550px; width: 100%; margin-top: 10px; margin-bottom: 10px;\"></div></div>\n\t\t</div>\n\t</figure>\n\t<div class=\"medium-insert-embeds-overlay\"></div>\n</div>\n<style>\r\n.ads_between_content{\r\n\theight:auto; \r\n\twidth:auto;\r\n\tclear: both;\r\n\ttext-align: center;\r\n}\r\n.ads_between_content .story_ads{\r\n\t\r\n}\r\n/*@media (max-width:600px){\r\n\t.ads_between_content{\r\n\t\tfloat:none;\r\n\t\tmargin:0px auto;\r\n\t\ttext-align: center;\r\n\t}\r\n}*/\r\n</style>\r\n<div class=\"ads_between_content\" style=\"min-width: 336px; min-height: 280px;margin:10px auto;\">\r\n\t\t<script async src=\"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7369466212570555\" crossorigin=\"anonymous\"></script>\r\n\t<!-- geo_post_mrec_top -->\r\n\t<ins class=\"adsbygoogle\" style=\"display:inline-block;width:300px;height:250px\" data-ad-client=\"ca-pub-7369466212570555\" data-ad-slot=\"3530359155\"></ins>\r\n\t<script>\r\n\t     (adsbygoogle = window.adsbygoogle || []).push({});\r\n\t</script>\r\n\t</div><p>The minister said no cash payments will be accepted at any department of Islamabad Capital Territory (ICT) or the Capital Development Authority (CDA) after November 30.</p><p>He said the government aims to bring all merchants in Islamabad into the cashless payment system by December 31. He said around 26,000 merchants in Islamabad have already been connected to the digital payment system.</p><p>Talal Chaudhry said digital payment facilities will be provided at every level, from street vendors to major business centres.</p><p>Internationally, the shift towards digital payments continues to reshape urban economies, although the pace of adoption varies across countries.</p><p>Nordic nations remain among the world's leading markets for digital payments, with Sweden reporting particularly low cash usage. </p><p>Mainland China, meanwhile, relies heavily on QR-based mobile payment platforms, particularly Alipay and WeChat Pay, which are widely used for everyday transactions.</p>\n                    </div>",
+  "image_url": "https://www.geo.tv/assets/uploads/updates/2026-11-13/690959_070342_updates.jpg",
+  "images": [
+    {
+      "url": "https://www.geo.tv/assets/uploads/updates/2026-11-13/690959_6337788_updates.jpg",
+      "alt_text": "A view of the Faisal Mosque in Islamabad on January 8, 2022. — INP",
+      "caption": "A view of the Faisal Mosque in Islamabad on January 8, 2022. — INP"
+    }
+  ],
+  "videos": [],
+  "tweets": [],
+  "tweet_embed_count": 0,
+  "embed_detection_scope": "downloaded_article_body_html_only",
+  "crawled_at": "2026-11-13T14:32:11.063990+00:00",
+  "discovered_from": "https://www.geo.tv/assets/uploads/google_news_latest.xml",
+  "processing_status": "cleaned",
+  "validation_issues": [],
+  "validation_status": "passed_basic_checks",
+  "section": "business",
+  "category": "business",
+  "cleaned_text": "The federal government has decided to make Islamabad the country’s first fully cashless city, with December 31 set as the deadline.\n\nChairing a meeting in the federal capital, Minister of State for Interior Talal Chaudhry said consultation and suggestions from all stakeholders are important for the successful implementation of the cashless Islamabad initiative.\n\nThe minister said no cash payments will be accepted at any department of Islamabad Capital Territory (ICT) or the Capital Development Authority (CDA) after November 30.\n\nHe said the government aims to bring all merchants in Islamabad into the cashless payment system by December 31. He said around 26,000 merchants in Islamabad have already been connected to the digital payment system.\n\nTalal Chaudhry said digital payment facilities will be provided at every level, from street vendors to major business centres.\n\nInternationally, the shift towards digital payments continues to reshape urban economies, although the pace of adoption varies across countries.\n\nNordic nations remain among the world's leading markets for digital payments, with Sweden reporting particularly low cash usage.\n\nMainland China, meanwhile, relies heavily on QR-based mobile payment platforms, particularly Alipay and WeChat Pay, which are widely used for everyday transactions.",
+  "cleaned_blocks": [
+    {
+      "source_block_index": 0,
+      "type": "paragraph",
+      "text": "The federal government has decided to make Islamabad the country’s first fully cashless city, with December 31 set as the deadline."
+    },
+    {
+      "source_block_index": 1,
+      "type": "paragraph",
+      "text": "Chairing a meeting in the federal capital, Minister of State for Interior Talal Chaudhry said consultation and suggestions from all stakeholders are important for the successful implementation of the cashless Islamabad initiative."
+    },
+    {
+      "source_block_index": 2,
+      "type": "paragraph",
+      "text": "The minister said no cash payments will be accepted at any department of Islamabad Capital Territory (ICT) or the Capital Development Authority (CDA) after November 30."
+    },
+    {
+      "source_block_index": 3,
+      "type": "paragraph",
+      "text": "He said the government aims to bring all merchants in Islamabad into the cashless payment system by December 31. He said around 26,000 merchants in Islamabad have already been connected to the digital payment system."
+    },
+    {
+      "source_block_index": 4,
+      "type": "paragraph",
+      "text": "Talal Chaudhry said digital payment facilities will be provided at every level, from street vendors to major business centres."
+    },
+    {
+      "source_block_index": 5,
+      "type": "paragraph",
+      "text": "Internationally, the shift towards digital payments continues to reshape urban economies, although the pace of adoption varies across countries."
+    },
+    {
+      "source_block_index": 6,
+      "type": "paragraph",
+      "text": "Nordic nations remain among the world's leading markets for digital payments, with Sweden reporting particularly low cash usage."
+    },
+    {
+      "source_block_index": 7,
+      "type": "paragraph",
+      "text": "Mainland China, meanwhile, relies heavily on QR-based mobile payment platforms, particularly Alipay and WeChat Pay, which are widely used for everyday transactions."
+    }
+  ],
+  "cleaning_version": "truthlens-clean-v1",
+  "cleaned_at": "2026-11-13T14:32:11.080473+00:00",
+  "cleaning_issues": [],
+  "cleaning_status": "cleaned",
+  "content_hash_version": "sha256-headline-subheadline-body-v1",
+  "content_hash": "bef2754366ab9437aae04e52210fb2020cc0be017af3084569dcdd7e9ba3fcdb",
+  "text_hash": "affef88f53d5ce8deb5233bbba2fcf2aeac4fe9f222fb842db02193e3cc73c93",
+  "metadata_hash": "d9b53f290deef1f4e34588f242b02f0362ac981ff44104bbb29e8cc9af831f33",
+  "media_hash": "19273ff49e99b50bbdaa48d19456c46e7435e2a33b950d7217edc509e4d633d4",
+  "quality_hash": "b8df83551d01c6666f62539b00ca8b1811a94ed92bc0b0df16544df4ef1278c6",
+  "state_hash": "9d2ca0ed751370dae6ed69b430e8e6626d9496b9ffde346dd6be4e62f0d93f1e",
+  "tracking_version": "truthlens-state-v1",
+  "change_status": "new",
+  "changed_fields": [],
+  "field_changes": {},
+  "body_diff": "",
+  "text_changed": null,
+  "text_reanalysis_required": true,
+  "version_number": 1,
+  "version_first_seen_at": "2026-11-13T14:32:11.063990+00:00",
+  "last_changed_at": "2026-11-13T14:32:11.063990+00:00",
+  "last_checked_at": "2026-11-13T14:32:11.063990+00:00",
+  "tracking_observation_count": 1,
+  "snapshot_saved": true,
+  "change_detection_scope": "extracted_text_metadata_media_references_and_quality"
+},
+{
+  "source": "Geo News",
+  "run_id": "20261113T143200Z_2704913c20a5498db6c2a2d8ed082f88",
+  "extraction_version": "geo-extract-v1",
+  "media_detection_scope": "URLs_and_extracted_metadata_not_media_bytes",
+  "article_id": "690962",
+  "article_key": "geo:690962",
+  "url": "https://www.geo.tv/latest/690962-usman-nurmagomedov-sentenced-to-six-months-in-prison-after-attacking-merab-dvalishvili",
+  "http_status": 200,
+  "response_encoding": "utf-8",
+  "canonical_url": "https://www.geo.tv/latest/690962-usman-nurmagomedov-sentenced-to-six-months-in-prison-after-attacking-merab-dvalishvili",
+  "canonical_url_source": "link[rel=canonical]",
+  "headline": "Usman Nurmagomedov sentenced to six months in prison after attacking Merab Dvalishvili",
+  "subheadline": "Khabib Nurmagomedov's cousin also faces hefty fine and deportation following Abu Dhabi hotel brawl",
+  "author": "Web Desk",
+  "author_parts": [
+    "Web Desk"
+  ],
+  "published_at": "2026-11-13T19:19:00+05:00",
+  "updated_at": "2026-11-13T19:19:29+05:00",
+  "timestamp_sources": {
+    "published_at": "meta[property='article:published_time']",
+    "updated_at": "meta[property='article:modified_time']"
+  },
+  "article_text": "Russian mixed martial arts (MMA) fighter Usman Nurmagomedov attacked the former UFC bantamweight champion Merab Dvalishvili and now the 28-year-old has reportedly been sentenced to six months in prison.\n\nThe videos of the incident went viral on social media and the people involved in the fight were arrested, including those who filmed the incident.\n\nThe Abu Dhabi Criminal Court on Friday, convicted 10 individuals involved in the altercation at a hotel on Yas Island.\n\nAccording to The National, six individuals were sentenced to six months in prison, fined 300,000 UAE dirhams (approximately $82,000) each and ordered to be deported after serving their sentences.\n\nInterestingly, two individuals who filmed and circulated footage of the incident received identical punishments for violating privacy laws.\n\nMeanwhile, Dvalishvili and his friend Saba Lazishvili were reportedly released from custody after being fined 50,000 dirhams each.\n\nWhy did Usman Nurmagomedov attack Merab Dvalishvili?\n\nThe Georgian fighter was giving an interview in the lobby of the Yas Hilton hotel on Wednesday when Nurmagomedov and his associates approached him from behind.\n\nFootage shows Nurmagomedov striking Dvalishvili, triggering a brawl that left the Georgian with a bloodied face.\n\nThe two camps have a history of animosity, with Dvalishvili having handed Usman's elder brother Umar Nurmagomedov his first professional MMA defeat at UFC 311 in January 2025.\n\nTension flared up again in July 2026 at a prior RAF event in Georgia, where Merab Dvalishvili slapped Akhmed Gadzhimagomedov, an associate of the Nurmagomedov camp.\n\nUsman was in Abu Dhabi to support Umar ahead of his wrestling match against former UFC fighter Urijah Faber.\n\nThe prison sentence could potentially derail the Russian fighter's much-anticipated move to the UFC.\n\nNurmagomedov, who completed his Professional Fighters League (PFL) contract earlier this year, boasts an undefeated professional MMA record of 22-0.",
+  "content_blocks": [
+    {
+      "type": "paragraph",
+      "text": "Russian mixed martial arts (MMA) fighter Usman Nurmagomedov attacked the former UFC bantamweight champion Merab Dvalishvili and now the 28-year-old has reportedly been sentenced to six months in prison.",
+      "html": "<p>Russian mixed martial arts (MMA) fighter Usman Nurmagomedov attacked the former UFC bantamweight champion Merab Dvalishvili and now the 28-year-old has reportedly been sentenced to six months in prison.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "The videos of the incident went viral on social media and the people involved in the fight were arrested, including those who filmed the incident.",
+      "html": "<p>The videos of the incident went viral on social media and the people involved in the fight were arrested, including those who filmed the incident.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "The Abu Dhabi Criminal Court on Friday, convicted 10 individuals involved in the altercation at a hotel on Yas Island.",
+      "html": "<p>The Abu Dhabi Criminal Court on Friday, convicted 10 individuals involved in the altercation at a hotel on Yas Island.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "According to The National, six individuals were sentenced to six months in prison, fined 300,000 UAE dirhams (approximately $82,000) each and ordered to be deported after serving their sentences.",
+      "html": "<p>According to <i>The National,</i> six individuals were sentenced to six months in prison, fined 300,000 UAE dirhams (approximately $82,000) each and ordered to be deported after serving their sentences.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Interestingly, two individuals who filmed and circulated footage of the incident received identical punishments for violating privacy laws.",
+      "html": "<p>Interestingly, two individuals who filmed and circulated footage of the incident received identical punishments for violating privacy laws.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Meanwhile, Dvalishvili and his friend Saba Lazishvili were reportedly released from custody after being fined 50,000 dirhams each.",
+      "html": "<p>Meanwhile, Dvalishvili and his friend Saba Lazishvili were reportedly released from custody after being fined 50,000 dirhams each.</p>"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Why did Usman Nurmagomedov attack Merab Dvalishvili?",
+      "html": "<h2><span style=\"font-weight: normal;\">Why did Usman Nurmagomedov attack Merab Dvalishvili?</span></h2>"
+    },
+    {
+      "type": "paragraph",
+      "text": "The Georgian fighter was giving an interview in the lobby of the Yas Hilton hotel on Wednesday when Nurmagomedov and his associates approached him from behind.",
+      "html": "<p>The Georgian fighter was giving an interview in the lobby of the Yas Hilton hotel on Wednesday when Nurmagomedov and his associates approached him from behind.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Footage shows Nurmagomedov striking Dvalishvili, triggering a brawl that left the Georgian with a bloodied face.",
+      "html": "<p><a href=\"https://www.geo.tv/latest/690697-ufc-star-merab-dvalishvili-left-bloodied-after-attack-by-usman-nurmagomedov-20-men\">Footage shows Nurmagomedov striking Dvalishvili</a>, triggering a brawl that left the Georgian with a bloodied face.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "The two camps have a history of animosity, with Dvalishvili having handed Usman's elder brother Umar Nurmagomedov his first professional MMA defeat at UFC 311 in January 2025.",
+      "html": "<p>The two camps have a history of animosity, with Dvalishvili having handed Usman's elder brother Umar Nurmagomedov his first professional MMA defeat at UFC 311 in January 2025.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Tension flared up again in July 2026 at a prior RAF event in Georgia, where Merab Dvalishvili slapped Akhmed Gadzhimagomedov, an associate of the Nurmagomedov camp.",
+      "html": "<p>Tension flared up again in July 2026 at a prior RAF event in Georgia, where Merab Dvalishvili slapped Akhmed Gadzhimagomedov, an associate of the Nurmagomedov camp.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Usman was in Abu Dhabi to support Umar ahead of his wrestling match against former UFC fighter Urijah Faber.",
+      "html": "<p>Usman was in Abu Dhabi to support Umar ahead of his wrestling match against former UFC fighter Urijah Faber.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "The prison sentence could potentially derail the Russian fighter's much-anticipated move to the UFC.",
+      "html": "<p>The prison sentence could potentially derail the Russian fighter's much-anticipated move to the UFC.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Nurmagomedov, who completed his Professional Fighters League (PFL) contract earlier this year, boasts an undefeated professional MMA record of 22-0.",
+      "html": "<p>Nurmagomedov, who completed his Professional Fighters League (PFL) contract earlier this year, boasts an undefeated professional MMA record of 22-0.</p>"
+    }
+  ],
+  "article_html": "<div class=\"content-area\">\r\n                        <div class=\"medium-insert-images ui-sortable medium-insert-active\"><figure contenteditable=\"false\">\n    <img src=\"https://www.geo.tv/assets/uploads/updates/2026-11-13/690962_2749041_updates.jpg\" alt=\"Usman Nurmagomedov sentenced to six months in prison after attacking Merab Dvalishvili\" width=\"700\" height=\"400\" class=\"\">\n\n<figcaption contenteditable=\"true\" class=\"\">Usman Nurmagomedov sentenced to six months in prison after attacking Merab Dvalishvili</figcaption></figure></div><p>Russian mixed martial arts (MMA) fighter Usman Nurmagomedov attacked the former UFC bantamweight champion Merab Dvalishvili and now the 28-year-old has reportedly been sentenced to six months in prison.</p><p>The videos of the incident went viral on social media and the people involved in the fight were arrested, including those who filmed the incident.</p><style>\r\n.ads_between_content{\r\n\theight:auto; \r\n\twidth:auto;\r\n\tclear: both;\r\n\ttext-align: center;\r\n}\r\n.ads_between_content .story_ads{\r\n\t\r\n}\r\n/*@media (max-width:600px){\r\n\t.ads_between_content{\r\n\t\tfloat:none;\r\n\t\tmargin:0px auto;\r\n\t\ttext-align: center;\r\n\t}\r\n}*/\r\n</style>\r\n<div class=\"ads_between_content\" style=\"min-width: 336px; min-height: 280px;margin:10px auto;\">\r\n\t\t<script async src=\"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7369466212570555\" crossorigin=\"anonymous\"></script>\r\n\t<!-- geo_post_mrec_top -->\r\n\t<ins class=\"adsbygoogle\" style=\"display:inline-block;width:300px;height:250px\" data-ad-client=\"ca-pub-7369466212570555\" data-ad-slot=\"3530359155\"></ins>\r\n\t<script>\r\n\t     (adsbygoogle = window.adsbygoogle || []).push({});\r\n\t</script>\r\n\t</div><p>The Abu Dhabi Criminal Court on Friday, convicted 10 individuals involved in the altercation at a hotel on Yas Island.</p><p>According to <i>The National,</i> six individuals were sentenced to six months in prison, fined 300,000 UAE dirhams (approximately $82,000) each and ordered to be deported after serving their sentences.</p><p>Interestingly, two individuals who filmed and circulated footage of the incident received identical punishments for violating privacy laws.</p><p>Meanwhile, Dvalishvili and his friend Saba Lazishvili were reportedly released from custody after being fined 50,000 dirhams each.</p><h2><span style=\"font-weight: normal;\">Why did Usman Nurmagomedov attack Merab Dvalishvili?</span></h2><p>The Georgian fighter was giving an interview in the lobby of the Yas Hilton hotel on Wednesday when Nurmagomedov and his associates approached him from behind.</p><p><a href=\"https://www.geo.tv/latest/690697-ufc-star-merab-dvalishvili-left-bloodied-after-attack-by-usman-nurmagomedov-20-men\">Footage shows Nurmagomedov striking Dvalishvili</a>, triggering a brawl that left the Georgian with a bloodied face.</p><p>The two camps have a history of animosity, with Dvalishvili having handed Usman's elder brother Umar Nurmagomedov his first professional MMA defeat at UFC 311 in January 2025.</p><p>Tension flared up again in July 2026 at a prior RAF event in Georgia, where Merab Dvalishvili slapped Akhmed Gadzhimagomedov, an associate of the Nurmagomedov camp.</p><p>Usman was in Abu Dhabi to support Umar ahead of his wrestling match against former UFC fighter Urijah Faber.</p><p>The prison sentence could potentially derail the Russian fighter's much-anticipated move to the UFC.</p><p>Nurmagomedov, who completed his Professional Fighters League (PFL) contract earlier this year, boasts an undefeated professional MMA record of 22-0.</p>                    </div>",
+  "image_url": "https://www.geo.tv/assets/uploads/updates/2026-11-13/690962_071928_updates.jpg",
+  "images": [
+    {
+      "url": "https://www.geo.tv/assets/uploads/updates/2026-11-13/690962_2749041_updates.jpg",
+      "alt_text": "Usman Nurmagomedov sentenced to six months in prison after attacking Merab Dvalishvili",
+      "caption": "Usman Nurmagomedov sentenced to six months in prison after attacking Merab Dvalishvili"
+    }
+  ],
+  "videos": [],
+  "tweets": [],
+  "tweet_embed_count": 0,
+  "embed_detection_scope": "downloaded_article_body_html_only",
+  "crawled_at": "2026-11-13T14:32:14.487509+00:00",
+  "discovered_from": "https://www.geo.tv/assets/uploads/google_news_latest.xml",
+  "processing_status": "cleaned",
+  "validation_issues": [],
+  "validation_status": "passed_basic_checks",
+  "section": "viral",
+  "category": "offbeat",
+  "cleaned_text": "Russian mixed martial arts (MMA) fighter Usman Nurmagomedov attacked the former UFC bantamweight champion Merab Dvalishvili and now the 28-year-old has reportedly been sentenced to six months in prison.\n\nThe videos of the incident went viral on social media and the people involved in the fight were arrested, including those who filmed the incident.\n\nThe Abu Dhabi Criminal Court on Friday, convicted 10 individuals involved in the altercation at a hotel on Yas Island.\n\nAccording to The National, six individuals were sentenced to six months in prison, fined 300,000 UAE dirhams (approximately $82,000) each and ordered to be deported after serving their sentences.\n\nInterestingly, two individuals who filmed and circulated footage of the incident received identical punishments for violating privacy laws.\n\nMeanwhile, Dvalishvili and his friend Saba Lazishvili were reportedly released from custody after being fined 50,000 dirhams each.\n\nWhy did Usman Nurmagomedov attack Merab Dvalishvili?\n\nThe Georgian fighter was giving an interview in the lobby of the Yas Hilton hotel on Wednesday when Nurmagomedov and his associates approached him from behind.\n\nFootage shows Nurmagomedov striking Dvalishvili, triggering a brawl that left the Georgian with a bloodied face.\n\nThe two camps have a history of animosity, with Dvalishvili having handed Usman's elder brother Umar Nurmagomedov his first professional MMA defeat at UFC 311 in January 2025.\n\nTension flared up again in July 2026 at a prior RAF event in Georgia, where Merab Dvalishvili slapped Akhmed Gadzhimagomedov, an associate of the Nurmagomedov camp.\n\nUsman was in Abu Dhabi to support Umar ahead of his wrestling match against former UFC fighter Urijah Faber.\n\nThe prison sentence could potentially derail the Russian fighter's much-anticipated move to the UFC.\n\nNurmagomedov, who completed his Professional Fighters League (PFL) contract earlier this year, boasts an undefeated professional MMA record of 22-0.",
+  "cleaned_blocks": [
+    {
+      "source_block_index": 0,
+      "type": "paragraph",
+      "text": "Russian mixed martial arts (MMA) fighter Usman Nurmagomedov attacked the former UFC bantamweight champion Merab Dvalishvili and now the 28-year-old has reportedly been sentenced to six months in prison."
+    },
+    {
+      "source_block_index": 1,
+      "type": "paragraph",
+      "text": "The videos of the incident went viral on social media and the people involved in the fight were arrested, including those who filmed the incident."
+    },
+    {
+      "source_block_index": 2,
+      "type": "paragraph",
+      "text": "The Abu Dhabi Criminal Court on Friday, convicted 10 individuals involved in the altercation at a hotel on Yas Island."
+    },
+    {
+      "source_block_index": 3,
+      "type": "paragraph",
+      "text": "According to The National, six individuals were sentenced to six months in prison, fined 300,000 UAE dirhams (approximately $82,000) each and ordered to be deported after serving their sentences."
+    },
+    {
+      "source_block_index": 4,
+      "type": "paragraph",
+      "text": "Interestingly, two individuals who filmed and circulated footage of the incident received identical punishments for violating privacy laws."
+    },
+    {
+      "source_block_index": 5,
+      "type": "paragraph",
+      "text": "Meanwhile, Dvalishvili and his friend Saba Lazishvili were reportedly released from custody after being fined 50,000 dirhams each."
+    },
+    {
+      "source_block_index": 6,
+      "type": "heading",
+      "text": "Why did Usman Nurmagomedov attack Merab Dvalishvili?"
+    },
+    {
+      "source_block_index": 7,
+      "type": "paragraph",
+      "text": "The Georgian fighter was giving an interview in the lobby of the Yas Hilton hotel on Wednesday when Nurmagomedov and his associates approached him from behind."
+    },
+    {
+      "source_block_index": 8,
+      "type": "paragraph",
+      "text": "Footage shows Nurmagomedov striking Dvalishvili, triggering a brawl that left the Georgian with a bloodied face."
+    },
+    {
+      "source_block_index": 9,
+      "type": "paragraph",
+      "text": "The two camps have a history of animosity, with Dvalishvili having handed Usman's elder brother Umar Nurmagomedov his first professional MMA defeat at UFC 311 in January 2025."
+    },
+    {
+      "source_block_index": 10,
+      "type": "paragraph",
+      "text": "Tension flared up again in July 2026 at a prior RAF event in Georgia, where Merab Dvalishvili slapped Akhmed Gadzhimagomedov, an associate of the Nurmagomedov camp."
+    },
+    {
+      "source_block_index": 11,
+      "type": "paragraph",
+      "text": "Usman was in Abu Dhabi to support Umar ahead of his wrestling match against former UFC fighter Urijah Faber."
+    },
+    {
+      "source_block_index": 12,
+      "type": "paragraph",
+      "text": "The prison sentence could potentially derail the Russian fighter's much-anticipated move to the UFC."
+    },
+    {
+      "source_block_index": 13,
+      "type": "paragraph",
+      "text": "Nurmagomedov, who completed his Professional Fighters League (PFL) contract earlier this year, boasts an undefeated professional MMA record of 22-0."
+    }
+  ],
+  "cleaning_version": "truthlens-clean-v1",
+  "cleaned_at": "2026-11-13T14:32:14.503934+00:00",
+  "cleaning_issues": [],
+  "cleaning_status": "cleaned",
+  "content_hash_version": "sha256-headline-subheadline-body-v1",
+  "content_hash": "5e804f615f83ed8aa3d1cd6b8a523a45a3fa800a18d8b0939e092dfa32ec1f13",
+  "text_hash": "d99b97607e06a5cb785e35876495fa8d73fbd14b7b0d8b11f599ea510cbe76e2",
+  "metadata_hash": "44b4b03c0e638975b9e0ad5f4098e223ed5a97abb60e01f863096ed11aef4cbf",
+  "media_hash": "71fc4d61e86dd1bbe628b052546785e115ef7c7763e57005ec6ca9b3392d1303",
+  "quality_hash": "b8df83551d01c6666f62539b00ca8b1811a94ed92bc0b0df16544df4ef1278c6",
+  "state_hash": "3563c5645c090a9ef0568d1d1a1cc2fe5d948e8cc89fb82ab4be9f5c1b94b6d7",
+  "tracking_version": "truthlens-state-v1",
+  "change_status": "new",
+  "changed_fields": [],
+  "field_changes": {},
+  "body_diff": "",
+  "text_changed": null,
+  "text_reanalysis_required": true,
+  "version_number": 1,
+  "version_first_seen_at": "2026-11-13T14:32:14.487509+00:00",
+  "last_changed_at": "2026-11-13T14:32:14.487509+00:00",
+  "last_checked_at": "2026-11-13T14:32:14.487509+00:00",
+  "tracking_observation_count": 1,
+  "snapshot_saved": true,
+  "change_detection_scope": "extracted_text_metadata_media_references_and_quality"
+},
+{
+  "source": "Geo News",
+  "run_id": "20261113T143200Z_2704913c20a5498db6c2a2d8ed082f88",
+  "extraction_version": "geo-extract-v1",
+  "media_detection_scope": "URLs_and_extracted_metadata_not_media_bytes",
+  "article_id": "690942",
+  "article_key": "geo:690942",
+  "url": "https://www.geo.tv/latest/690942-prince-william-shares-royal-christmas-treat-following-kates-carol-announcement",
+  "http_status": 200,
+  "response_encoding": "utf-8",
+  "canonical_url": "https://www.geo.tv/latest/690942-prince-william-shares-royal-christmas-treat-following-kates-carol-announcement",
+  "canonical_url_source": "link[rel=canonical]",
+  "headline": "Prince William shares royal Christmas treat following Kate's carol announcement",
+  "subheadline": "Princess Kate confirms date for sixth Together at Christmas carol service",
+  "author": "Web Desk",
+  "author_parts": [
+    "Web Desk"
+  ],
+  "published_at": "2026-11-13T19:28:00+05:00",
+  "updated_at": "2026-11-13T19:30:32+05:00",
+  "timestamp_sources": {
+    "published_at": "meta[property='article:published_time']",
+    "updated_at": "meta[property='article:modified_time']"
+  },
+  "article_text": "Prince William has shared a much-loved chocolate cake recipe with a touching link to Queen.\n\nPrincess Kate recently announced that she will host her sixth Together at Christmas service at Westminster Abbey on December 11, and William has offered a festive treat of his own by revealing the childhood favourite that became part of his wedding celebrations.\n\nThe Prince of Wales opened up about his affection for the classic chocolate biscuit cake in a feature for Country Life magazine, recalling how it became a familiar highlight of his visits to his grandmother.\n\n“I definitely have a sweet tooth and I love this recipe, which was dreamt up by my grandmother’s kitchen team,” William said.\n\nThe cake was served alongside the traditional fruit cake at his wedding reception to Catherine in 2011.\n\nHe remembered how afternoon tea with the late Queen often came with the hope that his favourite chocolate creation would be on the menu.\n\n“My grandmother got me into teatime with this cake being the perfect invitation,” he recalled.\n\n“Every time I’d go to have tea with her, I’d be hoping it would be served.”\n\nAlthough it was not offered on every visit, William said he was always delighted when it appeared, remembering the wonderful teas his grandmother would arrange.\n\nHe also told those occasions helped him develop a lasting appreciation for the British tradition of afternoon tea.\n\nThe cake itself has an impressive royal history.\n\nCreated with layers of Rich Tea biscuits held together by chocolate, the recipe was prepared on a grand scale for William and Catherine’s wedding reception at Buckingham Palace.\n\nThe three-tier creation was made to serve around 600 guests, with reports at the time describing it as a 40lb chocolate cake containing approximately 1,700 biscuits.\n\nIt was made by the Royal Family’s long-standing chocolate supplier, Barry Colenso.",
+  "content_blocks": [
+    {
+      "type": "paragraph",
+      "text": "Prince William has shared a much-loved chocolate cake recipe with a touching link to Queen.",
+      "html": "<p>Prince William has shared a much-loved chocolate cake recipe with a touching link to Queen.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Princess Kate recently announced that she will host her sixth Together at Christmas service at Westminster Abbey on December 11, and William has offered a festive treat of his own by revealing the childhood favourite that became part of his wedding celebrations.",
+      "html": "<p>Princess Kate recently announced that she will host her sixth Together at Christmas service at Westminster Abbey on December 11, and William has offered a festive treat of his own by revealing the childhood favourite that became part of his wedding celebrations.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "The Prince of Wales opened up about his affection for the classic chocolate biscuit cake in a feature for Country Life magazine, recalling how it became a familiar highlight of his visits to his grandmother.",
+      "html": "<p>The Prince of Wales opened up about his affection for the classic chocolate biscuit cake in a feature for Country Life magazine, recalling how it became a familiar highlight of his visits to his grandmother.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "“I definitely have a sweet tooth and I love this recipe, which was dreamt up by my grandmother’s kitchen team,” William said.",
+      "html": "<p>“I definitely have a sweet tooth and I love this recipe, which was dreamt up by my grandmother’s kitchen team,” William said. </p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "The cake was served alongside the traditional fruit cake at his wedding reception to Catherine in 2011.",
+      "html": "<p>The cake was served alongside the traditional fruit cake at his wedding reception to Catherine in 2011.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "He remembered how afternoon tea with the late Queen often came with the hope that his favourite chocolate creation would be on the menu.",
+      "html": "<p>He remembered how afternoon tea with the late Queen often came with the hope that his favourite chocolate creation would be on the menu.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "“My grandmother got me into teatime with this cake being the perfect invitation,” he recalled.",
+      "html": "<p>“My grandmother got me into teatime with this cake being the perfect invitation,” he recalled. </p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "“Every time I’d go to have tea with her, I’d be hoping it would be served.”",
+      "html": "<p>“Every time I’d go to have tea with her, I’d be hoping it would be served.”</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Although it was not offered on every visit, William said he was always delighted when it appeared, remembering the wonderful teas his grandmother would arrange.",
+      "html": "<p>Although it was not offered on every visit, William said he was always delighted when it appeared, remembering the wonderful teas his grandmother would arrange.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "He also told those occasions helped him develop a lasting appreciation for the British tradition of afternoon tea.",
+      "html": "<p>He also told those occasions helped him develop a lasting appreciation for the British tradition of afternoon tea.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "The cake itself has an impressive royal history.",
+      "html": "<p>The cake itself has an impressive royal history. </p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Created with layers of Rich Tea biscuits held together by chocolate, the recipe was prepared on a grand scale for William and Catherine’s wedding reception at Buckingham Palace.",
+      "html": "<p>Created with layers of Rich Tea biscuits held together by chocolate, the recipe was prepared on a grand scale for William and Catherine’s wedding reception at Buckingham Palace.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "The three-tier creation was made to serve around 600 guests, with reports at the time describing it as a 40lb chocolate cake containing approximately 1,700 biscuits.",
+      "html": "<p>The three-tier creation was made to serve around 600 guests, with reports at the time describing it as a 40lb chocolate cake containing approximately 1,700 biscuits.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "It was made by the Royal Family’s long-standing chocolate supplier, Barry Colenso.",
+      "html": "<p>It was made by the Royal Family’s long-standing chocolate supplier, Barry Colenso.</p>"
+    }
+  ],
+  "article_html": "<div class=\"content-area\">\r\n                        <div class=\"medium-insert-images ui-sortable\"><figure contenteditable=\"false\">\n    <img src=\"https://www.geo.tv/assets/uploads/updates/2026-11-13/690942_8814460_updates.jpg\" alt=\"Prince William shares royal Christmas treat following Kates carol announcement\" width=\"700\" height=\"400\">\n\n</figure></div><p>Prince William has shared a much-loved chocolate cake recipe with a touching link to Queen.</p><p>Princess Kate recently announced that she will host her sixth Together at Christmas service at Westminster Abbey on December 11, and William has offered a festive treat of his own by revealing the childhood favourite that became part of his wedding celebrations.</p><style>\r\n.ads_between_content{\r\n\theight:auto; \r\n\twidth:auto;\r\n\tclear: both;\r\n\ttext-align: center;\r\n}\r\n.ads_between_content .story_ads{\r\n\t\r\n}\r\n/*@media (max-width:600px){\r\n\t.ads_between_content{\r\n\t\tfloat:none;\r\n\t\tmargin:0px auto;\r\n\t\ttext-align: center;\r\n\t}\r\n}*/\r\n</style>\r\n<div class=\"ads_between_content\" style=\"min-width: 336px; min-height: 280px;margin:10px auto;\">\r\n\t\t<script async src=\"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7369466212570555\" crossorigin=\"anonymous\"></script>\r\n\t<!-- geo_post_mrec_top -->\r\n\t<ins class=\"adsbygoogle\" style=\"display:inline-block;width:300px;height:250px\" data-ad-client=\"ca-pub-7369466212570555\" data-ad-slot=\"3530359155\"></ins>\r\n\t<script>\r\n\t     (adsbygoogle = window.adsbygoogle || []).push({});\r\n\t</script>\r\n\t</div><p>The Prince of Wales opened up about his affection for the classic chocolate biscuit cake in a feature for Country Life magazine, recalling how it became a familiar highlight of his visits to his grandmother.</p><p>“I definitely have a sweet tooth and I love this recipe, which was dreamt up by my grandmother’s kitchen team,” William said. </p><p>The cake was served alongside the traditional fruit cake at his wedding reception to Catherine in 2011.</p><p>He remembered how afternoon tea with the late Queen often came with the hope that his favourite chocolate creation would be on the menu.</p><p>“My grandmother got me into teatime with this cake being the perfect invitation,” he recalled. </p><p>“Every time I’d go to have tea with her, I’d be hoping it would be served.”</p><p>Although it was not offered on every visit, William said he was always delighted when it appeared, remembering the wonderful teas his grandmother would arrange.</p><p>He also told those occasions helped him develop a lasting appreciation for the British tradition of afternoon tea.</p><p>The cake itself has an impressive royal history. </p><p>Created with layers of Rich Tea biscuits held together by chocolate, the recipe was prepared on a grand scale for William and Catherine’s wedding reception at Buckingham Palace.</p><p>The three-tier creation was made to serve around 600 guests, with reports at the time describing it as a 40lb chocolate cake containing approximately 1,700 biscuits.</p><p>It was made by the Royal Family’s long-standing chocolate supplier, Barry Colenso.</p>                    </div>",
+  "image_url": "https://www.geo.tv/assets/uploads/updates/2026-11-13/690942_052419_updates.jpg",
+  "images": [
+    {
+      "url": "https://www.geo.tv/assets/uploads/updates/2026-11-13/690942_8814460_updates.jpg",
+      "alt_text": "Prince William shares royal Christmas treat following Kates carol announcement",
+      "caption": null
+    }
+  ],
+  "videos": [],
+  "tweets": [],
+  "tweet_embed_count": 0,
+  "embed_detection_scope": "downloaded_article_body_html_only",
+  "crawled_at": "2026-11-13T14:32:17.870441+00:00",
+  "discovered_from": "https://www.geo.tv/assets/uploads/google_news_latest.xml",
+  "processing_status": "cleaned",
+  "validation_issues": [],
+  "validation_status": "passed_basic_checks",
+  "section": "royals",
+  "category": "entertainment",
+  "cleaned_text": "Prince William has shared a much-loved chocolate cake recipe with a touching link to Queen.\n\nPrincess Kate recently announced that she will host her sixth Together at Christmas service at Westminster Abbey on December 11, and William has offered a festive treat of his own by revealing the childhood favourite that became part of his wedding celebrations.\n\nThe Prince of Wales opened up about his affection for the classic chocolate biscuit cake in a feature for Country Life magazine, recalling how it became a familiar highlight of his visits to his grandmother.\n\n“I definitely have a sweet tooth and I love this recipe, which was dreamt up by my grandmother’s kitchen team,” William said.\n\nThe cake was served alongside the traditional fruit cake at his wedding reception to Catherine in 2011.\n\nHe remembered how afternoon tea with the late Queen often came with the hope that his favourite chocolate creation would be on the menu.\n\n“My grandmother got me into teatime with this cake being the perfect invitation,” he recalled.\n\n“Every time I’d go to have tea with her, I’d be hoping it would be served.”\n\nAlthough it was not offered on every visit, William said he was always delighted when it appeared, remembering the wonderful teas his grandmother would arrange.\n\nHe also told those occasions helped him develop a lasting appreciation for the British tradition of afternoon tea.\n\nThe cake itself has an impressive royal history.\n\nCreated with layers of Rich Tea biscuits held together by chocolate, the recipe was prepared on a grand scale for William and Catherine’s wedding reception at Buckingham Palace.\n\nThe three-tier creation was made to serve around 600 guests, with reports at the time describing it as a 40lb chocolate cake containing approximately 1,700 biscuits.\n\nIt was made by the Royal Family’s long-standing chocolate supplier, Barry Colenso.",
+  "cleaned_blocks": [
+    {
+      "source_block_index": 0,
+      "type": "paragraph",
+      "text": "Prince William has shared a much-loved chocolate cake recipe with a touching link to Queen."
+    },
+    {
+      "source_block_index": 1,
+      "type": "paragraph",
+      "text": "Princess Kate recently announced that she will host her sixth Together at Christmas service at Westminster Abbey on December 11, and William has offered a festive treat of his own by revealing the childhood favourite that became part of his wedding celebrations."
+    },
+    {
+      "source_block_index": 2,
+      "type": "paragraph",
+      "text": "The Prince of Wales opened up about his affection for the classic chocolate biscuit cake in a feature for Country Life magazine, recalling how it became a familiar highlight of his visits to his grandmother."
+    },
+    {
+      "source_block_index": 3,
+      "type": "paragraph",
+      "text": "“I definitely have a sweet tooth and I love this recipe, which was dreamt up by my grandmother’s kitchen team,” William said."
+    },
+    {
+      "source_block_index": 4,
+      "type": "paragraph",
+      "text": "The cake was served alongside the traditional fruit cake at his wedding reception to Catherine in 2011."
+    },
+    {
+      "source_block_index": 5,
+      "type": "paragraph",
+      "text": "He remembered how afternoon tea with the late Queen often came with the hope that his favourite chocolate creation would be on the menu."
+    },
+    {
+      "source_block_index": 6,
+      "type": "paragraph",
+      "text": "“My grandmother got me into teatime with this cake being the perfect invitation,” he recalled."
+    },
+    {
+      "source_block_index": 7,
+      "type": "paragraph",
+      "text": "“Every time I’d go to have tea with her, I’d be hoping it would be served.”"
+    },
+    {
+      "source_block_index": 8,
+      "type": "paragraph",
+      "text": "Although it was not offered on every visit, William said he was always delighted when it appeared, remembering the wonderful teas his grandmother would arrange."
+    },
+    {
+      "source_block_index": 9,
+      "type": "paragraph",
+      "text": "He also told those occasions helped him develop a lasting appreciation for the British tradition of afternoon tea."
+    },
+    {
+      "source_block_index": 10,
+      "type": "paragraph",
+      "text": "The cake itself has an impressive royal history."
+    },
+    {
+      "source_block_index": 11,
+      "type": "paragraph",
+      "text": "Created with layers of Rich Tea biscuits held together by chocolate, the recipe was prepared on a grand scale for William and Catherine’s wedding reception at Buckingham Palace."
+    },
+    {
+      "source_block_index": 12,
+      "type": "paragraph",
+      "text": "The three-tier creation was made to serve around 600 guests, with reports at the time describing it as a 40lb chocolate cake containing approximately 1,700 biscuits."
+    },
+    {
+      "source_block_index": 13,
+      "type": "paragraph",
+      "text": "It was made by the Royal Family’s long-standing chocolate supplier, Barry Colenso."
+    }
+  ],
+  "cleaning_version": "truthlens-clean-v1",
+  "cleaned_at": "2026-11-13T14:32:17.891434+00:00",
+  "cleaning_issues": [],
+  "cleaning_status": "cleaned",
+  "content_hash_version": "sha256-headline-subheadline-body-v1",
+  "content_hash": "08386f4901d79d8ec5df16ee8db13026a45d112e7e1a0ca3dac60a16ec823b47",
+  "text_hash": "c84fb636ed898d6ae568ba842d1bda35928e6f8cbea2cf35351336733e07f32f",
+  "metadata_hash": "5add942e00b2aee9714b891e81a6898fafa52ba156a53bba2559c9eb66a70e4e",
+  "media_hash": "52378b15f1a4290c27bae5218f4f63918695300a62f1086c03b817bd4e700345",
+  "quality_hash": "b8df83551d01c6666f62539b00ca8b1811a94ed92bc0b0df16544df4ef1278c6",
+  "state_hash": "9174753c70dc52a3fcb83a508c9935d16ebaadcbbcef73d0397c6565b92f0ed0",
+  "tracking_version": "truthlens-state-v1",
+  "change_status": "new",
+  "changed_fields": [],
+  "field_changes": {},
+  "body_diff": "",
+  "text_changed": null,
+  "text_reanalysis_required": true,
+  "version_number": 1,
+  "version_first_seen_at": "2026-11-13T14:32:17.870441+00:00",
+  "last_changed_at": "2026-11-13T14:32:17.870441+00:00",
+  "last_checked_at": "2026-11-13T14:32:17.870441+00:00",
+  "tracking_observation_count": 1,
+  "snapshot_saved": true,
+  "change_detection_scope": "extracted_text_metadata_media_references_and_quality"
+}
+]

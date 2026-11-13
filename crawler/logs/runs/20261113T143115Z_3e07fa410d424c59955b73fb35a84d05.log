@@ -1,0 +1,96 @@
+2026-11-13 19:31:15,283 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.logcount.LogCount',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.remote_control.RemoteControl',
+ 'truthlens.run_reporting.RunReportingExtension']
+2026-11-13 19:31:15,286 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'truthlens',
+ 'CONCURRENT_REQUESTS': 1,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 1,
+ 'DOWNLOAD_DELAY': 3,
+ 'DOWNLOAD_TIMEOUT': 30,
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'FEED_EXPORT_INDENT': 2,
+ 'LOG_LEVEL': 'INFO',
+ 'NEWSPIDER_MODULE': 'truthlens.spiders',
+ 'ROBOTSTXT_OBEY': True,
+ 'SPIDER_MODULES': ['truthlens.spiders'],
+ 'USER_AGENT': 'TruthLensResearchBot/0.1'}
+2026-11-13 19:31:16,084 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2026-11-13 19:31:16,095 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.start.StartSpiderMiddleware',
+ 'scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware',
+ 'scrapy.spidermiddlewares.metacopy.MetaCopyDetectionMiddleware']
+2026-11-13 19:31:16,366 [scrapy.middleware] INFO: Enabled item pipelines:
+['truthlens.pipelines.CleaningPipeline',
+ 'truthlens.pipelines.MongoDBPipeline',
+ 'truthlens.export.RunJsonExportPipeline']
+2026-11-13 19:31:16,367 [scrapy.core.engine] INFO: Spider opened
+2026-11-13 19:31:16,434 [truthlens.pipelines] INFO: MongoDB connected: database=truthlens
+2026-11-13 19:31:16,438 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2026-11-13 19:31:16,442 [truthlens.run_reporting] INFO: Run started: 20261113T143115Z_3e07fa410d424c59955b73fb35a84d05 | source=Dawn
+2026-11-13 19:31:16,447 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2026-11-13 19:31:16,457 [scrapy.extensions.remote_control] INFO: Remote control HTTP server listening on port 59994 (job 12384-d8d57a6f178a476fa618018a1e66dbfe)
+2026-11-13 19:31:19,933 [dawn_sitemap] INFO: Sitemap: selected 3 article URLs.
+2026-11-13 19:31:24,415 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2044280/cop-has-a-guest-list-problem | images=10 | videos=0
+2026-11-13 19:31:24,441 [truthlens.pipelines] INFO: Cleaned article: dawn:2044280 | characters=8725 | hash=78c2b356c8cf
+2026-11-13 19:31:24,474 [truthlens.pipelines] INFO: MongoDB new: dawn:2044280 | version=1 | fields=none
+2026-11-13 19:31:28,271 [dawn_sitemap] WARNING: Validation issues: https://www.dawn.com/news/2044304/us-treasurys-bessent-says-he-wont-be-cowed-by-death-threats | missing_author
+2026-11-13 19:31:28,271 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2044304/us-treasurys-bessent-says-he-wont-be-cowed-by-death-threats | images=0 | videos=0
+2026-11-13 19:31:28,276 [truthlens.pipelines] INFO: Cleaned article: dawn:2044304 | characters=358 | hash=7089b81d0032
+2026-11-13 19:31:28,295 [truthlens.pipelines] INFO: MongoDB new: dawn:2044304 | version=1 | fields=none
+2026-11-13 19:31:31,753 [dawn_sitemap] WARNING: Validation issues: https://www.dawn.com/news/2044310/us-treasury-chief-says-federal-reserve-should-not-hike-rates-over-iran-war-energy-shock | missing_author
+2026-11-13 19:31:31,758 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2044310/us-treasury-chief-says-federal-reserve-should-not-hike-rates-over-iran-war-energy-shock | images=0 | videos=0
+2026-11-13 19:31:31,819 [truthlens.pipelines] INFO: Cleaned article: dawn:2044310 | characters=1115 | hash=c9e8b7d5f9d7
+2026-11-13 19:31:31,938 [truthlens.pipelines] INFO: MongoDB new: dawn:2044310 | version=1 | fields=none
+2026-11-13 19:31:31,944 [scrapy.core.engine] INFO: Closing spider (finished)
+2026-11-13 19:31:31,945 [truthlens.export] INFO: Run JSON saved: data\runs\dawn_sitemap\dawn_sitemap_2026-11-13_19-31-16.json | items=3
+2026-11-13 19:31:31,966 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 1431,
+ 'downloader/request_count': 5,
+ 'downloader/request_method_count/GET': 5,
+ 'downloader/response_bytes': 110250,
+ 'downloader/response_count': 5,
+ 'downloader/response_status_count/200': 5,
+ 'elapsed_time_seconds': 15.53099999999904,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2026, 11, 13, 14, 31, 31, 964665, tzinfo=datetime.timezone.utc),
+ 'httpcompression/response_bytes': 502793,
+ 'httpcompression/response_count': 5,
+ 'item_scraped_count': 3,
+ 'items_per_minute': 12.0,
+ 'log_count/INFO': 16,
+ 'log_count/WARNING': 2,
+ 'mongodb/articles_new': 3,
+ 'mongodb/snapshots_inserted': 3,
+ 'request_depth_max': 1,
+ 'response_received_count': 5,
+ 'responses_per_minute': 20.0,
+ 'robotstxt/request_count': 1,
+ 'robotstxt/response_count': 1,
+ 'robotstxt/response_status_count/200': 1,
+ 'scheduler/dequeued': 4,
+ 'scheduler/dequeued/memory': 4,
+ 'scheduler/enqueued': 4,
+ 'scheduler/enqueued/memory': 4,
+ 'start_time': datetime.datetime(2026, 11, 13, 14, 31, 16, 437560, tzinfo=datetime.timezone.utc)}
+2026-11-13 19:31:31,966 [scrapy.core.engine] INFO: Spider closed (finished)
+2026-11-13 19:31:31,971 [truthlens.run_reporting] INFO: Run summary saved: logs\runs\20261113T143115Z_3e07fa410d424c59955b73fb35a84d05.json | status=completed_with_review_items

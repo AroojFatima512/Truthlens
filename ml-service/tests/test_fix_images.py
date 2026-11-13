@@ -105,3 +105,23 @@ def test_undo_puts_original_pictures_back(monkeypatch):
     assert all(got[f"nation:{i}"]["image_url"] == LOGO and "image_fixed_by" not in got[f"nation:{i}"] for i in range(6))
     assert got["dawn:1"]["image_url"] == "https://d.com/p.jpg"
     assert db.image_placeholders.count_documents({}) == 0
+
+
+def test_second_run_does_not_parse_pages_already_searched(monkeypatch):
+    mongomock = pytest.importorskip("mongomock")
+    client = mongomock.MongoClient()
+    db = client.truthlens
+    for i in range(6):                                   # logo, no photo of their own
+        db.articles.insert_one({"article_key": f"nation:{i}", "source": "The Nation", "url": f"https://n.pk/{i}",
+                                "image_url": LOGO, "raw_html": page(""), "images": [], "content_hash": f"h{i}"})
+    calls = []
+    real_parse = fx.parse
+    monkeypatch.setattr(fx, "parse", lambda html: calls.append(1) or real_parse(html))
+    got = run(monkeypatch, client)
+    assert len(calls) == 6 and all(got[f"nation:{i}"]["image_fixed_by"] == fx.NO_PHOTO for i in range(6))
+    calls.clear()
+    run(monkeypatch, client)
+    assert calls == []                                   # nothing changed: no page parsed again
+    db.articles.update_one({"article_key": "nation:2"}, {"$set": {"content_hash": "new", "images": [{"url": "https://n.pk/p/2.jpg"}]}})
+    got = run(monkeypatch, client)
+    assert len(calls) == 1 and got["nation:2"]["image_url"] == "https://n.pk/p/2.jpg"   # edited article searched again

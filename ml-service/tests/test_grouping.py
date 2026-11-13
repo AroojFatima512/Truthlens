@@ -90,3 +90,17 @@ def test_opinion_piece_does_not_join_a_news_story_but_shares_its_topic(monkeypat
     groups, reps, link, blocked, topics = compare.group_stories(arts, threshold=0.60, details=True)
     assert sorted(map(sorted, groups)) == [["a0", "a1"], ["a2", "a3"]]    # news story; editorials compared together
     assert sorted(map(sorted, topics)) == [["a0", "a1", "a2", "a3"]]
+
+
+def test_editorial_filed_as_news_is_still_kept_out_and_loose_opinion_pairs_split(monkeypatch):
+    # a2: a Dawn editorial the crawler filed as "news" (print edition), recognised by its byline;
+    # a3/a4: two opinion pieces on "the economy" at 0.66 - a broad theme, not one event
+    sim = matrix(5, {(0, 1): 0.9, (0, 2): 0.85, (1, 2): 0.84, (3, 4): 0.66})
+    monkeypatch.setattr(compare.models, "embed", lambda texts: FakeEmb(sim))
+    monkeypatch.setattr(compare.places, "keys_for", lambda texts: [(set(), set())] * len(texts))
+    monkeypatch.setattr(compare, "split_sentences", lambda body: [body])
+    extra = [{}, {}, {"category": "news", "author": "Editorial"}, {"opinion": True}, {"url": "https://n.pk/opinion/x"}]
+    arts = [{"id": f"a{i}", "source": s, "title": "t", "body": "b", "published_at": "2026-10-31T10:00:00+05:00", **e}
+            for i, (s, e) in enumerate(zip(["Geo", "Aaj", "Dawn", "Express Tribune", "The Nation"], extra))]
+    groups = compare.group_stories(arts, threshold=0.60, details=True)[0]
+    assert sorted(map(sorted, groups)) == [["a0", "a1"], ["a2"], ["a3"], ["a4"]]

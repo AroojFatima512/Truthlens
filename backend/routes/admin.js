@@ -6,6 +6,7 @@ const { toSource, iso } = require('../adapters/toFrontend');
 const { invalidate } = require('../lib/articleIndex');
 const sourceSettings = require('../lib/sourceSettings');
 const crawler = require('../lib/crawler');
+const userActivity = require('../lib/userActivity');
 const crawlSchedule = require('../lib/crawlSchedule');
 
 const router = express.Router();
@@ -46,14 +47,21 @@ async function listSources(db) {
 // GET /api/admin/stats  -> same keys as adminService.fetchStats() mock
 router.get('/stats', async (req, res) => {
   const db = getDb();
-  const [totalArticles, totalUsers, pendingFeedback, sources] = await Promise.all([
+  const [totalArticles, accounts, pendingFeedback, sources] = await Promise.all([
     db.collection('articles').countDocuments({ analysis: { $exists: true } }),
-    db.collection('users').countDocuments({}),
+    db.collection('users').find({}, { projection: { role: 1, emailVerified: 1, invitedAt: 1, passwordHash: 1, googleId: 1 } }).toArray(),
     db.collection('feedback').countDocuments({ status: { $ne: 'resolved' } }),
     db.collection('articles').distinct('source'),
   ]);
   await sourceSettings.refresh();
-  res.json({ totalArticles, activeSources: sources.filter((s) => s && sourceSettings.statusOf(s) === 'active').length, totalUsers, pendingFeedback });
+  // "Registered users" = confirmed accounts only; sign-ups awaiting e-mail verification and unanswered
+  // invitations are reported separately
+  const totalUsers = accounts.filter(userActivity.isConfirmed).length;
+  res.json({
+    totalArticles, activeSources: sources.filter((s) => s && sourceSettings.statusOf(s) === 'active').length,
+    totalUsers, unverifiedUsers: accounts.filter(userActivity.isUnverified).length,
+    invitedUsers: accounts.filter(userActivity.isInvitePending).length, pendingFeedback,
+  });
 });
 
 // GET /api/admin/sources  -> same shape as mockSources
@@ -123,11 +131,27 @@ router.post('/users/:id/invite', async (req, res) => {
 // GET /api/admin/users  -> never sends passwords or 2FA secrets
 router.get('/users', async (req, res) => {
   const users = await getDb().collection('users').find({}, { projection: { password: 0, twoFASecret: 0 } }).toArray();
-  res.json(users.map(({ _id, passwordHash, googleId, failedLogins, lastFailedLoginAt, ...u }) => ({
-    id: String(_id), ...u,
-    invitePending: Boolean(u.invitedAt) && !passwordHash && !googleId,          // added by an admin, no password chosen yet
-    locked: Boolean(u.lockedUntil && new Date(u.lockedUntil) > new Date()),     // too many wrong passwords (UC-5)
-  })));
+  res.json(users.map((full) => {
+    const { _id, passwordHash, googleId, failedLogins, lastFailedLoginAt, ...u } = full;
+    return {
+      id: String(_id), ...u,
+      invitePending: userActivity.isInvitePending(full),                          // added by an admin, no password chosen yet
+      locked: Boolean(u.lockedUntil && new Date(u.lockedUntil) > new Date()),     // too many wrong passwords (UC-5)
+      activity: userActivity.activityOf(full),                                   // online / active / inactive / unverified / ...
+    };
+  }));
+});
+
+// POST /api/admin/users/:id/verification  -> send the sign-up verification e-mail again
+router.post('/users/:id/verification', async (req, res) => {
+  try {
+    const r = await require('./auth').resendVerificationFor(req.params.id);
+    if (r.error) return res.status(r.status).json({ message: r.error });
+    res.json({ sent: true });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: 'Server error' });
+  }
 });
 
 // PATCH /api/admin/users/:id { status: 'Active' | 'Blocked' }   (readers only; admins can't be blocked here)

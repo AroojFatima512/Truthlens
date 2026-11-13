@@ -12,7 +12,21 @@
       "DeBERTa (yours)": {
         "n": 300,
         "accuracy": 0.903,
-        "macro_f1": 0.812
+        "macro_f1": 0.812,
+        "per_class_f1": {
+          "B": 0.681,
+          "N": 0.943
+        },
+        "confusion": {
+          "B": {
+            "B": 31,
+            "N": 9
+          },
+          "N": {
+            "B": 20,
+            "N": 240
+          }
+        }
       },
       "Second model": null
     }
@@ -31,7 +45,29 @@
       "Sentiment model": {
         "n": 300,
         "accuracy": 0.707,
-        "macro_f1": 0.697
+        "macro_f1": 0.697,
+        "per_class_f1": {
+          "neg": 0.644,
+          "neu": 0.739,
+          "pos": 0.71
+        },
+        "confusion": {
+          "neg": {
+            "neg": 56,
+            "neu": 46,
+            "pos": 0
+          },
+          "neu": {
+            "neg": 15,
+            "neu": 123,
+            "pos": 3
+          },
+          "pos": {
+            "neg": 1,
+            "neu": 23,
+            "pos": 33
+          }
+        }
       }
     }
   }

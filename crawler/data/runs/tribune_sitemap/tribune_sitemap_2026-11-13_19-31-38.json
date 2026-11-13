@@ -1,0 +1,621 @@
+[
+{
+  "source": "Express Tribune",
+  "run_id": "20261113T143137Z_01adcab33cd0455d959829262074a8c9",
+  "extraction_version": "tribune-extract-v1",
+  "article_id": "2640140",
+  "article_key": "tribune:2640140",
+  "url": "https://tribune.com.pk/story/2640140/un-envoy-urges-australia-to-act-on-embarrassing-indigenous-rights-record",
+  "http_status": 200,
+  "response_encoding": "utf-8",
+  "canonical_url": "https://tribune.com.pk/story/2640140/un-envoy-urges-australia-to-act-on-embarrassing-indigenous-rights-record",
+  "canonical_url_source": "link[rel=canonical]",
+  "headline": "UN envoy urges Australia to act on 'embarrassing' Indigenous rights record",
+  "subheadline": null,
+  "description": "Albert Barume is expected to present his full findings to the UN Human Rights Council in September next year",
+  "description_source": "meta[property=\"og:description\"]",
+  "author": "Reuters",
+  "author_parts": [
+    "Reuters"
+  ],
+  "published_at": "2026-11-13T14:22:17+00:00",
+  "updated_at": null,
+  "timestamp_sources": {
+    "published_at": "meta[property=\"article:published_time\"]",
+    "updated_at": null
+  },
+  "article_text": "Australia must take urgent action to protect Indigenous peoples’ rights, a United Nations expert warned, describing the country’s record as “embarrassing” and damaging to its international reputation, according to local broadcaster ABC on Friday.\n\nAlbert Barume, the UN special rapporteur on the rights of Indigenous peoples, made the remarks after a two-week visit to Australia, during which he was denied access to youth detention centers in Queensland and the Northern Territory.\n\n\"I'm convinced Indigenous peoples' rights … are unsafe in the hands of states and territories,\" Barume told reporters in Sydney. \"The state of protection of Indigenous peoples' rights is a bit embarrassing.\"\n\nBarume urged the government to introduce legally binding national minimum standards aligned with the UN Declaration on the Rights of Indigenous Peoples, warning that protections currently depend too heavily on state and territory governments.\n\nHe said changes in government could reverse existing progress, leaving Indigenous rights vulnerable to political priorities.\n\nThe envoy also raised concerns over punitive bail and sentencing laws, which he said had contributed to the disproportionate imprisonment of Indigenous children.\n\nFirst Nations children account for nearly two-thirds of those in youth detention, while Indigenous Australians make up 37% of the country's prison population, compared with 24% in 2009.\n\nHis preliminary findings also highlighted concerns over racism, violence against Indigenous women, missing and murdered Indigenous people, and the high number of Indigenous children in out-of-home care.\n\nBarume criticised the abandonment of treaty processes in Queensland and the Northern Territory, stressing that fundamental rights should not depend on election outcomes.\n\nDespite the concerns, he acknowledged progress in areas including Indigenous-led organisations, ranger programmes, language revitalisation and native title rights.\n\nHe called on Prime Minister Anthony Albanese to take responsibility for addressing the situation, saying protecting Indigenous rights was in Australia's collective interest.\n\nBarume is expected to present his full findings to the UN Human Rights Council in September next year.",
+  "content_blocks": [
+    {
+      "type": "paragraph",
+      "text": "Australia must take urgent action to protect Indigenous peoples’ rights, a United Nations expert warned, describing the country’s record as “embarrassing” and damaging to its international reputation, according to local broadcaster ABC on Friday.",
+      "html": "<p>Australia must take urgent action to protect Indigenous peoples’ rights, a United Nations expert warned, describing the country’s record as “embarrassing” and damaging to its international reputation, according to local broadcaster <em>ABC </em>on Friday.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Albert Barume, the UN special rapporteur on the rights of Indigenous peoples, made the remarks after a two-week visit to Australia, during which he was denied access to youth detention centers in Queensland and the Northern Territory.",
+      "html": "<p>Albert Barume, the UN special rapporteur on the rights of Indigenous peoples, made the remarks after a two-week visit to Australia, during which he was denied access to youth detention centers in Queensland and the Northern Territory.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "\"I'm convinced Indigenous peoples' rights … are unsafe in the hands of states and territories,\" Barume told reporters in Sydney. \"The state of protection of Indigenous peoples' rights is a bit embarrassing.\"",
+      "html": "<p>\"I'm convinced Indigenous peoples' rights … are unsafe in the hands of states and territories,\" Barume told reporters in Sydney. \"The state of protection of Indigenous peoples' rights is a bit embarrassing.\"</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Barume urged the government to introduce legally binding national minimum standards aligned with the UN Declaration on the Rights of Indigenous Peoples, warning that protections currently depend too heavily on state and territory governments.",
+      "html": "<p>Barume urged the government to introduce legally binding national minimum standards aligned with the UN Declaration on the Rights of Indigenous Peoples, warning that protections currently depend too heavily on state and territory governments.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "He said changes in government could reverse existing progress, leaving Indigenous rights vulnerable to political priorities.",
+      "html": "<p>He said changes in government could reverse existing progress, leaving Indigenous rights vulnerable to political priorities.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "The envoy also raised concerns over punitive bail and sentencing laws, which he said had contributed to the disproportionate imprisonment of Indigenous children.",
+      "html": "<p>The envoy also raised concerns over punitive bail and sentencing laws, which he said had contributed to the disproportionate imprisonment of Indigenous children.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "First Nations children account for nearly two-thirds of those in youth detention, while Indigenous Australians make up 37% of the country's prison population, compared with 24% in 2009.",
+      "html": "<p>First Nations children account for nearly two-thirds of those in youth detention, while Indigenous Australians make up 37% of the country's prison population, compared with 24% in 2009.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "His preliminary findings also highlighted concerns over racism, violence against Indigenous women, missing and murdered Indigenous people, and the high number of Indigenous children in out-of-home care.",
+      "html": "<p>His preliminary findings also highlighted concerns over racism, violence against Indigenous women, missing and murdered Indigenous people, and the high number of Indigenous children in out-of-home care.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Barume criticised the abandonment of treaty processes in Queensland and the Northern Territory, stressing that fundamental rights should not depend on election outcomes.",
+      "html": "<p>Barume criticised the abandonment of treaty processes in Queensland and the Northern Territory, stressing that fundamental rights should not depend on election outcomes.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Despite the concerns, he acknowledged progress in areas including Indigenous-led organisations, ranger programmes, language revitalisation and native title rights.",
+      "html": "<p>Despite the concerns, he acknowledged progress in areas including Indigenous-led organisations, ranger programmes, language revitalisation and native title rights.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "He called on Prime Minister Anthony Albanese to take responsibility for addressing the situation, saying protecting Indigenous rights was in Australia's collective interest.",
+      "html": "<p>He called on Prime Minister Anthony Albanese to take responsibility for addressing the situation, saying protecting Indigenous rights was in Australia's collective interest.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Barume is expected to present his full findings to the UN Human Rights Council in September next year.",
+      "html": "<p>Barume is expected to present his full findings to the UN Human Rights Council in September next year.</p>"
+    }
+  ],
+  "article_html": "<span class=\"story-text\">\n                                                                                            <p>Australia must take urgent action to protect Indigenous peoples’ rights, a United Nations expert warned, describing the country’s record as “embarrassing” and damaging to its international reputation, according to local broadcaster <em>ABC </em>on Friday.</p>\n\n<p>Albert Barume, the UN special rapporteur on the rights of Indigenous peoples, made the remarks after a two-week visit to Australia, during which he was denied access to youth detention centers in Queensland and the Northern Territory.</p>\n\n<p>\"I'm convinced Indigenous peoples' rights … are unsafe in the hands of states and territories,\" Barume told reporters in Sydney. \"The state of protection of Indigenous peoples' rights is a bit embarrassing.\"</p>\n\n<p>Barume urged the government to introduce legally binding national minimum standards aligned with the UN Declaration on the Rights of Indigenous Peoples, warning that protections currently depend too heavily on state and territory governments.</p>\n\n<p>He said changes in government could reverse existing progress, leaving Indigenous rights vulnerable to political priorities.</p><div id=\"div-gpt-story-2\"><script>googletag.cmd.push(function() { googletag.display('div-gpt-story-2'); });</script></div>\n\n<p>The envoy also raised concerns over punitive bail and sentencing laws, which he said had contributed to the disproportionate imprisonment of Indigenous children.</p>\n\n<p>First Nations children account for nearly two-thirds of those in youth detention, while Indigenous Australians make up 37% of the country's prison population, compared with 24% in 2009.</p>\n\n<p>His preliminary findings also highlighted concerns over racism, violence against Indigenous women, missing and murdered Indigenous people, and the high number of Indigenous children in out-of-home care.</p>\n\n<p>Barume criticised the abandonment of treaty processes in Queensland and the Northern Territory, stressing that fundamental rights should not depend on election outcomes.</p>\n\n<p>Despite the concerns, he acknowledged progress in areas including Indigenous-led organisations, ranger programmes, language revitalisation and native title rights.</p>\n\n<p>He called on Prime Minister Anthony Albanese to take responsibility for addressing the situation, saying protecting Indigenous rights was in Australia's collective interest.</p>\n\n<p>Barume is expected to present his full findings to the UN Human Rights Council in September next year.</p>\n\n\n\n                                                            </span>",
+  "image_url": "https://i.tribune.com.pk/media/images/australia1794576728-0/australia1794576728-0-640x480.webp",
+  "images": [],
+  "videos": [],
+  "tweets": [],
+  "tweet_embed_count": 0,
+  "media_detection_scope": "URLs_and_extracted_metadata_not_media_bytes",
+  "embed_detection_scope": "downloaded_article_body_html_only",
+  "language": "en",
+  "language_source": "English source configuration",
+  "section": "world",
+  "tags": [
+    "Latest"
+  ],
+  "crawled_at": "2026-11-13T14:31:48.359259+00:00",
+  "discovered_from": "https://tribune.com.pk/sitemap/latest-1.xml",
+  "processing_status": "cleaned",
+  "validation_issues": [],
+  "validation_status": "passed_basic_checks",
+  "category": "world",
+  "cleaned_text": "Australia must take urgent action to protect Indigenous peoples’ rights, a United Nations expert warned, describing the country’s record as “embarrassing” and damaging to its international reputation, according to local broadcaster ABC on Friday.\n\nAlbert Barume, the UN special rapporteur on the rights of Indigenous peoples, made the remarks after a two-week visit to Australia, during which he was denied access to youth detention centers in Queensland and the Northern Territory.\n\n\"I'm convinced Indigenous peoples' rights … are unsafe in the hands of states and territories,\" Barume told reporters in Sydney. \"The state of protection of Indigenous peoples' rights is a bit embarrassing.\"\n\nBarume urged the government to introduce legally binding national minimum standards aligned with the UN Declaration on the Rights of Indigenous Peoples, warning that protections currently depend too heavily on state and territory governments.\n\nHe said changes in government could reverse existing progress, leaving Indigenous rights vulnerable to political priorities.\n\nThe envoy also raised concerns over punitive bail and sentencing laws, which he said had contributed to the disproportionate imprisonment of Indigenous children.\n\nFirst Nations children account for nearly two-thirds of those in youth detention, while Indigenous Australians make up 37% of the country's prison population, compared with 24% in 2009.\n\nHis preliminary findings also highlighted concerns over racism, violence against Indigenous women, missing and murdered Indigenous people, and the high number of Indigenous children in out-of-home care.\n\nBarume criticised the abandonment of treaty processes in Queensland and the Northern Territory, stressing that fundamental rights should not depend on election outcomes.\n\nDespite the concerns, he acknowledged progress in areas including Indigenous-led organisations, ranger programmes, language revitalisation and native title rights.\n\nHe called on Prime Minister Anthony Albanese to take responsibility for addressing the situation, saying protecting Indigenous rights was in Australia's collective interest.\n\nBarume is expected to present his full findings to the UN Human Rights Council in September next year.",
+  "cleaned_blocks": [
+    {
+      "source_block_index": 0,
+      "type": "paragraph",
+      "text": "Australia must take urgent action to protect Indigenous peoples’ rights, a United Nations expert warned, describing the country’s record as “embarrassing” and damaging to its international reputation, according to local broadcaster ABC on Friday."
+    },
+    {
+      "source_block_index": 1,
+      "type": "paragraph",
+      "text": "Albert Barume, the UN special rapporteur on the rights of Indigenous peoples, made the remarks after a two-week visit to Australia, during which he was denied access to youth detention centers in Queensland and the Northern Territory."
+    },
+    {
+      "source_block_index": 2,
+      "type": "paragraph",
+      "text": "\"I'm convinced Indigenous peoples' rights … are unsafe in the hands of states and territories,\" Barume told reporters in Sydney. \"The state of protection of Indigenous peoples' rights is a bit embarrassing.\""
+    },
+    {
+      "source_block_index": 3,
+      "type": "paragraph",
+      "text": "Barume urged the government to introduce legally binding national minimum standards aligned with the UN Declaration on the Rights of Indigenous Peoples, warning that protections currently depend too heavily on state and territory governments."
+    },
+    {
+      "source_block_index": 4,
+      "type": "paragraph",
+      "text": "He said changes in government could reverse existing progress, leaving Indigenous rights vulnerable to political priorities."
+    },
+    {
+      "source_block_index": 5,
+      "type": "paragraph",
+      "text": "The envoy also raised concerns over punitive bail and sentencing laws, which he said had contributed to the disproportionate imprisonment of Indigenous children."
+    },
+    {
+      "source_block_index": 6,
+      "type": "paragraph",
+      "text": "First Nations children account for nearly two-thirds of those in youth detention, while Indigenous Australians make up 37% of the country's prison population, compared with 24% in 2009."
+    },
+    {
+      "source_block_index": 7,
+      "type": "paragraph",
+      "text": "His preliminary findings also highlighted concerns over racism, violence against Indigenous women, missing and murdered Indigenous people, and the high number of Indigenous children in out-of-home care."
+    },
+    {
+      "source_block_index": 8,
+      "type": "paragraph",
+      "text": "Barume criticised the abandonment of treaty processes in Queensland and the Northern Territory, stressing that fundamental rights should not depend on election outcomes."
+    },
+    {
+      "source_block_index": 9,
+      "type": "paragraph",
+      "text": "Despite the concerns, he acknowledged progress in areas including Indigenous-led organisations, ranger programmes, language revitalisation and native title rights."
+    },
+    {
+      "source_block_index": 10,
+      "type": "paragraph",
+      "text": "He called on Prime Minister Anthony Albanese to take responsibility for addressing the situation, saying protecting Indigenous rights was in Australia's collective interest."
+    },
+    {
+      "source_block_index": 11,
+      "type": "paragraph",
+      "text": "Barume is expected to present his full findings to the UN Human Rights Council in September next year."
+    }
+  ],
+  "cleaning_version": "truthlens-clean-v1",
+  "cleaned_at": "2026-11-13T14:31:48.364908+00:00",
+  "cleaning_issues": [],
+  "cleaning_status": "cleaned",
+  "content_hash_version": "sha256-headline-subheadline-body-v1",
+  "content_hash": "9c7893fa85c207eec95997df0a69a3e3933dbf774c8983126d32365b1201f4a6",
+  "text_hash": "cbe912d11a8ec64749889c22b8116c22b075ee8ffef608adb92b588ed059d13c",
+  "metadata_hash": "5d9683182d40199b80c8474f543fb8b4d56325258b9e0a2eac36cf225793e0fc",
+  "media_hash": "a0ba23857cd1887cd0b7637c4ac71c4878c30ea4f2788a56a98803006979b853",
+  "quality_hash": "b8df83551d01c6666f62539b00ca8b1811a94ed92bc0b0df16544df4ef1278c6",
+  "state_hash": "faef67c5883b58d86085987a8dbfd16ca5eb7c7c8d981df1be883f29f2386a0e",
+  "tracking_version": "truthlens-state-v1",
+  "change_status": "new",
+  "changed_fields": [],
+  "field_changes": {},
+  "body_diff": "",
+  "text_changed": null,
+  "text_reanalysis_required": true,
+  "version_number": 1,
+  "version_first_seen_at": "2026-11-13T14:31:48.359259+00:00",
+  "last_changed_at": "2026-11-13T14:31:48.359259+00:00",
+  "last_checked_at": "2026-11-13T14:31:48.359259+00:00",
+  "tracking_observation_count": 1,
+  "snapshot_saved": true,
+  "change_detection_scope": "extracted_text_metadata_media_references_and_quality"
+},
+{
+  "source": "Express Tribune",
+  "run_id": "20261113T143137Z_01adcab33cd0455d959829262074a8c9",
+  "extraction_version": "tribune-extract-v1",
+  "article_id": "2640141",
+  "article_key": "tribune:2640141",
+  "url": "https://tribune.com.pk/story/2640141/tyga-and-madelaine-petsch-split-after-more-than-a-year-of-dating",
+  "http_status": 200,
+  "response_encoding": "utf-8",
+  "canonical_url": "https://tribune.com.pk/story/2640141/tyga-and-madelaine-petsch-split-after-more-than-a-year-of-dating",
+  "canonical_url_source": "link[rel=canonical]",
+  "headline": "Tyga and Madelaine Petsch split after more than a year of dating",
+  "subheadline": null,
+  "description": "Their reported separation comes 2 months after the pair were seen enjoying a date at Knott’s Scary Farm in California",
+  "description_source": "meta[property=\"og:description\"]",
+  "author": "Pop Culture, Art",
+  "author_parts": [
+    "Pop Culture",
+    "Art"
+  ],
+  "published_at": "2026-11-13T13:28:05+00:00",
+  "updated_at": null,
+  "timestamp_sources": {
+    "published_at": "meta[property=\"article:published_time\"]",
+    "updated_at": null
+  },
+  "article_text": "Their reported separation comes 2 months after the pair were seen enjoying a date at Knott’s Scary Farm in California\n\nTyga and Madelaine Petsch have reportedly ended their relationship after more than a year of dating, with multiple sources confirming the split to PEOPLE.\n\nThe 36-year-old rapper and 32-year-old Riverdale actress first sparked romance rumours in February 2025, when they were spotted sitting courtside at a Los Angeles Lakers basketball game. Neither star publicly confirmed their relationship.\n\nTheir reported separation comes two months after the pair were seen enjoying an affectionate date at Knott’s Scary Farm in California.\n\nAt the time, a source told PEOPLE in September that “they’re really happy and she’s been spending time with his son too.”\n\nThe comment referred to Tyga’s 13-year-old son, King Cairo, whom he shares with his former partner Blac Chyna.\n\nThroughout their rumoured relationship, Tyga and Petsch were spotted together at several public events, including the Vanity Fair and Instagram Vanities Party in February 2025.\n\nThey were also photographed leaving the event together and attending a gathering at Bar Marmont.\n\nPetsch previously discussed her approach to relationships and privacy during an appearance on the Call Her Daddy podcast with Alex Cooper.\n\n“I am at a place in my life where I’ve been a public figure for 10 years and I’ve tried to navigate my private and my public lives for a very long time, not very well,” she said.\n\nThe actress also highlighted the qualities she values in a partner, including “consistency”, kindness, communication and trust.",
+  "content_blocks": [
+    {
+      "type": "paragraph",
+      "text": "Their reported separation comes 2 months after the pair were seen enjoying a date at Knott’s Scary Farm in California",
+      "html": "<p class=\"story-excerpt\">Their reported separation comes 2 months after the pair were seen enjoying a date at Knott’s Scary Farm in California</p>"
+    },
+    {
+      "type": "divider",
+      "text": "",
+      "html": "<hr>"
+    },
+    {
+      "type": "divider",
+      "text": "",
+      "html": "<hr>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Tyga and Madelaine Petsch have reportedly ended their relationship after more than a year of dating, with multiple sources confirming the split to PEOPLE.",
+      "html": "<p>Tyga and Madelaine Petsch have reportedly ended their relationship after more than a year of dating, with multiple sources confirming the split to <a rel=\"nofollow\" href=\"https://people.com/tyga-madelaine-petsch-call-it-quits-after-more-than-year-romance-speculation-12251956\"><em>PEOPLE</em></a>.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "The 36-year-old rapper and 32-year-old Riverdale actress first sparked romance rumours in February 2025, when they were spotted sitting courtside at a Los Angeles Lakers basketball game. Neither star publicly confirmed their relationship.",
+      "html": "<p>The 36-year-old rapper and 32-year-old <em>Riverdale</em> actress first sparked romance rumours in February 2025, when they were spotted sitting courtside at a Los Angeles Lakers basketball game. Neither star publicly confirmed their relationship.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Their reported separation comes two months after the pair were seen enjoying an affectionate date at Knott’s Scary Farm in California.",
+      "html": "<p>Their reported separation comes two months after the pair were seen enjoying an affectionate date at Knott’s Scary Farm in California.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "At the time, a source told PEOPLE in September that “they’re really happy and she’s been spending time with his son too.”",
+      "html": "<p>At the time, a source told <em>PEOPLE</em> in September that “they’re really happy and she’s been spending time with his son too.”</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "The comment referred to Tyga’s 13-year-old son, King Cairo, whom he shares with his former partner Blac Chyna.",
+      "html": "<p>The comment referred to Tyga’s 13-year-old son, King Cairo, whom he shares with his former partner Blac Chyna.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Throughout their rumoured relationship, Tyga and Petsch were spotted together at several public events, including the Vanity Fair and Instagram Vanities Party in February 2025.",
+      "html": "<p>Throughout their rumoured relationship, Tyga and Petsch were spotted together at several public events, including the Vanity Fair and Instagram Vanities Party in February 2025.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "They were also photographed leaving the event together and attending a gathering at Bar Marmont.",
+      "html": "<p>They were also photographed leaving the event together and attending a gathering at Bar Marmont.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Petsch previously discussed her approach to relationships and privacy during an appearance on the Call Her Daddy podcast with Alex Cooper.",
+      "html": "<p>Petsch previously discussed her approach to relationships and privacy during an appearance on the <em>Call Her Daddy</em> podcast with Alex Cooper.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "“I am at a place in my life where I’ve been a public figure for 10 years and I’ve tried to navigate my private and my public lives for a very long time, not very well,” she said.",
+      "html": "<p>“I am at a place in my life where I’ve been a public figure for 10 years and I’ve tried to navigate my private and my public lives for a very long time, not very well,” she said.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "The actress also highlighted the qualities she values in a partner, including “consistency”, kindness, communication and trust.",
+      "html": "<p>The actress also highlighted the qualities she values in a partner, including “consistency”, kindness, communication and trust.</p>"
+    }
+  ],
+  "article_html": "<div class=\"maincontent-customwidth storypage\">\n                <h1>Tyga and Madelaine Petsch split after more than a year of dating</h1>\n                <p class=\"story-excerpt\">Their reported separation comes 2 months after the pair were seen enjoying a date at Knott’s Scary Farm in California</p><hr>\n                <span class=\"storypage-leftside   \">\n                    <div class=\"left-authorbox\">\n\n                                                                                                                    <span><a href=\"https://tribune.com.pk/author/12598/pop-culture-art\">Pop Culture &amp; Art</a>  </span>\n                                \n                                                                                                        <span>November 13, 2026</span>\n                                                                                                    \n                        <span class=\"reading-time\" style=\"border-left: 1px solid #dedede;\">\n                            1 min read\n                        </span>\n                    </div>\n                    <div class=\"leftside-socialshare\n                                                                                                    \">\n                                                    <div class=\"story-social-icons\">\n\n<a class=\"fb-social \" href=\"https://www.facebook.com/sharer.php?u=https%3A%2F%2Ftribune.com.pk%2Fstory%2F2640141%2Ftyga-and-madelaine-petsch-split-after-more-than-a-year-of-dating\" target=\"popup\" onclick=\"window.open('https://www.facebook.com/sharer.php?u=https%3A%2F%2Ftribune.com.pk%2Fstory%2F2640141%2Ftyga-and-madelaine-petsch-split-after-more-than-a-year-of-dating','popup','width=600,height=600'); return false;\" rel=\"noopener noreferrer\">\n    \n        <!-- <i class=\"fab fa-facebook-f\"></i> -->\n        <svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"rgba(59,89,152,1)\"><path d=\"M14 13.5H16.5L17.5 9.5H14V7.5C14 6.47062 14 5.5 16 5.5H17.5V2.1401C17.1743 2.09685 15.943 2 14.6429 2C11.9284 2 10 3.65686 10 6.69971V9.5H7V13.5H10V22H14V13.5Z\"></path></svg>\n          <span style=\"font-size:0px\">facebook</span>\n    </a>\n\n<a class=\"twitter-social\" href=\"https://twitter.com/share?url=https%3A%2F%2Ftribune.com.pk%2Fstory%2F2640141%2Ftyga-and-madelaine-petsch-split-after-more-than-a-year-of-dating\" target=\"popup\" onclick=\"window.open('https://twitter.com/share?url=https%3A%2F%2Ftribune.com.pk%2Fstory%2F2640141%2Ftyga-and-madelaine-petsch-split-after-more-than-a-year-of-dating','popup','width=600,height=600'); return false;\" rel=\"noopener noreferrer\">\n    \n<!-- <i class=\"fa-brands fa-x-twitter\"></i> -->\n <svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"currentColor\"><path d=\"M17.6874 3.0625L12.6907 8.77425L8.37045 3.0625H2.11328L9.58961 12.8387L2.50378 20.9375H5.53795L11.0068 14.6886L15.7863 20.9375H21.8885L14.095 10.6342L20.7198 3.0625H17.6874ZM16.6232 19.1225L5.65436 4.78217H7.45745L18.3034 19.1225H16.6232Z\"></path></svg>\n        <span style=\"font-size:0px\">twitter</span>\n    </a>\n\n    <a class=\"whatsapp-icns \" href=\"https://api.whatsapp.com/send?text=https%3A%2F%2Ftribune.com.pk%2Fstory%2F2640141%2Ftyga-and-madelaine-petsch-split-after-more-than-a-year-of-dating\" target=\"popup\" onclick=\"window.open('https://api.whatsapp.com/send?text=https%3A%2F%2Ftribune.com.pk%2Fstory%2F2640141%2Ftyga-and-madelaine-petsch-split-after-more-than-a-year-of-dating','popup','width=600,height=600'); return false;\" rel=\"noopener noreferrer\">\n        <!-- <i class=\"fab fa-whatsapp\"></i> -->\n         <svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"rgba(37,211,102,1)\"><path d=\"M7.25361 18.4944L7.97834 18.917C9.18909 19.623 10.5651 20 12.001 20C16.4193 20 20.001 16.4183 20.001 12C20.001 7.58172 16.4193 4 12.001 4C7.5827 4 4.00098 7.58172 4.00098 12C4.00098 13.4363 4.37821 14.8128 5.08466 16.0238L5.50704 16.7478L4.85355 19.1494L7.25361 18.4944ZM2.00516 22L3.35712 17.0315C2.49494 15.5536 2.00098 13.8345 2.00098 12C2.00098 6.47715 6.47813 2 12.001 2C17.5238 2 22.001 6.47715 22.001 12C22.001 17.5228 17.5238 22 12.001 22C10.1671 22 8.44851 21.5064 6.97086 20.6447L2.00516 22ZM8.39232 7.30833C8.5262 7.29892 8.66053 7.29748 8.79459 7.30402C8.84875 7.30758 8.90265 7.31384 8.95659 7.32007C9.11585 7.33846 9.29098 7.43545 9.34986 7.56894C9.64818 8.24536 9.93764 8.92565 10.2182 9.60963C10.2801 9.76062 10.2428 9.95633 10.125 10.1457C10.0652 10.2428 9.97128 10.379 9.86248 10.5183C9.74939 10.663 9.50599 10.9291 9.50599 10.9291C9.50599 10.9291 9.40738 11.0473 9.44455 11.1944C9.45903 11.25 9.50521 11.331 9.54708 11.3991C9.57027 11.4368 9.5918 11.4705 9.60577 11.4938C9.86169 11.9211 10.2057 12.3543 10.6259 12.7616C10.7463 12.8783 10.8631 12.9974 10.9887 13.108C11.457 13.5209 11.9868 13.8583 12.559 14.1082L12.5641 14.1105C12.6486 14.1469 12.692 14.1668 12.8157 14.2193C12.8781 14.2457 12.9419 14.2685 13.0074 14.2858C13.0311 14.292 13.0554 14.2955 13.0798 14.2972C13.2415 14.3069 13.335 14.2032 13.3749 14.1555C14.0984 13.279 14.1646 13.2218 14.1696 13.2222V13.2238C14.2647 13.1236 14.4142 13.0888 14.5476 13.097C14.6085 13.1007 14.6691 13.1124 14.7245 13.1377C15.2563 13.3803 16.1258 13.7587 16.1258 13.7587L16.7073 14.0201C16.8047 14.0671 16.8936 14.1778 16.8979 14.2854C16.9005 14.3523 16.9077 14.4603 16.8838 14.6579C16.8525 14.9166 16.7738 15.2281 16.6956 15.3913C16.6406 15.5058 16.5694 15.6074 16.4866 15.6934C16.3743 15.81 16.2909 15.8808 16.1559 15.9814C16.0737 16.0426 16.0311 16.0714 16.0311 16.0714C15.8922 16.159 15.8139 16.2028 15.6484 16.2909C15.391 16.428 15.1066 16.5068 14.8153 16.5218C14.6296 16.5313 14.4444 16.5447 14.2589 16.5347C14.2507 16.5342 13.6907 16.4482 13.6907 16.4482C12.2688 16.0742 10.9538 15.3736 9.85034 14.402C9.62473 14.2034 9.4155 13.9885 9.20194 13.7759C8.31288 12.8908 7.63982 11.9364 7.23169 11.0336C7.03043 10.5884 6.90299 10.1116 6.90098 9.62098C6.89729 9.01405 7.09599 8.4232 7.46569 7.94186C7.53857 7.84697 7.60774 7.74855 7.72709 7.63586C7.85348 7.51651 7.93392 7.45244 8.02057 7.40811C8.13607 7.34902 8.26293 7.31742 8.39232 7.30833Z\"></path></svg>\n        <span style=\"font-size:0px\">whatsup</span>\n    </a>\n    <a class=\"whatsapp-icns \" href=\"https://www.linkedin.com/shareArticle?url=https%3A%2F%2Ftribune.com.pk%2Fstory%2F2640141%2Ftyga-and-madelaine-petsch-split-after-more-than-a-year-of-dating\" target=\"popup\" onclick=\"window.open('https://www.linkedin.com/shareArticle?url=https%3A%2F%2Ftribune.com.pk%2Fstory%2F2640141%2Ftyga-and-madelaine-petsch-split-after-more-than-a-year-of-dating','popup','width=600,height=600'); return false;\" rel=\"noopener noreferrer\">\n        <!-- <i class=\"fab fa-linkedin linkedin-icon\"></i> -->\n         <svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"rgba(0,119,181,1)\"><path d=\"M18.3362 18.339H15.6707V14.1622C15.6707 13.1662 15.6505 11.8845 14.2817 11.8845C12.892 11.8845 12.6797 12.9683 12.6797 14.0887V18.339H10.0142V9.75H12.5747V10.9207H12.6092C12.967 10.2457 13.837 9.53325 15.1367 9.53325C17.8375 9.53325 18.337 11.3108 18.337 13.6245V18.339H18.3362ZM7.00373 8.57475C6.14573 8.57475 5.45648 7.88025 5.45648 7.026C5.45648 6.1725 6.14648 5.47875 7.00373 5.47875C7.85873 5.47875 8.55173 6.1725 8.55173 7.026C8.55173 7.88025 7.85798 8.57475 7.00373 8.57475ZM8.34023 18.339H5.66723V9.75H8.34023V18.339ZM19.6697 3H4.32923C3.59498 3 3.00098 3.5805 3.00098 4.29675V19.7033C3.00098 20.4202 3.59498 21 4.32923 21H19.6675C20.401 21 21.001 20.4202 21.001 19.7033V4.29675C21.001 3.5805 20.401 3 19.6675 3H19.6697Z\"></path></svg>\n        <span style=\"font-size:0px\">linkded</span>\n    </a>\n\n    \n\n    \n    <a class=\"email-social\" href=\"mailto:?subject=I'd%20like%20to%20share%20a%20link%20with%20you&amp;body=https%3A%2F%2Ftribune.com.pk%2Fstory%2F2640141%2Ftyga-and-madelaine-petsch-split-after-more-than-a-year-of-dating\">\n        <!-- <i class=\"fa fa-envelope\"></i> -->\n         <svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"currentColor\"><path d=\"M3 3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3ZM20 7.23792L12.0718 14.338L4 7.21594V19H20V7.23792ZM4.51146 5L12.0619 11.662L19.501 5H4.51146Z\"></path></svg>\n        <span style=\"font-size:0px\">email</span>\n    </a>\n\n\n<!--<div class=\"more-social\">\n        <a href=\"#\">\n            <img src=\"https://tribune.com.pk/images/story/leftside/plus.png\" alt=\"\">\n            <span>MORE (3)</span>\n            <div class=\"others-hover\">\n                <div class=\"messenger st-custom-button\" data-network=\"messenger\" data-url=\"https%3A%2F%2Ftribune.com.pk%2Fstory%2F2640141%2Ftyga-and-madelaine-petsch-split-after-more-than-a-year-of-dating\">\n                    <img src=\"https://tribune.com.pk/images/story/leftside/mesg.png\" alt=\"\">\n                    <span>Messenger <span class=\"count\"></span></span>\n                </div>\n                <div class=\"pintrest st-custom-button\" data-network=\"whatsapp\" data-url=\"https%3A%2F%2Ftribune.com.pk%2Fstory%2F2640141%2Ftyga-and-madelaine-petsch-split-after-more-than-a-year-of-dating\">\n                    <img src=\"https://tribune.com.pk/images/story/leftside/whatsapp.png\" alt=\"\">\n                    <span>Whatsapp <span class=\"count\"></span></span>\n                </div>\n            </div>\n        </a>\n    </div> -->\n\n</div>\n                                            </div>\n                </span>\n\n                \n                                                                                    <div class=\"main-image-wrapper\">\n                            <div class=\"featured-image-global\" height=\"480\"><img width=\"640\" height=\"480\" src=\"https://i.tribune.com.pk/media/images/fizza-331740730165-01741167676-0/fizza-331740730165-01741167676-0-640x480.webp\" onerror=\"this.src='https://i.tribune.com.pk/media/thumbs/logo-tribune1588976358-0-450x300.webp';\" alt=\"tyga and madelaine petsch split after more than a year of dating\" title=\"tyga and madelaine petsch split after more than a year of dating\" loading=\"eager\" fetchpriority=\"high\"></div>\n                        </div>\n                        <div class=\"story-inner-caption\">Tyga and Madelaine Petsch split after more than a year of dating   </div>\n                        <hr>\n                                    \n                <div id=\"div-gpt-story-1\">\n                    <script>\n                        googletag.cmd.push(function () {\n                            googletag.display('div-gpt-story-1');\n                        });\n                    </script>\n                </div>\n\n                <span class=\"story-text\">\n                                                                                            <p>Tyga and Madelaine Petsch have reportedly ended their relationship after more than a year of dating, with multiple sources confirming the split to <a rel=\"nofollow\" href=\"https://people.com/tyga-madelaine-petsch-call-it-quits-after-more-than-year-romance-speculation-12251956\"><em>PEOPLE</em></a>.</p>\n\n<p>The 36-year-old rapper and 32-year-old <em>Riverdale</em> actress first sparked romance rumours in February 2025, when they were spotted sitting courtside at a Los Angeles Lakers basketball game. Neither star publicly confirmed their relationship.</p>\n\n<p>Their reported separation comes two months after the pair were seen enjoying an affectionate date at Knott’s Scary Farm in California.</p>\n\n<p>At the time, a source told <em>PEOPLE</em> in September that “they’re really happy and she’s been spending time with his son too.”</p><div id=\"div-gpt-story-2\"><script>googletag.cmd.push(function() { googletag.display('div-gpt-story-2'); });</script></div>\n\n<p>The comment referred to Tyga’s 13-year-old son, King Cairo, whom he shares with his former partner Blac Chyna.</p>\n\n<p>Throughout their rumoured relationship, Tyga and Petsch were spotted together at several public events, including the Vanity Fair and Instagram Vanities Party in February 2025.</p>\n\n<p>They were also photographed leaving the event together and attending a gathering at Bar Marmont.</p>\n\n<p>Petsch previously discussed her approach to relationships and privacy during an appearance on the <em>Call Her Daddy</em> podcast with Alex Cooper.</p>\n\n<p>“I am at a place in my life where I’ve been a public figure for 10 years and I’ve tried to navigate my private and my public lives for a very long time, not very well,” she said.</p>\n\n<p>The actress also highlighted the qualities she values in a partner, including “consistency”, kindness, communication and trust.</p>\n\n\n\n                                                            </span>\n\n                \n                <div class=\"storypage-social-bottom\">\n                    <div class=\"leftside-socialshare\">\n                        <div class=\"story-social-icons\">\n\n<a class=\"fb-social \" href=\"https://www.facebook.com/sharer.php?u=https%3A%2F%2Ftribune.com.pk%2Fstory%2F2640141%2Ftyga-and-madelaine-petsch-split-after-more-than-a-year-of-dating\" target=\"popup\" onclick=\"window.open('https://www.facebook.com/sharer.php?u=https%3A%2F%2Ftribune.com.pk%2Fstory%2F2640141%2Ftyga-and-madelaine-petsch-split-after-more-than-a-year-of-dating','popup','width=600,height=600'); return false;\" rel=\"noopener noreferrer\">\n    \n        <!-- <i class=\"fab fa-facebook-f\"></i> -->\n        <svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"rgba(59,89,152,1)\"><path d=\"M14 13.5H16.5L17.5 9.5H14V7.5C14 6.47062 14 5.5 16 5.5H17.5V2.1401C17.1743 2.09685 15.943 2 14.6429 2C11.9284 2 10 3.65686 10 6.69971V9.5H7V13.5H10V22H14V13.5Z\"></path></svg>\n          <span style=\"font-size:0px\">facebook</span>\n    </a>\n\n<a class=\"twitter-social\" href=\"https://twitter.com/share?url=https%3A%2F%2Ftribune.com.pk%2Fstory%2F2640141%2Ftyga-and-madelaine-petsch-split-after-more-than-a-year-of-dating\" target=\"popup\" onclick=\"window.open('https://twitter.com/share?url=https%3A%2F%2Ftribune.com.pk%2Fstory%2F2640141%2Ftyga-and-madelaine-petsch-split-after-more-than-a-year-of-dating','popup','width=600,height=600'); return false;\" rel=\"noopener noreferrer\">\n    \n<!-- <i class=\"fa-brands fa-x-twitter\"></i> -->\n <svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"currentColor\"><path d=\"M17.6874 3.0625L12.6907 8.77425L8.37045 3.0625H2.11328L9.58961 12.8387L2.50378 20.9375H5.53795L11.0068 14.6886L15.7863 20.9375H21.8885L14.095 10.6342L20.7198 3.0625H17.6874ZM16.6232 19.1225L5.65436 4.78217H7.45745L18.3034 19.1225H16.6232Z\"></path></svg>\n        <span style=\"font-size:0px\">twitter</span>\n    </a>\n\n    <a class=\"whatsapp-icns \" href=\"https://api.whatsapp.com/send?text=https%3A%2F%2Ftribune.com.pk%2Fstory%2F2640141%2Ftyga-and-madelaine-petsch-split-after-more-than-a-year-of-dating\" target=\"popup\" onclick=\"window.open('https://api.whatsapp.com/send?text=https%3A%2F%2Ftribune.com.pk%2Fstory%2F2640141%2Ftyga-and-madelaine-petsch-split-after-more-than-a-year-of-dating','popup','width=600,height=600'); return false;\" rel=\"noopener noreferrer\">\n        <!-- <i class=\"fab fa-whatsapp\"></i> -->\n         <svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"rgba(37,211,102,1)\"><path d=\"M7.25361 18.4944L7.97834 18.917C9.18909 19.623 10.5651 20 12.001 20C16.4193 20 20.001 16.4183 20.001 12C20.001 7.58172 16.4193 4 12.001 4C7.5827 4 4.00098 7.58172 4.00098 12C4.00098 13.4363 4.37821 14.8128 5.08466 16.0238L5.50704 16.7478L4.85355 19.1494L7.25361 18.4944ZM2.00516 22L3.35712 17.0315C2.49494 15.5536 2.00098 13.8345 2.00098 12C2.00098 6.47715 6.47813 2 12.001 2C17.5238 2 22.001 6.47715 22.001 12C22.001 17.5228 17.5238 22 12.001 22C10.1671 22 8.44851 21.5064 6.97086 20.6447L2.00516 22ZM8.39232 7.30833C8.5262 7.29892 8.66053 7.29748 8.79459 7.30402C8.84875 7.30758 8.90265 7.31384 8.95659 7.32007C9.11585 7.33846 9.29098 7.43545 9.34986 7.56894C9.64818 8.24536 9.93764 8.92565 10.2182 9.60963C10.2801 9.76062 10.2428 9.95633 10.125 10.1457C10.0652 10.2428 9.97128 10.379 9.86248 10.5183C9.74939 10.663 9.50599 10.9291 9.50599 10.9291C9.50599 10.9291 9.40738 11.0473 9.44455 11.1944C9.45903 11.25 9.50521 11.331 9.54708 11.3991C9.57027 11.4368 9.5918 11.4705 9.60577 11.4938C9.86169 11.9211 10.2057 12.3543 10.6259 12.7616C10.7463 12.8783 10.8631 12.9974 10.9887 13.108C11.457 13.5209 11.9868 13.8583 12.559 14.1082L12.5641 14.1105C12.6486 14.1469 12.692 14.1668 12.8157 14.2193C12.8781 14.2457 12.9419 14.2685 13.0074 14.2858C13.0311 14.292 13.0554 14.2955 13.0798 14.2972C13.2415 14.3069 13.335 14.2032 13.3749 14.1555C14.0984 13.279 14.1646 13.2218 14.1696 13.2222V13.2238C14.2647 13.1236 14.4142 13.0888 14.5476 13.097C14.6085 13.1007 14.6691 13.1124 14.7245 13.1377C15.2563 13.3803 16.1258 13.7587 16.1258 13.7587L16.7073 14.0201C16.8047 14.0671 16.8936 14.1778 16.8979 14.2854C16.9005 14.3523 16.9077 14.4603 16.8838 14.6579C16.8525 14.9166 16.7738 15.2281 16.6956 15.3913C16.6406 15.5058 16.5694 15.6074 16.4866 15.6934C16.3743 15.81 16.2909 15.8808 16.1559 15.9814C16.0737 16.0426 16.0311 16.0714 16.0311 16.0714C15.8922 16.159 15.8139 16.2028 15.6484 16.2909C15.391 16.428 15.1066 16.5068 14.8153 16.5218C14.6296 16.5313 14.4444 16.5447 14.2589 16.5347C14.2507 16.5342 13.6907 16.4482 13.6907 16.4482C12.2688 16.0742 10.9538 15.3736 9.85034 14.402C9.62473 14.2034 9.4155 13.9885 9.20194 13.7759C8.31288 12.8908 7.63982 11.9364 7.23169 11.0336C7.03043 10.5884 6.90299 10.1116 6.90098 9.62098C6.89729 9.01405 7.09599 8.4232 7.46569 7.94186C7.53857 7.84697 7.60774 7.74855 7.72709 7.63586C7.85348 7.51651 7.93392 7.45244 8.02057 7.40811C8.13607 7.34902 8.26293 7.31742 8.39232 7.30833Z\"></path></svg>\n        <span style=\"font-size:0px\">whatsup</span>\n    </a>\n    <a class=\"whatsapp-icns \" href=\"https://www.linkedin.com/shareArticle?url=https%3A%2F%2Ftribune.com.pk%2Fstory%2F2640141%2Ftyga-and-madelaine-petsch-split-after-more-than-a-year-of-dating\" target=\"popup\" onclick=\"window.open('https://www.linkedin.com/shareArticle?url=https%3A%2F%2Ftribune.com.pk%2Fstory%2F2640141%2Ftyga-and-madelaine-petsch-split-after-more-than-a-year-of-dating','popup','width=600,height=600'); return false;\" rel=\"noopener noreferrer\">\n        <!-- <i class=\"fab fa-linkedin linkedin-icon\"></i> -->\n         <svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"rgba(0,119,181,1)\"><path d=\"M18.3362 18.339H15.6707V14.1622C15.6707 13.1662 15.6505 11.8845 14.2817 11.8845C12.892 11.8845 12.6797 12.9683 12.6797 14.0887V18.339H10.0142V9.75H12.5747V10.9207H12.6092C12.967 10.2457 13.837 9.53325 15.1367 9.53325C17.8375 9.53325 18.337 11.3108 18.337 13.6245V18.339H18.3362ZM7.00373 8.57475C6.14573 8.57475 5.45648 7.88025 5.45648 7.026C5.45648 6.1725 6.14648 5.47875 7.00373 5.47875C7.85873 5.47875 8.55173 6.1725 8.55173 7.026C8.55173 7.88025 7.85798 8.57475 7.00373 8.57475ZM8.34023 18.339H5.66723V9.75H8.34023V18.339ZM19.6697 3H4.32923C3.59498 3 3.00098 3.5805 3.00098 4.29675V19.7033C3.00098 20.4202 3.59498 21 4.32923 21H19.6675C20.401 21 21.001 20.4202 21.001 19.7033V4.29675C21.001 3.5805 20.401 3 19.6675 3H19.6697Z\"></path></svg>\n        <span style=\"font-size:0px\">linkded</span>\n    </a>\n\n    \n\n    \n    <a class=\"email-social\" href=\"mailto:?subject=I'd%20like%20to%20share%20a%20link%20with%20you&amp;body=https%3A%2F%2Ftribune.com.pk%2Fstory%2F2640141%2Ftyga-and-madelaine-petsch-split-after-more-than-a-year-of-dating\">\n        <!-- <i class=\"fa fa-envelope\"></i> -->\n         <svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"currentColor\"><path d=\"M3 3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3ZM20 7.23792L12.0718 14.338L4 7.21594V19H20V7.23792ZM4.51146 5L12.0619 11.662L19.501 5H4.51146Z\"></path></svg>\n        <span style=\"font-size:0px\">email</span>\n    </a>\n\n\n<!--<div class=\"more-social\">\n        <a href=\"#\">\n            <img src=\"https://tribune.com.pk/images/story/leftside/plus.png\" alt=\"\">\n            <span>MORE (3)</span>\n            <div class=\"others-hover\">\n                <div class=\"messenger st-custom-button\" data-network=\"messenger\" data-url=\"https%3A%2F%2Ftribune.com.pk%2Fstory%2F2640141%2Ftyga-and-madelaine-petsch-split-after-more-than-a-year-of-dating\">\n                    <img src=\"https://tribune.com.pk/images/story/leftside/mesg.png\" alt=\"\">\n                    <span>Messenger <span class=\"count\"></span></span>\n                </div>\n                <div class=\"pintrest st-custom-button\" data-network=\"whatsapp\" data-url=\"https%3A%2F%2Ftribune.com.pk%2Fstory%2F2640141%2Ftyga-and-madelaine-petsch-split-after-more-than-a-year-of-dating\">\n                    <img src=\"https://tribune.com.pk/images/story/leftside/whatsapp.png\" alt=\"\">\n                    <span>Whatsapp <span class=\"count\"></span></span>\n                </div>\n            </div>\n        </a>\n    </div> -->\n\n</div>\n                    </div>\n                </div>\n\n                                     \n                                                            \n                \n                       \n                                                        \n                \n\n\n                <div class=\"boxes-row 3\" style=\"width: 100%\">\n                                                    <div class=\"story-comments-section\">\n          <p class=\"fbtitle\">COMMENTS </p>\n      <div class=\"comments-section-inner\">\n                    \n          <div id=\"more-comments-section\" style=\"display: none;\">\n                        </div>\n\n          \n              <div id=\"replyStatus2640141\" class=\"replyStatus\">\n                  <span>Replying to <span id=\"commentAuthor2640141\" class=\"commentAuthor\"></span></span>\n                  <span class=\"clickReply\" onclick=\"clearReply('2640141')\">X</span>\n              </div>\n          <form id=\"commentform2640141\" class=\"commentform\" method=\"POST\">\n              <input type=\"hidden\" name=\"_token\" value=\"5cUkX1sQqjxnQ0I3mneeQQ9O0HQfd3Hjl7NWoWQY\">              <div class=\"row\">\n                  <input type=\"hidden\" name=\"parent_id\" id=\"parent_id2640141\">\n                  <div class=\"col-md-6\">\n                      <input type=\"text\" id=\"name2640141\" placeholder=\"Name (required)\" required>\n                  </div>\n                  <div class=\"col-md-6\">\n                      <input type=\"email\" id=\"email2640141\" placeholder=\"Email (required)\" required>\n                  </div>\n                  <div class=\"col-md-12\">\n                      <textarea id=\"comment2640141\" cols=\"30\" rows=\"10\" placeholder=\"Write your comment here\" required></textarea>\n                  </div>\n                  <div class=\"col-md-12\">\n                      <input type=\"submit\" value=\"Post comment\" id=\"submit_comment2640141\">\n                  </div>\n              </div>\n          </form>\n\n          <div style=\"display: none\" class=\"alert alert-success \" id=\"success2640141\" role=\"alert\">\n              <strong>Saved ! Your comment will be displayed after the approval.</strong>\n          </div>\n\n          <div style=\"display: none\" class=\"alert alert-danger \" id=\"failed2640141\" role=\"alert\">\n              <strong>Error !</strong>\n          </div>\n\n          <div style=\"display: none\" class=\"alert alert-danger \" id=\"denied2640141\" role=\"alert\">\n              <strong>Denied! You can post your comment in 10 minutes.</strong>\n          </div>\n\n          <div style=\"display: none\" class=\"alert alert-danger \" id=\"invalid_email2640141\" role=\"alert\">\n              <strong>Error! Invalid Email.</strong>\n          </div>\n\n      </div>\n      <div class=\"below-comment-form\">\n          <p>Comments are moderated and generally will be posted if they are on-topic and not abusive. </p>\n          <p>For more information, please see our <a href=\"/comments-policy\">Comments FAQ</a></p>\n      </div>\n  </div>\n\n                                            </div>\n            </div>",
+  "image_url": "https://i.tribune.com.pk/media/images/fizza-331740730165-01741167676-0/fizza-331740730165-01741167676-0-640x480.webp",
+  "images": [
+    {
+      "url": "https://i.tribune.com.pk/media/images/fizza-331740730165-01741167676-0/fizza-331740730165-01741167676-0-640x480.webp",
+      "alt_text": "tyga and madelaine petsch split after more than a year of dating",
+      "caption": null
+    }
+  ],
+  "videos": [],
+  "tweets": [],
+  "tweet_embed_count": 0,
+  "media_detection_scope": "URLs_and_extracted_metadata_not_media_bytes",
+  "embed_detection_scope": "downloaded_article_body_html_only",
+  "language": "en",
+  "language_source": "English source configuration",
+  "section": "entertainment",
+  "tags": [
+    "entertainment",
+    "Celebrity Scandals & Gossip"
+  ],
+  "crawled_at": "2026-11-13T14:31:52.491926+00:00",
+  "discovered_from": "https://tribune.com.pk/sitemap/latest-1.xml",
+  "processing_status": "cleaned",
+  "validation_issues": [],
+  "validation_status": "passed_basic_checks",
+  "category": "entertainment",
+  "cleaned_text": "Their reported separation comes 2 months after the pair were seen enjoying a date at Knott’s Scary Farm in California\n\nTyga and Madelaine Petsch have reportedly ended their relationship after more than a year of dating, with multiple sources confirming the split to PEOPLE.\n\nThe 36-year-old rapper and 32-year-old Riverdale actress first sparked romance rumours in February 2025, when they were spotted sitting courtside at a Los Angeles Lakers basketball game. Neither star publicly confirmed their relationship.\n\nTheir reported separation comes two months after the pair were seen enjoying an affectionate date at Knott’s Scary Farm in California.\n\nAt the time, a source told PEOPLE in September that “they’re really happy and she’s been spending time with his son too.”\n\nThe comment referred to Tyga’s 13-year-old son, King Cairo, whom he shares with his former partner Blac Chyna.\n\nThroughout their rumoured relationship, Tyga and Petsch were spotted together at several public events, including the Vanity Fair and Instagram Vanities Party in February 2025.\n\nThey were also photographed leaving the event together and attending a gathering at Bar Marmont.\n\nPetsch previously discussed her approach to relationships and privacy during an appearance on the Call Her Daddy podcast with Alex Cooper.\n\n“I am at a place in my life where I’ve been a public figure for 10 years and I’ve tried to navigate my private and my public lives for a very long time, not very well,” she said.\n\nThe actress also highlighted the qualities she values in a partner, including “consistency”, kindness, communication and trust.",
+  "cleaned_blocks": [
+    {
+      "source_block_index": 0,
+      "type": "paragraph",
+      "text": "Their reported separation comes 2 months after the pair were seen enjoying a date at Knott’s Scary Farm in California"
+    },
+    {
+      "source_block_index": 3,
+      "type": "paragraph",
+      "text": "Tyga and Madelaine Petsch have reportedly ended their relationship after more than a year of dating, with multiple sources confirming the split to PEOPLE."
+    },
+    {
+      "source_block_index": 4,
+      "type": "paragraph",
+      "text": "The 36-year-old rapper and 32-year-old Riverdale actress first sparked romance rumours in February 2025, when they were spotted sitting courtside at a Los Angeles Lakers basketball game. Neither star publicly confirmed their relationship."
+    },
+    {
+      "source_block_index": 5,
+      "type": "paragraph",
+      "text": "Their reported separation comes two months after the pair were seen enjoying an affectionate date at Knott’s Scary Farm in California."
+    },
+    {
+      "source_block_index": 6,
+      "type": "paragraph",
+      "text": "At the time, a source told PEOPLE in September that “they’re really happy and she’s been spending time with his son too.”"
+    },
+    {
+      "source_block_index": 7,
+      "type": "paragraph",
+      "text": "The comment referred to Tyga’s 13-year-old son, King Cairo, whom he shares with his former partner Blac Chyna."
+    },
+    {
+      "source_block_index": 8,
+      "type": "paragraph",
+      "text": "Throughout their rumoured relationship, Tyga and Petsch were spotted together at several public events, including the Vanity Fair and Instagram Vanities Party in February 2025."
+    },
+    {
+      "source_block_index": 9,
+      "type": "paragraph",
+      "text": "They were also photographed leaving the event together and attending a gathering at Bar Marmont."
+    },
+    {
+      "source_block_index": 10,
+      "type": "paragraph",
+      "text": "Petsch previously discussed her approach to relationships and privacy during an appearance on the Call Her Daddy podcast with Alex Cooper."
+    },
+    {
+      "source_block_index": 11,
+      "type": "paragraph",
+      "text": "“I am at a place in my life where I’ve been a public figure for 10 years and I’ve tried to navigate my private and my public lives for a very long time, not very well,” she said."
+    },
+    {
+      "source_block_index": 12,
+      "type": "paragraph",
+      "text": "The actress also highlighted the qualities she values in a partner, including “consistency”, kindness, communication and trust."
+    }
+  ],
+  "cleaning_version": "truthlens-clean-v1",
+  "cleaned_at": "2026-11-13T14:31:52.496441+00:00",
+  "cleaning_issues": [],
+  "cleaning_status": "cleaned",
+  "content_hash_version": "sha256-headline-subheadline-body-v1",
+  "content_hash": "c955154a19882a3b2ac91d597535502aca953344e437392727e26834472ab0bd",
+  "text_hash": "b374a5aee421e22aa775055e2b07f79e8d1660a30021e90fc5fa120a2dc2eded",
+  "metadata_hash": "f32fee3e56d69b3fd3d77efb6d39f26616761980cf412d537e891cea12ff3821",
+  "media_hash": "e655c4ccc394ce95c5cb367eadbb51ed31808c2ff621a52c1a04bdf0d98e1775",
+  "quality_hash": "b8df83551d01c6666f62539b00ca8b1811a94ed92bc0b0df16544df4ef1278c6",
+  "state_hash": "e2723401c483045775cdb21e53233636dfa9cf2988b0063384bad6aad945aabd",
+  "tracking_version": "truthlens-state-v1",
+  "change_status": "new",
+  "changed_fields": [],
+  "field_changes": {},
+  "body_diff": "",
+  "text_changed": null,
+  "text_reanalysis_required": true,
+  "version_number": 1,
+  "version_first_seen_at": "2026-11-13T14:31:52.491926+00:00",
+  "last_changed_at": "2026-11-13T14:31:52.491926+00:00",
+  "last_checked_at": "2026-11-13T14:31:52.491926+00:00",
+  "tracking_observation_count": 1,
+  "snapshot_saved": true,
+  "change_detection_scope": "extracted_text_metadata_media_references_and_quality"
+},
+{
+  "source": "Express Tribune",
+  "run_id": "20261113T143137Z_01adcab33cd0455d959829262074a8c9",
+  "extraction_version": "tribune-extract-v1",
+  "article_id": "2640143",
+  "article_key": "tribune:2640143",
+  "url": "https://tribune.com.pk/story/2640143/pakistan-to-host-fih-nations-cup",
+  "http_status": 200,
+  "response_encoding": "utf-8",
+  "canonical_url": "https://tribune.com.pk/story/2640143/pakistan-to-host-fih-nations-cup",
+  "canonical_url_source": "link[rel=canonical]",
+  "headline": "Pakistan to host FIH Nations Cup",
+  "subheadline": null,
+  "description": "Ten nations are likely to feature in the tournament",
+  "description_source": "meta[property=\"og:description\"]",
+  "author": "Zulfiqar Baig",
+  "author_parts": [
+    "Zulfiqar Baig"
+  ],
+  "published_at": "2026-11-13T14:30:19+00:00",
+  "updated_at": null,
+  "timestamp_sources": {
+    "published_at": "meta[property=\"article:published_time\"]",
+    "updated_at": null
+  },
+  "article_text": "Pakistan will host the next FIH Nations Cup, with ten international teams expected to compete in the tournament as the country steps up efforts to revive its fortunes in hockey.\n\nInternational Hockey Federation’s (FIH) President Tayyab Ikram made the announcement at an event in Islamabad focused on the revival of Pakistan hockey.\n\nThe federal government also pledged its full support to the national federation.\n\nIkram said the Nations Cup was a major international competition, ranking among hockey's biggest events after the World Cup and the Olympic Games.\n\nHe also announced that the Naseer Bunda Hockey Stadium in Islamabad had been approved as an official FIH High Performance Centre, a move expected to support player development and improve training facilities.\n\nThe FIH president stressed that Pakistan needed to improve its hockey governance structure and invest in the national team's preparations if it hoped to return to the top level of international competition.\n\nHe said players needed financial support, modern training facilities and access to coaches who met international standards. Ikram also said India should come to Pakistan to play hockey.\n\nFederal Minister for Inter-Provincial Coordination (IPC) Rana Sanaullah said hockey remained a source of national identity and pride, recalling Pakistan's history as a leading force in the sport.\n\nHowever, he acknowledged that the country's recent performances had been disappointing and said Prime Minister Shehbaz Sharif had directed the government to give hockey special attention.\n\n\"The government stands with the hockey federation,\" Sanaullah said, urging the PHF to prepare a comprehensive plan for the sport's revival.\n\nHe pledged that the government would provide players with the necessary facilities and support, while calling on senior former players to contribute to rebuilding the game.\n\nSanaullah also said Pakistan needed people committed to representing the country rather than those who had brought politics into hockey.\n\nPHF president Mohyuddin Wani said efforts were being made at the government level to promote the sport and described the event as an important step towards a new era for Pakistan hockey.\n\nNational Assembly member Zeb Jaffar said hosting a ten-team international tournament would help promote hockey in the country. She described the agreement between the PHF and FIH as a milestone.",
+  "content_blocks": [
+    {
+      "type": "paragraph",
+      "text": "Pakistan will host the next FIH Nations Cup, with ten international teams expected to compete in the tournament as the country steps up efforts to revive its fortunes in hockey.",
+      "html": "<p>Pakistan will host the next FIH Nations Cup, with ten international teams expected to compete in the tournament as the country steps up efforts to revive its fortunes in hockey.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "International Hockey Federation’s (FIH) President Tayyab Ikram made the announcement at an event in Islamabad focused on the revival of Pakistan hockey.",
+      "html": "<p>International Hockey Federation’s (FIH) President Tayyab Ikram made the announcement at an event in Islamabad focused on the revival of Pakistan hockey.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "The federal government also pledged its full support to the national federation.",
+      "html": "<p>The federal government also pledged its full support to the national federation.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Ikram said the Nations Cup was a major international competition, ranking among hockey's biggest events after the World Cup and the Olympic Games.",
+      "html": "<p>Ikram said the Nations Cup was a major international competition, ranking among hockey's biggest events after the World Cup and the Olympic Games.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "He also announced that the Naseer Bunda Hockey Stadium in Islamabad had been approved as an official FIH High Performance Centre, a move expected to support player development and improve training facilities.",
+      "html": "<p>He also announced that the Naseer Bunda Hockey Stadium in Islamabad had been approved as an official FIH High Performance Centre, a move expected to support player development and improve training facilities.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "The FIH president stressed that Pakistan needed to improve its hockey governance structure and invest in the national team's preparations if it hoped to return to the top level of international competition.",
+      "html": "<p>The FIH president stressed that Pakistan needed to improve its hockey governance structure and invest in the national team's preparations if it hoped to return to the top level of international competition.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "He said players needed financial support, modern training facilities and access to coaches who met international standards. Ikram also said India should come to Pakistan to play hockey.",
+      "html": "<p>He said players needed financial support, modern training facilities and access to coaches who met international standards. Ikram also said India should come to Pakistan to play hockey.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Federal Minister for Inter-Provincial Coordination (IPC) Rana Sanaullah said hockey remained a source of national identity and pride, recalling Pakistan's history as a leading force in the sport.",
+      "html": "<p>Federal Minister for Inter-Provincial Coordination (IPC) Rana Sanaullah said hockey remained a source of national identity and pride, recalling Pakistan's history as a leading force in the sport.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "However, he acknowledged that the country's recent performances had been disappointing and said Prime Minister Shehbaz Sharif had directed the government to give hockey special attention.",
+      "html": "<p>However, he acknowledged that the country's recent performances had been disappointing and said Prime Minister Shehbaz Sharif had directed the government to give hockey special attention.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "\"The government stands with the hockey federation,\" Sanaullah said, urging the PHF to prepare a comprehensive plan for the sport's revival.",
+      "html": "<p>\"The government stands with the hockey federation,\" Sanaullah said, urging the PHF to prepare a comprehensive plan for the sport's revival.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "He pledged that the government would provide players with the necessary facilities and support, while calling on senior former players to contribute to rebuilding the game.",
+      "html": "<p>He pledged that the government would provide players with the necessary facilities and support, while calling on senior former players to contribute to rebuilding the game.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Sanaullah also said Pakistan needed people committed to representing the country rather than those who had brought politics into hockey.",
+      "html": "<p>Sanaullah also said Pakistan needed people committed to representing the country rather than those who had brought politics into hockey.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "PHF president Mohyuddin Wani said efforts were being made at the government level to promote the sport and described the event as an important step towards a new era for Pakistan hockey.",
+      "html": "<p>PHF president Mohyuddin Wani said efforts were being made at the government level to promote the sport and described the event as an important step towards a new era for Pakistan hockey.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "National Assembly member Zeb Jaffar said hosting a ten-team international tournament would help promote hockey in the country. She described the agreement between the PHF and FIH as a milestone.",
+      "html": "<p>National Assembly member Zeb Jaffar said hosting a ten-team international tournament would help promote hockey in the country. She described the agreement between the PHF and FIH as a milestone.</p>"
+    }
+  ],
+  "article_html": "<span class=\"story-text\">\n                                                                                            <strong class=\"location-names\">\n                                        ISLAMABAD: \n            \n\n        </strong>\n            <p>Pakistan will host the next FIH Nations Cup, with ten international teams expected to compete in the tournament as the country steps up efforts to revive its fortunes in hockey.</p>\n\n<p>International Hockey Federation’s (FIH) President Tayyab Ikram made the announcement at an event in Islamabad focused on the revival of Pakistan hockey.</p>\n\n<p>The federal government also pledged its full support to the national federation.</p>\n\n<p>Ikram said the Nations Cup was a major international competition, ranking among hockey's biggest events after the World Cup and the Olympic Games.</p>\n\n<p>He also announced that the Naseer Bunda Hockey Stadium in Islamabad had been approved as an official FIH High Performance Centre, a move expected to support player development and improve training facilities.</p>\n\n<p>The FIH president stressed that Pakistan needed to improve its hockey governance structure and invest in the national team's preparations if it hoped to return to the top level of international competition.</p><div id=\"div-gpt-story-2\"><script>googletag.cmd.push(function() { googletag.display('div-gpt-story-2'); });</script></div>\n\n<p>He said players needed financial support, modern training facilities and access to coaches who met international standards. Ikram also said India should come to Pakistan to play hockey.</p>\n\n<p>Federal Minister for Inter-Provincial Coordination (IPC) Rana Sanaullah said hockey remained a source of national identity and pride, recalling Pakistan's history as a leading force in the sport.</p>\n\n<p>However, he acknowledged that the country's recent performances had been disappointing and said Prime Minister Shehbaz Sharif had directed the government to give hockey special attention.</p>\n\n<p>\"The government stands with the hockey federation,\" Sanaullah said, urging the PHF to prepare a comprehensive plan for the sport's revival.</p>\n\n<p>He pledged that the government would provide players with the necessary facilities and support, while calling on senior former players to contribute to rebuilding the game.</p>\n\n<p>Sanaullah also said Pakistan needed people committed to representing the country rather than those who had brought politics into hockey.</p>\n\n<p>PHF president Mohyuddin Wani said efforts were being made at the government level to promote the sport and described the event as an important step towards a new era for Pakistan hockey.</p>\n\n<p>National Assembly member Zeb Jaffar said hosting a ten-team international tournament would help promote hockey in the country. She described the agreement between the PHF and FIH as a milestone.</p>\n\n\n\n                                                            </span>",
+  "image_url": "https://i.tribune.com.pk/media/images/11794580098-0/11794580098-0-640x480.webp",
+  "images": [],
+  "videos": [],
+  "tweets": [],
+  "tweet_embed_count": 0,
+  "media_detection_scope": "URLs_and_extracted_metadata_not_media_bytes",
+  "embed_detection_scope": "downloaded_article_body_html_only",
+  "language": "en",
+  "language_source": "English source configuration",
+  "section": "sports",
+  "tags": [
+    "Latest"
+  ],
+  "crawled_at": "2026-11-13T14:31:56.508079+00:00",
+  "discovered_from": "https://tribune.com.pk/sitemap/latest-1.xml",
+  "processing_status": "cleaned",
+  "validation_issues": [],
+  "validation_status": "passed_basic_checks",
+  "category": "sports",
+  "cleaned_text": "Pakistan will host the next FIH Nations Cup, with ten international teams expected to compete in the tournament as the country steps up efforts to revive its fortunes in hockey.\n\nInternational Hockey Federation’s (FIH) President Tayyab Ikram made the announcement at an event in Islamabad focused on the revival of Pakistan hockey.\n\nThe federal government also pledged its full support to the national federation.\n\nIkram said the Nations Cup was a major international competition, ranking among hockey's biggest events after the World Cup and the Olympic Games.\n\nHe also announced that the Naseer Bunda Hockey Stadium in Islamabad had been approved as an official FIH High Performance Centre, a move expected to support player development and improve training facilities.\n\nThe FIH president stressed that Pakistan needed to improve its hockey governance structure and invest in the national team's preparations if it hoped to return to the top level of international competition.\n\nHe said players needed financial support, modern training facilities and access to coaches who met international standards. Ikram also said India should come to Pakistan to play hockey.\n\nFederal Minister for Inter-Provincial Coordination (IPC) Rana Sanaullah said hockey remained a source of national identity and pride, recalling Pakistan's history as a leading force in the sport.\n\nHowever, he acknowledged that the country's recent performances had been disappointing and said Prime Minister Shehbaz Sharif had directed the government to give hockey special attention.\n\n\"The government stands with the hockey federation,\" Sanaullah said, urging the PHF to prepare a comprehensive plan for the sport's revival.\n\nHe pledged that the government would provide players with the necessary facilities and support, while calling on senior former players to contribute to rebuilding the game.\n\nSanaullah also said Pakistan needed people committed to representing the country rather than those who had brought politics into hockey.\n\nPHF president Mohyuddin Wani said efforts were being made at the government level to promote the sport and described the event as an important step towards a new era for Pakistan hockey.\n\nNational Assembly member Zeb Jaffar said hosting a ten-team international tournament would help promote hockey in the country. She described the agreement between the PHF and FIH as a milestone.",
+  "cleaned_blocks": [
+    {
+      "source_block_index": 0,
+      "type": "paragraph",
+      "text": "Pakistan will host the next FIH Nations Cup, with ten international teams expected to compete in the tournament as the country steps up efforts to revive its fortunes in hockey."
+    },
+    {
+      "source_block_index": 1,
+      "type": "paragraph",
+      "text": "International Hockey Federation’s (FIH) President Tayyab Ikram made the announcement at an event in Islamabad focused on the revival of Pakistan hockey."
+    },
+    {
+      "source_block_index": 2,
+      "type": "paragraph",
+      "text": "The federal government also pledged its full support to the national federation."
+    },
+    {
+      "source_block_index": 3,
+      "type": "paragraph",
+      "text": "Ikram said the Nations Cup was a major international competition, ranking among hockey's biggest events after the World Cup and the Olympic Games."
+    },
+    {
+      "source_block_index": 4,
+      "type": "paragraph",
+      "text": "He also announced that the Naseer Bunda Hockey Stadium in Islamabad had been approved as an official FIH High Performance Centre, a move expected to support player development and improve training facilities."
+    },
+    {
+      "source_block_index": 5,
+      "type": "paragraph",
+      "text": "The FIH president stressed that Pakistan needed to improve its hockey governance structure and invest in the national team's preparations if it hoped to return to the top level of international competition."
+    },
+    {
+      "source_block_index": 6,
+      "type": "paragraph",
+      "text": "He said players needed financial support, modern training facilities and access to coaches who met international standards. Ikram also said India should come to Pakistan to play hockey."
+    },
+    {
+      "source_block_index": 7,
+      "type": "paragraph",
+      "text": "Federal Minister for Inter-Provincial Coordination (IPC) Rana Sanaullah said hockey remained a source of national identity and pride, recalling Pakistan's history as a leading force in the sport."
+    },
+    {
+      "source_block_index": 8,
+      "type": "paragraph",
+      "text": "However, he acknowledged that the country's recent performances had been disappointing and said Prime Minister Shehbaz Sharif had directed the government to give hockey special attention."
+    },
+    {
+      "source_block_index": 9,
+      "type": "paragraph",
+      "text": "\"The government stands with the hockey federation,\" Sanaullah said, urging the PHF to prepare a comprehensive plan for the sport's revival."
+    },
+    {
+      "source_block_index": 10,
+      "type": "paragraph",
+      "text": "He pledged that the government would provide players with the necessary facilities and support, while calling on senior former players to contribute to rebuilding the game."
+    },
+    {
+      "source_block_index": 11,
+      "type": "paragraph",
+      "text": "Sanaullah also said Pakistan needed people committed to representing the country rather than those who had brought politics into hockey."
+    },
+    {
+      "source_block_index": 12,
+      "type": "paragraph",
+      "text": "PHF president Mohyuddin Wani said efforts were being made at the government level to promote the sport and described the event as an important step towards a new era for Pakistan hockey."
+    },
+    {
+      "source_block_index": 13,
+      "type": "paragraph",
+      "text": "National Assembly member Zeb Jaffar said hosting a ten-team international tournament would help promote hockey in the country. She described the agreement between the PHF and FIH as a milestone."
+    }
+  ],
+  "cleaning_version": "truthlens-clean-v1",
+  "cleaned_at": "2026-11-13T14:31:56.516339+00:00",
+  "cleaning_issues": [],
+  "cleaning_status": "cleaned",
+  "content_hash_version": "sha256-headline-subheadline-body-v1",
+  "content_hash": "60d9d1aef64c3df63d09e8a7463dcba00264e23f356fd796f71643ea81e2217f",
+  "text_hash": "a092ad8656e958f14e36f114c7a7cbef766a2354a8675e8c42662b5ae23c3335",
+  "metadata_hash": "ecceff41a0f368b092a219a4c6b5b16f3e7c553be339d7783e2e672693218c85",
+  "media_hash": "3eb9b1221828269a2bd471086514ba3e6c341b392285f03e9e316a84fb3ffd59",
+  "quality_hash": "b8df83551d01c6666f62539b00ca8b1811a94ed92bc0b0df16544df4ef1278c6",
+  "state_hash": "29b357a27eb12d763de3076b0ff9a941bb3f6921ed1fe735a5502224ab8d6918",
+  "tracking_version": "truthlens-state-v1",
+  "change_status": "new",
+  "changed_fields": [],
+  "field_changes": {},
+  "body_diff": "",
+  "text_changed": null,
+  "text_reanalysis_required": true,
+  "version_number": 1,
+  "version_first_seen_at": "2026-11-13T14:31:56.508079+00:00",
+  "last_changed_at": "2026-11-13T14:31:56.508079+00:00",
+  "last_checked_at": "2026-11-13T14:31:56.508079+00:00",
+  "tracking_observation_count": 1,
+  "snapshot_saved": true,
+  "change_detection_scope": "extracted_text_metadata_media_references_and_quality"
+}
+]

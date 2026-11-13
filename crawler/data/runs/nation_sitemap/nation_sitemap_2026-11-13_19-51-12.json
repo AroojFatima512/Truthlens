@@ -1,0 +1,303 @@
+[
+{
+  "source": "The Nation",
+  "run_id": "20261113T145112Z_22548ffe5a524dbda3bc9a8bc99390d6",
+  "extraction_version": "nation-extract-v1",
+  "article_id": "2026-11-13-supreme-court-reports-47pc-decline-pending-cases",
+  "article_key": "nation:2026-11-13-supreme-court-reports-47pc-decline-pending-cases",
+  "url": "https://www.nation.com.pk/13-Nov-2026/supreme-court-reports-47pc-decline-pending-cases",
+  "http_status": 200,
+  "response_encoding": "utf-8",
+  "canonical_url": "https://www.nation.com.pk/13-Nov-2026/supreme-court-reports-47pc-decline-pending-cases",
+  "canonical_url_source": "link[rel=canonical]/og:url",
+  "headline": "Supreme Court reports 47pc decline in pending cases",
+  "subheadline": null,
+  "description": "The Supreme Court has reported a significant reduction in its pending caseload, with cases declining from 60,304 in November 2024 to 31,927 in September 2026,",
+  "description_source": "meta[property=\"og:description\"]",
+  "author": "APP",
+  "author_parts": [
+    "APP"
+  ],
+  "published_at": "2026-11-13T19:04:19+05:00",
+  "updated_at": "2026-11-13T19:04:19+05:00",
+  "timestamp_sources": {
+    "published_at": "meta[property=\"article:published_time\"]",
+    "updated_at": "meta/JSON-LD"
+  },
+  "article_text": "The Supreme Court has reported a significant reduction in its pending caseload, with cases declining from 60,304 in November 2024 to 31,927 in September 2026, as part of an 86-point reform action plan aimed at making the justice system more accessible, efficient, and transparent. According to the reform progress report, 64 of the 86 actions have been completed, 11 are on track, while 11 require further attention. During the reporting period, 22,213 cases were transferred to the Federal Constitutional Court following the constitutional amendment. Separately, the Supreme Court disposed of 6,998 more cases than were instituted between November 2024 and September 2026. The annual disposal of cases also increased from 16,620 in 2023-24 to 25,989 in 2024-25, registering an improvement of approximately 56 per cent. The reform programme has prioritised long-pending cases involving personal liberty, family rights, taxation and service disputes. Death appeals have progressed from cases instituted in 2015 to those filed in 2026, while bail-after-arrest matters have advanced from 2009 to 2026 and family litigation from 2010 to 2026. Dedicated benches, early-hearing arrangements and structured case fixation are being used to address delays and expedite the disposal of cases. Technology has also emerged as a major component of the reforms. More than 45,131 cases were e-filed during the reporting period, over 264,000 judgments were digitised, and more than 34,883 certified copies were issued through system-enabled processes. The Supreme Court Rules 2025 introduced an updated framework for electronic filing, digital records and virtual hearings, while digital case tracking and judicial analytics are being strengthened. For public facilitation, the Supreme Court has established a Public Facilitation Centre to provide litigants with court-related information and assistance. A Free Legal Advice and Free Legal Aid Call Centre initiative has also been introduced to support people unable to afford private legal services, while an Overseas Litigants’ Facilitation Cell caters to Pakistanis living abroad. At the national level, the National Judicial (Policy Making) Committee (NJPMC) is extending reforms across the judicial system. Disposal timelines ranging from two to 24 months have been prescribed for 17 priority categories of cases. The District Judiciary disposed of 1,467,675 time-bound cases between September 2025 and July 2026. During the same period, Model Criminal Courts decided 91,071 cases, while Model Civil Courts disposed of 42,386 cases. A National Judicial Analytics Dashboard is being used to monitor case pendency, disposal rates, and institutional performance. The proposed National Unified E-Filing and Electronic Judicial Record System has received approval in principle. It envisages a Universal Case Identification Number to track cases across different tiers of the judiciary, with a phased pilot planned for family cases. National guidelines for the responsible use of artificial intelligence in judicial institutions are also under development. The reform programme also places emphasis on inclusive justice and women-friendly court facilities. Women-centric facilities have been reported at 398 locations across different jurisdictions, while plans for dedicated Women Facilitation Centres include waiting areas, childcare facilities, separate washrooms, mediation rooms and other essential services. To strengthen institutional accountability, an Anti-Corruption Hotline has been established to receive complaints regarding corruption, bribery and misconduct involving court staff. Measures relating to financial management, procurement, internal audit and performance monitoring have also been included in the programme. The Access to Justice Development Fund has supported infrastructure improvements, including solar energy solutions, e-libraries, internet connectivity, clean drinking water and women-centric facilities. The broader reform agenda also includes international judicial cooperation to strengthen technology, cybersecurity, professional training and institutional capacity. The programme aims not only to increase case disposal but also to ensure timely assistance to citizens, reduce procedural difficulties and improve public access to justice.",
+  "content_blocks": [
+    {
+      "type": "paragraph",
+      "text": "The Supreme Court has reported a significant reduction in its pending caseload, with cases declining from 60,304 in November 2024 to 31,927 in September 2026, as part of an 86-point reform action plan aimed at making the justice system more accessible, efficient, and transparent. According to the reform progress report, 64 of the 86 actions have been completed, 11 are on track, while 11 require further attention. During the reporting period, 22,213 cases were transferred to the Federal Constitutional Court following the constitutional amendment. Separately, the Supreme Court disposed of 6,998 more cases than were instituted between November 2024 and September 2026. The annual disposal of cases also increased from 16,620 in 2023-24 to 25,989 in 2024-25, registering an improvement of approximately 56 per cent. The reform programme has prioritised long-pending cases involving personal liberty, family rights, taxation and service disputes. Death appeals have progressed from cases instituted in 2015 to those filed in 2026, while bail-after-arrest matters have advanced from 2009 to 2026 and family litigation from 2010 to 2026. Dedicated benches, early-hearing arrangements and structured case fixation are being used to address delays and expedite the disposal of cases. Technology has also emerged as a major component of the reforms. More than 45,131 cases were e-filed during the reporting period, over 264,000 judgments were digitised, and more than 34,883 certified copies were issued through system-enabled processes. The Supreme Court Rules 2025 introduced an updated framework for electronic filing, digital records and virtual hearings, while digital case tracking and judicial analytics are being strengthened. For public facilitation, the Supreme Court has established a Public Facilitation Centre to provide litigants with court-related information and assistance. A Free Legal Advice and Free Legal Aid Call Centre initiative has also been introduced to support people unable to afford private legal services, while an Overseas Litigants’ Facilitation Cell caters to Pakistanis living abroad. At the national level, the National Judicial (Policy Making) Committee (NJPMC) is extending reforms across the judicial system. Disposal timelines ranging from two to 24 months have been prescribed for 17 priority categories of cases. The District Judiciary disposed of 1,467,675 time-bound cases between September 2025 and July 2026. During the same period, Model Criminal Courts decided 91,071 cases, while Model Civil Courts disposed of 42,386 cases. A National Judicial Analytics Dashboard is being used to monitor case pendency, disposal rates, and institutional performance. The proposed National Unified E-Filing and Electronic Judicial Record System has received approval in principle. It envisages a Universal Case Identification Number to track cases across different tiers of the judiciary, with a phased pilot planned for family cases. National guidelines for the responsible use of artificial intelligence in judicial institutions are also under development. The reform programme also places emphasis on inclusive justice and women-friendly court facilities. Women-centric facilities have been reported at 398 locations across different jurisdictions, while plans for dedicated Women Facilitation Centres include waiting areas, childcare facilities, separate washrooms, mediation rooms and other essential services. To strengthen institutional accountability, an Anti-Corruption Hotline has been established to receive complaints regarding corruption, bribery and misconduct involving court staff. Measures relating to financial management, procurement, internal audit and performance monitoring have also been included in the programme. The Access to Justice Development Fund has supported infrastructure improvements, including solar energy solutions, e-libraries, internet connectivity, clean drinking water and women-centric facilities. The broader reform agenda also includes international judicial cooperation to strengthen technology, cybersecurity, professional training and institutional capacity. The programme aims not only to increase case disposal but also to ensure timely assistance to citizens, reduce procedural difficulties and improve public access to justice.",
+      "html": "<p>The <a class=\"incontent_tags_class\" href=\"https://www.nation.com.pk/tag/Supreme%20Court\">Supreme Court</a> has reported a significant reduction in its pending caseload, with cases declining from 60,304 in November 2024 to 31,927 in September 2026, as part of an 86-point reform action plan aimed at making the justice system more accessible, efficient, and transparent.<br> <br> According to the reform progress report, 64 of the 86 actions have been completed, 11 are on track, while 11 require further attention.<br> <br> During the reporting period, 22,213 cases were transferred to the <a class=\"incontent_tags_class\" href=\"https://www.nation.com.pk/tag/Federal%20Constitutional%20Court\">Federal Constitutional Court</a> following the constitutional amendment. Separately, the <a class=\"incontent_tags_class\" href=\"https://www.nation.com.pk/tag/Supreme%20Court\">Supreme Court</a> disposed of 6,998 more cases than were instituted between November 2024 and September 2026.<br> <br> The annual disposal of cases also increased from 16,620 in 2023-24 to 25,989 in 2024-25, registering an improvement of approximately 56 per cent.<br> <br> The reform programme has prioritised long-pending cases involving personal liberty, family rights, taxation and service disputes. Death appeals have progressed from cases instituted in 2015 to those filed in 2026, while bail-after-arrest matters have advanced from 2009 to 2026 and family litigation from 2010 to 2026.<br> <br> Dedicated benches, early-hearing arrangements and structured case fixation are being used to address delays and expedite the disposal of cases.<br> <br> Technology has also emerged as a major component of the reforms. More than 45,131 cases were e-filed during the reporting period, over 264,000 judgments were digitised, and more than 34,883 certified copies were issued through system-enabled processes.<br> <br> The <a class=\"incontent_tags_class\" href=\"https://www.nation.com.pk/tag/Supreme%20Court\">Supreme Court</a> Rules 2025 introduced an updated framework for electronic filing, digital records and virtual hearings, while digital case tracking and judicial analytics are being strengthened.<br> <br> For public facilitation, the <a class=\"incontent_tags_class\" href=\"https://www.nation.com.pk/tag/Supreme%20Court\">Supreme Court</a> has established a Public Facilitation Centre to provide litigants with court-related information and assistance. A Free Legal Advice and Free Legal Aid Call Centre initiative has also been introduced to support people unable to afford private legal services, while an Overseas Litigants’ Facilitation Cell caters to Pakistanis living abroad.<br> <br> At the national level, the National Judicial (Policy Making) Committee (NJPMC) is extending reforms across the judicial system. Disposal timelines ranging from two to 24 months have been prescribed for 17 priority categories of cases.<br> <br> The District Judiciary disposed of 1,467,675 time-bound cases between September 2025 and July 2026. During the same period, Model Criminal Courts decided 91,071 cases, while Model Civil Courts disposed of 42,386 cases.<br> <br> A National Judicial Analytics Dashboard is being used to monitor <a class=\"incontent_tags_class\" href=\"https://www.nation.com.pk/tag/Case%20Pendency\">case pendency</a>, disposal rates, and institutional performance.<br> <br> The proposed National Unified E-Filing and Electronic Judicial Record System has received approval in principle. It envisages a Universal Case Identification Number to track cases across different tiers of the judiciary, with a phased pilot planned for family cases. National guidelines for the responsible use of artificial intelligence in judicial institutions are also under development.<br> <br> The reform programme also places emphasis on inclusive justice and women-friendly court facilities. Women-centric facilities have been reported at 398 locations across different jurisdictions, while plans for dedicated Women Facilitation Centres include waiting areas, childcare facilities, separate washrooms, mediation rooms and other essential services.<br> <br> To strengthen institutional accountability, an Anti-Corruption Hotline has been established to receive complaints regarding corruption, bribery and misconduct involving court staff. Measures relating to financial management, procurement, internal audit and performance monitoring have also been included in the programme.<br> <br> The <a class=\"incontent_tags_class\" href=\"https://www.nation.com.pk/tag/Access%20To%20Justice\">Access to Justice</a> Development Fund has supported infrastructure improvements, including solar energy solutions, e-libraries, internet connectivity, clean drinking water and women-centric facilities.<br> The broader reform agenda also includes international judicial cooperation to strengthen technology, cybersecurity, professional training and institutional capacity.<br> <br> The programme aims not only to increase case disposal but also to ensure timely assistance to citizens, reduce procedural difficulties and improve public <a class=\"incontent_tags_class\" href=\"https://www.nation.com.pk/tag/Access%20To%20Justice\">access to justice</a>.</p>"
+    }
+  ],
+  "article_html": "<div class=\"content-inner news-detail-content-class\"> <p>The <a class=\"incontent_tags_class\" href=\"https://www.nation.com.pk/tag/Supreme%20Court\">Supreme Court</a> has reported a significant reduction in its pending caseload, with cases declining from 60,304 in November 2024 to 31,927 in September 2026, as part of an 86-point reform action plan aimed at making the justice system more accessible, efficient, and transparent.<br><br>According to the reform progress report, 64 of the 86 actions have been completed, 11 are on track, while 11 require further attention.<br><br>During the reporting period, 22,213 cases were transferred to the <a class=\"incontent_tags_class\" href=\"https://www.nation.com.pk/tag/Federal%20Constitutional%20Court\">Federal Constitutional Court</a> following the constitutional amendment. Separately, the <a class=\"incontent_tags_class\" href=\"https://www.nation.com.pk/tag/Supreme%20Court\">Supreme Court</a> disposed of 6,998 more cases than were instituted between November 2024 and September 2026.<br><br>The annual disposal of cases also increased from 16,620 in 2023-24 to 25,989 in 2024-25, registering an improvement of approximately 56 per cent.<br><br>The reform programme has prioritised long-pending cases involving personal liberty, family rights, taxation and service disputes. Death appeals have progressed from cases instituted in 2015 to those filed in 2026, while bail-after-arrest matters have advanced from 2009 to 2026 and family litigation from 2010 to 2026.<br><br>Dedicated benches, early-hearing arrangements and structured case fixation are being used to address delays and expedite the disposal of cases.<br><br>Technology has also emerged as a major component of the reforms. More than 45,131 cases were e-filed during the reporting period, over 264,000 judgments were digitised, and more than 34,883 certified copies were issued through system-enabled processes.<br><br>The <a class=\"incontent_tags_class\" href=\"https://www.nation.com.pk/tag/Supreme%20Court\">Supreme Court</a> Rules 2025 introduced an updated framework for electronic filing, digital records and virtual hearings, while digital case tracking and judicial analytics are being strengthened.<br><br>For public facilitation, the <a class=\"incontent_tags_class\" href=\"https://www.nation.com.pk/tag/Supreme%20Court\">Supreme Court</a> has established a Public Facilitation Centre to provide litigants with court-related information and assistance. A Free Legal Advice and Free Legal Aid Call Centre initiative has also been introduced to support people unable to afford private legal services, while an Overseas Litigants’ Facilitation Cell caters to Pakistanis living abroad.<br><br>At the national level, the National Judicial (Policy Making) Committee (NJPMC) is extending reforms across the judicial system. Disposal timelines ranging from two to 24 months have been prescribed for 17 priority categories of cases.<br><br>The District Judiciary disposed of 1,467,675 time-bound cases between September 2025 and July 2026. During the same period, Model Criminal Courts decided 91,071 cases, while Model Civil Courts disposed of 42,386 cases.<br><br>A National Judicial Analytics Dashboard is being used to monitor <a class=\"incontent_tags_class\" href=\"https://www.nation.com.pk/tag/Case%20Pendency\">case pendency</a>, disposal rates, and institutional performance.<br><br>The proposed National Unified E-Filing and Electronic Judicial Record System has received approval in principle. It envisages a Universal Case Identification Number to track cases across different tiers of the judiciary, with a phased pilot planned for family cases. National guidelines for the responsible use of artificial intelligence in judicial institutions are also under development.<br><br>The reform programme also places emphasis on inclusive justice and women-friendly court facilities. Women-centric facilities have been reported at 398 locations across different jurisdictions, while plans for dedicated Women Facilitation Centres include waiting areas, childcare facilities, separate washrooms, mediation rooms and other essential services.<br><br>To strengthen institutional accountability, an Anti-Corruption Hotline has been established to receive complaints regarding corruption, bribery and misconduct involving court staff. Measures relating to financial management, procurement, internal audit and performance monitoring have also been included in the programme.<br><br>The <a class=\"incontent_tags_class\" href=\"https://www.nation.com.pk/tag/Access%20To%20Justice\">Access to Justice</a> Development Fund has supported infrastructure improvements, including solar energy solutions, e-libraries, internet connectivity, clean drinking water and women-centric facilities.<br>The broader reform agenda also includes international judicial cooperation to strengthen technology, cybersecurity, professional training and institutional capacity.<br><br>The programme aims not only to increase case disposal but also to ensure timely assistance to citizens, reduce procedural difficulties and improve public <a class=\"incontent_tags_class\" href=\"https://www.nation.com.pk/tag/Access%20To%20Justice\">access to justice</a>.</p> <div id=\"div-gpt-ad-1681982472501-0\" style=\"min-width: 300px; min-height: 90px;\"> <script> googletag.cmd.push(function() { googletag.display('div-gpt-ad-1681982472501-0'); }); </script> </div> <p></p><div class=\"oembed_ltr\"> <div class=\"oembed_image\" style=\"\"> <div class=\"top-center\" title=\"https://www.nation.com.pk/13-Nov-2026/gold-prices-decline-rs4-900-per-tola\" style=\"height:55px;background-image:url(https://www.nation.com.pk/digital_images/medium/2026-11-13/gold-prices-decline-rs4-900-per-tola-1794579343-1580.jpg);\"></div> </div> <div class=\"oembed_title\"> <a href=\"https://www.nation.com.pk/13-Nov-2026/gold-prices-decline-rs4-900-per-tola\">Gold prices decline by Rs4,900 per tola</a> </div> </div> <div class=\"clearfix\"></div> <div class=\"jeg_post_tags\"> <span>Tags:</span> <div> <a href=\"https://www.nation.com.pk/tag/Supreme-Court\" rel=\"tag\">Supreme Court</a><a href=\"https://www.nation.com.pk/tag/Judicial-Reforms\" rel=\"tag\">Judicial Reforms</a><a href=\"https://www.nation.com.pk/tag/Case-Pendency\" rel=\"tag\">Case Pendency</a><a href=\"https://www.nation.com.pk/tag/Federal-Constitutional-Court\" rel=\"tag\">Federal Constitutional Court</a><a href=\"https://www.nation.com.pk/tag/Digital-Justice-System\" rel=\"tag\">Digital Justice System</a><a href=\"https://www.nation.com.pk/tag/Access-To-Justice\" rel=\"tag\">Access To Justice</a> </div> </div> </div>",
+  "image_url": "https://www.nation.com.pk/digital_images/large/2026-11-13/supreme-court-reports-47pc-decline-pending-cases-1794578539-2631.jpg",
+  "images": [],
+  "videos": [],
+  "tweets": [],
+  "tweet_embed_count": 0,
+  "media_detection_scope": "URLs_and_extracted_metadata_not_media_bytes",
+  "embed_detection_scope": "downloaded_article_body_html_only",
+  "language": "en",
+  "language_source": "English source configuration",
+  "section": "national",
+  "tags": [
+    "Supreme Court, Judicial Reforms, Case Pendency, Federal Constitutional Court, Digital Justice System, Access To Justice"
+  ],
+  "crawled_at": "2026-11-13T14:51:19.693447+00:00",
+  "discovered_from": "https://www.nation.com.pk/sitemap_news_google.xml",
+  "processing_status": "cleaned",
+  "validation_issues": [],
+  "validation_status": "passed_basic_checks",
+  "category": "pakistan",
+  "cleaned_text": "The Supreme Court has reported a significant reduction in its pending caseload, with cases declining from 60,304 in November 2024 to 31,927 in September 2026, as part of an 86-point reform action plan aimed at making the justice system more accessible, efficient, and transparent.\n\nAccording to the reform progress report, 64 of the 86 actions have been completed, 11 are on track, while 11 require further attention.\n\nDuring the reporting period, 22,213 cases were transferred to the Federal Constitutional Court following the constitutional amendment. Separately, the Supreme Court disposed of 6,998 more cases than were instituted between November 2024 and September 2026.\n\nThe annual disposal of cases also increased from 16,620 in 2023-24 to 25,989 in 2024-25, registering an improvement of approximately 56 per cent.\n\nThe reform programme has prioritised long-pending cases involving personal liberty, family rights, taxation and service disputes. Death appeals have progressed from cases instituted in 2015 to those filed in 2026, while bail-after-arrest matters have advanced from 2009 to 2026 and family litigation from 2010 to 2026.\n\nDedicated benches, early-hearing arrangements and structured case fixation are being used to address delays and expedite the disposal of cases.\n\nTechnology has also emerged as a major component of the reforms. More than 45,131 cases were e-filed during the reporting period, over 264,000 judgments were digitised, and more than 34,883 certified copies were issued through system-enabled processes.\n\nThe Supreme Court Rules 2025 introduced an updated framework for electronic filing, digital records and virtual hearings, while digital case tracking and judicial analytics are being strengthened.\n\nFor public facilitation, the Supreme Court has established a Public Facilitation Centre to provide litigants with court-related information and assistance. A Free Legal Advice and Free Legal Aid Call Centre initiative has also been introduced to support people unable to afford private legal services, while an Overseas Litigants’ Facilitation Cell caters to Pakistanis living abroad.\n\nAt the national level, the National Judicial (Policy Making) Committee (NJPMC) is extending reforms across the judicial system. Disposal timelines ranging from two to 24 months have been prescribed for 17 priority categories of cases.\n\nThe District Judiciary disposed of 1,467,675 time-bound cases between September 2025 and July 2026. During the same period, Model Criminal Courts decided 91,071 cases, while Model Civil Courts disposed of 42,386 cases.\n\nA National Judicial Analytics Dashboard is being used to monitor case pendency, disposal rates, and institutional performance.\n\nThe proposed National Unified E-Filing and Electronic Judicial Record System has received approval in principle. It envisages a Universal Case Identification Number to track cases across different tiers of the judiciary, with a phased pilot planned for family cases. National guidelines for the responsible use of artificial intelligence in judicial institutions are also under development.\n\nThe reform programme also places emphasis on inclusive justice and women-friendly court facilities. Women-centric facilities have been reported at 398 locations across different jurisdictions, while plans for dedicated Women Facilitation Centres include waiting areas, childcare facilities, separate washrooms, mediation rooms and other essential services.\n\nTo strengthen institutional accountability, an Anti-Corruption Hotline has been established to receive complaints regarding corruption, bribery and misconduct involving court staff. Measures relating to financial management, procurement, internal audit and performance monitoring have also been included in the programme.\n\nThe Access to Justice Development Fund has supported infrastructure improvements, including solar energy solutions, e-libraries, internet connectivity, clean drinking water and women-centric facilities.\n\nThe broader reform agenda also includes international judicial cooperation to strengthen technology, cybersecurity, professional training and institutional capacity.\n\nThe programme aims not only to increase case disposal but also to ensure timely assistance to citizens, reduce procedural difficulties and improve public access to justice.",
+  "cleaned_blocks": [
+    {
+      "source_block_index": 0,
+      "type": "paragraph",
+      "text": "The Supreme Court has reported a significant reduction in its pending caseload, with cases declining from 60,304 in November 2024 to 31,927 in September 2026, as part of an 86-point reform action plan aimed at making the justice system more accessible, efficient, and transparent.\n\nAccording to the reform progress report, 64 of the 86 actions have been completed, 11 are on track, while 11 require further attention.\n\nDuring the reporting period, 22,213 cases were transferred to the Federal Constitutional Court following the constitutional amendment. Separately, the Supreme Court disposed of 6,998 more cases than were instituted between November 2024 and September 2026.\n\nThe annual disposal of cases also increased from 16,620 in 2023-24 to 25,989 in 2024-25, registering an improvement of approximately 56 per cent.\n\nThe reform programme has prioritised long-pending cases involving personal liberty, family rights, taxation and service disputes. Death appeals have progressed from cases instituted in 2015 to those filed in 2026, while bail-after-arrest matters have advanced from 2009 to 2026 and family litigation from 2010 to 2026.\n\nDedicated benches, early-hearing arrangements and structured case fixation are being used to address delays and expedite the disposal of cases.\n\nTechnology has also emerged as a major component of the reforms. More than 45,131 cases were e-filed during the reporting period, over 264,000 judgments were digitised, and more than 34,883 certified copies were issued through system-enabled processes.\n\nThe Supreme Court Rules 2025 introduced an updated framework for electronic filing, digital records and virtual hearings, while digital case tracking and judicial analytics are being strengthened.\n\nFor public facilitation, the Supreme Court has established a Public Facilitation Centre to provide litigants with court-related information and assistance. A Free Legal Advice and Free Legal Aid Call Centre initiative has also been introduced to support people unable to afford private legal services, while an Overseas Litigants’ Facilitation Cell caters to Pakistanis living abroad.\n\nAt the national level, the National Judicial (Policy Making) Committee (NJPMC) is extending reforms across the judicial system. Disposal timelines ranging from two to 24 months have been prescribed for 17 priority categories of cases.\n\nThe District Judiciary disposed of 1,467,675 time-bound cases between September 2025 and July 2026. During the same period, Model Criminal Courts decided 91,071 cases, while Model Civil Courts disposed of 42,386 cases.\n\nA National Judicial Analytics Dashboard is being used to monitor case pendency, disposal rates, and institutional performance.\n\nThe proposed National Unified E-Filing and Electronic Judicial Record System has received approval in principle. It envisages a Universal Case Identification Number to track cases across different tiers of the judiciary, with a phased pilot planned for family cases. National guidelines for the responsible use of artificial intelligence in judicial institutions are also under development.\n\nThe reform programme also places emphasis on inclusive justice and women-friendly court facilities. Women-centric facilities have been reported at 398 locations across different jurisdictions, while plans for dedicated Women Facilitation Centres include waiting areas, childcare facilities, separate washrooms, mediation rooms and other essential services.\n\nTo strengthen institutional accountability, an Anti-Corruption Hotline has been established to receive complaints regarding corruption, bribery and misconduct involving court staff. Measures relating to financial management, procurement, internal audit and performance monitoring have also been included in the programme.\n\nThe Access to Justice Development Fund has supported infrastructure improvements, including solar energy solutions, e-libraries, internet connectivity, clean drinking water and women-centric facilities.\n\nThe broader reform agenda also includes international judicial cooperation to strengthen technology, cybersecurity, professional training and institutional capacity.\n\nThe programme aims not only to increase case disposal but also to ensure timely assistance to citizens, reduce procedural difficulties and improve public access to justice."
+    }
+  ],
+  "cleaning_version": "truthlens-clean-v1",
+  "cleaned_at": "2026-11-13T14:51:19.696599+00:00",
+  "cleaning_issues": [],
+  "cleaning_status": "cleaned",
+  "content_hash_version": "sha256-headline-subheadline-body-v1",
+  "content_hash": "6f4b840a4a876163d189db2607d5af82a328f22914a5764916e8010c706b54c0",
+  "text_hash": "076f765f8ba4d773bd98403bca46a0a1e2b352baf609c6748450d7db413cefa4",
+  "metadata_hash": "2ba61deef7b01b3627bae230e0ab7023c58c251bacd21e4dcead5e0e29f04ae7",
+  "media_hash": "1a478b5b2f934fc5d7093cbd05eb83f42459737d2444fb7e151aade2f02619ec",
+  "quality_hash": "b8df83551d01c6666f62539b00ca8b1811a94ed92bc0b0df16544df4ef1278c6",
+  "state_hash": "42ffdfbb7b1afaf2e39cb731ed8fea07279df9d68b3d2f175b984f723ed657cf",
+  "tracking_version": "truthlens-state-v1",
+  "change_status": "new",
+  "changed_fields": [],
+  "field_changes": {},
+  "body_diff": "",
+  "text_changed": null,
+  "text_reanalysis_required": true,
+  "version_number": 1,
+  "version_first_seen_at": "2026-11-13T14:51:19.693447+00:00",
+  "last_changed_at": "2026-11-13T14:51:19.693447+00:00",
+  "last_checked_at": "2026-11-13T14:51:19.693447+00:00",
+  "tracking_observation_count": 1,
+  "snapshot_saved": true,
+  "change_detection_scope": "extracted_text_metadata_media_references_and_quality"
+},
+{
+  "source": "The Nation",
+  "run_id": "20261113T145112Z_22548ffe5a524dbda3bc9a8bc99390d6",
+  "extraction_version": "nation-extract-v1",
+  "article_id": "2026-11-13-punjab-opens-online-registration-attractive-vehicle-number-auction-november-30",
+  "article_key": "nation:2026-11-13-punjab-opens-online-registration-attractive-vehicle-number-auction-november-30",
+  "url": "https://www.nation.com.pk/13-Nov-2026/punjab-opens-online-registration-attractive-vehicle-number-auction-november-30",
+  "http_status": 200,
+  "response_encoding": "utf-8",
+  "canonical_url": "https://www.nation.com.pk/13-Nov-2026/punjab-opens-online-registration-attractive-vehicle-number-auction-november-30",
+  "canonical_url_source": "link[rel=canonical]/og:url",
+  "headline": "Punjab opens online registration for attractive vehicle number auction until November 30",
+  "subheadline": null,
+  "description": "The Punjab government has opened online registration for the auction of premium vehicle registration numbers, with interested citizens able to submit their",
+  "description_source": "meta[property=\"og:description\"]",
+  "author": "Web Desk",
+  "author_parts": [
+    "Web Desk"
+  ],
+  "published_at": "2026-11-13T19:12:00+05:00",
+  "updated_at": "2026-11-13T19:12:38+05:00",
+  "timestamp_sources": {
+    "published_at": "meta[property=\"article:published_time\"]",
+    "updated_at": "meta/JSON-LD"
+  },
+  "article_text": "The Punjab government has opened online registration for the auction of premium vehicle registration numbers, with interested citizens able to submit their applications until November 30.\n\nPunjab Information Technology Board (PITB) Chairman Faisal Yousaf said the e-auction facility allows people to participate in the bidding process from their homes without visiting Excise Department offices.\n\nThe auction covers registration numbers for motorcycles, private cars and commercial vehicles, while registration is available through the e-Auction mobile application and web portal.\n\nYousaf said the platform would also provide information about successful bidders, adding that the digital system was intended to simplify the process and improve transparency.\n\nThe initiative enables citizens to access the vehicle number auction service through an online platform",
+  "content_blocks": [
+    {
+      "type": "paragraph",
+      "text": "The Punjab government has opened online registration for the auction of premium vehicle registration numbers, with interested citizens able to submit their applications until November 30.",
+      "html": "<p>The Punjab government has opened <a class=\"incontent_tags_class\" href=\"https://www.nation.com.pk/tag/Online%20Registration\">online registration</a> for the auction of premium vehicle registration numbers, with interested citizens able to submit their applications until November 30.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Punjab Information Technology Board (PITB) Chairman Faisal Yousaf said the e-auction facility allows people to participate in the bidding process from their homes without visiting Excise Department offices.",
+      "html": "<p>Punjab Information Technology Board (PITB) Chairman Faisal Yousaf said the e-auction facility allows people to participate in the bidding process from their homes without visiting <a class=\"incontent_tags_class\" href=\"https://www.nation.com.pk/tag/Excise%20Department\">Excise Department</a> offices.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "The auction covers registration numbers for motorcycles, private cars and commercial vehicles, while registration is available through the e-Auction mobile application and web portal.",
+      "html": "<p>The auction covers registration numbers for motorcycles, private cars and commercial vehicles, while registration is available through the e-Auction mobile application and web portal.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Yousaf said the platform would also provide information about successful bidders, adding that the digital system was intended to simplify the process and improve transparency.",
+      "html": "<p>Yousaf said the platform would also provide information about successful bidders, adding that the digital system was intended to simplify the process and improve transparency.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "The initiative enables citizens to access the vehicle number auction service through an online platform",
+      "html": "<p>The initiative enables citizens to access the vehicle number auction service through an online platform</p>"
+    }
+  ],
+  "article_html": "<div class=\"content-inner news-detail-content-class\"> <p>The Punjab government has opened <a class=\"incontent_tags_class\" href=\"https://www.nation.com.pk/tag/Online%20Registration\">online registration</a> for the auction of premium vehicle registration numbers, with interested citizens able to submit their applications until November 30.</p> <div id=\"div-gpt-ad-1681982472501-0\" style=\"min-width: 300px; min-height: 90px;\"> <script> googletag.cmd.push(function() { googletag.display('div-gpt-ad-1681982472501-0'); }); </script> </div> <p>Punjab Information Technology Board (PITB) Chairman Faisal Yousaf said the e-auction facility allows people to participate in the bidding process from their homes without visiting <a class=\"incontent_tags_class\" href=\"https://www.nation.com.pk/tag/Excise%20Department\">Excise Department</a> offices.</p> <p>The auction covers registration numbers for motorcycles, private cars and commercial vehicles, while registration is available through the e-Auction mobile application and web portal.</p> <p></p><div class=\"oembed_ltr\"> <div class=\"oembed_image\" style=\"\"> <div class=\"top-center\" title=\"https://www.nation.com.pk/13-Nov-2026/gold-prices-decline-rs4-900-per-tola\" style=\"height:55px;background-image:url(https://www.nation.com.pk/digital_images/medium/2026-11-13/gold-prices-decline-rs4-900-per-tola-1794579343-1580.jpg);\"></div> </div> <div class=\"oembed_title\"> <a href=\"https://www.nation.com.pk/13-Nov-2026/gold-prices-decline-rs4-900-per-tola\">Gold prices decline by Rs4,900 per tola</a> </div> </div> <div class=\"clearfix\"></div> <p>Yousaf said the platform would also provide information about successful bidders, adding that the digital system was intended to simplify the process and improve transparency.</p> <p>The initiative enables citizens to access the vehicle number auction service through an online platform</p> <div class=\"jeg_post_tags\"> <span>Tags:</span> <div> <a href=\"https://www.nation.com.pk/tag/Punjab-Vehicle-Auction\" rel=\"tag\">Punjab Vehicle Auction</a><a href=\"https://www.nation.com.pk/tag/Premium-Registration-Numbers\" rel=\"tag\">Premium Registration Numbers</a><a href=\"https://www.nation.com.pk/tag/PITB\" rel=\"tag\">PITB</a><a href=\"https://www.nation.com.pk/tag/E-Auction-Portal\" rel=\"tag\">E-Auction Portal</a><a href=\"https://www.nation.com.pk/tag/Excise-Department\" rel=\"tag\">Excise Department</a><a href=\"https://www.nation.com.pk/tag/Online-Registration\" rel=\"tag\">Online Registration</a> </div> </div> </div>",
+  "image_url": "https://www.nation.com.pk/digital_images/large/2026-11-13/punjab-opens-online-registration-attractive-vehicle-number-auction-november-30-1794579123-6472.jpg",
+  "images": [],
+  "videos": [],
+  "tweets": [],
+  "tweet_embed_count": 0,
+  "media_detection_scope": "URLs_and_extracted_metadata_not_media_bytes",
+  "embed_detection_scope": "downloaded_article_body_html_only",
+  "language": "en",
+  "language_source": "English source configuration",
+  "section": "technology",
+  "tags": [
+    "Punjab Vehicle Auction, Premium Registration Numbers, PITB, E-Auction Portal, Excise Department, Online Registration"
+  ],
+  "crawled_at": "2026-11-13T14:51:23.429766+00:00",
+  "discovered_from": "https://www.nation.com.pk/sitemap_news_google.xml",
+  "processing_status": "cleaned",
+  "validation_issues": [],
+  "validation_status": "passed_basic_checks",
+  "category": "technology",
+  "cleaned_text": "The Punjab government has opened online registration for the auction of premium vehicle registration numbers, with interested citizens able to submit their applications until November 30.\n\nPunjab Information Technology Board (PITB) Chairman Faisal Yousaf said the e-auction facility allows people to participate in the bidding process from their homes without visiting Excise Department offices.\n\nThe auction covers registration numbers for motorcycles, private cars and commercial vehicles, while registration is available through the e-Auction mobile application and web portal.\n\nYousaf said the platform would also provide information about successful bidders, adding that the digital system was intended to simplify the process and improve transparency.\n\nThe initiative enables citizens to access the vehicle number auction service through an online platform",
+  "cleaned_blocks": [
+    {
+      "source_block_index": 0,
+      "type": "paragraph",
+      "text": "The Punjab government has opened online registration for the auction of premium vehicle registration numbers, with interested citizens able to submit their applications until November 30."
+    },
+    {
+      "source_block_index": 1,
+      "type": "paragraph",
+      "text": "Punjab Information Technology Board (PITB) Chairman Faisal Yousaf said the e-auction facility allows people to participate in the bidding process from their homes without visiting Excise Department offices."
+    },
+    {
+      "source_block_index": 2,
+      "type": "paragraph",
+      "text": "The auction covers registration numbers for motorcycles, private cars and commercial vehicles, while registration is available through the e-Auction mobile application and web portal."
+    },
+    {
+      "source_block_index": 3,
+      "type": "paragraph",
+      "text": "Yousaf said the platform would also provide information about successful bidders, adding that the digital system was intended to simplify the process and improve transparency."
+    },
+    {
+      "source_block_index": 4,
+      "type": "paragraph",
+      "text": "The initiative enables citizens to access the vehicle number auction service through an online platform"
+    }
+  ],
+  "cleaning_version": "truthlens-clean-v1",
+  "cleaned_at": "2026-11-13T14:51:23.431333+00:00",
+  "cleaning_issues": [],
+  "cleaning_status": "cleaned",
+  "content_hash_version": "sha256-headline-subheadline-body-v1",
+  "content_hash": "c444548881f6861b014d39e99f18d6ca94686df5be5fa600581daaa28e07d10a",
+  "text_hash": "40d60520120da03f0a21bcb29bcbc5d8a6948e163d36529410643a6b9f034ab9",
+  "metadata_hash": "29dcd7238f5931a48377d9dd5465d9a6bb924b5a4ca9a6702acff19a230c6dc9",
+  "media_hash": "288b3ea15a700cc3c6d825e2bb6434d44e0d2503c57c38fd7f2fd703884ee754",
+  "quality_hash": "b8df83551d01c6666f62539b00ca8b1811a94ed92bc0b0df16544df4ef1278c6",
+  "state_hash": "a2eb6e04fdb7bb403bf3573d1ce5c77cafdb8c109e83d95a90645e622f07f468",
+  "tracking_version": "truthlens-state-v1",
+  "change_status": "new",
+  "changed_fields": [],
+  "field_changes": {},
+  "body_diff": "",
+  "text_changed": null,
+  "text_reanalysis_required": true,
+  "version_number": 1,
+  "version_first_seen_at": "2026-11-13T14:51:23.429766+00:00",
+  "last_changed_at": "2026-11-13T14:51:23.429766+00:00",
+  "last_checked_at": "2026-11-13T14:51:23.429766+00:00",
+  "tracking_observation_count": 1,
+  "snapshot_saved": true,
+  "change_detection_scope": "extracted_text_metadata_media_references_and_quality"
+},
+{
+  "source": "The Nation",
+  "run_id": "20261113T145112Z_22548ffe5a524dbda3bc9a8bc99390d6",
+  "extraction_version": "nation-extract-v1",
+  "article_id": "2026-11-13-gold-prices-decline-rs4-900-per-tola",
+  "article_key": "nation:2026-11-13-gold-prices-decline-rs4-900-per-tola",
+  "url": "https://www.nation.com.pk/13-Nov-2026/gold-prices-decline-rs4-900-per-tola",
+  "http_status": 200,
+  "response_encoding": "utf-8",
+  "canonical_url": "https://www.nation.com.pk/13-Nov-2026/gold-prices-decline-rs4-900-per-tola",
+  "canonical_url_source": "link[rel=canonical]/og:url",
+  "headline": "Gold prices decline by Rs4,900 per tola",
+  "subheadline": null,
+  "description": "The prices of gold witnessed a significant decline in the local market on Friday, with the price of 24-karat gold per tola falling by Rs4,900 to settle at",
+  "description_source": "meta[property=\"og:description\"]",
+  "author": "APP",
+  "author_parts": [
+    "APP"
+  ],
+  "published_at": "2026-11-13T19:16:03+05:00",
+  "updated_at": "2026-11-13T19:16:03+05:00",
+  "timestamp_sources": {
+    "published_at": "meta[property=\"article:published_time\"]",
+    "updated_at": "meta/JSON-LD"
+  },
+  "article_text": "The prices of gold witnessed a significant decline in the local market on Friday, with the price of 24-karat gold per tola falling by Rs4,900 to settle at Rs411,636, according to rates issued by the All Pakistan Sarafa Gems and Jewellers Association. Similarly, the price of 10 grams of 24-karat gold decreased by Rs4,201 to Rs352,911, while 10 grams of 22-karat gold declined by Rs3,851 to Rs323,513. In the international market, the price of gold decreased by $49 to $3,891 per ounce, the association reported. Meanwhile, the price of silver per tola fell by Rs111 to Rs5,467, while the price of 10 grams of silver declined by Rs95 to Rs4,687. The price of silver in the international market also decreased by $1.11 to $49.89 per ounce, the association added.",
+  "content_blocks": [
+    {
+      "type": "paragraph",
+      "text": "The prices of gold witnessed a significant decline in the local market on Friday, with the price of 24-karat gold per tola falling by Rs4,900 to settle at Rs411,636, according to rates issued by the All Pakistan Sarafa Gems and Jewellers Association. Similarly, the price of 10 grams of 24-karat gold decreased by Rs4,201 to Rs352,911, while 10 grams of 22-karat gold declined by Rs3,851 to Rs323,513. In the international market, the price of gold decreased by $49 to $3,891 per ounce, the association reported. Meanwhile, the price of silver per tola fell by Rs111 to Rs5,467, while the price of 10 grams of silver declined by Rs95 to Rs4,687. The price of silver in the international market also decreased by $1.11 to $49.89 per ounce, the association added.",
+      "html": "<p>The prices of gold witnessed a significant decline in the local market on Friday, with the price of 24-karat gold per tola falling by Rs4,900 to settle at Rs411,636, according to rates issued by the All Pakistan Sarafa Gems and Jewellers Association.<br> <br> Similarly, the price of 10 grams of 24-karat gold decreased by Rs4,201 to Rs352,911, while 10 grams of 22-karat gold declined by Rs3,851 to Rs323,513.<br> <br> In the international market, the price of gold decreased by $49 to $3,891 per ounce, the association reported.<br> Meanwhile, the price of silver per tola fell by Rs111 to Rs5,467, while the price of 10 grams of silver declined by Rs95 to Rs4,687.<br> <br> The price of silver in the international market also decreased by $1.11 to $49.89 per ounce, the association added.</p>"
+    }
+  ],
+  "article_html": "<div class=\"content-inner news-detail-content-class\"> <p>The prices of gold witnessed a significant decline in the local market on Friday, with the price of 24-karat gold per tola falling by Rs4,900 to settle at Rs411,636, according to rates issued by the All Pakistan Sarafa Gems and Jewellers Association.<br><br>Similarly, the price of 10 grams of 24-karat gold decreased by Rs4,201 to Rs352,911, while 10 grams of 22-karat gold declined by Rs3,851 to Rs323,513.<br><br>In the international market, the price of gold decreased by $49 to $3,891 per ounce, the association reported.<br>Meanwhile, the price of silver per tola fell by Rs111 to Rs5,467, while the price of 10 grams of silver declined by Rs95 to Rs4,687.<br><br>The price of silver in the international market also decreased by $1.11 to $49.89 per ounce, the association added.</p> <div id=\"div-gpt-ad-1681982472501-0\" style=\"min-width: 300px; min-height: 90px;\"> <script> googletag.cmd.push(function() { googletag.display('div-gpt-ad-1681982472501-0'); }); </script> </div> <p></p><div class=\"oembed_ltr\"> <div class=\"oembed_image\" style=\"\"> <div class=\"top-center\" title=\"https://www.nation.com.pk/13-Nov-2026/punjab-opens-online-registration-attractive-vehicle-number-auction-november-30\" style=\"height:55px;background-image:url(https://www.nation.com.pk/digital_images/medium/2026-11-13/punjab-opens-online-registration-attractive-vehicle-number-auction-november-30-1794579123-6472.jpg);\"></div> </div> <div class=\"oembed_title\"> <a href=\"https://www.nation.com.pk/13-Nov-2026/punjab-opens-online-registration-attractive-vehicle-number-auction-november-30\">Punjab opens online registration for attractive vehicle number auction until November 30</a> </div> </div> <div class=\"clearfix\"></div> <div class=\"jeg_post_tags\"> <span>Tags:</span> <div> <a href=\"https://www.nation.com.pk/tag/Gold-Prices\" rel=\"tag\">Gold Prices</a><a href=\"https://www.nation.com.pk/tag/Silver-Prices\" rel=\"tag\">Silver Prices</a><a href=\"https://www.nation.com.pk/tag/Pakistan-Bullion-Market\" rel=\"tag\">Pakistan Bullion Market</a><a href=\"https://www.nation.com.pk/tag/Sarafa-Association\" rel=\"tag\">Sarafa Association</a><a href=\"https://www.nation.com.pk/tag/International-Gold-Rates\" rel=\"tag\">International Gold Rates</a><a href=\"https://www.nation.com.pk/tag/Precious-Metals\" rel=\"tag\">Precious Metals</a> </div> </div> </div>",
+  "image_url": "https://www.nation.com.pk/digital_images/large/2026-11-13/gold-prices-decline-rs4-900-per-tola-1794579343-1580.jpg",
+  "images": [],
+  "videos": [],
+  "tweets": [],
+  "tweet_embed_count": 0,
+  "media_detection_scope": "URLs_and_extracted_metadata_not_media_bytes",
+  "embed_detection_scope": "downloaded_article_body_html_only",
+  "language": "en",
+  "language_source": "English source configuration",
+  "section": "business",
+  "tags": [
+    "Gold Prices, Silver Prices, Pakistan Bullion Market, Sarafa Association, International Gold Rates, Precious Metals"
+  ],
+  "crawled_at": "2026-11-13T14:51:27.508407+00:00",
+  "discovered_from": "https://www.nation.com.pk/sitemap_news_google.xml",
+  "processing_status": "cleaned",
+  "validation_issues": [],
+  "validation_status": "passed_basic_checks",
+  "category": "business",
+  "cleaned_text": "The prices of gold witnessed a significant decline in the local market on Friday, with the price of 24-karat gold per tola falling by Rs4,900 to settle at Rs411,636, according to rates issued by the All Pakistan Sarafa Gems and Jewellers Association.\n\nSimilarly, the price of 10 grams of 24-karat gold decreased by Rs4,201 to Rs352,911, while 10 grams of 22-karat gold declined by Rs3,851 to Rs323,513.\n\nIn the international market, the price of gold decreased by $49 to $3,891 per ounce, the association reported.\n\nMeanwhile, the price of silver per tola fell by Rs111 to Rs5,467, while the price of 10 grams of silver declined by Rs95 to Rs4,687.\n\nThe price of silver in the international market also decreased by $1.11 to $49.89 per ounce, the association added.",
+  "cleaned_blocks": [
+    {
+      "source_block_index": 0,
+      "type": "paragraph",
+      "text": "The prices of gold witnessed a significant decline in the local market on Friday, with the price of 24-karat gold per tola falling by Rs4,900 to settle at Rs411,636, according to rates issued by the All Pakistan Sarafa Gems and Jewellers Association.\n\nSimilarly, the price of 10 grams of 24-karat gold decreased by Rs4,201 to Rs352,911, while 10 grams of 22-karat gold declined by Rs3,851 to Rs323,513.\n\nIn the international market, the price of gold decreased by $49 to $3,891 per ounce, the association reported.\n\nMeanwhile, the price of silver per tola fell by Rs111 to Rs5,467, while the price of 10 grams of silver declined by Rs95 to Rs4,687.\n\nThe price of silver in the international market also decreased by $1.11 to $49.89 per ounce, the association added."
+    }
+  ],
+  "cleaning_version": "truthlens-clean-v1",
+  "cleaned_at": "2026-11-13T14:51:27.508922+00:00",
+  "cleaning_issues": [],
+  "cleaning_status": "cleaned",
+  "content_hash_version": "sha256-headline-subheadline-body-v1",
+  "content_hash": "d406b6c9e007e8381d40db02eda4a3e09828f320eef040b5646bd6121fe26d0e",
+  "text_hash": "9705406fbd7c4b575d7fc919726dc3f2cd20aa57b7be24cb68c8eb1198e34c4d",
+  "metadata_hash": "545dfbba30e871b3ace1e626aafa9b79b9417fb923acc49b17e1a25f1a316925",
+  "media_hash": "1f2d64e04de2c44e46fa7354cf0493d51ddc54e11951de7b0361e28dc0c3567c",
+  "quality_hash": "b8df83551d01c6666f62539b00ca8b1811a94ed92bc0b0df16544df4ef1278c6",
+  "state_hash": "6a3474b836797f818bad85baaee6b0510581af9d48d30787dfd437f83e647e08",
+  "tracking_version": "truthlens-state-v1",
+  "change_status": "new",
+  "changed_fields": [],
+  "field_changes": {},
+  "body_diff": "",
+  "text_changed": null,
+  "text_reanalysis_required": true,
+  "version_number": 1,
+  "version_first_seen_at": "2026-11-13T14:51:27.508407+00:00",
+  "last_changed_at": "2026-11-13T14:51:27.508407+00:00",
+  "last_checked_at": "2026-11-13T14:51:27.508407+00:00",
+  "tracking_observation_count": 1,
+  "snapshot_saved": true,
+  "change_detection_scope": "extracted_text_metadata_media_references_and_quality"
+}
+]

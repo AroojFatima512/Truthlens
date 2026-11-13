@@ -20,6 +20,10 @@ export const inviteUser = async (name, email) => {
 export const resendInvite = async (id) => {
   try { return (await api.post(`/admin/users/${id}/invite`)).data; } catch (e) { throw apiError(e, 'Could not send the invitation'); }
 };
+// send the sign-up verification e-mail again (accounts that never confirmed their address)
+export const resendVerification = async (id) => {
+  try { return (await api.post(`/admin/users/${id}/verification`)).data; } catch (e) { throw apiError(e, 'Could not send the verification e-mail'); }
+};
 export const deleteUser = async (id) => {
   try { return (await api.delete(`/admin/users/${id}`)).data; } catch (e) { throw apiError(e, 'Could not delete the user'); }
 };

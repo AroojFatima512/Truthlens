@@ -171,7 +171,11 @@ const AdminDashboardPage = () => {
                 <p className="text-gray-500 dark:text-gray-400 text-[11px] font-bold uppercase tracking-widest mb-1.5 transition-colors">Registered Users</p>
                 <h3 className="text-3xl font-bold text-gray-900 dark:text-white tracking-tight leading-none mb-2 transition-colors">{stats.totalUsers}</h3>
                 <div className="flex items-center gap-2">
-                  <span className="text-gray-400 dark:text-gray-500 text-[10px]">Readers and admins</span>
+                  <span className="text-gray-400 dark:text-gray-500 text-[10px]">
+                    {stats.unverifiedUsers || stats.invitedUsers
+                      ? `Confirmed accounts${stats.unverifiedUsers ? ` · ${stats.unverifiedUsers} awaiting e-mail verification` : ''}${stats.invitedUsers ? ` · ${stats.invitedUsers} invited` : ''}`
+                      : 'Readers and admins'}
+                  </span>
                 </div>
               </div>
             </div>

@@ -1,0 +1,95 @@
+2026-11-13 19:50:50,464 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.logcount.LogCount',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.remote_control.RemoteControl',
+ 'truthlens.run_reporting.RunReportingExtension']
+2026-11-13 19:50:50,465 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'truthlens',
+ 'CONCURRENT_REQUESTS': 1,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 1,
+ 'DOWNLOAD_DELAY': 3,
+ 'DOWNLOAD_TIMEOUT': 30,
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'FEED_EXPORT_INDENT': 2,
+ 'LOG_LEVEL': 'INFO',
+ 'NEWSPIDER_MODULE': 'truthlens.spiders',
+ 'ROBOTSTXT_OBEY': True,
+ 'SPIDER_MODULES': ['truthlens.spiders'],
+ 'USER_AGENT': 'TruthLensResearchBot/0.1'}
+2026-11-13 19:50:50,808 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2026-11-13 19:50:50,813 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.start.StartSpiderMiddleware',
+ 'scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware',
+ 'scrapy.spidermiddlewares.metacopy.MetaCopyDetectionMiddleware']
+2026-11-13 19:50:50,917 [scrapy.middleware] INFO: Enabled item pipelines:
+['truthlens.pipelines.CleaningPipeline',
+ 'truthlens.pipelines.MongoDBPipeline',
+ 'truthlens.export.RunJsonExportPipeline']
+2026-11-13 19:50:50,918 [scrapy.core.engine] INFO: Spider opened
+2026-11-13 19:50:50,949 [truthlens.pipelines] INFO: MongoDB connected: database=truthlens
+2026-11-13 19:50:50,952 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2026-11-13 19:50:50,956 [truthlens.run_reporting] INFO: Run started: 20261113T145050Z_b4d0e61fa05b46529a4119b47c295097 | source=Express Tribune
+2026-11-13 19:50:50,958 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2026-11-13 19:50:50,962 [scrapy.extensions.remote_control] INFO: Remote control HTTP server listening on port 62512 (job 8672-2ccd22b2829844ceac20699546afed2c)
+2026-11-13 19:50:55,594 [tribune_sitemap] INFO: Sitemap: selected 3 article URLs.
+2026-11-13 19:51:00,952 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2640143/pakistan-to-host-fih-nations-cup | paragraphs=14 | words=362
+2026-11-13 19:51:00,955 [truthlens.pipelines] INFO: Cleaned article: tribune:2640143 | characters=2389 | hash=60d9d1aef64c
+2026-11-13 19:51:00,962 [truthlens.pipelines] INFO: MongoDB unchanged: tribune:2640143 | version=1 | fields=none
+2026-11-13 19:51:05,147 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2640145/pakistan-chase-saff-cup-history | paragraphs=12 | words=421
+2026-11-13 19:51:05,149 [truthlens.pipelines] INFO: Cleaned article: tribune:2640145 | characters=2779 | hash=63e9d670f72d
+2026-11-13 19:51:05,155 [truthlens.pipelines] INFO: MongoDB new: tribune:2640145 | version=1 | fields=none
+2026-11-13 19:51:08,861 [tribune_sitemap] INFO: Extracted article: https://tribune.com.pk/story/2640147/pakistan-eye-title-defence-against-india | paragraphs=11 | words=400
+2026-11-13 19:51:08,863 [truthlens.pipelines] INFO: Cleaned article: tribune:2640147 | characters=2507 | hash=14ff7afae8f2
+2026-11-13 19:51:08,871 [truthlens.pipelines] INFO: MongoDB new: tribune:2640147 | version=1 | fields=none
+2026-11-13 19:51:08,872 [scrapy.core.engine] INFO: Closing spider (finished)
+2026-11-13 19:51:08,872 [truthlens.export] INFO: Run JSON saved: data\runs\tribune_sitemap\tribune_sitemap_2026-11-13_19-50-50.json | items=3
+2026-11-13 19:51:08,875 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 1407,
+ 'downloader/request_count': 5,
+ 'downloader/request_method_count/GET': 5,
+ 'downloader/response_bytes': 122132,
+ 'downloader/response_count': 5,
+ 'downloader/response_status_count/200': 5,
+ 'elapsed_time_seconds': 17.920999999998457,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2026, 11, 13, 14, 51, 8, 874131, tzinfo=datetime.timezone.utc),
+ 'httpcompression/response_bytes': 587270,
+ 'httpcompression/response_count': 5,
+ 'item_scraped_count': 3,
+ 'items_per_minute': 10.588235294117647,
+ 'log_count/INFO': 16,
+ 'mongodb/articles_new': 2,
+ 'mongodb/articles_unchanged': 1,
+ 'mongodb/snapshots_inserted': 2,
+ 'mongodb/snapshots_skipped': 1,
+ 'request_depth_max': 1,
+ 'response_received_count': 5,
+ 'responses_per_minute': 17.647058823529413,
+ 'robotstxt/request_count': 1,
+ 'robotstxt/response_count': 1,
+ 'robotstxt/response_status_count/200': 1,
+ 'scheduler/dequeued': 4,
+ 'scheduler/dequeued/memory': 4,
+ 'scheduler/enqueued': 4,
+ 'scheduler/enqueued/memory': 4,
+ 'start_time': datetime.datetime(2026, 11, 13, 14, 50, 50, 951191, tzinfo=datetime.timezone.utc)}
+2026-11-13 19:51:08,875 [scrapy.core.engine] INFO: Spider closed (finished)
+2026-11-13 19:51:08,877 [truthlens.run_reporting] INFO: Run summary saved: logs\runs\20261113T145050Z_b4d0e61fa05b46529a4119b47c295097.json | status=completed

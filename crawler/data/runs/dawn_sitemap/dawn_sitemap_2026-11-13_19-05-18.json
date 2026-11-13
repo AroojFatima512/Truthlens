@@ -1,0 +1,570 @@
+[
+{
+  "source": "Dawn",
+  "run_id": "20261113T140515Z_dfe117810033491b91e0616010dabaff",
+  "extraction_version": "dawn-extract-v1",
+  "article_id": "2044258",
+  "article_key": "dawn:2044258",
+  "url": "https://www.dawn.com/news/2044258/microsoft-says-improvements-for-outlook-in-north-america-europe",
+  "http_status": 200,
+  "response_encoding": "utf-8",
+  "canonical_url": "https://www.dawn.com/news/2044258",
+  "canonical_url_source": "link[rel=canonical]",
+  "headline": "Microsoft says ‘improvements’ for Outlook in North America, Europe",
+  "subheadline": null,
+  "description": "Tech giant says outage specifically hit features tied to Exchange Online — its cloud-based email and scheduling hub — leaving unconnected applications operational.",
+  "description_source": "meta[property=\"og:description\"]",
+  "author": "Reuters, AFP",
+  "author_parts": [
+    "Reuters",
+    "AFP"
+  ],
+  "published_at": "2026-11-13 09:57:29+05:00",
+  "updated_at": "2026-11-13 18:59:01+05:00",
+  "timestamp_sources": {
+    "published_at": "meta[property=\"article:published_time\"]",
+    "updated_at": "meta[property=\"article:modified_time\"]"
+  },
+  "article_text": "Microsoft said on Friday that it was seeing “improvements” for Outlook email and other services amid an outage that was disrupting public services and businesses around the world.\n\nIn an update, it noted “broader improvements in North America, sustained improvements across much of Europe, and encouraging recovery signals in Asia-Pacific”.\n\nA more than 12-hour outage of Microsoft Outlook and Teams crippled communications for businesses and governments globally, forcing some organisations to revert to fax machines and halting at least one bond repurchase in Europe.\n\nMicrosoft said server issues were behind the incident that also affected its Copilot AI assistant and that a broader roll-out of software fixes was starting to stabilise the system. It said it was not aware of any malicious activity.\n\nOutlook and Teams are two of the most widely used workplace applications with hundreds of millions of users. The outage prevented people from performing essential functions such as sending emails, managing calendars and hosting virtual meetings.\n\nIt affected government agencies from Australia to Japan and the United States, caused delays at trading firms, hindered some companies from publishing earnings and prompted airlines to warn customers of communication lags, according to public statements.\n\nOrganisations that host Microsoft services on their own servers, rather than in the cloud, were somewhat spared.\n\nIn its latest update, Microsoft said efforts to improve serviceability were not progressing as expected.\n\n“We’re identifying alternate workstreams that can be applied to increase capacity in the face of sustained traffic management imbalances,” it said.\n\nDowndetector, which tracks outages by collating status reports from a number of sources, showed more than 25,000 reports of Outlook problems in the US at 9:30 p.m. ET (0230 GMT). It also showed outages for several Microsoft services in the Asia-Pacific region, including India, Australia and Japan, early Friday local time.\n\nAt its peak, Downdetector showed more than 130,000 reports of Outlook problems in the US around 1 p.m. ET on Thursday.\n\nIn a service health notice, Microsoft said features of Microsoft 365 services that depended on Exchange Online and email were affected, while elements that did not rely on Exchange Online remained functional. Exchange Online is the company’s cloud-based messaging platform that delivers email, calendar, contacts, and tasks.\n\nAnother outage for Microsoft\n\nThe outage is one of the longest in Microsoft’s history and the second disruption to its services this year.\n\nMicrosoft said the outage specifically hit features tied to Exchange Online — its cloud-based email and scheduling hub — leaving unconnected applications operational.\n\nThe incident deepens questions about the global reliance on a handful of Big Tech companies that supply both the essential software and the cloud infrastructure that underpins it.\n\nMicrosoft shares fell 1.7 per cent before the bell, lagging the broader market. They have gained roughly 8pc so far this year.\n\n“The bigger worry is that this is not the first Microsoft 365 outage this year,” said Josh Gilbert, a market analyst at trading platform eToro. “If reliability starts to look like a recurring problem, it hands every IT department a reason to think twice before putting even more of their business in one provider’s hands.”\n\nStill, some analysts have questioned whether such incidents can push customers on to rivals due to the steep switching costs of replacing tools embedded so deeply in daily operations.\n\nMicrosoft faced an outage with its 365 services in January this year and also in October last year. Last month, it reported an outage of its Azure cloud platform that impacted its suite of productivity software, and a range of industries worldwide.\n\nTrades had to be confirmed by fax\n\nA spokesperson for the UK government said it was working with Microsoft to find a solution for the outage that hit organisations such as the NHS and London’s Metropolitan Police.\n\nLack of access to emails and other services was impacting the Metropolitan Police’s ability to report some crimes online, though its ability to respond to calls was not affected. NHS said its local services were turning to alternate measures such as using IT systems or paper records.\n\nFor businesses, the fallout was widespread.\n\nEuropean exchange operator Euronext reported email disruptions, British insurer Aviva activated backups for its earnings calls and Danish shipping giant Maersk warned customers of delayed updates.\n\nAmerican AI giants OpenAI and Anthropic also faced issues with Microsoft connectors, while Indian airlines IndiGo, Akasa Air and Air India said their email support services were impacted.\n\nThe outage also disrupted fund management at Taiwanese securities firms, life insurers, and investment trust companies. One of the companies went as far as cancelling a bond repurchase transaction, a source familiar with the situation told Reuters.\n\nAnother Taiwanese financial company resorted to using fax to confirm trades, a second source said.\n\nIn the US, electric truck maker Workhorse Group rescheduled its results on Thursday to November 16, while Switzerland’s Richemont briefly delayed its first-half results announcement on Friday.\n\nIn Australia, where the spy agency and federal police were among organisations caught in the outage, Cyber Security Minister Tony Burke said Microsoft does not suspect a cyber attack.\n\n“The impact that they are dealing with … is very much on email systems,” the minister added.\n\nImpact on email systems\n\nBurke said that Microsoft believed it was not dealing with a cyberattack.\n\n“They believe they are dealing in some ways similar to what we saw with respect to CrowdStrike where there is an update that has gone awry,” Burke said at a press conference.\n\n“The impact that they are dealing with … is very much on email systems,” the minister added.\n\nAustralia’s spy agency and federal police were among organisations caught up in the outage on Friday.\n\nThe CrowdStrike malfunction of 2024 was one of the largest internet disruptions, hobbling technology systems in hospitals, banks, and airports, highlighting the vulnerability of the world’s interconnected technologies.\n\nThe US House of Representatives said the outage impacted its users and its engineers were working with Microsoft.\n\nThe company had earlier in the day pointed to a number of servers being unexpectedly unavailable and said it was not driven by an increase in traffic.\n\nMicrosoft had then said the restored servers remained stable so far and that it was shifting traffic to alternate routes wherever possible while streamlining the process to bring the remaining impacted servers back online.\n\n“As capacity is restored, users may experience a gradual recovery as their clients reconnect,” Microsoft said in a previous statement.At 6 p.m. ET (2300 GMT), Microsoft had said it observed limited recovery as users gradually reconnected.\n\nBusinesses feel the impact\n\nOpenAI said it was investigating an issue with Microsoft connectors in which new connections may be broken and tools are not working as expected.\n\nAnthropic said it had identified an issue with an upstream provider affecting its Microsoft 365 connector.\n\nMicrosoft last month reported an outage of its Azure cloud platform that impacted the tech giant’s suite of productivity software, and a range of industries worldwide.\n\nElectric truck maker Workhorse Group, which was expected to report third-quarter results on November 12, rescheduled it to November 16 citing business disruptions caused by the global Microsoft outage.",
+  "content_blocks": [
+    {
+      "type": "paragraph",
+      "text": "Microsoft said on Friday that it was seeing “improvements” for Outlook email and other services amid an outage that was disrupting public services and businesses around the world.",
+      "html": "<p>Microsoft said on Friday that it was seeing “improvements” for Outlook email and other services amid an outage that was disrupting public services and businesses around the world.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "In an update, it noted “broader improvements in North America, sustained improvements across much of Europe, and encouraging recovery signals in Asia-Pacific”.",
+      "html": "<p>In an update, it noted “broader improvements in North America, sustained improvements across much of Europe, and encouraging recovery signals in Asia-Pacific”.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "A more than 12-hour outage of Microsoft Outlook and Teams crippled communications for businesses and governments globally, forcing some organisations to revert to fax machines and halting at least one bond repurchase in Europe.",
+      "html": "<p>A more than 12-hour outage of Microsoft Outlook and Teams crippled communications for businesses and governments globally, forcing some organisations to revert to fax machines and halting at least one bond repurchase in Europe.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Microsoft said server issues were behind the incident that also affected its Copilot AI assistant and that a broader roll-out of software fixes was starting to stabilise the system. It said it was not aware of any malicious activity.",
+      "html": "<p>Microsoft said server issues were behind the incident that also affected its Copilot AI assistant and that a broader roll-out of software fixes was starting to stabilise the system. It said it was not aware of any malicious activity.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Outlook and Teams are two of the most widely used workplace applications with hundreds of millions of users. The outage prevented people from performing essential functions such as sending emails, managing calendars and hosting virtual meetings.",
+      "html": "<p>Outlook and Teams are two of the most widely used workplace applications with hundreds of millions of users. The outage prevented people from performing essential functions such as sending emails, managing calendars and hosting virtual meetings.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "It affected government agencies from Australia to Japan and the United States, caused delays at trading firms, hindered some companies from publishing earnings and prompted airlines to warn customers of communication lags, according to public statements.",
+      "html": "<p>It affected government agencies from Australia to Japan and the United States, caused delays at trading firms, hindered some companies from publishing earnings and prompted airlines to warn customers of communication lags, according to public statements.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Organisations that host Microsoft services on their own servers, rather than in the cloud, were somewhat spared.",
+      "html": "<p>Organisations that host Microsoft services on their own servers, rather than in the cloud, were somewhat spared.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "In its latest update, Microsoft said efforts to improve serviceability were not progressing as expected.",
+      "html": "<p>In its latest update, Microsoft said efforts to improve serviceability were not progressing as expected.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "“We’re identifying alternate workstreams that can be applied to increase capacity in the face of sustained traffic management imbalances,” it said.",
+      "html": "<p>“We’re identifying alternate workstreams that can be applied to increase capacity in the face of sustained traffic management imbalances,” it said.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Downdetector, which tracks outages by collating status reports from a number of sources, showed more than 25,000 reports of Outlook problems in the US at 9:30 p.m. ET (0230 GMT). It also showed outages for several Microsoft services in the Asia-Pacific region, including India, Australia and Japan, early Friday local time.",
+      "html": "<p>Downdetector, which tracks outages by collating status reports from a number of sources, showed more than 25,000 reports of Outlook problems in the US at 9:30 p.m. ET (0230 GMT). It also showed outages for several Microsoft services in the Asia-Pacific region, including India, Australia and Japan, early Friday local time.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "At its peak, Downdetector showed more than 130,000 reports of Outlook problems in the US around 1 p.m. ET on Thursday.",
+      "html": "<p>At its peak, Downdetector showed more than 130,000 reports of Outlook problems in the US around 1 p.m. ET on Thursday.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "In a service health notice, Microsoft said features of Microsoft 365 services that depended on Exchange Online and email were affected, while elements that did not rely on Exchange Online remained functional. Exchange Online is the company’s cloud-based messaging platform that delivers email, calendar, contacts, and tasks.",
+      "html": "<p>In a service health notice, Microsoft said features of Microsoft 365 services that depended on Exchange Online and email were affected, while elements that did not rely on Exchange Online remained functional. Exchange Online is the company’s cloud-based messaging platform that delivers email, calendar, contacts, and tasks.</p>"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Another outage for Microsoft",
+      "html": "<h2><a id=\"another-outage-for-microsoft\" href=\"#another-outage-for-microsoft\" class=\"heading-permalink\" aria-hidden=\"true\" tabindex=\"-1\" title=\"Permalink\"></a>Another outage for Microsoft</h2>"
+    },
+    {
+      "type": "paragraph",
+      "text": "The outage is one of the longest in Microsoft’s history and the second disruption to its services this year.",
+      "html": "<p>The outage is one of the longest in Microsoft’s history and the second disruption to its services this year.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Microsoft said the outage specifically hit features tied to Exchange Online — its cloud-based email and scheduling hub — leaving unconnected applications operational.",
+      "html": "<p>Microsoft said the outage specifically hit features tied to Exchange Online — its cloud-based email and scheduling hub — leaving unconnected applications operational.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "The incident deepens questions about the global reliance on a handful of Big Tech companies that supply both the essential software and the cloud infrastructure that underpins it.",
+      "html": "<p>The incident deepens questions about the global reliance on a handful of Big Tech companies that supply both the essential software and the cloud infrastructure that underpins it.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Microsoft shares fell 1.7 per cent before the bell, lagging the broader market. They have gained roughly 8pc so far this year.",
+      "html": "<p>Microsoft shares fell 1.7 per cent before the bell, lagging the broader market. They have gained roughly 8pc so far this year.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "“The bigger worry is that this is not the first Microsoft 365 outage this year,” said Josh Gilbert, a market analyst at trading platform eToro. “If reliability starts to look like a recurring problem, it hands every IT department a reason to think twice before putting even more of their business in one provider’s hands.”",
+      "html": "<p>“The bigger worry is that this is not the first Microsoft 365 outage this year,” said Josh Gilbert, a market analyst at trading platform eToro. “If reliability starts to look like a recurring problem, it hands every IT department a reason to think twice before putting even more of their business in one provider’s hands.”</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Still, some analysts have questioned whether such incidents can push customers on to rivals due to the steep switching costs of replacing tools embedded so deeply in daily operations.",
+      "html": "<p>Still, some analysts have questioned whether such incidents can push customers on to rivals due to the steep switching costs of replacing tools embedded so deeply in daily operations.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Microsoft faced an outage with its 365 services in January this year and also in October last year. Last month, it reported an outage of its Azure cloud platform that impacted its suite of productivity software, and a range of industries worldwide.",
+      "html": "<p>Microsoft faced an outage with its 365 services in January this year and also in October last year. Last month, it reported an outage of its Azure cloud platform that impacted its suite of productivity software, and a range of industries worldwide.</p>"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Trades had to be confirmed by fax",
+      "html": "<h2><a id=\"trades-had-to-be-confirmed-by-fax\" href=\"#trades-had-to-be-confirmed-by-fax\" class=\"heading-permalink\" aria-hidden=\"true\" tabindex=\"-1\" title=\"Permalink\"></a>Trades had to be confirmed by fax</h2>"
+    },
+    {
+      "type": "paragraph",
+      "text": "A spokesperson for the UK government said it was working with Microsoft to find a solution for the outage that hit organisations such as the NHS and London’s Metropolitan Police.",
+      "html": "<p>A spokesperson for the UK government said it was working with Microsoft to find a solution for the outage that hit organisations such as the NHS and London’s Metropolitan Police.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Lack of access to emails and other services was impacting the Metropolitan Police’s ability to report some crimes online, though its ability to respond to calls was not affected. NHS said its local services were turning to alternate measures such as using IT systems or paper records.",
+      "html": "<p>Lack of access to emails and other services was impacting the Metropolitan Police’s ability to report some crimes online, though its ability to respond to calls was not affected. NHS said its local services were turning to alternate measures such as using IT systems or paper records.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "For businesses, the fallout was widespread.",
+      "html": "<p>For businesses, the fallout was widespread.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "European exchange operator Euronext reported email disruptions, British insurer Aviva activated backups for its earnings calls and Danish shipping giant Maersk warned customers of delayed updates.",
+      "html": "<p>European exchange operator Euronext reported email disruptions, British insurer Aviva activated backups for its earnings calls and Danish shipping giant Maersk warned customers of delayed updates.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "American AI giants OpenAI and Anthropic also faced issues with Microsoft connectors, while Indian airlines IndiGo, Akasa Air and Air India said their email support services were impacted.",
+      "html": "<p>American AI giants OpenAI and Anthropic also faced issues with Microsoft connectors, while Indian airlines IndiGo, Akasa Air and Air India said their email support services were impacted.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "The outage also disrupted fund management at Taiwanese securities firms, life insurers, and investment trust companies. One of the companies went as far as cancelling a bond repurchase transaction, a source familiar with the situation told Reuters.",
+      "html": "<p>The outage also disrupted fund management at Taiwanese securities firms, life insurers, and investment trust companies. One of the companies went as far as cancelling a bond repurchase transaction, a source familiar with the situation told <em>Reuters</em>.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Another Taiwanese financial company resorted to using fax to confirm trades, a second source said.",
+      "html": "<p>Another Taiwanese financial company resorted to using fax to confirm trades, a second source said.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "In the US, electric truck maker Workhorse Group rescheduled its results on Thursday to November 16, while Switzerland’s Richemont briefly delayed its first-half results announcement on Friday.",
+      "html": "<p>In the US, electric truck maker Workhorse Group rescheduled its results on Thursday to November 16, while Switzerland’s Richemont briefly delayed its first-half results announcement on Friday.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "In Australia, where the spy agency and federal police were among organisations caught in the outage, Cyber Security Minister Tony Burke said Microsoft does not suspect a cyber attack.",
+      "html": "<p>In Australia, where the spy agency and federal police were among organisations caught in the outage, Cyber Security Minister Tony Burke said Microsoft does not suspect a cyber attack.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "“The impact that they are dealing with … is very much on email systems,” the minister added.",
+      "html": "<p>“The impact that they are dealing with … is very much on email systems,” the minister added.</p>"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Impact on email systems",
+      "html": "<h2><a id=\"impact-on-email-systems\" href=\"#impact-on-email-systems\" class=\"heading-permalink\" aria-hidden=\"true\" tabindex=\"-1\" title=\"Permalink\"></a>Impact on email systems</h2>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Burke said that Microsoft believed it was not dealing with a cyberattack.",
+      "html": "<p>Burke said that Microsoft believed it was not dealing with a cyberattack.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "“They believe they are dealing in some ways similar to what we saw with respect to CrowdStrike where there is an update that has gone awry,” Burke said at a press conference.",
+      "html": "<p>“They believe they are dealing in some ways similar to what we saw with respect to CrowdStrike where there is an update that has gone awry,” Burke said at a press conference.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "“The impact that they are dealing with … is very much on email systems,” the minister added.",
+      "html": "<p>“The impact that they are dealing with … is very much on email systems,” the minister added.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Australia’s spy agency and federal police were among organisations caught up in the outage on Friday.",
+      "html": "<p>Australia’s spy agency and federal police were among organisations caught up in the outage on Friday.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "The CrowdStrike malfunction of 2024 was one of the largest internet disruptions, hobbling technology systems in hospitals, banks, and airports, highlighting the vulnerability of the world’s interconnected technologies.",
+      "html": "<p>The CrowdStrike malfunction of 2024 was one of the largest internet disruptions, hobbling technology systems in hospitals, banks, and airports, highlighting the vulnerability of the world’s interconnected technologies.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "The US House of Representatives said the outage impacted its users and its engineers were working with Microsoft.",
+      "html": "<p>The US House of Representatives said the outage impacted its users and its engineers were working with Microsoft.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "The company had earlier in the day pointed to a number of servers being unexpectedly unavailable and said it was not driven by an increase in traffic.",
+      "html": "<p>The company had earlier in the day pointed to a number of servers being unexpectedly unavailable and said it was not driven by an increase in traffic.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Microsoft had then said the restored servers remained stable so far and that it was shifting traffic to alternate routes wherever possible while streamlining the process to bring the remaining impacted servers back online.",
+      "html": "<p>Microsoft had then said the restored servers remained stable so far and that it was shifting traffic to alternate routes wherever possible while streamlining the process to bring the remaining impacted servers back online.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "“As capacity is restored, users may experience a gradual recovery as their clients reconnect,” Microsoft said in a previous statement.At 6 p.m. ET (2300 GMT), Microsoft had said it observed limited recovery as users gradually reconnected.",
+      "html": "<p>“As capacity is restored, users may experience a gradual recovery as their clients reconnect,” Microsoft said in a previous statement.<br>At 6 p.m. ET (2300 GMT), Microsoft had said it observed limited recovery as users gradually reconnected.</p>"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Businesses feel the impact",
+      "html": "<h2><a id=\"businesses-feel-the-impact\" href=\"#businesses-feel-the-impact\" class=\"heading-permalink\" aria-hidden=\"true\" tabindex=\"-1\" title=\"Permalink\"></a>Businesses feel the impact</h2>"
+    },
+    {
+      "type": "paragraph",
+      "text": "OpenAI said it was investigating an issue with Microsoft connectors in which new connections may be broken and tools are not working as expected.",
+      "html": "<p>OpenAI said it was investigating an issue with Microsoft connectors in which new connections may be broken and tools are not working as expected.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Anthropic said it had identified an issue with an upstream provider affecting its Microsoft 365 connector.",
+      "html": "<p>Anthropic said it had identified an issue with an upstream provider affecting its Microsoft 365 connector.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Microsoft last month reported an outage of its Azure cloud platform that impacted the tech giant’s suite of productivity software, and a range of industries worldwide.",
+      "html": "<p>Microsoft last month reported an outage of its Azure cloud platform that impacted the tech giant’s suite of productivity software, and a range of industries worldwide.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Electric truck maker Workhorse Group, which was expected to report third-quarter results on November 12, rescheduled it to November 16 citing business disruptions caused by the global Microsoft outage.",
+      "html": "<p>Electric truck maker Workhorse Group, which was expected to report third-quarter results on November 12, rescheduled it to November 16 citing business disruptions caused by the global Microsoft outage.</p>"
+    }
+  ],
+  "article_html": "<div dir=\"auto\" class=\"story__content  flow-root    pt-1 mt-1 text-4 sm:text-4.5  overflow-visible\"><p>Microsoft said on Friday that it was seeing “improvements” for Outlook email and other services amid an outage that was disrupting public services and businesses around the world.</p>\n<p>In an update, it noted “broader improvements in North America, sustained improvements across much of Europe, and encouraging recovery signals in Asia-Pacific”.</p>\n<p>A more than 12-hour outage of Microsoft Outlook and Teams crippled communications for businesses and governments globally, forcing some organisations to revert to fax machines and halting at least one bond repurchase in Europe.</p>\n<p>Microsoft said server issues were behind the incident that also affected its Copilot AI assistant and that a broader roll-out of software fixes was starting to stabilise the system. It said it was not aware of any malicious activity.</p>\n<p>Outlook and Teams are two of the most widely used workplace applications with hundreds of millions of users. The outage prevented people from performing essential functions such as sending emails, managing calendars and hosting virtual meetings.</p>\n<p>It affected government agencies from Australia to Japan and the United States, caused delays at trading firms, hindered some companies from publishing earnings and prompted airlines to warn customers of communication lags, according to public statements.</p>\n<p>Organisations that host Microsoft services on their own servers, rather than in the cloud, were somewhat spared.</p>\n    <figure class=\"media  w-full  w-full  media--  media--embed  media--uneven media--tweet\" data-original-src=\"https://x.com/MSFT365Status/status/2121079061774491735\">\n        <div class=\"media__item  media__item--twitter  \"><span>\n    <blockquote class=\"twitter-tweet\" lang=\"en\">\n        <a href=\"https://twitter.com/MSFT365Status/status/2121079061774491735\"></a>\n    </blockquote>\n</span></div>\n        \n    </figure>\n<p>In its latest update, Microsoft said efforts to improve serviceability were not progressing as expected.</p>\n<p>“We’re identifying alternate workstreams that can be applied to increase capacity in the face of sustained traffic management imbalances,” it said.</p>\n<p>Downdetector, which tracks outages by collating status reports from a number of sources, showed more than 25,000 reports of Outlook problems in the US at 9:30 p.m. ET (0230 GMT). It also showed outages for several Microsoft services in the Asia-Pacific region, including India, Australia and Japan, early Friday local time.</p>\n    <figure class=\"media  w-full  w-full  media--  media--embed  media--uneven media--tweet\" data-original-src=\"https://x.com/downdetector/status/2120981125145174504\">\n        <div class=\"media__item  media__item--twitter  \"><span>\n    <blockquote class=\"twitter-tweet\" lang=\"en\">\n        <a href=\"https://twitter.com/downdetector/status/2120981125145174504\"></a>\n    </blockquote>\n</span></div>\n        \n    </figure>\n<p>At its peak, Downdetector showed more than 130,000 reports of Outlook problems in the US around 1 p.m. ET on Thursday.</p>\n<p>In a service health notice, Microsoft said features of Microsoft 365 services that depended on Exchange Online and email were affected, while elements that did not rely on Exchange Online remained functional. Exchange Online is the company’s cloud-based messaging platform that delivers email, calendar, contacts, and tasks.</p>\n<h2><a id=\"another-outage-for-microsoft\" href=\"#another-outage-for-microsoft\" class=\"heading-permalink\" aria-hidden=\"true\" tabindex=\"-1\" title=\"Permalink\"></a>Another outage for Microsoft</h2>\n<p>The outage is one of the longest in Microsoft’s history and the second disruption to its services this year.</p>\n<p>Microsoft said the outage specifically hit features tied to Exchange Online — its cloud-based email and scheduling hub — leaving unconnected applications operational.</p>\n<p>The incident deepens questions about the global reliance on a handful of Big Tech companies that supply both the essential software and the cloud infrastructure that underpins it.</p>\n<p>Microsoft shares fell 1.7 per cent before the bell, lagging the broader market. They have gained roughly 8pc so far this year.</p>\n<p>“The bigger worry is that this is not the first Microsoft 365 outage this year,” said Josh Gilbert, a market analyst at trading platform eToro. “If reliability starts to look like a recurring problem, it hands every IT department a reason to think twice before putting even more of their business in one provider’s hands.”</p>\n<p>Still, some analysts have questioned whether such incidents can push customers on to rivals due to the steep switching costs of replacing tools embedded so deeply in daily operations.</p>\n<p>Microsoft faced an outage with its 365 services in January this year and also in October last year. Last month, it reported an outage of its Azure cloud platform that impacted its suite of productivity software, and a range of industries worldwide.</p>\n<h2><a id=\"trades-had-to-be-confirmed-by-fax\" href=\"#trades-had-to-be-confirmed-by-fax\" class=\"heading-permalink\" aria-hidden=\"true\" tabindex=\"-1\" title=\"Permalink\"></a>Trades had to be confirmed by fax</h2>\n<p>A spokesperson for the UK government said it was working with Microsoft to find a solution for the outage that hit organisations such as the NHS and London’s Metropolitan Police.</p>\n<p>Lack of access to emails and other services was impacting the Metropolitan Police’s ability to report some crimes online, though its ability to respond to calls was not affected. NHS said its local services were turning to alternate measures such as using IT systems or paper records.</p>\n<p>For businesses, the fallout was widespread.</p>\n<p>European exchange operator Euronext reported email disruptions, British insurer Aviva activated backups for its earnings calls and Danish shipping giant Maersk warned customers of delayed updates.</p>\n<p>American AI giants OpenAI and Anthropic also faced issues with Microsoft connectors, while Indian airlines IndiGo, Akasa Air and Air India said their email support services were impacted.</p>\n<p>The outage also disrupted fund management at Taiwanese securities firms, life insurers, and investment trust companies. One of the companies went as far as cancelling a bond repurchase transaction, a source familiar with the situation told <em>Reuters</em>.</p>\n<p>Another Taiwanese financial company resorted to using fax to confirm trades, a second source said.</p>\n<p>In the US, electric truck maker Workhorse Group rescheduled its results on Thursday to November 16, while Switzerland’s Richemont briefly delayed its first-half results announcement on Friday.</p>\n<p>In Australia, where the spy agency and federal police were among organisations caught in the outage, Cyber Security Minister Tony Burke said Microsoft does not suspect a cyber attack.</p>\n<p>“The impact that they are dealing with … is very much on email systems,” the minister added.</p>\n<h2><a id=\"impact-on-email-systems\" href=\"#impact-on-email-systems\" class=\"heading-permalink\" aria-hidden=\"true\" tabindex=\"-1\" title=\"Permalink\"></a>Impact on email systems</h2>\n<p>Burke said that Microsoft believed it was not dealing with a cyberattack.</p>\n<p>“They believe they are dealing in some ways similar to what we saw with respect to CrowdStrike where there is an update that has gone awry,” Burke said at a press conference.</p>\n<p>“The impact that they are dealing with … is very much on email systems,” the minister added.</p>\n<p>Australia’s spy agency and federal police were among organisations caught up in the outage on Friday.</p>\n<p>The CrowdStrike malfunction of 2024 was one of the largest internet disruptions, hobbling technology systems in hospitals, banks, and airports, highlighting the vulnerability of the world’s interconnected technologies.</p>\n<p>The US House of Representatives said the outage impacted its users and its engineers were working with Microsoft.</p>\n<p>The company had earlier in the day pointed to a number of servers being unexpectedly unavailable and said it was not driven by an increase in traffic.</p>\n<p>Microsoft had then said the restored servers remained stable so far and that it was shifting traffic to alternate routes wherever possible while streamlining the process to bring the remaining impacted servers back online.</p>\n<p>“As capacity is restored, users may experience a gradual recovery as their clients reconnect,” Microsoft said in a previous statement.<br>At 6 p.m. ET (2300 GMT), Microsoft had said it observed limited recovery as users gradually reconnected.</p>\n<h2><a id=\"businesses-feel-the-impact\" href=\"#businesses-feel-the-impact\" class=\"heading-permalink\" aria-hidden=\"true\" tabindex=\"-1\" title=\"Permalink\"></a>Businesses feel the impact</h2>\n<p>OpenAI said it was investigating an issue with Microsoft connectors in which new connections may be broken and tools are not working as expected.</p>\n<p>Anthropic said it had identified an issue with an upstream provider affecting its Microsoft 365 connector.</p>\n<p>Microsoft last month reported an outage of its Azure cloud platform that impacted the tech giant’s suite of productivity software, and a range of industries worldwide.</p>\n<p>Electric truck maker Workhorse Group, which was expected to report third-quarter results on November 12, rescheduled it to November 16 citing business disruptions caused by the global Microsoft outage.</p>\n\n    </div>",
+  "image_url": "https://i.dawn.com/large/2026/11/13124409bb44140.webp",
+  "images": [
+    {
+      "url": "https://i.dawn.com/primary/2026/11/13124409bb44140.jpg",
+      "alt_text": "Microsoft logo and a keyboard in this illustration. — Reuters/File",
+      "caption": "Microsoft logo and a keyboard in this illustration. — Reuters/File"
+    }
+  ],
+  "videos": [],
+  "tweets": [
+    {
+      "provider": "X/Twitter",
+      "tweet_id": "2121079061774491735",
+      "url": "https://twitter.com/MSFT365Status/status/2121079061774491735",
+      "embed_url": null,
+      "text": null,
+      "text_status": "missing",
+      "completeness": "not_verified",
+      "html": "<blockquote class=\"twitter-tweet\" lang=\"en\">\n        <a href=\"https://twitter.com/MSFT365Status/status/2121079061774491735\"></a>\n    </blockquote>"
+    },
+    {
+      "provider": "X/Twitter",
+      "tweet_id": "2120981125145174504",
+      "url": "https://twitter.com/downdetector/status/2120981125145174504",
+      "embed_url": null,
+      "text": null,
+      "text_status": "missing",
+      "completeness": "not_verified",
+      "html": "<blockquote class=\"twitter-tweet\" lang=\"en\">\n        <a href=\"https://twitter.com/downdetector/status/2120981125145174504\"></a>\n    </blockquote>"
+    }
+  ],
+  "tweet_embed_count": 2,
+  "media_detection_scope": "URLs_and_extracted_metadata_not_media_bytes",
+  "embed_detection_scope": "downloaded_article_body_html_only",
+  "language": "en",
+  "language_source": "English source configuration",
+  "section": "tech",
+  "crawled_at": "2026-11-13T14:05:25.122062+00:00",
+  "discovered_from": "https://www.dawn.com/feeds/sitemap",
+  "processing_status": "cleaned",
+  "validation_issues": [
+    "tweet_text_missing"
+  ],
+  "validation_status": "needs_review",
+  "category": "technology",
+  "cleaned_text": "Microsoft said on Friday that it was seeing “improvements” for Outlook email and other services amid an outage that was disrupting public services and businesses around the world.\n\nIn an update, it noted “broader improvements in North America, sustained improvements across much of Europe, and encouraging recovery signals in Asia-Pacific”.\n\nA more than 12-hour outage of Microsoft Outlook and Teams crippled communications for businesses and governments globally, forcing some organisations to revert to fax machines and halting at least one bond repurchase in Europe.\n\nMicrosoft said server issues were behind the incident that also affected its Copilot AI assistant and that a broader roll-out of software fixes was starting to stabilise the system. It said it was not aware of any malicious activity.\n\nOutlook and Teams are two of the most widely used workplace applications with hundreds of millions of users. The outage prevented people from performing essential functions such as sending emails, managing calendars and hosting virtual meetings.\n\nIt affected government agencies from Australia to Japan and the United States, caused delays at trading firms, hindered some companies from publishing earnings and prompted airlines to warn customers of communication lags, according to public statements.\n\nOrganisations that host Microsoft services on their own servers, rather than in the cloud, were somewhat spared.\n\nIn its latest update, Microsoft said efforts to improve serviceability were not progressing as expected.\n\n“We’re identifying alternate workstreams that can be applied to increase capacity in the face of sustained traffic management imbalances,” it said.\n\nDowndetector, which tracks outages by collating status reports from a number of sources, showed more than 25,000 reports of Outlook problems in the US at 9:30 p.m. ET (0230 GMT). It also showed outages for several Microsoft services in the Asia-Pacific region, including India, Australia and Japan, early Friday local time.\n\nAt its peak, Downdetector showed more than 130,000 reports of Outlook problems in the US around 1 p.m. ET on Thursday.\n\nIn a service health notice, Microsoft said features of Microsoft 365 services that depended on Exchange Online and email were affected, while elements that did not rely on Exchange Online remained functional. Exchange Online is the company’s cloud-based messaging platform that delivers email, calendar, contacts, and tasks.\n\nAnother outage for Microsoft\n\nThe outage is one of the longest in Microsoft’s history and the second disruption to its services this year.\n\nMicrosoft said the outage specifically hit features tied to Exchange Online — its cloud-based email and scheduling hub — leaving unconnected applications operational.\n\nThe incident deepens questions about the global reliance on a handful of Big Tech companies that supply both the essential software and the cloud infrastructure that underpins it.\n\nMicrosoft shares fell 1.7 per cent before the bell, lagging the broader market. They have gained roughly 8pc so far this year.\n\n“The bigger worry is that this is not the first Microsoft 365 outage this year,” said Josh Gilbert, a market analyst at trading platform eToro. “If reliability starts to look like a recurring problem, it hands every IT department a reason to think twice before putting even more of their business in one provider’s hands.”\n\nStill, some analysts have questioned whether such incidents can push customers on to rivals due to the steep switching costs of replacing tools embedded so deeply in daily operations.\n\nMicrosoft faced an outage with its 365 services in January this year and also in October last year. Last month, it reported an outage of its Azure cloud platform that impacted its suite of productivity software, and a range of industries worldwide.\n\nTrades had to be confirmed by fax\n\nA spokesperson for the UK government said it was working with Microsoft to find a solution for the outage that hit organisations such as the NHS and London’s Metropolitan Police.\n\nLack of access to emails and other services was impacting the Metropolitan Police’s ability to report some crimes online, though its ability to respond to calls was not affected. NHS said its local services were turning to alternate measures such as using IT systems or paper records.\n\nFor businesses, the fallout was widespread.\n\nEuropean exchange operator Euronext reported email disruptions, British insurer Aviva activated backups for its earnings calls and Danish shipping giant Maersk warned customers of delayed updates.\n\nAmerican AI giants OpenAI and Anthropic also faced issues with Microsoft connectors, while Indian airlines IndiGo, Akasa Air and Air India said their email support services were impacted.\n\nThe outage also disrupted fund management at Taiwanese securities firms, life insurers, and investment trust companies. One of the companies went as far as cancelling a bond repurchase transaction, a source familiar with the situation told Reuters.\n\nAnother Taiwanese financial company resorted to using fax to confirm trades, a second source said.\n\nIn the US, electric truck maker Workhorse Group rescheduled its results on Thursday to November 16, while Switzerland’s Richemont briefly delayed its first-half results announcement on Friday.\n\nIn Australia, where the spy agency and federal police were among organisations caught in the outage, Cyber Security Minister Tony Burke said Microsoft does not suspect a cyber attack.\n\n“The impact that they are dealing with … is very much on email systems,” the minister added.\n\nImpact on email systems\n\nBurke said that Microsoft believed it was not dealing with a cyberattack.\n\n“They believe they are dealing in some ways similar to what we saw with respect to CrowdStrike where there is an update that has gone awry,” Burke said at a press conference.\n\n“The impact that they are dealing with … is very much on email systems,” the minister added.\n\nAustralia’s spy agency and federal police were among organisations caught up in the outage on Friday.\n\nThe CrowdStrike malfunction of 2024 was one of the largest internet disruptions, hobbling technology systems in hospitals, banks, and airports, highlighting the vulnerability of the world’s interconnected technologies.\n\nThe US House of Representatives said the outage impacted its users and its engineers were working with Microsoft.\n\nThe company had earlier in the day pointed to a number of servers being unexpectedly unavailable and said it was not driven by an increase in traffic.\n\nMicrosoft had then said the restored servers remained stable so far and that it was shifting traffic to alternate routes wherever possible while streamlining the process to bring the remaining impacted servers back online.\n\n“As capacity is restored, users may experience a gradual recovery as their clients reconnect,” Microsoft said in a previous statement.\n\nAt 6 p.m. ET (2300 GMT), Microsoft had said it observed limited recovery as users gradually reconnected.\n\nBusinesses feel the impact\n\nOpenAI said it was investigating an issue with Microsoft connectors in which new connections may be broken and tools are not working as expected.\n\nAnthropic said it had identified an issue with an upstream provider affecting its Microsoft 365 connector.\n\nMicrosoft last month reported an outage of its Azure cloud platform that impacted the tech giant’s suite of productivity software, and a range of industries worldwide.\n\nElectric truck maker Workhorse Group, which was expected to report third-quarter results on November 12, rescheduled it to November 16 citing business disruptions caused by the global Microsoft outage.",
+  "cleaned_blocks": [
+    {
+      "source_block_index": 0,
+      "type": "paragraph",
+      "text": "Microsoft said on Friday that it was seeing “improvements” for Outlook email and other services amid an outage that was disrupting public services and businesses around the world."
+    },
+    {
+      "source_block_index": 1,
+      "type": "paragraph",
+      "text": "In an update, it noted “broader improvements in North America, sustained improvements across much of Europe, and encouraging recovery signals in Asia-Pacific”."
+    },
+    {
+      "source_block_index": 2,
+      "type": "paragraph",
+      "text": "A more than 12-hour outage of Microsoft Outlook and Teams crippled communications for businesses and governments globally, forcing some organisations to revert to fax machines and halting at least one bond repurchase in Europe."
+    },
+    {
+      "source_block_index": 3,
+      "type": "paragraph",
+      "text": "Microsoft said server issues were behind the incident that also affected its Copilot AI assistant and that a broader roll-out of software fixes was starting to stabilise the system. It said it was not aware of any malicious activity."
+    },
+    {
+      "source_block_index": 4,
+      "type": "paragraph",
+      "text": "Outlook and Teams are two of the most widely used workplace applications with hundreds of millions of users. The outage prevented people from performing essential functions such as sending emails, managing calendars and hosting virtual meetings."
+    },
+    {
+      "source_block_index": 5,
+      "type": "paragraph",
+      "text": "It affected government agencies from Australia to Japan and the United States, caused delays at trading firms, hindered some companies from publishing earnings and prompted airlines to warn customers of communication lags, according to public statements."
+    },
+    {
+      "source_block_index": 6,
+      "type": "paragraph",
+      "text": "Organisations that host Microsoft services on their own servers, rather than in the cloud, were somewhat spared."
+    },
+    {
+      "source_block_index": 7,
+      "type": "paragraph",
+      "text": "In its latest update, Microsoft said efforts to improve serviceability were not progressing as expected."
+    },
+    {
+      "source_block_index": 8,
+      "type": "paragraph",
+      "text": "“We’re identifying alternate workstreams that can be applied to increase capacity in the face of sustained traffic management imbalances,” it said."
+    },
+    {
+      "source_block_index": 9,
+      "type": "paragraph",
+      "text": "Downdetector, which tracks outages by collating status reports from a number of sources, showed more than 25,000 reports of Outlook problems in the US at 9:30 p.m. ET (0230 GMT). It also showed outages for several Microsoft services in the Asia-Pacific region, including India, Australia and Japan, early Friday local time."
+    },
+    {
+      "source_block_index": 10,
+      "type": "paragraph",
+      "text": "At its peak, Downdetector showed more than 130,000 reports of Outlook problems in the US around 1 p.m. ET on Thursday."
+    },
+    {
+      "source_block_index": 11,
+      "type": "paragraph",
+      "text": "In a service health notice, Microsoft said features of Microsoft 365 services that depended on Exchange Online and email were affected, while elements that did not rely on Exchange Online remained functional. Exchange Online is the company’s cloud-based messaging platform that delivers email, calendar, contacts, and tasks."
+    },
+    {
+      "source_block_index": 12,
+      "type": "heading",
+      "text": "Another outage for Microsoft"
+    },
+    {
+      "source_block_index": 13,
+      "type": "paragraph",
+      "text": "The outage is one of the longest in Microsoft’s history and the second disruption to its services this year."
+    },
+    {
+      "source_block_index": 14,
+      "type": "paragraph",
+      "text": "Microsoft said the outage specifically hit features tied to Exchange Online — its cloud-based email and scheduling hub — leaving unconnected applications operational."
+    },
+    {
+      "source_block_index": 15,
+      "type": "paragraph",
+      "text": "The incident deepens questions about the global reliance on a handful of Big Tech companies that supply both the essential software and the cloud infrastructure that underpins it."
+    },
+    {
+      "source_block_index": 16,
+      "type": "paragraph",
+      "text": "Microsoft shares fell 1.7 per cent before the bell, lagging the broader market. They have gained roughly 8pc so far this year."
+    },
+    {
+      "source_block_index": 17,
+      "type": "paragraph",
+      "text": "“The bigger worry is that this is not the first Microsoft 365 outage this year,” said Josh Gilbert, a market analyst at trading platform eToro. “If reliability starts to look like a recurring problem, it hands every IT department a reason to think twice before putting even more of their business in one provider’s hands.”"
+    },
+    {
+      "source_block_index": 18,
+      "type": "paragraph",
+      "text": "Still, some analysts have questioned whether such incidents can push customers on to rivals due to the steep switching costs of replacing tools embedded so deeply in daily operations."
+    },
+    {
+      "source_block_index": 19,
+      "type": "paragraph",
+      "text": "Microsoft faced an outage with its 365 services in January this year and also in October last year. Last month, it reported an outage of its Azure cloud platform that impacted its suite of productivity software, and a range of industries worldwide."
+    },
+    {
+      "source_block_index": 20,
+      "type": "heading",
+      "text": "Trades had to be confirmed by fax"
+    },
+    {
+      "source_block_index": 21,
+      "type": "paragraph",
+      "text": "A spokesperson for the UK government said it was working with Microsoft to find a solution for the outage that hit organisations such as the NHS and London’s Metropolitan Police."
+    },
+    {
+      "source_block_index": 22,
+      "type": "paragraph",
+      "text": "Lack of access to emails and other services was impacting the Metropolitan Police’s ability to report some crimes online, though its ability to respond to calls was not affected. NHS said its local services were turning to alternate measures such as using IT systems or paper records."
+    },
+    {
+      "source_block_index": 23,
+      "type": "paragraph",
+      "text": "For businesses, the fallout was widespread."
+    },
+    {
+      "source_block_index": 24,
+      "type": "paragraph",
+      "text": "European exchange operator Euronext reported email disruptions, British insurer Aviva activated backups for its earnings calls and Danish shipping giant Maersk warned customers of delayed updates."
+    },
+    {
+      "source_block_index": 25,
+      "type": "paragraph",
+      "text": "American AI giants OpenAI and Anthropic also faced issues with Microsoft connectors, while Indian airlines IndiGo, Akasa Air and Air India said their email support services were impacted."
+    },
+    {
+      "source_block_index": 26,
+      "type": "paragraph",
+      "text": "The outage also disrupted fund management at Taiwanese securities firms, life insurers, and investment trust companies. One of the companies went as far as cancelling a bond repurchase transaction, a source familiar with the situation told Reuters."
+    },
+    {
+      "source_block_index": 27,
+      "type": "paragraph",
+      "text": "Another Taiwanese financial company resorted to using fax to confirm trades, a second source said."
+    },
+    {
+      "source_block_index": 28,
+      "type": "paragraph",
+      "text": "In the US, electric truck maker Workhorse Group rescheduled its results on Thursday to November 16, while Switzerland’s Richemont briefly delayed its first-half results announcement on Friday."
+    },
+    {
+      "source_block_index": 29,
+      "type": "paragraph",
+      "text": "In Australia, where the spy agency and federal police were among organisations caught in the outage, Cyber Security Minister Tony Burke said Microsoft does not suspect a cyber attack."
+    },
+    {
+      "source_block_index": 30,
+      "type": "paragraph",
+      "text": "“The impact that they are dealing with … is very much on email systems,” the minister added."
+    },
+    {
+      "source_block_index": 31,
+      "type": "heading",
+      "text": "Impact on email systems"
+    },
+    {
+      "source_block_index": 32,
+      "type": "paragraph",
+      "text": "Burke said that Microsoft believed it was not dealing with a cyberattack."
+    },
+    {
+      "source_block_index": 33,
+      "type": "paragraph",
+      "text": "“They believe they are dealing in some ways similar to what we saw with respect to CrowdStrike where there is an update that has gone awry,” Burke said at a press conference."
+    },
+    {
+      "source_block_index": 34,
+      "type": "paragraph",
+      "text": "“The impact that they are dealing with … is very much on email systems,” the minister added."
+    },
+    {
+      "source_block_index": 35,
+      "type": "paragraph",
+      "text": "Australia’s spy agency and federal police were among organisations caught up in the outage on Friday."
+    },
+    {
+      "source_block_index": 36,
+      "type": "paragraph",
+      "text": "The CrowdStrike malfunction of 2024 was one of the largest internet disruptions, hobbling technology systems in hospitals, banks, and airports, highlighting the vulnerability of the world’s interconnected technologies."
+    },
+    {
+      "source_block_index": 37,
+      "type": "paragraph",
+      "text": "The US House of Representatives said the outage impacted its users and its engineers were working with Microsoft."
+    },
+    {
+      "source_block_index": 38,
+      "type": "paragraph",
+      "text": "The company had earlier in the day pointed to a number of servers being unexpectedly unavailable and said it was not driven by an increase in traffic."
+    },
+    {
+      "source_block_index": 39,
+      "type": "paragraph",
+      "text": "Microsoft had then said the restored servers remained stable so far and that it was shifting traffic to alternate routes wherever possible while streamlining the process to bring the remaining impacted servers back online."
+    },
+    {
+      "source_block_index": 40,
+      "type": "paragraph",
+      "text": "“As capacity is restored, users may experience a gradual recovery as their clients reconnect,” Microsoft said in a previous statement.\n\nAt 6 p.m. ET (2300 GMT), Microsoft had said it observed limited recovery as users gradually reconnected."
+    },
+    {
+      "source_block_index": 41,
+      "type": "heading",
+      "text": "Businesses feel the impact"
+    },
+    {
+      "source_block_index": 42,
+      "type": "paragraph",
+      "text": "OpenAI said it was investigating an issue with Microsoft connectors in which new connections may be broken and tools are not working as expected."
+    },
+    {
+      "source_block_index": 43,
+      "type": "paragraph",
+      "text": "Anthropic said it had identified an issue with an upstream provider affecting its Microsoft 365 connector."
+    },
+    {
+      "source_block_index": 44,
+      "type": "paragraph",
+      "text": "Microsoft last month reported an outage of its Azure cloud platform that impacted the tech giant’s suite of productivity software, and a range of industries worldwide."
+    },
+    {
+      "source_block_index": 45,
+      "type": "paragraph",
+      "text": "Electric truck maker Workhorse Group, which was expected to report third-quarter results on November 12, rescheduled it to November 16 citing business disruptions caused by the global Microsoft outage."
+    }
+  ],
+  "cleaning_version": "truthlens-clean-v1",
+  "cleaned_at": "2026-11-13T14:05:25.131065+00:00",
+  "cleaning_issues": [],
+  "cleaning_status": "cleaned",
+  "content_hash_version": "sha256-headline-subheadline-body-v1",
+  "content_hash": "566828f2aadb740220a806b123fafb0dbae5f7c1ad463938e7310186b9669733",
+  "text_hash": "a74fdbdbed19b5a3377c9cdd361e0c71158f05b014b21e415c2841b5b0beccf0",
+  "metadata_hash": "b773f3b6300bc0ac38375c30b76724ceb3a48d241d8f5c6f2771a0abc3489f45",
+  "media_hash": "bf2e630bcd4636789a5db25869ea88d33ac22b69c075e10868a303a39a773487",
+  "quality_hash": "fdd9b77c2302ebc12eda6afc77dc7c7bbf5960367cac00447e8172e4ae25420d",
+  "state_hash": "ff69da77ee15ce97b12ec52678e2c795ad3ee37b5266df9dda633d5a052c69cf",
+  "tracking_version": "truthlens-state-v1",
+  "change_status": "new",
+  "changed_fields": [],
+  "field_changes": {},
+  "body_diff": "",
+  "text_changed": null,
+  "text_reanalysis_required": true,
+  "version_number": 1,
+  "version_first_seen_at": "2026-11-13T14:05:25.122062+00:00",
+  "last_changed_at": "2026-11-13T14:05:25.122062+00:00",
+  "last_checked_at": "2026-11-13T14:05:25.122062+00:00",
+  "tracking_observation_count": 1,
+  "snapshot_saved": true,
+  "change_detection_scope": "extracted_text_metadata_media_references_and_quality"
+}
+]

@@ -1,0 +1,603 @@
+[
+{
+  "source": "Express Tribune",
+  "run_id": "20261113T145050Z_b4d0e61fa05b46529a4119b47c295097",
+  "extraction_version": "tribune-extract-v1",
+  "article_id": "2640143",
+  "article_key": "tribune:2640143",
+  "url": "https://tribune.com.pk/story/2640143/pakistan-to-host-fih-nations-cup",
+  "http_status": 200,
+  "response_encoding": "utf-8",
+  "canonical_url": "https://tribune.com.pk/story/2640143/pakistan-to-host-fih-nations-cup",
+  "canonical_url_source": "link[rel=canonical]",
+  "headline": "Pakistan to host FIH Nations Cup",
+  "subheadline": null,
+  "description": "Ten nations are likely to feature in the tournament",
+  "description_source": "meta[property=\"og:description\"]",
+  "author": "Zulfiqar Baig",
+  "author_parts": [
+    "Zulfiqar Baig"
+  ],
+  "published_at": "2026-11-13T14:30:19+00:00",
+  "updated_at": null,
+  "timestamp_sources": {
+    "published_at": "meta[property=\"article:published_time\"]",
+    "updated_at": null
+  },
+  "article_text": "Pakistan will host the next FIH Nations Cup, with ten international teams expected to compete in the tournament as the country steps up efforts to revive its fortunes in hockey.\n\nInternational Hockey Federation’s (FIH) President Tayyab Ikram made the announcement at an event in Islamabad focused on the revival of Pakistan hockey.\n\nThe federal government also pledged its full support to the national federation.\n\nIkram said the Nations Cup was a major international competition, ranking among hockey's biggest events after the World Cup and the Olympic Games.\n\nHe also announced that the Naseer Bunda Hockey Stadium in Islamabad had been approved as an official FIH High Performance Centre, a move expected to support player development and improve training facilities.\n\nThe FIH president stressed that Pakistan needed to improve its hockey governance structure and invest in the national team's preparations if it hoped to return to the top level of international competition.\n\nHe said players needed financial support, modern training facilities and access to coaches who met international standards. Ikram also said India should come to Pakistan to play hockey.\n\nFederal Minister for Inter-Provincial Coordination (IPC) Rana Sanaullah said hockey remained a source of national identity and pride, recalling Pakistan's history as a leading force in the sport.\n\nHowever, he acknowledged that the country's recent performances had been disappointing and said Prime Minister Shehbaz Sharif had directed the government to give hockey special attention.\n\n\"The government stands with the hockey federation,\" Sanaullah said, urging the PHF to prepare a comprehensive plan for the sport's revival.\n\nHe pledged that the government would provide players with the necessary facilities and support, while calling on senior former players to contribute to rebuilding the game.\n\nSanaullah also said Pakistan needed people committed to representing the country rather than those who had brought politics into hockey.\n\nPHF president Mohyuddin Wani said efforts were being made at the government level to promote the sport and described the event as an important step towards a new era for Pakistan hockey.\n\nNational Assembly member Zeb Jaffar said hosting a ten-team international tournament would help promote hockey in the country. She described the agreement between the PHF and FIH as a milestone.",
+  "content_blocks": [
+    {
+      "type": "paragraph",
+      "text": "Pakistan will host the next FIH Nations Cup, with ten international teams expected to compete in the tournament as the country steps up efforts to revive its fortunes in hockey.",
+      "html": "<p>Pakistan will host the next FIH Nations Cup, with ten international teams expected to compete in the tournament as the country steps up efforts to revive its fortunes in hockey.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "International Hockey Federation’s (FIH) President Tayyab Ikram made the announcement at an event in Islamabad focused on the revival of Pakistan hockey.",
+      "html": "<p>International Hockey Federation’s (FIH) President Tayyab Ikram made the announcement at an event in Islamabad focused on the revival of Pakistan hockey.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "The federal government also pledged its full support to the national federation.",
+      "html": "<p>The federal government also pledged its full support to the national federation.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Ikram said the Nations Cup was a major international competition, ranking among hockey's biggest events after the World Cup and the Olympic Games.",
+      "html": "<p>Ikram said the Nations Cup was a major international competition, ranking among hockey's biggest events after the World Cup and the Olympic Games.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "He also announced that the Naseer Bunda Hockey Stadium in Islamabad had been approved as an official FIH High Performance Centre, a move expected to support player development and improve training facilities.",
+      "html": "<p>He also announced that the Naseer Bunda Hockey Stadium in Islamabad had been approved as an official FIH High Performance Centre, a move expected to support player development and improve training facilities.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "The FIH president stressed that Pakistan needed to improve its hockey governance structure and invest in the national team's preparations if it hoped to return to the top level of international competition.",
+      "html": "<p>The FIH president stressed that Pakistan needed to improve its hockey governance structure and invest in the national team's preparations if it hoped to return to the top level of international competition.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "He said players needed financial support, modern training facilities and access to coaches who met international standards. Ikram also said India should come to Pakistan to play hockey.",
+      "html": "<p>He said players needed financial support, modern training facilities and access to coaches who met international standards. Ikram also said India should come to Pakistan to play hockey.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Federal Minister for Inter-Provincial Coordination (IPC) Rana Sanaullah said hockey remained a source of national identity and pride, recalling Pakistan's history as a leading force in the sport.",
+      "html": "<p>Federal Minister for Inter-Provincial Coordination (IPC) Rana Sanaullah said hockey remained a source of national identity and pride, recalling Pakistan's history as a leading force in the sport.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "However, he acknowledged that the country's recent performances had been disappointing and said Prime Minister Shehbaz Sharif had directed the government to give hockey special attention.",
+      "html": "<p>However, he acknowledged that the country's recent performances had been disappointing and said Prime Minister Shehbaz Sharif had directed the government to give hockey special attention.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "\"The government stands with the hockey federation,\" Sanaullah said, urging the PHF to prepare a comprehensive plan for the sport's revival.",
+      "html": "<p>\"The government stands with the hockey federation,\" Sanaullah said, urging the PHF to prepare a comprehensive plan for the sport's revival.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "He pledged that the government would provide players with the necessary facilities and support, while calling on senior former players to contribute to rebuilding the game.",
+      "html": "<p>He pledged that the government would provide players with the necessary facilities and support, while calling on senior former players to contribute to rebuilding the game.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Sanaullah also said Pakistan needed people committed to representing the country rather than those who had brought politics into hockey.",
+      "html": "<p>Sanaullah also said Pakistan needed people committed to representing the country rather than those who had brought politics into hockey.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "PHF president Mohyuddin Wani said efforts were being made at the government level to promote the sport and described the event as an important step towards a new era for Pakistan hockey.",
+      "html": "<p>PHF president Mohyuddin Wani said efforts were being made at the government level to promote the sport and described the event as an important step towards a new era for Pakistan hockey.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "National Assembly member Zeb Jaffar said hosting a ten-team international tournament would help promote hockey in the country. She described the agreement between the PHF and FIH as a milestone.",
+      "html": "<p>National Assembly member Zeb Jaffar said hosting a ten-team international tournament would help promote hockey in the country. She described the agreement between the PHF and FIH as a milestone.</p>"
+    }
+  ],
+  "article_html": "<span class=\"story-text\">\n                                                                                            <strong class=\"location-names\">\n                                        ISLAMABAD: \n            \n\n        </strong>\n            <p>Pakistan will host the next FIH Nations Cup, with ten international teams expected to compete in the tournament as the country steps up efforts to revive its fortunes in hockey.</p>\n\n<p>International Hockey Federation’s (FIH) President Tayyab Ikram made the announcement at an event in Islamabad focused on the revival of Pakistan hockey.</p>\n\n<p>The federal government also pledged its full support to the national federation.</p>\n\n<p>Ikram said the Nations Cup was a major international competition, ranking among hockey's biggest events after the World Cup and the Olympic Games.</p>\n\n<p>He also announced that the Naseer Bunda Hockey Stadium in Islamabad had been approved as an official FIH High Performance Centre, a move expected to support player development and improve training facilities.</p>\n\n<p>The FIH president stressed that Pakistan needed to improve its hockey governance structure and invest in the national team's preparations if it hoped to return to the top level of international competition.</p><div id=\"div-gpt-story-2\"><script>googletag.cmd.push(function() { googletag.display('div-gpt-story-2'); });</script></div>\n\n<p>He said players needed financial support, modern training facilities and access to coaches who met international standards. Ikram also said India should come to Pakistan to play hockey.</p>\n\n<p>Federal Minister for Inter-Provincial Coordination (IPC) Rana Sanaullah said hockey remained a source of national identity and pride, recalling Pakistan's history as a leading force in the sport.</p>\n\n<p>However, he acknowledged that the country's recent performances had been disappointing and said Prime Minister Shehbaz Sharif had directed the government to give hockey special attention.</p>\n\n<p>\"The government stands with the hockey federation,\" Sanaullah said, urging the PHF to prepare a comprehensive plan for the sport's revival.</p>\n\n<p>He pledged that the government would provide players with the necessary facilities and support, while calling on senior former players to contribute to rebuilding the game.</p>\n\n<p>Sanaullah also said Pakistan needed people committed to representing the country rather than those who had brought politics into hockey.</p>\n\n<p>PHF president Mohyuddin Wani said efforts were being made at the government level to promote the sport and described the event as an important step towards a new era for Pakistan hockey.</p>\n\n<p>National Assembly member Zeb Jaffar said hosting a ten-team international tournament would help promote hockey in the country. She described the agreement between the PHF and FIH as a milestone.</p>\n\n\n\n                                                            </span>",
+  "image_url": "https://i.tribune.com.pk/media/images/11794580098-0/11794580098-0-640x480.webp",
+  "images": [],
+  "videos": [],
+  "tweets": [],
+  "tweet_embed_count": 0,
+  "media_detection_scope": "URLs_and_extracted_metadata_not_media_bytes",
+  "embed_detection_scope": "downloaded_article_body_html_only",
+  "language": "en",
+  "language_source": "English source configuration",
+  "section": "sports",
+  "tags": [
+    "Latest"
+  ],
+  "crawled_at": "2026-11-13T14:51:00.952775+00:00",
+  "discovered_from": "https://tribune.com.pk/sitemap/latest-1.xml",
+  "processing_status": "cleaned",
+  "validation_issues": [],
+  "validation_status": "passed_basic_checks",
+  "category": "sports",
+  "cleaned_text": "Pakistan will host the next FIH Nations Cup, with ten international teams expected to compete in the tournament as the country steps up efforts to revive its fortunes in hockey.\n\nInternational Hockey Federation’s (FIH) President Tayyab Ikram made the announcement at an event in Islamabad focused on the revival of Pakistan hockey.\n\nThe federal government also pledged its full support to the national federation.\n\nIkram said the Nations Cup was a major international competition, ranking among hockey's biggest events after the World Cup and the Olympic Games.\n\nHe also announced that the Naseer Bunda Hockey Stadium in Islamabad had been approved as an official FIH High Performance Centre, a move expected to support player development and improve training facilities.\n\nThe FIH president stressed that Pakistan needed to improve its hockey governance structure and invest in the national team's preparations if it hoped to return to the top level of international competition.\n\nHe said players needed financial support, modern training facilities and access to coaches who met international standards. Ikram also said India should come to Pakistan to play hockey.\n\nFederal Minister for Inter-Provincial Coordination (IPC) Rana Sanaullah said hockey remained a source of national identity and pride, recalling Pakistan's history as a leading force in the sport.\n\nHowever, he acknowledged that the country's recent performances had been disappointing and said Prime Minister Shehbaz Sharif had directed the government to give hockey special attention.\n\n\"The government stands with the hockey federation,\" Sanaullah said, urging the PHF to prepare a comprehensive plan for the sport's revival.\n\nHe pledged that the government would provide players with the necessary facilities and support, while calling on senior former players to contribute to rebuilding the game.\n\nSanaullah also said Pakistan needed people committed to representing the country rather than those who had brought politics into hockey.\n\nPHF president Mohyuddin Wani said efforts were being made at the government level to promote the sport and described the event as an important step towards a new era for Pakistan hockey.\n\nNational Assembly member Zeb Jaffar said hosting a ten-team international tournament would help promote hockey in the country. She described the agreement between the PHF and FIH as a milestone.",
+  "cleaned_blocks": [
+    {
+      "source_block_index": 0,
+      "type": "paragraph",
+      "text": "Pakistan will host the next FIH Nations Cup, with ten international teams expected to compete in the tournament as the country steps up efforts to revive its fortunes in hockey."
+    },
+    {
+      "source_block_index": 1,
+      "type": "paragraph",
+      "text": "International Hockey Federation’s (FIH) President Tayyab Ikram made the announcement at an event in Islamabad focused on the revival of Pakistan hockey."
+    },
+    {
+      "source_block_index": 2,
+      "type": "paragraph",
+      "text": "The federal government also pledged its full support to the national federation."
+    },
+    {
+      "source_block_index": 3,
+      "type": "paragraph",
+      "text": "Ikram said the Nations Cup was a major international competition, ranking among hockey's biggest events after the World Cup and the Olympic Games."
+    },
+    {
+      "source_block_index": 4,
+      "type": "paragraph",
+      "text": "He also announced that the Naseer Bunda Hockey Stadium in Islamabad had been approved as an official FIH High Performance Centre, a move expected to support player development and improve training facilities."
+    },
+    {
+      "source_block_index": 5,
+      "type": "paragraph",
+      "text": "The FIH president stressed that Pakistan needed to improve its hockey governance structure and invest in the national team's preparations if it hoped to return to the top level of international competition."
+    },
+    {
+      "source_block_index": 6,
+      "type": "paragraph",
+      "text": "He said players needed financial support, modern training facilities and access to coaches who met international standards. Ikram also said India should come to Pakistan to play hockey."
+    },
+    {
+      "source_block_index": 7,
+      "type": "paragraph",
+      "text": "Federal Minister for Inter-Provincial Coordination (IPC) Rana Sanaullah said hockey remained a source of national identity and pride, recalling Pakistan's history as a leading force in the sport."
+    },
+    {
+      "source_block_index": 8,
+      "type": "paragraph",
+      "text": "However, he acknowledged that the country's recent performances had been disappointing and said Prime Minister Shehbaz Sharif had directed the government to give hockey special attention."
+    },
+    {
+      "source_block_index": 9,
+      "type": "paragraph",
+      "text": "\"The government stands with the hockey federation,\" Sanaullah said, urging the PHF to prepare a comprehensive plan for the sport's revival."
+    },
+    {
+      "source_block_index": 10,
+      "type": "paragraph",
+      "text": "He pledged that the government would provide players with the necessary facilities and support, while calling on senior former players to contribute to rebuilding the game."
+    },
+    {
+      "source_block_index": 11,
+      "type": "paragraph",
+      "text": "Sanaullah also said Pakistan needed people committed to representing the country rather than those who had brought politics into hockey."
+    },
+    {
+      "source_block_index": 12,
+      "type": "paragraph",
+      "text": "PHF president Mohyuddin Wani said efforts were being made at the government level to promote the sport and described the event as an important step towards a new era for Pakistan hockey."
+    },
+    {
+      "source_block_index": 13,
+      "type": "paragraph",
+      "text": "National Assembly member Zeb Jaffar said hosting a ten-team international tournament would help promote hockey in the country. She described the agreement between the PHF and FIH as a milestone."
+    }
+  ],
+  "cleaning_version": "truthlens-clean-v1",
+  "cleaned_at": "2026-11-13T14:51:00.955888+00:00",
+  "cleaning_issues": [],
+  "cleaning_status": "cleaned",
+  "content_hash_version": "sha256-headline-subheadline-body-v1",
+  "content_hash": "60d9d1aef64c3df63d09e8a7463dcba00264e23f356fd796f71643ea81e2217f",
+  "text_hash": "a092ad8656e958f14e36f114c7a7cbef766a2354a8675e8c42662b5ae23c3335",
+  "metadata_hash": "ecceff41a0f368b092a219a4c6b5b16f3e7c553be339d7783e2e672693218c85",
+  "media_hash": "3eb9b1221828269a2bd471086514ba3e6c341b392285f03e9e316a84fb3ffd59",
+  "quality_hash": "b8df83551d01c6666f62539b00ca8b1811a94ed92bc0b0df16544df4ef1278c6",
+  "state_hash": "29b357a27eb12d763de3076b0ff9a941bb3f6921ed1fe735a5502224ab8d6918",
+  "tracking_version": "truthlens-state-v1",
+  "change_status": "unchanged",
+  "changed_fields": [],
+  "field_changes": {},
+  "body_diff": "",
+  "text_changed": false,
+  "text_reanalysis_required": false,
+  "version_number": 1,
+  "version_first_seen_at": "2026-11-13T14:31:56.508079+00:00",
+  "last_changed_at": "2026-11-13T14:31:56.508079+00:00",
+  "last_checked_at": "2026-11-13T14:51:00.952775+00:00",
+  "tracking_observation_count": 2,
+  "snapshot_saved": false,
+  "change_detection_scope": "extracted_text_metadata_media_references_and_quality"
+},
+{
+  "source": "Express Tribune",
+  "run_id": "20261113T145050Z_b4d0e61fa05b46529a4119b47c295097",
+  "extraction_version": "tribune-extract-v1",
+  "article_id": "2640145",
+  "article_key": "tribune:2640145",
+  "url": "https://tribune.com.pk/story/2640145/pakistan-chase-saff-cup-history",
+  "http_status": 200,
+  "response_encoding": "utf-8",
+  "canonical_url": "https://tribune.com.pk/story/2640145/pakistan-chase-saff-cup-history",
+  "canonical_url_source": "link[rel=canonical]",
+  "headline": "Pakistan chase SAFF Cup history",
+  "subheadline": null,
+  "description": "Green-shirts face Bangladesh in the semi-final in Dhaka today",
+  "description_source": "meta[property=\"og:description\"]",
+  "author": "Hamza Khan",
+  "author_parts": [
+    "Hamza Khan"
+  ],
+  "published_at": "2026-11-13T14:33:24+00:00",
+  "updated_at": null,
+  "timestamp_sources": {
+    "published_at": "meta[property=\"article:published_time\"]",
+    "updated_at": null
+  },
+  "article_text": "Pakistan will look to make history by reaching the SAFF Championship final when they face hosts Bangladesh in a high-stake semi-final at the National Stadium in Dhaka on Saturday (today.\n\nThe visitors will have added strength for the knockout encounter with five overseas-based players including Abdullah Iqbal, Easah Suliman, Ali Akbar Khan, Adil Nabi and Abdul Samad Shahzad joining the squad ahead of the November 14 clash.\n\nThe players missed Pakistan's group-stage fixtures because they fell outside the FIFA international window. Their arrival, however, gives coach Nolberto Solano additional options against a Bangladesh side that has yet to concede a goal in the tournament.\n\nPakistan advanced to the semi-finals as Group B runners-up with three points and a goal difference of plus two. They scored five goals and conceded three across their two matches, finishing behind India, who collected six points from two victories.\n\nPakistan began their campaign with a 3-2 defeat against India despite showing attacking promise. Suhail Ahmad Bhat scored twice, while Kipgen added a third in the 32nd minute.\n\nSolano's side responded emphatically in their next outing, beating the Maldives 3-0. Teenage striker Najeeb Ullah Khan, 19, scored twice in the first half as Pakistan secured the points needed to strengthen their qualification hopes.\n\nTheir place in the semi-finals was confirmed after India edged the Maldives 1-0, with Suhail converting a 38th-minute penalty. Pakistan consequently finished second in the group, while the Maldives were eliminated after losing both matches.\n\nBangladesh, meanwhile, head into the contest unbeaten and with the advantage of playing in front of their home supporters. They opened their campaign with a 1-0 victory over Bhutan, courtesy of substitute Mohammad Ibrahim, before progressing to the semi-finals following a 2-2 draw between Sri Lanka and Bhutan.\n\nThe hosts further underlined their attacking strength with a 4-0 victory over Sri Lanka. Shamit Shome, Hamza Choudhury, Farhaan Ali Wahid and Rakib Hossain were among the scorers as Bangladesh strengthened their credentials as title contenders.\n\nPakistan will need to remain defensively disciplined while making the most of their attacking opportunities against a confident opponent. The arrival of the overseas contingent could prove important as Solano looks to improve his team's chances of reaching the final.\n\nBangladesh are chasing their second SAFF Championship title, having last lifted the trophy in 2003. Pakistan, however, will be determined to spoil the hosts' celebrations and take another step towards regional glory.\n\nThe other semi-final will see defending champions India face the Group A runners-up Bhutan on Saturday, with the final scheduled for November 17.",
+  "content_blocks": [
+    {
+      "type": "paragraph",
+      "text": "Pakistan will look to make history by reaching the SAFF Championship final when they face hosts Bangladesh in a high-stake semi-final at the National Stadium in Dhaka on Saturday (today.",
+      "html": "<p>Pakistan will look to make history by reaching the SAFF Championship final when they face hosts Bangladesh in a high-stake semi-final at the National Stadium in Dhaka on Saturday (today.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "The visitors will have added strength for the knockout encounter with five overseas-based players including Abdullah Iqbal, Easah Suliman, Ali Akbar Khan, Adil Nabi and Abdul Samad Shahzad joining the squad ahead of the November 14 clash.",
+      "html": "<p>The visitors will have added strength for the knockout encounter with five overseas-based players including Abdullah Iqbal, Easah Suliman, Ali Akbar Khan, Adil Nabi and Abdul Samad Shahzad joining the squad ahead of the November 14 clash.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "The players missed Pakistan's group-stage fixtures because they fell outside the FIFA international window. Their arrival, however, gives coach Nolberto Solano additional options against a Bangladesh side that has yet to concede a goal in the tournament.",
+      "html": "<p>The players missed Pakistan's group-stage fixtures because they fell outside the FIFA international window. Their arrival, however, gives coach Nolberto Solano additional options against a Bangladesh side that has yet to concede a goal in the tournament.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Pakistan advanced to the semi-finals as Group B runners-up with three points and a goal difference of plus two. They scored five goals and conceded three across their two matches, finishing behind India, who collected six points from two victories.",
+      "html": "<p>Pakistan advanced to the semi-finals as Group B runners-up with three points and a goal difference of plus two. They scored five goals and conceded three across their two matches, finishing behind India, who collected six points from two victories.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Pakistan began their campaign with a 3-2 defeat against India despite showing attacking promise. Suhail Ahmad Bhat scored twice, while Kipgen added a third in the 32nd minute.",
+      "html": "<p>Pakistan began their campaign with a 3-2 defeat against India despite showing attacking promise. Suhail Ahmad Bhat scored twice, while Kipgen added a third in the 32nd minute.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Solano's side responded emphatically in their next outing, beating the Maldives 3-0. Teenage striker Najeeb Ullah Khan, 19, scored twice in the first half as Pakistan secured the points needed to strengthen their qualification hopes.",
+      "html": "<p>Solano's side responded emphatically in their next outing, beating the Maldives 3-0. Teenage striker Najeeb Ullah Khan, 19, scored twice in the first half as Pakistan secured the points needed to strengthen their qualification hopes.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Their place in the semi-finals was confirmed after India edged the Maldives 1-0, with Suhail converting a 38th-minute penalty. Pakistan consequently finished second in the group, while the Maldives were eliminated after losing both matches.",
+      "html": "<p>Their place in the semi-finals was confirmed after India edged the Maldives 1-0, with Suhail converting a 38th-minute penalty. Pakistan consequently finished second in the group, while the Maldives were eliminated after losing both matches.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Bangladesh, meanwhile, head into the contest unbeaten and with the advantage of playing in front of their home supporters. They opened their campaign with a 1-0 victory over Bhutan, courtesy of substitute Mohammad Ibrahim, before progressing to the semi-finals following a 2-2 draw between Sri Lanka and Bhutan.",
+      "html": "<p>Bangladesh, meanwhile, head into the contest unbeaten and with the advantage of playing in front of their home supporters. They opened their campaign with a 1-0 victory over Bhutan, courtesy of substitute Mohammad Ibrahim, before progressing to the semi-finals following a 2-2 draw between Sri Lanka and Bhutan.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "The hosts further underlined their attacking strength with a 4-0 victory over Sri Lanka. Shamit Shome, Hamza Choudhury, Farhaan Ali Wahid and Rakib Hossain were among the scorers as Bangladesh strengthened their credentials as title contenders.",
+      "html": "<p>The hosts further underlined their attacking strength with a 4-0 victory over Sri Lanka. Shamit Shome, Hamza Choudhury, Farhaan Ali Wahid and Rakib Hossain were among the scorers as Bangladesh strengthened their credentials as title contenders.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Pakistan will need to remain defensively disciplined while making the most of their attacking opportunities against a confident opponent. The arrival of the overseas contingent could prove important as Solano looks to improve his team's chances of reaching the final.",
+      "html": "<p>Pakistan will need to remain defensively disciplined while making the most of their attacking opportunities against a confident opponent. The arrival of the overseas contingent could prove important as Solano looks to improve his team's chances of reaching the final.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Bangladesh are chasing their second SAFF Championship title, having last lifted the trophy in 2003. Pakistan, however, will be determined to spoil the hosts' celebrations and take another step towards regional glory.",
+      "html": "<p>Bangladesh are chasing their second SAFF Championship title, having last lifted the trophy in 2003. Pakistan, however, will be determined to spoil the hosts' celebrations and take another step towards regional glory.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "The other semi-final will see defending champions India face the Group A runners-up Bhutan on Saturday, with the final scheduled for November 17.",
+      "html": "<p>The other semi-final will see defending champions India face the Group A runners-up Bhutan on Saturday, with the final scheduled for November 17.</p>"
+    }
+  ],
+  "article_html": "<span class=\"story-text\">\n                                                                                            <strong class=\"location-names\">\n                                        KARACHI: \n            \n\n        </strong>\n            <p>Pakistan will look to make history by reaching the SAFF Championship final when they face hosts Bangladesh in a high-stake semi-final at the National Stadium in Dhaka on Saturday (today.</p>\n\n<p>The visitors will have added strength for the knockout encounter with five overseas-based players including Abdullah Iqbal, Easah Suliman, Ali Akbar Khan, Adil Nabi and Abdul Samad Shahzad joining the squad ahead of the November 14 clash.</p>\n\n<p>The players missed Pakistan's group-stage fixtures because they fell outside the FIFA international window. Their arrival, however, gives coach Nolberto Solano additional options against a Bangladesh side that has yet to concede a goal in the tournament.</p>\n\n<p>Pakistan advanced to the semi-finals as Group B runners-up with three points and a goal difference of plus two. They scored five goals and conceded three across their two matches, finishing behind India, who collected six points from two victories.</p>\n\n<p>Pakistan began their campaign with a 3-2 defeat against India despite showing attacking promise. Suhail Ahmad Bhat scored twice, while Kipgen added a third in the 32nd minute.</p><div id=\"div-gpt-story-2\"><script>googletag.cmd.push(function() { googletag.display('div-gpt-story-2'); });</script></div>\n\n<p>Solano's side responded emphatically in their next outing, beating the Maldives 3-0. Teenage striker Najeeb Ullah Khan, 19, scored twice in the first half as Pakistan secured the points needed to strengthen their qualification hopes.</p>\n\n<p>Their place in the semi-finals was confirmed after India edged the Maldives 1-0, with Suhail converting a 38th-minute penalty. Pakistan consequently finished second in the group, while the Maldives were eliminated after losing both matches.</p>\n\n<p>Bangladesh, meanwhile, head into the contest unbeaten and with the advantage of playing in front of their home supporters. They opened their campaign with a 1-0 victory over Bhutan, courtesy of substitute Mohammad Ibrahim, before progressing to the semi-finals following a 2-2 draw between Sri Lanka and Bhutan.</p>\n\n<p>The hosts further underlined their attacking strength with a 4-0 victory over Sri Lanka. Shamit Shome, Hamza Choudhury, Farhaan Ali Wahid and Rakib Hossain were among the scorers as Bangladesh strengthened their credentials as title contenders.</p>\n\n<p>Pakistan will need to remain defensively disciplined while making the most of their attacking opportunities against a confident opponent. The arrival of the overseas contingent could prove important as Solano looks to improve his team's chances of reaching the final.</p>\n\n<p>Bangladesh are chasing their second SAFF Championship title, having last lifted the trophy in 2003. Pakistan, however, will be determined to spoil the hosts' celebrations and take another step towards regional glory.</p>\n\n<p>The other semi-final will see defending champions India face the Group A runners-up Bhutan on Saturday, with the final scheduled for November 17.</p>\n\n\n\n                                                            </span>",
+  "image_url": "https://i.tribune.com.pk/media/images/pg13-four-col1794580321-0/pg13-four-col1794580321-0-640x480.webp",
+  "images": [],
+  "videos": [],
+  "tweets": [],
+  "tweet_embed_count": 0,
+  "media_detection_scope": "URLs_and_extracted_metadata_not_media_bytes",
+  "embed_detection_scope": "downloaded_article_body_html_only",
+  "language": "en",
+  "language_source": "English source configuration",
+  "section": "sports",
+  "tags": [
+    "Latest"
+  ],
+  "crawled_at": "2026-11-13T14:51:05.146748+00:00",
+  "discovered_from": "https://tribune.com.pk/sitemap/latest-1.xml",
+  "processing_status": "cleaned",
+  "validation_issues": [],
+  "validation_status": "passed_basic_checks",
+  "category": "sports",
+  "cleaned_text": "Pakistan will look to make history by reaching the SAFF Championship final when they face hosts Bangladesh in a high-stake semi-final at the National Stadium in Dhaka on Saturday (today.\n\nThe visitors will have added strength for the knockout encounter with five overseas-based players including Abdullah Iqbal, Easah Suliman, Ali Akbar Khan, Adil Nabi and Abdul Samad Shahzad joining the squad ahead of the November 14 clash.\n\nThe players missed Pakistan's group-stage fixtures because they fell outside the FIFA international window. Their arrival, however, gives coach Nolberto Solano additional options against a Bangladesh side that has yet to concede a goal in the tournament.\n\nPakistan advanced to the semi-finals as Group B runners-up with three points and a goal difference of plus two. They scored five goals and conceded three across their two matches, finishing behind India, who collected six points from two victories.\n\nPakistan began their campaign with a 3-2 defeat against India despite showing attacking promise. Suhail Ahmad Bhat scored twice, while Kipgen added a third in the 32nd minute.\n\nSolano's side responded emphatically in their next outing, beating the Maldives 3-0. Teenage striker Najeeb Ullah Khan, 19, scored twice in the first half as Pakistan secured the points needed to strengthen their qualification hopes.\n\nTheir place in the semi-finals was confirmed after India edged the Maldives 1-0, with Suhail converting a 38th-minute penalty. Pakistan consequently finished second in the group, while the Maldives were eliminated after losing both matches.\n\nBangladesh, meanwhile, head into the contest unbeaten and with the advantage of playing in front of their home supporters. They opened their campaign with a 1-0 victory over Bhutan, courtesy of substitute Mohammad Ibrahim, before progressing to the semi-finals following a 2-2 draw between Sri Lanka and Bhutan.\n\nThe hosts further underlined their attacking strength with a 4-0 victory over Sri Lanka. Shamit Shome, Hamza Choudhury, Farhaan Ali Wahid and Rakib Hossain were among the scorers as Bangladesh strengthened their credentials as title contenders.\n\nPakistan will need to remain defensively disciplined while making the most of their attacking opportunities against a confident opponent. The arrival of the overseas contingent could prove important as Solano looks to improve his team's chances of reaching the final.\n\nBangladesh are chasing their second SAFF Championship title, having last lifted the trophy in 2003. Pakistan, however, will be determined to spoil the hosts' celebrations and take another step towards regional glory.\n\nThe other semi-final will see defending champions India face the Group A runners-up Bhutan on Saturday, with the final scheduled for November 17.",
+  "cleaned_blocks": [
+    {
+      "source_block_index": 0,
+      "type": "paragraph",
+      "text": "Pakistan will look to make history by reaching the SAFF Championship final when they face hosts Bangladesh in a high-stake semi-final at the National Stadium in Dhaka on Saturday (today."
+    },
+    {
+      "source_block_index": 1,
+      "type": "paragraph",
+      "text": "The visitors will have added strength for the knockout encounter with five overseas-based players including Abdullah Iqbal, Easah Suliman, Ali Akbar Khan, Adil Nabi and Abdul Samad Shahzad joining the squad ahead of the November 14 clash."
+    },
+    {
+      "source_block_index": 2,
+      "type": "paragraph",
+      "text": "The players missed Pakistan's group-stage fixtures because they fell outside the FIFA international window. Their arrival, however, gives coach Nolberto Solano additional options against a Bangladesh side that has yet to concede a goal in the tournament."
+    },
+    {
+      "source_block_index": 3,
+      "type": "paragraph",
+      "text": "Pakistan advanced to the semi-finals as Group B runners-up with three points and a goal difference of plus two. They scored five goals and conceded three across their two matches, finishing behind India, who collected six points from two victories."
+    },
+    {
+      "source_block_index": 4,
+      "type": "paragraph",
+      "text": "Pakistan began their campaign with a 3-2 defeat against India despite showing attacking promise. Suhail Ahmad Bhat scored twice, while Kipgen added a third in the 32nd minute."
+    },
+    {
+      "source_block_index": 5,
+      "type": "paragraph",
+      "text": "Solano's side responded emphatically in their next outing, beating the Maldives 3-0. Teenage striker Najeeb Ullah Khan, 19, scored twice in the first half as Pakistan secured the points needed to strengthen their qualification hopes."
+    },
+    {
+      "source_block_index": 6,
+      "type": "paragraph",
+      "text": "Their place in the semi-finals was confirmed after India edged the Maldives 1-0, with Suhail converting a 38th-minute penalty. Pakistan consequently finished second in the group, while the Maldives were eliminated after losing both matches."
+    },
+    {
+      "source_block_index": 7,
+      "type": "paragraph",
+      "text": "Bangladesh, meanwhile, head into the contest unbeaten and with the advantage of playing in front of their home supporters. They opened their campaign with a 1-0 victory over Bhutan, courtesy of substitute Mohammad Ibrahim, before progressing to the semi-finals following a 2-2 draw between Sri Lanka and Bhutan."
+    },
+    {
+      "source_block_index": 8,
+      "type": "paragraph",
+      "text": "The hosts further underlined their attacking strength with a 4-0 victory over Sri Lanka. Shamit Shome, Hamza Choudhury, Farhaan Ali Wahid and Rakib Hossain were among the scorers as Bangladesh strengthened their credentials as title contenders."
+    },
+    {
+      "source_block_index": 9,
+      "type": "paragraph",
+      "text": "Pakistan will need to remain defensively disciplined while making the most of their attacking opportunities against a confident opponent. The arrival of the overseas contingent could prove important as Solano looks to improve his team's chances of reaching the final."
+    },
+    {
+      "source_block_index": 10,
+      "type": "paragraph",
+      "text": "Bangladesh are chasing their second SAFF Championship title, having last lifted the trophy in 2003. Pakistan, however, will be determined to spoil the hosts' celebrations and take another step towards regional glory."
+    },
+    {
+      "source_block_index": 11,
+      "type": "paragraph",
+      "text": "The other semi-final will see defending champions India face the Group A runners-up Bhutan on Saturday, with the final scheduled for November 17."
+    }
+  ],
+  "cleaning_version": "truthlens-clean-v1",
+  "cleaned_at": "2026-11-13T14:51:05.149792+00:00",
+  "cleaning_issues": [],
+  "cleaning_status": "cleaned",
+  "content_hash_version": "sha256-headline-subheadline-body-v1",
+  "content_hash": "63e9d670f72dd063b03ed1ac9b1216194b8ae43c281a200396381bccbbd0de7d",
+  "text_hash": "bb4740173152978abfe387ea7641f4198585ff2e1a11748a485165832f426699",
+  "metadata_hash": "2d5c63bca2e0aeddc03abdb45253d35133fdfa693136efb7bef636d4c81ada4e",
+  "media_hash": "6b7a04f03014e7e1ac57745dd0c6faf6c9d010437dc52dd58568255ab703f89b",
+  "quality_hash": "b8df83551d01c6666f62539b00ca8b1811a94ed92bc0b0df16544df4ef1278c6",
+  "state_hash": "69b7d1c9d4d406f6cea09d142eab9db2f0eeff2ab1c58f628891349e26d2a3c0",
+  "tracking_version": "truthlens-state-v1",
+  "change_status": "new",
+  "changed_fields": [],
+  "field_changes": {},
+  "body_diff": "",
+  "text_changed": null,
+  "text_reanalysis_required": true,
+  "version_number": 1,
+  "version_first_seen_at": "2026-11-13T14:51:05.146748+00:00",
+  "last_changed_at": "2026-11-13T14:51:05.146748+00:00",
+  "last_checked_at": "2026-11-13T14:51:05.146748+00:00",
+  "tracking_observation_count": 1,
+  "snapshot_saved": true,
+  "change_detection_scope": "extracted_text_metadata_media_references_and_quality"
+},
+{
+  "source": "Express Tribune",
+  "run_id": "20261113T145050Z_b4d0e61fa05b46529a4119b47c295097",
+  "extraction_version": "tribune-extract-v1",
+  "article_id": "2640147",
+  "article_key": "tribune:2640147",
+  "url": "https://tribune.com.pk/story/2640147/pakistan-eye-title-defence-against-india",
+  "http_status": 200,
+  "response_encoding": "utf-8",
+  "canonical_url": "https://tribune.com.pk/story/2640147/pakistan-eye-title-defence-against-india",
+  "canonical_url_source": "link[rel=canonical]",
+  "headline": "Pakistan eye title defence against India",
+  "subheadline": null,
+  "description": "Holders eye back-to-back crowns after an unbeaten campaign in Under-19 Asia Cup",
+  "description_source": "meta[property=\"og:description\"]",
+  "author": "Sports Desk",
+  "author_parts": [
+    "Sports Desk"
+  ],
+  "published_at": "2026-11-13T14:35:28+00:00",
+  "updated_at": null,
+  "timestamp_sources": {
+    "published_at": "meta[property=\"article:published_time\"]",
+    "updated_at": null
+  },
+  "article_text": "Pakistan and India will renew their fierce cricket rivalry when they meet in the final of the Under-19 Asia Cup in Oman on Saturday (today) with the defending champions seeking to retain their crown.\n\nThe final at the Oman Cricket Academy Ground in Al Amerat brings together the tournament's two most closely watched sides, both of whom have negotiated challenging knockout assignments to reach the title decider.\n\nPakistan, led by Farhan Yousaf, have been the more consistent team throughout the competition, winning all four of their matches. They opened their campaign with a nine-wicket victory over the United Arab Emirates before edging India by three wickets in a closely contested group encounter thanks to Hamza Zahoor’s stunning 100 not out.\n\nA commanding 101-run win over Nepal secured Pakistan's place at the top of Group A, while their nine-wicket demolition of Bangladesh in Thursday's semi-final underlined their credentials. Fast bowler Rizwanullah claimed five wickets for 30 runs before Hayam Khan and Usman Khan guided Pakistan to victory with an unbeaten opening partnership of 123 runs.\n\nIndia, meanwhile, finished second in Group A after winning two of their three matches. They began with a ten-wicket victory over Nepal, suffered a three-wicket defeat against Pakistan and recovered with a 70-run win over the UAE.\n\nThe Indian side regained momentum in the semi-finals, defeating Afghanistan by eight wickets. Lakshya Raichandani led the chase with an impressive 93 off 90 deliveries, while Arya Viraj Sehrawat and VK Vinith provided valuable support.\n\nSaturday's encounter also carries the weight of last year's final, when Pakistan defeated India by 191 runs to claim the title. That result will add another layer of motivation for India, although Pakistan's group-stage victory suggests they will enter the contest with considerable confidence.\n\nAaryavir Sehwag of India leads the batting chart with 303 runs, which contains one century and one fifty.\n\nUsman Khan of Pakistan follows with 238 runs which carries one century and one fifty.\n\nAfghanistan’s Noor Ali leads bowling chart with 14 wickets. He is followed by Tafiulm Alam Tamim of Bangladesh with 13 while Pakistan’s Rizwanullah and ID Sood of India stand share 11 wickets each. India have won the event for record seven times while once in 2012 in Malaysia India and Pakistan had shared the trophy after the final had ended in a tie.\n\nBangladesh have two titles to their credit while Afghanistan have won the event once.",
+  "content_blocks": [
+    {
+      "type": "paragraph",
+      "text": "Pakistan and India will renew their fierce cricket rivalry when they meet in the final of the Under-19 Asia Cup in Oman on Saturday (today) with the defending champions seeking to retain their crown.",
+      "html": "<p>Pakistan and India will renew their fierce cricket rivalry when they meet in the final of the Under-19 Asia Cup in Oman on Saturday (today) with the defending champions seeking to retain their crown.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "The final at the Oman Cricket Academy Ground in Al Amerat brings together the tournament's two most closely watched sides, both of whom have negotiated challenging knockout assignments to reach the title decider.",
+      "html": "<p>The final at the Oman Cricket Academy Ground in Al Amerat brings together the tournament's two most closely watched sides, both of whom have negotiated challenging knockout assignments to reach the title decider.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Pakistan, led by Farhan Yousaf, have been the more consistent team throughout the competition, winning all four of their matches. They opened their campaign with a nine-wicket victory over the United Arab Emirates before edging India by three wickets in a closely contested group encounter thanks to Hamza Zahoor’s stunning 100 not out.",
+      "html": "<p>Pakistan, led by Farhan Yousaf, have been the more consistent team throughout the competition, winning all four of their matches. They opened their campaign with a nine-wicket victory over the United Arab Emirates before edging India by three wickets in a closely contested group encounter thanks to Hamza Zahoor’s stunning 100 not out.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "A commanding 101-run win over Nepal secured Pakistan's place at the top of Group A, while their nine-wicket demolition of Bangladesh in Thursday's semi-final underlined their credentials. Fast bowler Rizwanullah claimed five wickets for 30 runs before Hayam Khan and Usman Khan guided Pakistan to victory with an unbeaten opening partnership of 123 runs.",
+      "html": "<p>A commanding 101-run win over Nepal secured Pakistan's place at the top of Group A, while their nine-wicket demolition of Bangladesh in Thursday's semi-final underlined their credentials. Fast bowler Rizwanullah claimed five wickets for 30 runs before Hayam Khan and Usman Khan guided Pakistan to victory with an unbeaten opening partnership of 123 runs.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "India, meanwhile, finished second in Group A after winning two of their three matches. They began with a ten-wicket victory over Nepal, suffered a three-wicket defeat against Pakistan and recovered with a 70-run win over the UAE.",
+      "html": "<p>India, meanwhile, finished second in Group A after winning two of their three matches. They began with a ten-wicket victory over Nepal, suffered a three-wicket defeat against Pakistan and recovered with a 70-run win over the UAE.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "The Indian side regained momentum in the semi-finals, defeating Afghanistan by eight wickets. Lakshya Raichandani led the chase with an impressive 93 off 90 deliveries, while Arya Viraj Sehrawat and VK Vinith provided valuable support.",
+      "html": "<p>The Indian side regained momentum in the semi-finals, defeating Afghanistan by eight wickets. Lakshya Raichandani led the chase with an impressive 93 off 90 deliveries, while Arya Viraj Sehrawat and VK Vinith provided valuable support.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Saturday's encounter also carries the weight of last year's final, when Pakistan defeated India by 191 runs to claim the title. That result will add another layer of motivation for India, although Pakistan's group-stage victory suggests they will enter the contest with considerable confidence.",
+      "html": "<p>Saturday's encounter also carries the weight of last year's final, when Pakistan defeated India by 191 runs to claim the title. That result will add another layer of motivation for India, although Pakistan's group-stage victory suggests they will enter the contest with considerable confidence.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Aaryavir Sehwag of India leads the batting chart with 303 runs, which contains one century and one fifty.",
+      "html": "<p>Aaryavir Sehwag of India leads the batting chart with 303 runs, which contains one century and one fifty.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Usman Khan of Pakistan follows with 238 runs which carries one century and one fifty.",
+      "html": "<p>Usman Khan of Pakistan follows with 238 runs which carries one century and one fifty.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Afghanistan’s Noor Ali leads bowling chart with 14 wickets. He is followed by Tafiulm Alam Tamim of Bangladesh with 13 while Pakistan’s Rizwanullah and ID Sood of India stand share 11 wickets each. India have won the event for record seven times while once in 2012 in Malaysia India and Pakistan had shared the trophy after the final had ended in a tie.",
+      "html": "<p>Afghanistan’s Noor Ali leads bowling chart with 14 wickets. He is followed by Tafiulm Alam Tamim of Bangladesh with 13 while Pakistan’s Rizwanullah and ID Sood of India stand share 11 wickets each. India have won the event for record seven times while once in 2012 in Malaysia India and Pakistan had shared the trophy after the final had ended in a tie.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Bangladesh have two titles to their credit while Afghanistan have won the event once.",
+      "html": "<p>Bangladesh have two titles to their credit while Afghanistan have won the event once.</p>"
+    }
+  ],
+  "article_html": "<span class=\"story-text\">\n                                                                                            <p>Pakistan and India will renew their fierce cricket rivalry when they meet in the final of the Under-19 Asia Cup in Oman on Saturday (today) with the defending champions seeking to retain their crown.</p>\n\n<p>The final at the Oman Cricket Academy Ground in Al Amerat brings together the tournament's two most closely watched sides, both of whom have negotiated challenging knockout assignments to reach the title decider.</p>\n\n<p>Pakistan, led by Farhan Yousaf, have been the more consistent team throughout the competition, winning all four of their matches. They opened their campaign with a nine-wicket victory over the United Arab Emirates before edging India by three wickets in a closely contested group encounter thanks to Hamza Zahoor’s stunning 100 not out.</p>\n\n<p>A commanding 101-run win over Nepal secured Pakistan's place at the top of Group A, while their nine-wicket demolition of Bangladesh in Thursday's semi-final underlined their credentials. Fast bowler Rizwanullah claimed five wickets for 30 runs before Hayam Khan and Usman Khan guided Pakistan to victory with an unbeaten opening partnership of 123 runs.</p><div id=\"div-gpt-story-2\"><script>googletag.cmd.push(function() { googletag.display('div-gpt-story-2'); });</script></div>\n\n<p>India, meanwhile, finished second in Group A after winning two of their three matches. They began with a ten-wicket victory over Nepal, suffered a three-wicket defeat against Pakistan and recovered with a 70-run win over the UAE.</p>\n\n<p>The Indian side regained momentum in the semi-finals, defeating Afghanistan by eight wickets. Lakshya Raichandani led the chase with an impressive 93 off 90 deliveries, while Arya Viraj Sehrawat and VK Vinith provided valuable support.</p>\n\n<p>Saturday's encounter also carries the weight of last year's final, when Pakistan defeated India by 191 runs to claim the title. That result will add another layer of motivation for India, although Pakistan's group-stage victory suggests they will enter the contest with considerable confidence.</p>\n\n<p>Aaryavir Sehwag of India leads the batting chart with 303 runs, which contains one century and one fifty.</p>\n\n<p>Usman Khan of Pakistan follows with 238 runs which carries one century and one fifty.</p>\n\n<p>Afghanistan’s Noor Ali leads bowling chart with 14 wickets. He is followed by Tafiulm Alam Tamim of Bangladesh with 13 while Pakistan’s Rizwanullah and ID Sood of India stand share 11 wickets each. India have won the event for record seven times while once in 2012 in Malaysia India and Pakistan had shared the trophy after the final had ended in a tie.</p>\n\n<p>Bangladesh have two titles to their credit while Afghanistan have won the event once.</p>\n\n\n\n                                                            </span>",
+  "image_url": "https://i.tribune.com.pk/media/images/pg12-four-col1794580445-0/pg12-four-col1794580445-0-640x480.webp",
+  "images": [],
+  "videos": [],
+  "tweets": [],
+  "tweet_embed_count": 0,
+  "media_detection_scope": "URLs_and_extracted_metadata_not_media_bytes",
+  "embed_detection_scope": "downloaded_article_body_html_only",
+  "language": "en",
+  "language_source": "English source configuration",
+  "section": "sports",
+  "tags": [
+    "Latest"
+  ],
+  "crawled_at": "2026-11-13T14:51:08.860729+00:00",
+  "discovered_from": "https://tribune.com.pk/sitemap/latest-1.xml",
+  "processing_status": "cleaned",
+  "validation_issues": [],
+  "validation_status": "passed_basic_checks",
+  "category": "sports",
+  "cleaned_text": "Pakistan and India will renew their fierce cricket rivalry when they meet in the final of the Under-19 Asia Cup in Oman on Saturday (today) with the defending champions seeking to retain their crown.\n\nThe final at the Oman Cricket Academy Ground in Al Amerat brings together the tournament's two most closely watched sides, both of whom have negotiated challenging knockout assignments to reach the title decider.\n\nPakistan, led by Farhan Yousaf, have been the more consistent team throughout the competition, winning all four of their matches. They opened their campaign with a nine-wicket victory over the United Arab Emirates before edging India by three wickets in a closely contested group encounter thanks to Hamza Zahoor’s stunning 100 not out.\n\nA commanding 101-run win over Nepal secured Pakistan's place at the top of Group A, while their nine-wicket demolition of Bangladesh in Thursday's semi-final underlined their credentials. Fast bowler Rizwanullah claimed five wickets for 30 runs before Hayam Khan and Usman Khan guided Pakistan to victory with an unbeaten opening partnership of 123 runs.\n\nIndia, meanwhile, finished second in Group A after winning two of their three matches. They began with a ten-wicket victory over Nepal, suffered a three-wicket defeat against Pakistan and recovered with a 70-run win over the UAE.\n\nThe Indian side regained momentum in the semi-finals, defeating Afghanistan by eight wickets. Lakshya Raichandani led the chase with an impressive 93 off 90 deliveries, while Arya Viraj Sehrawat and VK Vinith provided valuable support.\n\nSaturday's encounter also carries the weight of last year's final, when Pakistan defeated India by 191 runs to claim the title. That result will add another layer of motivation for India, although Pakistan's group-stage victory suggests they will enter the contest with considerable confidence.\n\nAaryavir Sehwag of India leads the batting chart with 303 runs, which contains one century and one fifty.\n\nUsman Khan of Pakistan follows with 238 runs which carries one century and one fifty.\n\nAfghanistan’s Noor Ali leads bowling chart with 14 wickets. He is followed by Tafiulm Alam Tamim of Bangladesh with 13 while Pakistan’s Rizwanullah and ID Sood of India stand share 11 wickets each. India have won the event for record seven times while once in 2012 in Malaysia India and Pakistan had shared the trophy after the final had ended in a tie.\n\nBangladesh have two titles to their credit while Afghanistan have won the event once.",
+  "cleaned_blocks": [
+    {
+      "source_block_index": 0,
+      "type": "paragraph",
+      "text": "Pakistan and India will renew their fierce cricket rivalry when they meet in the final of the Under-19 Asia Cup in Oman on Saturday (today) with the defending champions seeking to retain their crown."
+    },
+    {
+      "source_block_index": 1,
+      "type": "paragraph",
+      "text": "The final at the Oman Cricket Academy Ground in Al Amerat brings together the tournament's two most closely watched sides, both of whom have negotiated challenging knockout assignments to reach the title decider."
+    },
+    {
+      "source_block_index": 2,
+      "type": "paragraph",
+      "text": "Pakistan, led by Farhan Yousaf, have been the more consistent team throughout the competition, winning all four of their matches. They opened their campaign with a nine-wicket victory over the United Arab Emirates before edging India by three wickets in a closely contested group encounter thanks to Hamza Zahoor’s stunning 100 not out."
+    },
+    {
+      "source_block_index": 3,
+      "type": "paragraph",
+      "text": "A commanding 101-run win over Nepal secured Pakistan's place at the top of Group A, while their nine-wicket demolition of Bangladesh in Thursday's semi-final underlined their credentials. Fast bowler Rizwanullah claimed five wickets for 30 runs before Hayam Khan and Usman Khan guided Pakistan to victory with an unbeaten opening partnership of 123 runs."
+    },
+    {
+      "source_block_index": 4,
+      "type": "paragraph",
+      "text": "India, meanwhile, finished second in Group A after winning two of their three matches. They began with a ten-wicket victory over Nepal, suffered a three-wicket defeat against Pakistan and recovered with a 70-run win over the UAE."
+    },
+    {
+      "source_block_index": 5,
+      "type": "paragraph",
+      "text": "The Indian side regained momentum in the semi-finals, defeating Afghanistan by eight wickets. Lakshya Raichandani led the chase with an impressive 93 off 90 deliveries, while Arya Viraj Sehrawat and VK Vinith provided valuable support."
+    },
+    {
+      "source_block_index": 6,
+      "type": "paragraph",
+      "text": "Saturday's encounter also carries the weight of last year's final, when Pakistan defeated India by 191 runs to claim the title. That result will add another layer of motivation for India, although Pakistan's group-stage victory suggests they will enter the contest with considerable confidence."
+    },
+    {
+      "source_block_index": 7,
+      "type": "paragraph",
+      "text": "Aaryavir Sehwag of India leads the batting chart with 303 runs, which contains one century and one fifty."
+    },
+    {
+      "source_block_index": 8,
+      "type": "paragraph",
+      "text": "Usman Khan of Pakistan follows with 238 runs which carries one century and one fifty."
+    },
+    {
+      "source_block_index": 9,
+      "type": "paragraph",
+      "text": "Afghanistan’s Noor Ali leads bowling chart with 14 wickets. He is followed by Tafiulm Alam Tamim of Bangladesh with 13 while Pakistan’s Rizwanullah and ID Sood of India stand share 11 wickets each. India have won the event for record seven times while once in 2012 in Malaysia India and Pakistan had shared the trophy after the final had ended in a tie."
+    },
+    {
+      "source_block_index": 10,
+      "type": "paragraph",
+      "text": "Bangladesh have two titles to their credit while Afghanistan have won the event once."
+    }
+  ],
+  "cleaning_version": "truthlens-clean-v1",
+  "cleaned_at": "2026-11-13T14:51:08.863310+00:00",
+  "cleaning_issues": [],
+  "cleaning_status": "cleaned",
+  "content_hash_version": "sha256-headline-subheadline-body-v1",
+  "content_hash": "14ff7afae8f2f1cf6d7866be57061ba64582ec32277c38a731d0702c645aa456",
+  "text_hash": "3ce51e99fca258a3ef6923160610b974f423449564457754ff72052bf3078f3b",
+  "metadata_hash": "b4e69ffabbb6668fd5e11b2afee5691b48ce5f8571c9698ef02a11e40021403e",
+  "media_hash": "1edbc171facf0c350ebc4f9b6d4e8f1de934941fbbbd4b7579d8f3e05041cfbf",
+  "quality_hash": "b8df83551d01c6666f62539b00ca8b1811a94ed92bc0b0df16544df4ef1278c6",
+  "state_hash": "db5387af2a9105c88cb15c335ef438a80a8c78a2cdfcba402f937dcffabb8f6d",
+  "tracking_version": "truthlens-state-v1",
+  "change_status": "new",
+  "changed_fields": [],
+  "field_changes": {},
+  "body_diff": "",
+  "text_changed": null,
+  "text_reanalysis_required": true,
+  "version_number": 1,
+  "version_first_seen_at": "2026-11-13T14:51:08.860729+00:00",
+  "last_changed_at": "2026-11-13T14:51:08.860729+00:00",
+  "last_checked_at": "2026-11-13T14:51:08.860729+00:00",
+  "tracking_observation_count": 1,
+  "snapshot_saved": true,
+  "change_detection_scope": "extracted_text_metadata_media_references_and_quality"
+}
+]

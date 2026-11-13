@@ -1,0 +1,92 @@
+2026-11-13 19:30:56,222 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.logcount.LogCount',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.remote_control.RemoteControl',
+ 'truthlens.run_reporting.RunReportingExtension']
+2026-11-13 19:30:56,224 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'truthlens',
+ 'CONCURRENT_REQUESTS': 1,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 1,
+ 'DOWNLOAD_DELAY': 3,
+ 'DOWNLOAD_TIMEOUT': 30,
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'FEED_EXPORT_INDENT': 2,
+ 'LOG_LEVEL': 'INFO',
+ 'NEWSPIDER_MODULE': 'truthlens.spiders',
+ 'ROBOTSTXT_OBEY': True,
+ 'SPIDER_MODULES': ['truthlens.spiders'],
+ 'USER_AGENT': 'TruthLensResearchBot/0.1'}
+2026-11-13 19:30:56,962 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2026-11-13 19:30:56,972 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.start.StartSpiderMiddleware',
+ 'scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware',
+ 'scrapy.spidermiddlewares.metacopy.MetaCopyDetectionMiddleware']
+2026-11-13 19:30:57,236 [scrapy.middleware] INFO: Enabled item pipelines:
+['truthlens.pipelines.CleaningPipeline',
+ 'truthlens.pipelines.MongoDBPipeline',
+ 'truthlens.export.RunJsonExportPipeline']
+2026-11-13 19:30:57,237 [scrapy.core.engine] INFO: Spider opened
+2026-11-13 19:30:57,301 [truthlens.pipelines] INFO: MongoDB connected: database=truthlens
+2026-11-13 19:30:57,307 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2026-11-13 19:30:57,316 [truthlens.run_reporting] INFO: Run started: 20261113T143056Z_fd03062559aa4095bc6f4d5f0a7285a7 | source=Aaj News
+2026-11-13 19:30:57,320 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2026-11-13 19:30:57,330 [scrapy.extensions.remote_control] INFO: Remote control HTTP server listening on port 59924 (job 19136-313df334c9ce42d583866f4569a5efa3)
+2026-11-13 19:31:01,149 [aaj_sitemap] INFO: Sitemap: selected 3 article URLs.
+2026-11-13 19:31:04,285 [aaj_sitemap] INFO: Extracted article: https://english.aaj.tv/news/330480581/spacex-to-attempt-first-starship-spacecraft-recovery-on-land-in-15th-flight | paragraphs=13 | words=601
+2026-11-13 19:31:04,299 [truthlens.pipelines] INFO: Cleaned article: aaj:330480581 | characters=3678 | hash=02fdb23dca9c
+2026-11-13 19:31:04,323 [truthlens.pipelines] INFO: MongoDB new: aaj:330480581 | version=1 | fields=none
+2026-11-13 19:31:07,737 [aaj_sitemap] INFO: Skipping section videos (never kept) | https://english.aaj.tv/news/330480582/lahore-green-electro-bus-incident-employee-dismissed-aaj-news
+2026-11-13 19:31:11,576 [aaj_sitemap] INFO: Extracted article: https://english.aaj.tv/news/330480583/former-nvidia-ceo-huang-had-a-relationship-with-a-second-employee-sources-say | paragraphs=10 | words=298
+2026-11-13 19:31:11,582 [truthlens.pipelines] INFO: Cleaned article: aaj:330480583 | characters=1843 | hash=dcd4d8d6375d
+2026-11-13 19:31:11,600 [truthlens.pipelines] INFO: MongoDB new: aaj:330480583 | version=1 | fields=none
+2026-11-13 19:31:11,603 [scrapy.core.engine] INFO: Closing spider (finished)
+2026-11-13 19:31:11,605 [truthlens.export] INFO: Run JSON saved: data\runs\aaj_sitemap\aaj_sitemap_2026-11-13_19-30-57.json | items=2
+2026-11-13 19:31:11,612 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'aaj_sitemap/skipped_section': 1,
+ 'downloader/request_bytes': 1492,
+ 'downloader/request_count': 5,
+ 'downloader/request_method_count/GET': 5,
+ 'downloader/response_bytes': 109144,
+ 'downloader/response_count': 5,
+ 'downloader/response_status_count/200': 5,
+ 'elapsed_time_seconds': 14.296999999998661,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2026, 11, 13, 14, 31, 11, 609295, tzinfo=datetime.timezone.utc),
+ 'httpcompression/response_bytes': 491710,
+ 'httpcompression/response_count': 5,
+ 'item_scraped_count': 2,
+ 'items_per_minute': 8.571428571428571,
+ 'log_count/INFO': 14,
+ 'mongodb/articles_new': 2,
+ 'mongodb/snapshots_inserted': 2,
+ 'request_depth_max': 1,
+ 'response_received_count': 5,
+ 'responses_per_minute': 21.428571428571427,
+ 'robotstxt/request_count': 1,
+ 'robotstxt/response_count': 1,
+ 'robotstxt/response_status_count/200': 1,
+ 'scheduler/dequeued': 4,
+ 'scheduler/dequeued/memory': 4,
+ 'scheduler/enqueued': 4,
+ 'scheduler/enqueued/memory': 4,
+ 'start_time': datetime.datetime(2026, 11, 13, 14, 30, 57, 305552, tzinfo=datetime.timezone.utc)}
+2026-11-13 19:31:11,612 [scrapy.core.engine] INFO: Spider closed (finished)
+2026-11-13 19:31:11,618 [truthlens.run_reporting] INFO: Run summary saved: logs\runs\20261113T143056Z_fd03062559aa4095bc6f4d5f0a7285a7.json | status=completed

@@ -1,0 +1,185 @@
+[
+{
+  "source": "Aaj News",
+  "run_id": "20261113T145129Z_56e1ebcc0cf548f9a1cf56a7f72810c6",
+  "extraction_version": "aaj-extract-v1",
+  "article_id": "330480583",
+  "article_key": "aaj:330480583",
+  "url": "https://english.aaj.tv/news/330480583/former-nvidia-ceo-huang-had-a-relationship-with-a-second-employee-sources-say",
+  "http_status": 200,
+  "response_encoding": "utf-8",
+  "canonical_url": "https://english.aaj.tv/news/330480583/former-nvidia-ceo-huang-had-a-relationship-with-a-second-employee-sources-say",
+  "canonical_url_source": "link[rel=canonical]/og:url",
+  "headline": "Former Nvidia CEO Huang had a relationship with a second employee, sources say",
+  "subheadline": null,
+  "description": "Jensen Huang reportedly had an intimate relationship with a second employee, following revelations of two other extramarital affairs",
+  "description_source": "meta[property=\"og:description\"]",
+  "author": "Reuters",
+  "author_parts": [
+    "Reuters"
+  ],
+  "published_at": "2026-11-13 19:27:03+05:00",
+  "updated_at": "2026-11-13 19:27:03+05:00",
+  "timestamp_sources": {
+    "published_at": "meta[property=\"article:published_time\"]",
+    "updated_at": "meta/JSON-LD"
+  },
+  "article_text": "Ousted Nvidia CEO Jensen Huang ​had an intimate relationship with a second employee, according to two people ‌familiar with the matter, Reuters has learned.\n\nThe revelation follows two other extramarital affairs that led to his resignation Thursday. The two women are Alice Huang, whom US intelligence suspects of being ​a Chinese spy, and Kimberly Powell, Nvidia’s vice president of health ​care.\n\nReuters is not naming the second employee. Attempts to reach the ⁠woman were not successful.\n\nNvidia declined to comment. Powell, Jensen Huang, and a representative ​for Nvidia’s board did not reply to requests for comment. Alice Huang could ​not be reached for comment.\n\nJensen Huang admitted to an affair in a November 8 statement following the reports of his relationship with Alice Huang, without referring to her by name.\n\nThe former ​Nvidia CEO’s decision to resign from the company could disrupt the AI industry ​that he helped shape. Nvidia has used its financial strength to help create an industry ‌around ⁠AI through complex financial arrangements that ease the purchase of the company’s chips. It has backed cloud computing companies and AI labs in order to do so.\n\nPressure on Jensen Huang, who is 63 and married, to resign mounted after reports ​of his affair with ​Alice Huang.\n\nNvidia’s board ⁠appointed finance chief Colette Kress as interim CEO while it conducts a search to replace Jensen Huang. The board is ​considering internal and external candidates for the job.\n\nEarlier this month, ​Nvidia’s board ⁠launched a probe, led by independent directors with outside legal counsel, into whether Jensen Huang had been targeted by a foreign intelligence operation. It also expressed confidence ⁠in him ​at the time.\n\nShares fell 5.5% on Thursday ​in active trading. The stock has shed more than 30% of its value since its early October ​peak.",
+  "content_blocks": [
+    {
+      "type": "paragraph",
+      "text": "Ousted Nvidia CEO Jensen Huang ​had an intimate relationship with a second employee, according to two people ‌familiar with the matter, Reuters has learned.",
+      "html": "<p><strong>Ousted Nvidia CEO Jensen Huang ​had an intimate relationship with a second employee, according to two people ‌familiar with the matter, <em>Reuters</em> has learned.</strong></p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "The revelation follows two other extramarital affairs that led to his resignation Thursday. The two women are Alice Huang, whom US intelligence suspects of being ​a Chinese spy, and Kimberly Powell, Nvidia’s vice president of health ​care.",
+      "html": "<p>The revelation follows two other extramarital affairs that led to his resignation Thursday. The two women are Alice Huang, whom US intelligence suspects of being ​a Chinese spy, and Kimberly Powell, Nvidia’s vice president of health ​care.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Reuters is not naming the second employee. Attempts to reach the ⁠woman were not successful.",
+      "html": "<p>Reuters is not naming the second employee. Attempts to reach the ⁠woman were not successful.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Nvidia declined to comment. Powell, Jensen Huang, and a representative ​for Nvidia’s board did not reply to requests for comment. Alice Huang could ​not be reached for comment.",
+      "html": "<p>Nvidia declined to comment. Powell, Jensen Huang, and a representative ​for Nvidia’s board did not reply to requests for comment. Alice Huang could ​not be reached for comment.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Jensen Huang admitted to an affair in a November 8 statement following the reports of his relationship with Alice Huang, without referring to her by name.",
+      "html": "<p>Jensen Huang admitted to an affair in a November 8 statement following the reports of his relationship with Alice Huang, without referring to her by name.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "The former ​Nvidia CEO’s decision to resign from the company could disrupt the AI industry ​that he helped shape. Nvidia has used its financial strength to help create an industry ‌around ⁠AI through complex financial arrangements that ease the purchase of the company’s chips. It has backed cloud computing companies and AI labs in order to do so.",
+      "html": "<p>The former ​Nvidia CEO’s decision to resign from the company could disrupt the AI industry ​that he helped shape. Nvidia has used its financial strength to help create an industry ‌around ⁠AI through complex financial arrangements that ease the purchase of the company’s chips. It has backed cloud computing companies and AI labs in order to do so.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Pressure on Jensen Huang, who is 63 and married, to resign mounted after reports ​of his affair with ​Alice Huang.",
+      "html": "<p>Pressure on Jensen Huang, who is 63 and married, to resign mounted after reports ​of his affair with ​Alice Huang.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Nvidia’s board ⁠appointed finance chief Colette Kress as interim CEO while it conducts a search to replace Jensen Huang. The board is ​considering internal and external candidates for the job.",
+      "html": "<p>Nvidia’s board ⁠appointed finance chief Colette Kress as interim CEO while it conducts a search to replace Jensen Huang. The board is ​considering internal and external candidates for the job.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Earlier this month, ​Nvidia’s board ⁠launched a probe, led by independent directors with outside legal counsel, into whether Jensen Huang had been targeted by a foreign intelligence operation. It also expressed confidence ⁠in him ​at the time.",
+      "html": "<p>Earlier this month, ​Nvidia’s board ⁠launched a probe, led by independent directors with outside legal counsel, into whether Jensen Huang had been targeted by a foreign intelligence operation. It also expressed confidence ⁠in him ​at the time.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Shares fell 5.5% on Thursday ​in active trading. The stock has shed more than 30% of its value since its early October ​peak.",
+      "html": "<p>Shares fell 5.5% on Thursday ​in active trading. The stock has shed more than 30% of its value since its early October ​peak.</p>"
+    }
+  ],
+  "article_html": "<div dir=\"auto\" class=\"story__content  flow-root    text-4 leading-tight text-black\"><p><strong>Ousted Nvidia CEO Jensen Huang ​had an intimate relationship with a second employee, according to two people ‌familiar with the matter, <em>Reuters</em> has learned.</strong></p>\n<p>The revelation follows two other extramarital affairs that led to his resignation Thursday. The two women are Alice Huang, whom US intelligence suspects of being ​a Chinese spy, and Kimberly Powell, Nvidia’s vice president of health ​care.</p>\n<p>Reuters is not naming the second employee. Attempts to reach the ⁠woman were not successful.</p>\n<p>Nvidia declined to comment. Powell, Jensen Huang, and a representative ​for Nvidia’s board did not reply to requests for comment. Alice Huang could ​not be reached for comment.</p>\n<p>Jensen Huang admitted to an affair in a November 8 statement following the reports of his relationship with Alice Huang, without referring to her by name.</p>\n<p>The former ​Nvidia CEO’s decision to resign from the company could disrupt the AI industry ​that he helped shape. Nvidia has used its financial strength to help create an industry ‌around ⁠AI through complex financial arrangements that ease the purchase of the company’s chips. It has backed cloud computing companies and AI labs in order to do so.</p>\n<p>Pressure on Jensen Huang, who is 63 and married, to resign mounted after reports ​of his affair with ​Alice Huang.</p>\n<p>Nvidia’s board ⁠appointed finance chief Colette Kress as interim CEO while it conducts a search to replace Jensen Huang. The board is ​considering internal and external candidates for the job.</p>\n<p>Earlier this month, ​Nvidia’s board ⁠launched a probe, led by independent directors with outside legal counsel, into whether Jensen Huang had been targeted by a foreign intelligence operation. It also expressed confidence ⁠in him ​at the time.</p>\n<p>Shares fell 5.5% on Thursday ​in active trading. The stock has shed more than 30% of its value since its early October ​peak.</p>\n\n    </div>",
+  "image_url": "https://i.aaj.tv/large/2026/11/1319252092615b7.webp",
+  "images": [],
+  "videos": [],
+  "tweets": [],
+  "tweet_embed_count": 0,
+  "media_detection_scope": "URLs_and_extracted_metadata_not_media_bytes",
+  "embed_detection_scope": "downloaded_article_body_html_only",
+  "language": "en",
+  "language_source": "English source configuration",
+  "section": "technology",
+  "tags": [
+    "Kimberly Powell",
+    "Colette Kress",
+    "Alice Huang",
+    "Powell",
+    "Jensen Huang",
+    "Nvidia",
+    "Reuters"
+  ],
+  "crawled_at": "2026-11-13T14:51:36.628805+00:00",
+  "discovered_from": "https://english.aaj.tv/feeds/sitemap",
+  "processing_status": "cleaned",
+  "validation_issues": [],
+  "validation_status": "passed_basic_checks",
+  "category": "technology",
+  "cleaned_text": "Ousted Nvidia CEO Jensen Huang had an intimate relationship with a second employee, according to two people ‌familiar with the matter, Reuters has learned.\n\nThe revelation follows two other extramarital affairs that led to his resignation Thursday. The two women are Alice Huang, whom US intelligence suspects of being a Chinese spy, and Kimberly Powell, Nvidia’s vice president of health care.\n\nReuters is not naming the second employee. Attempts to reach the ⁠woman were not successful.\n\nNvidia declined to comment. Powell, Jensen Huang, and a representative for Nvidia’s board did not reply to requests for comment. Alice Huang could not be reached for comment.\n\nJensen Huang admitted to an affair in a November 8 statement following the reports of his relationship with Alice Huang, without referring to her by name.\n\nThe former Nvidia CEO’s decision to resign from the company could disrupt the AI industry that he helped shape. Nvidia has used its financial strength to help create an industry ‌around ⁠AI through complex financial arrangements that ease the purchase of the company’s chips. It has backed cloud computing companies and AI labs in order to do so.\n\nPressure on Jensen Huang, who is 63 and married, to resign mounted after reports of his affair with Alice Huang.\n\nNvidia’s board ⁠appointed finance chief Colette Kress as interim CEO while it conducts a search to replace Jensen Huang. The board is considering internal and external candidates for the job.\n\nEarlier this month, Nvidia’s board ⁠launched a probe, led by independent directors with outside legal counsel, into whether Jensen Huang had been targeted by a foreign intelligence operation. It also expressed confidence ⁠in him at the time.\n\nShares fell 5.5% on Thursday in active trading. The stock has shed more than 30% of its value since its early October peak.",
+  "cleaned_blocks": [
+    {
+      "source_block_index": 0,
+      "type": "paragraph",
+      "text": "Ousted Nvidia CEO Jensen Huang had an intimate relationship with a second employee, according to two people ‌familiar with the matter, Reuters has learned."
+    },
+    {
+      "source_block_index": 1,
+      "type": "paragraph",
+      "text": "The revelation follows two other extramarital affairs that led to his resignation Thursday. The two women are Alice Huang, whom US intelligence suspects of being a Chinese spy, and Kimberly Powell, Nvidia’s vice president of health care."
+    },
+    {
+      "source_block_index": 2,
+      "type": "paragraph",
+      "text": "Reuters is not naming the second employee. Attempts to reach the ⁠woman were not successful."
+    },
+    {
+      "source_block_index": 3,
+      "type": "paragraph",
+      "text": "Nvidia declined to comment. Powell, Jensen Huang, and a representative for Nvidia’s board did not reply to requests for comment. Alice Huang could not be reached for comment."
+    },
+    {
+      "source_block_index": 4,
+      "type": "paragraph",
+      "text": "Jensen Huang admitted to an affair in a November 8 statement following the reports of his relationship with Alice Huang, without referring to her by name."
+    },
+    {
+      "source_block_index": 5,
+      "type": "paragraph",
+      "text": "The former Nvidia CEO’s decision to resign from the company could disrupt the AI industry that he helped shape. Nvidia has used its financial strength to help create an industry ‌around ⁠AI through complex financial arrangements that ease the purchase of the company’s chips. It has backed cloud computing companies and AI labs in order to do so."
+    },
+    {
+      "source_block_index": 6,
+      "type": "paragraph",
+      "text": "Pressure on Jensen Huang, who is 63 and married, to resign mounted after reports of his affair with Alice Huang."
+    },
+    {
+      "source_block_index": 7,
+      "type": "paragraph",
+      "text": "Nvidia’s board ⁠appointed finance chief Colette Kress as interim CEO while it conducts a search to replace Jensen Huang. The board is considering internal and external candidates for the job."
+    },
+    {
+      "source_block_index": 8,
+      "type": "paragraph",
+      "text": "Earlier this month, Nvidia’s board ⁠launched a probe, led by independent directors with outside legal counsel, into whether Jensen Huang had been targeted by a foreign intelligence operation. It also expressed confidence ⁠in him at the time."
+    },
+    {
+      "source_block_index": 9,
+      "type": "paragraph",
+      "text": "Shares fell 5.5% on Thursday in active trading. The stock has shed more than 30% of its value since its early October peak."
+    }
+  ],
+  "cleaning_version": "truthlens-clean-v1",
+  "cleaned_at": "2026-11-13T14:51:36.633989+00:00",
+  "cleaning_issues": [],
+  "cleaning_status": "cleaned",
+  "content_hash_version": "sha256-headline-subheadline-body-v1",
+  "content_hash": "dcd4d8d6375d2e80f5a0f3000f2ab072f750b018a0e4cd950b9654c817f01d00",
+  "text_hash": "2fad85685563ed3c3bd6b74cd21b50ba1847a739188cb561af4f1a529777ab23",
+  "metadata_hash": "c1a029e908be8720382e5aa1f007a1ab63835da92de5ea58e16cbd6372ba105d",
+  "media_hash": "ba205dbd88c280f7fcb374782750c8d2fced41fef7d4ad3ad8581f10efac69fb",
+  "quality_hash": "b8df83551d01c6666f62539b00ca8b1811a94ed92bc0b0df16544df4ef1278c6",
+  "state_hash": "c4f0df8965b432cf42696ae7ae1ab403c4b147014aa89fb95cd3b7b1544e85ed",
+  "tracking_version": "truthlens-state-v1",
+  "change_status": "unchanged",
+  "changed_fields": [],
+  "field_changes": {},
+  "body_diff": "",
+  "text_changed": false,
+  "text_reanalysis_required": false,
+  "version_number": 1,
+  "version_first_seen_at": "2026-11-13T14:31:11.575864+00:00",
+  "last_changed_at": "2026-11-13T14:31:11.575864+00:00",
+  "last_checked_at": "2026-11-13T14:51:36.628805+00:00",
+  "tracking_observation_count": 2,
+  "snapshot_saved": false,
+  "change_detection_scope": "extracted_text_metadata_media_references_and_quality"
+}
+]

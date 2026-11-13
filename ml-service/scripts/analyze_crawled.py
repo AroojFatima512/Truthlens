@@ -31,11 +31,32 @@ from pymongo import MongoClient
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from app.duplicates import find_duplicates  # noqa: E402  (plain Python, loads no model)
 from app.boilerplate import find_boilerplate, strip_boilerplate  # noqa: E402
+from app.opinion import is_opinion  # noqa: E402
 
 TEXT_FIELDS = {"article_key": 1, "source": 1, "url": 1, "headline": 1, "cleaned_text": 1, "published_at": 1,
                "content_hash": 1, "analysis_content_hash": 1, "story_id": 1, "analysis": 1, "analysis_meta": 1,
                "version_number": 1, "version_first_seen_at": 1, "crawled_at": 1, "category": 1,
-               "duplicate_of": 1, "topic_id": 1, "analysis_body_hash": 1}   # never load raw_html
+               "duplicate_of": 1, "topic_id": 1, "analysis_body_hash": 1, "section": 1, "author": 1,
+               "author_parts": 1, "is_opinion": 1, "opinion_checked_hash": 1}   # never load raw_html in bulk
+
+
+def mark_opinions(arts, docs):
+    """Work out once per article version whether it is an opinion piece (app/opinion.py) and store it as
+    is_opinion / opinion_reason; the stored page is read one article at a time, only when needed."""
+    n = 0
+    for a in docs:
+        if a.get("is_opinion") is not None and a.get("opinion_checked_hash") == a.get("content_hash"):
+            continue
+        full = dict(a)
+        if not is_opinion(a)[0]:
+            page = arts.find_one({"_id": a["_id"]}, {"raw_html": 1}) or {}
+            full["raw_html"] = page.get("raw_html")
+        flag, why = is_opinion(full)
+        a["is_opinion"] = flag
+        arts.update_one({"_id": a["_id"]}, {"$set": {"is_opinion": flag, "opinion_reason": why or None,
+                                                     "opinion_checked_hash": a.get("content_hash")}})
+        n += flag
+    return n
 
 
 def now():
@@ -97,10 +118,12 @@ def main():
     for a in cleaned:
         kept = dup.get(a["article_key"])
         if kept and a.get("duplicate_of") != kept:
-            arts.update_one({"_id": a["_id"]}, {"$set": {"duplicate_of": kept},
+            arts.update_one({"_id": a["_id"]}, {"$set": {"duplicate_of": kept, "processing_status": "duplicate",
+                                                         "analysis_error": f"duplicate of {kept}: not analysed"},
                                                 "$unset": {"story_id": "", "topic_id": "", "story_link": ""}})
         elif not kept and a.get("duplicate_of"):
-            arts.update_one({"_id": a["_id"]}, {"$unset": {"duplicate_of": ""}})
+            arts.update_one({"_id": a["_id"]}, {"$unset": {"duplicate_of": "", "analysis_error": ""},
+                                                "$set": {"processing_status": "cleaned"}})
     if dup:
         print(f"{len(dup)} same-outlet duplicate(s) set aside (same report under two URLs), e.g.:")
         by_k = {a["article_key"]: a for a in cleaned}
@@ -139,16 +162,24 @@ def main():
                                               "explain_top_k": args.explain_top_k})
         except requests.HTTPError as e:
             print(f"  [{n}/{len(todo)}] skipped {a['article_key']}: {e}")
+            try:
+                reason = e.response.json().get("detail") or str(e)
+            except ValueError:
+                reason = str(e)
+            # the admin Data Quality page shows why it was not analysed
+            arts.update_one({"_id": a["_id"]}, {"$set": {"processing_status": "failed", "analysis_error": str(reason)[:300]}})
             continue
         clean_body, n_removed = strip_boilerplate(a["cleaned_text"], a.get("source"), bp)
         update = {"$set": {"analysis": res, "analysis_content_hash": a["content_hash"], "analyzed_at": now(),
                            "analysis_body_hash": text_hash(clean_body), "boilerplate_removed": n_removed,
+                           "processing_status": "analyzed",
                            # the text without boilerplate, for the article page (null = same as cleaned_text)
                            "body_text": clean_body if n_removed else None,
                            # which version of the text this analysis belongs to (for the Timeline screen)
                            "analysis_meta": {"version_number": a.get("version_number"), "headline": a.get("headline"),
                                              "seen_at": a.get("version_first_seen_at") or a.get("crawled_at")
                                              or a.get("published_at")}}}
+        update["$unset"] = {"analysis_error": ""}
         old, meta = a.get("analysis"), a.get("analysis_meta") or {}
         text_changed = a.get("analysis_content_hash") not in (None, a["content_hash"])
         if old and text_changed:   # keep a short record of the previous version's scores (not on --force)
@@ -167,9 +198,14 @@ def main():
     if not recent:
         print("No recent analysed articles to group.")
         return
+    found = mark_opinions(arts, recent)
+    if found:
+        print(f"{found} newly checked article(s) are opinion pieces (kept out of news stories)")
     payload = {"articles": [{"id": a["article_key"], "source": a.get("source"), "title": a.get("headline", ""),
                              "body": body(a), "published_at": a.get("published_at"),
-                             "category": a.get("category")} for a in recent]}
+                             "category": a.get("category"), "opinion": bool(a.get("is_opinion")),
+                             "url": a.get("url"), "section": a.get("section"), "author": a.get("author")}
+                            for a in recent]}
     if args.threshold is not None:
         payload["threshold"] = args.threshold
     grouped = post(args.api, "/group", payload)

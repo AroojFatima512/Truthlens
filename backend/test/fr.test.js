@@ -108,6 +108,51 @@ test('FR-13: data quality list, review and hide', async () => {
   assert.equal((await call('GET', '/feed?pageSize=50')).body.total, before);
 });
 
+test('FR-13: minor codes and status alone do not flag; same-outlet duplicates have their own tab', async () => {
+  const col = fake.collection('articles');
+  const base = { source: 'Dawn', headline: 'Q test', url: 'https://dawn.com/x', cleaned_text: 'word '.repeat(150), crawled_at: new Date() };
+  await col.insertMany([
+    { ...base, article_key: 'dawn:q-author', validation_status: 'needs_review', validation_issues: ['missing_author'], analysis: { bias: { score: 0.2 } } },
+    { ...base, article_key: 'dawn:q-status', validation_status: 'needs_review', validation_issues: [], analysis: { bias: { score: 0.2 } } },
+    { ...base, article_key: 'dawn:q-real', validation_status: 'needs_review', validation_issues: ['missing_author', 'missing_body_container'], analysis: { bias: { score: 0.2 } } },
+    { ...base, article_key: 'dawn:q-dup', processing_status: 'skipped_duplicate', duplicate_of: 'dawn:q-real', cleaned_text: 'short text' },
+    { ...base, article_key: 'dawn:q-dup2', skip_reason: 'Duplicate of an article from the same outlet' },
+  ]);
+  const all = (await call('GET', '/admin/quality?status=all&pageSize=100', null, admin)).body.items;
+  const byId = (k) => all.find((i) => i.id === k.replace(':', '-'));
+  assert.equal(byId('dawn:q-author'), undefined, 'only missing_author: not flagged');
+  assert.equal(byId('dawn:q-status'), undefined, 'needs_review with no serious code: not flagged');
+  const real = byId('dawn:q-real');
+  assert.deepEqual(real.reasons.map((r) => r.code), ['validation']);
+  assert.match(real.reasons[0].detail, /no author \(agency or staff item\), no article body found/);
+  const dup = byId('dawn:q-dup');
+  assert.equal(dup.status, 'duplicate'); assert.deepEqual(dup.reasons.map((r) => r.code), ['duplicate'], 'not "not analysed", not "short"');
+  assert.match(dup.reasons[0].detail, /dawn:q-real/);
+  assert.equal(byId('dawn:q-dup2').status, 'duplicate');
+  const open = (await call('GET', '/admin/quality?pageSize=100', null, admin)).body;
+  assert.ok(!open.items.some((i) => i.status === 'duplicate'), 'duplicates are not in Needs review');
+  assert.equal(open.counts.duplicate, 2);
+  const tab = (await call('GET', '/admin/quality?status=duplicate&pageSize=100', null, admin)).body;
+  assert.deepEqual(tab.items.map((i) => i.id).sort(), ['dawn-q-dup', 'dawn-q-dup2']);
+});
+
+test('FR-13: under 50 words needs review; 50-99 words is a complete brief, counted for information only', async () => {
+  const col = fake.collection('articles');
+  const base = { source: 'Geo News', headline: 'Brief test', url: 'https://geo.tv/b', crawled_at: new Date(), analysis: { bias: { score: 0.1 } } };
+  const before = (await call('GET', '/admin/quality?pageSize=100', null, admin)).body.counts.briefs;
+  await col.insertMany([
+    { ...base, article_key: 'geo:b-30', cleaned_text: 'word '.repeat(30) },
+    { ...base, article_key: 'geo:b-70', cleaned_text: 'word '.repeat(70) },
+    { ...base, article_key: 'geo:b-120', cleaned_text: 'word '.repeat(120) },
+  ]);
+  const q = (await call('GET', '/admin/quality?status=all&pageSize=200', null, admin)).body;
+  const ids = q.items.map((i) => i.id);
+  assert.ok(ids.includes('geo-b-30')); assert.ok(!ids.includes('geo-b-70')); assert.ok(!ids.includes('geo-b-120'));
+  assert.equal(q.items.find((i) => i.id === 'geo-b-30').reasons[0].label, 'Under 50 words');
+  assert.equal(q.counts.briefs, before + 1);
+  assert.deepEqual(q.counts.briefRange, [50, 99]);
+});
+
 test('FR-15: article lists people, organisations and places', async () => {
   const doc = [...analysed].sort((x, y) => (y.analysis.entities || []).length - (x.analysis.entities || []).length)[0];
   const a = (await call('GET', `/articles/${doc.article_key.replace(':', '-')}`)).body;

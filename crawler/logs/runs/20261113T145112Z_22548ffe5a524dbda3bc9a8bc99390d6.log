@@ -1,0 +1,93 @@
+2026-11-13 19:51:12,039 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.logcount.LogCount',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.remote_control.RemoteControl',
+ 'truthlens.run_reporting.RunReportingExtension']
+2026-11-13 19:51:12,040 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'truthlens',
+ 'CONCURRENT_REQUESTS': 1,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 1,
+ 'DOWNLOAD_DELAY': 3,
+ 'DOWNLOAD_TIMEOUT': 30,
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'FEED_EXPORT_INDENT': 2,
+ 'LOG_LEVEL': 'INFO',
+ 'NEWSPIDER_MODULE': 'truthlens.spiders',
+ 'ROBOTSTXT_OBEY': True,
+ 'SPIDER_MODULES': ['truthlens.spiders'],
+ 'USER_AGENT': 'TruthLensResearchBot/0.1'}
+2026-11-13 19:51:12,405 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2026-11-13 19:51:12,410 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.start.StartSpiderMiddleware',
+ 'scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware',
+ 'scrapy.spidermiddlewares.metacopy.MetaCopyDetectionMiddleware']
+2026-11-13 19:51:12,522 [scrapy.middleware] INFO: Enabled item pipelines:
+['truthlens.pipelines.CleaningPipeline',
+ 'truthlens.pipelines.MongoDBPipeline',
+ 'truthlens.export.RunJsonExportPipeline']
+2026-11-13 19:51:12,523 [scrapy.core.engine] INFO: Spider opened
+2026-11-13 19:51:12,550 [truthlens.pipelines] INFO: MongoDB connected: database=truthlens
+2026-11-13 19:51:12,552 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2026-11-13 19:51:12,553 [truthlens.run_reporting] INFO: Run started: 20261113T145112Z_22548ffe5a524dbda3bc9a8bc99390d6 | source=The Nation
+2026-11-13 19:51:12,555 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2026-11-13 19:51:12,559 [scrapy.extensions.remote_control] INFO: Remote control HTTP server listening on port 62592 (job 12472-3e738f3c6583404496ac0d7f3dc1c48c)
+2026-11-13 19:51:16,400 [nation_sitemap] INFO: Sitemap: selected 3 article URLs.
+2026-11-13 19:51:19,693 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/13-Nov-2026/supreme-court-reports-47pc-decline-pending-cases | paragraphs=1 | words=599
+2026-11-13 19:51:19,696 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-13-supreme-court-reports-47pc-decline-pending-cases | characters=4327 | hash=6f4b840a4a87
+2026-11-13 19:51:19,702 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-13-supreme-court-reports-47pc-decline-pending-cases | version=1 | fields=none
+2026-11-13 19:51:23,429 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/13-Nov-2026/punjab-opens-online-registration-attractive-vehicle-number-auction-november-30 | paragraphs=5 | words=118
+2026-11-13 19:51:23,431 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-13-punjab-opens-online-registration-attractive-vehicle-number-auction-november-30 | characters=862 | hash=c444548881f6
+2026-11-13 19:51:23,437 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-13-punjab-opens-online-registration-attractive-vehicle-number-auction-november-30 | version=1 | fields=none
+2026-11-13 19:51:27,508 [nation_sitemap] INFO: Extracted article: https://www.nation.com.pk/13-Nov-2026/gold-prices-decline-rs4-900-per-tola | paragraphs=1 | words=129
+2026-11-13 19:51:27,508 [truthlens.pipelines] INFO: Cleaned article: nation:2026-11-13-gold-prices-decline-rs4-900-per-tola | characters=765 | hash=d406b6c9e007
+2026-11-13 19:51:27,514 [truthlens.pipelines] INFO: MongoDB new: nation:2026-11-13-gold-prices-decline-rs4-900-per-tola | version=1 | fields=none
+2026-11-13 19:51:27,515 [scrapy.core.engine] INFO: Closing spider (finished)
+2026-11-13 19:51:27,516 [truthlens.export] INFO: Run JSON saved: data\runs\nation_sitemap\nation_sitemap_2026-11-13_19-51-12.json | items=3
+2026-11-13 19:51:27,518 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 1496,
+ 'downloader/request_count': 5,
+ 'downloader/request_method_count/GET': 5,
+ 'downloader/response_bytes': 94858,
+ 'downloader/response_count': 5,
+ 'downloader/response_status_count/200': 5,
+ 'elapsed_time_seconds': 14.96900000000096,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2026, 11, 13, 14, 51, 27, 517499, tzinfo=datetime.timezone.utc),
+ 'httpcompression/response_bytes': 613169,
+ 'httpcompression/response_count': 5,
+ 'item_scraped_count': 3,
+ 'items_per_minute': 12.857142857142858,
+ 'log_count/INFO': 16,
+ 'mongodb/articles_new': 3,
+ 'mongodb/snapshots_inserted': 3,
+ 'request_depth_max': 1,
+ 'response_received_count': 5,
+ 'responses_per_minute': 21.428571428571427,
+ 'robotstxt/request_count': 1,
+ 'robotstxt/response_count': 1,
+ 'robotstxt/response_status_count/200': 1,
+ 'scheduler/dequeued': 4,
+ 'scheduler/dequeued/memory': 4,
+ 'scheduler/enqueued': 4,
+ 'scheduler/enqueued/memory': 4,
+ 'start_time': datetime.datetime(2026, 11, 13, 14, 51, 12, 551836, tzinfo=datetime.timezone.utc)}
+2026-11-13 19:51:27,518 [scrapy.core.engine] INFO: Spider closed (finished)
+2026-11-13 19:51:27,520 [truthlens.run_reporting] INFO: Run summary saved: logs\runs\20261113T145112Z_22548ffe5a524dbda3bc9a8bc99390d6.json | status=completed

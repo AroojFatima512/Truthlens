@@ -90,6 +90,7 @@ connectWithRetry()
       .catch((err) => console.error('Could not build the article index:', err.message));
     articleIndex.watch();
     require('./lib/crawlSchedule').startTimer();   // UC-29: automatic crawls, if the admin turned them on
+    require('./lib/userActivity').startCleanupTimer();   // delete sign-ups never verified within 7 days
   })
   .catch((err) => {
     console.error('Could not connect to MongoDB. Is it running? ', err.message);

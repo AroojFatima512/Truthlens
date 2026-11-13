@@ -1,0 +1,89 @@
+2026-11-13 19:05:15,519 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.logcount.LogCount',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.remote_control.RemoteControl',
+ 'truthlens.run_reporting.RunReportingExtension']
+2026-11-13 19:05:15,521 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'truthlens',
+ 'CONCURRENT_REQUESTS': 1,
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 1,
+ 'DOWNLOAD_DELAY': 3,
+ 'DOWNLOAD_TIMEOUT': 30,
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'FEED_EXPORT_INDENT': 2,
+ 'LOG_LEVEL': 'INFO',
+ 'NEWSPIDER_MODULE': 'truthlens.spiders',
+ 'ROBOTSTXT_OBEY': True,
+ 'SPIDER_MODULES': ['truthlens.spiders'],
+ 'USER_AGENT': 'TruthLensResearchBot/0.1'}
+2026-11-13 19:05:17,062 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2026-11-13 19:05:17,127 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.start.StartSpiderMiddleware',
+ 'scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware',
+ 'scrapy.spidermiddlewares.metacopy.MetaCopyDetectionMiddleware']
+2026-11-13 19:05:18,480 [scrapy.middleware] INFO: Enabled item pipelines:
+['truthlens.pipelines.CleaningPipeline',
+ 'truthlens.pipelines.MongoDBPipeline',
+ 'truthlens.export.RunJsonExportPipeline']
+2026-11-13 19:05:18,481 [scrapy.core.engine] INFO: Spider opened
+2026-11-13 19:05:18,673 [truthlens.pipelines] INFO: MongoDB connected: database=truthlens
+2026-11-13 19:05:18,676 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2026-11-13 19:05:18,678 [truthlens.run_reporting] INFO: Run started: 20261113T140515Z_dfe117810033491b91e0616010dabaff | source=Dawn
+2026-11-13 19:05:18,680 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2026-11-13 19:05:18,686 [scrapy.extensions.remote_control] INFO: Remote control HTTP server listening on port 56657 (job 19428-1d0a188a2daf44d4b292493364bdcff7)
+2026-11-13 19:05:20,880 [dawn_sitemap] INFO: Sitemap: selected 1 article URLs.
+2026-11-13 19:05:25,122 [dawn_sitemap] WARNING: Validation issues: https://www.dawn.com/news/2044258/microsoft-says-improvements-for-outlook-in-north-america-europe | tweet_text_missing
+2026-11-13 19:05:25,123 [dawn_sitemap] INFO: Extracted article: https://www.dawn.com/news/2044258/microsoft-says-improvements-for-outlook-in-north-america-europe | images=1 | videos=0
+2026-11-13 19:05:25,131 [truthlens.pipelines] INFO: Cleaned article: dawn:2044258 | characters=7660 | hash=566828f2aadb
+2026-11-13 19:05:25,148 [truthlens.pipelines] INFO: MongoDB new: dawn:2044258 | version=1 | fields=none
+2026-11-13 19:05:25,151 [scrapy.core.engine] INFO: Closing spider (finished)
+2026-11-13 19:05:25,152 [truthlens.export] INFO: Run JSON saved: data\runs\dawn_sitemap\dawn_sitemap_2026-11-13_19-05-18.json | items=1
+2026-11-13 19:05:25,155 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 780,
+ 'downloader/request_count': 3,
+ 'downloader/request_method_count/GET': 3,
+ 'downloader/response_bytes': 52456,
+ 'downloader/response_count': 3,
+ 'downloader/response_status_count/200': 3,
+ 'elapsed_time_seconds': 6.485000000000582,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2026, 11, 13, 14, 5, 25, 155897, tzinfo=datetime.timezone.utc),
+ 'httpcompression/response_bytes': 252464,
+ 'httpcompression/response_count': 3,
+ 'item_scraped_count': 1,
+ 'items_per_minute': 10.0,
+ 'log_count/INFO': 10,
+ 'log_count/WARNING': 1,
+ 'mongodb/articles_new': 1,
+ 'mongodb/snapshots_inserted': 1,
+ 'request_depth_max': 1,
+ 'response_received_count': 3,
+ 'responses_per_minute': 30.0,
+ 'robotstxt/request_count': 1,
+ 'robotstxt/response_count': 1,
+ 'robotstxt/response_status_count/200': 1,
+ 'scheduler/dequeued': 2,
+ 'scheduler/dequeued/memory': 2,
+ 'scheduler/enqueued': 2,
+ 'scheduler/enqueued/memory': 2,
+ 'start_time': datetime.datetime(2026, 11, 13, 14, 5, 18, 675854, tzinfo=datetime.timezone.utc)}
+2026-11-13 19:05:25,158 [scrapy.core.engine] INFO: Spider closed (finished)
+2026-11-13 19:05:25,161 [truthlens.run_reporting] INFO: Run summary saved: logs\runs\20261113T140515Z_dfe117810033491b91e0616010dabaff.json | status=completed_with_review_items

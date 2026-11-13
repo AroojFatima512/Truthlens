@@ -37,7 +37,7 @@ def scores(gold, pred):
     if not pairs:
         return None
     labels = sorted({g for g, _ in pairs} | {p for _, p in pairs})
-    f1s = []
+    f1s, per_class = [], {}
     for c in labels:
         tp = sum(g == c and p == c for g, p in pairs)
         fp = sum(g != c and p == c for g, p in pairs)
@@ -45,8 +45,10 @@ def scores(gold, pred):
         prec = tp / (tp + fp) if tp + fp else 0.0
         rec = tp / (tp + fn) if tp + fn else 0.0
         f1s.append(2 * prec * rec / (prec + rec) if prec + rec else 0.0)
+        per_class[c] = round(f1s[-1], 3)
+    confusion = {g: {p: sum(1 for x, y in pairs if x == g and y == p) for p in labels} for g in labels}
     return {"n": len(pairs), "accuracy": round(sum(g == p for g, p in pairs) / len(pairs), 3),
-            "macro_f1": round(sum(f1s) / len(f1s), 3)}
+            "macro_f1": round(sum(f1s) / len(f1s), 3), "per_class_f1": per_class, "confusion": confusion}
 
 
 def main():
@@ -86,7 +88,11 @@ def main():
         print(f"\n{task.upper()}: {t['labelled_by_both']} labelled by both, agreement {t['agreement']}, "
               f"Cohen's kappa {t['cohens_kappa']}, gold set {t['gold_sentences']} {t['gold_distribution']}")
         for name, s in t["models"].items():
-            print(f"  {name:<18} " + (f"accuracy {s['accuracy']:.3f}  macro-F1 {s['macro_f1']:.3f}  (n={s['n']})" if s else "no predictions"))
+            print(f"  {name:<18} " + (f"accuracy {s['accuracy']:.3f}  macro-F1 {s['macro_f1']:.3f}  (n={s['n']})  "
+                                      f"F1 per class {s['per_class_f1']}" if s else "no predictions"))
+            if s:
+                print("      rows = human label, columns = model: " + "; ".join(
+                    f"{g}: {row}" for g, row in s["confusion"].items()))
     dest = sheet.with_name(sheet.stem + "_scores.json")
     dest.write_text(json.dumps(out, indent=2))
     print(f"\nSaved {dest}")

@@ -10,6 +10,7 @@ from math import ceil
 
 import numpy as np
 
+from .opinion import is_opinion
 from . import config, models, places
 from .analyze import extract_entities
 from .text_utils import clean, split_sentences
@@ -37,7 +38,7 @@ def _pair_similarity(articles, threshold):
     linkable = np.zeros((n, n), dtype=bool)  # pairs that may join one topic chain
     blocked = []
     max_gap = config.SAME_STORY_MAX_DAYS * 86400
-    opinion = [str(a.get("category") or "").lower() == "opinion" for a in articles]
+    opinion = [bool(a["opinion"]) if a.get("opinion") is not None else is_opinion(a)[0] for a in articles]
     for i, j in combinations(range(n), 2):
         di, dj = dates[i], dates[j]
         if di is not None and dj is not None and abs((di - dj).total_seconds()) > max_gap:
@@ -48,6 +49,10 @@ def _pair_similarity(articles, threshold):
         if config.SEPARATE_OPINION and opinion[i] != opinion[j]:
             effective[i, j] = effective[j, i] = 0.0        # editorial vs news report: same topic, not one event
             linkable[i, j] = linkable[j, i] = True
+            continue
+        if config.SEPARATE_OPINION and opinion[i] and sim[i, j] < config.SAME_STORY_STRONG:
+            effective[i, j] = effective[j, i] = 0.0        # two opinion pieces on a broad theme ("the economy"):
+            linkable[i, j] = linkable[j, i] = True         # one event only when they are very close
             continue
         if sim[i, j] < config.SAME_STORY_STRONG and not places.same_event_possible(keys[i], keys[j]):
             effective[i, j] = effective[j, i] = 0.0        # similar wording, different places: not the same event

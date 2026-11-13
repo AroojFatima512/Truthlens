@@ -1,0 +1,641 @@
+[
+{
+  "source": "Geo News",
+  "run_id": "20261113T145014Z_3613f07dfbda4f338165397e7d3bdd22",
+  "extraction_version": "geo-extract-v1",
+  "media_detection_scope": "URLs_and_extracted_metadata_not_media_bytes",
+  "article_id": "690962",
+  "article_key": "geo:690962",
+  "url": "https://www.geo.tv/latest/690962-usman-nurmagomedov-sentenced-to-six-months-in-prison-after-attacking-merab-dvalishvili",
+  "http_status": 200,
+  "response_encoding": "utf-8",
+  "canonical_url": "https://www.geo.tv/latest/690962-usman-nurmagomedov-sentenced-to-six-months-in-prison-after-attacking-merab-dvalishvili",
+  "canonical_url_source": "link[rel=canonical]",
+  "headline": "Usman Nurmagomedov sentenced to six months in prison after attacking Merab Dvalishvili",
+  "subheadline": "Khabib Nurmagomedov's cousin also faces hefty fine and deportation following Abu Dhabi hotel brawl",
+  "author": "Web Desk",
+  "author_parts": [
+    "Web Desk"
+  ],
+  "published_at": "2026-11-13T19:19:00+05:00",
+  "updated_at": "2026-11-13T19:19:29+05:00",
+  "timestamp_sources": {
+    "published_at": "meta[property='article:published_time']",
+    "updated_at": "meta[property='article:modified_time']"
+  },
+  "article_text": "Russian mixed martial arts (MMA) fighter Usman Nurmagomedov attacked the former UFC bantamweight champion Merab Dvalishvili and now the 28-year-old has reportedly been sentenced to six months in prison.\n\nThe videos of the incident went viral on social media and the people involved in the fight were arrested, including those who filmed the incident.\n\nThe Abu Dhabi Criminal Court on Friday, convicted 10 individuals involved in the altercation at a hotel on Yas Island.\n\nAccording to The National, six individuals were sentenced to six months in prison, fined 300,000 UAE dirhams (approximately $82,000) each and ordered to be deported after serving their sentences.\n\nInterestingly, two individuals who filmed and circulated footage of the incident received identical punishments for violating privacy laws.\n\nMeanwhile, Dvalishvili and his friend Saba Lazishvili were reportedly released from custody after being fined 50,000 dirhams each.\n\nWhy did Usman Nurmagomedov attack Merab Dvalishvili?\n\nThe Georgian fighter was giving an interview in the lobby of the Yas Hilton hotel on Wednesday when Nurmagomedov and his associates approached him from behind.\n\nFootage shows Nurmagomedov striking Dvalishvili, triggering a brawl that left the Georgian with a bloodied face.\n\nThe two camps have a history of animosity, with Dvalishvili having handed Usman's elder brother Umar Nurmagomedov his first professional MMA defeat at UFC 311 in January 2025.\n\nTension flared up again in July 2026 at a prior RAF event in Georgia, where Merab Dvalishvili slapped Akhmed Gadzhimagomedov, an associate of the Nurmagomedov camp.\n\nUsman was in Abu Dhabi to support Umar ahead of his wrestling match against former UFC fighter Urijah Faber.\n\nThe prison sentence could potentially derail the Russian fighter's much-anticipated move to the UFC.\n\nNurmagomedov, who completed his Professional Fighters League (PFL) contract earlier this year, boasts an undefeated professional MMA record of 22-0.",
+  "content_blocks": [
+    {
+      "type": "paragraph",
+      "text": "Russian mixed martial arts (MMA) fighter Usman Nurmagomedov attacked the former UFC bantamweight champion Merab Dvalishvili and now the 28-year-old has reportedly been sentenced to six months in prison.",
+      "html": "<p>Russian mixed martial arts (MMA) fighter Usman Nurmagomedov attacked the former UFC bantamweight champion Merab Dvalishvili and now the 28-year-old has reportedly been sentenced to six months in prison.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "The videos of the incident went viral on social media and the people involved in the fight were arrested, including those who filmed the incident.",
+      "html": "<p>The videos of the incident went viral on social media and the people involved in the fight were arrested, including those who filmed the incident.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "The Abu Dhabi Criminal Court on Friday, convicted 10 individuals involved in the altercation at a hotel on Yas Island.",
+      "html": "<p>The Abu Dhabi Criminal Court on Friday, convicted 10 individuals involved in the altercation at a hotel on Yas Island.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "According to The National, six individuals were sentenced to six months in prison, fined 300,000 UAE dirhams (approximately $82,000) each and ordered to be deported after serving their sentences.",
+      "html": "<p>According to <i>The National,</i> six individuals were sentenced to six months in prison, fined 300,000 UAE dirhams (approximately $82,000) each and ordered to be deported after serving their sentences.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Interestingly, two individuals who filmed and circulated footage of the incident received identical punishments for violating privacy laws.",
+      "html": "<p>Interestingly, two individuals who filmed and circulated footage of the incident received identical punishments for violating privacy laws.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Meanwhile, Dvalishvili and his friend Saba Lazishvili were reportedly released from custody after being fined 50,000 dirhams each.",
+      "html": "<p>Meanwhile, Dvalishvili and his friend Saba Lazishvili were reportedly released from custody after being fined 50,000 dirhams each.</p>"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Why did Usman Nurmagomedov attack Merab Dvalishvili?",
+      "html": "<h2><span style=\"font-weight: normal;\">Why did Usman Nurmagomedov attack Merab Dvalishvili?</span></h2>"
+    },
+    {
+      "type": "paragraph",
+      "text": "The Georgian fighter was giving an interview in the lobby of the Yas Hilton hotel on Wednesday when Nurmagomedov and his associates approached him from behind.",
+      "html": "<p>The Georgian fighter was giving an interview in the lobby of the Yas Hilton hotel on Wednesday when Nurmagomedov and his associates approached him from behind.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Footage shows Nurmagomedov striking Dvalishvili, triggering a brawl that left the Georgian with a bloodied face.",
+      "html": "<p><a href=\"https://www.geo.tv/latest/690697-ufc-star-merab-dvalishvili-left-bloodied-after-attack-by-usman-nurmagomedov-20-men\">Footage shows Nurmagomedov striking Dvalishvili</a>, triggering a brawl that left the Georgian with a bloodied face.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "The two camps have a history of animosity, with Dvalishvili having handed Usman's elder brother Umar Nurmagomedov his first professional MMA defeat at UFC 311 in January 2025.",
+      "html": "<p>The two camps have a history of animosity, with Dvalishvili having handed Usman's elder brother Umar Nurmagomedov his first professional MMA defeat at UFC 311 in January 2025.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Tension flared up again in July 2026 at a prior RAF event in Georgia, where Merab Dvalishvili slapped Akhmed Gadzhimagomedov, an associate of the Nurmagomedov camp.",
+      "html": "<p>Tension flared up again in July 2026 at a prior RAF event in Georgia, where Merab Dvalishvili slapped Akhmed Gadzhimagomedov, an associate of the Nurmagomedov camp.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Usman was in Abu Dhabi to support Umar ahead of his wrestling match against former UFC fighter Urijah Faber.",
+      "html": "<p>Usman was in Abu Dhabi to support Umar ahead of his wrestling match against former UFC fighter Urijah Faber.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "The prison sentence could potentially derail the Russian fighter's much-anticipated move to the UFC.",
+      "html": "<p>The prison sentence could potentially derail the Russian fighter's much-anticipated move to the UFC.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Nurmagomedov, who completed his Professional Fighters League (PFL) contract earlier this year, boasts an undefeated professional MMA record of 22-0.",
+      "html": "<p>Nurmagomedov, who completed his Professional Fighters League (PFL) contract earlier this year, boasts an undefeated professional MMA record of 22-0.</p>"
+    }
+  ],
+  "article_html": "<div class=\"content-area\">\r\n                        <div class=\"medium-insert-images ui-sortable medium-insert-active\"><figure contenteditable=\"false\">\n    <img src=\"https://www.geo.tv/assets/uploads/updates/2026-11-13/690962_2749041_updates.jpg\" alt=\"Usman Nurmagomedov sentenced to six months in prison after attacking Merab Dvalishvili\" width=\"700\" height=\"400\" class=\"\">\n\n<figcaption contenteditable=\"true\" class=\"\">Usman Nurmagomedov sentenced to six months in prison after attacking Merab Dvalishvili</figcaption></figure></div><p>Russian mixed martial arts (MMA) fighter Usman Nurmagomedov attacked the former UFC bantamweight champion Merab Dvalishvili and now the 28-year-old has reportedly been sentenced to six months in prison.</p><p>The videos of the incident went viral on social media and the people involved in the fight were arrested, including those who filmed the incident.</p><style>\r\n.ads_between_content{\r\n\theight:auto; \r\n\twidth:auto;\r\n\tclear: both;\r\n\ttext-align: center;\r\n}\r\n.ads_between_content .story_ads{\r\n\t\r\n}\r\n/*@media (max-width:600px){\r\n\t.ads_between_content{\r\n\t\tfloat:none;\r\n\t\tmargin:0px auto;\r\n\t\ttext-align: center;\r\n\t}\r\n}*/\r\n</style>\r\n<div class=\"ads_between_content\" style=\"min-width: 336px; min-height: 280px;margin:10px auto;\">\r\n\t\t<script async src=\"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7369466212570555\" crossorigin=\"anonymous\"></script>\r\n\t<!-- geo_post_mrec_top -->\r\n\t<ins class=\"adsbygoogle\" style=\"display:inline-block;width:300px;height:250px\" data-ad-client=\"ca-pub-7369466212570555\" data-ad-slot=\"3530359155\"></ins>\r\n\t<script>\r\n\t     (adsbygoogle = window.adsbygoogle || []).push({});\r\n\t</script>\r\n\t</div><p>The Abu Dhabi Criminal Court on Friday, convicted 10 individuals involved in the altercation at a hotel on Yas Island.</p><p>According to <i>The National,</i> six individuals were sentenced to six months in prison, fined 300,000 UAE dirhams (approximately $82,000) each and ordered to be deported after serving their sentences.</p><p>Interestingly, two individuals who filmed and circulated footage of the incident received identical punishments for violating privacy laws.</p><p>Meanwhile, Dvalishvili and his friend Saba Lazishvili were reportedly released from custody after being fined 50,000 dirhams each.</p><h2><span style=\"font-weight: normal;\">Why did Usman Nurmagomedov attack Merab Dvalishvili?</span></h2><p>The Georgian fighter was giving an interview in the lobby of the Yas Hilton hotel on Wednesday when Nurmagomedov and his associates approached him from behind.</p><p><a href=\"https://www.geo.tv/latest/690697-ufc-star-merab-dvalishvili-left-bloodied-after-attack-by-usman-nurmagomedov-20-men\">Footage shows Nurmagomedov striking Dvalishvili</a>, triggering a brawl that left the Georgian with a bloodied face.</p><p>The two camps have a history of animosity, with Dvalishvili having handed Usman's elder brother Umar Nurmagomedov his first professional MMA defeat at UFC 311 in January 2025.</p><p>Tension flared up again in July 2026 at a prior RAF event in Georgia, where Merab Dvalishvili slapped Akhmed Gadzhimagomedov, an associate of the Nurmagomedov camp.</p><p>Usman was in Abu Dhabi to support Umar ahead of his wrestling match against former UFC fighter Urijah Faber.</p><p>The prison sentence could potentially derail the Russian fighter's much-anticipated move to the UFC.</p><p>Nurmagomedov, who completed his Professional Fighters League (PFL) contract earlier this year, boasts an undefeated professional MMA record of 22-0.</p>                    </div>",
+  "image_url": "https://www.geo.tv/assets/uploads/updates/2026-11-13/690962_071928_updates.jpg",
+  "images": [
+    {
+      "url": "https://www.geo.tv/assets/uploads/updates/2026-11-13/690962_2749041_updates.jpg",
+      "alt_text": "Usman Nurmagomedov sentenced to six months in prison after attacking Merab Dvalishvili",
+      "caption": "Usman Nurmagomedov sentenced to six months in prison after attacking Merab Dvalishvili"
+    }
+  ],
+  "videos": [],
+  "tweets": [],
+  "tweet_embed_count": 0,
+  "embed_detection_scope": "downloaded_article_body_html_only",
+  "crawled_at": "2026-11-13T14:50:22.357818+00:00",
+  "discovered_from": "https://www.geo.tv/assets/uploads/google_news_latest.xml",
+  "processing_status": "cleaned",
+  "validation_issues": [],
+  "validation_status": "passed_basic_checks",
+  "section": "viral",
+  "category": "offbeat",
+  "cleaned_text": "Russian mixed martial arts (MMA) fighter Usman Nurmagomedov attacked the former UFC bantamweight champion Merab Dvalishvili and now the 28-year-old has reportedly been sentenced to six months in prison.\n\nThe videos of the incident went viral on social media and the people involved in the fight were arrested, including those who filmed the incident.\n\nThe Abu Dhabi Criminal Court on Friday, convicted 10 individuals involved in the altercation at a hotel on Yas Island.\n\nAccording to The National, six individuals were sentenced to six months in prison, fined 300,000 UAE dirhams (approximately $82,000) each and ordered to be deported after serving their sentences.\n\nInterestingly, two individuals who filmed and circulated footage of the incident received identical punishments for violating privacy laws.\n\nMeanwhile, Dvalishvili and his friend Saba Lazishvili were reportedly released from custody after being fined 50,000 dirhams each.\n\nWhy did Usman Nurmagomedov attack Merab Dvalishvili?\n\nThe Georgian fighter was giving an interview in the lobby of the Yas Hilton hotel on Wednesday when Nurmagomedov and his associates approached him from behind.\n\nFootage shows Nurmagomedov striking Dvalishvili, triggering a brawl that left the Georgian with a bloodied face.\n\nThe two camps have a history of animosity, with Dvalishvili having handed Usman's elder brother Umar Nurmagomedov his first professional MMA defeat at UFC 311 in January 2025.\n\nTension flared up again in July 2026 at a prior RAF event in Georgia, where Merab Dvalishvili slapped Akhmed Gadzhimagomedov, an associate of the Nurmagomedov camp.\n\nUsman was in Abu Dhabi to support Umar ahead of his wrestling match against former UFC fighter Urijah Faber.\n\nThe prison sentence could potentially derail the Russian fighter's much-anticipated move to the UFC.\n\nNurmagomedov, who completed his Professional Fighters League (PFL) contract earlier this year, boasts an undefeated professional MMA record of 22-0.",
+  "cleaned_blocks": [
+    {
+      "source_block_index": 0,
+      "type": "paragraph",
+      "text": "Russian mixed martial arts (MMA) fighter Usman Nurmagomedov attacked the former UFC bantamweight champion Merab Dvalishvili and now the 28-year-old has reportedly been sentenced to six months in prison."
+    },
+    {
+      "source_block_index": 1,
+      "type": "paragraph",
+      "text": "The videos of the incident went viral on social media and the people involved in the fight were arrested, including those who filmed the incident."
+    },
+    {
+      "source_block_index": 2,
+      "type": "paragraph",
+      "text": "The Abu Dhabi Criminal Court on Friday, convicted 10 individuals involved in the altercation at a hotel on Yas Island."
+    },
+    {
+      "source_block_index": 3,
+      "type": "paragraph",
+      "text": "According to The National, six individuals were sentenced to six months in prison, fined 300,000 UAE dirhams (approximately $82,000) each and ordered to be deported after serving their sentences."
+    },
+    {
+      "source_block_index": 4,
+      "type": "paragraph",
+      "text": "Interestingly, two individuals who filmed and circulated footage of the incident received identical punishments for violating privacy laws."
+    },
+    {
+      "source_block_index": 5,
+      "type": "paragraph",
+      "text": "Meanwhile, Dvalishvili and his friend Saba Lazishvili were reportedly released from custody after being fined 50,000 dirhams each."
+    },
+    {
+      "source_block_index": 6,
+      "type": "heading",
+      "text": "Why did Usman Nurmagomedov attack Merab Dvalishvili?"
+    },
+    {
+      "source_block_index": 7,
+      "type": "paragraph",
+      "text": "The Georgian fighter was giving an interview in the lobby of the Yas Hilton hotel on Wednesday when Nurmagomedov and his associates approached him from behind."
+    },
+    {
+      "source_block_index": 8,
+      "type": "paragraph",
+      "text": "Footage shows Nurmagomedov striking Dvalishvili, triggering a brawl that left the Georgian with a bloodied face."
+    },
+    {
+      "source_block_index": 9,
+      "type": "paragraph",
+      "text": "The two camps have a history of animosity, with Dvalishvili having handed Usman's elder brother Umar Nurmagomedov his first professional MMA defeat at UFC 311 in January 2025."
+    },
+    {
+      "source_block_index": 10,
+      "type": "paragraph",
+      "text": "Tension flared up again in July 2026 at a prior RAF event in Georgia, where Merab Dvalishvili slapped Akhmed Gadzhimagomedov, an associate of the Nurmagomedov camp."
+    },
+    {
+      "source_block_index": 11,
+      "type": "paragraph",
+      "text": "Usman was in Abu Dhabi to support Umar ahead of his wrestling match against former UFC fighter Urijah Faber."
+    },
+    {
+      "source_block_index": 12,
+      "type": "paragraph",
+      "text": "The prison sentence could potentially derail the Russian fighter's much-anticipated move to the UFC."
+    },
+    {
+      "source_block_index": 13,
+      "type": "paragraph",
+      "text": "Nurmagomedov, who completed his Professional Fighters League (PFL) contract earlier this year, boasts an undefeated professional MMA record of 22-0."
+    }
+  ],
+  "cleaning_version": "truthlens-clean-v1",
+  "cleaned_at": "2026-11-13T14:50:22.365352+00:00",
+  "cleaning_issues": [],
+  "cleaning_status": "cleaned",
+  "content_hash_version": "sha256-headline-subheadline-body-v1",
+  "content_hash": "5e804f615f83ed8aa3d1cd6b8a523a45a3fa800a18d8b0939e092dfa32ec1f13",
+  "text_hash": "d99b97607e06a5cb785e35876495fa8d73fbd14b7b0d8b11f599ea510cbe76e2",
+  "metadata_hash": "44b4b03c0e638975b9e0ad5f4098e223ed5a97abb60e01f863096ed11aef4cbf",
+  "media_hash": "71fc4d61e86dd1bbe628b052546785e115ef7c7763e57005ec6ca9b3392d1303",
+  "quality_hash": "b8df83551d01c6666f62539b00ca8b1811a94ed92bc0b0df16544df4ef1278c6",
+  "state_hash": "3563c5645c090a9ef0568d1d1a1cc2fe5d948e8cc89fb82ab4be9f5c1b94b6d7",
+  "tracking_version": "truthlens-state-v1",
+  "change_status": "unchanged",
+  "changed_fields": [],
+  "field_changes": {},
+  "body_diff": "",
+  "text_changed": false,
+  "text_reanalysis_required": false,
+  "version_number": 1,
+  "version_first_seen_at": "2026-11-13T14:32:14.487509+00:00",
+  "last_changed_at": "2026-11-13T14:32:14.487509+00:00",
+  "last_checked_at": "2026-11-13T14:50:22.357818+00:00",
+  "tracking_observation_count": 2,
+  "snapshot_saved": false,
+  "change_detection_scope": "extracted_text_metadata_media_references_and_quality"
+},
+{
+  "source": "Geo News",
+  "run_id": "20261113T145014Z_3613f07dfbda4f338165397e7d3bdd22",
+  "extraction_version": "geo-extract-v1",
+  "media_detection_scope": "URLs_and_extracted_metadata_not_media_bytes",
+  "article_id": "690942",
+  "article_key": "geo:690942",
+  "url": "https://www.geo.tv/latest/690942-prince-william-shares-royal-christmas-treat-following-kates-carol-announcement",
+  "http_status": 200,
+  "response_encoding": "utf-8",
+  "canonical_url": "https://www.geo.tv/latest/690942-prince-william-shares-royal-christmas-treat-following-kates-carol-announcement",
+  "canonical_url_source": "link[rel=canonical]",
+  "headline": "Prince William shares royal Christmas treat following Kate's carol announcement",
+  "subheadline": "Princess Kate confirms date for sixth Together at Christmas carol service",
+  "author": "Web Desk",
+  "author_parts": [
+    "Web Desk"
+  ],
+  "published_at": "2026-11-13T19:28:00+05:00",
+  "updated_at": "2026-11-13T19:30:32+05:00",
+  "timestamp_sources": {
+    "published_at": "meta[property='article:published_time']",
+    "updated_at": "meta[property='article:modified_time']"
+  },
+  "article_text": "Prince William has shared a much-loved chocolate cake recipe with a touching link to Queen.\n\nPrincess Kate recently announced that she will host her sixth Together at Christmas service at Westminster Abbey on December 11, and William has offered a festive treat of his own by revealing the childhood favourite that became part of his wedding celebrations.\n\nThe Prince of Wales opened up about his affection for the classic chocolate biscuit cake in a feature for Country Life magazine, recalling how it became a familiar highlight of his visits to his grandmother.\n\n“I definitely have a sweet tooth and I love this recipe, which was dreamt up by my grandmother’s kitchen team,” William said.\n\nThe cake was served alongside the traditional fruit cake at his wedding reception to Catherine in 2011.\n\nHe remembered how afternoon tea with the late Queen often came with the hope that his favourite chocolate creation would be on the menu.\n\n“My grandmother got me into teatime with this cake being the perfect invitation,” he recalled.\n\n“Every time I’d go to have tea with her, I’d be hoping it would be served.”\n\nAlthough it was not offered on every visit, William said he was always delighted when it appeared, remembering the wonderful teas his grandmother would arrange.\n\nHe also told those occasions helped him develop a lasting appreciation for the British tradition of afternoon tea.\n\nThe cake itself has an impressive royal history.\n\nCreated with layers of Rich Tea biscuits held together by chocolate, the recipe was prepared on a grand scale for William and Catherine’s wedding reception at Buckingham Palace.\n\nThe three-tier creation was made to serve around 600 guests, with reports at the time describing it as a 40lb chocolate cake containing approximately 1,700 biscuits.\n\nIt was made by the Royal Family’s long-standing chocolate supplier, Barry Colenso.",
+  "content_blocks": [
+    {
+      "type": "paragraph",
+      "text": "Prince William has shared a much-loved chocolate cake recipe with a touching link to Queen.",
+      "html": "<p>Prince William has shared a much-loved chocolate cake recipe with a touching link to Queen.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Princess Kate recently announced that she will host her sixth Together at Christmas service at Westminster Abbey on December 11, and William has offered a festive treat of his own by revealing the childhood favourite that became part of his wedding celebrations.",
+      "html": "<p>Princess Kate recently announced that she will host her sixth Together at Christmas service at Westminster Abbey on December 11, and William has offered a festive treat of his own by revealing the childhood favourite that became part of his wedding celebrations.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "The Prince of Wales opened up about his affection for the classic chocolate biscuit cake in a feature for Country Life magazine, recalling how it became a familiar highlight of his visits to his grandmother.",
+      "html": "<p>The Prince of Wales opened up about his affection for the classic chocolate biscuit cake in a feature for Country Life magazine, recalling how it became a familiar highlight of his visits to his grandmother.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "“I definitely have a sweet tooth and I love this recipe, which was dreamt up by my grandmother’s kitchen team,” William said.",
+      "html": "<p>“I definitely have a sweet tooth and I love this recipe, which was dreamt up by my grandmother’s kitchen team,” William said. </p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "The cake was served alongside the traditional fruit cake at his wedding reception to Catherine in 2011.",
+      "html": "<p>The cake was served alongside the traditional fruit cake at his wedding reception to Catherine in 2011.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "He remembered how afternoon tea with the late Queen often came with the hope that his favourite chocolate creation would be on the menu.",
+      "html": "<p>He remembered how afternoon tea with the late Queen often came with the hope that his favourite chocolate creation would be on the menu.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "“My grandmother got me into teatime with this cake being the perfect invitation,” he recalled.",
+      "html": "<p>“My grandmother got me into teatime with this cake being the perfect invitation,” he recalled. </p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "“Every time I’d go to have tea with her, I’d be hoping it would be served.”",
+      "html": "<p>“Every time I’d go to have tea with her, I’d be hoping it would be served.”</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Although it was not offered on every visit, William said he was always delighted when it appeared, remembering the wonderful teas his grandmother would arrange.",
+      "html": "<p>Although it was not offered on every visit, William said he was always delighted when it appeared, remembering the wonderful teas his grandmother would arrange.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "He also told those occasions helped him develop a lasting appreciation for the British tradition of afternoon tea.",
+      "html": "<p>He also told those occasions helped him develop a lasting appreciation for the British tradition of afternoon tea.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "The cake itself has an impressive royal history.",
+      "html": "<p>The cake itself has an impressive royal history. </p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Created with layers of Rich Tea biscuits held together by chocolate, the recipe was prepared on a grand scale for William and Catherine’s wedding reception at Buckingham Palace.",
+      "html": "<p>Created with layers of Rich Tea biscuits held together by chocolate, the recipe was prepared on a grand scale for William and Catherine’s wedding reception at Buckingham Palace.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "The three-tier creation was made to serve around 600 guests, with reports at the time describing it as a 40lb chocolate cake containing approximately 1,700 biscuits.",
+      "html": "<p>The three-tier creation was made to serve around 600 guests, with reports at the time describing it as a 40lb chocolate cake containing approximately 1,700 biscuits.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "It was made by the Royal Family’s long-standing chocolate supplier, Barry Colenso.",
+      "html": "<p>It was made by the Royal Family’s long-standing chocolate supplier, Barry Colenso.</p>"
+    }
+  ],
+  "article_html": "<div class=\"content-area\">\r\n                        <div class=\"medium-insert-images ui-sortable\"><figure contenteditable=\"false\">\n    <img src=\"https://www.geo.tv/assets/uploads/updates/2026-11-13/690942_8814460_updates.jpg\" alt=\"Prince William shares royal Christmas treat following Kates carol announcement\" width=\"700\" height=\"400\">\n\n</figure></div><p>Prince William has shared a much-loved chocolate cake recipe with a touching link to Queen.</p><p>Princess Kate recently announced that she will host her sixth Together at Christmas service at Westminster Abbey on December 11, and William has offered a festive treat of his own by revealing the childhood favourite that became part of his wedding celebrations.</p><style>\r\n.ads_between_content{\r\n\theight:auto; \r\n\twidth:auto;\r\n\tclear: both;\r\n\ttext-align: center;\r\n}\r\n.ads_between_content .story_ads{\r\n\t\r\n}\r\n/*@media (max-width:600px){\r\n\t.ads_between_content{\r\n\t\tfloat:none;\r\n\t\tmargin:0px auto;\r\n\t\ttext-align: center;\r\n\t}\r\n}*/\r\n</style>\r\n<div class=\"ads_between_content\" style=\"min-width: 336px; min-height: 280px;margin:10px auto;\">\r\n\t\t<script async src=\"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7369466212570555\" crossorigin=\"anonymous\"></script>\r\n\t<!-- geo_post_mrec_top -->\r\n\t<ins class=\"adsbygoogle\" style=\"display:inline-block;width:300px;height:250px\" data-ad-client=\"ca-pub-7369466212570555\" data-ad-slot=\"3530359155\"></ins>\r\n\t<script>\r\n\t     (adsbygoogle = window.adsbygoogle || []).push({});\r\n\t</script>\r\n\t</div><p>The Prince of Wales opened up about his affection for the classic chocolate biscuit cake in a feature for Country Life magazine, recalling how it became a familiar highlight of his visits to his grandmother.</p><p>“I definitely have a sweet tooth and I love this recipe, which was dreamt up by my grandmother’s kitchen team,” William said. </p><p>The cake was served alongside the traditional fruit cake at his wedding reception to Catherine in 2011.</p><p>He remembered how afternoon tea with the late Queen often came with the hope that his favourite chocolate creation would be on the menu.</p><p>“My grandmother got me into teatime with this cake being the perfect invitation,” he recalled. </p><p>“Every time I’d go to have tea with her, I’d be hoping it would be served.”</p><p>Although it was not offered on every visit, William said he was always delighted when it appeared, remembering the wonderful teas his grandmother would arrange.</p><p>He also told those occasions helped him develop a lasting appreciation for the British tradition of afternoon tea.</p><p>The cake itself has an impressive royal history. </p><p>Created with layers of Rich Tea biscuits held together by chocolate, the recipe was prepared on a grand scale for William and Catherine’s wedding reception at Buckingham Palace.</p><p>The three-tier creation was made to serve around 600 guests, with reports at the time describing it as a 40lb chocolate cake containing approximately 1,700 biscuits.</p><p>It was made by the Royal Family’s long-standing chocolate supplier, Barry Colenso.</p>                    </div>",
+  "image_url": "https://www.geo.tv/assets/uploads/updates/2026-11-13/690942_052419_updates.jpg",
+  "images": [
+    {
+      "url": "https://www.geo.tv/assets/uploads/updates/2026-11-13/690942_8814460_updates.jpg",
+      "alt_text": "Prince William shares royal Christmas treat following Kates carol announcement",
+      "caption": null
+    }
+  ],
+  "videos": [],
+  "tweets": [],
+  "tweet_embed_count": 0,
+  "embed_detection_scope": "downloaded_article_body_html_only",
+  "crawled_at": "2026-11-13T14:50:25.089541+00:00",
+  "discovered_from": "https://www.geo.tv/assets/uploads/google_news_latest.xml",
+  "processing_status": "cleaned",
+  "validation_issues": [],
+  "validation_status": "passed_basic_checks",
+  "section": "royals",
+  "category": "entertainment",
+  "cleaned_text": "Prince William has shared a much-loved chocolate cake recipe with a touching link to Queen.\n\nPrincess Kate recently announced that she will host her sixth Together at Christmas service at Westminster Abbey on December 11, and William has offered a festive treat of his own by revealing the childhood favourite that became part of his wedding celebrations.\n\nThe Prince of Wales opened up about his affection for the classic chocolate biscuit cake in a feature for Country Life magazine, recalling how it became a familiar highlight of his visits to his grandmother.\n\n“I definitely have a sweet tooth and I love this recipe, which was dreamt up by my grandmother’s kitchen team,” William said.\n\nThe cake was served alongside the traditional fruit cake at his wedding reception to Catherine in 2011.\n\nHe remembered how afternoon tea with the late Queen often came with the hope that his favourite chocolate creation would be on the menu.\n\n“My grandmother got me into teatime with this cake being the perfect invitation,” he recalled.\n\n“Every time I’d go to have tea with her, I’d be hoping it would be served.”\n\nAlthough it was not offered on every visit, William said he was always delighted when it appeared, remembering the wonderful teas his grandmother would arrange.\n\nHe also told those occasions helped him develop a lasting appreciation for the British tradition of afternoon tea.\n\nThe cake itself has an impressive royal history.\n\nCreated with layers of Rich Tea biscuits held together by chocolate, the recipe was prepared on a grand scale for William and Catherine’s wedding reception at Buckingham Palace.\n\nThe three-tier creation was made to serve around 600 guests, with reports at the time describing it as a 40lb chocolate cake containing approximately 1,700 biscuits.\n\nIt was made by the Royal Family’s long-standing chocolate supplier, Barry Colenso.",
+  "cleaned_blocks": [
+    {
+      "source_block_index": 0,
+      "type": "paragraph",
+      "text": "Prince William has shared a much-loved chocolate cake recipe with a touching link to Queen."
+    },
+    {
+      "source_block_index": 1,
+      "type": "paragraph",
+      "text": "Princess Kate recently announced that she will host her sixth Together at Christmas service at Westminster Abbey on December 11, and William has offered a festive treat of his own by revealing the childhood favourite that became part of his wedding celebrations."
+    },
+    {
+      "source_block_index": 2,
+      "type": "paragraph",
+      "text": "The Prince of Wales opened up about his affection for the classic chocolate biscuit cake in a feature for Country Life magazine, recalling how it became a familiar highlight of his visits to his grandmother."
+    },
+    {
+      "source_block_index": 3,
+      "type": "paragraph",
+      "text": "“I definitely have a sweet tooth and I love this recipe, which was dreamt up by my grandmother’s kitchen team,” William said."
+    },
+    {
+      "source_block_index": 4,
+      "type": "paragraph",
+      "text": "The cake was served alongside the traditional fruit cake at his wedding reception to Catherine in 2011."
+    },
+    {
+      "source_block_index": 5,
+      "type": "paragraph",
+      "text": "He remembered how afternoon tea with the late Queen often came with the hope that his favourite chocolate creation would be on the menu."
+    },
+    {
+      "source_block_index": 6,
+      "type": "paragraph",
+      "text": "“My grandmother got me into teatime with this cake being the perfect invitation,” he recalled."
+    },
+    {
+      "source_block_index": 7,
+      "type": "paragraph",
+      "text": "“Every time I’d go to have tea with her, I’d be hoping it would be served.”"
+    },
+    {
+      "source_block_index": 8,
+      "type": "paragraph",
+      "text": "Although it was not offered on every visit, William said he was always delighted when it appeared, remembering the wonderful teas his grandmother would arrange."
+    },
+    {
+      "source_block_index": 9,
+      "type": "paragraph",
+      "text": "He also told those occasions helped him develop a lasting appreciation for the British tradition of afternoon tea."
+    },
+    {
+      "source_block_index": 10,
+      "type": "paragraph",
+      "text": "The cake itself has an impressive royal history."
+    },
+    {
+      "source_block_index": 11,
+      "type": "paragraph",
+      "text": "Created with layers of Rich Tea biscuits held together by chocolate, the recipe was prepared on a grand scale for William and Catherine’s wedding reception at Buckingham Palace."
+    },
+    {
+      "source_block_index": 12,
+      "type": "paragraph",
+      "text": "The three-tier creation was made to serve around 600 guests, with reports at the time describing it as a 40lb chocolate cake containing approximately 1,700 biscuits."
+    },
+    {
+      "source_block_index": 13,
+      "type": "paragraph",
+      "text": "It was made by the Royal Family’s long-standing chocolate supplier, Barry Colenso."
+    }
+  ],
+  "cleaning_version": "truthlens-clean-v1",
+  "cleaned_at": "2026-11-13T14:50:25.095344+00:00",
+  "cleaning_issues": [],
+  "cleaning_status": "cleaned",
+  "content_hash_version": "sha256-headline-subheadline-body-v1",
+  "content_hash": "08386f4901d79d8ec5df16ee8db13026a45d112e7e1a0ca3dac60a16ec823b47",
+  "text_hash": "c84fb636ed898d6ae568ba842d1bda35928e6f8cbea2cf35351336733e07f32f",
+  "metadata_hash": "5add942e00b2aee9714b891e81a6898fafa52ba156a53bba2559c9eb66a70e4e",
+  "media_hash": "52378b15f1a4290c27bae5218f4f63918695300a62f1086c03b817bd4e700345",
+  "quality_hash": "b8df83551d01c6666f62539b00ca8b1811a94ed92bc0b0df16544df4ef1278c6",
+  "state_hash": "9174753c70dc52a3fcb83a508c9935d16ebaadcbbcef73d0397c6565b92f0ed0",
+  "tracking_version": "truthlens-state-v1",
+  "change_status": "unchanged",
+  "changed_fields": [],
+  "field_changes": {},
+  "body_diff": "",
+  "text_changed": false,
+  "text_reanalysis_required": false,
+  "version_number": 1,
+  "version_first_seen_at": "2026-11-13T14:32:17.870441+00:00",
+  "last_changed_at": "2026-11-13T14:32:17.870441+00:00",
+  "last_checked_at": "2026-11-13T14:50:25.089541+00:00",
+  "tracking_observation_count": 2,
+  "snapshot_saved": false,
+  "change_detection_scope": "extracted_text_metadata_media_references_and_quality"
+},
+{
+  "source": "Geo News",
+  "run_id": "20261113T145014Z_3613f07dfbda4f338165397e7d3bdd22",
+  "extraction_version": "geo-extract-v1",
+  "media_detection_scope": "URLs_and_extracted_metadata_not_media_bytes",
+  "article_id": "690966",
+  "article_key": "geo:690966",
+  "url": "https://www.geo.tv/latest/690966-tyra-banks-says-its-nice-to-be-single-after-split-from-longtime-boyfriend",
+  "http_status": 200,
+  "response_encoding": "utf-8",
+  "canonical_url": "https://www.geo.tv/latest/690966-tyra-banks-says-its-nice-to-be-single-after-split-from-longtime-boyfriend",
+  "canonical_url_source": "link[rel=canonical]",
+  "headline": "Tyra Banks says 'it's nice to be single' after split from longtime boyfriend",
+  "subheadline": "The 'America's Next Top Model' host was dating businessman Louis Bélanger-Martin since 2019",
+  "author": "Web Desk",
+  "author_parts": [
+    "Web Desk"
+  ],
+  "published_at": "2026-11-13T19:43:00+05:00",
+  "updated_at": "2026-11-13T19:43:51+05:00",
+  "timestamp_sources": {
+    "published_at": "meta[property='article:published_time']",
+    "updated_at": "meta[property='article:modified_time']"
+  },
+  "article_text": "Tyra Banks is back on the market after seven years.\n\nThe model confirmed that she has parted ways with her boyfriend, businessman Louis Bélanger-Martin. Banks, 52, first revealed the news during her appearance on HOT 97 on Tuesday, November 11, confirming it again to TMZ on Thursday.\n\n“The biggest lesson I’ve learned [about love and relationships is] I think that it’s never too late to start again,” she said.\n\nREAD MORE: Tyra Banks breaks silence on Law Roach 'beef'\n\n“I’m a single woman now, I’m 52 years old, and I’m single,” Banks added, noting that she’s still fulfilled because of her family, including her 10-year-old son York, whom she shares with her ex-boyfriend Erik Asla.\n\nTwo days later, the America’s Next Top Model host was asked by a TMZ photographer whether she was actually single.\n\n“Yeah,” she replied. “Maybe I am, [but] hell no am I online dating, girl, that’d be crazy!”\n\nBanks noted that even though she isn’t on a dating website — her friends even tried to get her to join celebrity dating app Raya — she is still dating.\n\n“I am dating. It’s nice to be single, it’s been a while,” she admitted.\n\nBanks and Bélanger-Martin have been romantically linked since October 2019, per Page Six.\n\nThe pair reportedly became serious quickly and even moved in together, splitting their time between properties in England, Barbados and Canada.\n\nThey were last publicly photographed together at a Shadow Force event in Los Angeles in April 2025.\n\nREAD MORE: Tyra Banks shares thrilling update about 'America's Next Top Model' return",
+  "content_blocks": [
+    {
+      "type": "paragraph",
+      "text": "Tyra Banks is back on the market after seven years.",
+      "html": "<p>Tyra Banks is back on the market after seven years. </p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "The model confirmed that she has parted ways with her boyfriend, businessman Louis Bélanger-Martin. Banks, 52, first revealed the news during her appearance on HOT 97 on Tuesday, November 11, confirming it again to TMZ on Thursday.",
+      "html": "<p>The model confirmed that she has parted ways with <a href=\"https://www.geo.tv/latest/607757-tyra-banks-and-louis-belanger-martin-mark-major-milestone\">her boyfriend</a>, businessman Louis Bélanger-Martin. Banks, 52, first revealed the news during her appearance on <i>HOT 97</i> on Tuesday, November 11, confirming it again to <i>TMZ </i>on Thursday. </p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "“The biggest lesson I’ve learned [about love and relationships is] I think that it’s never too late to start again,” she said.",
+      "html": "<p>“The biggest lesson I’ve learned [about love and relationships is] I think that it’s never too late to start again,” she said. </p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "READ MORE: Tyra Banks breaks silence on Law Roach 'beef'",
+      "html": "<p><b>READ MORE:</b> <a href=\"https://www.geo.tv/latest/685384-tyra-banks-breaks-silence-on-law-roach-clash-were-beefing\">Tyra Banks breaks silence on Law Roach 'beef'</a></p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "“I’m a single woman now, I’m 52 years old, and I’m single,” Banks added, noting that she’s still fulfilled because of her family, including her 10-year-old son York, whom she shares with her ex-boyfriend Erik Asla.",
+      "html": "<p>“I’m a single woman now, I’m 52 years old, and I’m single,” Banks added, noting that she’s still fulfilled because of her family, including her 10-year-old son York, whom she shares with her ex-boyfriend Erik Asla. </p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Two days later, the America’s Next Top Model host was asked by a TMZ photographer whether she was actually single.",
+      "html": "<p>Two days later, the<i> America’s Next Top Model</i> host was asked by a TMZ photographer whether she was actually single. </p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "“Yeah,” she replied. “Maybe I am, [but] hell no am I online dating, girl, that’d be crazy!”",
+      "html": "<p>“Yeah,” she replied. “Maybe I am, [but] hell no am I online dating, girl, that’d be crazy!” </p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Banks noted that even though she isn’t on a dating website — her friends even tried to get her to join celebrity dating app Raya — she is still dating.",
+      "html": "<p>Banks noted that even though she isn’t on a dating website — her friends even tried to get her to join celebrity dating app Raya — she is still dating. </p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "“I am dating. It’s nice to be single, it’s been a while,” she admitted.",
+      "html": "<p>“I am dating. It’s nice to be single, it’s been a while,” she admitted.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "Banks and Bélanger-Martin have been romantically linked since October 2019, per Page Six.",
+      "html": "<p>Banks and Bélanger-Martin have been romantically linked since October 2019, per <i>Page Six</i>.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "The pair reportedly became serious quickly and even moved in together, splitting their time between properties in England, Barbados and Canada.",
+      "html": "<p>The pair reportedly became serious quickly and even moved in together, splitting their time between properties in England, Barbados and Canada.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "They were last publicly photographed together at a Shadow Force event in Los Angeles in April 2025.",
+      "html": "<p>They were last publicly photographed together at a <i>Shadow Force</i> event in Los Angeles in April 2025.</p>"
+    },
+    {
+      "type": "paragraph",
+      "text": "READ MORE: Tyra Banks shares thrilling update about 'America's Next Top Model' return",
+      "html": "<p><b>READ MORE:</b> <a href=\"https://www.geo.tv/latest/651346-tyra-banks-shares-thrilling-update-on-americas-next-top-model-return\">Tyra Banks shares thrilling update about 'America's Next Top Model' return</a></p>"
+    }
+  ],
+  "article_html": "<div class=\"content-area\">\r\n                        <div class=\"medium-insert-images ui-sortable\"><figure contenteditable=\"false\">\n    <img src=\"https://www.geo.tv/assets/uploads/updates/2026-11-13/690966_2011655_updates.jpg\" alt=\"The former couple were last publicly photographer together at a 2025 Shadow Force event\" width=\"700\" height=\"400\" class=\"\">\n\n<figcaption contenteditable=\"true\" class=\"\">The former couple were last publicly photographer together at a 2025 Shadow Force event </figcaption></figure></div><p>Tyra Banks is back on the market after seven years. </p><p>The model confirmed that she has parted ways with <a href=\"https://www.geo.tv/latest/607757-tyra-banks-and-louis-belanger-martin-mark-major-milestone\">her boyfriend</a>, businessman Louis Bélanger-Martin. Banks, 52, first revealed the news during her appearance on <i>HOT 97</i> on Tuesday, November 11, confirming it again to <i>TMZ </i>on Thursday. </p><style>\r\n.ads_between_content{\r\n\theight:auto; \r\n\twidth:auto;\r\n\tclear: both;\r\n\ttext-align: center;\r\n}\r\n.ads_between_content .story_ads{\r\n\t\r\n}\r\n/*@media (max-width:600px){\r\n\t.ads_between_content{\r\n\t\tfloat:none;\r\n\t\tmargin:0px auto;\r\n\t\ttext-align: center;\r\n\t}\r\n}*/\r\n</style>\r\n<div class=\"ads_between_content\" style=\"min-width: 336px; min-height: 280px;margin:10px auto;\">\r\n\t\t<script async src=\"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7369466212570555\" crossorigin=\"anonymous\"></script>\r\n\t<!-- geo_post_mrec_top -->\r\n\t<ins class=\"adsbygoogle\" style=\"display:inline-block;width:300px;height:250px\" data-ad-client=\"ca-pub-7369466212570555\" data-ad-slot=\"3530359155\"></ins>\r\n\t<script>\r\n\t     (adsbygoogle = window.adsbygoogle || []).push({});\r\n\t</script>\r\n\t</div><p>“The biggest lesson I’ve learned [about love and relationships is] I think that it’s never too late to start again,” she said. </p><p><b>READ MORE:</b> <a href=\"https://www.geo.tv/latest/685384-tyra-banks-breaks-silence-on-law-roach-clash-were-beefing\">Tyra Banks breaks silence on Law Roach 'beef'</a></p><p>“I’m a single woman now, I’m 52 years old, and I’m single,” Banks added, noting that she’s still fulfilled because of her family, including her 10-year-old son York, whom she shares with her ex-boyfriend Erik Asla. </p><p>Two days later, the<i> America’s Next Top Model</i> host was asked by a TMZ photographer whether she was actually single. </p><p>“Yeah,” she replied. “Maybe I am, [but] hell no am I online dating, girl, that’d be crazy!” </p><p>Banks noted that even though she isn’t on a dating website — her friends even tried to get her to join celebrity dating app Raya — she is still dating. </p><p>“I am dating. It’s nice to be single, it’s been a while,” she admitted.</p><div>                                        <div class=\"medium-insert-embeds\" contenteditable=\"false\">                                            <figure>                                                <div class=\"medium-insert-embed \">                        \t\t<iframe class=\"instagram-media instagram-media-rendered\" id=\"instagram-embed-0\" src=\"https://www.instagram.com/reel/Dfp3fRzv6Qf/embed/?cr=1&amp;v=14&amp;wp=801&amp;rd=https%3A%2F%2Fapnegn.geo.tv&amp;rp=%2Fgeonewimages%2Fcontent%2Fposts%2Fedit%2F690966%3Fpost_type%3D1#%7B%22ci%22%3A0%2C%22os%22%3A3329.60000000149%2C%22ls%22%3A2670.300000000745%2C%22le%22%3A2674.800000000745%7D\" allowtransparency=\"true\" allowfullscreen=\"true\" frameborder=\"0\" height=\"1041\" data-instgrm-payload-id=\"instagram-media-payload-0\" scrolling=\"no\" style=\"background: white; max-width: 100%; width: calc(100% - 2px); border-radius: 3px; border: 1px solid rgb(219, 219, 219); box-shadow: none; display: block; margin: 0px 0px 12px; min-width: 326px; padding: 0px;\"></iframe>                        \t\t <div class=\"clearfix\"></div>                        \t\t</div>                        \t</figure>                        \t<div class=\"medium-insert-embeds-overlay\"></div>                        </div>                        </div><p>Banks and Bélanger-Martin have been romantically linked since October 2019, per <i>Page Six</i>.</p><p>The pair reportedly became serious quickly and even moved in together, splitting their time between properties in England, Barbados and Canada.</p><p>They were last publicly photographed together at a <i>Shadow Force</i> event in Los Angeles in April 2025.</p><p><b>READ MORE:</b> <a href=\"https://www.geo.tv/latest/651346-tyra-banks-shares-thrilling-update-on-americas-next-top-model-return\">Tyra Banks shares thrilling update about 'America's Next Top Model' return</a></p>                    </div>",
+  "image_url": "https://www.geo.tv/assets/uploads/updates/2026-11-13/690966_074334_updates.jpg",
+  "images": [
+    {
+      "url": "https://www.geo.tv/assets/uploads/updates/2026-11-13/690966_2011655_updates.jpg",
+      "alt_text": "The former couple were last publicly photographer together at a 2025 Shadow Force event",
+      "caption": "The former couple were last publicly photographer together at a 2025 Shadow Force event"
+    }
+  ],
+  "videos": [],
+  "tweets": [],
+  "tweet_embed_count": 0,
+  "embed_detection_scope": "downloaded_article_body_html_only",
+  "crawled_at": "2026-11-13T14:50:29.417324+00:00",
+  "discovered_from": "https://www.geo.tv/assets/uploads/google_news_latest.xml",
+  "processing_status": "cleaned",
+  "validation_issues": [],
+  "validation_status": "passed_basic_checks",
+  "section": "entertainment",
+  "category": "entertainment",
+  "cleaned_text": "Tyra Banks is back on the market after seven years.\n\nThe model confirmed that she has parted ways with her boyfriend, businessman Louis Bélanger-Martin. Banks, 52, first revealed the news during her appearance on HOT 97 on Tuesday, November 11, confirming it again to TMZ on Thursday.\n\n“The biggest lesson I’ve learned [about love and relationships is] I think that it’s never too late to start again,” she said.\n\nREAD MORE: Tyra Banks breaks silence on Law Roach 'beef'\n\n“I’m a single woman now, I’m 52 years old, and I’m single,” Banks added, noting that she’s still fulfilled because of her family, including her 10-year-old son York, whom she shares with her ex-boyfriend Erik Asla.\n\nTwo days later, the America’s Next Top Model host was asked by a TMZ photographer whether she was actually single.\n\n“Yeah,” she replied. “Maybe I am, [but] hell no am I online dating, girl, that’d be crazy!”\n\nBanks noted that even though she isn’t on a dating website — her friends even tried to get her to join celebrity dating app Raya — she is still dating.\n\n“I am dating. It’s nice to be single, it’s been a while,” she admitted.\n\nBanks and Bélanger-Martin have been romantically linked since October 2019, per Page Six.\n\nThe pair reportedly became serious quickly and even moved in together, splitting their time between properties in England, Barbados and Canada.\n\nThey were last publicly photographed together at a Shadow Force event in Los Angeles in April 2025.\n\nREAD MORE: Tyra Banks shares thrilling update about 'America's Next Top Model' return",
+  "cleaned_blocks": [
+    {
+      "source_block_index": 0,
+      "type": "paragraph",
+      "text": "Tyra Banks is back on the market after seven years."
+    },
+    {
+      "source_block_index": 1,
+      "type": "paragraph",
+      "text": "The model confirmed that she has parted ways with her boyfriend, businessman Louis Bélanger-Martin. Banks, 52, first revealed the news during her appearance on HOT 97 on Tuesday, November 11, confirming it again to TMZ on Thursday."
+    },
+    {
+      "source_block_index": 2,
+      "type": "paragraph",
+      "text": "“The biggest lesson I’ve learned [about love and relationships is] I think that it’s never too late to start again,” she said."
+    },
+    {
+      "source_block_index": 3,
+      "type": "paragraph",
+      "text": "READ MORE: Tyra Banks breaks silence on Law Roach 'beef'"
+    },
+    {
+      "source_block_index": 4,
+      "type": "paragraph",
+      "text": "“I’m a single woman now, I’m 52 years old, and I’m single,” Banks added, noting that she’s still fulfilled because of her family, including her 10-year-old son York, whom she shares with her ex-boyfriend Erik Asla."
+    },
+    {
+      "source_block_index": 5,
+      "type": "paragraph",
+      "text": "Two days later, the America’s Next Top Model host was asked by a TMZ photographer whether she was actually single."
+    },
+    {
+      "source_block_index": 6,
+      "type": "paragraph",
+      "text": "“Yeah,” she replied. “Maybe I am, [but] hell no am I online dating, girl, that’d be crazy!”"
+    },
+    {
+      "source_block_index": 7,
+      "type": "paragraph",
+      "text": "Banks noted that even though she isn’t on a dating website — her friends even tried to get her to join celebrity dating app Raya — she is still dating."
+    },
+    {
+      "source_block_index": 8,
+      "type": "paragraph",
+      "text": "“I am dating. It’s nice to be single, it’s been a while,” she admitted."
+    },
+    {
+      "source_block_index": 9,
+      "type": "paragraph",
+      "text": "Banks and Bélanger-Martin have been romantically linked since October 2019, per Page Six."
+    },
+    {
+      "source_block_index": 10,
+      "type": "paragraph",
+      "text": "The pair reportedly became serious quickly and even moved in together, splitting their time between properties in England, Barbados and Canada."
+    },
+    {
+      "source_block_index": 11,
+      "type": "paragraph",
+      "text": "They were last publicly photographed together at a Shadow Force event in Los Angeles in April 2025."
+    },
+    {
+      "source_block_index": 12,
+      "type": "paragraph",
+      "text": "READ MORE: Tyra Banks shares thrilling update about 'America's Next Top Model' return"
+    }
+  ],
+  "cleaning_version": "truthlens-clean-v1",
+  "cleaned_at": "2026-11-13T14:50:29.424325+00:00",
+  "cleaning_issues": [],
+  "cleaning_status": "cleaned",
+  "content_hash_version": "sha256-headline-subheadline-body-v1",
+  "content_hash": "4d31813552123ec230ca790bebb2426eada4533f187a97a07cba6766cf69a5fb",
+  "text_hash": "aea3540acd56554fcc2fc02351339cfc53648af4e0d0251169e1ab397096765e",
+  "metadata_hash": "201828fc59f2976fb8918fa1554d330fe8f81d18e53848425ae57eb23c82c092",
+  "media_hash": "7f36c827bd822cfcfbf1b7a8e35c4614261757cc2c12b4642667fb805d873938",
+  "quality_hash": "b8df83551d01c6666f62539b00ca8b1811a94ed92bc0b0df16544df4ef1278c6",
+  "state_hash": "65f3b5e70fc426b36ef045933cbdd6a2bfd195bbc236730662bdfa8a7f7ce410",
+  "tracking_version": "truthlens-state-v1",
+  "change_status": "new",
+  "changed_fields": [],
+  "field_changes": {},
+  "body_diff": "",
+  "text_changed": null,
+  "text_reanalysis_required": true,
+  "version_number": 1,
+  "version_first_seen_at": "2026-11-13T14:50:29.417324+00:00",
+  "last_changed_at": "2026-11-13T14:50:29.417324+00:00",
+  "last_checked_at": "2026-11-13T14:50:29.417324+00:00",
+  "tracking_observation_count": 1,
+  "snapshot_saved": true,
+  "change_detection_scope": "extracted_text_metadata_media_references_and_quality"
+}
+]

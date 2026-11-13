@@ -2,20 +2,22 @@ import React, { useCallback, useEffect, useState } from 'react';
 import Sidebar from '../components/common/Sidebar';
 import Pagination from '../components/common/Pagination';
 import { fetchQuality, setReviewed, setHidden } from '../services/adminService';
-import { Menu, ShieldAlert, ExternalLink, CheckCircle2, RotateCcw, EyeOff, Eye, ChevronDown, Star, FileWarning, Cpu, Scissors, AlignLeft } from 'lucide-react';
+import { Menu, ShieldAlert, ExternalLink, CheckCircle2, RotateCcw, EyeOff, Eye, ChevronDown, Star, FileWarning, Cpu, Scissors, AlignLeft, Copy, Info } from 'lucide-react';
 import toast from 'react-hot-toast';
 
 // FR-13: flagged and low-quality data for the admin to examine. Each row says why the article was
 // flagged. "Mark reviewed" takes it off the open list; "Hide from site" removes it from the feed,
-// stories and search (and its page) until the admin brings it back.
+// stories and search (and its page) until the admin brings it back. Same-outlet duplicates that the ML
+// pipeline skips on purpose are not errors: they are listed under their own "Duplicates" tab.
 const REASON_STYLE = {
   validation: { icon: FileWarning, cls: 'text-orange-300 bg-orange-500/10 border-orange-500/30' },
   cleaning: { icon: Scissors, cls: 'text-yellow-300 bg-yellow-500/10 border-yellow-500/30' },
   not_analysed: { icon: Cpu, cls: 'text-sky-300 bg-sky-500/10 border-sky-500/30' },
   short: { icon: AlignLeft, cls: 'text-violet-300 bg-violet-500/10 border-violet-500/30' },
   low_rating: { icon: Star, cls: 'text-red-300 bg-red-500/10 border-red-500/30' },
+  duplicate: { icon: Copy, cls: 'text-gray-300 bg-gray-500/10 border-gray-500/30' },
 };
-const STATUS = [['open', 'Needs review'], ['reviewed', 'Reviewed'], ['hidden', 'Hidden from site'], ['all', 'All']];
+const STATUS = [['open', 'Needs review'], ['reviewed', 'Reviewed'], ['hidden', 'Hidden from site'], ['duplicate', 'Duplicates'], ['all', 'All']];
 const fmt = (d) => (d ? new Date(d).toLocaleString('en-GB', { day: 'numeric', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' }) : '–');
 
 const AdminDataQualityPage = () => {
@@ -69,8 +71,8 @@ const AdminDataQualityPage = () => {
           </div>
 
           {/* Count per reason (open items) */}
-          <div className="grid grid-cols-2 lg:grid-cols-5 gap-3 mb-6">
-            {(data?.reasons || []).map((r) => {
+          <div className="grid grid-cols-2 lg:grid-cols-5 gap-3 mb-3">
+            {(data?.reasons || []).filter((r) => r.code !== 'duplicate').map((r) => {
               const st = REASON_STYLE[r.code]; const Icon = st.icon;
               const selected = reason === r.code;
               return (
@@ -83,6 +85,13 @@ const AdminDataQualityPage = () => {
               );
             })}
           </div>
+          {counts?.briefs > 0 && (
+            <p className="mb-6 flex items-start gap-2 text-xs text-gray-400">
+              <Info size={14} className="mt-0.5 shrink-0 text-gray-500" />
+              <span><span className="font-semibold text-gray-300">{counts.briefs.toLocaleString()}</span> more articles have {counts.briefRange?.[0] ?? 50}–{counts.briefRange?.[1] ?? 99} words. These are complete short news briefs, shown here for information only, not counted as problems.</span>
+            </p>
+          )}
+          {!(counts?.briefs > 0) && <div className="mb-3" />}
 
           <div className="bg-[#110505] border border-red-900/20 rounded-xl overflow-hidden shadow-lg">
             <div className="p-4 border-b border-red-900/20 flex flex-wrap items-center gap-3">
@@ -109,12 +118,12 @@ const AdminDataQualityPage = () => {
             <div className="divide-y divide-red-900/10">
               {!data && <p className="p-10 text-center text-gray-400 text-sm">Loading…</p>}
               {data && data.items.length === 0 && (
-                <p className="p-10 text-center text-gray-400 text-sm">{status === 'open' ? 'Nothing needs review. 🎉' : 'Nothing here.'}</p>
+                <p className="p-10 text-center text-gray-400 text-sm">{status === 'open' ? 'Nothing needs review. 🎉' : status === 'duplicate' ? 'No skipped duplicates.' : 'Nothing here.'}</p>
               )}
               {data?.items.map((it) => (
                 <div key={it.id} className="p-4 lg:p-5 flex flex-col lg:flex-row gap-4 lg:items-center hover:bg-red-950/10">
                   <div className="flex-1 min-w-0">
-                    <p className="text-[11px] text-gray-500 mb-1">{it.source} · crawled {fmt(it.crawledAt)}{it.analysed ? '' : ' · not analysed'}</p>
+                    <p className="text-[11px] text-gray-500 mb-1">{it.source} · crawled {fmt(it.crawledAt)}{it.status === 'duplicate' ? ' · skipped on purpose, not shown on the site' : it.analysed ? '' : ' · not analysed'}</p>
                     <p className="text-sm font-bold text-white mb-2 line-clamp-2">{it.headline}</p>
                     <div className="flex flex-wrap gap-1.5">
                       {it.reasons.map((r) => {
@@ -143,18 +152,18 @@ const AdminDataQualityPage = () => {
                         <Eye size={13} /> On TruthLens
                       </a>
                     )}
-                    {it.status !== 'hidden' && (
+                    {it.status !== 'hidden' && it.status !== 'duplicate' && (
                       <button type="button" disabled={busy === it.id}
                         onClick={() => act(setReviewed, it.id, !it.reviewed, it.reviewed ? 'Moved back to the review list' : 'Marked as reviewed')}
                         className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg border border-emerald-700/40 text-xs text-emerald-300 hover:bg-emerald-950/40 disabled:opacity-50">
                         {it.reviewed ? <><RotateCcw size={13} /> Reopen</> : <><CheckCircle2 size={13} /> Mark reviewed</>}
                       </button>
                     )}
-                    <button type="button" disabled={busy === it.id}
+                    {it.status !== 'duplicate' && <button type="button" disabled={busy === it.id}
                       onClick={() => act(setHidden, it.id, !it.hidden, it.hidden ? 'Article is back on the site' : 'Article hidden from the site')}
                       className={`inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-semibold disabled:opacity-50 ${it.hidden ? 'border border-gray-600 text-gray-200 hover:bg-gray-800' : 'bg-[#D32F2F] text-white hover:bg-[#B71C1C]'}`}>
                       {it.hidden ? <><Eye size={13} /> Show on site</> : <><EyeOff size={13} /> Hide from site</>}
-                    </button>
+                    </button>}
                   </div>
                 </div>
               ))}

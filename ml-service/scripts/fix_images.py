@@ -119,19 +119,24 @@ def small(img):
         return False
 
 
-def real_picture(doc, placeholders, page_count):
-    """(url, how) of the article's own picture, or (None, reason)."""
-    def ok(u):
-        return u and not NOT_PHOTO.search(u) and not LOGO_WORDS.search(urlsplit(u).path) and norm(u) not in placeholders
-
-    base = doc.get("url") or ""
+def parse(html):
     page = Page()
-    html = doc.get("raw_html") or ""
     if html:
         try:
             page.feed(html)
         except Exception:                                       # broken HTML: use what was parsed
             pass
+    return page
+
+
+def real_picture(doc, placeholders, page_count, page=None):
+    """(url, how) of the article's own picture, or (None, reason). `page`: the already parsed raw_html."""
+    def ok(u):
+        return u and not NOT_PHOTO.search(u) and not LOGO_WORDS.search(urlsplit(u).path) and norm(u) not in placeholders
+
+    base = doc.get("url") or ""
+    if page is None:
+        page = parse(doc.get("raw_html") or "")
     for u in ld_images(page.ld):
         if ok(urljoin(base, u)):
             return urljoin(base, u), "JSON-LD image"
@@ -165,7 +170,8 @@ def main():
         n = 0
         for d in arts.find({"image_fixed_by": {"$exists": True}}, {"image_url_original": 1}):
             arts.update_one({"_id": d["_id"]}, {"$set": {"image_url": d.get("image_url_original")},
-                                                "$unset": {"image_url_original": "", "image_fixed_by": "", "image_from": ""}})
+                                                "$unset": {"image_url_original": "", "image_fixed_by": "", "image_from": "",
+                                                           "image_checked_hash": "", "page_image_urls": ""}})
             n += 1
         db.image_placeholders.drop()
         print(f"Undone: {n} article(s) have their original crawled picture back (logos included).")
@@ -182,7 +188,8 @@ def main():
 
     docs = list(arts.find({"duplicate_of": {"$exists": False}},
                           {"article_key": 1, "source": 1, "image_url": 1, "image_url_original": 1, "image_fixed_by": 1,
-                           "image_from": 1, "story_id": 1, "published_at": 1}))
+                           "image_from": 1, "story_id": 1, "published_at": 1, "content_hash": 1,
+                           "image_checked_hash": 1, "page_image_urls": 1}))
     known = {x["url"] for x in db.image_placeholders.find({}, {"url": 1})}
 
     def original(d):          # the picture the crawler gave it (before any fix by this script)
@@ -207,10 +214,21 @@ def main():
         return (not u or is_placeholder(u) or borrowed(d)                  # borrowed / none: re-checked every run,
                 or d.get("image_fixed_by") == NO_PHOTO)                    # a story may have gained outlets
 
+    def settled(d):
+        """Already searched for its own photo (none found), and neither the text nor the crawler's picture has
+        changed since: only the borrowing step is redone (a story may have gained outlets), the page is not
+        parsed again. This is what keeps later runs fast."""
+        if not (d.get("image_fixed_by") == NO_PHOTO or borrowed(d)) or d.get("page_image_urls") is None:
+            return False
+        stored = (d.get("image_from") or {}).get("url") if borrowed(d) else None
+        return d.get("image_url") == stored and d.get("image_checked_hash") == d.get("content_hash")
+
     flagged = [d for d in docs if needs_work(d)]
+    to_parse = [d for d in flagged if not settled(d)]
     n_logo = sum(1 for d in flagged if original(d) and is_placeholder(original(d)))
     print(f"{len(docs)} articles | {len(placeholders)} placeholder image URL(s) | {n_logo} with a logo, "
-          f"{len(flagged) - n_logo} with no picture or a borrowed one")
+          f"{len(flagged) - n_logo} with no picture or a borrowed one | {len(to_parse)} page(s) to search "
+          f"({len(flagged) - len(to_parse)} already searched, unchanged)")
     for src, c in sorted(by_source.items(), key=lambda kv: str(kv[0])):
         top = [(u, n) for u, n in c.most_common(3) if n >= args.min_repeat]
         n_flag = sum(1 for d in flagged if d.get("source") == src and original(d) and is_placeholder(original(d)))
@@ -220,17 +238,17 @@ def main():
         return
 
     # ---- 1. the article's own photo -------------------------------------------------------
-    page_count, cache = Counter(), {}
-    for d in arts.find({"article_key": {"$in": [f["article_key"] for f in flagged]}},
+    page_count, cache, pages, page_urls = Counter(), {}, {}, {}
+    for d in flagged:                       # pictures of pages searched in earlier runs (stored, not re-parsed)
+        if settled(d):
+            page_urls[d["article_key"]] = d["page_image_urls"]
+    for d in arts.find({"article_key": {"$in": [f["article_key"] for f in to_parse]}},
                        {"article_key": 1, "url": 1, "raw_html": 1, "images": 1}):
         cache[d["article_key"]] = d
-        pg = Page()
-        try:
-            pg.feed(d.get("raw_html") or "")
-        except Exception:
-            pass
-        for u in {norm(urljoin(d.get("url") or "", im["src"])) for im in pg.imgs}:
-            page_count[u] += 1
+        pages[d["article_key"]] = pg = parse(d.get("raw_html") or "")      # parsed once, used twice
+        page_urls[d["article_key"]] = sorted({norm(urljoin(d.get("url") or "", im["src"])) for im in pg.imgs})
+    for urls in page_urls.values():
+        page_count.update(urls)
 
     result = {}                                                   # article_key -> (url, how, image_from)
     for f in flagged:
@@ -238,7 +256,9 @@ def main():
         if u and not is_placeholder(u) and u != (f.get("image_from") or {}).get("url"):
             result[f["article_key"]] = (u, "photo added by the outlet since", None)      # re-crawl found a real one
             continue
-        url, how = real_picture(cache.get(f["article_key"], f), placeholders, page_count)
+        if f["article_key"] not in pages:                       # settled: searched before, nothing found
+            continue
+        url, how = real_picture(cache.get(f["article_key"], f), placeholders, page_count, pages[f["article_key"]])
         if url:
             result[f["article_key"]] = (url, how, None)
 
@@ -284,7 +304,9 @@ def main():
     for u in placeholders - known:
         db.image_placeholders.update_one({"url": u}, {"$setOnInsert": {"url": u}}, upsert=True)
     for f, url, how, src in changes:
-        upd = {"$set": {"image_url": url, "image_url_original": original(f), "image_fixed_by": how}}
+        upd = {"$set": {"image_url": url, "image_url_original": original(f), "image_fixed_by": how,
+                        "image_checked_hash": f.get("content_hash"),
+                        "page_image_urls": page_urls.get(f["article_key"], [])}}
         if src:
             upd["$set"]["image_from"] = src
         else:
