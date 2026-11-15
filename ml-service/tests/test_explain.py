@@ -66,7 +66,7 @@ def test_ablation_finds_the_loaded_words_in_order(fake):
 def test_top_words_keep_the_sentence_index_and_skip_weak_or_filler_words(fake):
     e = explain.explain_sentence("The shameless regime passed the corrupt budget", method="ablation")
     e["index"] = 4
-    top = explain.top_words([e])
+    top = explain.top_words([e], strict=False)
     assert [t["word"] for t in top] == ["shameless", "corrupt"]          # regime (0.33) is under the 0.4 cut-off
     assert top[0] == {"word": "shameless", "score": 1.0, "sentence": 4}
 
@@ -100,7 +100,7 @@ def test_punctuation_is_not_part_of_a_word(fake):
 def test_card_keeps_hyphenated_words_and_drops_filler():
     e = {"index": 1, "words": [{"word": "so-called", "score": 1.0}, {"word": "could", "score": 0.9},
                                {"word": "orphans", "score": 0.75}, {"word": "2026", "score": 0.8}]}
-    assert [w["word"] for w in explain.top_words([e])] == ["so-called", "orphans"]
+    assert [w["word"] for w in explain.top_words([e], strict=False)] == ["so-called", "orphans"]
 
 
 def test_card_leaves_out_names_and_common_words_but_keeps_a_capital_first_word():
@@ -108,7 +108,7 @@ def test_card_leaves_out_names_and_common_words_but_keeps_a_capital_first_word()
                                {"word": "as", "score": 0.5}, {"word": "Harry", "score": 1.0},
                                {"word": "slams", "score": 0.8}, {"word": "people", "score": 0.7},
                                {"word": "PTI", "score": 0.6}, {"word": "petty", "score": 0.35}]}
-    assert [w["word"] for w in explain.top_words([e])] == ["shocking", "slams"]
+    assert [w["word"] for w in explain.top_words([e], strict=False)] == ["shocking", "slams"]
 
 
 def test_card_leaves_out_the_articles_named_entities_even_at_sentence_start():
@@ -116,4 +116,17 @@ def test_card_leaves_out_the_articles_named_entities_even_at_sentence_start():
                                {"word": "desperate", "score": 0.9}]}
     names = explain.name_words([{"text": "Prince Harry", "type": "PERSON"}, {"text": "Meghan's", "type": "PERSON"}])
     assert {"harry", "prince", "meghan"} <= names
-    assert [w["word"] for w in explain.top_words([e], names=names)] == ["desperate"]
+    assert [w["word"] for w in explain.top_words([e], names=names, strict=False)] == ["desperate"]
+
+
+def test_strict_card_keeps_only_strong_describing_words():
+    pytest.importorskip("spacy")
+    try:
+        models.nlp()
+    except Exception:
+        pytest.skip("spaCy English model not installed")
+    e = {"index": 0, "sentence": "Mega-rich donors backed the slapdash plan that critics called a nightmare.",
+         "words": [{"word": "Mega-rich", "score": 0.9}, {"word": "donors", "score": 1.0}, {"word": "backed", "score": 0.95},
+                   {"word": "slapdash", "score": 0.85}, {"word": "plan", "score": 0.5}, {"word": "critics", "score": 0.9},
+                   {"word": "nightmare", "score": 0.82}]}
+    assert [w["word"] for w in explain.top_words([e], strict=True)] == ["mega-rich", "slapdash"]

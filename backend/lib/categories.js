@@ -29,6 +29,26 @@ function categoryOf(section) {
   return category;
 }
 
+// The ML pipeline marks editorials, columns and op-eds with is_opinion (from the outlet's category, the
+// page's section tag, an "Editorial" byline or the headline). That flag wins over the section name.
+function categoryOfDoc(doc) {
+  if (doc && doc.is_opinion === true) return 'Opinion';
+  return categoryOf(doc && doc.section);
+}
+
+// Bias levels, same cut-offs as the ML service (BIAS_LOW_BELOW / BIAS_HIGH_FROM):
+// Low below 35, Moderate 35-59, High 60 and above. The stored analysis.bias.level is used when present.
+const BIAS_LOW_BELOW = 35;
+const BIAS_HIGH_FROM = 60;
+function biasLevelOf(level, score) {
+  const named = String(level || '').trim().toLowerCase();
+  if (named === 'low') return 'Low';
+  if (named === 'moderate' || named === 'medium') return 'Moderate';
+  if (named === 'high') return 'High';
+  if (typeof score !== 'number' || Number.isNaN(score)) return null;
+  return score >= BIAS_HIGH_FROM ? 'High' : score >= BIAS_LOW_BELOW ? 'Moderate' : 'Low';
+}
+
 // Called after the article index is built: lists sections that ended up in "Other" (once each)
 const reported = new Set();
 function reportUnmatched() {
@@ -38,4 +58,4 @@ function reportUnmatched() {
   console.log(`Categories: these sections are shown as "Other" (edit backend/lib/categories.js to move them): ${fresh.join(', ')}`);
 }
 
-module.exports = { CATEGORIES, categoryOf, reportUnmatched };
+module.exports = { CATEGORIES, categoryOf, categoryOfDoc, biasLevelOf, BIAS_LOW_BELOW, BIAS_HIGH_FROM, reportUnmatched };

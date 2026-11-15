@@ -2,10 +2,11 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { formatDate } from '../../utils/formatters';
+import OpinionTag from './OpinionTag';
 import BiasScoreBadge from '../common/BiasScoreBadge';
 import SentimentTag from '../common/SentimentTag';
-import ArticleImage from '../common/ArticleImage';
 import { Layers } from 'lucide-react';
+import ArticleThumb from './ArticleThumb';
 
 const NewsCard = ({ article }) => {
   const item = {
@@ -16,24 +17,26 @@ const NewsCard = ({ article }) => {
   return (
     <motion.div variants={item} whileHover={{ y: -5 }} className="bg-bg-card border border-gray-800 rounded-xl overflow-hidden hover:border-gray-600 transition-all duration-300 shadow-lg group flex flex-col h-full">
       <div className="relative h-48 overflow-hidden">
-        <ArticleImage src={article.thumbnail} alt={article.headline} category={article.category} source={article.source}
-          credit={article.photoCredit} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+        <ArticleThumb src={article.thumbnail} source={article.source} category={article.category}
+          imgClassName="group-hover:scale-105 transition-transform duration-500" />
         <div className="absolute top-3 left-3 flex flex-col gap-2">
           <span className="bg-gray-900/80 backdrop-blur text-white text-xs px-2.5 py-1 rounded-md font-medium border border-gray-700/50">
             {article.source}
           </span>
         </div>
         <div className="absolute top-3 right-3 flex flex-col gap-2">
-          <BiasScoreBadge score={article.biasScore} size="sm" />
+          <BiasScoreBadge score={article.biasScore} level={article.biasLevel} size="sm" />
           <SentimentTag sentiment={article.sentiment} showIcon={false} />
         </div>
       </div>
       
       <div className="p-5 flex flex-col flex-grow">
         <div className="flex justify-between items-center mb-3">
-          <span className="text-xs font-semibold text-primary bg-primary/10 px-2 py-1 rounded">
-            {article.category}
-          </span>
+          {article.isOpinion
+            ? <OpinionTag className="text-xs normal-case tracking-normal px-2 py-1">{article.category}</OpinionTag>
+            : <span className="text-xs font-semibold text-primary bg-primary/10 px-2 py-1 rounded">
+                {article.category}
+              </span>}
           <span className="text-xs text-gray-400">
             {formatDate(article.publishedAt)}
           </span>

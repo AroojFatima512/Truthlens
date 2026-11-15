@@ -14,6 +14,7 @@ import toast from 'react-hot-toast';
 import { useSavedArticles } from '../context/SavedArticlesContext';
 import { useSettings } from '../context/SettingsContext';
 import { logUserActivity } from '../utils/historyService';
+import OpinionTag from '../components/news/OpinionTag';
 
 const recentlyLogged = new Map();   // articleId -> when it was last added to History (this tab)
 
@@ -187,9 +188,11 @@ const NewsDetailPage = () => {
                 <span className="bg-gray-800 text-white px-3 py-1 rounded-md text-sm font-medium border border-gray-700">
                   {article.source}
                 </span>
-                <span className="text-primary bg-primary/10 px-3 py-1 rounded-md text-sm font-medium">
-                  {article.category}
-                </span>
+                {article.isOpinion
+                  ? <OpinionTag className="text-sm normal-case tracking-normal px-3 py-1">Opinion piece</OpinionTag>
+                  : <span className="text-primary bg-primary/10 px-3 py-1 rounded-md text-sm font-medium">
+                      {article.category}
+                    </span>}
                 <div className="flex items-center gap-1 text-gray-400 text-sm ml-auto">
                   <Clock size={14} /> {formatDate(article.publishedAt)}
                 </div>

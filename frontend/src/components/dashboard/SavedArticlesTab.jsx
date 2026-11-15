@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { Search, Filter, Bookmark, Folder, Calendar, Clock, MoreVertical, ChevronDown, Trash2 } from 'lucide-react';
 import { useSavedArticles } from '../../context/SavedArticlesContext';
 import { Link } from 'react-router-dom';
-import ArticleImage from '../common/ArticleImage';
+import ArticleThumb from '../news/ArticleThumb';
+import { biasLevelOf } from '../../utils/biasColorMapper';
 
 const SavedArticlesTab = () => {
   const { savedArticles, toggleSaveArticle } = useSavedArticles();
@@ -43,10 +44,12 @@ const SavedArticlesTab = () => {
     
     let matchesBias = true;
     if (biasFilter !== 'All Bias Levels') {
+      // same levels as the badges and the feed filter: Low < 35, Moderate 35-59, High >= 60
       const bias = article.biasScore || parseInt(article.bias) || 0;
-      if (biasFilter === 'Low Bias') matchesBias = bias < 30;
-      else if (biasFilter === 'Medium Bias') matchesBias = bias >= 30 && bias <= 70;
-      else if (biasFilter === 'High Bias') matchesBias = bias > 70;
+      const level = biasLevelOf(bias, article.biasLevel);
+      if (biasFilter === 'Low Bias') matchesBias = level === 'low';
+      else if (biasFilter === 'Medium Bias') matchesBias = level === 'moderate';
+      else if (biasFilter === 'High Bias') matchesBias = level === 'high';
     }
 
     const matchesSentiment = sentimentFilter === 'All Sentiments' || article.sentiment?.toLowerCase() === sentimentFilter.toLowerCase();
@@ -187,9 +190,8 @@ const SavedArticlesTab = () => {
                 
                 {/* Left: Thumbnail */}
                 <div className="w-full md:w-36 lg:w-44 h-full shrink-0 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-800 relative bg-gray-100 dark:bg-gray-800">
-                  <ArticleImage src={article.thumbnail} alt={article.headline} category={article.category}
-                    source={article.source} credit={article.photoCredit}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" />
+                  <ArticleThumb src={article.thumbnail} source={article.source} category={article.category}
+                    imgClassName="group-hover:scale-105 transition-transform duration-500 ease-out" />
                   {/* Mobile-only badge */}
                   <div className="absolute bottom-2 left-2 md:hidden">
                     <div className="px-2 py-1 rounded bg-black/60 backdrop-blur-md text-white text-[10px] font-medium">
@@ -300,9 +302,9 @@ const SavedArticlesTab = () => {
                     className="w-full bg-transparent text-xs text-gray-300 py-2 pl-3 pr-8 appearance-none focus:outline-none cursor-pointer"
                   >
                     <option value="All Bias Levels" className="bg-gray-900">All Bias Levels</option>
-                    <option value="Low Bias" className="bg-gray-900">Low Bias (&lt;30%)</option>
-                    <option value="Medium Bias" className="bg-gray-900">Medium Bias (30-70%)</option>
-                    <option value="High Bias" className="bg-gray-900">High Bias (&gt;70%)</option>
+                    <option value="Low Bias" className="bg-gray-900">Low Bias (&lt;35%)</option>
+                    <option value="Medium Bias" className="bg-gray-900">Medium Bias (35–59%)</option>
+                    <option value="High Bias" className="bg-gray-900">High Bias (60%+)</option>
                   </select>
                   <ChevronDown size={14} className="text-gray-500 absolute right-3 pointer-events-none" />
                 </div>

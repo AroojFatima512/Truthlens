@@ -2,11 +2,11 @@ import React from 'react';
 import { GitCompareArrows, Scale, HeartPulse, Frown, Meh, Smile, Crown } from 'lucide-react';
 import GlowCard, { GlowTile } from '../common/GlowCard';
 import { sourceStyle } from '../../utils/sourceStyles';
-import { getBiasLabel } from '../../utils/biasColorMapper';
+import { getBiasLabel, biasLevelOf } from '../../utils/biasColorMapper';
 
 // Compare page, right column: how similar the coverage is, how biased each outlet is and the tone
 // each outlet takes. Everything comes from the articles on screen and the stored ML comparison.
-const levelOf = (score) => (score > 60 ? 'high' : score > 30 ? 'moderate' : 'low');
+const levelOf = (score, level) => biasLevelOf(score, level);   // Low < 35, Moderate 35-59, High >= 60
 const BAR = { high: 'from-red-500 to-rose-400', moderate: 'from-amber-400 to-yellow-300', low: 'from-emerald-500 to-teal-300' };
 const LEVEL_TEXT = { high: 'text-red-300', moderate: 'text-amber-200', low: 'text-emerald-300' };
 const TONE = {
@@ -69,7 +69,7 @@ const ComparisonSidePanel = ({ articles, comparison, similarity, noComparisonTex
       <GlowCard tone="rose" icon={Scale} title="Bias Comparison" subtitle={`${scored.length} outlet${scored.length === 1 ? '' : 's'}, most biased first`}>
         <div className="space-y-3">
           {sortedBias.map((a, i) => {
-            const lvl = levelOf(a.biasScore);
+            const lvl = levelOf(a.biasScore, a.biasLevel);
             return (
               <div key={a.id || a.source}>
                 <div className="flex items-center justify-between gap-2 text-sm mb-1">
@@ -78,7 +78,7 @@ const ComparisonSidePanel = ({ articles, comparison, similarity, noComparisonTex
                     <span className="truncate">{a.source}</span>
                     {i === 0 && sortedBias.length > 1 && <Crown size={13} className="text-amber-300 shrink-0" title="Most biased" />}
                   </span>
-                  <span className="shrink-0 text-xs"><span className="font-bold text-white">{a.biasScore}%</span> <span className={LEVEL_TEXT[lvl]}>{getBiasLabel(a.biasScore).replace(' Bias', '')}</span></span>
+                  <span className="shrink-0 text-xs"><span className="font-bold text-white">{a.biasScore}%</span> <span className={LEVEL_TEXT[lvl]}>{getBiasLabel(a.biasScore, a.biasLevel).replace(' Bias', '')}</span></span>
                 </div>
                 <div className="h-2 rounded-full bg-white/10 overflow-hidden">
                   <div className={`h-full rounded-full bg-gradient-to-r ${BAR[lvl]}`} style={{ width: `${Math.max(3, a.biasScore)}%` }} />

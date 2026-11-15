@@ -87,7 +87,7 @@ const StoryEvolutionTimeline = ({ versionHistory }) => {
                     <div className="flex flex-col gap-1">
                       <span className="text-[10px] text-gray-500 uppercase font-semibold">Bias Score</span>
                       <div className="flex items-center gap-2">
-                        <BiasScoreBadge score={version.biasScore} size="sm" showLabel />
+                        <BiasScoreBadge score={version.biasScore} level={version.biasLevel} size="sm" showLabel />
                         {biasShift !== 0 && (
                           <div className={`flex items-center gap-0.5 text-[10px] font-bold px-1.5 py-0.5 rounded ${
                             biasShift > 0 ? 'bg-red-500/10 text-red-400' : 'bg-emerald-500/10 text-emerald-400'

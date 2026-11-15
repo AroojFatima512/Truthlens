@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Sidebar from '../components/common/Sidebar';
 import BiasRadarChart from '../components/charts/BiasRadarChart';
+import CaptumLine from '../components/news/CaptumLine';
 import SentimentBarChart from '../components/charts/SentimentBarChart';
 import { fetchAnalyzeStatus, analyzeArticle } from '../services/meService';
 import { logUserActivity } from '../utils/historyService';
@@ -57,6 +58,7 @@ const Sentence = ({ s, explanation }) => {
   return (
     <div className={`border-l-4 ${bar} pl-3 py-1.5`}>
       <p className="text-[14px] leading-relaxed text-gray-200">{body}</p>
+      {s.biased && <CaptumLine explanation={explanation} />}
       <p className="text-[11px] text-gray-500 mt-0.5">
         <span className={s.biased ? 'text-red-400 font-semibold' : ''}>{pct}% biased</span>
         {' · '}<span className={sentimentStyle[s.sentiment]}>{s.sentiment}</span>
@@ -169,7 +171,7 @@ const AnalyzePage = () => {
                   </button>
                 </div>
               </div>
-              {running && <p className="text-xs text-gray-500 mt-3">The models run on this computer, so a long article can take up to a minute.</p>}
+              {running && <p className="text-xs text-gray-500 mt-3">The models run on this computer, so a long or very biased article can take 1–3 minutes.</p>}
               {error && (
                 <div className="mt-4 rounded-xl border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm text-red-200">
                   {error.message}
@@ -209,7 +211,7 @@ const AnalyzePage = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
                   <div className="bg-bg-card border border-gray-800 rounded-2xl p-5">
                     <h3 className="text-sm font-bold mb-1">Bias dimensions</h3>
-                    <p className="text-[11px] text-gray-500 mb-2">Political framing comes from the model; the other axes are measured rules. Selective reporting needs another outlet's version of the story, so it is 0 here.</p>
+                    <p className="text-[11px] text-gray-500 mb-2">Political framing is the bias of the sentences about political actors (not measured with fewer than 2 political sentences). Selective reporting needs another outlet's version of the story, so it is not measured here.</p>
                     <div className="h-[280px]"><BiasRadarChart data={result.report.dimensions} /></div>
                   </div>
                   <div className="bg-bg-card border border-gray-800 rounded-2xl p-5">

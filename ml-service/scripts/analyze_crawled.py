@@ -19,6 +19,7 @@ What it does, without touching any field the crawler writes:
 Your crawler's pipeline updates articles with $set, so these fields survive later re-crawls.
 """
 import argparse
+import json
 import hashlib
 from collections import Counter
 import sys
@@ -91,7 +92,9 @@ def stable_ids(groups, old, first, prefix):
 
 
 def post(api, path, payload):
-    r = requests.post(f"{api}{path}", json=payload, timeout=900)
+    # default=str: stored analyses can hold MongoDB dates (e.g. analysis.sentiment_rescored_at), which plain JSON can't
+    r = requests.post(f"{api}{path}", data=json.dumps(payload, default=str), timeout=900,
+                      headers={"Content-Type": "application/json"})
     r.raise_for_status()
     return r.json()
 
@@ -102,7 +105,8 @@ def main():
     p.add_argument("--mongo", default="mongodb://localhost:27017/")
     p.add_argument("--db", default="truthlens")
     p.add_argument("--days", type=int, default=3, help="Only group/compare articles published in the last N days")
-    p.add_argument("--explain-top-k", type=int, default=3)
+    p.add_argument("--explain-top-k", type=int, default=None,
+                   help="at most this many biased sentences per article are explained (default: the service's, 20)")
     p.add_argument("--threshold", type=float, default=None, help="Same-story similarity threshold (default: service config)")
     p.add_argument("--force", action="store_true",
                    help="Re-analyse every article, e.g. after changing the bias cut-offs (does not add Timeline versions)")

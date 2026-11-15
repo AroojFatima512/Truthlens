@@ -1,12 +1,17 @@
 """All settings in one place. Override any of them with environment variables."""
 import os
+from pathlib import Path
 
 # Folder where you saved the fine-tuned DeBERTa from the notebook (see notebooks/BiasDetection.ipynb, "Save the plain DeBERTa model").
 BIAS_MODEL_DIR = os.getenv("BIAS_MODEL_DIR", "models/bias_deberta")
 
-# 3-class sentiment (negative / neutral / positive). SST-2 DistilBERT has no "neutral",
-# so it can't fill the Neutral bar on your screens. Swap this for your own model later.
-SENTIMENT_MODEL = os.getenv("SENTIMENT_MODEL", "cardiffnlp/twitter-roberta-base-sentiment-latest")
+# 3-class sentiment (negative / neutral / positive). Base: cardiffnlp RoBERTa, pre-trained on tweets.
+# If models/sentiment_pk holds the model fine-tuned on Pakistani news (notebooks/finetune_sentiment.py),
+# that one is used. SENTIMENT_MODEL=cardiffnlp/twitter-roberta-base-sentiment-latest forces the pre-trained one.
+SENTIMENT_BASE = "cardiffnlp/twitter-roberta-base-sentiment-latest"
+_SENT_PK = Path(__file__).resolve().parents[1] / "models" / "sentiment_pk"
+SENTIMENT_MODEL = os.getenv("SENTIMENT_MODEL", str(_SENT_PK) if (_SENT_PK / "config.json").exists() else SENTIMENT_BASE)
+SENTIMENT_NAME = "models/sentiment_pk (fine-tuned on Pakistani news)" if SENTIMENT_MODEL == str(_SENT_PK) else SENTIMENT_MODEL
 
 SBERT_MODEL = os.getenv("SBERT_MODEL", "sentence-transformers/all-MiniLM-L6-v2")
 SPACY_MODEL = os.getenv("SPACY_MODEL", "en_core_web_sm")
@@ -17,7 +22,9 @@ BATCH_SIZE = int(os.getenv("BATCH_SIZE", "16"))
 
 # Explainable AI (Captum). Each explained sentence costs ~1-3 s on a laptop CPU.
 XAI_STEPS = int(os.getenv("XAI_STEPS", "20"))
-XAI_TOP_K_DEFAULT = int(os.getenv("XAI_TOP_K", "5"))     # the 5 most biased sentences of an article are explained
+XAI_TOP_K_DEFAULT = int(os.getenv("XAI_TOP_K", "20"))    # EVERY biased sentence (p >= 0.5) is explained, at most 20
+XAI_PHRASES = os.getenv("XAI_PHRASES", "1") != "0"        # also test 2- and 3-word phrases ("machinery of war")
+XAI_FRAMING_SHARE = float(os.getenv("XAI_FRAMING_SHARE", "0.25"))   # top word/phrase explains < 25%: framing
 # "ablation" (Captum FeatureAblation, word by word: clearer) or "ig" (Integrated Gradients, as in the notebook)
 XAI_METHOD = os.getenv("XAI_METHOD", "ablation")
 # website card: only adjectives/adverbs scoring >= 0.8 ("1"), or every word scoring >= 0.4 ("0")

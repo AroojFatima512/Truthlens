@@ -260,7 +260,7 @@ router.put('/preferences', wrap(async (req, res) => {
 // The copy keeps the card readable even if the article is later removed from the site.
 const bookmarks = () => getDb().collection('bookmarks');
 const MAX_BOOKMARKS = 1000;
-const CARD_FIELDS = ['headline', 'title', 'source', 'category', 'section', 'biasScore', 'bias', 'sentiment', 'publishedAt',
+const CARD_FIELDS = ['headline', 'title', 'source', 'category', 'section', 'biasScore', 'biasLevel', 'isOpinion', 'bias', 'sentiment', 'publishedAt',
   'thumbnail', 'summary', 'match', 'similarity', 'sourceUrl', 'storyId', 'url'];
 const cardOf = (a = {}) => Object.fromEntries(CARD_FIELDS.filter((k) => a[k] !== undefined && a[k] !== null)
   .map((k) => [k, typeof a[k] === 'string' ? a[k].slice(0, 600) : a[k]])

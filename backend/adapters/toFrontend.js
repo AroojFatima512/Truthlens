@@ -15,7 +15,7 @@ function toKey(id) {
   return best ? `${best}:${s.slice(best.length + 1)}` : s.replace('-', ':');   // fallback: first dash
 }
 
-const { categoryOf } = require('../lib/categories');
+const { categoryOfDoc, biasLevelOf } = require('../lib/categories');
 const { photoOf } = require('../lib/genericImages');
 
 const cap = (s) => (s ? s.charAt(0).toUpperCase() + s.slice(1) : s);
@@ -65,6 +65,38 @@ function groupEntities(entities) {
   return out;
 }
 
+// Captum explanations of the biased sentences (up to 20 per article). Large: detail and report only.
+//   units     words and 2-3 word phrases, strongest first; share = part of the decision each explains (0-1)
+//   topShare  how much of the decision the strongest unit explains
+//   decisive  removing the strongest unit makes the sentence Non-biased
+//   framing   no word or phrase explains much: the sentence is biased by its framing as a whole
+function toExplanations(a) {
+  return (a.explanations || []).map((e) => ({
+    index: e.index,
+    pBiased: e.p_biased ?? null,
+    units: (e.units || []).map((u) => ({ text: u.text, words: u.words, score: u.score, share: u.share ?? null })),
+    topShare: e.top_share ?? null,
+    decisive: !!e.decisive,
+    framing: !!e.framing,
+    words: e.words || [],
+  }));
+}
+
+// Political framing, measured: A = bias of the political sentences (score, null = fewer than 2),
+// B = tone towards each political actor, and how differently the actors are treated (oneSidedness).
+function toPolitical(a) {
+  const p = a.political;
+  if (!p) return null;
+  return {
+    score: p.score ?? null,
+    politicalSentences: p.political_sentences ?? 0,
+    actors: (p.actors || []).map((x) => ({
+      name: x.name, sentences: x.sentences ?? 0, tone: x.tone ?? null, label: x.label || 'neutral', biasedSentences: x.biased_sentences ?? 0,
+    })),
+    oneSidedness: p.one_sidedness ?? null,
+  };
+}
+
 function toArticle(doc, { related = [], similarity = null, full = true } = {}) {
   const a = doc.analysis || {};
   const entities = a.entities || [];
@@ -82,12 +114,13 @@ function toArticle(doc, { related = [], similarity = null, full = true } = {}) {
     headline: doc.headline,
     source: doc.source,
     sourceUrl: doc.url,                                    // link to the original article
-    category: categoryOf(doc.section),                    // grouped: Pakistan, World, Business, Opinion, ...
+    category: categoryOfDoc(doc),                         // grouped: Pakistan, World, Business, Opinion, ...
+    isOpinion: doc.is_opinion === true,                   // editorial / column / op-ed (set by the ML pipeline)
     section: cap(doc.section) || null,                     // the outlet's own section name
     publishedAt: iso(doc.published_at),
     thumbnail: photoOf(doc.image_url),                     // null = no real photo (logo / shared banner): the UI shows a placeholder
     biasScore: round(a.bias?.score),
-    biasLevel: a.bias?.level || null,                      // "Low" | "Moderate" | "High"
+    biasLevel: biasLevelOf(a.bias?.level, a.bias?.score),  // "Low" | "Moderate" | "High" (Low < 35, Moderate 35-59, High >= 60)
     sentiment: a.sentiment?.label || 'neutral',
     credibilityScore: null,                                // no model computes this: hide it in the UI
     similarity: similarity == null ? null : Math.round(similarity * 100),   // replaces Math.random() in the feed
@@ -118,6 +151,8 @@ function toArticle(doc, { related = [], similarity = null, full = true } = {}) {
       index: s.index, text: s.text, biased: s.biased, pBiased: s.p_biased, sentiment: s.sentiment,
       biasWords: (s.bias_words || []).map((w) => w.word),   // word model: dark highlight inside a Biased sentence
     })) : undefined,
+    explanations: full ? toExplanations(a) : undefined,    // Captum, per biased sentence (matches sentences[].index)
+    political: full ? toPolitical(a) : undefined,
   };
 }
 
@@ -130,16 +165,20 @@ function toBiasReport(doc) {
   const pct = (n) => Math.round((100 * (n || 0)) / total);
   return {
     overallBias: round(a.bias?.score) ?? 0,
-    biasLevel: a.bias?.level || null,
+    biasLevel: biasLevelOf(a.bias?.level, a.bias?.score),
+    // null = not measured, never 0: selective reporting needs a second outlet on the same story,
+    // political framing needs at least 2 political sentences. Averages must skip nulls.
     dimensions: {
-      politicalFraming: round(d.political_framing) ?? 0,
-      emotionalLanguage: round(d.emotional_language) ?? 0,
-      selectiveReporting: round(d.selective_reporting) ?? 0,
-      sourceAttribution: round(d.source_attribution) ?? 0,
-      headlineMismatch: round(d.headline_mismatch) ?? 0,
+      politicalFraming: round(d.political_framing),
+      emotionalLanguage: round(d.emotional_language),
+      selectiveReporting: round(d.selective_reporting),
+      sourceAttribution: round(d.source_attribution),
+      headlineMismatch: round(d.headline_mismatch),
     },
-    // null dimensions could not be measured (selective reporting needs a second outlet on the same story)
-    unavailable: Object.entries(d).filter(([, v]) => v == null).map(([k]) => k),
+    unavailable: ['political_framing', 'emotional_language', 'selective_reporting', 'source_attribution', 'headline_mismatch']
+      .filter((k) => typeof d[k] !== 'number'),
+    explanations: toExplanations(a),
+    political: toPolitical(a),
     sentimentBreakdown: { positive: pct(dist.positive), neutral: pct(dist.neutral), negative: pct(dist.negative) },
   };
 }
@@ -262,4 +301,4 @@ function toSource({ name, url, articlesCount, lastCrawled, category, status, upd
   };
 }
 
-module.exports = { toId, toKey, registerKeyPrefixes, groupEntities, iso, toArticle, toBiasReport, toComparison, storyLinks, toSource };
+module.exports = { toId, toKey, registerKeyPrefixes, groupEntities, iso, toArticle, toBiasReport, toExplanations, toPolitical, toComparison, storyLinks, toSource };

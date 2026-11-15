@@ -1,6 +1,7 @@
 import React from 'react';
 import { formatDate } from '../../utils/formatters';
 import BiasScoreBadge from '../common/BiasScoreBadge';
+import { biasLevelOf } from '../../utils/biasColorMapper';
 import { sourceStyle } from '../../utils/sourceStyles';
 
 const sentimentBadge = (sentiment) => {
@@ -54,7 +55,7 @@ const SideBySideLayout = ({ articles, focusIds = [] }) => {
           <div className="mt-5 space-y-4 text-sm text-gray-300">
             <p>{article.summary}</p>
             <div className="flex flex-wrap items-center gap-2">
-              <span className={`rounded-full px-3 py-1 text-xs font-semibold ${article.biasScore >= 60 ? 'bg-red-500/15 text-red-300 border border-red-500/20' : article.biasScore >= 40 ? 'bg-yellow-500/15 text-yellow-300 border border-yellow-500/20' : 'bg-emerald-500/15 text-emerald-300 border border-emerald-500/20'}`}>
+              <span className={`rounded-full px-3 py-1 text-xs font-semibold ${{ high: 'bg-red-500/15 text-red-300 border border-red-500/20', moderate: 'bg-yellow-500/15 text-yellow-300 border border-yellow-500/20', low: 'bg-emerald-500/15 text-emerald-300 border border-emerald-500/20' }[biasLevelOf(article.biasScore, article.biasLevel)]}`}>
                 Bias: {article.biasScore}%
               </span>
               <span className={`rounded-full px-3 py-1 text-xs font-semibold ${article.sentiment === 'positive' ? 'bg-emerald-500/15 text-emerald-300 border border-emerald-500/20' : article.sentiment === 'negative' ? 'bg-red-500/15 text-red-300 border border-red-500/20' : 'bg-slate-500/15 text-slate-300 border border-slate-500/20'}`}>

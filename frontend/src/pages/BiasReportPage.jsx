@@ -5,7 +5,7 @@ import BiasScoreBadge from '../components/common/BiasScoreBadge';
 import SentimentTag from '../components/common/SentimentTag';
 import BiasRadarChart from '../components/charts/BiasRadarChart';
 import SentimentBarChart from '../components/charts/SentimentBarChart';
-import BiasExplanation, { DIMENSIONS, SNAKE } from '../components/news/BiasExplanation';
+import BiasExplanation, { DIMENSIONS, SNAKE, NOT_MEASURED } from '../components/news/BiasExplanation';
 import EntityPanel from '../components/news/EntityPanel';
 import { fetchArticleById, fetchCredibility } from '../services/newsService';
 import { fetchBiasReport } from '../services/biasService';
@@ -109,7 +109,7 @@ const BiasReportPage = () => {
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                 <div className="bg-gray-900/60 p-3 rounded-xl border border-gray-800 flex flex-col items-center gap-1.5">
                   <span className="text-gray-400 font-semibold text-xs uppercase tracking-wider">Overall Bias Rating</span>
-                  <BiasScoreBadge score={report.overallBias} showLabel />
+                  <BiasScoreBadge score={report.overallBias} level={report.biasLevel} showLabel />
                 </div>
                 <div className="bg-gray-900/60 p-3 rounded-xl border border-gray-800 flex flex-col items-center gap-1.5">
                   <span className="text-gray-400 font-semibold text-xs uppercase tracking-wider">Dominant Sentiment</span>
@@ -137,7 +137,7 @@ const BiasReportPage = () => {
                 <Title icon={ShieldAlert}>What Each Dimension Means</Title>
                 <ul className="space-y-3">
                   {dims.map(([k, v]) => {
-                    const off = unavailable.has(SNAKE[k]);
+                    const off = unavailable.has(SNAKE[k]) || typeof v !== 'number';
                     return (
                       <li key={k}>
                         <div className="flex items-center justify-between text-sm mb-1">
@@ -148,7 +148,7 @@ const BiasReportPage = () => {
                           {!off && <div className={`h-full rounded-full ${barColor(v)}`} style={{ width: `${Math.max(2, v)}%` }} />}
                         </div>
                         <p className="text-[11px] text-gray-500">
-                          {off ? "Needs another outlet's version of the same story." : `Higher means more ${DIMENSIONS[k][1]}.`}
+                          {off ? (NOT_MEASURED[SNAKE[k]] || 'Not measured for this article.') : DIMENSIONS[k][2]}
                         </p>
                       </li>
                     );

@@ -18,7 +18,7 @@ export const fetchRecommendations = async (limit = 6) => (await api.get('/me/rec
 export const fetchAnalyzeStatus = async () => (await api.get('/analyze/status')).data;
 export const analyzeArticle = async (title, body) => {
   try {
-    return (await api.post('/analyze', { title, body }, { timeout: 130000 })).data;
+    return (await api.post('/analyze', { title, body }, { timeout: 250000 })).data;
   } catch (e) {
     const err = new Error(e.response?.data?.message || (e.code === 'ECONNABORTED' ? 'The analysis took too long.' : 'Could not analyse the article.'));
     err.hint = e.response?.data?.hint;

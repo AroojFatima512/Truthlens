@@ -7,7 +7,7 @@
 // change (checked every 30 seconds, and right after "Run crawl now" finishes).
 const { getDb } = require('../db');
 const { storyLinks, toId, registerKeyPrefixes } = require('../adapters/toFrontend');
-const { categoryOf, reportUnmatched } = require('./categories');
+const { categoryOfDoc, biasLevelOf, reportUnmatched } = require('./categories');
 const genericImages = require('./genericImages');
 const sourceSettings = require('./sourceSettings');
 
@@ -21,7 +21,7 @@ const time = (v) => {
 };
 
 const INDEX_PROJECTION = {
-  article_key: 1, source: 1, headline: 1, section: 1, published_at: 1, crawled_at: 1, story_id: 1, image_url: 1,
+  article_key: 1, source: 1, headline: 1, section: 1, is_opinion: 1, published_at: 1, crawled_at: 1, story_id: 1, image_url: 1,
   'analysis.bias.score': 1, 'analysis.bias.level': 1, 'analysis.sentiment.label': 1,
   'analysis.entities.text': 1, 'analysis.entities.type': 1,
 };
@@ -63,11 +63,12 @@ async function build() {
       source: d.source || 'Unknown',
       headline: d.headline || '',
       section: d.section || '',
-      category: categoryOf(d.section),
+      category: categoryOfDoc(d),
+      isOpinion: d.is_opinion === true,
       ts: time(d.published_at),
       crawledTs: time(d.crawled_at),
       bias: d.analysis?.bias?.score ?? null,
-      level: d.analysis?.bias?.level ?? null,
+      level: biasLevelOf(d.analysis?.bias?.level, d.analysis?.bias?.score),
       sentiment: d.analysis?.sentiment?.label || 'neutral',
       storyId: d.story_id || null,
       image: genericImages.photoOf(d.image_url),

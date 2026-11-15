@@ -8,6 +8,7 @@ from collections import Counter
 import numpy as np
 
 from . import config, explain, models, words
+from .political import political_framing
 from .text_utils import clean, has_attribution, split_sentences
 
 
@@ -23,6 +24,21 @@ def _sentiment_names(clf) -> tuple[int, int, int]:
             clf.label_index("positive", "pos", "label_2"))
 
 
+def sentiment_summary(sclf, sentences: list[str]):
+    """Per-sentence labels, the article's sentiment block and the emotional-language score (0-100).
+    Shared by analyze_article and scripts/resentiment.py, so a re-scored article matches a fresh analysis."""
+    neg, neu, pos = _sentiment_names(sclf)
+    s_prob = sclf.predict_proba(sentences)[:, [neg, neu, pos]]
+    s_label = np.array(["negative", "neutral", "positive"])[np.argmax(s_prob, axis=1)]
+    dist = Counter(s_label.tolist())
+    mean_s = s_prob.mean(axis=0)
+    sentiment = {"label": ("negative", "neutral", "positive")[int(np.argmax(mean_s))],
+                 "polarity": round(float(mean_s[2] - mean_s[0]), 3),          # -1 (negative) .. +1 (positive)
+                 "distribution": {k: int(dist.get(k, 0)) for k in ("positive", "neutral", "negative")}}
+    emotional = round(100 * float((1 - s_prob[:, 1]).mean()), 1)
+    return s_label.tolist(), sentiment, emotional
+
+
 def extract_entities(text: str) -> list[dict]:
     try:
         doc = models.nlp()(text)
@@ -34,11 +50,17 @@ def extract_entities(text: str) -> list[dict]:
 
 
 def headline_mismatch(title: str, sentences: list[str]) -> float | None:
-    """0 = headline matches the opening of the story, 100 = unrelated. Heuristic: SBERT cosine."""
+    """0 = the headline is about what the whole article is about, 100 = about something else.
+    Sentence-BERT: the headline's embedding is compared with the article's overall meaning, the average of
+    the embeddings of ALL its sentences (the model reads at most 256 tokens at once, so a whole article cannot be
+    embedded in one piece). It measures meaning, not tone. Short, abstract headlines (editorials such as
+    "Nuclear Threshold") score high because they name the theme, not the event."""
     if not title or not sentences:
         return None
-    t, lead = models.embed([title, " ".join(sentences[:3])])
-    cos = float(np.dot(t, lead))
+    e = models.embed([title] + list(sentences))
+    centre = e[1:].mean(axis=0)
+    centre /= (np.linalg.norm(centre) or 1.0)
+    cos = float(np.dot(e[0], centre))
     return round(100 * min(1.0, max(0.0, (0.8 - cos) / 0.8)), 1)
 
 
@@ -56,20 +78,13 @@ def analyze_article(title: str, body: str, explain_top_k: int | None = None) -> 
     bias_score = round(100 * float(p_bias.mean()), 1)
 
     # ---- Sentiment per sentence -> distribution ---------------------------------------------
-    sclf = models.sentiment_model()
-    neg, neu, pos = _sentiment_names(sclf)
-    s_prob = sclf.predict_proba(sentences)
-    s_label = np.array(["negative", "neutral", "positive"])[
-        np.argmax(s_prob[:, [neg, neu, pos]], axis=1)]
-    dist = Counter(s_label.tolist())
-    mean_s = s_prob[:, [neg, neu, pos]].mean(axis=0)
-    polarity = float(mean_s[2] - mean_s[0])                   # -1 (negative) .. +1 (positive)
+    s_label, sentiment, emotional = sentiment_summary(models.sentiment_model(), sentences)
 
     # ---- Bias dimensions (radar chart). Heuristics: describe them as such in the report ------
     attributed = float(np.mean([has_attribution(s) for s in sentences]))
     dimensions = {
-        "political_framing": bias_score,                                        # model output
-        "emotional_language": round(100 * float((1 - s_prob[:, neu]).mean()), 1),  # share of non-neutral tone
+        "political_framing": None,              # set below: bias of the political sentences (app/political.py)
+        "emotional_language": emotional,                                        # share of non-neutral tone
         "headline_mismatch": headline_mismatch(title, sentences),
         "source_attribution": round(100 * (1 - attributed), 1),                  # % of sentences with no "said", quote, "according to"
         "selective_reporting": None,                                            # needs other sources: /compare
@@ -79,7 +94,10 @@ def analyze_article(title: str, body: str, explain_top_k: int | None = None) -> 
                      "sentiment": sl, "attributed": has_attribution(s)}
                     for i, (s, pb, sl) in enumerate(zip(sentences, p_bias, s_label))]
 
-    # ---- Explainable AI for the most biased sentences ----------------------------------------
+    political = political_framing(per_sentence)
+    dimensions["political_framing"] = political["score"]
+
+    # ---- Explainable AI for the biased sentences (all of them, most biased first, at most k) ---
     k = config.XAI_TOP_K_DEFAULT if explain_top_k is None else explain_top_k
     explanations = []
     for i in np.argsort(-p_bias)[:k]:
@@ -100,14 +118,13 @@ def analyze_article(title: str, body: str, explain_top_k: int | None = None) -> 
         "bias": {"score": bias_score, "level": bias_level(bias_score),
                  "biased_sentence_share": round(100 * float((p_bias >= 0.5).mean()), 1),
                  "headline_p_biased": None if p_bias_title is None else round(p_bias_title, 4)},
-        "sentiment": {"label": ("negative", "neutral", "positive")[int(np.argmax(mean_s))],
-                      "polarity": round(polarity, 3),
-                      "distribution": {k2: int(dist.get(k2, 0)) for k2 in ("positive", "neutral", "negative")}},
+        "sentiment": sentiment,
         "dimensions": dimensions,
+        "political": political,                      # political sentences, actors and their tone (app/political.py)
         "entities": entities,
         "sentences": per_sentence,
         "explanations": explanations,
         "highlight_words": highlights,
         "highlight_method": method,
-        "model": {"bias": config.BIAS_MODEL_DIR, "sentiment": config.SENTIMENT_MODEL},
+        "model": {"bias": config.BIAS_MODEL_DIR, "sentiment": config.SENTIMENT_NAME},
     }

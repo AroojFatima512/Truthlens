@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { AlertCircle, AlertTriangle, CheckCircle2, Frown, Meh, Smile, Users, BarChart2, ChevronRight, Layers } from 'lucide-react';
 import GlowCard, { GlowTile } from '../common/GlowCard';
-import { getBiasLabel } from '../../utils/biasColorMapper';
+import { getBiasLabel, biasLevelOf as levelOf } from '../../utils/biasColorMapper';
 
 // Article page, right column: the quick verdict (bias, sentiment, how much of the text was rated
 // biased) and the way to the Full Report and the comparison with other outlets.
@@ -16,7 +16,7 @@ const SENTIMENT_STYLE = {
   neutral:  { text: 'text-slate-200',   ring: 'border-slate-400/40 bg-slate-400/10 text-slate-300',       Icon: Meh },
   positive: { text: 'text-emerald-300', ring: 'border-emerald-300/50 bg-emerald-400/10 text-emerald-300', Icon: Smile },
 };
-export const biasLevelOf = (score) => (score > 60 ? 'high' : score > 30 ? 'moderate' : 'low');
+export const biasLevelOf = (score, level) => levelOf(score, level);   // Low < 35, Moderate 35-59, High >= 60
 
 // a small coloured icon next to the tile's label (one circle only, never covering the value)
 const TileIcon = ({ className, Icon }) => {
@@ -25,7 +25,8 @@ const TileIcon = ({ className, Icon }) => {
 };
 
 const AtAGlanceCard = ({ article }) => {
-  const b = BIAS_STYLE[biasLevelOf(article.biasScore ?? 0)];
+  const level = biasLevelOf(article.biasScore ?? 0, article.biasLevel);
+  const b = BIAS_STYLE[level];
   const sentiment = (article.sentiment || 'neutral').toLowerCase();
   const s = SENTIMENT_STYLE[sentiment] || SENTIMENT_STYLE.neutral;
   const sig = article.biasSignals || {};
@@ -41,7 +42,7 @@ const AtAGlanceCard = ({ article }) => {
             <TileIcon className={b.ring} Icon={b.Icon} />
           </div>
           <p className="text-[26px] font-extrabold text-white leading-none mb-2">{article.biasScore ?? '–'}%</p>
-          <span className={`inline-block whitespace-nowrap rounded-md border px-2 py-0.5 text-[11px] font-semibold ${b.pill}`}>{getBiasLabel(article.biasScore ?? 0)}</span>
+          <span className={`inline-block whitespace-nowrap rounded-md border px-2 py-0.5 text-[11px] font-semibold ${b.pill}`}>{getBiasLabel(article.biasScore ?? 0, article.biasLevel)}</span>
         </GlowTile>
         <GlowTile className="min-w-0">
           <div className="flex items-center justify-between gap-2 mb-1">
@@ -59,7 +60,7 @@ const AtAGlanceCard = ({ article }) => {
             {sig.biasedSentences} of {sig.totalSentences} sentences rated biased · {minutes} min read
           </p>
           <div className="h-1.5 rounded-full bg-white/10 overflow-hidden" title={`${Math.round((100 * sig.biasedSentences) / sig.totalSentences)}% of sentences`}>
-            <div className={`h-full rounded-full ${biasLevelOf(article.biasScore ?? 0) === 'high' ? 'bg-red-400' : biasLevelOf(article.biasScore ?? 0) === 'moderate' ? 'bg-amber-300' : 'bg-emerald-400'}`}
+            <div className={`h-full rounded-full ${level === 'high' ? 'bg-red-400' : level === 'moderate' ? 'bg-amber-300' : 'bg-emerald-400'}`}
               style={{ width: `${Math.max(3, (100 * sig.biasedSentences) / sig.totalSentences)}%` }} />
           </div>
         </div>

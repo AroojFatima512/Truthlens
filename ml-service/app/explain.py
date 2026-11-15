@@ -73,24 +73,95 @@ def explain_sentence(sentence: str, n_steps: int | None = None, method: str | No
             return logits[:, target] - torch.logsumexp(others, dim=1)
 
         pad = clf.tokenizer.pad_token_id or 0
-        feature_mask = torch.zeros_like(input_ids)
-        for gi, g in enumerate(groups):
-            feature_mask[0, g] = gi + 1
-        # a removed word: its tokens become padding AND get attention 0, so the model doesn't see them at all.
-        # Special tokens and punctuation (feature 0, also "ablated" but onto themselves) never change.
-        base_ids = torch.where(feature_mask > 0, torch.full_like(input_ids, pad), input_ids)
-        base_mask = torch.where(feature_mask > 0, torch.zeros_like(attn), attn)
-        with torch.no_grad():
-            attr, _ = FeatureAblation(margin).attribute((input_ids, attn), baselines=(base_ids, base_mask),
-                                                        feature_mask=(feature_mask, feature_mask),
-                                                        perturbations_per_eval=16)
-        token_scores = attr.squeeze(0).detach().cpu().numpy().astype(float)
-        raw = np.array([float(token_scores[g[0]]) for g in groups]) if groups else np.zeros(0)   # same value per word
+
+        def removed(word_sets):
+            """Captum FeatureAblation with one feature per set of words: the drop in the Biased margin when that
+            set is removed. A removed word: its tokens become padding AND get attention 0, so the model doesn't
+            see them at all. Special tokens and punctuation (feature 0) never change."""
+            feature_mask = torch.zeros_like(input_ids)
+            for fi, ws in enumerate(word_sets):
+                for w in ws:
+                    feature_mask[0, groups[w]] = fi + 1
+            base_ids = torch.where(feature_mask > 0, torch.full_like(input_ids, pad), input_ids)
+            base_mask = torch.where(feature_mask > 0, torch.zeros_like(attn), attn)
+            with torch.no_grad():
+                attr, _ = FeatureAblation(margin).attribute((input_ids, attn), baselines=(base_ids, base_mask),
+                                                            feature_mask=(feature_mask, feature_mask),
+                                                            perturbations_per_eval=32)
+            tok = attr.squeeze(0).detach().cpu().numpy().astype(float)
+            return [float(tok[groups[ws[0]][0]]) for ws in word_sets]
+
+        raw = np.array(removed([[w] for w in range(len(groups))])) if groups else np.zeros(0)
+        if groups and config.XAI_PHRASES:
+            extra.update(_phrases(removed, raw, texts, groups, input_ids, attn, margin, forward, target, pad, torch))
 
     with torch.no_grad():
         p_biased = float(torch.softmax(forward(input_ids, attn), -1)[0, target])
     return {"sentence": sentence, "p_biased": round(p_biased, 4), "method": method,
             "words": scale_words(texts, raw), **extra}
+
+
+def _phrases(removed, raw, texts, groups, input_ids, attn, margin, forward, target, pad, torch) -> dict:
+    """Phrase-level explanation on top of the single words (Captum FeatureAblation again, on 2- and 3-word
+    phrases), and how much of the decision the strongest part explains.
+
+    units      : up to 3 non-overlapping words or phrases that lower the model's "Biased" margin most when removed.
+                 A phrase is listed only if removing it lowers the margin clearly more (>= 1.2x) than removing its
+                 words one at a time, added up, i.e. the words back each other up ("machinery of war").
+    share      : a unit's drop / the drop when ALL words are removed (0-1): how much of the model's push towards
+                 "Biased" that unit accounts for.
+    decisive   : removing the top unit turns the sentence Non-biased (p < 0.5).
+    framing    : no unit accounts for much (top share < config.XAI_FRAMING_SHARE) and none is decisive: the model
+                 reacted to the sentence as a whole, not to particular words.
+    """
+    n = len(groups)
+    with torch.no_grad():
+        m_full = float(margin(input_ids, attn)[0])
+        every = [i for g in groups for i in g]
+        ids0, mask0 = input_ids.clone(), attn.clone()
+        ids0[0, every], mask0[0, every] = pad, 0
+        total = m_full - float(margin(ids0, mask0)[0])                 # the drop when every word is removed
+    cands = [((w,), float(raw[w])) for w in range(n)]
+
+    def flips(word_idx) -> bool:
+        ids1, mask1 = input_ids.clone(), attn.clone()
+        pos = [i for w in word_idx for i in groups[w]]
+        ids1[0, pos], mask1[0, pos] = pad, 0
+        with torch.no_grad():
+            return float(torch.softmax(forward(ids1, mask1), -1)[0, target]) < 0.5
+
+    # if removing the strongest single word already makes the sentence Non-biased, that word is the answer:
+    # the phrase passes (about 2x the work) are skipped
+    top_word = int(np.argmax(raw)) if n else None
+    skip_phrases = top_word is not None and raw[top_word] > 0 and flips([top_word])
+    for k in (2, 3):
+        if n < k or skip_phrases:
+            continue
+        for off in range(k):                                           # FeatureAblation needs disjoint features
+            sets = [list(range(i, i + k)) for i in range(off, n - k + 1, k)]
+            if sets:
+                cands += [(tuple(ws), d) for ws, d in zip(sets, removed(sets))]
+    best_word = {w: float(raw[w]) for w in range(n)}
+    # a phrase counts only if removing it does clearly more (>= 1.2x) than removing its words one by one, added up:
+    # the words back each other up ("machinery of war": take out one and the rest still carries the framing)
+    keep = [(ws, d) for ws, d in cands
+            if d > 0 and (len(ws) == 1 or d >= 1.2 * sum(max(0.0, best_word[w]) for w in ws) + 1e-9)]
+    chosen, used = [], set()
+    for ws, d in sorted(keep, key=lambda x: -x[1]):
+        if used.isdisjoint(ws):
+            chosen.append((ws, d))
+            used.update(ws)
+        if len(chosen) == 3:
+            break
+    top = chosen[0][1] if chosen else 0.0
+    share = (lambda d: round(min(1.0, max(0.0, d / total)), 3)) if total > 1e-6 else (lambda d: None)
+    units = [{"text": " ".join(texts[w] for w in ws), "words": len(ws), "score": round(d / top, 4) if top else 0.0,
+              "share": share(d)} for ws, d in chosen]
+    decisive = bool(chosen) and (skip_phrases if chosen[0][0] == (top_word,) else flips(chosen[0][0]))
+    top_share = units[0]["share"] if units else None
+    framing = (not decisive) and (top_share is None or top_share < config.XAI_FRAMING_SHARE)
+    return {"units": units, "top_share": top_share, "decisive": decisive, "framing": framing,
+            "margin": round(m_full, 4), "margin_drop_all_words": round(total, 4)}
 
 
 _WORD = re.compile(r"\w+(?:['’\-]\w+)*")
@@ -163,15 +234,39 @@ def name_words(entities) -> set[str]:
     return out
 
 
-def top_words(explanations: list[dict], k: int = 8, min_score: float = 0.4, names: set[str] | None = None) -> list[dict]:
+def describing_words(sentence: str) -> set[str] | None:
+    """Lower-cased adjectives and adverbs of a sentence (spaCy), incl. hyphenated adjectives ("mega-rich").
+    None if spaCy is not available (then the card does not filter by word type)."""
+    try:
+        doc = models.nlp()(sentence)
+    except Exception:
+        return None
+    out = {t.text.lower() for t in doc if t.pos_ in ("ADJ", "ADV")}
+    for m in re.finditer(r"\w+(?:-\w+)+", sentence):          # spaCy splits "mega-rich" into 3 tokens
+        span = doc.char_span(m.start(), m.end(), alignment_mode="expand")
+        if span is not None and any(t.pos_ in ("ADJ", "ADV") for t in span):
+            out.add(m.group().lower())
+    return out
+
+
+def top_words(explanations: list[dict], k: int = 8, min_score: float | None = None, names: set[str] | None = None,
+              strict: bool | None = None) -> list[dict]:
     """Strongest bias-driving words across explained sentences, for the 'Explainable AI Analysis' card.
+    strict (config.XAI_CARD_STRICT, default on): only adjectives and adverbs scoring >= 0.8 (the describing
+    words: "slapdash", "polarising", "so-called", "unsubstantiated"). Measured on 183 highlighted words this
+    raised the share a human judged to be loaded wording from 22% to about 44%, keeping two thirds of them;
+    nouns and verbs the model leans on stay visible in the per-sentence view.
     Left out of the card (still visible per sentence): filler and common words, numbers, and names, i.e.
     capitalised words that don't start the sentence (Trump, Harry, Pakistan, PTI) and the article's named
     entities (`names`, from name_words), because a name is the topic, not loaded language.
     `sentence` is the index of the sentence the word came from."""
     names = names or set()
+    strict = config.XAI_CARD_STRICT if strict is None else strict
+    if min_score is None:
+        min_score = 0.8 if strict else 0.4
     best: dict[str, tuple[float, int | None]] = {}
     for e in explanations:
+        allowed = describing_words(e.get("sentence", "")) if strict and e.get("sentence") else None
         for pos, w in enumerate(e["words"]):
             word = w["word"]
             key = word.strip(".,;:!?\"'“”‘’()—-").lower()
@@ -179,6 +274,8 @@ def top_words(explanations: list[dict], k: int = 8, min_score: float = 0.4, name
             if len(key) <= 2 or not plain.isalpha() or key in config.STOPWORDS or key in CARD_SKIP:
                 continue
             if (pos > 0 and word[:1].isupper()) or key in names:      # a name
+                continue
+            if allowed is not None and key not in allowed:            # strict: describing words only
                 continue
             if w["score"] >= min_score and w["score"] > best.get(key, (0.0, None))[0]:
                 best[key] = (w["score"], e.get("index"))

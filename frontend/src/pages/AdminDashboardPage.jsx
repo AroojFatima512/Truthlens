@@ -85,7 +85,7 @@ const AdminDashboardPage = () => {
       setCrawlStatus((st) => ({ ...(st || {}), running: true, last: null }));
       setLastRun({ status: 'running', startedAt: new Date().toISOString(), steps: [] });
       const skipped = started.skipped?.length ? ` Skipping ${started.skipped.join(', ')}.` : '';
-      toast.success(`Crawl started (${crawlLimit} articles per outlet). This takes a few minutes.${skipped}`);
+      toast.success(`Crawl started (${crawlLimit} articles per outlet). About 10 minutes for 3 per outlet, longer for more.${skipped}`);
     } catch (err) {
       toast.error(err.response?.data?.message || 'Could not start the crawl');
     }
@@ -222,9 +222,9 @@ const AdminDashboardPage = () => {
             <div className="flex items-center gap-3">
               <select value={crawlLimit} onChange={(e) => setCrawlLimit(Number(e.target.value))} disabled={crawling}
                 className="px-3 py-2.5 border border-red-200 dark:border-red-900/30 rounded-lg bg-red-50 dark:bg-[#1a0505] text-gray-700 dark:text-gray-300 text-sm focus:outline-none">
-                <option value={3}>3 per outlet (quick, ~1 min)</option>
-                <option value={30}>30 per outlet</option>
-                <option value={100}>100 per outlet</option>
+                <option value={3}>3 per outlet (quick test, about 10 min)</option>
+                <option value={30}>30 per outlet (can take an hour)</option>
+                <option value={100}>100 per outlet (several hours)</option>
               </select>
               <button onClick={handleRunCrawl} disabled={crawling || (crawlStatus && crawlStatus.outlets?.length === 0 && crawlStatus.skipped?.length > 0)}
                 title={crawlStatus?.outlets?.length === 0 && crawlStatus?.skipped?.length ? 'Every outlet is paused or removed' : undefined}

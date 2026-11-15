@@ -66,7 +66,7 @@ const Scores = ({ v, prev }) => {
   const delta = prev?.biasScore != null ? v.biasScore - prev.biasScore : null;
   return (
     <div className="flex flex-wrap items-center gap-2">
-      <BiasScoreBadge score={v.biasScore} size="sm" showLabel />
+      <BiasScoreBadge score={v.biasScore} level={v.biasLevel} size="sm" showLabel />
       {v.sentiment && <SentimentTag sentiment={v.sentiment} />}
       {delta != null && delta !== 0 && (
         <span className={`inline-flex items-center gap-1 text-[11px] ${delta > 0 ? 'text-red-300' : 'text-emerald-300'}`}>

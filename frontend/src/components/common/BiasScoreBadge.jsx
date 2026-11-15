@@ -1,8 +1,9 @@
 import React from 'react';
 import { getBiasColor, getBiasLabel } from '../../utils/biasColorMapper';
 
-const BiasScoreBadge = ({ score, size = "md", showLabel = false }) => {
-  const colorClasses = getBiasColor(score);
+// level (optional): the stored "Low" / "Moderate" / "High" from the ML service; it wins over the score
+const BiasScoreBadge = ({ score, level, size = "md", showLabel = false }) => {
+  const colorClasses = getBiasColor(score, level);
   
   const sizeClasses = {
     sm: "px-2 py-0.5 text-xs",
@@ -13,7 +14,7 @@ const BiasScoreBadge = ({ score, size = "md", showLabel = false }) => {
   return (
     <span className={`inline-flex items-center rounded-full font-medium ${colorClasses} ${sizeClasses[size]}`}>
       {score}% 
-      {showLabel && <span className="ml-1 hidden sm:inline">- {getBiasLabel(score)}</span>}
+      {showLabel && <span className="ml-1 hidden sm:inline">- {getBiasLabel(score, level)}</span>}
     </span>
   );
 };

@@ -48,9 +48,17 @@ const LandingPage = () => {
   // Real numbers from the database (public endpoint, works without logging in)
   const [overview, setOverview] = useState(null);
   const [biasModel, setBiasModel] = useState(null);   // { accuracy, dataset, testSize, evaluatedAt, ... }
+  const [sentimentModel, setSentimentModel] = useState(null);
   useEffect(() => {
-    fetchModelMetrics().then((list) => setBiasModel(list.find((m) => m.model === 'bias-sentence') || null));
+    fetchModelMetrics().then((list) => {
+      setBiasModel(list.find((m) => m.model === 'bias-sentence') || null);
+      setSentimentModel(list.find((m) => m.model === 'sentiment') || null);
+    });
   }, []);
+  // e.g. "Sentiment: accuracy 70.9%, macro-F1 0.69 (399 human-labelled sentences)"
+  const sentimentNote = sentimentModel && sentimentModel.accuracy != null
+    ? `Sentiment: accuracy ${pct(sentimentModel.accuracy)}%${sentimentModel.macroF1 != null ? `, macro-F1 ${Number(sentimentModel.macroF1).toFixed(2)}` : ''}${sentimentModel.testSize ? ` (${sentimentModel.testSize} human-labelled sentences)` : ''}`
+    : null;
   const accuracy = pct(biasModel?.accuracy) ?? MODEL_ACCURACY;
   const accuracyNote = biasModel
     ? `${biasModel.name || 'Bias model'}: accuracy on ${biasModel.dataset || 'the test set'}${biasModel.testSize ? ` (${biasModel.testSize} sentences)` : ''}${biasModel.f1 != null ? `, F1 ${pct(biasModel.f1)}%` : ''}`
@@ -223,7 +231,8 @@ const LandingPage = () => {
                   <div className="text-2xl lg:text-3xl font-extrabold text-gray-900 dark:text-white mb-0.5 tracking-tight transition-colors duration-300">
                     <AnimatedCounter key={accuracy} end={accuracy} suffix="%" duration={2.5} />
                   </div>
-                  <div title={accuracyNote} className="text-gray-500 dark:text-gray-400 text-[10px] lg:text-xs font-bold uppercase tracking-wider transition-colors duration-300">Bias Model Accuracy</div>
+                  <div title={sentimentNote ? `${accuracyNote}\n${sentimentNote}` : accuracyNote} className="text-gray-500 dark:text-gray-400 text-[10px] lg:text-xs font-bold uppercase tracking-wider transition-colors duration-300">Bias Model Accuracy</div>
+                  {sentimentNote && <div className="text-gray-400 dark:text-gray-500 text-[10px] mt-0.5" title={sentimentNote}>Sentiment {pct(sentimentModel.accuracy)}%</div>}
                 </div>
               </div>
 

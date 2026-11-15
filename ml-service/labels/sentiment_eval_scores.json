@@ -1,0 +1,119 @@
+{
+  "model_name": "models/sentiment_pk (fine-tuned on Pakistani news)",
+  "dataset": "human sentiment labels, test sheets test_sheet + test_sheet_4",
+  "per_sheet": {
+    "test_sheet": {
+      "n": 399,
+      "accuracy": 0.799,
+      "macro_f1": 0.794,
+      "per_class_f1": {
+        "neg": 0.831,
+        "neu": 0.785,
+        "pos": 0.767
+      },
+      "confusion": {
+        "neg": {
+          "neg": 128,
+          "neu": 20,
+          "pos": 3
+        },
+        "neu": {
+          "neg": 26,
+          "neu": 135,
+          "pos": 17
+        },
+        "pos": {
+          "neg": 3,
+          "neu": 11,
+          "pos": 56
+        }
+      }
+    },
+    "test_sheet_4": {
+      "n": 300,
+      "accuracy": 0.8,
+      "macro_f1": 0.804,
+      "per_class_f1": {
+        "neg": 0.787,
+        "neu": 0.801,
+        "pos": 0.822
+      },
+      "confusion": {
+        "neg": {
+          "neg": 83,
+          "neu": 18,
+          "pos": 1
+        },
+        "neu": {
+          "neg": 23,
+          "neu": 113,
+          "pos": 5
+        },
+        "pos": {
+          "neg": 3,
+          "neu": 10,
+          "pos": 44
+        }
+      }
+    },
+    "both": {
+      "n": 699,
+      "accuracy": 0.8,
+      "macro_f1": 0.799,
+      "per_class_f1": {
+        "neg": 0.813,
+        "neu": 0.792,
+        "pos": 0.791
+      },
+      "confusion": {
+        "neg": {
+          "neg": 211,
+          "neu": 38,
+          "pos": 4
+        },
+        "neu": {
+          "neg": 49,
+          "neu": 248,
+          "pos": 22
+        },
+        "pos": {
+          "neg": 6,
+          "neu": 21,
+          "pos": 100
+        }
+      }
+    }
+  },
+  "sentiment": {
+    "models": {
+      "Sentiment model": {
+        "n": 699,
+        "accuracy": 0.8,
+        "macro_f1": 0.799,
+        "per_class_f1": {
+          "neg": 0.813,
+          "neu": 0.792,
+          "pos": 0.791
+        },
+        "confusion": {
+          "neg": {
+            "neg": 211,
+            "neu": 38,
+            "pos": 4
+          },
+          "neu": {
+            "neg": 49,
+            "neu": 248,
+            "pos": 22
+          },
+          "pos": {
+            "neg": 6,
+            "neu": 21,
+            "pos": 100
+          }
+        }
+      }
+    },
+    "cohens_kappa": null
+  }
+}

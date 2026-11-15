@@ -167,10 +167,19 @@ def word_diff(a: str, b: str) -> list[dict]:
     return ops
 
 
+def word_overlap(diff: list[dict]) -> float:
+    """Share of words (of the longer sentence) the two sentences have in common, 0-1. High: the coloured
+    word-by-word view is readable; low: the same point said in other words, better shown as two plain sentences."""
+    same = sum(len(d["a"].split()) for d in diff if d["op"] == "equal")
+    a = sum(len(d["a"].split()) for d in diff)
+    b = sum(len(d["b"].split()) for d in diff)
+    return round(same / max(a, b, 1), 3) if diff else 1.0
+
+
 def _align(sa, ea, sb, eb) -> dict:
     """Match each sentence of A with its closest sentence in B."""
     if not sa or not sb:
-        return {"matched": [], "only_a": list(range(len(sa))), "only_b": list(range(len(sb)))}
+        return {"matched": [], "only_a": list(range(len(sa))), "only_b": list(range(len(sb))), "related": [], "closest": []}
     sim = ea @ eb.T
     matched, only_a = [], []
     for i in range(len(sa)):
@@ -180,14 +189,29 @@ def _align(sa, ea, sb, eb) -> dict:
             diff = word_diff(sa[i], sb[j])
             changed = any(d["op"] != "equal" for d in diff)
             matched.append({"a": i, "b": j, "similarity": round(s, 3),
-                            "kind": "reworded" if changed else "identical", "diff": diff if changed else []})
+                            "kind": "reworded" if changed else "identical", "diff": diff if changed else [],
+                            "word_overlap": word_overlap(diff)})
         elif s < config.SENT_RELATED:
             only_a.append(i)
     used_b = {m["b"] for m in matched}
     only_b = [j for j in range(len(sb)) if j not in used_b and float(sim[:, j].max()) < config.SENT_RELATED]
+    # RELATED: about the same thing but not the same point (0.50-0.70), and B sentences whose closest A sentence
+    # was already paired with another B sentence. Without this group such sentences were shown nowhere, so every
+    # sentence now lands in exactly one place: matched, related or only-in.
+    related, done_a, done_b = [], {m["a"] for m in matched} | set(only_a), used_b | set(only_b)
+    for i in range(len(sa)):
+        if i not in done_a:
+            j = int(np.argmax(sim[i]))
+            related.append({"a": i, "b": j, "similarity": round(float(sim[i, j]), 3)})
+            done_b.add(j)
+    for j in range(len(sb)):
+        if j not in done_b:
+            i = int(np.argmax(sim[:, j]))
+            related.append({"a": i, "b": j, "similarity": round(float(sim[i, j]), 3)})
+    related.sort(key=lambda r: (r["a"], r["b"]))
     best = sorted(((float(sim[i].max()), i, int(np.argmax(sim[i]))) for i in range(len(sa))), reverse=True)[:5]
     closest = [{"a": i, "b": j, "similarity": round(s, 3)} for s, i, j in best]   # shows how close the nearest pairs are
-    return {"matched": matched, "only_a": only_a, "only_b": only_b, "closest": closest}
+    return {"matched": matched, "only_a": only_a, "only_b": only_b, "related": related, "closest": closest}
 
 
 # ---------------------------------------------------------------- selective reporting
@@ -247,6 +271,8 @@ def compare_articles(articles: list[dict]) -> dict:
             "reworded_sentences": [m for m in al["matched"] if m["kind"] == "reworded"],
             "identical_sentences": sum(m["kind"] == "identical" for m in al["matched"]),
             "identical_pairs": [{"a": m["a"], "b": m["b"]} for m in al["matched"] if m["kind"] == "identical"],
+            "related_sentences": [{"a": r["a"], "b": r["b"], "a_text": sents[i][r["a"]], "b_text": sents[j][r["b"]],
+                                   "similarity": r["similarity"]} for r in al["related"]],
             "only_in_a": [sents[i][k] for k in al["only_a"]],
             "only_in_b": [sents[j][k] for k in al["only_b"]],
             "closest_pairs": [{"a_text": sents[i][c["a"]], "b_text": sents[j][c["b"]], "similarity": c["similarity"]}

@@ -1,16 +1,25 @@
 import React, { useMemo, useState } from 'react';
 import { Lightbulb, ChevronDown, ChevronUp, Info } from 'lucide-react';
 import BiasScoreBadge from '../common/BiasScoreBadge';
+import CaptumLine from './CaptumLine';
 
 // FR-17 Explainable AI: WHY the article got its bias score, in plain language, built only from the
 // ML service's own outputs: how many sentences it rated biased, the headline's rating, the strongest
-// bias dimensions, and the words that pushed it towards "biased", shown inside their sentences.
+// bias dimensions, the words the word model flagged, and (Captum) what the sentence model relied on.
+// [label, short meaning (used in "meaning ..."), what the dimension measures (report page)]
 export const DIMENSIONS = {
-  politicalFraming: ['Political framing', 'the story is framed from one political side'],
-  emotionalLanguage: ['Emotional language', 'emotionally loaded or subjective wording'],
-  sourceAttribution: ['Source attribution', 'claims that are not attributed to a named source'],
-  headlineMismatch: ['Headline mismatch', "the headline's tone does not match the article"],
-  selectiveReporting: ['Selective reporting', 'facts that other outlets report are left out'],
+  politicalFraming: ['Political framing', 'the writing is biased in sentences about political actors',
+    "How biased the writing is in sentences about political actors (parties, government, military, courts, foreign governments). 'Not measured' if the article has fewer than 2 political sentences."],
+  emotionalLanguage: ['Emotional language', 'emotionally loaded or subjective wording', 'Higher means more emotionally loaded or subjective wording.'],
+  sourceAttribution: ['Source attribution', 'claims that are not attributed to a named source', 'Higher means more claims that are not attributed to a named source.'],
+  headlineMismatch: ['Headline mismatch', 'the headline is about something different from the article as a whole',
+    'Higher means the headline is about something different from the article as a whole (meaning, not tone). Short editorial titles score high naturally.'],
+  selectiveReporting: ['Selective reporting', 'facts that other outlets report are left out', 'Higher means more facts that other outlets report are left out.'],
+};
+// why a dimension can be "not measured"
+export const NOT_MEASURED = {
+  political_framing: 'Not measured: the article has fewer than 2 political sentences.',
+  selective_reporting: "Needs another outlet's version of the same story.",
 };
 export const SNAKE = { politicalFraming: 'political_framing', emotionalLanguage: 'emotional_language', sourceAttribution: 'source_attribution', headlineMismatch: 'headline_mismatch', selectiveReporting: 'selective_reporting' };
 const PREVIEW = 4;
@@ -33,6 +42,8 @@ const Marked = ({ text, words }) => {
 const BiasExplanation = ({ article, report }) => {
   const [allSentences, setAllSentences] = useState(false);
   const sig = article.biasSignals || {};
+  const explanations = useMemo(() => new Map((article.explanations || report?.explanations || []).map((e) => [e.index, e])),
+    [article.explanations, report?.explanations]);
   const words = useMemo(() => (article.highlightedWords || []).filter((w) => w.type !== 'entity'), [article.highlightedWords]);
   const wordList = words.map((w) => w.word);
 
@@ -74,13 +85,14 @@ const BiasExplanation = ({ article, report }) => {
     reasons.push(`No bias dimension is high; the highest is ${DIMENSIONS[dims[0][0]][0].toLowerCase()} at ${Math.round(dims[0][1])}%.`);
   }
   if (wordList.length) {
-    reasons.push(`Words that pushed the rating towards "biased": ${wordList.slice(0, 6).map((w) => `"${w}"`).join(', ')}${wordList.length > 6 ? ` and ${wordList.length - 6} more` : ''}.`);
+    const lead = sig.wordMethod === 'word_model' ? 'Words flagged as biased (word model)' : 'Words that raised the bias score (attribution)';
+    reasons.push(`${lead}: ${wordList.slice(0, 6).map((w) => `"${w}"`).join(', ')}${wordList.length > 6 ? ` and ${wordList.length - 6} more` : ''}.`);
   }
 
   const shownSentences = allSentences ? sentences : sentences.slice(0, PREVIEW);
-  const method = sig.wordMethod === 'word_model'
-    ? 'a word-level model trained on expert word labels (MBIC) marks the biased words'
-    : 'the marked words are the ones that raised the model\'s "biased" score the most (attribution)';
+  const howItWorks = sig.wordMethod === 'word_model'
+    ? 'A sentence model rates every sentence. A word-level model, trained on MBIC word labels and our Pakistani word sheet, marks loaded words. Captum tests the sentence model itself by removing words and phrases, to show what it relied on. Dimension scores combine model outputs with stated rules.'
+    : 'A sentence model rates every sentence. The marked words are the ones that raised its "biased" score the most (attribution). Captum tests the sentence model itself by removing words and phrases, to show what it relied on. Dimension scores combine model outputs with stated rules.';
 
   return (
     <div className="bg-bg-card rounded-2xl border border-gray-800 p-4 md:p-5 shadow-xl">
@@ -92,7 +104,7 @@ const BiasExplanation = ({ article, report }) => {
       <div className="rounded-xl bg-[#0f1f35] border border-gray-800 p-4 mb-4">
         <div className="flex flex-wrap items-center gap-2 mb-2">
           <span className="text-sm text-gray-300">TruthLens rates this article</span>
-          <BiasScoreBadge score={article.biasScore} showLabel />
+          <BiasScoreBadge score={article.biasScore} level={article.biasLevel} showLabel />
           <span className="text-sm text-gray-300">because:</span>
         </div>
         <ul className="space-y-1.5 list-disc pl-5 text-sm text-gray-200 leading-6">
@@ -113,6 +125,7 @@ const BiasExplanation = ({ article, report }) => {
                   {s.words.length > 0 && <span className="text-[11px] text-gray-500">because of {s.words.map((w) => `"${w}"`).join(', ')}</span>}
                 </div>
                 <p className="text-sm text-gray-200 leading-6"><Marked text={s.text} words={s.words} /></p>
+                <CaptumLine explanation={explanations.get(s.index)} />
               </li>
             ))}
           </ul>
@@ -139,7 +152,7 @@ const BiasExplanation = ({ article, report }) => {
 
       <p className="text-[11px] text-gray-500 flex items-start gap-1.5">
         <Info size={12} className="mt-0.5 shrink-0" />
-        How this works: a sentence model rates every sentence; {method}; the bias dimensions combine model scores and measured rules. Hover a flagged word to see its score.
+        How this works: {howItWorks} Hover a flagged word to see its score.
       </p>
     </div>
   );

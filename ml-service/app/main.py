@@ -27,7 +27,7 @@ app = FastAPI(title="TruthLens ML service", version="0.1", lifespan=lifespan)
 class AnalyzeIn(BaseModel):
     title: str = ""
     body: str = Field(..., min_length=20)
-    explain_top_k: int | None = Field(None, ge=0, le=10, description="How many of the most biased sentences to explain (Captum). 0 = skip.")
+    explain_top_k: int | None = Field(None, ge=0, le=50, description="At most how many biased sentences to explain (Captum), most biased first. Default: all, up to config.XAI_TOP_K_DEFAULT (20). 0 = skip.")
 
 
 class ExplainIn(BaseModel):
@@ -41,7 +41,7 @@ class SentenceIn(BaseModel):
 
 
 class ExplainManyIn(BaseModel):
-    sentences: list[SentenceIn] = Field(..., max_length=20)
+    sentences: list[SentenceIn] = Field(..., max_length=50)
     method: str | None = None
     entities: list[dict] = Field(default_factory=list, description="the article's stored entities (names left off the card)")
 

@@ -60,11 +60,16 @@ def from_results_table(path, test_prefix="Sheets 1 + 4", model_prefix="v2"):
 
 
 def sentiment_doc(path, name="cardiffnlp twitter-roberta-base-sentiment-latest (pre-trained)"):
-    t = json.load(open(path, encoding="utf-8"))["sentiment"]
+    """From score_label_sheet.py's <sheet>_scores.json (pre-trained model) or eval_sentiment.py's
+    sentiment_eval_scores.json (the model in use, both test sheets), which names its model and test set."""
+    full = json.load(open(path, encoding="utf-8"))
+    t = full["sentiment"]
     s = t["models"].get("Sentiment model")
     if not s:
         raise SystemExit(f"{path} has no sentiment-model scores (is the sentiment_model column in the predictions file?)")
-    return {"model": "sentiment", "name": name, "dataset": f"human sentiment labels, {Path(path).stem.replace('_scores', '')}",
+    name = full.get("model_name", name)
+    dataset = full.get("dataset") or f"human sentiment labels, {Path(path).stem.replace('_scores', '')}"
+    return {"model": "sentiment", "name": name, "dataset": dataset,
             "testSize": s["n"], "accuracy": s["accuracy"], "macroF1": s["macro_f1"], "perClassF1": s.get("per_class_f1"),
             "annotatorKappa": t.get("cohens_kappa"), "evaluatedAt": datetime.now(timezone.utc)}
 

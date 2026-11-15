@@ -39,8 +39,10 @@ router.post('/', async (req, res) => {
     r = await fetch(`${mlUrl()}/analyze`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ title, body, explain_top_k: 3 }),
-      signal: AbortSignal.timeout(120000),     // the models can take 5-30 s on a laptop CPU
+      // Captum explains every biased sentence, up to 20, as for stored articles. A very biased article
+      // can take 1-3 minutes on a laptop CPU; if that is too slow for a demo, lower it to 8.
+      body: JSON.stringify({ title, body, explain_top_k: 20 }),
+      signal: AbortSignal.timeout(240000),
     });
   } catch (err) {
     const timedOut = err.name === 'TimeoutError' || err.name === 'AbortError';

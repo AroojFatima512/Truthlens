@@ -14,6 +14,7 @@ import StoryCard from '../components/news/StoryCard';
 import { X, Search, ChevronDown, Bookmark, Menu, ShieldCheck, Newspaper, Layers } from 'lucide-react';
 import { formatDate } from '../utils/formatters';
 import { motion } from 'framer-motion';
+import OpinionTag from '../components/news/OpinionTag';
 import ArticleThumb from '../components/news/ArticleThumb';
 
 // The feed asks the backend for ONE page at a time (GET /api/feed or /api/stories). Filters, sorting
@@ -498,6 +499,7 @@ const NewsFeedPage = () => {
                               <div className="px-2 py-0.5 rounded-md bg-indigo-50 dark:bg-indigo-900/20 border border-indigo-100 dark:border-indigo-800/30 text-indigo-700 dark:text-indigo-300 text-[10px] font-bold shadow-sm flex items-center gap-1">
                                 BIAS: <span className="text-indigo-900 dark:text-indigo-100">{article.biasScore}%</span>
                               </div>
+                              {article.isOpinion && <OpinionTag className="shadow-sm" />}
 
                               {/* Similarity Pill: only when another outlet covers the same story */}
                               {article.similarity != null && (
