@@ -10,7 +10,9 @@ import { fetchCredibility, rateCredibility, removeCredibility } from '../../serv
 // average. Articles readers rate 2 stars or lower show up on the admin Data Quality page.
 const LABELS = { 1: 'Not credible', 2: 'Doubtful', 3: 'Mixed', 4: 'Mostly credible', 5: 'Very credible' };
 
-const CredibilityRating = ({ articleId }) => {
+// personal: the reader's own saved analysis from Analyze an Article. Only they can see and rate it.
+// compact: a small card (average, five stars to rate, optional reason) for the Analyze Article page.
+const CredibilityRating = ({ articleId, personal = false, compact = false }) => {
   const { user } = useAuth();
   const [data, setData] = useState(null);
   const [hover, setHover] = useState(0);
@@ -43,8 +45,44 @@ const CredibilityRating = ({ articleId }) => {
     : avg >= 2.5 ? 'border-amber-400/25 bg-amber-500/10 text-amber-200' : 'border-red-400/25 bg-red-500/10 text-red-300';
   const VerdictIcon = avg == null ? HelpCircle : avg >= 3.5 ? CheckCircle2 : avg >= 2.5 ? AlertTriangle : XCircle;
 
+  if (compact) {
+    return (
+      <GlowCard tone="amber" icon={ShieldCheck} className="h-full" title={personal ? 'Your credibility rating' : 'Reader credibility'}
+        subtitle={personal ? 'Only you can see this rating' : (data.count ? `${data.count} rating${data.count === 1 ? '' : 's'} from readers` : 'No ratings yet')}>
+        <div className="flex items-baseline gap-1.5 -mt-1 mb-2">
+          <span className="text-3xl font-extrabold text-white leading-none">{avg != null ? avg.toFixed(1) : '–'}</span>
+          <span className="text-sm font-semibold text-slate-400">/ 5</span>
+          {verdict && !personal && <span className={`ml-2 inline-flex items-center gap-1 rounded-full border px-2 py-0.5 text-[11px] font-medium ${verdictStyle}`}><VerdictIcon size={12} /> {verdict}</span>}
+        </div>
+        {canRate ? (
+          <>
+            <div className="flex items-center gap-0.5" onMouseLeave={() => setHover(0)}>
+              {[1, 2, 3, 4, 5].map((n) => (
+                <button key={n} type="button" disabled={saving} aria-label={`${n} star${n === 1 ? '' : 's'}: ${LABELS[n]}`}
+                  onMouseEnter={() => setHover(n)} onClick={() => save(n)}
+                  className="p-0.5 disabled:opacity-60 transition-transform hover:scale-110">
+                  <Star size={20} className={n <= active ? 'text-amber-400 fill-amber-400' : 'text-slate-600'} />
+                </button>
+              ))}
+              <span className="ml-2 text-xs text-slate-400">{LABELS[active] || (data.mine ? '' : 'Tap a star to rate')}</span>
+            </div>
+            {data.mine && (
+              <div className="mt-2 flex gap-2 items-center">
+                <input value={reason} onChange={(e) => setReason(e.target.value)} maxLength={300} placeholder="Why? (optional)"
+                  className="min-w-0 flex-1 rounded-lg border border-white/10 bg-[#0a1528] px-2.5 py-1 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-amber-400" />
+                <button type="button" onClick={() => save(data.mine, reason)} disabled={saving || !reason.trim()} className="text-xs text-amber-300 hover:text-amber-200 disabled:opacity-40">Save</button>
+                <button type="button" onClick={remove} className="text-xs text-slate-400 hover:text-red-300">Remove</button>
+              </div>
+            )}
+          </>
+        ) : null}
+      </GlowCard>
+    );
+  }
+
   return (
-    <GlowCard tone="blue" icon={ShieldCheck} watermark={ShieldCheck} title="Reader Credibility" subtitle="How credible do readers find this article?">
+    <GlowCard tone="blue" icon={ShieldCheck} watermark={ShieldCheck} title={personal ? 'Your Credibility Rating' : 'Reader Credibility'}
+      subtitle={personal ? 'How credible do you find this article? Only you can see this rating.' : 'How credible do readers find this article?'}>
       <div className="flex items-baseline gap-2 mb-1">
         <span className="text-[34px] font-extrabold text-white leading-none">{avg != null ? avg.toFixed(1) : '–'}</span>
         <span className="text-lg font-semibold text-slate-400">/ 5</span>

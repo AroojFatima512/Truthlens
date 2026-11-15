@@ -157,7 +157,8 @@ test('analyze: forwards to the ML service and reports problems clearly', async (
 
   const ok = await call('POST', '/analyze', { title: 'Budget passed', body: ARTICLE }, t);
   assert.equal(ok.status, 200);
-  assert.equal(ok.body.analysis.bias.level, 'High');
+  assert.equal(ok.body.kind, 'analysis'); assert.match(ok.body.id, /^ua-[0-9a-f]{16}$/);
+  assert.equal(ok.body.article.biasLevel, 'High'); assert.equal(ok.body.article.source, 'Pasted text');
   assert.equal(ok.body.report.overallBias, 64);
   assert.deepEqual(Object.keys(ok.body.report.dimensions).sort(), ['emotionalLanguage', 'headlineMismatch', 'politicalFraming', 'selectiveReporting', 'sourceAttribution']);
   assert.equal(ok.body.report.sentimentBreakdown.negative, 50);

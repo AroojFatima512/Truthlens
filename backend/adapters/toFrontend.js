@@ -183,6 +183,74 @@ function toBiasReport(doc) {
   };
 }
 
+// ---------------------------------------------------------------- selective reporting: what was left out
+// The ML service stores, per compared article, the people, organisations and places that most other
+// outlets in the story mention but this one leaves out (lower case, up to 15):
+//   comparisons.result.articles[] { id: <article_key>, entities, selective_reporting: { score, missing_entities } }
+// Shown with their original spelling from the story's entity lists ("ispr" -> "ISPR"), else capitalised.
+// Returns at most 5 names, or [] when the article is not in the comparison.
+function missingEntitiesFor(cmpDoc, key, max = 5) {
+  const arts = cmpDoc?.result?.articles || [];
+  const entry = arts.find((x) => x.id === key);
+  const list = entry?.selective_reporting?.missing_entities;
+  if (!Array.isArray(list) || !list.length) return [];
+  const spelling = new Map();
+  for (const art of arts) {
+    for (const e of art.entities || []) {
+      const t = typeof e === 'string' ? e : e?.text;
+      if (t && !spelling.has(t.toLowerCase())) spelling.set(t.toLowerCase(), t);
+    }
+  }
+  const cap = (t) => t.replace(/\b\p{L}/gu, (c) => c.toUpperCase());
+  return list.filter((x) => typeof x === 'string' && x.trim())
+    .slice(0, max).map((x) => spelling.get(x.toLowerCase()) || cap(x));
+}
+
+// Why selective reporting has no value: the story has one outlet, or this article was not the one
+// picked for its outlet (the comparison uses at most one article per outlet, up to 5).
+//   single_outlet     no other outlet covered the story
+//   same_outlet_used  another article from the same outlet was used for the comparison
+//   not_compared      anything else (fall back to the general sentence)
+// storyOutlets: number of outlets in the story; sameOutletCompared: whether another article of this
+// outlet is in the story's comparison (unknown = undefined).
+function selectiveReasonFor(storyOutlets, sameOutletCompared) {
+  if (storyOutlets == null) return 'not_compared';
+  if (storyOutlets <= 1) return 'single_outlet';
+  return sameOutletCompared === false ? 'not_compared' : 'same_outlet_used';
+}
+
+// Bias dimensions of every article in a story, for the Compare page (one row per dimension, one
+// column per outlet), with selective reporting from the story's comparison document. The ML service
+// compares at most one article per outlet (up to 5), listed in comparisons.result.articles.
+//   storyDocs: the story's articles (article_key, source, analysis.dimensions); cmpDoc: its comparison
+function toStoryDimensions(storyDocs, cmpDoc) {
+  const compared = new Map((cmpDoc?.result?.articles || []).map((x) => [x.id, x]));
+  const outlets = new Set(storyDocs.map((d) => d.source)).size;
+  const sourceOf = new Map(storyDocs.map((d) => [d.article_key, d.source]));
+  const comparedSources = new Set([...compared.values()].map((x) => x.source || sourceOf.get(x.id)).filter(Boolean));
+  const num = (v) => (typeof v === 'number' ? Math.round(v) : null);
+  return storyDocs.map((d) => {
+    const dims = d.analysis?.dimensions || {};
+    const entry = compared.get(d.article_key);
+    const score = num(entry?.selective_reporting?.score ?? dims.selective_reporting);
+    const reason = score != null ? null
+      : entry ? (outlets <= 1 ? 'single_outlet' : 'not_compared')
+        : selectiveReasonFor(outlets, comparedSources.has(d.source));
+    return {
+      id: toId(d.article_key),
+      source: d.source,
+      dimensions: {
+        politicalFraming: num(dims.political_framing),
+        emotionalLanguage: num(dims.emotional_language),
+        sourceAttribution: num(dims.source_attribution),
+        headlineMismatch: num(dims.headline_mismatch),
+        selectiveReporting: score,
+      },
+      selective: { score, missing: score != null ? missingEntitiesFor(cmpDoc, d.article_key) : [], reason },
+    };
+  });
+}
+
 // ---------------------------------------------------------------- comparison of two articles
 // cmpDoc: a document from the `comparisons` collection; keyA/keyB: article keys to compare
 function toComparison(cmpDoc, keyA, keyB) {
@@ -213,7 +281,7 @@ function toComparison(cmpDoc, keyA, keyB) {
     const missing = (other.entities || []).filter((e) => !mine.has(e.text.toLowerCase())).map((e) => e.text);
     if (missing.length) keyDifferences.push({
       type: 'omission', source: art.source,
-      detail: `Does not mention ${missing.slice(0, 4).join(', ')}, which ${other.source} mentions`,
+      detail: `Leaves out names that ${other.source} mentions: ${missing.slice(0, 4).join(', ')}`,
     });
   }
   // every reworded sentence, with its word changes seen from A (left) to B (right)
@@ -301,4 +369,4 @@ function toSource({ name, url, articlesCount, lastCrawled, category, status, upd
   };
 }
 
-module.exports = { toId, toKey, registerKeyPrefixes, groupEntities, iso, toArticle, toBiasReport, toExplanations, toPolitical, toComparison, storyLinks, toSource };
+module.exports = { toId, toKey, registerKeyPrefixes, groupEntities, iso, toArticle, toBiasReport, toExplanations, toPolitical, missingEntitiesFor, selectiveReasonFor, toStoryDimensions, toComparison, storyLinks, toSource };

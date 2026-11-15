@@ -59,6 +59,9 @@ export const fetchComparison = async (id1, id2) => {
 // All articles on one story (all outlets), oldest first
 export const fetchStory = async (storyId) => (await api.get(`/stories/${storyId}`)).data;
 
+// Compare page: [{ id, source, dimensions: {5 axes, null = not applicable}, selective: { score, missing, reason } }]
+export const fetchStoryDimensions = async (storyId) => (await api.get(`/stories/${storyId}/dimensions`)).data;
+
 // Real counts for the Trending Topics tab: { categories: [{name, value, avgBias}], perDay: [{date, count}], total }
 export const fetchTopicStats = async () => (await api.get('/stats/topics')).data;
 

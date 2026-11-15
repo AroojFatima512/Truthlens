@@ -3,6 +3,8 @@
 //   PUT    /api/articles/:id/credibility   { rating: 1-5, reason?: string }  (logged-in readers)
 //   DELETE /api/articles/:id/credibility   remove the reader's own rating
 // Articles that readers rate 2 stars or lower on average show up on the admin Data Quality page.
+// A reader's own saved analysis from "Analyze an Article" (id "ua-...") can be rated too, by that
+// reader only; those ratings are private and never reach the Data Quality page (no crawled article).
 const express = require('express');
 const { getDb } = require('../db');
 const { toKey } = require('../adapters/toFrontend');
@@ -36,8 +38,14 @@ async function summary(articleKey, userId) {
   };
 }
 
+const isAnalysis = (key) => key.startsWith('ua:');
+const ownsAnalysis = async (key, userId) => Boolean(userId && await getDb().collection('user_analyses')
+  .findOne({ article_key: key, user_id: userId }, { projection: { article_key: 1 } }));
+
 router.get('/articles/:id/credibility', optionalAuth, wrap(async (req, res) => {
-  res.json(await summary(toKey(req.params.id), req.user?.id));
+  const key = toKey(req.params.id);
+  if (isAnalysis(key) && !(await ownsAnalysis(key, req.user?.id))) return res.status(404).json({ message: 'Analysis not found' });
+  res.json(await summary(key, req.user?.id));
 }));
 
 router.put('/articles/:id/credibility', requireAuth, wrap(async (req, res) => {
@@ -45,7 +53,9 @@ router.put('/articles/:id/credibility', requireAuth, wrap(async (req, res) => {
   const rating = Number(req.body?.rating);
   if (!Number.isInteger(rating) || rating < 1 || rating > 5) return res.status(400).json({ message: 'Rating must be 1 to 5 stars' });
   const articleKey = toKey(req.params.id);
-  const exists = await getDb().collection('articles').findOne({ article_key: articleKey }, { projection: { article_key: 1 } });
+  const exists = isAnalysis(articleKey)
+    ? await ownsAnalysis(articleKey, req.user.id)
+    : await getDb().collection('articles').findOne({ article_key: articleKey }, { projection: { article_key: 1 } });
   if (!exists) return res.status(404).json({ message: 'Article not found' });
   await ensureIndex();
   const reason = typeof req.body?.reason === 'string' ? req.body.reason.trim().slice(0, 300) : '';

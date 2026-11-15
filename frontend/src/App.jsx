@@ -77,6 +77,7 @@ function App() {
                   <Route path="/compare" element={<ComparisonPage />} />
                   <Route path="/compare/:id1/:id2" element={<ComparisonPage />} />
                   <Route path="/report/:id" element={<BiasReportPage />} />
+                  <Route path="/analyze/report/:id" element={<BiasReportPage kind="analysis" />} />
                   <Route path="/dashboard" element={<UserDashboardPage />} />
                   <Route path="/feedback" element={<FeedbackPage />} />
                   <Route path="/feedback/history" element={<FeedbackHistoryPage />} />

@@ -5,7 +5,9 @@ import Sidebar from '../components/common/Sidebar';
 import SideBySideLayout from '../components/comparison/SideBySideLayout';
 import ChangedWordsPanel from '../components/comparison/ChangedWordsPanel';
 import ComparisonSidePanel from '../components/comparison/ComparisonSidePanel';
-import { fetchArticleById, fetchComparison, fetchStory, fetchStories } from '../services/newsService';
+import SelectiveReportingCard from '../components/comparison/SelectiveReportingCard';
+import DimensionsByOutlet from '../components/comparison/DimensionsByOutlet';
+import { fetchArticleById, fetchComparison, fetchStory, fetchStories, fetchStoryDimensions } from '../services/newsService';
 import { Download, Share2, Layers, X, Plus, ChevronDown } from 'lucide-react';
 
 import { sourceStyle } from '../utils/sourceStyles';
@@ -184,6 +186,18 @@ const ComparisonPage = () => {
     }),
     [selectedArticles, category, startDate, endDate]
   );
+
+  // bias dimensions and selective reporting of every article in the stories on screen (by article id)
+  const [storyDims, setStoryDims] = useState({});
+  const storyKey = [...new Set(filteredArticles.map((a) => a.storyId).filter(Boolean))].sort().join('|');
+  useEffect(() => {
+    if (!storyKey) { setStoryDims({}); return; }
+    let live = true;
+    Promise.all(storyKey.split('|').map((id) => fetchStoryDimensions(id).catch(() => [])))
+      .then((lists) => { if (live) setStoryDims(Object.fromEntries(lists.flat().map((r) => [r.id, r]))); });
+    return () => { live = false; };
+  }, [storyKey]);
+  const dimRows = filteredArticles.map((a) => storyDims[a.id]).filter(Boolean);
 
   // Which two of the articles on screen get the detailed (sentence-level) comparison. With exactly two
   // it is those two; with more, the most different pair until the reader picks another one.
@@ -433,6 +447,7 @@ const ComparisonPage = () => {
               <aside data-flow="side" className="order-2 space-y-5 xl:float-right xl:w-[34%] xl:ml-8 xl:mb-8">
                 <ComparisonSidePanel articles={filteredArticles} comparison={hasComparison ? comparison : null}
                   similarity={similarityScore == null ? null : overallSimilarityPercentage} noComparisonText={noComparisonText} />
+                <SelectiveReportingCard rows={dimRows} />
               </aside>
               <div className="contents">
                 <div data-flow="main" className="order-1 flow-root xl:mb-8 bg-[#081b34] rounded-3xl border border-blue-900/60 p-6 shadow-[0_30px_60px_rgba(0,0,0,0.25)]">
@@ -508,6 +523,8 @@ const ComparisonPage = () => {
                     </div>
                   </div>
                 </div>
+
+                {dimRows.length > 0 && <div data-flow="main" className="order-1 flow-root xl:mb-8"><DimensionsByOutlet rows={dimRows} /></div>}
 
                 {hasComparison && <div data-flow="main" className="order-1 flow-root xl:mb-8"><ChangedWordsPanel comparison={comparison} /></div>}
 

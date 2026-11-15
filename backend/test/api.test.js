@@ -95,3 +95,13 @@ test('admin routes need an admin token and return mock shapes', async () => {
   const runs = (await get('/admin/crawl-runs', admin)).body; assert.equal(runs[0].status, 'completed');
   console.log('  stats:', JSON.stringify(stats), '| sources:', src.map((x) => `${x.name} ${x.articlesCount}`).join(', '), '| run steps:', runs[0].steps.length);
 });
+
+test('bias report says what was left out, or why selective reporting has no value', async () => {
+  for (const a of analysed.slice(0, 12)) {
+    const { status, body } = await get(`/articles/${a.article_key.replace(':', '-')}/report`);
+    assert.equal(status, 200);
+    assert.ok(Array.isArray(body.selectiveMissing) && body.selectiveMissing.length <= 5);
+    if (body.dimensions.selectiveReporting == null) assert.ok(['single_outlet', 'same_outlet_used', 'not_compared'].includes(body.selectiveReason));
+    else assert.equal(body.selectiveReason, null);
+  }
+});

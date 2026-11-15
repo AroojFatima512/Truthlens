@@ -7,7 +7,7 @@
 //   GET /api/articles   plain array, newest first (older callers; max 300)
 const express = require('express');
 const { getDb } = require('../db');
-const { toArticle, toBiasReport, toComparison, toKey, iso } = require('../adapters/toFrontend');
+const { toArticle, toBiasReport, toComparison, toKey, iso, missingEntitiesFor, selectiveReasonFor, toStoryDimensions } = require('../adapters/toFrontend');
 const { getIndex, isHidden } = require('../lib/articleIndex');
 const sourceSettings = require('../lib/sourceSettings');
 const { diffWords, diffTexts } = require('../lib/wordDiff');
@@ -241,6 +241,19 @@ router.get('/stories/:storyId', wrap(async (req, res) => {
   res.json(items.map((it) => toArticle(byKey.get(it.key), { related: it.related, similarity: it.similarity, full: false })));
 }));
 
+// GET /api/stories/:storyId/dimensions
+// The five bias dimensions of each article in the story, with selective reporting (score, names left
+// out, or why it is not applicable) from the story's comparison document. null = not applicable.
+router.get('/stories/:storyId/dimensions', wrap(async (req, res) => {
+  const db = getDb();
+  const removed = sourceSettings.removedSources();
+  const docs = (await db.collection('articles')
+    .find({ story_id: req.params.storyId, analysis: { $exists: true } }, { projection: { article_key: 1, source: 1, 'analysis.dimensions': 1 } }).toArray())
+    .filter((d) => !removed.has(d.source));
+  const cmp = await db.collection('comparisons').findOne({ story_id: req.params.storyId });
+  res.json(toStoryDimensions(docs, cmp));
+}));
+
 // ---------------------------------------------------------------- one article
 // GET /api/articles/:id   (id like "geo-685964")
 router.get('/articles/:id', optionalAuth, wrap(async (req, res) => {
@@ -325,9 +338,33 @@ router.get('/articles/:id/versions', wrap(async (req, res) => {
 
 // GET /api/articles/:id/report
 router.get('/articles/:id/report', wrap(async (req, res) => {
-  const doc = await getDb().collection('articles').findOne({ article_key: toKey(req.params.id) }, { projection: { analysis: 1 } });
+  const key = toKey(req.params.id);
+  const db = getDb();
+  const doc = await db.collection('articles').findOne({ article_key: key }, { projection: { analysis: 1, story_id: 1 } });
   if (!doc || !doc.analysis) return res.status(404).json({ message: 'No analysis for this article' });
-  res.json(toBiasReport(doc));
+  const report = toBiasReport(doc);
+  // selective reporting: what this outlet left out, or why it could not be compared
+  report.selectiveMissing = [];
+  report.selectiveReason = null;
+  if (typeof doc.analysis.dimensions?.selective_reporting === 'number') {
+    const cmp = await db.collection('comparisons').findOne({ article_keys: key });
+    report.selectiveMissing = missingEntitiesFor(cmp, key);
+  } else {
+    let outlets = null; let sameOutletCompared;
+    try {
+      if (!doc.story_id) outlets = 1;
+      else {
+        outlets = (await db.collection('articles').distinct('source', { story_id: doc.story_id })).length;
+        const cmp = await db.collection('comparisons').findOne({ story_id: doc.story_id });
+        const keys = (cmp?.result?.articles || []).map((x) => x.id).filter((k) => k !== key);
+        const sources = keys.length ? await db.collection('articles').distinct('source', { article_key: { $in: keys } }) : [];
+        const mine = (await db.collection('articles').findOne({ article_key: key }, { projection: { source: 1 } }))?.source;
+        sameOutletCompared = sources.includes(mine);
+      }
+    } catch { /* unknown: the general sentence is shown */ }
+    report.selectiveReason = selectiveReasonFor(outlets, sameOutletCompared);
+  }
+  res.json(report);
 }));
 
 // GET /api/compare/:id1/:id2

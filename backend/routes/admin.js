@@ -181,6 +181,7 @@ router.delete('/users/:id', async (req, res) => {
     await users.deleteOne({ id: user.id });
     await getDb().collection('history').deleteMany({ userId: user.id });
     await getDb().collection('article_ratings').deleteMany({ userId: user.id });
+    await getDb().collection('user_analyses').deleteMany({ user_id: user.id });
     await getDb().collection('bookmarks').deleteMany({ userId: user.id });
     await getDb().collection('feedback').updateMany({ userId: user.id }, { $set: { userId: 'deleted-user', userEmail: null, userName: 'Deleted user' } });
     res.json({ id: user.id, deleted: true });

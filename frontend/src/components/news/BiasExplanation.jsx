@@ -9,18 +9,29 @@ import CaptumLine from './CaptumLine';
 // [label, short meaning (used in "meaning ..."), what the dimension measures (report page)]
 export const DIMENSIONS = {
   politicalFraming: ['Political framing', 'the writing is biased in sentences about political actors',
-    "How biased the writing is in sentences about political actors (parties, government, military, courts, foreign governments). 'Not measured' if the article has fewer than 2 political sentences."],
+    "How biased the writing is in sentences about political actors (parties, government, military, courts, foreign governments). 'No political content' if the article has fewer than 2 political sentences."],
   emotionalLanguage: ['Emotional language', 'emotionally loaded or subjective wording', 'Higher means more emotionally loaded or subjective wording.'],
   sourceAttribution: ['Source attribution', 'claims that are not attributed to a named source', 'Higher means more claims that are not attributed to a named source.'],
   headlineMismatch: ['Headline mismatch', 'the headline is about something different from the article as a whole',
     'Higher means the headline is about something different from the article as a whole (meaning, not tone). Short editorial titles score high naturally.'],
-  selectiveReporting: ['Selective reporting', 'facts that other outlets report are left out', 'Higher means more facts that other outlets report are left out.'],
+  selectiveReporting: ['Selective reporting', 'people, organisations and places that other outlets mention are left out',
+    'Higher means this outlet left out more of the people, organisations and places that most other outlets covering the same story mention.'],
 };
-// why a dimension can be "not measured"
-export const NOT_MEASURED = {
-  political_framing: 'Not measured: the article has fewer than 2 political sentences.',
-  selective_reporting: "Needs another outlet's version of the same story.",
+// a dimension with no value is "Not applicable" for this article, and this is why.
+// Selective reporting depends on the report's selectiveReason: the comparison uses at most one
+// article per outlet, so an article can have other outlets in its story and still not be compared.
+const SELECTIVE_NA = {
+  single_outlet: 'No other outlet in TruthLens covered this story, so there is nothing to compare it with.',
+  same_outlet_used: "This article was not compared with another outlet's report: another article from the same outlet was used for this story's comparison.",
+  not_compared: "This article was not compared with another outlet's report (no other outlet covered the story, or another article from the same outlet was used for the comparison).",
 };
+export const notApplicableReason = (snakeKey, report) => {
+  if (snakeKey === 'political_framing') return 'This article does not discuss political actors (fewer than 2 sentences about parties, government, military, courts or foreign governments), so there is no political framing to score.';
+  if (snakeKey === 'selective_reporting') return SELECTIVE_NA[report?.selectiveReason] || SELECTIVE_NA.not_compared;
+  return 'Not applicable to this article.';
+};
+// what to show instead of a number: political framing with no political sentences is "No political content"
+export const naLabel = (camelKey) => (camelKey === 'politicalFraming' ? 'No political content' : 'Not applicable');
 export const SNAKE = { politicalFraming: 'political_framing', emotionalLanguage: 'emotional_language', sourceAttribution: 'source_attribution', headlineMismatch: 'headline_mismatch', selectiveReporting: 'selective_reporting' };
 const PREVIEW = 4;
 const escape = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');

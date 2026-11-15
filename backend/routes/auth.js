@@ -538,6 +538,7 @@ router.delete('/me', requireAuth, wrap(async (req, res) => {
   await getDb().collection('password_resets').deleteMany({ userId: user.id });
   await getDb().collection('history').deleteMany({ userId: user.id });
   await getDb().collection('article_ratings').deleteMany({ userId: user.id });
+  await getDb().collection('user_analyses').deleteMany({ user_id: user.id });
   await getDb().collection('bookmarks').deleteMany({ userId: user.id });
   await getDb().collection('email_verifications').deleteMany({ userId: user.id });
   // Keep their feedback for the admins, but no longer linked to a person

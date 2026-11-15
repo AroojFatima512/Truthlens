@@ -5,9 +5,10 @@ import BiasScoreBadge from '../components/common/BiasScoreBadge';
 import SentimentTag from '../components/common/SentimentTag';
 import BiasRadarChart from '../components/charts/BiasRadarChart';
 import SentimentBarChart from '../components/charts/SentimentBarChart';
-import BiasExplanation, { DIMENSIONS, SNAKE, NOT_MEASURED } from '../components/news/BiasExplanation';
+import BiasExplanation, { DIMENSIONS, SNAKE, notApplicableReason, naLabel } from '../components/news/BiasExplanation';
 import EntityPanel from '../components/news/EntityPanel';
 import { fetchArticleById, fetchCredibility } from '../services/newsService';
+import { fetchAnalysis } from '../services/meService';
 import { fetchBiasReport } from '../services/biasService';
 import { formatDate } from '../utils/formatters';
 import { ArrowLeft, BarChart2, ShieldAlert, Cpu, Menu, ShieldCheck, Star, Printer, Layers, FileText, ExternalLink } from 'lucide-react';
@@ -17,6 +18,8 @@ import { ArrowLeft, BarChart2, ShieldAlert, Cpu, Menu, ShieldCheck, Star, Printe
 //   1. header: bias, sentiment, reader credibility    2. Explainable AI: why this score
 //   3. bias dimensions: radar + what each one means    4. sentiment: distribution + by sentence
 //   5. people, organisations & places + article facts
+// kind="analysis": the same report for an article the reader analysed on Analyze an Article (a link
+// TruthLens had not crawled, or pasted text), loaded from their saved analyses.
 const card = 'bg-bg-card rounded-2xl border border-gray-800 p-4 lg:p-5 shadow-xl';
 const Title = ({ icon: Icon, children }) => (
   <h3 className="text-base font-bold text-white mb-3 flex items-center gap-2 border-b border-gray-800 pb-2"><Icon className="text-primary" size={18} /> {children}</h3>
@@ -24,8 +27,9 @@ const Title = ({ icon: Icon, children }) => (
 const TONE_BG = { positive: 'bg-emerald-500/70', neutral: 'bg-gray-600', negative: 'bg-red-500/70' };
 const barColor = (v) => (v >= 60 ? 'bg-red-500' : v >= 35 ? 'bg-amber-400' : 'bg-emerald-500');
 
-const BiasReportPage = () => {
+const BiasReportPage = ({ kind = 'article' }) => {
   const { id } = useParams();
+  const isAnalysis = kind === 'analysis';
   const [article, setArticle] = useState(null);
   const [report, setReport] = useState(null);
   const [credibility, setCredibility] = useState(null);
@@ -36,9 +40,15 @@ const BiasReportPage = () => {
     const loadData = async () => {
       setLoading(true);
       try {
-        const [a, rep] = await Promise.all([fetchArticleById(id), fetchBiasReport(id)]);
-        setArticle(a);
-        setReport(rep);
+        if (isAnalysis) {
+          const r = await fetchAnalysis(id);
+          setArticle(r.article);
+          setReport(r.report);
+        } else {
+          const [a, rep] = await Promise.all([fetchArticleById(id), fetchBiasReport(id)]);
+          setArticle(a);
+          setReport(rep);
+        }
       } catch (err) {
         console.error(err);
       } finally {
@@ -47,7 +57,7 @@ const BiasReportPage = () => {
       fetchCredibility(id).then(setCredibility).catch(() => setCredibility(null));
     };
     loadData();
-  }, [id]);
+  }, [id, isAnalysis]);
 
   if (loading) {
     return <div className="min-h-screen flex items-center justify-center bg-bg-dark"><div className="w-12 h-12 border-4 border-primary border-t-transparent rounded-full animate-spin"></div></div>;
@@ -57,7 +67,9 @@ const BiasReportPage = () => {
   }
 
   const unavailable = new Set(report.unavailable || []);
-  const dims = Object.entries(report.dimensions || {}).filter(([k]) => DIMENSIONS[k]);
+  // selective reporting is left out altogether when only one outlet covered the story (never applies)
+  const hidden = isAnalysis || (report.selectiveReason === 'single_outlet' && report.dimensions?.selectiveReporting == null) ? ['selectiveReporting'] : [];
+  const dims = Object.entries(report.dimensions || {}).filter(([k]) => DIMENSIONS[k] && !hidden.includes(k));
   const sentences = article.sentences || [];
   const tone = ['positive', 'neutral', 'negative'].map((t) => ({ t, n: sentences.filter((s) => s.sentiment === t).length }));
   const words = (article.content || '').split(/\s+/).filter(Boolean).length;
@@ -78,8 +90,8 @@ const BiasReportPage = () => {
 
         <div className="flex-1 overflow-y-auto w-full flex flex-col">
           <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-4 w-full flex flex-col gap-4">
-            <Link to={`/news/${id}`} className="inline-flex items-center text-gray-400 hover:text-white transition-colors font-medium w-max">
-              <ArrowLeft size={16} className="mr-2" /> Back to Article
+            <Link to={isAnalysis ? '/analyze' : `/news/${id}`} className="inline-flex items-center text-gray-400 hover:text-white transition-colors font-medium w-max">
+              <ArrowLeft size={16} className="mr-2" /> {isAnalysis ? 'Back to Analyze Article' : 'Back to Article'}
             </Link>
 
             {/* 1. header */}
@@ -103,8 +115,12 @@ const BiasReportPage = () => {
               </div>
               <div className="mb-4 border-l-4 border-primary pl-3 py-1 bg-gradient-to-r from-primary/10 to-transparent pr-3 rounded-r-lg">
                 <p className="text-gray-400 text-[10px] font-bold uppercase tracking-widest mb-1">Target Article</p>
-                <h2 className="text-sm lg:text-base font-bold text-white leading-snug">{article.headline}</h2>
-                <p className="text-gray-500 mt-1 text-xs">{article.source} · {article.category} · {formatDate(article.publishedAt)}</p>
+                <h2 className="text-sm lg:text-base font-bold text-white leading-snug">{article.headline || 'Untitled article (no headline given)'}</h2>
+                <p className="text-gray-500 mt-1 text-xs">
+                  {isAnalysis
+                    ? [article.source, article.publishedAt && formatDate(article.publishedAt), `Analysed ${formatDate(article.analyzedAt)}`].filter(Boolean).join(' · ')
+                    : `${article.source} · ${article.category} · ${formatDate(article.publishedAt)}`}
+                </p>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                 <div className="bg-gray-900/60 p-3 rounded-xl border border-gray-800 flex flex-col items-center gap-1.5">
@@ -116,7 +132,7 @@ const BiasReportPage = () => {
                   <SentimentTag sentiment={article.sentiment} />
                 </div>
                 <div className="bg-gray-900/60 p-3 rounded-xl border border-gray-800 flex flex-col items-center gap-1.5">
-                  <span className="text-gray-400 font-semibold text-xs uppercase tracking-wider">Reader Credibility</span>
+                  <span className="text-gray-400 font-semibold text-xs uppercase tracking-wider">{isAnalysis ? 'Your Credibility Rating' : 'Reader Credibility'}</span>
                   {credibility?.count
                     ? <span className="inline-flex items-center gap-1 text-sm text-white font-semibold"><Star size={15} className="text-amber-400 fill-amber-400" /> {credibility.average} / 5 <span className="text-gray-500 font-normal">({credibility.count})</span></span>
                     : <span className="text-sm text-gray-500">No ratings yet</span>}
@@ -131,7 +147,7 @@ const BiasReportPage = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
               <section className={card}>
                 <Title icon={ShieldAlert}>Multi-Dimensional Bias</Title>
-                <div className="w-full h-72 flex items-center justify-center"><BiasRadarChart data={report.dimensions} /></div>
+                <div className="w-full h-72 flex items-center justify-center"><BiasRadarChart data={report.dimensions} hide={hidden} /></div>
               </section>
               <section className={card}>
                 <Title icon={ShieldAlert}>What Each Dimension Means</Title>
@@ -142,14 +158,17 @@ const BiasReportPage = () => {
                       <li key={k}>
                         <div className="flex items-center justify-between text-sm mb-1">
                           <span className="text-gray-200 font-medium">{DIMENSIONS[k][0]}</span>
-                          <span className="text-gray-300">{off ? 'not measured' : `${Math.round(v)}%`}</span>
+                          <span className={off ? 'text-gray-500' : 'text-gray-300'}>{off ? naLabel(k) : `${Math.round(v)}%`}</span>
                         </div>
                         <div className={`h-2 rounded-full overflow-hidden mb-1 ${off ? 'border border-dashed border-gray-700' : 'bg-gray-800'}`}>
                           {!off && <div className={`h-full rounded-full ${barColor(v)}`} style={{ width: `${Math.max(2, v)}%` }} />}
                         </div>
                         <p className="text-[11px] text-gray-500">
-                          {off ? (NOT_MEASURED[SNAKE[k]] || 'Not measured for this article.') : DIMENSIONS[k][2]}
+                          {off ? notApplicableReason(SNAKE[k], report) : DIMENSIONS[k][2]}
                         </p>
+                        {!off && k === 'selectiveReporting' && report.selectiveMissing?.length > 0 && (
+                          <p className="text-[11px] text-gray-400 mt-0.5">Left out: {report.selectiveMissing.slice(0, 5).join(', ')}</p>
+                        )}
                       </li>
                     );
                   })}
@@ -205,13 +224,18 @@ const BiasReportPage = () => {
               <section className={card}>
                 <Title icon={FileText}>Article Facts</Title>
                 <dl className="space-y-2 text-sm">
-                  {[
+                  {(isAnalysis ? [
+                    ['Outlet', article.source],
+                    ['Published', article.publishedAt ? formatDate(article.publishedAt) : 'Not known'],
+                    ['Analysed', formatDate(article.analyzedAt)],
+                  ] : [
                     ['Outlet', article.source],
                     ['Section', article.section || article.category],
                     ['Published', formatDate(article.publishedAt)],
+                  ]).concat([
                     ['Length', `${words} words · ${Math.max(1, Math.ceil(words / 200))} min read`],
                     ['Sentences analysed', article.biasSignals?.totalSentences ?? sentences.length],
-                  ].map(([k, v]) => (
+                  ]).map(([k, v]) => (
                     <div key={k} className="flex justify-between gap-3 border-b border-gray-800/60 pb-1.5">
                       <dt className="text-gray-500">{k}</dt><dd className="text-gray-200 text-right">{v}</dd>
                     </div>
