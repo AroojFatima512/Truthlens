@@ -30,3 +30,9 @@ export const analyzeArticle = async (payload) => {
 };
 // one of the reader's saved analyses, for the detailed report page -> { article, report }
 export const fetchAnalysis = async (id) => (await api.get(`/analyze/${id}`)).data;
+// the reader's analysed articles -> { items: [{ id, kind, headline, source, url, mode, biasScore, biasLevel, sentiment, analyzedAt }], total, page, pages }
+export const fetchAnalysisHistory = async ({ page = 1, limit = 20, q = '' } = {}) => (await api.get('/analyze/history', { params: { page, limit, q } })).data;
+export const removeAnalysis = async (id) => (await api.delete(`/analyze/${id}`)).data;
+// where an analysed article opens: crawled articles open their feed page, the reader's own analyses their own page
+export const analysisArticlePath = (item) => (item.kind === 'stored' ? `/news/${item.id}` : `/analyze/article/${item.id}`);
+export const analysisReportPath = (item) => (item.kind === 'stored' ? `/report/${item.id}` : `/analyze/report/${item.id}`);

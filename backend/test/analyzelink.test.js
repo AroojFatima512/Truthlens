@@ -148,3 +148,37 @@ test('saved analyses: only their owner can open and rate them, and they go with 
   assert.equal((await call('DELETE', '/auth/me', { password: 'Secret#12' }, t)).status, 200);
   assert.equal(await fake.collection('user_analyses').countDocuments({ user_id: user.id }), 0);
 });
+
+test('analysed history: no re-analysis, fresh run on request, list and remove', async () => {
+  const t = await newReader('link4@test.com');
+  const runs0 = seen.length;
+  const a = await call('POST', '/analyze', { mode: 'text', title: 'Bus plan', body: BODY }, t);
+  const again = await call('POST', '/analyze', { mode: 'text', title: 'Bus plan', body: BODY }, t);
+  assert.equal(again.body.id, a.body.id); assert.equal(again.body.fromHistory, true);
+  assert.equal(seen.length, runs0 + 1, 'the same text is not analysed twice');
+  const fresh = await call('POST', '/analyze', { mode: 'text', title: 'Bus plan', body: BODY, force: true }, t);
+  assert.equal(fresh.body.id, a.body.id, 'a fresh run keeps the same id'); assert.equal(fresh.body.fromHistory, undefined);
+  assert.equal(seen.length, runs0 + 2);
+
+  await call('POST', '/analyze', { mode: 'link', url: 'https://www.dawn.com/news/9999001/new-bus-plan' }, t);
+  await call('POST', '/analyze', { mode: 'link', url: 'https://www.geo.tv/latest/685964-federal-govt-decides-to-impose-emergency-in-kp-sources' }, t);
+  await call('POST', '/analyze', { mode: 'link', url: 'https://www.geo.tv/latest/685964-federal-govt-decides-to-impose-emergency-in-kp-sources' }, t);
+
+  const h = await call('GET', '/analyze/history', null, t);
+  assert.equal(h.status, 200);
+  assert.equal(h.body.total, 3, 'crawled link listed once');
+  assert.deepEqual(h.body.items.map((x) => x.kind), ['stored', 'analysis', 'analysis']);
+  assert.equal(h.body.items[0].id, 'geo-685964'); assert.equal(h.body.items[0].source, 'Geo News');
+  assert.equal(typeof h.body.items[0].biasScore, 'number');
+  assert.equal(h.body.items[1].url, 'https://www.dawn.com/news/9999001/new-bus-plan'); assert.equal(h.body.items[1].biasLevel, 'Low');
+  assert.equal(h.body.items[2].source, 'Pasted text'); assert.equal(h.body.items[2].mode, 'text');
+  const paged = await call('GET', '/analyze/history?limit=2&page=2', null, t);
+  assert.equal(paged.body.items.length, 1); assert.equal(paged.body.pages, 2);
+  assert.equal((await call('GET', '/analyze/history?q=bus', null, t)).body.total, 2);
+  assert.equal((await call('GET', '/analyze/history', null, await newReader('link5@test.com'))).body.total, 0, 'private to the reader');
+
+  assert.equal((await call('DELETE', '/analyze/geo-685964', null, t)).status, 200);
+  assert.equal((await call('DELETE', `/analyze/${a.body.id}`, null, t)).status, 200);
+  assert.equal((await call('GET', `/analyze/${a.body.id}`, null, t)).status, 404);
+  assert.equal((await call('GET', '/analyze/history', null, t)).body.total, 1);
+});

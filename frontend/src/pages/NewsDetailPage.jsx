@@ -8,8 +8,9 @@ import CredibilityRating from '../components/news/CredibilityRating';
 import AtAGlanceCard from '../components/news/AtAGlanceCard';
 import { fetchArticleById } from '../services/newsService';
 import { fetchBiasReport } from '../services/biasService';
+import { fetchAnalysis } from '../services/meService';
 import { formatDate } from '../utils/formatters';
-import { ArrowLeft, Clock, Share2, Bookmark, ExternalLink, Layers, Menu } from 'lucide-react';
+import { ArrowLeft, Clock, Share2, Bookmark, ExternalLink, Layers, Menu, FileText, Link2 } from 'lucide-react';
 import toast from 'react-hot-toast';
 import { useSavedArticles } from '../context/SavedArticlesContext';
 import { useSettings } from '../context/SettingsContext';
@@ -24,8 +25,12 @@ const clearStretch = (side) => {
   if (side) side.dataset.stretch = '0';
 };
 
-const NewsDetailPage = () => {
+// kind="analysis": the same page for an article the reader analysed on Analyze Article (a link
+// TruthLens had not crawled, or pasted text). It is private to the reader, so there is no Share, Save,
+// version history or outlet comparison; "Full Report" opens the analysis's own report.
+const NewsDetailPage = ({ kind = 'article' }) => {
   const { id } = useParams();
+  const isAnalysis = kind === 'analysis';
   const [article, setArticle] = useState(null);
   const [report, setReport] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -109,6 +114,12 @@ const NewsDetailPage = () => {
     const loadArticle = async () => {
       setLoading(true);
       try {
+        if (isAnalysis) {
+          const r = await fetchAnalysis(id);
+          setArticle(r.article);
+          setReport(r.report);
+          return;
+        }
         const [articleData, reportData] = await Promise.all([
           fetchArticleById(id),
           fetchBiasReport(id)
@@ -147,7 +158,7 @@ const NewsDetailPage = () => {
       }
     };
     loadArticle();
-  }, [id]);
+  }, [id, isAnalysis]);
 
   if (loading) {
     return <div className="min-h-screen flex items-center justify-center bg-bg-dark"><div className="w-12 h-12 border-4 border-primary border-t-transparent rounded-full animate-spin"></div></div>;
@@ -164,8 +175,8 @@ const NewsDetailPage = () => {
         
         <div className="flex-1 overflow-y-auto w-full hide-scrollbar flex flex-col">
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 w-full">
-        <Link to="/feed" className="inline-flex items-center text-gray-400 hover:text-white transition-colors mb-4 font-medium">
-          <ArrowLeft size={16} className="mr-2" /> Back to Feed
+        <Link to={isAnalysis ? '/analyze/history' : '/feed'} className="inline-flex items-center text-gray-400 hover:text-white transition-colors mb-4 font-medium">
+          <ArrowLeft size={16} className="mr-2" /> {isAnalysis ? 'Back to Analysed Articles' : 'Back to Feed'}
         </Link>
 
         {/* Wide screens: the analysis cards float on the right; every box on the left that starts below
@@ -175,10 +186,10 @@ const NewsDetailPage = () => {
               dimensions, sentiment, people & places) is on the Full Report page. Keeping this column short
               lets the article text wrap around it and use the full width below, so no empty space is left. */}
           <div data-flow="side" className="order-2 flex flex-col gap-4 lg:float-right lg:w-1/3 lg:pl-6 lg:mb-6">
-            <AtAGlanceCard article={article} />
+            <AtAGlanceCard article={article} reportLink={isAnalysis ? `/analyze/report/${article.id}` : undefined} />
 
             {/* FR-12: readers rate this article's credibility */}
-            <div data-stretch className="flex flex-col [&>*]:flex-1"><CredibilityRating articleId={article.id} /></div>
+            <div data-stretch className="flex flex-col [&>*]:flex-1"><CredibilityRating articleId={article.id} personal={isAnalysis} /></div>
           </div>
 
           {/* Left Column: Article Content */}
@@ -188,13 +199,17 @@ const NewsDetailPage = () => {
                 <span className="bg-gray-800 text-white px-3 py-1 rounded-md text-sm font-medium border border-gray-700">
                   {article.source}
                 </span>
-                {article.isOpinion
+                {isAnalysis
+                  ? <span className="inline-flex items-center gap-1.5 text-violet-200 bg-violet-500/10 border border-violet-400/20 px-3 py-1 rounded-md text-sm font-medium">
+                      {article.mode === 'link' ? <Link2 size={14} /> : <FileText size={14} />} {article.mode === 'link' ? 'Analysed from a link' : 'Analysed from pasted text'}
+                    </span>
+                  : article.isOpinion
                   ? <OpinionTag className="text-sm normal-case tracking-normal px-3 py-1">Opinion piece</OpinionTag>
                   : <span className="text-primary bg-primary/10 px-3 py-1 rounded-md text-sm font-medium">
                       {article.category}
                     </span>}
                 <div className="flex items-center gap-1 text-gray-400 text-sm ml-auto">
-                  <Clock size={14} /> {formatDate(article.publishedAt)}
+                  <Clock size={14} /> {isAnalysis && !article.publishedAt ? `Analysed ${formatDate(article.analyzedAt)}` : formatDate(article.publishedAt)}
                 </div>
               </div>
 
@@ -210,13 +225,13 @@ const NewsDetailPage = () => {
               {!splitAt && (
               <div className="mt-6 pt-4 border-t border-gray-800 flex flex-wrap gap-3 items-center justify-between">
                 <div className="flex gap-3">
-                  <button 
+                  {!isAnalysis && <button 
                     onClick={handleShare}
                     className="flex items-center gap-2 px-3 py-2 bg-gray-800/80 hover:bg-gray-700 text-white rounded-xl transition-all duration-300 text-sm font-medium hover:shadow-lg hover:-translate-y-0.5 border border-gray-700/50"
                   >
                     <Share2 size={16} className="text-gray-400 group-hover:text-white" /> Share
-                  </button>
-                  <button 
+                  </button>}
+                  {!isAnalysis && <button 
                     onClick={toggleSave}
                     className={`flex items-center gap-2 px-3 py-2 rounded-xl transition-all duration-300 text-sm font-medium hover:shadow-lg hover:-translate-y-0.5 border ${
                       isSaved ? 'bg-blue-600/20 border-blue-500/50 text-blue-400' : 'bg-gray-800/80 hover:bg-gray-700 text-white border-gray-700/50'
@@ -224,10 +239,10 @@ const NewsDetailPage = () => {
                   >
                     <Bookmark size={16} className={isSaved ? "text-blue-400" : "text-gray-400"} fill={isSaved ? "currentColor" : "none"} /> 
                     {isSaved ? 'Saved' : 'Save'}
-                  </button>
-                  <a href={article.sourceUrl} target="_blank" rel="noreferrer" className="flex items-center gap-2 px-3 py-2 bg-gray-800/80 hover:bg-gray-700 text-white rounded-xl transition-all duration-300 text-sm font-medium hover:shadow-lg hover:-translate-y-0.5 border border-gray-700/50">
+                  </button>}
+                  {article.sourceUrl && <a href={article.sourceUrl} target="_blank" rel="noreferrer" className="flex items-center gap-2 px-3 py-2 bg-gray-800/80 hover:bg-gray-700 text-white rounded-xl transition-all duration-300 text-sm font-medium hover:shadow-lg hover:-translate-y-0.5 border border-gray-700/50">
                     <ExternalLink size={16} className="text-gray-400 group-hover:text-white" /> Original
-                  </a>
+                  </a>}
                 </div>
                 
                 {article.relatedArticleIds?.length > 0 && (
@@ -250,13 +265,13 @@ const NewsDetailPage = () => {
                 </div>
               <div className="mt-6 pt-4 border-t border-gray-800 flex flex-wrap gap-3 items-center justify-between">
                 <div className="flex gap-3">
-                  <button 
+                  {!isAnalysis && <button 
                     onClick={handleShare}
                     className="flex items-center gap-2 px-3 py-2 bg-gray-800/80 hover:bg-gray-700 text-white rounded-xl transition-all duration-300 text-sm font-medium hover:shadow-lg hover:-translate-y-0.5 border border-gray-700/50"
                   >
                     <Share2 size={16} className="text-gray-400 group-hover:text-white" /> Share
-                  </button>
-                  <button 
+                  </button>}
+                  {!isAnalysis && <button 
                     onClick={toggleSave}
                     className={`flex items-center gap-2 px-3 py-2 rounded-xl transition-all duration-300 text-sm font-medium hover:shadow-lg hover:-translate-y-0.5 border ${
                       isSaved ? 'bg-blue-600/20 border-blue-500/50 text-blue-400' : 'bg-gray-800/80 hover:bg-gray-700 text-white border-gray-700/50'
@@ -264,10 +279,10 @@ const NewsDetailPage = () => {
                   >
                     <Bookmark size={16} className={isSaved ? "text-blue-400" : "text-gray-400"} fill={isSaved ? "currentColor" : "none"} /> 
                     {isSaved ? 'Saved' : 'Save'}
-                  </button>
-                  <a href={article.sourceUrl} target="_blank" rel="noreferrer" className="flex items-center gap-2 px-3 py-2 bg-gray-800/80 hover:bg-gray-700 text-white rounded-xl transition-all duration-300 text-sm font-medium hover:shadow-lg hover:-translate-y-0.5 border border-gray-700/50">
+                  </button>}
+                  {article.sourceUrl && <a href={article.sourceUrl} target="_blank" rel="noreferrer" className="flex items-center gap-2 px-3 py-2 bg-gray-800/80 hover:bg-gray-700 text-white rounded-xl transition-all duration-300 text-sm font-medium hover:shadow-lg hover:-translate-y-0.5 border border-gray-700/50">
                     <ExternalLink size={16} className="text-gray-400 group-hover:text-white" /> Original
-                  </a>
+                  </a>}
                 </div>
                 
                 {article.relatedArticleIds?.length > 0 && (
@@ -285,9 +300,11 @@ const NewsDetailPage = () => {
             {/* Explainable AI Panel */}
 
             {/* FR-09 Version History: each saved version, its bias and sentiment, and the words that changed */}
-            <div data-flow="main" className="order-1 flow-root lg:mb-6">
-              <VersionHistory articleId={article.id} />
-            </div>
+            {!isAnalysis && (
+              <div data-flow="main" className="order-1 flow-root lg:mb-6">
+                <VersionHistory articleId={article.id} />
+              </div>
+            )}
           </div>
 
 

@@ -90,8 +90,8 @@ const BiasReportPage = ({ kind = 'article' }) => {
 
         <div className="flex-1 overflow-y-auto w-full flex flex-col">
           <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-4 w-full flex flex-col gap-4">
-            <Link to={isAnalysis ? '/analyze' : `/news/${id}`} className="inline-flex items-center text-gray-400 hover:text-white transition-colors font-medium w-max">
-              <ArrowLeft size={16} className="mr-2" /> {isAnalysis ? 'Back to Analyze Article' : 'Back to Article'}
+            <Link to={isAnalysis ? `/analyze/article/${id}` : `/news/${id}`} className="inline-flex items-center text-gray-400 hover:text-white transition-colors font-medium w-max">
+              <ArrowLeft size={16} className="mr-2" /> Back to Article
             </Link>
 
             {/* 1. header */}

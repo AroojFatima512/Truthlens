@@ -146,10 +146,22 @@ const cleanPage = (html) => html
 const SITE_SUFFIX = /\s*[|\-–—]\s*(dawn|dawn\.com|geo\.tv|geo news|the express tribune|express tribune|tribune|the nation|aaj english tv|aaj news|aaj tv)\s*$/i;
 
 // -> { headline, body, publishedAt } from a page's HTML (exported for the tests)
+// The headline candidates in order of preference. Some outlets drop the punctuation in one of them
+// (Express Tribune's structured data says "Trump s neo colonialism" where the page says "Trump's
+// neo-colonialism"), so a candidate with the same words but more punctuation wins.
+const sameWords = (s) => s.toLowerCase().replace(/[^\p{L}\p{N}]+/gu, '');
+const punctuation = (s) => (s.match(/[^\p{L}\p{N}\s]/gu) || []).length;
+function pickHeadline(cands) {
+  const list = cands.map((c) => strip(c || '').replace(SITE_SUFFIX, '').trim()).filter(Boolean);
+  if (!list.length) return '';
+  const best = list.filter((c) => sameWords(c) === sameWords(list[0])).sort((a, b) => punctuation(b) - punctuation(a))[0];
+  return best.slice(0, 300);
+}
+
 function extractArticle(html, outlet) {
   const ld = jsonLdArticle(html);
-  const headline = strip(ld?.headline || meta(html, 'og:title') || html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i)?.[1]
-    || html.match(/<title[^>]*>([\s\S]*?)<\/title>/i)?.[1] || '').replace(SITE_SUFFIX, '').slice(0, 300);
+  const headline = pickHeadline([ld?.headline, meta(html, 'og:title'), meta(html, 'twitter:title'),
+    html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i)?.[1], html.match(/<title[^>]*>([\s\S]*?)<\/title>/i)?.[1]]);
   let body = '';
   const ldBody = ld?.articleBody ? strip(String(ld.articleBody).replace(/\r?\n+/g, '\n\n')) : '';
   if (words(ldBody) >= 40) body = ldBody;

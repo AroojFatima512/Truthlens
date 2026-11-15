@@ -24,7 +24,8 @@ const TileIcon = ({ className, Icon }) => {
   return <Icon size={18} strokeWidth={2.2} className={`shrink-0 ${color}`} aria-hidden />;
 };
 
-const AtAGlanceCard = ({ article }) => {
+// reportLink: where "Full Report" goes (a reader's own analysis has its own report page)
+const AtAGlanceCard = ({ article, reportLink }) => {
   const level = biasLevelOf(article.biasScore ?? 0, article.biasLevel);
   const b = BIAS_STYLE[level];
   const sentiment = (article.sentiment || 'neutral').toLowerCase();
@@ -67,7 +68,7 @@ const AtAGlanceCard = ({ article }) => {
       )}
 
       <div className="flex flex-col gap-2">
-        <Link to={`/report/${article.id}`}
+        <Link to={reportLink || `/report/${article.id}`}
           className="group flex items-center gap-3 rounded-xl bg-gradient-to-r from-blue-600 to-sky-500 px-4 py-2.5 text-sm font-semibold text-white shadow-lg shadow-blue-900/40 hover:from-blue-500 hover:to-sky-400 transition-colors">
           <BarChart2 size={17} /> <span className="flex-1 text-center">Full Report: Why this score?</span>
           <ChevronRight size={17} className="transition-transform group-hover:translate-x-0.5" />

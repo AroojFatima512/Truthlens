@@ -24,6 +24,7 @@ import NewsDetailPage from './pages/NewsDetailPage';
 import SearchResultsPage from './pages/SearchResultsPage';
 import ComparisonPage from './pages/ComparisonPage';
 import BiasReportPage from './pages/BiasReportPage';
+import AnalysisHistoryPage from './pages/AnalysisHistoryPage';
 import UserDashboardPage from './pages/UserDashboardPage';
 import FeedbackPage from './pages/FeedbackPage';
 import FeedbackHistoryPage from './pages/FeedbackHistoryPage';
@@ -78,6 +79,8 @@ function App() {
                   <Route path="/compare/:id1/:id2" element={<ComparisonPage />} />
                   <Route path="/report/:id" element={<BiasReportPage />} />
                   <Route path="/analyze/report/:id" element={<BiasReportPage kind="analysis" />} />
+                  <Route path="/analyze/article/:id" element={<NewsDetailPage kind="analysis" />} />
+                  <Route path="/analyze/history" element={<AnalysisHistoryPage />} />
                   <Route path="/dashboard" element={<UserDashboardPage />} />
                   <Route path="/feedback" element={<FeedbackPage />} />
                   <Route path="/feedback/history" element={<FeedbackHistoryPage />} />

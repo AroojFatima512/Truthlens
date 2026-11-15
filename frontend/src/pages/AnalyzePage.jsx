@@ -3,12 +3,13 @@ import { Link } from 'react-router-dom';
 import Sidebar from '../components/common/Sidebar';
 import CredibilityRating from '../components/news/CredibilityRating';
 import GlowCard from '../components/common/GlowCard';
-import { fetchAnalyzeStatus, analyzeArticle } from '../services/meService';
+import AnalysisHistoryList from '../components/analyze/AnalysisHistoryList';
+import { fetchAnalyzeStatus, analyzeArticle, fetchAnalysisHistory, removeAnalysis, analysisArticlePath, analysisReportPath } from '../services/meService';
 import { logUserActivity } from '../utils/historyService';
 import { formatDate } from '../utils/formatters';
 import {
   ShieldCheck, Menu, ScanText, Loader2, RotateCcw, ClipboardPaste, CircleCheck, CircleAlert, Info, Sparkles,
-  Link2, FileText, BarChart2, ExternalLink, Newspaper, Database, ArrowRight, Gauge, Smile, Meh, Frown,
+  Link2, FileText, BarChart2, ExternalLink, Newspaper, Database, ArrowRight, Gauge, Smile, Meh, Frown, History, RefreshCw,
 } from 'lucide-react';
 import toast from 'react-hot-toast';
 
@@ -84,10 +85,17 @@ const AnalyzePage = () => {
   const [result, setResult] = useState(last?.result || null);
   const [error, setError] = useState(null);
   const resultRef = useRef(null);
+  const [recent, setRecent] = useState(null);       // the reader's latest analysed articles { items, total }
 
+  const loadRecent = () => fetchAnalysisHistory({ limit: 5 }).then(setRecent).catch(() => setRecent({ items: [], total: 0 }));
   useEffect(() => {
     fetchAnalyzeStatus().then(setStatus).catch(() => setStatus({ online: false }));
+    loadRecent();
   }, []);
+  const removeRecent = async (item) => {
+    try { await removeAnalysis(item.id); toast.success('Removed from your analysed articles'); loadRecent(); }
+    catch { toast.error('Could not remove it'); }
+  };
 
   useEffect(() => {
     if (!running) return undefined;
@@ -103,19 +111,22 @@ const AnalyzePage = () => {
   const switchMode = (m) => { setMode(m); setError(null); };
   const clear = () => { setUrl(''); setTitle(''); setBody(''); setResult(null); setError(null); writeLast(null); };
 
-  const submit = async (e) => {
-    e.preventDefault();
+  // force: analyse again even though this link or text is already in the reader's history
+  const submit = async (e, force = false) => {
+    e?.preventDefault();
     if (!canSubmit) return;
     setRunning(true);
     setError(null);
     setResult(null);
     try {
-      const payload = mode === 'link' ? { mode, url: link.url } : { mode, title, body };
+      const payload = { ...(mode === 'link' ? { mode, url: link.url } : { mode, title, body }), ...(force ? { force: true } : {}) };
       const r = await analyzeArticle(payload);
       setResult(r);
       setStatus({ online: true });
       writeLast({ mode, url, title, body, result: r });
-      logUserActivity('analysis', {
+      loadRecent();
+      if (r.fromHistory) toast('You analysed this article before: showing the saved result', { icon: '🗂️' });
+      if (!r.fromHistory) logUserActivity('analysis', {
         title: r.article.headline || `${body.trim().split(/\s+/).slice(0, 10).join(' ')}…`,
         subtitle: mode === 'link' ? `Link from ${r.article.source} (Analyze page)` : 'Pasted article (Analyze page)',
         source: r.article.source,
@@ -136,7 +147,8 @@ const AnalyzePage = () => {
   const sentences = art?.sentences || [];
   const tone = ['positive', 'neutral', 'negative'].map((t) => [t, sentences.filter((s) => s.sentiment === t).length]);
   const stored = result?.kind === 'stored';
-  const reportLink = result ? (stored ? `/report/${result.id}` : `/analyze/report/${result.id}`) : null;
+  const resultItem = result ? { id: result.id, kind: stored ? 'stored' : 'analysis' } : null;
+  const reportLink = result ? analysisReportPath(resultItem) : null;
 
   return (
     <div className="min-h-[100dvh] flex flex-col bg-transparent font-sans text-white">
@@ -264,7 +276,7 @@ const AnalyzePage = () => {
 
             {/* Result: bias score, tone, credibility, and the detailed report */}
             {art && (
-              <div ref={resultRef} className="space-y-4 pb-10">
+              <div ref={resultRef} className="space-y-4 pb-6">
                 <GlowCard tone="violet">
                   <div className="flex flex-wrap items-center gap-2 mb-1.5">
                     <span className="inline-flex items-center gap-1 text-[11px] px-2 py-0.5 rounded-full border border-violet-400/30 bg-violet-500/10 text-violet-200">
@@ -275,8 +287,19 @@ const AnalyzePage = () => {
                         title="TruthLens crawled this article earlier, so its saved analysis and readers' ratings are shown.">
                         <Database size={12} /> Already in TruthLens
                       </span>
+                    ) : result.fromHistory ? (
+                      <span className="inline-flex flex-wrap items-center gap-2 text-[11px] text-slate-300">
+                        <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full border border-amber-400/30 bg-amber-500/10 text-amber-200">
+                          <History size={12} /> From your history
+                        </span>
+                        analysed {formatDate(result.analyzedAt || art.analyzedAt)}
+                        <button type="button" onClick={(e) => submit(e, true)} disabled={running}
+                          className="inline-flex items-center gap-1 text-sky-300 hover:text-sky-200 underline underline-offset-2 disabled:opacity-50">
+                          <RefreshCw size={11} /> Analyse again
+                        </button>
+                      </span>
                     ) : (
-                      <span className="text-[11px] text-slate-400">Analysed {formatDate(result.analyzedAt || art.analyzedAt)} · saved to your account</span>
+                      <span className="text-[11px] text-slate-400">Analysed {formatDate(result.analyzedAt || art.analyzedAt)} · saved to your analysed articles</span>
                     )}
                   </div>
                   <h2 className="text-lg font-bold leading-snug text-white">{art.headline || 'Untitled article (no headline given)'}</h2>
@@ -329,11 +352,9 @@ const AnalyzePage = () => {
                       <Link to={reportLink} className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold bg-blue-600 hover:bg-blue-500 text-white shadow-lg shadow-blue-900/40">
                         <BarChart2 size={16} /> Detailed report <ArrowRight size={15} />
                       </Link>
-                      {stored && (
-                        <Link to={`/news/${result.id}`} className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-medium border border-white/15 text-slate-200 hover:bg-white/5">
-                          <Newspaper size={15} /> Open article
-                        </Link>
-                      )}
+                      <Link to={analysisArticlePath(resultItem)} className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-medium border border-white/15 text-slate-200 hover:bg-white/5">
+                        <Newspaper size={15} /> Open article
+                      </Link>
                       {!stored && art.sourceUrl && (
                         <a href={art.sourceUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-medium border border-white/15 text-slate-200 hover:bg-white/5">
                           <ExternalLink size={15} /> Read on {art.source}
@@ -347,6 +368,21 @@ const AnalyzePage = () => {
                   <Info size={14} className="shrink-0" />
                   The bias model was trained on US news sentences (MBIC) and fine-tuned on labelled Pakistani news sentences. Treat the scores as indicators of loaded wording, not as a verdict on the article or the outlet.
                 </p>
+              </div>
+            )}
+
+            {/* the reader's analysed articles: no need to analyse the same article twice */}
+            {recent?.items?.length > 0 && (
+              <div className="pb-10">
+                <GlowCard tone="teal" icon={History} title="Your analysed articles"
+                  subtitle="Open one to see it again without re-analysing it. Only you can see this list."
+                  action={(
+                    <Link to="/analyze/history" className="shrink-0 inline-flex items-center gap-1.5 rounded-lg border border-teal-400/30 bg-teal-500/10 px-3 py-1.5 text-xs font-semibold text-teal-200 hover:bg-teal-500/20">
+                      View all{recent.total > recent.items.length ? ` (${recent.total})` : ''} <ArrowRight size={13} />
+                    </Link>
+                  )}>
+                  <AnalysisHistoryList items={recent.items} onRemove={removeRecent} />
+                </GlowCard>
               </div>
             )}
           </div>
