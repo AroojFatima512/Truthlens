@@ -235,7 +235,8 @@ const NewsFeedPage = () => {
             {/* Top Header */}
             <div className="mb-2 pl-2">
               <div className="flex flex-wrap items-center justify-between gap-3">
-                <h1 className="text-xl lg:text-2xl font-bold text-gray-900 dark:text-white mb-1 tracking-tight">Your News Feed</h1>
+                {/* the title follows the view: the feed of single articles, or the stories compared across outlets */}
+                <h1 className="text-xl lg:text-2xl font-bold text-gray-900 dark:text-white mb-1 tracking-tight">{view === 'stories' ? 'Compared Stories' : 'Your News Feed'}</h1>
                 {/* Two views of the news: single articles, or stories with every outlet's version side by side */}
                 <div role="tablist" className="inline-flex p-1 rounded-xl bg-white dark:bg-[#111827] border border-gray-200 dark:border-gray-800">
                   {[['articles', 'Articles', Newspaper, facets?.totalArticles], ['stories', 'Compared Stories', Layers, facets?.totalStories]].map(([key, label, Icon, n]) => (

@@ -81,14 +81,9 @@ const LandingPage = () => {
       note: sentimentNote ? `Sentiment ${pct(sentimentModel.accuracy)}%` : null, value: <AnimatedCounter key={accuracy} end={accuracy} suffix="%" duration={2.5} /> },
     { icon: Split, tint: 'bg-red-50 dark:bg-[#3d1616]', color: 'text-red-600 dark:text-red-500', label: 'Stories Compared', value: <AnimatedCounter end={overview?.comparisons || 0} duration={2} /> },
   ];
-  const STEPS = [
-    { n: 1, icon: <Globe className="text-blue-500" size={18} />, title: 'Collect', text: `A Scrapy crawler collects articles from ${overview?.sources?.length ? overview.sources.map((x) => x.name).join(', ').replace(/, ([^,]*)$/, ' and $1') : 'Pakistani news outlets'}, cleans them and keeps every earlier version of an article.` },
-    { n: 2, icon: <Brain className="text-purple-400" size={18} />, title: 'Analyse', text: 'A DeBERTa model scores every sentence for biased wording, and other models add sentiment and the people, places and organisations mentioned.' },
-    { n: 3, icon: <Split className="text-emerald-400" size={18} />, title: 'Compare', text: 'Sentence-BERT finds the same story in different outlets and shows what each one words differently or leaves out.' },
-  ];
 
-  // Layout: two screen-high parts on a laptop. Screen 1 is the hero with both buttons; screen 2 holds
-  // Powerful Features, the numbers and How TruthLens Works together. Heights follow the window
+  // Layout: three screen-high parts on a laptop. Screen 1 is the hero with both buttons; screen 2 holds
+  // Powerful Features and the numbers; screen 3 is a call to action and the footer. Heights follow the window
   // (100dvh minus the 4rem navbar), and the headline size follows the window height, so nothing is cut
   // off on a short laptop screen and nothing looks empty on a tall monitor.
   return (
@@ -152,7 +147,7 @@ const LandingPage = () => {
                 <Link to={user ? homePathFor(user, settings) : '/register'} className="px-7 py-3 border border-transparent text-base font-bold rounded-lg text-white bg-gradient-to-r from-primary to-blue-600 hover:from-blue-600 hover:to-blue-700 transition-all duration-300 shadow-[0_0_30px_rgba(26,115,232,0.4)] hover:shadow-[0_0_40px_rgba(26,115,232,0.6)] transform hover:-translate-y-1">
                   {!user ? 'Start Detecting Bias' : isAdmin ? 'Open Admin Dashboard' : 'Go to My News'}
                 </Link>
-                <Link to={!user ? '/about' : isAdmin ? '/admin/sources' : '/compare'} className="px-7 py-3 border border-gray-300 dark:border-gray-600 text-base font-bold rounded-lg text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300 backdrop-blur-sm bg-white/30 dark:bg-bg-dark/30 hover:shadow-lg transform hover:-translate-y-1">
+                <Link to={!user ? '/about#how-it-works' : isAdmin ? '/admin/sources' : '/compare'} className="px-7 py-3 border border-gray-300 dark:border-gray-600 text-base font-bold rounded-lg text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300 backdrop-blur-sm bg-white/30 dark:bg-bg-dark/30 hover:shadow-lg transform hover:-translate-y-1">
                   {!user ? 'See How It Works' : isAdmin ? 'Manage Sources' : 'Compare Sources'}
                 </Link>
               </div>
@@ -160,15 +155,15 @@ const LandingPage = () => {
           </div>
         </section>
 
-        {/* Screen 2: features, numbers and how it works, together */}
-        <section className="min-h-[calc(100dvh-4rem)] flex flex-col justify-center gap-4 lg:gap-5 py-5 lg:py-6 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Screen 2: features and the numbers */}
+        <section className="min-h-[calc(100dvh-4rem)] flex flex-col justify-center gap-6 lg:gap-8 py-8 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8">
           {/* Powerful Features */}
-          <div className="bg-white dark:bg-[#0b1120] rounded-[1.75rem] px-5 py-4 lg:px-8 shadow-[0_20px_50px_rgba(0,0,0,0.1)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-gray-100 dark:border-gray-800 transition-colors duration-500 ease-out relative overflow-hidden">
+          <div className="bg-white dark:bg-[#0b1120] rounded-[1.75rem] px-5 py-6 lg:px-8 shadow-[0_20px_50px_rgba(0,0,0,0.1)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-gray-100 dark:border-gray-800 transition-colors duration-500 ease-out relative overflow-hidden">
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-24 bg-primary/10 blur-[60px] rounded-full pointer-events-none"></div>
-            <h3 className="text-center text-gray-900 dark:text-white font-bold mb-4 relative z-10 text-base uppercase tracking-wider">Powerful Features</h3>
+            <h3 className="text-center text-gray-900 dark:text-white font-bold mb-5 relative z-10 text-base uppercase tracking-wider">Powerful Features</h3>
             <div className="grid grid-cols-2 md:grid-cols-5 gap-3 relative z-10">
               {FEATURES.map(({ icon: Icon, label, color, glow }) => (
-                <motion.div key={label} whileHover={{ y: -4 }} className="bg-gray-50 dark:bg-[#121c33] rounded-2xl px-3 py-3.5 text-center hover:bg-white dark:hover:bg-[#1a2642] transition-all duration-300 flex flex-col items-center justify-center gap-2 border border-gray-100 dark:border-gray-800/50 shadow-sm hover:shadow-md dark:shadow-none group relative overflow-hidden">
+                <motion.div key={label} whileHover={{ y: -4 }} className="bg-gray-50 dark:bg-[#121c33] rounded-2xl px-3 py-5 text-center hover:bg-white dark:hover:bg-[#1a2642] transition-all duration-300 flex flex-col items-center justify-center gap-2 border border-gray-100 dark:border-gray-800/50 shadow-sm hover:shadow-md dark:shadow-none group relative overflow-hidden">
                   <div className={`absolute inset-0 bg-gradient-to-b ${glow} to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300`}></div>
                   <Icon className={`${color} group-hover:scale-110 transition-transform duration-300 relative z-10`} size={28} strokeWidth={1.5} />
                   <span className="text-sm font-bold text-gray-800 dark:text-white relative z-10 leading-tight">{label}</span>
@@ -178,7 +173,7 @@ const LandingPage = () => {
           </div>
 
           {/* the numbers, live from the database */}
-          <div className="bg-white dark:bg-[#0b1120] rounded-[1.5rem] py-4 px-4 md:px-6 shadow-[0_10px_40px_rgba(0,0,0,0.04)] dark:shadow-2xl border border-gray-200 dark:border-gray-800/80 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-0 md:divide-x divide-gray-200 dark:divide-gray-800/80 transition-colors duration-500">
+          <div className="bg-white dark:bg-[#0b1120] rounded-[1.5rem] py-5 px-4 md:px-6 shadow-[0_10px_40px_rgba(0,0,0,0.04)] dark:shadow-2xl border border-gray-200 dark:border-gray-800/80 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-0 md:divide-x divide-gray-200 dark:divide-gray-800/80 transition-colors duration-500">
             {STATS.map(({ icon: Icon, tint, color, label, value, title, note }) => (
               <div key={label} className="flex items-center gap-3 px-2 lg:px-6 justify-start md:justify-center group">
                 <div className={`w-11 h-11 rounded-full ${tint} flex items-center justify-center shrink-0`}>
@@ -193,25 +188,38 @@ const LandingPage = () => {
             ))}
           </div>
 
-          {/* How It Works */}
-          <div>
-            <h2 className="text-xl md:text-2xl font-bold text-center text-gray-900 dark:text-white mb-3 lg:mb-4 tracking-tight">How TruthLens Works</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              {STEPS.map((step) => (
-                <div key={step.n} className="bg-white dark:bg-[#121c33] rounded-2xl p-4 lg:p-5 border border-gray-200 dark:border-gray-800/80 shadow-lg flex flex-col">
-                  <div className="flex items-center gap-3 mb-2.5">
-                    <div className="w-9 h-9 rounded-full bg-blue-600/10 border border-blue-500/30 flex items-center justify-center text-blue-400 font-bold">{step.n}</div>
-                    <div className="flex items-center gap-2">{step.icon}<p className="text-gray-900 dark:text-white font-semibold">{step.title}</p></div>
-                  </div>
-                  <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">{step.text}</p>
-                </div>
-              ))}
+        </section>
+
+        {/* Screen 3: a short call to action, with the footer under it. How TruthLens works is explained
+            once, on the About page (#how-it-works). */}
+        <div className="min-h-[calc(100dvh-4rem)] flex flex-col">
+        <section className="flex-1 flex flex-col justify-center py-3 max-w-5xl w-full mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="relative overflow-hidden rounded-[2rem] border border-blue-400/20 bg-gradient-to-br from-[#0f2a4d] via-[#0d1a33] to-[#1a1240] px-6 py-6 md:px-12 md:py-7 text-center shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+            <div aria-hidden className="pointer-events-none absolute -top-24 -left-24 h-64 w-64 rounded-full bg-blue-500/20 blur-3xl" />
+            <div aria-hidden className="pointer-events-none absolute -bottom-24 -right-24 h-64 w-64 rounded-full bg-purple-500/20 blur-3xl" />
+            <div className="relative">
+              <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight text-white">
+                Ready to <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-400">see the bias</span>?
+              </h2>
+              <p className="mt-2 max-w-2xl mx-auto text-sm md:text-base text-slate-300 leading-relaxed">
+                {user
+                  ? 'Read the news with every sentence scored, compare how outlets cover the same story, or analyse an article of your own.'
+                  : 'Create a free account to read the news with every sentence scored, compare how outlets cover the same story, and analyse any article yourself.'}
+              </p>
+              <div className="mt-5 flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
+                <Link to={user ? homePathFor(user, settings) : '/register'} className="px-7 py-3 text-base font-bold rounded-lg text-white bg-gradient-to-r from-primary to-blue-600 hover:from-blue-600 hover:to-blue-700 transition-all duration-300 shadow-[0_0_30px_rgba(26,115,232,0.4)] hover:-translate-y-0.5">
+                  {!user ? 'Create an account' : isAdmin ? 'Open Admin Dashboard' : 'Go to My News'}
+                </Link>
+                <Link to="/about#how-it-works" className="px-7 py-3 text-base font-bold rounded-lg text-white border border-white/20 bg-white/5 hover:bg-white/10 transition-all duration-300 hover:-translate-y-0.5">
+                  Learn how it works →
+                </Link>
+              </div>
             </div>
           </div>
         </section>
+        <Footer compact />
+        </div>
       </PageTransition>
-
-      <Footer />
     </div>
   );
 };

@@ -15,12 +15,32 @@ const LEVELS = [
 export const passwordReady = (password, ctx = {}, confirm) => PASSWORD_RULES.every((r) => r.test(String(password || ''), ctx))
   && (confirm === undefined || (password.length > 0 && password === confirm));
 
-const PasswordChecklist = ({ password = '', email, name, confirm, light = false }) => {
+// compact: one line (strength bar and the first rule still missing), for forms that must fit one screen;
+// the full list is shown while the password field is focused.
+const PasswordChecklist = ({ password = '', email, name, confirm, light = false, compact = false }) => {
   const ctx = { email, name };
   const level = passwordStrength(password, ctx);
   const rules = PASSWORD_RULES.map((r) => ({ text: r.text, ok: r.test(password, ctx) }));
   if (confirm !== undefined) rules.push({ text: 'Both passwords match', ok: password.length > 0 && password === confirm });
   const muted = light ? 'text-gray-500' : 'text-gray-500';
+
+  if (compact) {
+    const missing = rules.filter((r) => !r.ok);
+    return (
+      <div className="mt-1.5 flex items-center gap-2" aria-live="polite">
+        <div className="flex w-20 shrink-0 gap-0.5">
+          {[1, 2, 3, 4].map((n) => (
+            <span key={n} className={`h-1 flex-1 rounded-full ${level >= n ? LEVELS[level].bar : light ? 'bg-gray-200' : 'bg-white/10'}`} />
+          ))}
+        </div>
+        <span className={`text-[10.5px] truncate ${missing.length ? 'text-red-400/90' : 'text-emerald-400'}`}>
+          {missing.length
+            ? `${level ? `${LEVELS[level].label} · ` : ''}${missing[0].text}${missing.length > 1 ? ` (+${missing.length - 1} more)` : ''}`
+            : <span className="inline-flex items-center gap-1"><Check size={11} strokeWidth={3} /> {LEVELS[level]?.label || 'Good'} · all rules met</span>}
+        </span>
+      </div>
+    );
+  }
 
   return (
     <div className="mt-2" aria-live="polite">

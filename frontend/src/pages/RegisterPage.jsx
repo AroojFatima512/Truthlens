@@ -33,6 +33,7 @@ const RegisterPage = () => {
   const navigate = useNavigate();
 
   const [touched, setTouched] = useState({});
+  const [pwFocus, setPwFocus] = useState(false);   // full password rules shown only while typing a password
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -124,7 +125,7 @@ const RegisterPage = () => {
       </Link>
 
       {/* Right Side - Branding & Graphic */}
-      <div className="w-full lg:w-1/2 order-1 lg:order-2 relative bg-[#0b1120] flex flex-col items-center justify-center p-4 lg:p-8 overflow-hidden border-l border-gray-800/60 h-[40%] lg:h-full z-10">
+      <div className="w-full lg:w-1/2 order-1 lg:order-2 relative bg-[#0b1120] flex flex-col items-center justify-center p-4 lg:p-8 overflow-hidden border-l border-gray-800/60 h-[30%] lg:h-full z-10">
           
           {/* Network constellation background (Subtle dots) */}
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-900/20 via-[#0b1120] to-[#0b1120] pointer-events-none"></div>
@@ -238,27 +239,27 @@ const RegisterPage = () => {
       </div>
 
       {/* Left Side - Form */}
-      <div className="w-full lg:w-1/2 order-2 lg:order-1 flex items-center justify-center p-4 sm:p-6 lg:p-8 bg-[#0a0a0a] h-[60%] lg:h-full overflow-y-auto hide-scrollbar">
+      <div className="w-full lg:w-1/2 order-2 lg:order-1 flex items-center justify-center px-4 py-3 sm:px-6 lg:px-8 lg:py-6 [@media(max-height:640px)]:py-2 bg-[#0a0a0a] h-[70%] lg:h-full overflow-y-auto hide-scrollbar">
         <motion.div 
           initial={{ opacity: 0, x: 30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-          className="w-full max-w-[360px] lg:max-w-[380px] my-auto"
+          className="w-full max-w-[380px] lg:max-w-[430px] my-auto"
         >
 
           {step === 1 && (
             <>
-              <div className="flex flex-col items-center mb-2 lg:mb-4">
+              <div className="flex flex-col items-center mb-3 lg:mb-4 [@media(max-height:640px)]:mb-2.5">
                 <motion.div 
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
                   transition={{ delay: 0.6, type: "spring", bounce: 0.5 }}
-                  className="w-[38px] h-[38px] lg:w-[46px] lg:h-[46px] rounded-full border border-blue-600/80 flex items-center justify-center mb-1.5 lg:mb-2 text-blue-500 bg-transparent shadow-[0_0_15px_rgba(59,130,246,0.2)]"
+                  className="w-[38px] h-[38px] lg:w-[46px] lg:h-[46px] [@media(max-height:700px)]:hidden rounded-full border border-blue-600/80 flex items-center justify-center mb-1.5 lg:mb-2 text-blue-500 bg-transparent shadow-[0_0_15px_rgba(59,130,246,0.2)]"
                 >
                   <UserPlus size={20} className="lg:w-5 lg:h-5" strokeWidth={1.5} />
                 </motion.div>
                 <h2 className="text-[20px] lg:text-[22px] font-semibold text-white mb-0.5 tracking-tight">Create Account</h2>
-                <p className="text-gray-400 text-[12px] lg:text-[13px] text-center max-w-[240px] leading-snug">
+                <p className="text-gray-400 text-[12px] lg:text-[13px] text-center leading-snug">
                   Join TruthLens and see beyond the headlines.
                 </p>
               </div>
@@ -324,6 +325,8 @@ const RegisterPage = () => {
                         autoComplete="new-password"
                         value={formData.password}
                         onChange={handleChange}
+                        onFocus={() => setPwFocus(true)}
+                        onBlur={() => setPwFocus(false)}
                         className="block w-full pl-9 lg:pl-10 pr-10 py-1.5 lg:py-2 border border-[#222] rounded-lg lg:rounded-xl bg-transparent text-white placeholder-gray-600 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition text-[12px] lg:text-[13px] font-mono tracking-wider"
                         placeholder="••••••••"
                       />
@@ -351,6 +354,8 @@ const RegisterPage = () => {
                         autoComplete="new-password"
                         value={formData.confirmPassword}
                         onChange={handleChange}
+                        onFocus={() => setPwFocus(true)}
+                        onBlur={() => setPwFocus(false)}
                         className="block w-full pl-9 lg:pl-10 pr-10 py-1.5 lg:py-2 border border-[#222] rounded-lg lg:rounded-xl bg-transparent text-white placeholder-gray-600 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition text-[12px] lg:text-[13px] font-mono tracking-wider"
                         placeholder="••••••••"
                       />
@@ -364,13 +369,20 @@ const RegisterPage = () => {
                     </div>
                   </div>
                 </div>
+                {/* one line under the fields; the full rules float over the form while a password field
+                    has focus, so the page never has to scroll */}
                 {(formData.password || touched.password) && (
-                  <div className="mb-2 lg:mb-2.5">
-                    <PasswordChecklist password={formData.password} email={formData.email} name={formData.name} confirm={formData.confirmPassword ? formData.confirmPassword : undefined} />
+                  <div className="relative mb-2 lg:mb-2.5 -mt-1">
+                    <PasswordChecklist compact password={formData.password} email={formData.email} name={formData.name} confirm={formData.confirmPassword ? formData.confirmPassword : undefined} />
+                    {pwFocus && (
+                      <div className="absolute left-0 right-0 top-full z-30 mt-1 rounded-xl border border-blue-500/30 bg-[#0d1220] px-3 pb-2.5 pt-0.5 shadow-[0_12px_30px_rgba(0,0,0,0.6)]">
+                        <PasswordChecklist password={formData.password} email={formData.email} name={formData.name} confirm={formData.confirmPassword ? formData.confirmPassword : undefined} />
+                      </div>
+                    )}
                   </div>
                 )}
 
-                <div className="py-1 mb-2 lg:mb-3">
+                <div className="py-1 mb-2 lg:mb-3 [@media(max-height:640px)]:mb-2">
                   <div className="flex items-center gap-2">
                     <input
                       type="checkbox"
@@ -378,7 +390,7 @@ const RegisterPage = () => {
                       required
                       className="w-3.5 h-3.5 rounded border-[#222] bg-transparent text-blue-600 focus:ring-blue-500"
                     />
-                    <label htmlFor="terms" className="text-[11px] lg:text-[12px] text-gray-400">
+                    <label htmlFor="terms" className="text-[11px] lg:text-[12px] text-gray-400 leading-snug">
                       I understand my name, email and feedback are stored to run TruthLens
                     </label>
                   </div>
@@ -397,14 +409,14 @@ const RegisterPage = () => {
               </form>
 
               {/* Social Login Options */}
-              <div className="relative my-3">
+              <div className="relative my-3 [@media(max-height:640px)]:my-2">
                 <div className="absolute inset-0 flex items-center"><div className="w-full border-t border-[#222]"></div></div>
                 <div className="relative flex justify-center text-[9px] lg:text-[11px]">
                   <span className="px-3 bg-[#0a0a0a] text-gray-500 uppercase tracking-widest font-medium">or</span>
                 </div>
               </div>
               <GoogleButton onCredential={handleGoogle} text="signup_with" disabled={loading} />
-              <div className="mt-3 lg:mt-4 text-center text-[12px] lg:text-[13px] text-gray-400">
+              <div className="mt-3 lg:mt-4 [@media(max-height:640px)]:mt-2.5 text-center text-[12px] lg:text-[13px] text-gray-400">
                 Already have an account?{' '}
                 <Link to="/login" className="font-semibold text-blue-500 hover:text-blue-400 transition">Log in</Link>
               </div>

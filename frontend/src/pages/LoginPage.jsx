@@ -152,12 +152,12 @@ const LoginPage = () => {
       </div>
 
       {/* Right Side - Form */}
-      <div className="w-full lg:w-1/2 flex items-center justify-center p-4 sm:p-6 lg:p-8 bg-[#0a0a0a] h-[60%] lg:h-full overflow-y-auto hide-scrollbar">
+      <div className="w-full lg:w-1/2 flex items-center justify-center px-4 py-3 sm:px-6 lg:px-8 lg:py-6 [@media(max-height:640px)]:py-2 bg-[#0a0a0a] h-[60%] lg:h-full overflow-y-auto hide-scrollbar">
         <motion.div 
           initial={{ opacity: 0, x: 30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-          className="w-full max-w-[360px] lg:max-w-[380px] my-auto"
+          className="w-full max-w-[380px] lg:max-w-[420px] my-auto"
         >
 
           {step === 1 && (
@@ -167,12 +167,12 @@ const LoginPage = () => {
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
                   transition={{ delay: 0.6, type: "spring", bounce: 0.5 }}
-                  className="w-[38px] h-[38px] lg:w-[46px] lg:h-[46px] rounded-full border border-blue-600/80 flex items-center justify-center mb-1.5 lg:mb-2 text-blue-500 bg-transparent shadow-[0_0_15px_rgba(59,130,246,0.2)]"
+                  className="w-[38px] h-[38px] lg:w-[46px] lg:h-[46px] [@media(max-height:700px)]:hidden rounded-full border border-blue-600/80 flex items-center justify-center mb-1.5 lg:mb-2 text-blue-500 bg-transparent shadow-[0_0_15px_rgba(59,130,246,0.2)]"
                 >
                   <User size={20} className="lg:w-5 lg:h-5" strokeWidth={1.5} />
                 </motion.div>
                 <h2 className="text-[20px] lg:text-[22px] font-semibold text-white mb-0.5 tracking-tight">Welcome Back!</h2>
-                <p className="text-gray-400 text-[12px] lg:text-[13px] text-center max-w-[240px] leading-snug">
+                <p className="text-gray-400 text-[12px] lg:text-[13px] text-center leading-snug">
                   Login to continue to TruthLens.
                 </p>
               </div>
